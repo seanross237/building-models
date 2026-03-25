@@ -841,7 +841,7 @@ The project key in `transcript_path` is set when the session starts and NEVER ch
 **Additional complication:** Someone placed a `settings.local.json` in `~/.claude/projects/-Users-seanross-kingdom-of-god-grand-unified-theory/` thinking it would be picked up. It was NOT — that directory is only for transcript storage.
 
 **Fix needed:** Either:
-1. Start the tmux session from `/Users/seanross/kingdom_of_god/science/grand-unified-theory/` (under the science git root), OR
+1. Start the tmux session from the correct directory under the atlas git root, OR
 2. Add `.claude/settings.local.json` to `/Users/seanross/kingdom_of_god/grand-unified-theory/` (the separate git root)
 
 ### Failure 2: Hook traps wrong session (March 21)

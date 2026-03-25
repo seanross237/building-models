@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atlas — First Complete Run</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --slide-bg: #f8f9fa;
+  --slide-border: #e1e4e8;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #4f46e5;
+  --accent-light: #eef2ff;
+  --green: #059669;
+  --green-light: #ecfdf5;
+  --red: #dc2626;
+  --red-light: #fef2f2;
+  --amber: #d97706;
+  --amber-light: #fffbeb;
+  --blue: #2563eb;
+  --blue-light: #eff6ff;
+  --purple: #7c3aed;
+  --purple-light: #f5f3ff;
+  --teal: #0d9488;
+  --teal-light: #f0fdfa;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  display: flex; flex-direction: column; align-items: center;
+  min-height: 100vh; padding: 40px 20px;
+}
+
+/* Nav */
+.nav {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+  padding: 10px 20px; border-radius: 999px; z-index: 100;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+.nav-btn {
+  background: transparent; border: 1px solid rgba(255,255,255,0.2);
+  color: white; width: 36px; height: 36px; border-radius: 50%;
+  cursor: pointer; font-size: 16px; display: flex; align-items: center;
+  justify-content: center; transition: all 0.15s;
+}
+.nav-btn:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.4); }
+.nav-btn:disabled { opacity: 0.3; cursor: default; }
+.nav-counter { color: rgba(255,255,255,0.6); font-size: 13px; min-width: 50px; text-align: center; }
+
+/* Slide */
+.slide {
+  display: none; width: 100%; max-width: 860px;
+  background: var(--slide-bg); border: 1px solid var(--slide-border);
+  border-radius: 16px; padding: 48px 56px 56px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+  animation: fadeIn 0.25s ease;
+}
+.slide.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Typography */
+h1 { font-size: 32px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+h2 { font-size: 24px; font-weight: 700; color: var(--text); margin-bottom: 16px; }
+h3 { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: var(--muted); margin-bottom: 32px; }
+.label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+
+/* Cards */
+.card {
+  border: 1px solid var(--slide-border); border-radius: 10px;
+  padding: 16px 20px; margin-bottom: 12px; background: white;
+}
+.card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.card-num {
+  width: 28px; height: 28px; border-radius: 8px; font-size: 13px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.card-title { font-size: 15px; font-weight: 600; color: var(--text); }
+.card-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+/* Stats */
+.stats { display: grid; gap: 12px; margin: 20px 0; }
+.stats-2 { grid-template-columns: 1fr 1fr; }
+.stats-3 { grid-template-columns: 1fr 1fr 1fr; }
+.stats-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.stats-5 { grid-template-columns: 1fr 1fr 1fr 1fr 1fr; }
+.stat {
+  text-align: center; padding: 16px 12px; border-radius: 10px;
+  border: 1px solid var(--slide-border); background: white;
+}
+.stat-value { font-size: 28px; font-weight: 700; }
+.stat-label { font-size: 11px; color: var(--muted); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* Tags */
+.tag {
+  display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px;
+  border-radius: 6px; margin-right: 4px; margin-bottom: 4px;
+}
+.tag-green { background: var(--green-light); color: var(--green); }
+.tag-red { background: var(--red-light); color: var(--red); }
+.tag-amber { background: var(--amber-light); color: var(--amber); }
+.tag-blue { background: var(--blue-light); color: var(--blue); }
+.tag-accent { background: var(--accent-light); color: var(--accent); }
+.tag-purple { background: var(--purple-light); color: var(--purple); }
+.tag-teal { background: var(--teal-light); color: var(--teal); }
+
+/* Misc */
+.divider { height: 1px; background: var(--slide-border); margin: 24px 0; }
+.finding {
+  display: flex; gap: 12px; margin-bottom: 12px; font-size: 13px; line-height: 1.5;
+}
+.finding-num {
+  width: 22px; height: 22px; border-radius: 50%; background: var(--accent);
+  color: white; font-size: 11px; font-weight: 700; display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0; margin-top: 1px;
+}
+
+/* TOC */
+.toc-item {
+  display: flex; align-items: center; gap: 12px; padding: 12px 16px;
+  border: 1px solid var(--slide-border); border-radius: 10px; margin-bottom: 8px;
+  cursor: pointer; transition: all 0.15s; background: white;
+}
+.toc-item:hover { border-color: var(--accent); background: var(--accent-light); }
+.toc-num {
+  width: 32px; height: 32px; border-radius: 8px; font-size: 14px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.toc-text { font-size: 15px; font-weight: 500; color: var(--text); }
+
+/* Flow / architecture */
+.flow-arrow { text-align: center; font-size: 20px; color: var(--muted); margin: 4px 0; }
+.flow-box {
+  border: 1px solid var(--slide-border); border-radius: 10px; padding: 12px 16px;
+  background: white; text-align: center; font-size: 13px; font-weight: 500;
+}
+
+/* Agent hierarchy diagram */
+.agent-tree { display: flex; flex-direction: column; align-items: center; gap: 0; margin: 16px 0; }
+.agent-node {
+  padding: 10px 20px; border-radius: 10px; font-size: 13px; font-weight: 600;
+  text-align: center; border: 2px solid; min-width: 160px;
+}
+.agent-row { display: flex; gap: 16px; justify-content: center; align-items: flex-start; }
+.agent-connector {
+  width: 2px; height: 20px; background: var(--slide-border); margin: 0 auto;
+}
+.agent-branch {
+  display: flex; flex-direction: column; align-items: center;
+}
+.agent-branch-line {
+  width: 100%; height: 2px; background: var(--slide-border); margin-bottom: 0;
+  position: relative; top: -1px;
+}
+
+/* Validation table */
+.val-table {
+  width: 100%; border-collapse: collapse; font-size: 13px; margin: 12px 0;
+}
+.val-table th {
+  text-align: left; padding: 8px 12px; font-weight: 600; color: var(--muted);
+  border-bottom: 2px solid var(--slide-border); font-size: 11px; text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.val-table td {
+  padding: 8px 12px; border-bottom: 1px solid #f3f4f6; color: var(--text);
+}
+.val-table tr:last-child td { border-bottom: none; }
+.check { color: var(--green); font-weight: 700; }
+.partial { color: var(--amber); font-weight: 700; }
+
+/* Timeline */
+.timeline-item {
+  display: flex; gap: 12px; margin-bottom: 14px; font-size: 13px; line-height: 1.5;
+}
+.timeline-marker {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 4px;
+}
+.timeline-content { flex: 1; }
+.timeline-title { font-weight: 600; color: var(--text); }
+.timeline-desc { color: var(--muted); margin-top: 2px; }
+
+/* Feedback */
+.feedback-section {
+  margin-top: 24px; padding-top: 16px;
+  border-top: 1px dashed var(--slide-border);
+}
+.feedback-toggle {
+  display: flex; align-items: center; gap: 8px; cursor: pointer;
+  font-size: 12px; font-weight: 600; color: var(--muted);
+  background: none; border: none; padding: 4px 0;
+  transition: color 0.15s;
+}
+.feedback-toggle:hover { color: var(--text); }
+.feedback-toggle .chevron { transition: transform 0.2s; font-size: 10px; }
+.feedback-toggle .chevron.open { transform: rotate(90deg); }
+.feedback-toggle .dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+  display: none;
+}
+.feedback-toggle .dot.has-feedback { display: inline-block; }
+.feedback-body { display: none; margin-top: 10px; }
+.feedback-body.open { display: block; }
+.feedback-textarea {
+  width: 100%; min-height: 60px; padding: 10px 12px;
+  border: 1px solid var(--slide-border); border-radius: 8px;
+  font-family: inherit; font-size: 13px; color: var(--text);
+  background: white; resize: vertical; outline: none;
+  transition: border-color 0.15s;
+}
+.feedback-textarea:focus { border-color: var(--accent); }
+.feedback-actions { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+.feedback-save {
+  padding: 6px 14px; border-radius: 6px; border: none;
+  background: var(--accent); color: white; font-size: 12px;
+  font-weight: 600; cursor: pointer; transition: opacity 0.15s;
+}
+.feedback-save:hover { opacity: 0.85; }
+.feedback-save:disabled { opacity: 0.4; cursor: default; }
+.feedback-status { font-size: 11px; color: var(--green); opacity: 0; transition: opacity 0.3s; }
+.feedback-status.show { opacity: 1; }
+.feedback-saved-list { margin-top: 8px; }
+.feedback-entry {
+  display: flex; gap: 8px; align-items: flex-start; padding: 6px 0;
+  font-size: 12px; color: var(--text); border-bottom: 1px solid #f3f4f6;
+}
+.feedback-entry:last-child { border-bottom: none; }
+.feedback-entry-time { color: var(--muted); font-size: 11px; white-space: nowrap; flex-shrink: 0; }
+.feedback-entry-text { line-height: 1.4; }
+.feedback-entry-delete {
+  background: none; border: none; color: var(--muted); cursor: pointer;
+  font-size: 11px; padding: 0 4px; flex-shrink: 0;
+}
+.feedback-entry-delete:hover { color: var(--red); }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 0: Title + TOC -->
+<div class="slide active" id="slide-0">
+  <h1>Atlas — First Complete Run</h1>
+  <p class="subtitle">Autonomous multi-agent research system completes its first mission: quantum gravity</p>
+  <div class="divider"></div>
+  <p class="label" style="color:var(--muted)">What's Inside</p>
+
+  <div class="toc-item" onclick="goTo(1)">
+    <div class="toc-num" style="background:var(--accent-light);color:var(--accent)">1</div>
+    <div class="toc-text">The Agent Architecture</div>
+  </div>
+  <div class="toc-item" onclick="goTo(2)">
+    <div class="toc-num" style="background:var(--blue-light);color:var(--blue)">2</div>
+    <div class="toc-text">How It Runs</div>
+  </div>
+  <div class="toc-item" onclick="goTo(3)">
+    <div class="toc-num" style="background:var(--green-light);color:var(--green)">3</div>
+    <div class="toc-text">Strategy 1 — Constraint-Driven</div>
+  </div>
+  <div class="toc-item" onclick="goTo(4)">
+    <div class="toc-num" style="background:var(--purple-light);color:var(--purple)">4</div>
+    <div class="toc-text">Strategy 2 — Beyond the No-Go</div>
+  </div>
+  <div class="toc-item" onclick="goTo(5)">
+    <div class="toc-num" style="background:var(--teal-light);color:var(--teal)">5</div>
+    <div class="toc-text">Results &amp; Validation</div>
+  </div>
+  <div class="toc-item" onclick="goTo(6)">
+    <div class="toc-num" style="background:var(--amber-light);color:var(--amber)">6</div>
+    <div class="toc-text">System Learnings</div>
+  </div>
+  <div class="toc-item" onclick="goTo(7)">
+    <div class="toc-num" style="background:#f3f4f6;color:var(--muted)">7</div>
+    <div class="toc-text">Mission Conclusion &amp; What's Next</div>
+  </div>
+</div>
+
+<!-- SLIDE 1: Agent Architecture -->
+<div class="slide" id="slide-1">
+  <p class="label" style="color:var(--accent)">Architecture</p>
+  <h2>5 Agents, 3 Levels</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:24px">Hierarchical system where each level owns a different scope of decisions</p>
+
+  <!-- Visual agent hierarchy -->
+  <div class="agent-tree">
+    <div class="agent-node" style="border-color:var(--accent);background:var(--accent-light);color:var(--accent);">
+      Missionary
+      <div style="font-size:11px;font-weight:400;color:var(--muted);margin-top:2px">Owns the mission. Writes strategies, evaluates results.</div>
+    </div>
+    <div class="agent-connector"></div>
+    <div class="agent-node" style="border-color:var(--blue);background:var(--blue-light);color:var(--blue);">
+      Strategizer
+      <div style="font-size:11px;font-weight:400;color:var(--muted);margin-top:2px">Owns one strategy. Runs 10-16 explorations. Stop-hook loop.</div>
+    </div>
+    <div class="agent-connector"></div>
+    <div class="agent-row">
+      <div class="agent-branch">
+        <div class="agent-node" style="border-color:var(--green);background:var(--green-light);color:var(--green);min-width:130px;">
+          Explorer
+          <div style="font-size:11px;font-weight:400;color:var(--muted);margin-top:2px">Researches one question</div>
+        </div>
+      </div>
+      <div class="agent-branch">
+        <div class="agent-node" style="border-color:var(--purple);background:var(--purple-light);color:var(--purple);min-width:130px;">
+          Librarian
+          <div style="font-size:11px;font-weight:400;color:var(--muted);margin-top:2px">Searches the knowledge base</div>
+        </div>
+      </div>
+      <div class="agent-branch">
+        <div class="agent-node" style="border-color:var(--amber);background:var(--amber-light);color:var(--amber);min-width:130px;">
+          Curator
+          <div style="font-size:11px;font-weight:400;color:var(--muted);margin-top:2px">Processes findings into library</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div style="display:flex;gap:12px">
+    <div class="card" style="flex:1">
+      <div style="font-size:12px;font-weight:700;color:var(--accent);margin-bottom:4px">OUTER LOOP</div>
+      <div class="card-desc">Missionary writes strategy, launches strategizer, evaluates final report, decides whether to create next strategy.</div>
+    </div>
+    <div class="card" style="flex:1">
+      <div style="font-size:12px;font-weight:700;color:var(--blue);margin-bottom:4px">INNER LOOP</div>
+      <div class="card-desc">Strategizer queries librarian, designs exploration goal, launches explorer in tmux, processes report, launches curator. Repeat.</div>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:12px;margin-top:0">
+    <div class="card" style="flex:1">
+      <div style="font-size:12px;font-weight:700;color:var(--green);margin-bottom:4px">KNOWLEDGE FLOW</div>
+      <div class="card-desc">
+        <strong>Down:</strong> goals, strategy, librarian context&nbsp;&nbsp;
+        <strong>Up:</strong> reports, findings&nbsp;&nbsp;
+        <strong>Lateral:</strong> library (95+ entries)&nbsp;&nbsp;
+        <strong>Meta:</strong> process lessons
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 2: How It Runs -->
+<div class="slide" id="slide-2">
+  <p class="label" style="color:var(--blue)">Orchestration</p>
+  <h2>How It Runs</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">tmux sessions, stop hooks, and fire-and-forget agents</p>
+
+  <div style="display:flex;gap:12px;margin-bottom:20px">
+    <div class="stat" style="flex:1">
+      <div class="stat-value" style="color:var(--blue)">4</div>
+      <div class="stat-label">Parallel tmux sessions</div>
+    </div>
+    <div class="stat" style="flex:1">
+      <div class="stat-value" style="color:var(--blue)">~9 min</div>
+      <div class="stat-label">Per exploration</div>
+    </div>
+    <div class="stat" style="flex:1">
+      <div class="stat-value" style="color:var(--blue)">1</div>
+      <div class="stat-label">Manual intervention</div>
+    </div>
+  </div>
+
+  <h3>One Exploration Cycle</h3>
+  <div class="flow-box" style="border-color:var(--purple)"><span style="color:var(--purple);font-weight:700">Librarian</span> &mdash; strategizer queries for relevant context from factual library + meta-inbox</div>
+  <div class="flow-arrow">&darr;</div>
+  <div class="flow-box" style="border-color:var(--blue)"><span style="color:var(--blue);font-weight:700">Strategizer</span> &mdash; writes GOAL.md with exploration target + librarian findings</div>
+  <div class="flow-arrow">&darr;</div>
+  <div class="flow-box" style="border-color:var(--green)"><span style="color:var(--green);font-weight:700">Explorer</span> &mdash; launched in tmux, writes REPORT.md incrementally, REPORT-SUMMARY.md signals done</div>
+  <div class="flow-arrow">&darr;</div>
+  <div class="flow-box" style="border-color:var(--amber)"><span style="color:var(--amber);font-weight:700">Curator</span> &mdash; fire-and-forget in tmux, processes report into library, checks duplicates</div>
+
+  <div class="divider"></div>
+
+  <div style="display:flex;gap:12px">
+    <div class="card" style="flex:1">
+      <div style="font-size:12px;font-weight:700;color:var(--blue);margin-bottom:4px">STOP HOOK</div>
+      <div class="card-desc">Shell script registered in ~/.claude/settings.json. When strategizer's context runs out, the hook matches the transcript path to the strategy directory and feeds a meta-prompt back in. Keeps the loop alive across context resets.</div>
+    </div>
+    <div class="card" style="flex:1">
+      <div style="font-size:12px;font-weight:700;color:var(--green);margin-bottom:4px">MONITORING</div>
+      <div class="card-desc">Strategizer polls explorer's REPORT.md line count. Can nudge after 5 min of no progress, kill after 15. Partial results survive on disk. The single manual step: approving the settings.json permission prompt.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3: Strategy 1 -->
+<div class="slide" id="slide-3">
+  <p class="label" style="color:var(--green)">Strategy 1 &middot; 9 Explorations</p>
+  <h2>Constraint-Driven Theory Construction</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">Map all constraints, find the tightest bottleneck, work backward to a unique theory</p>
+
+  <div class="stats stats-4">
+    <div class="stat">
+      <div class="stat-value" style="color:var(--green)">32</div>
+      <div class="stat-label">Constraints mapped</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--green)">1</div>
+      <div class="stat-label">Theory selected</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--green)">7/7</div>
+      <div class="stat-label">Validation passed</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--green)">1</div>
+      <div class="stat-label">Novel prediction</div>
+    </div>
+  </div>
+
+  <h3>The Derivation Chain</h3>
+  <div class="timeline-item">
+    <div class="timeline-marker" style="background:var(--blue)"></div>
+    <div class="timeline-content">
+      <div class="timeline-title">Spectral dimension d<sub>s</sub> = 4 &rarr; 2 as constructive axiom</div>
+      <div class="timeline-desc">Observed across 7+ independent QG programs. No one had used this as a starting point before.</div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker" style="background:var(--red)"></div>
+    <div class="timeline-content">
+      <div class="timeline-title">No-go theorem: ghost-free theories cannot produce d<sub>s</sub> = 2</div>
+      <div class="timeline-desc">Hadamard factorization + Kallen-Lehmann representation. Ghost-free nonlocal theories give d<sub>s</sub> &rarr; 0.</div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker" style="background:var(--green)"></div>
+    <div class="timeline-content">
+      <div class="timeline-title">Unique action: quadratic gravity (Stelle 1977)</div>
+      <div class="timeline-desc">d<sub>s</sub> = 2 forces 4-derivative terms. Diffeo invariance leaves only R<sup>2</sup> and C<sup>2</sup>. Two dimensionless couplings.</div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker" style="background:var(--accent)"></div>
+    <div class="timeline-content">
+      <div class="timeline-title">Ghost resolved via fakeon quantization (Anselmi-Piva 2018)</div>
+      <div class="timeline-desc">Massive spin-2 mode removed from physical spectrum. Theory is both renormalizable AND unitary.</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <div style="display:flex;gap:12px">
+    <div class="card" style="flex:1;border-left:3px solid var(--green)">
+      <div style="font-size:12px;font-weight:600;color:var(--green);margin-bottom:4px">NOVEL</div>
+      <div class="card-desc">The derivation path (spectral dimension &rarr; no-go &rarr; unique action &rarr; fakeon) is new. The theory itself is Anselmi's existing program (25+ papers since 2017).</div>
+    </div>
+    <div class="card" style="flex:1;border-left:3px solid var(--amber)">
+      <div style="font-size:12px;font-weight:600;color:var(--amber);margin-bottom:4px">KEY FINDING</div>
+      <div class="card-desc">QG+F is the perturbative face of asymptotic safety. Both produce identical UV propagators (~1/p<sup>4</sup>). Same theory, different regimes &mdash; analogous to perturbative vs. non-perturbative QCD.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4: Strategy 2 -->
+<div class="slide" id="slide-4">
+  <p class="label" style="color:var(--purple)">Strategy 2 &middot; 16 Explorations</p>
+  <h2>Beyond the No-Go</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">Systematically explore all escape routes. Try to find alternatives to QG+F. Result: there are none.</p>
+
+  <div class="stats stats-4">
+    <div class="stat">
+      <div class="stat-value" style="color:var(--purple)">5</div>
+      <div class="stat-label">Escape routes tested</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--purple)">8</div>
+      <div class="stat-label">Directions explored</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--purple)">0</div>
+      <div class="stat-label">Alternatives survived</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--purple)">8</div>
+      <div class="stat-label">Paths converge on QG+F</div>
+    </div>
+  </div>
+
+  <h3>What Was Eliminated</h3>
+  <div style="display:flex;gap:12px;margin-bottom:16px">
+    <div class="card" style="flex:1;border-top:3px solid var(--red)">
+      <div style="font-size:12px;font-weight:600;color:var(--red)">Lee-Wick QG</div>
+      <div class="card-desc" style="margin-top:4px">Collapses onto QG+F. CLOP prescription violates unitarity. Modesto himself agrees (2025).</div>
+    </div>
+    <div class="card" style="flex:1;border-top:3px solid var(--red)">
+      <div style="font-size:12px;font-weight:600;color:var(--red)">Entropic Gravity</div>
+      <div class="card-desc" style="margin-top:4px">Derives classical equations only. No UV completion. Bianconi 2025 fails Tier 1.</div>
+    </div>
+    <div class="card" style="flex:1;border-top:3px solid var(--red)">
+      <div style="font-size:12px;font-weight:600;color:var(--red)">Lorentz Violation</div>
+      <div class="card-desc" style="margin-top:4px">Super-Planckian LIV bounds from GRB 221009A. Hostile territory.</div>
+    </div>
+  </div>
+
+  <h3>What Was Constructed</h3>
+  <div style="display:flex;gap:12px">
+    <div class="card" style="flex:1;border-top:3px solid var(--green)">
+      <div style="font-size:12px;font-weight:600;color:var(--green)">Entanglement Bootstrap</div>
+      <div class="card-desc" style="margin-top:4px">Jacobson's MVEH + self-consistency + renormalizability uniquely selects QG+F, including the fakeon prescription. Novel derivation.</div>
+    </div>
+    <div class="card" style="flex:1;border-top:3px solid var(--green)">
+      <div style="font-size:12px;font-weight:600;color:var(--green)">Six-Derivative Extension</div>
+      <div class="card-desc" style="margin-top:4px">R<sup>3</sup> correction resolves 2.3-sigma n<sub>s</sub> tension with ACT+DESI data. Shifts n<sub>s</sub> from 0.967 to 0.974.</div>
+    </div>
+    <div class="card" style="flex:1;border-top:3px solid var(--green)">
+      <div style="font-size:12px;font-weight:600;color:var(--green)">Uniqueness Theorem</div>
+      <div class="card-desc" style="margin-top:4px">8 independent derivation paths converge on QG+F. "Quantum Lovelock's theorem" &mdash; the unique quantum gravity in 4D.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5: Results & Validation -->
+<div class="slide" id="slide-5">
+  <p class="label" style="color:var(--teal)">Results</p>
+  <h2>Validation &amp; Predictions</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">The theory passes all tiers. Two predictions already confirmed.</p>
+
+  <table class="val-table">
+    <thead>
+      <tr><th>Tier</th><th>Requirement</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1 &mdash; Structural</td><td>Renormalizable, unitary, correct DOF, diffeo invariant</td><td><span class="check">PASSED</span></td></tr>
+      <tr><td>2 &mdash; Recovery</td><td>Newton's law, PPN, equivalence principle, linearized GR</td><td><span class="check">PASSED</span></td></tr>
+      <tr><td>3 &mdash; Quantitative</td><td>m<sub>g</sub>=0, c<sub>gw</sub>=c, BH entropy, spectral dim</td><td><span class="check">PASSED</span></td></tr>
+      <tr><td>4 &mdash; Predictions</td><td>Testable, distinguishable from GR</td><td><span class="check">ACHIEVED</span></td></tr>
+      <tr><td>5 &mdash; Unification</td><td>SM connection, cosmological constant</td><td><span class="partial">PARTIAL</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="divider"></div>
+
+  <h3>Prediction Scorecard</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+    <div class="card" style="border-left:3px solid var(--green)">
+      <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:6px">CONFIRMED</div>
+      <div class="card-desc"><strong>Higgs mass ~126 GeV</strong> &mdash; AS boundary conditions (Shaposhnikov-Wetterich 2010, confirmed LHC 2012)</div>
+      <div class="card-desc" style="margin-top:6px"><strong>SM vacuum near-criticality</strong> &mdash; lambda<sub>H</sub> ~ 0 at M<sub>P</sub></div>
+    </div>
+    <div class="card" style="border-left:3px solid var(--blue)">
+      <div style="font-size:11px;font-weight:700;color:var(--blue);margin-bottom:6px">TESTABLE</div>
+      <div class="card-desc"><strong>r in [0.0004, 0.0045]</strong> &mdash; tensor-to-scalar ratio, testable by LiteBIRD ~2037</div>
+      <div class="card-desc" style="margin-top:6px"><strong>n<sub>s</sub> ~ 0.974</strong> &mdash; consistent with ACT+DESI (six-derivative extension)</div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:0">
+    <div class="card" style="border-left:3px solid var(--muted)">
+      <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:6px">INACCESSIBLE</div>
+      <div class="card-desc">Modified Newtonian potential at 10<sup>-35</sup> m. Microcausality violation at 10<sup>-43</sup> s. BH corrections suppressed by 10<sup>-76</sup>.</div>
+    </div>
+    <div class="card" style="border-left:3px solid var(--amber)">
+      <div style="font-size:11px;font-weight:700;color:var(--amber);margin-bottom:6px">MAKE-OR-BREAK</div>
+      <div class="card-desc"><strong>r is the sole realistic discriminator.</strong> LiteBIRD ~2037: if r > 0.005 favors non-perturbative AS, if r < 0.003 confirms QG+F, in between favors six-derivative extension.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6: System Learnings -->
+<div class="slide" id="slide-6">
+  <p class="label" style="color:var(--amber)">System Performance</p>
+  <h2>What Worked, What Broke</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">3 test runs before the full mission. Each fixed real problems.</p>
+
+  <div class="card" style="border-left:3px solid var(--green)">
+    <div class="card-header"><div class="card-title" style="color:var(--green)">Worked</div></div>
+    <div class="card-desc" style="margin-top:4px">
+      <strong>Stop hook loop kept the strategizer alive across context resets.</strong> Transcript path matching was simple and reliable after the initial bug was fixed.
+    </div>
+    <div class="card-desc" style="margin-top:8px">
+      <strong>Curator maintained a 95+ entry library with INDEX.md hierarchy.</strong> Deduplication, conflict checking, and hierarchical indexing worked. Root INDEX.md was missed once (prompt strengthened).
+    </div>
+    <div class="card-desc" style="margin-top:8px">
+      <strong>Librarian queries improved strategizer decision quality.</strong> Context from previous explorations prevented redundant work and enabled the strategizer to build on findings.
+    </div>
+    <div class="card-desc" style="margin-top:8px">
+      <strong>Context efficiency was excellent.</strong> Strategizer at 12% after 7 explorations. Could easily handle 16+.
+    </div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--red);margin-top:0">
+    <div class="card-header"><div class="card-title" style="color:var(--red)">Fixed Mid-Run</div></div>
+    <div class="card-desc" style="margin-top:4px">
+      <strong>Run 2: Foreground explorers.</strong> Run 1 used foreground sub-agents that couldn't be monitored or timed out. Switched to tmux-based explorers with progress polling.
+    </div>
+    <div class="card-desc" style="margin-top:8px">
+      <strong>Run 2: Curator automation.</strong> Initially manual. Added fire-and-forget tmux launch after each exploration.
+    </div>
+    <div class="card-desc" style="margin-top:8px">
+      <strong>Run 2: Incremental writing.</strong> Explorer wrote 8 lines early, then nothing for 10 min, then 521 at end. Improved to 33 lines early by run 3.
+    </div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--amber);margin-top:0">
+    <div class="card-header"><div class="card-title" style="color:var(--amber)">Known Limitations</div></div>
+    <div class="card-desc" style="margin-top:4px">
+      <strong>Settings.json permission prompt</strong> &mdash; requires one manual "2" approval per run. Could be pre-registered.
+    </div>
+    <div class="card-desc" style="margin-top:8px">
+      <strong>Internet outage recovery</strong> &mdash; strategizer got stuck on ConnectionRefused for 33 min. Recovered when nudged, but no auto-retry.
+    </div>
+    <div class="card-desc" style="margin-top:8px">
+      <strong>Single-prediction problem</strong> &mdash; methodology finding: all non-CMB signatures are 15+ orders of magnitude out of reach. The theory is effectively a one-test theory (r).
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 7: Conclusion -->
+<div class="slide" id="slide-7">
+  <p class="label" style="color:var(--muted)">Conclusion</p>
+  <h2>Mission Complete</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">25 explorations across 2 strategies. The landscape of perturbative quantum gravity has been fully mapped.</p>
+
+  <div class="stats stats-5">
+    <div class="stat">
+      <div class="stat-value" style="color:var(--accent)">2</div>
+      <div class="stat-label">Strategies</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--accent)">25</div>
+      <div class="stat-label">Explorations</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--accent)">95+</div>
+      <div class="stat-label">Library entries</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--green)">2</div>
+      <div class="stat-label">Confirmed</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--blue)">1</div>
+      <div class="stat-label">Unique theory</div>
+    </div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--accent)">
+    <div style="font-size:12px;font-weight:700;color:var(--accent);margin-bottom:6px">THE RESULT</div>
+    <div class="card-desc">QG+F is the unique unitary, Lorentz-invariant, diffeomorphism-invariant, local, perturbatively renormalizable quantum gravity in 4D. Eight independent derivation paths converge on it. No alternative exists within standard axioms.</div>
+    <div class="card-desc" style="margin-top:8px">The theory is not new (Anselmi et al.). The proof of its uniqueness, the spectral dimension derivation, and the no-go theorem are.</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h3>Why No Strategy 3</h3>
+  <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:20px">The uniqueness theorem closes the space. A third strategy would either reach the same conclusion within standard axioms, or abandon axioms into territory that is experimentally excluded (Lorentz violation) or unconstrained (non-perturbative, non-QFT). The remaining open questions &mdash; cosmological constant, non-perturbative completion, SM origin &mdash; are the frontier of all theoretical physics.</p>
+
+  <h3>Unsolved</h3>
+  <div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;margin-bottom:16px">
+    <span class="tag tag-red">Cosmological constant (why 10<sup>-122</sup>)</span>
+    <span class="tag tag-amber">Non-perturbative completion</span>
+    <span class="tag tag-amber">SM gauge group not derived</span>
+    <span class="tag tag-blue">One-prediction problem (r only)</span>
+  </div>
+
+  <h3>What's Next for the System</h3>
+  <p style="font-size:13px;color:var(--muted);line-height:1.6">Atlas is domain-agnostic. The architecture &mdash; missionary/strategizer/explorer with library accumulation and stop-hook loops &mdash; is ready for the next mission. The quantum gravity run validated the methodology: autonomous strategy creation, mid-run pivoting, library-driven context, and mission-level self-termination all worked.</p>
+</div>
+
+<!-- Nav -->
+<div class="nav">
+  <button class="nav-btn" id="prevBtn" onclick="prev()">&larr;</button>
+  <div class="nav-counter" id="navCounter">1 / 8</div>
+  <button class="nav-btn" id="nextBtn" onclick="next()">&rarr;</button>
+</div>
+
+<script>
+let current = 0;
+const total = document.querySelectorAll('.slide').length;
+
+// --- Feedback System ---
+const FEEDBACK_KEY = 'atlas-first-complete-run-feedback';
+
+function loadFeedback() {
+  try { return JSON.parse(localStorage.getItem(FEEDBACK_KEY) || '{}'); }
+  catch { return {}; }
+}
+
+function saveFeedbackStore(store) {
+  localStorage.setItem(FEEDBACK_KEY, JSON.stringify(store));
+  fetch('/api/feedback', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(store)
+  }).catch(() => {});
+}
+
+function addFeedback(slideIdx, text) {
+  if (!text.trim()) return;
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  if (!store[key]) store[key] = [];
+  store[key].push({
+    text: text.trim(),
+    timestamp: new Date().toISOString(),
+    slideTitle: getSlideName(slideIdx)
+  });
+  saveFeedbackStore(store);
+  renderFeedbackForSlide(slideIdx);
+}
+
+function deleteFeedback(slideIdx, entryIdx) {
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  if (store[key] && store[key][entryIdx] !== undefined) {
+    store[key].splice(entryIdx, 1);
+    if (store[key].length === 0) delete store[key];
+    saveFeedbackStore(store);
+    renderFeedbackForSlide(slideIdx);
+  }
+}
+
+function getSlideName(idx) {
+  const names = ['Title & TOC', 'Agent Architecture', 'How It Runs',
+                 'Strategy 1', 'Strategy 2', 'Results & Validation',
+                 'System Learnings', 'Mission Conclusion'];
+  return names[idx] || 'Slide ' + (idx + 1);
+}
+
+function renderFeedbackForSlide(slideIdx) {
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  const entries = store[key] || [];
+  const listEl = document.getElementById('feedback-list-' + slideIdx);
+  const dotEl = document.getElementById('feedback-dot-' + slideIdx);
+
+  if (dotEl) dotEl.classList.toggle('has-feedback', entries.length > 0);
+  if (!listEl) return;
+  if (entries.length === 0) { listEl.innerHTML = ''; return; }
+
+  listEl.innerHTML = entries.map((e, i) => `
+    <div class="feedback-entry">
+      <span class="feedback-entry-time">${new Date(e.timestamp).toLocaleDateString('en-US', {month:'short',day:'numeric'})}</span>
+      <span class="feedback-entry-text">${escapeHtml(e.text)}</span>
+      <button class="feedback-entry-delete" onclick="deleteFeedback(${slideIdx},${i})" title="Delete">&times;</button>
+    </div>
+  `).join('');
+}
+
+function escapeHtml(str) {
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+function submitFeedback(slideIdx) {
+  const ta = document.getElementById('feedback-input-' + slideIdx);
+  const status = document.getElementById('feedback-status-' + slideIdx);
+  if (!ta || !ta.value.trim()) return;
+  addFeedback(slideIdx, ta.value);
+  ta.value = '';
+  if (status) {
+    status.classList.add('show');
+    setTimeout(() => status.classList.remove('show'), 2000);
+  }
+}
+
+function toggleFeedback(slideIdx) {
+  const body = document.getElementById('feedback-body-' + slideIdx);
+  const chev = document.getElementById('feedback-chevron-' + slideIdx);
+  if (body) body.classList.toggle('open');
+  if (chev) chev.classList.toggle('open');
+}
+
+// Inject feedback UI into every slide
+document.querySelectorAll('.slide').forEach((slide, idx) => {
+  const section = document.createElement('div');
+  section.className = 'feedback-section';
+  section.innerHTML = `
+    <button class="feedback-toggle" onclick="toggleFeedback(${idx})">
+      <span class="chevron" id="feedback-chevron-${idx}">&#9654;</span>
+      <span>Leave feedback on this slide</span>
+      <span class="dot" id="feedback-dot-${idx}"></span>
+    </button>
+    <div class="feedback-body" id="feedback-body-${idx}">
+      <div class="feedback-saved-list" id="feedback-list-${idx}"></div>
+      <textarea class="feedback-textarea" id="feedback-input-${idx}" placeholder="Your thoughts on this slide..." onkeydown="if(event.key==='Enter'&&event.metaKey){submitFeedback(${idx});event.preventDefault();}"></textarea>
+      <div class="feedback-actions">
+        <button class="feedback-save" onclick="submitFeedback(${idx})">Save (&#8984;&#9166;)</button>
+        <span class="feedback-status" id="feedback-status-${idx}">Saved!</span>
+      </div>
+    </div>
+  `;
+  slide.appendChild(section);
+  renderFeedbackForSlide(idx);
+});
+
+// --- Load server feedback on startup (merge with localStorage) ---
+(async function() {
+  try {
+    const resp = await fetch('/api/feedback');
+    const serverStore = await resp.json();
+    const localStore = loadFeedback();
+    let merged = false;
+    for (const key of Object.keys(serverStore)) {
+      if (!localStore[key]) { localStore[key] = serverStore[key]; merged = true; }
+      else {
+        const localTimestamps = new Set(localStore[key].map(e => e.timestamp));
+        for (const entry of serverStore[key]) {
+          if (!localTimestamps.has(entry.timestamp)) {
+            localStore[key].push(entry);
+            merged = true;
+          }
+        }
+      }
+    }
+    if (merged) {
+      localStorage.setItem(FEEDBACK_KEY, JSON.stringify(localStore));
+      document.querySelectorAll('.slide').forEach((_, idx) => renderFeedbackForSlide(idx));
+    }
+  } catch {}
+})();
+
+// --- Navigation ---
+function show(n) {
+  document.querySelectorAll('.slide').forEach((s, i) => {
+    s.classList.toggle('active', i === n);
+  });
+  document.getElementById('navCounter').textContent = (n + 1) + ' / ' + total;
+  document.getElementById('prevBtn').disabled = n === 0;
+  document.getElementById('nextBtn').disabled = n === total - 1;
+  current = n;
+}
+
+function next() { if (current < total - 1) show(current + 1); }
+function prev() { if (current > 0) show(current - 1); }
+function goTo(n) { show(n); }
+
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'TEXTAREA') return;
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+});
+</script>
+</body>
+</html>
