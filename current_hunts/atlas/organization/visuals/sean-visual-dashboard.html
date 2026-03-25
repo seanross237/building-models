@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agent Loop Architecture</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 24px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  h1 {
+    color: #58a6ff;
+    margin-bottom: 8px;
+    font-size: 28px;
+  }
+  .subtitle {
+    color: #8b949e;
+    margin-bottom: 32px;
+    font-size: 14px;
+  }
+  .entity {
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    background: #161b22;
+  }
+  .entity-header {
+    padding: 16px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+  }
+  .entity-header:hover {
+    background: #1c2129;
+    border-radius: 8px;
+  }
+  .entity-title {
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .color-missionary { color: #da8ee7; }
+  .color-strategizer { color: #58a6ff; }
+  .color-explorer { color: #3fb950; }
+  .color-scribe { color: #e0a4ff; }
+  .color-librarian { color: #f0883e; }
+  .color-curator { color: #d29922; }
+  .color-receptionist { color: #f0883e; }
+  .chevron {
+    transition: transform 0.2s;
+    color: #8b949e;
+    font-size: 14px;
+  }
+  .entity.open > .entity-header .chevron {
+    transform: rotate(90deg);
+  }
+  .entity-body {
+    display: none;
+    padding: 0 20px 20px 20px;
+    border-top: 1px solid #30363d;
+  }
+  .entity.open > .entity-body {
+    display: block;
+  }
+  .section {
+    margin-top: 16px;
+  }
+  .section-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #8b949e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .section-content {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #c9d1d9;
+  }
+  .tbd {
+    color: #8b949e;
+    font-style: italic;
+  }
+
+  /* Collapsible need items */
+  .need-item {
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    background: #0d1117;
+  }
+  .need-header {
+    padding: 10px 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 500;
+    user-select: none;
+  }
+  .need-header:hover {
+    background: #161b22;
+    border-radius: 6px;
+  }
+  .need-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .need-status {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .need-status.done { background: #d29922; }
+  .need-status.pending { background: #f85149; }
+  .need-status.created { background: #3fb950; }
+  .need-body a {
+    color: #58a6ff;
+    text-decoration: none;
+  }
+  .need-body a:hover {
+    text-decoration: underline;
+  }
+  .need-source {
+    font-size: 12px;
+    color: #8b949e;
+    margin-left: 8px;
+  }
+  .need-body {
+    display: none;
+    padding: 0 14px 14px 14px;
+    border-top: 1px solid #21262d;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #8b949e;
+    margin-top: 4px;
+  }
+  .need-item.open .need-body {
+    display: block;
+  }
+  .need-item.open .chevron {
+    transform: rotate(90deg);
+  }
+
+  /* Role collapsible */
+  .role-item {
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    background: #0d1117;
+  }
+  .role-header {
+    padding: 10px 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 500;
+    user-select: none;
+    color: #8b949e;
+  }
+  .role-header:hover {
+    background: #161b22;
+    border-radius: 6px;
+  }
+  .role-body {
+    display: none;
+    padding: 0 14px 14px 14px;
+    border-top: 1px solid #21262d;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #c9d1d9;
+  }
+  .role-item.open .role-body {
+    display: block;
+  }
+  .role-item.open .chevron {
+    transform: rotate(90deg);
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid #30363d;
+    margin: 24px 0;
+  }
+  .divider-thick {
+    border: none;
+    border-top: 2px solid #30363d;
+    margin: 48px 0;
+  }
+  .divider-label {
+    color: #8b949e;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+  .overview-box {
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    background: #161b22;
+    padding: 20px;
+    margin-bottom: 24px;
+    line-height: 1.6;
+    font-size: 14px;
+  }
+  .expand-all {
+    background: none;
+    border: 1px solid #30363d;
+    color: #8b949e;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+  .expand-all:hover {
+    color: #c9d1d9;
+    border-color: #8b949e;
+  }
+  ol {
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 4px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Agent Loop Architecture</h1>
+<p class="subtitle">Interactive dashboard — click to expand/collapse sections</p>
+
+<div class="overview-box">
+  A hierarchical agent system for tackling complex, open-ended research problems. Three levels — <span class="color-missionary">Missionary</span> <span style="color:#8b949e">(strategy builder)</span>, <span class="color-strategizer">Strategizer</span>, and <span class="color-explorer">Explorers</span> — plus support agents (<span class="color-scribe">Scribe</span>, <span class="color-curator">Library Curator</span>, and <span class="color-receptionist">Library Receptionist</span>) for knowledge management. Higher levels set goals, lower levels execute and report back. Knowledge accumulates in shared libraries.
+</div>
+
+<button class="expand-all" onclick="toggleAll()">Expand / Collapse All</button>
+
+<!-- MISSIONARY -->
+<div class="entity" id="missionary">
+  <div class="entity-header" onclick="toggle('missionary')">
+    <div class="entity-title color-missionary">Missionary <span style="color: #8b949e; font-size: 13px; font-weight: 400;">(strategy builder)</span></div>
+    <span class="chevron">&#9654;</span>
+  </div>
+  <div class="entity-body">
+    <div class="role-item" id="sb-role">
+      <div class="role-header" onclick="toggleItem(event, 'sb-role')">
+        <span>Role</span>
+        <span class="chevron">&#9654;</span>
+      </div>
+      <div class="role-body">
+        Owns the overall mission. Decides what strategies to pursue, can spin up or shut down strategizers, watches the trajectory of whole strategies. Decides when a strategic direction is exhausted.
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">System Prompt (always has)</div>
+      <div class="need-item" id="missionary-prompt">
+        <div class="need-header" onclick="toggleItem(event, 'missionary-prompt')">
+          <div class="need-left">
+            <span class="need-status created"></span>
+            <span>Missionary system prompt</span>
+          </div>
+          <span class="chevron">&#9654;</span>
+        </div>
+        <div class="need-body" style="white-space: pre-wrap; max-height: 400px; overflow-y: auto;" id="missionary-prompt-content">Loading...</div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">Provided at Runtime</div>
+      <div class="need-item" id="missionary-mission">
+        <div class="need-header" onclick="toggleItem(event, 'missionary-mission')">
+          <div class="need-left">
+            <span class="need-status created"></span>
+            <span>Mission</span>
+            <span class="need-source">Defined by Sean</span>
+          </div>
+          <span class="chevron">&#9654;</span>
+        </div>
+        <div class="need-body" style="white-space: pre-wrap;" id="mission-content">Loading...</div>
+      </div>
+      <div class="need-item" id="missionary-history">
+        <div class="need-header" onclick="toggleItem(event, 'missionary-history')">
+          <div class="need-left">
+            <span class="need-status done"></span>
+            <span>Mission history</span>
+            <span class="need-source">Accumulates over time</span>
+          </div>
+          <span class="chevron">&#9654;</span>
+        </div>
+        <div class="need-body"></div>
+      </div>
+      <div class="need-item" id="missionary-library">
+        <div class="need-header" onclick="toggleItem(event, 'missionary-library')">
+          <div class="need-left">
+            <span class="need-status done"></span>
+            <span>Relevant library context</span>
+            <span class="need-source">Provided by <span class="color-librarian">Librarian</span></span>
+          </div>
+          <span class="chevron">&#9654;</span>
+        </div>
+        <div class="need-body"></div>
+      </div>
+      <div class="need-item" id="missionary-validation">
+        <div class="need-header" onclick="toggleItem(event, 'missionary-validation')">
+          <div class="need-left">
+            <span class="need-status created"></span>
+            <span>Mission validation guide</span>
+            <span class="need-source">Defined by Sean</span>
+          </div>
+          <span class="chevron">&#9654;</span>
+        </div>
+        <div class="need-body" style="white-space: pre-wrap; max-height: 400px; overflow-y: auto;" id="validation-content">Loading...</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STRATEGIZER -->
+<div class="entity" id="strategizer">
+  <div class="entity-header" onclick="toggle('strategizer')">
+    <div class="entity-title color-strategizer">Strategizer</div>
+    <span class="chevron">&#9654;</span>
+  </div>
+  <div class="entity-body">
+    <div class="role-item" id="strat-role">
+      <div class="role-header" onclick="toggleItem(event, 'strat-role')">
+        <span>Role</span>
+        <span class="chevron">&#9654;</span>
+      </div>
+      <div class="role-body">
+        Owns a specific strategic direction. Designs explorations, sets goals for explorers, synthesizes results across multiple explorer runs. Adapts approach based on patterns. Reports up to the strategy builder.
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">System Prompt (always has)</div>
+      <div class="need-item" id="strat-prompt">
+        <div class="need-header" onclick="toggleItem(event, 'strat-prompt')">
+          <div class="need-left">
+            <span class="need-status pending"></span>
+            <span>Strategizer system prompt</span>
+            <span class="need-source">Not yet created</span>
+          </div>
+          <span class="chevron">&#9654;</span>
+        </div>
+        <div class="need-body"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Provided at Runtime</div>
+      <div class="need-item" id="strat-goal">
+        <div class="need-header" onclick="toggleItem(event, 'strat-goal')">
+          <div class="need-left">
+            <span class="need-status done"></span>
+            <span>Goal</span>
+            <span class="need-source">Provided by <span class="color-missionary">Missionary</span></span>
+          </div>
+          <span class="chevron">&#9654;</span>
+        </div>
+        <div class="need-body"></div>
+      </div>
+      <div class="need-item" id="strat-history">
+        <div class="need-header" onclick="toggleItem(event, 'strat-history')">
+          <div class="need-left">
+            <span class="need-status done"></span>
+            <span>Strategizer history</span>
+            <span class="need-source">Accumulates over time</span>
+          </div>
+          <span class="chevron">&#9654;</span>
+        </div>
+        <div class="need-body"></div>
+      </div>
+      <div class="need-item" id="strat-library">
+        <div class="need-header" onclick="toggleItem(event, 'strat-library')">
+          <div class="need-left">
+            <span class="need-status done"></span>
+            <span>Relevant library context</span>
+            <span class="need-source">Provided by <span class="color-librarian">Librarian</span></span>
+          </div>
+          <span class="chevron">&#9654;</span>
+        </div>
+        <div class="need-body"></div>
+      </div>
+      <div class="need-item" id="strat-validation">
+        <div class="need-header" onclick="toggleItem(event, 'strat-validation')">
+          <div class="need-left">
+            <span class="need-status done"></span>
+            <span>Validation guide</span>
+            <span class="need-source">Provided by <span class="color-missionary">Missionary</span></span>
+          </div>
+          <span class="chevron">&#9654;</span>
+        </div>
+        <div class="need-body"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPLORER -->
+<div class="entity" id="explorer">
+  <div class="entity-header" onclick="toggle('explorer')">
+    <div class="entity-title color-explorer">Explorer <span style="color: #8b949e; font-size: 14px;">&#9675;</span></div>
+    <span class="chevron">&#9654;</span>
+  </div>
+  <div class="entity-body">
+    <div class="role-item" id="explorer-role">
+      <div class="role-header" onclick="toggleItem(event, 'explorer-role')">
+        <span>Role</span>
+        <span class="chevron">&#9654;</span>
+      </div>
+      <div class="role-body">
+        Executes a specific investigation. Runs to completion, produces a report, done. Disposable — no memory of past explorations, full context window for actual work.
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">System Prompt (always has)</div>
+
+      <div class="need-item" id="explorer-prompt">
+        <div class="need-header" onclick="toggleItem(event, 'explorer-prompt')">
+          <div class="need-left">
+            <span class="need-status pending"></span>
+            <span>Explorer system prompt</span>
+            <span class="need-source">Not yet created</span>
+          </div>
+          <span class="chevron">&#9654;</span>
+        </div>
+        <div class="need-body"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Provided at Runtime</div>
+
+      <div class="need-item" id="explorer-goal">
+        <div class="need-header" onclick="toggleItem(event, 'explorer-goal')">
+          <div class="need-left">
+            <span class="need-status done"></span>
+            <span>Goal</span>
+            <span class="need-source">Provided by <span class="color-strategizer">Strategizer</span></span>
+          </div>
+          <span class="chevron">&#9654;</span>
+        </div>
+        <div class="need-body"></div>
+      </div>
+
+      <div class="need-item" id="explorer-library">
+        <div class="need-header" onclick="toggleItem(event, 'explorer-library')">
+          <div class="need-left">
+            <span class="need-status done"></span>
+            <span>Relevant library context</span>
+            <span class="need-source">Provided by <span class="color-librarian">Librarian</span></span>
+          </div>
+          <span class="chevron">&#9654;</span>
+        </div>
+        <div class="need-body"></div>
+      </div>
+
+      <div class="need-item" id="explorer-validation">
+        <div class="need-header" onclick="toggleItem(event, 'explorer-validation')">
+          <div class="need-left">
+            <span class="need-status done"></span>
+            <span>Validation criteria?</span>
+            <span class="need-source">Provided by <span class="color-strategizer">Strategizer</span></span>
+          </div>
+          <span class="chevron">&#9654;</span>
+        </div>
+        <div class="need-body"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+<div class="divider-label">Library Agents</div>
+
+<!-- LIBRARY CURATOR -->
+<div class="entity" id="curator">
+  <div class="entity-header" onclick="toggle('curator')">
+    <div class="entity-title color-curator">Library Curator</div>
+    <span class="chevron">&#9654;</span>
+  </div>
+  <div class="entity-body">
+    <div class="role-item" id="curator-role">
+      <div class="role-header" onclick="toggleItem(event, 'curator-role')">
+        <span>Role</span>
+        <span class="chevron">&#9654;</span>
+      </div>
+      <div class="role-body">
+        Organizes and maintains the libraries. Files new findings, decides where they go, updates or supersedes existing entries, maintains the hierarchical structure so it scales well over time.
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">System Prompt (always has)</div>
+      <div class="need-item" id="curator-prompt">
+        <div class="need-header" onclick="toggleItem(event, 'curator-prompt')">
+          <div class="need-left">
+            <span class="need-status pending"></span>
+            <span>Library curator system prompt</span>
+            <span class="need-source">Not yet created</span>
+          </div>
+          <span class="chevron">&#9654;</span>
+        </div>
+        <div class="need-body"></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">Provided at Runtime</div>
+      <div class="need-item" id="curator-factual">
+        <div class="need-header" onclick="toggleItem(event, 'curator-factual')">
+          <div class="need-left">
+            <span class="need-status done"></span>
+            <span>Factual library</span>
+            <span class="need-source">On disk</span>
+          </div>
+          <span class="chevron">&#9654;</span>
+        </div>
+        <div class="need-body"></div>
+      </div>
+      <div class="need-item" id="curator-meta">
+        <div class="need-header" onclick="toggleItem(event, 'curator-meta')">
+          <div class="need-left">
+            <span class="need-status done"></span>
+            <span>Meta library</span>
+            <span class="need-source">On disk</span>
+          </div>
+          <span class="chevron">&#9654;</span>
+        </div>
+        <div class="need-body"></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">Has Access To</div>
+      <div class="need-item" id="curator-changelog">
+        <div class="need-header" onclick="toggleItem(event, 'curator-changelog')">
+          <div class="need-left">
+            <span class="need-status done"></span>
+            <span>Changelog</span>
+            <span class="need-source">On disk</span>
+          </div>
+          <span class="chevron">&#9654;</span>
+        </div>
+        <div class="need-body"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LIBRARY RECEPTIONIST -->
+<div class="entity" id="receptionist">
+  <div class="entity-header" onclick="toggle('receptionist')">
+    <div class="entity-title color-receptionist">Library Receptionist <span style="color: #8b949e; font-size: 13px; font-weight: 400;">(on standby)</span></div>
+    <span class="chevron">&#9654;</span>
+  </div>
+  <div class="entity-body">
+    <div class="role-item" id="receptionist-role">
+      <div class="role-header" onclick="toggleItem(event, 'receptionist-role')">
+        <span>Role</span>
+        <span class="chevron">&#9654;</span>
+      </div>
+      <div class="role-body">
+        Retrieves relevant prior knowledge on request. Given a query about what an agent is working on, searches the libraries and returns the relevant pieces.
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">System Prompt (always has)</div>
+      <div class="need-item" id="receptionist-prompt">
+        <div class="need-header" onclick="toggleItem(event, 'receptionist-prompt')">
+          <div class="need-left">
+            <span class="need-status pending"></span>
+            <span>Library receptionist system prompt</span>
+            <span class="need-source">Not yet created</span>
+          </div>
+          <span class="chevron">&#9654;</span>
+        </div>
+        <div class="need-body"></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">Provided at Runtime</div>
+      <div class="need-item" id="receptionist-factual">
+        <div class="need-header" onclick="toggleItem(event, 'receptionist-factual')">
+          <div class="need-left">
+            <span class="need-status done"></span>
+            <span>Factual library</span>
+            <span class="need-source">On disk</span>
+          </div>
+          <span class="chevron">&#9654;</span>
+        </div>
+        <div class="need-body"></div>
+      </div>
+      <div class="need-item" id="receptionist-meta">
+        <div class="need-header" onclick="toggleItem(event, 'receptionist-meta')">
+          <div class="need-left">
+            <span class="need-status done"></span>
+            <span>Meta library</span>
+            <span class="need-source">On disk</span>
+          </div>
+          <span class="chevron">&#9654;</span>
+        </div>
+        <div class="need-body"></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">Has Access To</div>
+      <div class="need-item" id="receptionist-changelog">
+        <div class="need-header" onclick="toggleItem(event, 'receptionist-changelog')">
+          <div class="need-left">
+            <span class="need-status done"></span>
+            <span>Changelog</span>
+            <span class="need-source">On disk</span>
+          </div>
+          <span class="chevron">&#9654;</span>
+        </div>
+        <div class="need-body"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+<div class="divider-label">Scribe</div>
+
+<!-- SCRIBE -->
+<div class="entity" id="scribe">
+  <div class="entity-header" onclick="toggle('scribe')">
+    <div class="entity-title color-scribe">Scribe <span style="color: #8b949e; font-size: 13px; font-weight: 400;">(on standby)</span></div>
+    <span class="chevron">&#9654;</span>
+  </div>
+  <div class="entity-body">
+    <div class="role-item" id="scribe-role">
+      <div class="role-header" onclick="toggleItem(event, 'scribe-role')">
+        <span>Role</span>
+        <span class="chevron">&#9654;</span>
+      </div>
+      <div class="role-body">
+        Activated after each exploration completes. Distills what happened into factual findings, meta-knowledge, structured reports, and records of strategy taken.
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">System Prompt (always has)</div>
+      <div class="need-item" id="scribe-prompt">
+        <div class="need-header" onclick="toggleItem(event, 'scribe-prompt')">
+          <div class="need-left">
+            <span class="need-status pending"></span>
+            <span>Scribe system prompt</span>
+            <span class="need-source">Not yet created</span>
+          </div>
+          <span class="chevron">&#9654;</span>
+        </div>
+        <div class="need-body"></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">Provided at Runtime</div>
+      <div class="need-item" id="scribe-report">
+        <div class="need-header" onclick="toggleItem(event, 'scribe-report')">
+          <div class="need-left">
+            <span class="need-status done"></span>
+            <span>Exploration's report</span>
+            <span class="need-source">Provided by <span class="color-explorer">Explorer</span></span>
+          </div>
+          <span class="chevron">&#9654;</span>
+        </div>
+        <div class="need-body"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider-thick">
+
+<!-- OPEN QUESTIONS -->
+<div class="entity" id="questions">
+  <div class="entity-header" onclick="toggle('questions')">
+    <div class="entity-title">Open Questions</div>
+    <span class="chevron">&#9654;</span>
+  </div>
+  <div class="entity-body">
+    <div class="section">
+      <div class="section-content">
+        <ol>
+          <li style="margin-bottom:12px"><strong>Conflict resolution</strong> — When a new finding contradicts an existing library entry, what process adjudicates?</li>
+          <li style="margin-bottom:12px"><strong>Termination criteria</strong> — How does the system distinguish "done" from "stuck"?</li>
+          <li><strong>Overwrite governance</strong> — Should there be evidence thresholds before an established finding can be overturned?</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- FUTURE EXPANSION -->
+<div class="entity" id="future">
+  <div class="entity-header" onclick="toggle('future')">
+    <div class="entity-title">Future Expansion</div>
+    <span class="chevron">&#9654;</span>
+  </div>
+  <div class="entity-body">
+    <div class="section">
+      <div class="section-content">
+        <ol>
+          <li><strong>Recursion</strong> — How can this be made recursive/fractal so any agent can become an orchestrator at arbitrary depth?</li>
+          <li style="margin-top:12px"><strong>Parallel strategies</strong> — Allow the Missionary to run multiple strategies simultaneously, reviewing them as they report back.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- TO DO -->
+<div class="entity" id="todo">
+  <div class="entity-header" onclick="toggle('todo')">
+    <div class="entity-title">To Do</div>
+    <span class="chevron">&#9654;</span>
+  </div>
+  <div class="entity-body">
+    <div class="section">
+      <div class="section-content">
+        <ul style="list-style: none; padding-left: 0;">
+          <li><span class="need-status pending" style="vertical-align: middle;"></span> Create <span class="color-missionary">Missionary</span> system prompt</li>
+          <li><span class="need-status pending" style="vertical-align: middle;"></span> Create <span class="color-explorer">Explorer</span> system prompt</li>
+          <li><span class="need-status pending" style="vertical-align: middle;"></span> Create validation criteria</li>
+          <li><span class="need-status pending" style="vertical-align: middle;"></span> Create validation guidance</li>
+          <li><span class="need-status pending" style="vertical-align: middle;"></span> Create <span class="color-explorer">Explorer</span></li>
+          <li><span class="need-status pending" style="vertical-align: middle;"></span> Create library retrieval</li>
+          <li><span class="need-status pending" style="vertical-align: middle;"></span> Create history accumulation guide</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggle(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+
+function toggleItem(event, id) {
+  event.stopPropagation();
+  document.getElementById(id).classList.toggle('open');
+}
+
+function toggleAll() {
+  const entities = document.querySelectorAll('.entity');
+  const allOpen = [...entities].every(e => e.classList.contains('open'));
+  entities.forEach(e => {
+    if (allOpen) e.classList.remove('open');
+    else e.classList.add('open');
+  });
+}
+
+// Load file contents into expandable sections
+async function loadFileContent(url, elementId) {
+  try {
+    const resp = await fetch(url, { cache: 'no-store' });
+    const text = await resp.text();
+    document.getElementById(elementId).textContent = text;
+  } catch(e) {
+    document.getElementById(elementId).textContent = 'Could not load file.';
+  }
+}
+loadFileContent('../../execution/agents/missionary/system-prompt.md', 'missionary-prompt-content');
+loadFileContent('../../execution/instances/quantum-gravity/MISSION.md', 'mission-content');
+loadFileContent('../../execution/instances/quantum-gravity/MISSION-VALIDATION-GUIDE.md', 'validation-content');
+
+// Live reload: poll for file changes every second
+(function() {
+  let lastContent = document.documentElement.outerHTML;
+  setInterval(async () => {
+    try {
+      const resp = await fetch(window.location.href, { cache: 'no-store' });
+      const newContent = await resp.text();
+      if (newContent !== lastContent) {
+        // Save open/closed state
+        const openIds = [...document.querySelectorAll('.open')].map(el => el.id);
+        const scrollY = window.scrollY;
+        document.documentElement.innerHTML = new DOMParser()
+          .parseFromString(newContent, 'text/html').documentElement.innerHTML;
+        // Restore open/closed state
+        openIds.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.classList.add('open');
+        });
+        window.scrollTo(0, scrollY);
+        lastContent = newContent;
+      }
+    } catch(e) {}
+  }, 1000);
+})();
+</script>
+
+</body>
+</html>

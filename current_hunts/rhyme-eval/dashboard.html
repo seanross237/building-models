@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rhyme-Eval Dashboard</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --card-hover: #1c2129;
+  --border: #30363d;
+  --text: #c9d1d9;
+  --muted: #8b949e;
+  --dim: #484f58;
+  --hit: #3fb950;
+  --hit-bg: rgba(63,185,80,0.08);
+  --miss: #f85149;
+  --miss-bg: rgba(248,81,73,0.08);
+  --running: #58a6ff;
+  --complete: #3fb950;
+  --best: #d29922;
+  --accent: #58a6ff;
+  --tier-low: #f85149;
+  --tier-mid: #d29922;
+  --tier-good: #58a6ff;
+  --tier-great: #3fb950;
+  --model-opus: #da8ee7;
+  --model-sonnet: #58a6ff;
+  --model-haiku: #d29922;
+  --model-custom: #3fb950;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ── Header ── */
+.header {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 24px;
+  display: flex; align-items: center; gap: 16px;
+  flex-wrap: wrap;
+}
+.header-title {
+  font-size: 16px; font-weight: 600; white-space: nowrap;
+}
+.status-pill {
+  font-size: 11px; font-weight: 600; text-transform: uppercase;
+  padding: 2px 10px; border-radius: 12px; letter-spacing: 0.5px;
+}
+.status-pill.running {
+  background: rgba(88,166,255,0.15); color: var(--running);
+  animation: pulse 2s ease-in-out infinite;
+}
+.status-pill.complete {
+  background: rgba(63,185,80,0.15); color: var(--complete);
+}
+.status-pill.waiting {
+  background: rgba(139,148,158,0.15); color: var(--muted);
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.progress-wrap {
+  flex: 1; min-width: 120px; display: flex; align-items: center; gap: 8px;
+}
+.progress-text { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.progress-bar {
+  flex: 1; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden;
+}
+.progress-fill {
+  height: 100%; background: var(--accent); border-radius: 2px; transition: width 0.5s;
+}
+.last-updated { font-size: 11px; color: var(--dim); white-space: nowrap; }
+
+/* ── Main ── */
+.main { max-width: 920px; margin: 0 auto; padding: 24px 16px 80px; }
+
+/* ── Section ── */
+.section { margin-bottom: 24px; }
+.section-title {
+  font-size: 13px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 1px; color: var(--muted); margin-bottom: 12px;
+}
+
+/* ── Chart ── */
+.chart-wrap {
+  background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+  padding: 20px; text-align: center;
+}
+.chart-wrap svg { width: 100%; max-width: 500px; }
+
+/* ── Leaderboard ── */
+.leaderboard {
+  background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+  overflow: hidden;
+}
+.lb-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 16px; border-bottom: 1px solid var(--border);
+  cursor: pointer; transition: background 0.15s;
+}
+.lb-row:last-child { border-bottom: none; }
+.lb-row:hover { background: var(--card-hover); }
+.lb-row.best { background: rgba(210,153,34,0.08); border-left: 3px solid var(--best); }
+.lb-rank { font-size: 13px; font-weight: 700; color: var(--muted); width: 28px; text-align: center; }
+.lb-gen { font-size: 13px; color: var(--text); }
+.lb-score { font-size: 13px; font-weight: 600; margin-left: auto; }
+.lb-pct { font-size: 13px; font-weight: 600; width: 48px; text-align: right; }
+.lb-delta { font-size: 12px; width: 40px; text-align: right; }
+.delta-pos { color: var(--hit); }
+.delta-neg { color: var(--miss); }
+.delta-zero { color: var(--muted); }
+
+/* ── Gen Card ── */
+.gen-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+  margin-bottom: 16px; overflow: hidden;
+}
+.gen-header {
+  padding: 16px 20px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.gen-badge {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  padding: 2px 8px; border-radius: 4px;
+  background: rgba(88,166,255,0.15); color: var(--accent);
+}
+.gen-score-big { font-size: 28px; font-weight: 700; }
+.gen-pct { font-size: 20px; font-weight: 600; margin-left: 4px; }
+.gen-delta { font-size: 14px; margin-left: 8px; }
+
+/* Hit/miss mini bar */
+.hitmiss-bar {
+  width: 100%; height: 6px; border-radius: 3px;
+  display: flex; overflow: hidden; margin: 0 20px 12px;
+}
+.hitmiss-hit { background: var(--hit); }
+.hitmiss-miss { background: var(--miss); }
+
+/* Analysis block */
+.gen-analysis {
+  padding: 0 20px 16px; font-size: 13px; color: var(--text);
+  line-height: 1.6; font-style: italic;
+}
+.gen-analysis::before { content: '"'; color: var(--muted); }
+.gen-analysis::after { content: '"'; color: var(--muted); }
+
+/* ── Collapsible ── */
+.collapsible-header {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 20px; cursor: pointer;
+  border-top: 1px solid var(--border);
+  font-size: 13px; font-weight: 600; color: var(--muted);
+  transition: background 0.15s; user-select: none;
+}
+.collapsible-header:hover { background: var(--card-hover); }
+.collapsible-chevron {
+  transition: transform 0.2s; font-size: 10px; width: 16px; text-align: center;
+}
+.collapsible-header.open .collapsible-chevron { transform: rotate(90deg); }
+.collapsible-count { font-weight: 400; color: var(--dim); margin-left: 4px; }
+.collapsible-body { display: none; border-top: 1px solid var(--border); }
+.collapsible-body.open { display: block; }
+
+/* ── Prompt block ── */
+.prompt-block {
+  padding: 16px 20px; max-height: 400px; overflow-y: auto;
+}
+.prompt-text {
+  font-family: 'SF Mono', SFMono-Regular, Consolas, monospace;
+  font-size: 12px; line-height: 1.6; color: var(--text);
+  white-space: pre-wrap; word-break: break-word;
+}
+.prompt-meta { font-size: 11px; color: var(--dim); margin-bottom: 8px; }
+
+/* ── Predictions ── */
+.pred-filters {
+  display: flex; gap: 6px; padding: 12px 20px;
+}
+.pred-filter-btn {
+  font-size: 11px; padding: 3px 10px; border-radius: 12px;
+  border: 1px solid var(--border); background: transparent;
+  color: var(--muted); cursor: pointer; transition: all 0.15s;
+}
+.pred-filter-btn.active {
+  background: rgba(88,166,255,0.15); color: var(--accent); border-color: var(--accent);
+}
+.pred-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 20px; border-top: 1px solid var(--border);
+  cursor: pointer; transition: background 0.15s; font-size: 13px;
+}
+.pred-row:hover { background: var(--card-hover); }
+.pred-row.hit { border-left: 3px solid var(--hit); }
+.pred-row.miss { border-left: 3px solid var(--miss); }
+.pred-badge {
+  font-size: 10px; font-weight: 700; text-transform: uppercase;
+  padding: 1px 6px; border-radius: 3px; letter-spacing: 0.5px;
+}
+.pred-badge.hit { background: rgba(63,185,80,0.15); color: var(--hit); }
+.pred-badge.miss { background: rgba(248,81,73,0.15); color: var(--miss); }
+.pred-info { color: var(--muted); }
+.pred-picks { margin-left: auto; font-size: 12px; white-space: nowrap; }
+
+/* Prediction detail */
+.pred-detail {
+  display: none; padding: 12px 20px 12px 40px;
+  border-top: 1px solid var(--border); background: rgba(0,0,0,0.2);
+}
+.pred-detail.open { display: block; }
+.pred-option {
+  margin-bottom: 10px; padding: 8px 12px; border-radius: 6px;
+  border: 1px solid var(--border); font-size: 13px;
+}
+.pred-option.guesser-pick { border-color: var(--accent); background: rgba(88,166,255,0.05); }
+.pred-option.sean-pick { border-color: var(--hit); background: rgba(63,185,80,0.05); }
+.pred-option.both-pick { border-color: var(--hit); background: rgba(63,185,80,0.1); }
+.pred-option-label {
+  font-size: 11px; font-weight: 600; margin-bottom: 4px;
+  display: flex; align-items: center; gap: 6px;
+}
+.model-tag {
+  font-size: 10px; padding: 1px 5px; border-radius: 3px; font-weight: 600;
+}
+.model-tag.opus { background: rgba(218,142,231,0.15); color: var(--model-opus); }
+.model-tag.sonnet { background: rgba(88,166,255,0.15); color: var(--model-sonnet); }
+.model-tag.haiku { background: rgba(210,153,34,0.15); color: var(--model-haiku); }
+.model-tag.custom { background: rgba(63,185,80,0.15); color: var(--model-custom); }
+.couplet-lines { font-style: italic; color: var(--text); line-height: 1.5; margin-left: 4px; }
+.reasoning-block {
+  margin-top: 8px; padding: 8px 12px; border-radius: 6px;
+  background: rgba(88,166,255,0.05); border-left: 2px solid var(--accent);
+  font-size: 12px; color: var(--muted); line-height: 1.5;
+}
+.reasoning-label { font-size: 11px; font-weight: 600; color: var(--accent); margin-bottom: 2px; }
+
+/* ── Miss detail ── */
+.miss-card {
+  padding: 16px 20px; border-top: 1px solid var(--border);
+}
+.miss-card:first-child { border-top: none; }
+.miss-group-label { font-size: 13px; font-weight: 600; margin-bottom: 10px; color: var(--text); }
+.miss-compare {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 10px;
+}
+.miss-side { padding: 10px 12px; border-radius: 6px; border: 1px solid var(--border); }
+.miss-side.guesser { border-color: var(--miss); background: var(--miss-bg); }
+.miss-side.sean { border-color: var(--hit); background: var(--hit-bg); }
+.miss-side-label { font-size: 11px; font-weight: 600; margin-bottom: 4px; }
+.miss-side.guesser .miss-side-label { color: var(--miss); }
+.miss-side.sean .miss-side-label { color: var(--hit); }
+
+/* ── Evolution ── */
+.evo-entry {
+  padding: 16px 20px; border-top: 1px solid var(--border);
+  cursor: pointer; transition: background 0.15s;
+}
+.evo-entry:first-child { border-top: none; }
+.evo-entry:hover { background: var(--card-hover); }
+.evo-label { font-size: 12px; font-weight: 600; color: var(--accent); margin-bottom: 4px; }
+.evo-text { font-size: 13px; color: var(--text); line-height: 1.5; }
+.evo-prompt { display: none; margin-top: 12px; }
+.evo-prompt.open { display: block; }
+
+/* ── Empty state ── */
+.empty-state {
+  text-align: center; padding: 60px 20px; color: var(--muted);
+}
+.empty-state-icon { font-size: 48px; margin-bottom: 12px; opacity: 0.3; }
+.empty-state-text { font-size: 16px; }
+.empty-state-sub { font-size: 13px; margin-top: 4px; color: var(--dim); }
+
+/* ── Footer ── */
+.footer {
+  text-align: center; padding: 20px; font-size: 11px; color: var(--dim);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--dim); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-title">Rhyme-Eval</div>
+  <div id="statusPill" class="status-pill waiting">Waiting</div>
+  <div class="progress-wrap">
+    <span id="progressText" class="progress-text">—</span>
+    <div class="progress-bar"><div id="progressFill" class="progress-fill" style="width:0%"></div></div>
+  </div>
+  <div id="lastUpdated" class="last-updated"></div>
+</div>
+
+<div class="main">
+  <div id="emptyState" class="empty-state" style="display:none">
+    <div class="empty-state-icon">&#9835;</div>
+    <div class="empty-state-text">Waiting for Generation 1...</div>
+    <div class="empty-state-sub">Start the loop with /rhyme-eval in a Claude Code session</div>
+  </div>
+
+  <div id="chartSection" class="section" style="display:none">
+    <div class="section-title">Accuracy Over Generations</div>
+    <div class="chart-wrap"><div id="chartContainer"></div></div>
+  </div>
+
+  <div id="leaderboardSection" class="section" style="display:none">
+    <div class="section-title">Leaderboard</div>
+    <div id="leaderboard" class="leaderboard"></div>
+  </div>
+
+  <div id="generationsSection" class="section" style="display:none">
+    <div class="section-title">Generations</div>
+    <div id="generations"></div>
+  </div>
+
+  <div id="evolutionSection" class="section" style="display:none">
+    <div class="section-title">Prompt Evolution</div>
+    <div id="evolution" class="leaderboard"></div>
+  </div>
+</div>
+
+<div class="footer">Polling every 5s &middot; Rhyme-Eval Dashboard &middot; Port 8877</div>
+
+<script>
+// ── State ──
+let cachedJSON = '';
+// Track EXPANDED items (everything collapsed by default)
+let expandedSet = new Set(JSON.parse(localStorage.getItem('rhyme-eval-expanded-v2') || '[]'));
+let expandedPreds = new Set();
+let predFilters = {}; // genNum -> 'all' | 'hits' | 'misses'
+
+function saveExpanded() {
+  localStorage.setItem('rhyme-eval-expanded-v2', JSON.stringify([...expandedSet]));
+}
+
+// ── Helpers ──
+function tierColor(accuracy) {
+  if (accuracy >= 0.85) return 'var(--tier-great)';
+  if (accuracy >= 0.70) return 'var(--tier-good)';
+  if (accuracy >= 0.50) return 'var(--tier-mid)';
+  return 'var(--tier-low)';
+}
+
+function pct(accuracy) { return Math.round(accuracy * 100) + '%'; }
+
+function modelClass(model) {
+  if (model === 'opus') return 'opus';
+  if (model === 'sonnet') return 'sonnet';
+  if (model === 'haiku') return 'haiku';
+  return 'custom';
+}
+
+function esc(s) {
+  if (!s) return '';
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ── Render ──
+function render(state) {
+  const gens = state.generations || [];
+  const total = state.total_generations || 5;
+  const current = state.current_generation || 0;
+  const done = state.done || false;
+
+  // Header
+  const pill = document.getElementById('statusPill');
+  if (done) {
+    pill.className = 'status-pill complete'; pill.textContent = 'Complete';
+  } else if (gens.length > 0) {
+    pill.className = 'status-pill running'; pill.textContent = 'Running';
+  } else {
+    pill.className = 'status-pill waiting'; pill.textContent = 'Waiting';
+  }
+
+  document.getElementById('progressText').textContent = `Generation ${current} of ${total}`;
+  document.getElementById('progressFill').style.width = (current / total * 100) + '%';
+  document.getElementById('lastUpdated').textContent = 'Updated ' + new Date().toLocaleTimeString();
+
+  // Empty state
+  if (gens.length === 0) {
+    document.getElementById('emptyState').style.display = '';
+    document.getElementById('chartSection').style.display = 'none';
+    document.getElementById('leaderboardSection').style.display = 'none';
+    document.getElementById('generationsSection').style.display = 'none';
+    document.getElementById('evolutionSection').style.display = 'none';
+    return;
+  }
+
+  document.getElementById('emptyState').style.display = 'none';
+  document.getElementById('chartSection').style.display = '';
+  document.getElementById('leaderboardSection').style.display = '';
+  document.getElementById('generationsSection').style.display = '';
+  document.getElementById('evolutionSection').style.display = '';
+
+  renderChart(gens, total);
+  renderLeaderboard(gens);
+  renderGenerations(gens);
+  renderEvolution(gens);
+}
+
+// ── Chart (SVG) ──
+function renderChart(gens, totalSlots) {
+  const W = 500, H = 200;
+  const pad = { top: 25, bottom: 35, left: 45, right: 15 };
+  const plotW = W - pad.left - pad.right;
+  const plotH = H - pad.top - pad.bottom;
+  const barW = Math.min(50, (plotW / totalSlots) * 0.6);
+  const slotW = plotW / totalSlots;
+
+  let svg = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">`;
+
+  // Y-axis labels + grid
+  for (const v of [0, 0.25, 0.5, 0.75, 1]) {
+    const y = pad.top + plotH * (1 - v);
+    svg += `<text x="${pad.left - 6}" y="${y + 4}" fill="var(--dim)" font-size="10" text-anchor="end">${Math.round(v*100)}%</text>`;
+    if (v > 0 && v < 1) {
+      svg += `<line x1="${pad.left}" y1="${y}" x2="${W - pad.right}" y2="${y}" stroke="var(--border)" stroke-dasharray="4,4"/>`;
+    }
+  }
+
+  // Reference lines at 50% and 75%
+  for (const v of [0.5, 0.75]) {
+    const y = pad.top + plotH * (1 - v);
+    svg += `<line x1="${pad.left}" y1="${y}" x2="${W - pad.right}" y2="${y}" stroke="var(--dim)" stroke-dasharray="2,4" opacity="0.4"/>`;
+  }
+
+  // Bars
+  const points = [];
+  for (let i = 0; i < totalSlots; i++) {
+    const cx = pad.left + slotW * i + slotW / 2;
+    const gen = gens[i];
+
+    // X-axis label
+    svg += `<text x="${cx}" y="${H - 8}" fill="var(--muted)" font-size="11" text-anchor="middle">Gen ${i + 1}</text>`;
+
+    if (gen) {
+      const acc = gen.score.accuracy;
+      const barH = acc * plotH;
+      const barY = pad.top + plotH - barH;
+      const color = tierColor(acc);
+
+      svg += `<rect x="${cx - barW/2}" y="${barY}" width="${barW}" height="${barH}" rx="3" fill="${color}" opacity="0.85" class="chart-bar" data-gen="${i+1}" style="cursor:pointer"/>`;
+      svg += `<text x="${cx}" y="${barY - 6}" fill="${color}" font-size="10" font-weight="600" text-anchor="middle">${gen.score.hits}/${gen.score.total}</text>`;
+      svg += `<text x="${cx}" y="${barY - 17}" fill="var(--muted)" font-size="9" text-anchor="middle">${pct(acc)}</text>`;
+
+      points.push({ x: cx, y: barY });
+    } else {
+      // Empty slot
+      const barH = plotH * 0.95;
+      const barY = pad.top + plotH - barH;
+      svg += `<rect x="${cx - barW/2}" y="${barY}" width="${barW}" height="${barH}" rx="3" fill="none" stroke="var(--border)" stroke-dasharray="4,4" opacity="0.3"/>`;
+    }
+  }
+
+  // Trend line
+  if (points.length > 1) {
+    const line = points.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x},${p.y}`).join(' ');
+    svg += `<path d="${line}" fill="none" stroke="var(--text)" stroke-width="2" opacity="0.4"/>`;
+    for (const p of points) {
+      svg += `<circle cx="${p.x}" cy="${p.y}" r="3" fill="var(--text)" opacity="0.6"/>`;
+    }
+  }
+
+  svg += '</svg>';
+  document.getElementById('chartContainer').innerHTML = svg;
+
+  // Click handlers for bars
+  document.querySelectorAll('.chart-bar').forEach(bar => {
+    bar.addEventListener('click', () => {
+      const genNum = bar.dataset.gen;
+      const card = document.getElementById('gen-card-' + genNum);
+      if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+}
+
+// ── Leaderboard ──
+function renderLeaderboard(gens) {
+  const sorted = [...gens].sort((a, b) => b.score.accuracy - a.score.accuracy);
+  const bestGen = sorted[0]?.generation;
+
+  let html = '';
+  sorted.forEach((gen, i) => {
+    const isBest = gen.generation === bestGen;
+    const prevGen = gens.find(g => g.generation === gen.generation - 1);
+    const delta = prevGen ? gen.score.hits - prevGen.score.hits : 0;
+    const deltaClass = delta > 0 ? 'delta-pos' : delta < 0 ? 'delta-neg' : 'delta-zero';
+    const deltaText = delta > 0 ? '+' + delta : delta === 0 ? '—' : '' + delta;
+
+    html += `
+      <div class="lb-row ${isBest ? 'best' : ''}" onclick="document.getElementById('gen-card-${gen.generation}')?.scrollIntoView({behavior:'smooth',block:'start'})">
+        <span class="lb-rank">#${i + 1}</span>
+        <span class="lb-gen">Generation ${gen.generation}</span>
+        <span class="lb-score">${gen.score.hits}/${gen.score.total}</span>
+        <span class="lb-pct" style="color:${tierColor(gen.score.accuracy)}">${pct(gen.score.accuracy)}</span>
+        <span class="lb-delta ${deltaClass}">${deltaText}</span>
+      </div>`;
+  });
+  document.getElementById('leaderboard').innerHTML = html;
+}
+
+// ── Generation Cards ──
+function renderGenerations(gens) {
+  let html = '';
+  gens.forEach((gen, idx) => {
+    const prevGen = idx > 0 ? gens[idx - 1] : null;
+    const delta = prevGen ? gen.score.hits - prevGen.score.hits : 0;
+    const deltaClass = delta > 0 ? 'delta-pos' : delta < 0 ? 'delta-neg' : 'delta-zero';
+    const deltaText = delta > 0 ? '+' + delta : delta === 0 ? '' : '' + delta;
+    const hitPct = (gen.score.hits / gen.score.total * 100).toFixed(0);
+    const missPct = (gen.score.misses / gen.score.total * 100).toFixed(0);
+
+    const promptId = `prompt-${gen.generation}`;
+    const predsId = `preds-${gen.generation}`;
+    const missesId = `misses-${gen.generation}`;
+
+    const promptOpen = expandedSet.has(promptId);
+    const predsOpen = expandedSet.has(predsId);
+    const missesOpen = expandedSet.has(missesId);
+
+    const filter = predFilters[gen.generation] || 'all';
+
+    html += `
+    <div class="gen-card" id="gen-card-${gen.generation}">
+      <div class="gen-header">
+        <span class="gen-badge">Gen ${gen.generation}</span>
+        <span class="gen-score-big">${gen.score.hits}/${gen.score.total}</span>
+        <span class="gen-pct" style="color:${tierColor(gen.score.accuracy)}">${pct(gen.score.accuracy)}</span>
+        ${deltaText ? `<span class="gen-delta ${deltaClass}">${deltaText}</span>` : ''}
+      </div>
+      <div class="hitmiss-bar">
+        <div class="hitmiss-hit" style="width:${hitPct}%"></div>
+        <div class="hitmiss-miss" style="width:${missPct}%"></div>
+      </div>
+      ${gen.updater_analysis ? `<div class="gen-analysis">${esc(gen.updater_analysis)}</div>` : ''}
+
+      <!-- Prompt -->
+      <div class="collapsible-header ${expandedSet.has(promptId) ? 'open' : ''}" onclick="toggleCollapse('${promptId}')">
+        <span class="collapsible-chevron">&#9654;</span>
+        Prompt Used
+        <span class="collapsible-count">${gen.prompt_used ? gen.prompt_used.split(/\s+/).length + ' words' : ''}</span>
+      </div>
+      <div class="collapsible-body ${expandedSet.has(promptId) ? 'open' : ''}" id="${promptId}">
+        <div class="prompt-block">
+          <div class="prompt-text">${esc(gen.prompt_used)}</div>
+        </div>
+      </div>
+
+      <!-- Predictions -->
+      <div class="collapsible-header ${expandedSet.has(predsId) ? 'open' : ''}" onclick="toggleCollapse('${predsId}')">
+        <span class="collapsible-chevron">&#9654;</span>
+        All Predictions
+        <span class="collapsible-count">${gen.score.hits} hits, ${gen.score.misses} misses</span>
+      </div>
+      <div class="collapsible-body ${expandedSet.has(predsId) ? 'open' : ''}" id="${predsId}">
+        <div class="pred-filters">
+          <button class="pred-filter-btn ${filter === 'all' ? 'active' : ''}" onclick="setFilter(${gen.generation}, 'all')">All (${gen.score.total})</button>
+          <button class="pred-filter-btn ${filter === 'hits' ? 'active' : ''}" onclick="setFilter(${gen.generation}, 'hits')">Hits (${gen.score.hits})</button>
+          <button class="pred-filter-btn ${filter === 'misses' ? 'active' : ''}" onclick="setFilter(${gen.generation}, 'misses')">Misses (${gen.score.misses})</button>
+        </div>
+        ${renderPredictions(gen)}
+      </div>
+
+      <!-- Misses -->
+      <div class="collapsible-header ${expandedSet.has(missesId) ? 'open' : ''}" onclick="toggleCollapse('${missesId}')">
+        <span class="collapsible-chevron">&#9654;</span>
+        Miss Analysis
+        <span class="collapsible-count">${gen.misses_detail ? gen.misses_detail.length + ' misses' : '0'}</span>
+      </div>
+      <div class="collapsible-body ${expandedSet.has(missesId) ? 'open' : ''}" id="${missesId}">
+        ${renderMisses(gen)}
+      </div>
+    </div>`;
+  });
+  document.getElementById('generations').innerHTML = html;
+}
+
+function renderPredictions(gen) {
+  if (!gen.predictions) return '';
+  const filter = predFilters[gen.generation] || 'all';
+
+  let html = '';
+  gen.predictions.forEach((pred, i) => {
+    if (filter === 'hits' && !pred.hit) return;
+    if (filter === 'misses' && pred.hit) return;
+
+    const predKey = `${gen.generation}-${i}`;
+    const isOpen = expandedPreds.has(predKey);
+
+    html += `
+      <div class="pred-row ${pred.hit ? 'hit' : 'miss'}" onclick="togglePred('${predKey}')">
+        <span class="pred-badge ${pred.hit ? 'hit' : 'miss'}">${pred.hit ? 'HIT' : 'MISS'}</span>
+        <span>${esc(pred.recipient)} &mdash; ${esc(pred.section)}</span>
+        <span class="pred-picks">
+          Picked: ${pred.guesser_pick_letter}
+          <span class="model-tag ${modelClass(pred.guesser_pick_model)}">${esc(pred.guesser_pick_model)}</span>
+          ${!pred.hit ? ` &rarr; Sean: <span class="model-tag ${modelClass(pred.sean_pick_model)}">${esc(pred.sean_pick_model)}</span>` : ''}
+        </span>
+      </div>
+      <div class="pred-detail ${isOpen ? 'open' : ''}" id="pred-${predKey}">
+        ${renderPredDetail(pred)}
+      </div>`;
+  });
+  return html;
+}
+
+function renderPredDetail(pred) {
+  if (!pred.options_presented) return '';
+  let html = '';
+  pred.options_presented.forEach(opt => {
+    const isGuesserPick = opt.letter === pred.guesser_pick_letter;
+    const isSeanPick = opt.model === pred.sean_pick_model;
+    let cls = '';
+    if (isGuesserPick && isSeanPick) cls = 'both-pick';
+    else if (isGuesserPick) cls = 'guesser-pick';
+    else if (isSeanPick) cls = 'sean-pick';
+
+    let labels = [];
+    if (isGuesserPick) labels.push('Guesser pick');
+    if (isSeanPick) labels.push("Sean's pick");
+
+    html += `
+      <div class="pred-option ${cls}">
+        <div class="pred-option-label">
+          ${opt.letter})
+          <span class="model-tag ${modelClass(opt.model)}">${esc(opt.model)}</span>
+          ${labels.length ? `<span style="font-size:10px;color:${isSeanPick ? 'var(--hit)' : 'var(--accent)'}">${labels.join(' + ')}</span>` : ''}
+        </div>
+        <div class="couplet-lines">${esc(opt.line1)}<br>${esc(opt.line2)}</div>
+      </div>`;
+  });
+
+  if (pred.guesser_reasoning) {
+    html += `
+      <div class="reasoning-block">
+        <div class="reasoning-label">Guesser's reasoning</div>
+        ${esc(pred.guesser_reasoning)}
+      </div>`;
+  }
+  return html;
+}
+
+function renderMisses(gen) {
+  if (!gen.misses_detail || gen.misses_detail.length === 0) {
+    return '<div style="padding:16px 20px;color:var(--muted);font-size:13px">No misses</div>';
+  }
+
+  let html = '';
+  gen.misses_detail.forEach(miss => {
+    html += `
+      <div class="miss-card">
+        <div class="miss-group-label">${esc(miss.recipient)} &mdash; ${esc(miss.section)}</div>
+        <div class="miss-compare">
+          <div class="miss-side guesser">
+            <div class="miss-side-label">Guesser picked: ${miss.guesser_picked.letter}
+              <span class="model-tag ${modelClass(miss.guesser_picked.model)}">${esc(miss.guesser_picked.model)}</span>
+            </div>
+            <div class="couplet-lines">${esc(miss.guesser_picked.line1)}<br>${esc(miss.guesser_picked.line2)}</div>
+          </div>
+          <div class="miss-side sean">
+            <div class="miss-side-label">Sean picked:
+              <span class="model-tag ${modelClass(miss.sean_picked.model)}">${esc(miss.sean_picked.model)}</span>
+            </div>
+            <div class="couplet-lines">${esc(miss.sean_picked.line1)}<br>${esc(miss.sean_picked.line2)}</div>
+          </div>
+        </div>
+        ${miss.guesser_reasoning ? `
+          <div class="reasoning-block">
+            <div class="reasoning-label">Guesser's reasoning</div>
+            ${esc(miss.guesser_reasoning)}
+          </div>` : ''}
+      </div>`;
+  });
+  return html;
+}
+
+// ── Evolution ──
+function renderEvolution(gens) {
+  if (gens.length < 1) return;
+
+  let html = '';
+  gens.forEach((gen, i) => {
+    if (!gen.updater_analysis) return;
+    const evoId = `evo-${gen.generation}`;
+    const isOpen = expandedSet.has(evoId);
+
+    html += `
+      <div class="evo-entry" onclick="toggleCollapse('${evoId}')">
+        <div class="evo-label">
+          Gen ${gen.generation} &rarr; ${gen.generation < gens.length ? 'Gen ' + (gen.generation + 1) : 'Final'}
+          <span style="color:${tierColor(gen.score.accuracy)};margin-left:8px">${pct(gen.score.accuracy)}</span>
+        </div>
+        <div class="evo-text">${esc(gen.updater_analysis)}</div>
+        <div class="evo-prompt ${isOpen ? 'open' : ''}" id="${evoId}">
+          ${gen.next_prompt ? `
+            <div class="prompt-block" style="padding:12px 0 0">
+              <div class="prompt-meta">Next prompt (${gen.next_prompt.split(/\s+/).length} words)</div>
+              <div class="prompt-text" style="font-size:11px;max-height:250px;overflow-y:auto">${esc(gen.next_prompt)}</div>
+            </div>` : ''}
+        </div>
+      </div>`;
+  });
+  document.getElementById('evolution').innerHTML = html;
+}
+
+// ── Interactions ──
+function toggleCollapse(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const header = el.previousElementSibling;
+
+  if (expandedSet.has(id)) {
+    expandedSet.delete(id);
+    el.classList.remove('open');
+    if (header) header.classList.remove('open');
+  } else {
+    expandedSet.add(id);
+    el.classList.add('open');
+    if (header) header.classList.add('open');
+  }
+  saveExpanded();
+}
+
+function togglePred(key) {
+  const el = document.getElementById('pred-' + key);
+  if (!el) return;
+  if (expandedPreds.has(key)) {
+    expandedPreds.delete(key);
+    el.classList.remove('open');
+  } else {
+    expandedPreds.add(key);
+    el.classList.add('open');
+  }
+}
+
+function setFilter(genNum, filter) {
+  predFilters[genNum] = filter;
+  // Re-render just needs a full render call since we rebuild innerHTML
+  fetchAndRender();
+}
+
+// ── Polling ──
+async function fetchAndRender() {
+  try {
+    const resp = await fetch('/api/state');
+    const state = await resp.json();
+    const newJSON = JSON.stringify(state);
+    if (newJSON !== cachedJSON) {
+      cachedJSON = newJSON;
+      render(state);
+    } else {
+      // Just update timestamp
+      document.getElementById('lastUpdated').textContent = 'Updated ' + new Date().toLocaleTimeString();
+    }
+  } catch (e) {
+    document.getElementById('lastUpdated').textContent = 'Error: ' + e.message;
+  }
+}
+
+// Everything collapsed by default — expandedSet tracks what user has opened
+
+fetchAndRender();
+setInterval(fetchAndRender, 5000);
+</script>
+</body>
+</html>
