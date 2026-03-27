@@ -536,3 +536,144 @@ Automatically updated at midnight PST.
   https://www.youtube.com/watch?v=hRZN5PW9cTw
 - **10 Physics Glitches That Suggest We Live in a Simulation** — Orbiting Truths (9:39, 4 views)
   https://www.youtube.com/watch?v=JGHvcnrgUnA
+
+## 2026-03-26 — 69 videos
+
+- **New Quantum Paradox Proves: REALITY Isn’t Singular... It Can’t Exist Without an Observer** — exo-SCIENCE (10:59, 1.7K views)
+  https://www.youtube.com/watch?v=5ZpXXUdoB30
+- **WE DO NOT EXIST? | Richard Feynman Mind-Blowing Theory** — Piensa como Feynman (14:26, 10 views)
+  https://www.youtube.com/watch?v=nV7igSVjNFM
+- **Quantum Physics Reveals: the TRUTH about God and the Universe** — Theodore, the Researcher (2:51:21, 324 views)
+  https://www.youtube.com/watch?v=_MqhghZ4zUU
+- **Consciousness, Information, and the Limits of Physics | Sleepy Physicist** — Sleepy Physicist (1:31:05, 136 views)
+  https://www.youtube.com/watch?v=lS1oGbdJ4R0
+- **Why Time Is TRAPPED In Matter? My Answer Will COLLAPSE Reality** — Feynman Light Files (25:14, 1.5K views)
+  https://www.youtube.com/watch?v=xHBskMvTRl0
+- **Light DOESN’T TRAVEL – Richard Feynman Explains | Quantum Physics Simplified** — The Feynman Lab (13:48, 38 views)
+  https://www.youtube.com/watch?v=pAG4NTE6h3c
+- **What is a dilution fridge? | Quantum science at Fermilab** — Fermilab (3:06, 3.3K views)
+  https://www.youtube.com/watch?v=HSClNB2pq0c
+- **"Feynman Explains: Light Does Not Move Through Space — It Moves Through Time"** — Unveiling Science (19:48, 589 views)
+  https://www.youtube.com/watch?v=aFPr_i-LApg
+- **Mind and Tachyons: The Quantum Physics of Thought** — Quantumcohesion (8:19, 4 views)
+  https://www.youtube.com/watch?v=zVpiX7tecPw
+- **THIS EXPERIMENT BROKE PHYSICS | Richard Feynman Explained** — The Feynman Lab (12:31, 27 views)
+  https://www.youtube.com/watch?v=wldXO6-81iE
+- **Unknown Truth About The BLACK HOLE | Exploring Cosmic Mysteries and Quantum Physics.** — Quantum Nexus Enigma (8:03, 1 views)
+  https://www.youtube.com/watch?v=hct-juJPV-0
+- **Quantum Mechanics Defies Logic | Here's Why** — Science, but make it weird (12:04, new)
+  https://www.youtube.com/watch?v=Px4mAENgLS8
+- **Quantum Observer Effect: The Shocking Truth About Consciousness & Reality** — The Wise Path (36:17, 10 views)
+  https://www.youtube.com/watch?v=yKNInmiUFY4
+- **Quantum Entanglement Explained | Einstein’s Spooky Action & Vedanta #quantumphysics #vedanta #scifi** — The Quantum Sutra (English) (4:59, 2 views)
+  https://www.youtube.com/watch?v=J23_G-VhwCs
+- **“Remove separation” and then it becomes inevitable** — Carter Dombeck (8:22, 74 views)
+  https://www.youtube.com/watch?v=7Ouo-vuI3fU
+- **What Is the Symphony of Possibilities? (And Why People Can’t Explain It)  @drdainheer​** — Dr Dain Heer (4:56, 1.3K views)
+  https://www.youtube.com/watch?v=VSppgzfPGCg
+- **Feynman's Last Lecture Changed Physics FOREVER — Here's What He Said** — Feynman’s Thought Experiments (14:00, new)
+  https://www.youtube.com/watch?v=SpOyEI-LOBU
+- **10 Ways Advanced Civilizations Might Travel the Universe** — Space Mate (18:44, 3.4K views)
+  https://www.youtube.com/watch?v=qY4dyiOekpw
+- **Topic – QUANTUM MECHANICS -Assignment-1-Part-2** — Physics Vision by Dr. Isha Gawri (NA, new)
+  https://www.youtube.com/watch?v=ZzDlaHN5Jzo
+- **Black Holes and Time Travel, the Theory That Changes Everything | Miguel Alcubierre | #489** — Jorge Serratos (1:10:28, 4.6K views)
+  https://www.youtube.com/watch?v=dldF5a843w4
+- **Einstein’s Photoelectric Effect Explained | The Birth of Quantum Physics** — Einstein Mindset • 23M views • 2 days ago (6:03, 2 views)
+  https://www.youtube.com/watch?v=OVfFYBAOKbo
+- **What Is the Universe Made Of, Really? | Leonard Susskind** — Divine Intelligence (15:46, 17 views)
+  https://www.youtube.com/watch?v=VZWWEuFU0Z0
+- **QUANTUM DYNAMICS || PART 1 || ADVANCED QUANTUM MECHANICS** — Aamir's Physics Academy (35:00, 5 views)
+  https://www.youtube.com/watch?v=v-M8fHxcVgY
+- **Feynman Explains Bohr vs Einstein debate: The Greatest Scientific Argument Ever?** — Think Like Feynman (40:15, 447 views)
+  https://www.youtube.com/watch?v=wNTVt5RlG5g
+- **Quantum Applications in AI Explained | How Quantum Computing is Transforming Artificial Intelligence** — Professor Rahul Jain (1:43, 1 views)
+  https://www.youtube.com/watch?v=6JWq6giLuOk
+- **Beyond Brainstorming: Quantum Physics for Creativity** — Quantum Sovereignty (9:31, 3 views)
+  https://www.youtube.com/watch?v=oSyn5rnJI18
+- **The Consciousness Theory That Shocked Scientists** — Advaita Vedanta (13:14, new)
+  https://www.youtube.com/watch?v=xpQdpUAoP-c
+- **The Quantum Mystery of Being: You Don’t Exist the Way You Think | The Quantum Slumber** — The Quantum Slumber (1:48:32, 2 views)
+  https://www.youtube.com/watch?v=X3rh8sDwQi4
+- **Richard Feynman Explanation Why Particles Can Exist in Two Places at Once** — Feynman Explains Physics (41:21, 6 views)
+  https://www.youtube.com/watch?v=H_bsjDzwXO8
+- **3I/ATLAS Just CAPTURED Comet's Tail — Wrapping It Around Itself | Michio Kaku** — ASTRO AVI (24:34, 774 views)
+  https://www.youtube.com/watch?v=LkvFY9utITU
+- **The "Inverse Problem" Of Dark Matter Is Insane** — Curt Jaimungal (2:31:21, 10.3K views)
+  https://www.youtube.com/watch?v=Bj4Ra75vvTc
+- **The Scariest Thing in Software Engineering** — Modern Software Engineering (1:31, 2.8K views)
+  https://www.youtube.com/watch?v=OzMyEhpCyuU
+- **Quantum Mechanics vs. Biochemistry: Spooky Action at a Distance** — Reasons to Believe (5:44, 650 views)
+  https://www.youtube.com/watch?v=-RGoe14hiYs
+- **Quantum Minds Episode 5 Erwin Schrodinger The Most Elegant Equation You've Never Heard Of** — Bandwidth Chronicles (5:58, 1 views)
+  https://www.youtube.com/watch?v=IaruWf2yxp8
+- **The Quantum Field Wants to Tell You EVERYTHING** — Quantum Veil (1:33:02, 15 views)
+  https://www.youtube.com/watch?v=RjbGmeK0C-U
+- **Kitty Pride and Storm QFig by Quantum Mechanics!** — Brokecollector80 A. M. (3:08, new)
+  https://www.youtube.com/watch?v=Qxqn_n_2x0k
+- **7AM PKT | Quantum Mechanics for Beginners | Week 01 | Day 04** — iCodeGuru (44:44, 9 views)
+  https://www.youtube.com/watch?v=CCPpqmpg7sM
+- **Look Closer.. Your ENTIRE Reality Is Already Reorganizing** — Quantum Flux (1:38:18, 4 views)
+  https://www.youtube.com/watch?v=YE-qzXo9MQI
+- **Richard Feynman explains the Behavior of Waves** — Richard Feynman Explains (19:51, 8 views)
+  https://www.youtube.com/watch?v=eh4PGXLpuqc
+- **Quantum Computing Roadmap 2026 | Step-by-Step Guide for Beginners (Skills, Tools & Career Path)** — Debug Labs (6:04, 1 views)
+  https://www.youtube.com/watch?v=fBe-7tVCaMk
+- **Quantum vacuum explained: how did the universe begin?** — Renderium (15:22, 1.2K views)
+  https://www.youtube.com/watch?v=3cYv5Coiiks
+- **Quantum Computing Just Changed Forever (And Nobody Is Talking About It)** — Julia McCoy (10:45, 21.6K views)
+  https://www.youtube.com/watch?v=1oJLrvQtnHs
+- **Google Warns: Prepare for Quantum by 2029 | Cybersecurity Implications** — The Quantum Bull (8:39, 422 views)
+  https://www.youtube.com/watch?v=BZI3TiZPxuc
+- **BlackRock Bottom Line | 3 things to know about quantum computing** — BlackRock (1:58, 110 views)
+  https://www.youtube.com/watch?v=0Fu65FAGR0M
+- **Q&A with Tim — The Upcoming AI Tsunami and Building Offline Advantage** — Tim Ferriss (1:20:15, 11.2K views)
+  https://www.youtube.com/watch?v=Vw1-tGkT9K8
+- **Episode 71: Infleqtion and the Quantum Opportunity** — Citi (24:48, 119 views)
+  https://www.youtube.com/watch?v=TccW9I4Q-QU
+- **QUBT Stock (Quantum Computing Inc.) QUBT Stock Analysis | March 27, 2026** — Candle Point (52, 2 views)
+  https://www.youtube.com/watch?v=uu453X50ffA
+- **Quantum Computing Demystified: Impacts, timelines, and how to get quantum-safe - Dr. Arnab Biswas** — SPRITEplus (25:38, 4 views)
+  https://www.youtube.com/watch?v=oTJezhrOyTY
+- **The Quantum Internet Is Coming 😳 Unhackable Future Explained** — Quantum Articles (6:32, 2 views)
+  https://www.youtube.com/watch?v=v5KwGtHjK0k
+- **Quantum Computing’s BB84: How Turing Award Winners Beat Quantum Hackers!** — Mimico Design House (2:15, 2 views)
+  https://www.youtube.com/watch?v=NkqynqpeyUw
+- **Intro to Quantum Computing** — Society of Computer Developers (17:29, 1 views)
+  https://www.youtube.com/watch?v=wBrysk343YE
+- **One-day National Conference on  'From Bits to Qubits: Quantum Computing and Beyond'** — Prerna College of Commerce (NA, new)
+  https://www.youtube.com/watch?v=QFYljIXsKAQ
+- **Will This Stock Be The Next Nvidia?** — Dylan Rieger (9:36, 1.1K views)
+  https://www.youtube.com/watch?v=_tY_QnO-bZQ
+- **Quantum Computing (Part 2): Who Controls It, Who Wins & What It Means for Crypto** — Crypto News Today (10:36, 1 views)
+  https://www.youtube.com/watch?v=drNe05PvR7A
+- **Quantum Computing, Episode 1: A Practical Guide to Quantum Technology for Patent Practitioners** — Schwegman Lundberg & Woessner, P.A. (1:01:24, 12 views)
+  https://www.youtube.com/watch?v=FJMDNVtGD9E
+- **Quantum Computing Threats and Opportunities** — Broadband Breakfast (2:49, 1 views)
+  https://www.youtube.com/watch?v=7v3ttFRiT6o
+- **Prompt, it's me | Supasate Vorathammathorn | TEDxKMUTT** — TEDx Talks (10:58, 6 views)
+  https://www.youtube.com/watch?v=uOEv0sW0Vlc
+- **Getting started with Fire Opal Qiskit Functions on IBM Quantum** — Q-CTRL (17:12, 3 views)
+  https://www.youtube.com/watch?v=1G6ugxmzQm4
+- **Mining and Technology Updates: Rare Earth Projects and Quantum Computing Podcast** — NewsRamp (3:53, new)
+  https://www.youtube.com/watch?v=KVCRG2gf9T4
+- **Entangled Machines 🌠 A Gentle Introduction to the Future of Technology** — Sleep Story for Grown Ups (1:19, 11 views)
+  https://www.youtube.com/watch?v=sNR_PmLGD3g
+- **Session 4 : Quantum Random Number Generation | The Physical Layer | Q Cryptography | Quantum AI Lab** — iQafé (1:50:00, 5 views)
+  https://www.youtube.com/watch?v=4mwWgOerGSo
+- **Frontier Technology: The Future Is Now—Are You Ready?** — Coursera (2:24, 86 views)
+  https://www.youtube.com/watch?v=qehuyJ2XnQU
+- **DHS shutdown: Republican lawmaker says "nothing works" for Democrats** — LiveNOW from FOX (9:44, 28.4K views)
+  https://www.youtube.com/watch?v=Rd53HcVHJ1k
+- **India’s 3–5 Year Countdown to Quantum Security… Or Everything Changes** — Tech Brew with Vandana Nair (1:13, 104 views)
+  https://www.youtube.com/watch?v=C6clzRLRadE
+- **خريطة تعلم Quantum Computing من الصفر 🚀 | دليل شامل للبدء في الكوانتم خطوة بخطوة** — Debug Labs (5:47, new)
+  https://www.youtube.com/watch?v=61Ra8B0zZQ8
+- **Variational Quantum Algorithms for the Allocation of Resources in a Cloud/Edge Architecture** — TQ Science (1:32, 5 views)
+  https://www.youtube.com/watch?v=0oDitbNzZok
+- **Quantum Entanglement Misconceptions ⚛️ | What Everyone Gets Wrong** — Final Signal (7:36, 1 views)
+  https://www.youtube.com/watch?v=Qzuq33RUUAU
+- **"What Makes Interstellar Travel Mathematically Impossible: Feynman Reality Check"** — The Sum Over Histories (18:30, 1.0K views)
+  https://www.youtube.com/watch?v=ubCOh_9XDwI
+- **The Universe May be a Deception... #shorts #space #universe #cosmicexploration** — Space Science Documentary (1:17, 110 views)
+  https://www.youtube.com/watch?v=R56AApvLTKc
