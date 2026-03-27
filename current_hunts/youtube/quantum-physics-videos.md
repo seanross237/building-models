@@ -677,3 +677,16 @@ Automatically updated at midnight PST.
   https://www.youtube.com/watch?v=ubCOh_9XDwI
 - **The Universe May be a Deception... #shorts #space #universe #cosmicexploration** — Space Science Documentary (1:17, 110 views)
   https://www.youtube.com/watch?v=R56AApvLTKc
+
+## 2026-03-27 — 5 videos
+
+- **Quantum Mechanics of the Hartle-Hawking State - ||Jordan Cotler** — ||CHEP IISc Bangalore (1:03:17, new)
+  https://www.youtube.com/watch?v=I0UX-jXfLjM
+- **3I/ATLAS Just EMITTED Chlorophyll Signature — Same Molecule Plants Use | Michio Kaku** — ASTRO AVI (25:54, 2.2K views)
+  https://www.youtube.com/watch?v=3273pv8qqMI
+- **"This Bear Market Won't Last" | Samson Mow on Nation-State Bitcoin Adoption & Quantum FUD** — Bitcoincom News (20:49, 17 views)
+  https://www.youtube.com/watch?v=DpzmrLa10mg
+- **The Sun Has Never Burned — Not Even Once In 5 Billion Years** — Physics with Feynman (42:22, 3.3K views)
+  https://www.youtube.com/watch?v=qBd90QZ_MBc
+- **3I/ATLAS Just BOUNCED Off Magnetic Field — Ricocheted Into Different Path | Michio Kaku** — ASTRO AVI (26:00, 807 views)
+  https://www.youtube.com/watch?v=C1AgMaKarOI
