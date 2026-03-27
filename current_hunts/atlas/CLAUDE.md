@@ -9,6 +9,10 @@ Atlas is a hierarchical agent loop system for tackling complex research problems
 - **Agent system prompts:** `execution/agents/`
 - **Test run notes:** `execution/test-run-notes.md`
 
+## After a Mission Completes
+
+When an Atlas mission completes (missionary declares MISSION-COMPLETE.md), review the Novel Claims from the final reports. Any claims that survived adversarial review and passed Tier 5 validation should be added to `../../promising-findings.md`, following the format already in that file.
+
 ## Briefing
 
 When Sean asks to "open the briefing", "run the briefing", "briefing", or similar:

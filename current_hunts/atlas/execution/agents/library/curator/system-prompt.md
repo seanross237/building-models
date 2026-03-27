@@ -40,6 +40,34 @@ factual/
 
 You decide what the hierarchy looks like. Organize by whatever structure makes the knowledge most findable and navigable. The Library Receptionist will use the INDEX.md files to navigate, so make them clear and descriptive.
 
+### Meta Library Structure
+
+The meta library follows the same pattern — INDEX.md files, one finding per file, YAML frontmatter — but organized around **how the system works** rather than domain knowledge.
+
+Categories emerge from what strategizers learn, but typical topics include:
+- **Task design** — what exploration types work (surveys, construction, adversarial, repairs)
+- **Scope** — when to split vs. combine tasks, line count guidance
+- **Explorer behavior** — stalling patterns, nudging, incremental writing
+- **Context provision** — what to pre-load, how to frame goals, when to name specific authors/papers
+- **Negative results** — how to use failures, when to include failure-path instructions
+- **Strategic sequencing** — when to attack vs. build, when to compare to benchmarks
+
+```
+meta/
+  INDEX.md
+  task-design/
+    INDEX.md
+    survey-deep-dive-pattern.md
+    adversarial-with-severity-ranking.md
+    ...
+  scope/
+    INDEX.md
+    one-task-per-exploration.md
+    ...
+```
+
+**Consolidation is critical for the meta library.** Multiple meta-learning notes will report the same lesson in different words. Your job is to synthesize them into a single, authoritative entry — not file 6 copies of "one task per exploration." When consolidating, note which explorations contributed to the lesson (e.g., "Observed in strategy-001 explorations 006-007, confirmed in strategy-003 exploration s3-001").
+
 ## What You Do
 
 When you receive findings to file:
@@ -53,9 +81,19 @@ When you receive findings to file:
 
 **Only add genuinely new information.** A finding that restates what the library already knows is not worth filing. If a finding adds nuance or specificity to an existing entry (e.g., a concrete number where before there was only a qualitative statement), update the existing entry rather than creating a new one.
 
+### Processing Meta-Learning Notes
+
+When you receive a meta-learning note (from the meta-inbox), process it into the **meta library** (`meta/`):
+
+1. **Read the note.** Identify the lessons — there may be several in one note.
+2. **Check for existing entries.** Is this lesson already captured in the meta library? If so, update the existing entry with the new evidence (add the exploration reference, strengthen or qualify the lesson).
+3. **Consolidate aggressively.** If three notes all say "one task per exploration," that's one meta library entry with three supporting observations, not three entries.
+4. **File new lessons.** Create entries in the appropriate category folder under `meta/`.
+5. **Update meta INDEX.md files.** Same discipline as the factual library — every index in the chain must reflect the addition.
+
 ## Frontmatter Format
 
-Every finding file should have:
+Every **factual** finding file should have:
 
 ```markdown
 ---
@@ -63,6 +101,17 @@ topic: [topic name]
 confidence: [verified | provisional]
 date: [YYYY-MM-DD]
 source: [where this came from — URL, exploration ID, etc.]
+---
+```
+
+Every **meta** finding file should have:
+
+```markdown
+---
+topic: [topic name]
+category: [task-design | scope | explorer-behavior | context-provision | negative-results | strategic-sequencing]
+date: [YYYY-MM-DD]
+source: [which meta-exploration notes contributed to this, e.g., "strategy-001 meta-005, strategy-002 meta-007"]
 ---
 ```
 

@@ -40,13 +40,25 @@ At scales above the Planck mass, gravity contributes an anomalous dimension A_λ
 **For A_λ < 0:** The window opens: 126 < m_H < 174 GeV. Less predictive.
 
 ### The Prediction
-This yields m_H = m_min = **126 GeV**, with only a few GeV uncertainty (from M_top uncertainty).
+This yields m_H = m_min = **126 ± 3 GeV**, with uncertainty dominated by the top quark mass and strong coupling constant.
+
+**Uncertainty budget:**
+- **Top quark mass (m_top):** Dominant. δm_H ≈ 1 GeV per 1 GeV shift in m_top. The original prediction uses m_top ≈ 171 GeV; current world average m_top = 172.57 ± 0.29 GeV pushes the predicted value slightly higher (125–132 GeV range depending on exact m_top).
+- **Strong coupling (α_s):** Enters through QCD corrections to top Yukawa running. Subdominant but non-negligible (~1 GeV effect).
+- **Higher-loop SM corrections:** ~0.5 GeV.
+- **Gravitational parameters:** ~0 (only sign of A_λ matters — structural/topological prediction).
 
 ### Significance
 This prediction was made in 2009, **three years before** the Higgs was discovered at 125.1 GeV at the LHC in July 2012. It is arguably the most impressive predictive success of the AS/QG+F program and the only confirmed particle physics prediction from any quantum gravity framework.
 
 ### Robustness
-The prediction is remarkably robust: independent of details of UV running (only the sign of A_λ matters), holds for a "wide class of extensions of the SM." Only requires the big desert assumption (no new physics between Fermi and Planck scales).
+The prediction is remarkably robust: independent of details of UV running (only the sign of A_λ matters), holds for a "wide class of extensions of the SM." Only requires the big desert assumption (no new physics between Fermi and Planck scales). The prediction is "topological" — it depends on the fixed-point structure (which eigenoperators are relevant/irrelevant) rather than numerical values of anomalous dimensions.
+
+**Important:** The mechanism was formulated in the **Einstein-Hilbert truncation** of AS. It does not explicitly include higher-derivative terms (C², R²). The anomalous dimension A_λ is computed from the NGFP in the Einstein-Hilbert sector. Higher-derivative truncations with full matter coupling remain to be computed (Dona-Eichhorn-Percacci 2014 confirmed NGFP survival with SM content in E-H truncation only).
+
+### Fakeon Compatibility (Exploration s4-004)
+
+The unified QG+F–AS framework inherits the SW prediction **unchanged**. The fakeon prescription for the C² ghost does not affect the prediction: (1) UV divergences / beta functions are prescription-independent, (2) the NGFP is an Euclidean computation where prescriptions are indistinguishable, (3) threshold corrections at M₂ ~ M_Pl have absorptive parts that vanish at the EW scale (kinematic suppression by (m_H/M_Pl)²). Conservative bound: |Δm_H| < 10⁻⁷ GeV. See `../cross-cutting/unified-qgf-as-framework/higgs-mass-consistency.md` for the full analysis.
 
 ### Connection to QG+F
 The Higgs mass prediction is a **non-perturbative** AS result. In perturbative QG+F, gravity corrections to λ_H are suppressed by (μ/M_Pl)² — far too small to drive λ → 0. QG+F is consistent with the prediction (same theory, different regime) but cannot derive it perturbatively. Analogous to perturbative QCD not deriving the proton mass.

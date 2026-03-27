@@ -30,3 +30,11 @@ Dark energy = long-range entanglement; baryonic matter displaces entanglement; e
 ## Critical Limitation
 
 All rigorous results are in anti-de Sitter space. Our universe has positive Lambda (de Sitter). Extension to dS is one of the most important open problems in theoretical physics.
+
+### Recent de Sitter Progress (2024-2025)
+
+- **Static patch holography:** Holographic dual localized on the cosmological horizon, rather than spatial infinity
+- **Island formula and ER=EPR extensions:** Partial generalization to de Sitter space
+- **Time from dS holography (2025):** A time coordinate emerges from the dual Euclidean CFT in de Sitter; the information metric for bulk coordinate estimation replicates the de Sitter metric
+
+**Status:** Encouraging progress, but the full de Sitter holographic dictionary remains incomplete. The naive Ryu-Takayanagi prescription fails to satisfy strong subadditivity in dS.

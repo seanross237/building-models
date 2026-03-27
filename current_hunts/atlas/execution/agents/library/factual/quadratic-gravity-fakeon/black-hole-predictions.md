@@ -23,7 +23,7 @@ All static BH solutions in quadratic gravity have vanishing Ricci scalar (R = 0)
 2. **Non-Schwarzschild "Yukawa attractive" branch:** Negative Yukawa charge (S₂⁻ < 0). Gravity stronger near horizon. Unbounded parameter space.
 3. **Non-Schwarzschild "Yukawa repulsive" branch:** Positive Yukawa charge (S₂⁻ > 0). Exists only for narrow parameter ranges.
 
-Branches intersect at a critical horizon radius r_H^cross ≈ 0.876/m₂ (sub-Planckian for m₂ ~ M_P).
+Branches intersect at a critical horizon radius r_H^cross ≈ 0.876/m₂. Using m₂ ≈ 1.42 M_P (from Benedetti et al. 2009 NGFP values, g₁*/g₃* = 2.02), this gives **r_H^cross ≈ 0.63 l_P** — sub-Planckian. The ghost-driven instability only triggers for BHs smaller than the Planck length, deep in the non-perturbative AS regime.
 
 ### Phase Diagram (Silveravalle & Zuccotti 2023, PRD 107, 064029)
 
@@ -155,6 +155,6 @@ The sharpest BH-related test remains the **CMB tensor-to-scalar ratio r**, which
 
 ## Key Conclusion
 
-BH physics highlights the tension between QG+F and AS interpretations. Perturbative QG+F predicts essentially GR BHs, while AS predicts qualitatively modified BHs (regular cores, remnants, modified entropy). This reinforces the importance of determining whether QG+F and AS are the same theory in different regimes — the BH sector makes this question particularly sharp.
+QG+F and AS BH predictions are **compatible, not contradictory** — they describe different regimes of the same physics (perturbative: large BHs, r >> l_P; non-perturbative: Planck BHs, r ~ l_P), analogous to perturbative QCD vs. confinement. See `cross-cutting/qgf-vs-as-bh-compatibility.md` for the systematic five-argument compatibility analysis (verdict: SUPPORTS). The key unresolved bottleneck is the ghost's fate at strong coupling — if the fakeon fails non-perturbatively, spontaneous ghostification could break compatibility.
 
 Sources: Lü, Perkins, Pope, Stelle (2015), PRL 114, 171601; Silveravalle & Zuccotti (2023), PRD 107, 064029; Tattersall & Silveravalle (2024), arXiv:2412.15037; Held, Gold & Sen (2023), A&A 674, A190; Bonanno et al. (2025), PRD 111, 044031; Bonanno et al. (May 2025), arXiv:2505.20360; Anselmi & Piva (2019), CQG 37, 095003; Anselmi (JHEP 01 (2026) 104); Carr et al. (2020), EPJC 80, 478

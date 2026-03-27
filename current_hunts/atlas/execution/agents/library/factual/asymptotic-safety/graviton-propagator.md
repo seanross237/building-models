@@ -38,10 +38,26 @@ The dressed graviton propagator shows nontrivial momentum dependence:
 - In the IR (momenta far below the Planck scale): standard 1/p^2 behavior (massless graviton)
 - In the UV (momenta above the Planck scale): modified by quantum corrections encoded in momentum-dependent form factors
 
+## Critical Caveat: Ghost Absent from Truncation
+
+The Bonanno et al. reconstruction is done within the **Einstein-Hilbert truncation** (no C² term). The massive spin-2 ghost that arises in Stelle's quadratic gravity is therefore absent from this analysis entirely. The negative spectral weight in the background propagator is a gauge artifact, **not** related to the ghost. This result demonstrates that spectral reconstruction techniques exist within AS, but says nothing about the ghost's fate. See `ghost-fate-strong-coupling.md` for the full survey of the ghost's status in AS.
+
+## Wick Rotation Obstruction
+
+The graviton propagator's pole structure creates a major obstruction to standard analytic continuation between Euclidean and Lorentzian signatures:
+
+- **Donoghue (2020, arXiv:1911.02967):** The ghost pole in quadratic gravity sits in the **upper right quadrant** of the complex q₀ plane. Standard Wick rotation (90° contour rotation) sweeps over this pole. Any truncation without tachyons will likely have poles obstructing analytic continuation.
+- **Draper et al. (PRL 125, 2020; JHEP 2020):** Found **infinite towers of spin-0 and spin-2 poles at imaginary squared momentum** — highly non-standard pole structure that further obstructs naive Wick rotation.
+- **Bonanno et al. (2022):** Must **assume** "the existence of a standard Wick rotation at least for backgrounds close to flat ones" — they cannot derive it. Explicitly exclude complex conjugate poles.
+
+This is recognized as one of the remaining challenges in AS. See `../cross-cutting/qgf-vs-as-analyticity-compatibility.md` for how QG+F's fakeon "average continuation" may provide the systematic solution.
+
 ## Open Issues
 
 - The detailed form of the propagator depends on gauge choice and truncation
 - Full resolution of unitarity requires going beyond the spectral function to compute scattering amplitudes
 - Background independence of the results needs further investigation
+- The massive spin-2 ghost propagator has NOT been reconstructed in AS — this is a critical gap
+- **Wick rotation from Euclidean to Lorentzian is obstructed** by complex poles; no systematic solution exists within AS yet (the QG+F fakeon "average continuation" is one candidate)
 
-Source: https://scipost.org/10.21468/SciPostPhys.12.1.001
+Source: https://scipost.org/10.21468/SciPostPhys.12.1.001; Donoghue arXiv:1911.02967; Draper et al. PRL 125 (2020) 181301

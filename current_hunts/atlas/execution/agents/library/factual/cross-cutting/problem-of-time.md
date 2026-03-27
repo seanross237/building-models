@@ -43,6 +43,15 @@ Quantize the full constrained system, then recover time semiclassically. The WKB
 
 The problem of time affects every canonical approach to quantum gravity (LQG, Wheeler-DeWitt quantum cosmology, causal set theory). Covariant approaches (string theory, spin foams) partially circumvent it but must still address how time emerges from a fundamentally timeless formalism. The problem is intimately connected to the observables problem: in a diffeomorphism-invariant theory, all observables must be relational (non-local).
 
+## Cross-References
+
+- [page-wootters-mechanism.md](page-wootters-mechanism.md) — Detailed treatment of the Type III(a) resolution: time from static entanglement, with mathematical formulation, experimental confirmation (Moreva et al. 2014), Smith-Ahmadi interacting extension, quantum reference frame program (Hoehn)
+- [arrow-of-time-from-entanglement.md](arrow-of-time-from-entanglement.md) — How entanglement growth produces the arrow of time
+- [time-from-entanglement-synthesis.md](time-from-entanglement-synthesis.md) — Unified thesis connecting Wheeler-DeWitt → Page-Wootters → gravity-from-entanglement → arrow of time
+- [temporal-realism-irreducible-becoming.md](temporal-realism-irreducible-becoming.md) — The opposing view: time-as-becoming is irreducible, WDW timelessness is a formalism artifact (Bergson, Whitehead, Prigogine, Smolin, Ellis, Maudlin, causal set theory)
+- [computational-irreducibility-thesis.md](computational-irreducibility-thesis.md) — The computational view: time is the irreducible execution of the universe's computation (Landauer-Bennett-Bekenstein triad, Wolfram CI, Lloyd); offers a novel framing where the frozen formalism dissolves because computation is inherently sequential
+- [`gravitize-the-quantum/`](../gravitize-the-quantum/INDEX.md) — Several GtQ programs offer novel resolutions: Adler-Singh trace dynamics derives time from pre-spacetime "Connes time" τ; Oppenheim dissolves the problem (gravity is classical → time is unambiguous); Barandes assumes time as stochastic process parameter (a weakness)
+
 Source: https://arxiv.org/abs/gr-qc/9210011
 Additional: https://plato.stanford.edu/entries/quantum-gravity/
 Additional: https://en.wikipedia.org/wiki/Wheeler%E2%80%93DeWitt_equation

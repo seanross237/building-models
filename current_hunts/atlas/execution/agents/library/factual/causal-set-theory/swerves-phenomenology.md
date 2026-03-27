@@ -25,9 +25,9 @@ The momentum-space diffusion is governed by a single phenomenological parameter 
 
 Since swerving causes particle trajectories to deviate slightly from exact geodesics, distant point sources would appear "fuzzed" -- their apparent positions would be spread out, potentially explaining why some ultra-high-energy cosmic ray sources cannot be identified.
 
-## Current Status
+## Current Status and Observational Constraints
 
-At large scales, the microscopic swerves manifest as Lorentz invariant diffusion in energy-momentum. However, the predicted magnitude of the effect is extremely small, making direct observational confirmation challenging with current technology.
+At large scales, the microscopic swerves manifest as Lorentz invariant diffusion in energy-momentum. **The swerves parameter is severely constrained:** k ≤ 10⁻⁵⁶ kg²m²s⁻³ from spontaneous heating bounds on hydrogen gas. The original hope that cosmic ray anomalies could be attributed to swerves has been **ruled out** — the effect is inconsistent with laboratory bounds. Direct observational confirmation remains far beyond current technology.
 
 ## Publication Details
 

@@ -24,7 +24,13 @@ Whether asymptotically safe gravity is unitary remains unresolved. Higher-deriva
 The functional RG approach uses a background metric, raising questions about background independence -- a key requirement for any theory of quantum gravity. The "background field approximation" conflates the background field with the mean field, and overcoming this remains challenging.
 
 ### 5. Lorentzian vs. Euclidean
-Most computations are performed in Euclidean signature for technical convenience. The Wick rotation to Lorentzian spacetime is nontrivial in gravity (no fixed background to define it). Recent work has begun addressing Lorentzian flows directly, but the program is still predominantly Euclidean.
+Most computations are performed in Euclidean signature for technical convenience. The Wick rotation to Lorentzian spacetime is nontrivial in gravity — complex poles (ghost pole in upper right quadrant, infinite pole towers at imaginary p²) obstruct standard analytic continuation (see `graviton-propagator.md`). However, Lorentzian formulations now exist:
+
+- **D'Angelo, Drago, Pinamonti, Rejzner (Phys. Rev. D 109, 2024; arXiv:2310.20603):** First background-independent evidence of an NGFP directly in Lorentzian signature at (g*, λ*) = (1.15, 0.42). No Wick rotation needed.
+- **Manrique, Reuter, Saueressig (2011; arXiv:1102.5012):** Causal FRG connecting Euclidean and Lorentzian RG flows without standard analytic continuation.
+- **Foliated AS (Baldazzi, D'Angelo, Falls, 2025; arXiv:2501.03752):** Wick rotation via lapse function rotation rather than time coordinate; Euclidean and Lorentzian beta functions found identical with careful regulator choice.
+
+The Euclidean formulation is a computational convenience, not a fundamental requirement. This eliminates any argument that AS's Euclidean nature demands analyticity. See `../cross-cutting/qgf-vs-as-analyticity-compatibility.md` for implications regarding QG+F compatibility.
 
 ## Conceptual Criticisms
 

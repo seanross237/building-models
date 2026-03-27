@@ -25,8 +25,8 @@ Quadratic gravity with Anselmi-Piva fakeon quantization is a **well-developed, a
 | 2022 | Comprehensive review: "Purely Virtual Particles in QG, Inflationary Cosmology and Collider Physics" (22R1) | Symmetry 14(3), 521 |
 | 2023-24 | Gauge theories on compact manifolds, cosmological inhomogeneities, primordial BHs | — |
 | 2024 | Salvio proposes unimodular quadratic gravity for CC problem | arXiv:2406.12958 |
-| 2025 | Amplitude prescriptions with complex poles, classicized dynamics (25A1, 25A2); Quanta Magazine feature | — |
-| 2026 | Causality and predictivity in quantum gravity (26A1) | — |
+| 2025 | Amplitude prescriptions with complex poles: explicit catalog of 4 inequivalent prescriptions and their trade-offs — fakeon uniquely preserves unitarity + Lorentz invariance but sacrifices S-matrix analyticity (25A1, JHEP 05, 2025, 145); classicized dynamics (25A2); Quanta Magazine feature | arXiv:2503.01841 |
+| 2026 | "On Causality and Predictivity" (26A1): radical philosophical position that causality should be abandoned as fundamental principle; "delayed prepostdictions" as maximum achievable inference; nonperturbative effects introduce "new type of uncertainty" | arXiv:2601.06346 |
 
 ## Active Research Groups
 

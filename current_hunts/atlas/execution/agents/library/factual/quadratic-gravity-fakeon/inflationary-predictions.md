@@ -30,6 +30,23 @@ The fakeon widens the prediction range compared to pure Starobinsky — the lowe
 
 Source: Anselmi (2020), JHEP 07, 211; Anselmi (2022), Symmetry 14(3), 521
 
+### Bianchi-Gamonal Precision W² Corrections (2025)
+
+Bianchi & Gamonal (arXiv:2506.10081, June 2025) treat W² perturbatively via reduction of order, computing to N³LO:
+
+- **Precision formula:** r ≈ 3(1 − β/6α)(n_s − 1)² where α is the R² coupling and β is the W² coupling
+- For β > 0, r is **systematically reduced** below pure Starobinsky
+- Tensor and scalar sound speeds differ: c_t/c_s ≈ 1 + β/(6α)
+- **Key point:** Including W² (as QG+F requires) pushes r DOWN from Starobinsky, not up
+
+### Anselmi 2023 Causality Bound on Inflationary Models
+
+Anselmi, PRD 108, 083526 (2023): "Causality bounds in quadratic inflation from purely virtual particles"
+
+- Pure quadratic inflation (V = m²φ²) with R+C² fakeon gravity is **ruled out** by causality constraints
+- Starobinsky inflation (R² inflaton) remains viable
+- This constrains the inflationary model within QG+F to be specifically Starobinsky-type
+
 ## Scalar Spectral Index (n_s) — The Emerging Tension
 
 ### QG+F Prediction
@@ -131,4 +148,4 @@ QG+F makes **two sharp, falsifiable inflationary predictions**:
 
 The n_s prediction is arguably MORE constraining than r, because the current data already shows tension. If n_s ≈ 0.974 is confirmed, QG+F requires modification to the R² sector (see `ns-tension-resolution-paths.md`). If the RG running of f₀² naturally produces the right shift, this would be a triumph for the theory. If not, the six-derivative extension becomes necessary (see `six-derivative-extension.md`).
 
-Sources: Anselmi (2020), JHEP 07, 211; Anselmi (2022), Symmetry 14(3), 521; Anselmi, Bianchi & Piva (2020), JHEP; Anselmi (2021), JCAP; arXiv: 2504.20757; BICEP/Keck (2021); LiteBIRD collaboration; CMB-S4 collaboration
+Sources: Anselmi (2020), JHEP 07, 211; Anselmi (2022), Symmetry 14(3), 521; Anselmi, Bianchi & Piva (2020), JHEP; Anselmi (2021), JCAP; Anselmi (2023), PRD 108, 083526; Bianchi & Gamonal (2025), arXiv:2506.10081; arXiv: 2504.20757; BICEP/Keck (2021); LiteBIRD collaboration; CMB-S4 collaboration; exploration-004-inflation-prediction-reconciliation

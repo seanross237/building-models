@@ -1,29 +1,50 @@
 ---
 topic: cross-cutting
 confidence: verified
-date: 2026-03-25
-source: exploration-010-IHO-CMB-predictions (strategy-002)
+date: 2026-03-26
+source: exploration-010-IHO-CMB-predictions (strategy-002), exploration-004-inflation-prediction-reconciliation (strategy-003)
 ---
 
 # QG+F vs. Asymptotic Safety: CMB Discrimination
 
-## The Key Distinction
+## The Key Distinction — Corrected
 
-**QG+F** drives inflation via the R² Starobinsky mechanism. The C² term provides perturbatively small quantum gravity corrections (suppressed by α = 1/(4πN) ~ 1/115).
+**QG+F** drives inflation via the R² Starobinsky mechanism. The C² (Weyl-squared) term modifies tensor perturbations, pushing r slightly below pure Starobinsky. The scalar spectral index n_s is determined by R² alone.
 
-**Asymptotic Safety** drives inflation via the Reuter non-Gaussian fixed point — a non-perturbative mechanism where the running cosmological constant provides the effective inflaton. No explicit inflaton field needed.
+**Asymptotic Safety** — contrary to the common characterization as "inflaton-free" — **also produces Starobinsky inflation** in its most developed models:
+- Codello et al. (2014) and Gubitosi et al. (2018) show the NGFP naturally generates Starobinsky inflation via RG flow
+- Bonanno-Platania (2015/18) gives a logarithmic deformation OF Starobinsky from NGFP effects
+- Only the original Bonanno-Reuter (2002) model is truly "inflaton-free," and it is the most primitive truncation with the least sharp predictions
+
+See `asymptotic-safety/cosmology.md` for the full AS inflation taxonomy (6 models across 4 classes).
+
+## Reconciliation Status: SUPPORTS (MODERATE)
+
+**Both theories predict Starobinsky inflation.** The apparent tension between QG+F (r ~ 0.003) and AS ("r up to 0.01") dissolves upon close examination: the "r up to 0.01" comes from one specific model (Bonanno-Platania with maximal b ~ 10⁻²). Most AS inflation papers predict r ≈ 0.003, identical to QG+F. No published paper directly compares the two frameworks' inflationary predictions — this is a literature gap.
+
+### Compatibility Scenario (if QG+F and AS are the same theory)
+- The NGFP determines UV initial conditions for the R² coupling
+- The R² coupling flows to values consistent with Starobinsky inflation
+- The C² term constrains the tensor sector, pushing r slightly below pure Starobinsky
+- The Bonanno-Platania b parameter represents residual NGFP correction; including C² may constrain b to be small
+
+### The Missing Calculation
+Nobody has done AS inflation with the **full fourth-order truncation** (R² + C²) simultaneously. AS calculations typically use f(R) truncations that exclude C². QG+F calculations include C² but don't incorporate non-perturbative RG running. This is exactly where the two frameworks need to meet.
+
+### Strength of Reconciliation: MODERATE
+The predictions are reconcilable by convergence-of-approximations rather than by explicit calculation. The key missing calculation is AS inflation in the fourth-order (R² + C²) truncation.
 
 ## The Discrimination Table
 
 | Observable | QG+F (4-deriv) | QG+F (6-deriv) | AS (Reuter FP) | Discriminating? |
 |-----------|----------------|----------------|----------------|-----------------|
 | **n_s** | 0.964-0.967 | ~0.974 | 0.964-0.97 | WEAK — overlapping ranges |
-| **r** | **0.0004-0.004** | ~0.0045 | **up to 0.01** | **YES — SHARPEST** |
+| **r** | **0.0004-0.004** | ~0.0045 | **~0.003 (most models); up to 0.01 (Bonanno-Platania max b only)** | **YES — SHARPEST** (but overlap substantial) |
 | **α_s** | ~-6.5×10⁻⁴ | ~-8×10⁻⁴ | ~-5×10⁻⁴ | NO — below measurement precision |
 | **β_s** | ~2.4×10⁻⁵ | ~10⁻⁵ | ~10⁻⁵ | NO — unmeasurable |
 | **n_T** | -r/8 | -r/8 | -r/8 (likely) | NO — both satisfy consistency relation |
 | **f_NL** | ~10⁻⁴ | ~10⁻⁴ | ~10⁻⁴ | NO — both negligible |
-| **Inflaton needed?** | Yes (R² scalaron) | Yes | **No** | YES — conceptual, not directly observable |
+| **Inflaton needed?** | Yes (R² scalaron) | Yes | **Most models: Yes (R² scalaron from NGFP flow). Only Bonanno-Reuter 2002: No** | WEAK — most AS models also use R² scalaron |
 | **Running G (cosmic)** | Logarithmic, tiny (~10⁻¹⁴) | Same | **Power-law, potentially observable** | YES — via precision cosmology |
 | **BH remnants** | No prediction | No prediction | **Planck-mass remnants** | YES — via PBH dark matter |
 | **Higgs mass** | No prediction | No prediction | **~126 GeV (Shaposhnikov-Wetterich)** | YES — but already observed |
@@ -63,19 +84,23 @@ A December 2024 paper (JHEP 12, 024) proposes that UV-complete theories with Wey
 ### Stochastic GW Background
 Future space-based detectors (DECIGO) could measure n_T with enough precision to distinguish models. Decades away.
 
-## AS Inflation: The Bonanno-Platania Framework
+## AS Inflation: Full Landscape (Corrected)
 
-The AS effective Lagrangian:
+The AS inflation literature contains **four classes** of models. See `asymptotic-safety/cosmology.md` for full taxonomy.
+
+**Key correction:** The "r up to 0.01" for AS is misleading. It comes specifically from Bonanno-Platania's logarithmic correction model with maximal b ~ 10⁻² — one model out of six. The majority of developed AS models (Codello 2014, Gubitosi 2018, Pawlowski 2024) predict r ≈ 0.003–0.005, squarely within the QG+F window.
+
+### Bonanno-Platania (the model that gives r ~ 0.01)
 
     L_eff = M_P² R/2 + (a/2) R²/[1 + b ln(R/μ²)]
 
-where b parameterizes AS correction strength. For b → 0: reduces to Starobinsky. For b ~ 10⁻³: n_s increases toward ~0.97, r increases to ~0.01.
+where b parameterizes AS correction strength. For b → 0: reduces to Starobinsky. For b ~ 10⁻²: n_s increases toward ~0.975, r increases to ~0.01. But b is NOT uniquely determined by AS — it depends on truncation-dependent critical exponents.
 
-Also: Emergent cosmology model (Bonanno et al. PRD 111, 103519, 2025):
-
-    G(ε) = G_N / (1 + ε/ε_c)
-
-with ε_c determined by g* = 540π/833. Produces quasi-de Sitter without inflaton. Explicit n_s, r predictions not yet published.
+### Other AS models (all predict r ≈ 0.003)
+- Codello et al. (2014): NGFP sets R² initial conditions → pure Starobinsky
+- Gubitosi et al. (2018): f(R) RG flow → Starobinsky explicitly
+- Pawlowski et al. (2024): Emergent inflaton potential from scalar-tensor RG → r ≈ 0.005
+- Bonanno et al. (2024/2025): Running G cosmology, sharp r not yet published
 
 ## Experimental Timeline for Discrimination
 
@@ -84,4 +109,4 @@ See `cmb-experimental-timeline.md` for full details. Summary:
 - **2030-2032:** SO enhanced σ(r) ~ 0.001-0.002 — earliest definitive discrimination
 - **2036-2037:** LiteBIRD σ(r) < 0.001 — most reliable discrimination
 
-Sources: Bonanno & Platania (2018, PRD 98, 043505); Bonanno et al. (2025, PRD 111, 103519; arXiv:2405.02636); Anselmi (2020, JHEP 07, 211; 2021, JCAP 01, 048); JHEP 12 (2024) 024
+Sources: Bonanno & Platania (2018, PRD 98, 043505); Bonanno et al. (2025, PRD 111, 103519; arXiv:2405.02636); Anselmi (2020, JHEP 07, 211; 2021, JCAP 01, 048); Codello, D'Odorico, Pagani (2014, PRD 91, 103530); Gubitosi et al. (2018, JCAP 1812, 004); Pawlowski et al. (2024, arXiv:2406.10170); Bianchi & Gamonal (2025, arXiv:2506.10081); JHEP 12 (2024) 024; exploration-004-inflation-prediction-reconciliation

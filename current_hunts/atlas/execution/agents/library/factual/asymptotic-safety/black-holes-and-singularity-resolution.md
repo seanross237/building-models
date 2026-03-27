@@ -52,10 +52,10 @@ Gravity *weakens* at high energies. When matter collapses, the effective gravita
 ## Planck-Mass Remnants as Dark Matter
 
 If AS predicts stable Planck-mass remnants from primordial black hole evaporation:
-- Primordial BHs with initial mass < 10^9 g would have evaporated by now classically
-- In AS, evaporation halts at a Planck-mass remnant (~10^{-5} g)
-- Remnants could dominate dark matter density if enough primordial BHs formed
-- **Observable signature:** Gravitational wave signal at ~100 Hz (from PBH mergers/formation)
+- All PBHs with M_init ≲ 5 × 10¹¹ kg (≈ 5 × 10¹⁴ g) have evaporated by now; each leaves a Planck-mass remnant (~10⁻⁵ g ≈ 0.46 M_P, T = 0, σ ~ l_P²)
+- **Cannot be ALL of dark matter:** γ-ray constraints on evaporating PBHs (β < 10⁻²⁵ for M ~ 10⁹–10¹¹ kg) are far tighter than what's needed for all-DM (β ~ 10⁻¹⁸). Very light PBHs (M_init ~ 10⁴–10⁶ g, evaporated within seconds of Big Bang) have weaker constraints and could contribute a significant fraction.
+- Remnant properties: M ~ M_P ≈ 2 × 10⁻⁸ kg, charge 0, T = 0 (no Hawking radiation), cross-section σ ~ l_P² ~ 10⁻⁷⁰ m² (essentially undetectable directly), O(1) entropy in Planck units
+- **Observable signature:** Gravitational wave signal at ~100 Hz (from PBH mergers/formation); possibly detectable via femtolensing (>2040)
 - Recent work (2024, MNRAS): Breakdown of Hawking evaporation opens new mass window for PBHs as dark matter
 
 ## Comparison with Perturbative QG+F
@@ -64,6 +64,8 @@ The remnant and singularity resolution predictions are **invisible to perturbati
 - QG+F gives corrections as a power series in (M_P/M_BH)^2, which diverges for Planckian BHs
 - The T -> 0 endpoint requires the full non-perturbative beta-function to all orders
 - The specific running G(k) -> g*/k^2 in the UV is a consequence of the Reuter fixed point, not visible in perturbation theory
+
+**Compatibility verdict: SUPPORTS.** At large r (r >> l_P), the BR metric reduces to f(r) ≈ 1 - 2G₀m/r + O(l_P²/r²) — exactly Schwarzschild, matching QG+F. The two frameworks describe different regimes (perturbative vs. non-perturbative) of the same physics. See `cross-cutting/qgf-vs-as-bh-compatibility.md` for the full five-argument compatibility analysis.
 
 ## Testability
 

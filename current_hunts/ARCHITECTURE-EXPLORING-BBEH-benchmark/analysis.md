@@ -1,15 +1,75 @@
-# BBEH Benchmark Analysis — Claude Opus 4.6
+# BBEH Benchmark Analysis
 
-**Date:** 2026-03-08
-**Model:** claude-opus-4-6
+**Models tested:** Claude Opus 4.6, Claude Sonnet 4.6
+**Dates:** 2026-03-08 (Opus runs 1-2), 2026-03-26 (Sonnet run 3)
 
 ## Run Comparison
 
-| | Run 1 | Run 2 (with certainty) |
-|---|---|---|
-| **Accuracy** | 16/23 (69.57%) | 16/23 (69.57%) |
-| **Unique misses** | multistep_arithmetic, object_properties | causal_understanding, zebra_puzzles |
-| **Shared misses** | boardgame_qa, hyperbaton, sarc_triples, sportqa, word_sorting | *(same 5)* |
+| | Opus Run 1 | Opus Run 2 | Sonnet Run 3 |
+|---|---|---|---|
+| **Accuracy** | 16/23 (69.57%) | 16/23 (69.57%) | 15/23 (65.22%) |
+| **Unique misses** | multistep_arithmetic, object_properties | causal_understanding, zebra_puzzles | disambiguation_qa, dyck_languages, geometric_shapes |
+| **Shared misses (all 3)** | hyperbaton, sarc_triples, sportqa, word_sorting | *(same 4)* | *(same 4)* |
+
+## Sonnet vs Opus — Cross-Model Comparison (Run 3 vs Runs 1-2)
+
+| Task | Opus R1 | Opus R2 | Sonnet | Correct | Time |
+|------|---------|---------|--------|---------|------|
+| boardgame_qa | WRONG | WRONG | **RIGHT** | proved | 17s |
+| boolean_expressions | RIGHT | RIGHT | RIGHT | (A) | 36s |
+| buggy_tables | RIGHT | RIGHT | RIGHT | 23.5 | 56s |
+| causal_understanding | RIGHT | WRONG | RIGHT | Yes | 2s |
+| disambiguation_qa | RIGHT | RIGHT | **WRONG** | (A) | 12s |
+| dyck_languages | RIGHT | RIGHT | **WRONG** | 18 | 18s |
+| geometric_shapes | RIGHT | RIGHT | **WRONG** | (C) | 37s |
+| hyperbaton | WRONG | WRONG | WRONG | B | 2m41s |
+| linguini | RIGHT | RIGHT | RIGHT | les pelvis | 14s |
+| movie_recommendation | RIGHT | RIGHT | RIGHT | (J) | 17s |
+| multistep_arithmetic | WRONG | RIGHT | **WRONG** | -45678 | 10m+ |
+| nycc | RIGHT | RIGHT | RIGHT | (C) | 13s |
+| object_counting | RIGHT | RIGHT | RIGHT | 293 | 13s |
+| object_properties | WRONG | RIGHT | **RIGHT** | 34 | 2m16s |
+| sarc_triples | WRONG | WRONG | WRONG | 1,1,1 | 10s |
+| shuffled_objects | RIGHT | RIGHT | RIGHT | (F) | 2m10s |
+| spatial_reasoning | RIGHT | RIGHT | RIGHT | correct | 8s |
+| sportqa | WRONG | WRONG | WRONG | ABD,ABD,B | 9s |
+| temporal_sequence | RIGHT | RIGHT | RIGHT | 120,1 | 3m2s |
+| time_arithmetic | RIGHT | RIGHT | RIGHT | [] | 10s |
+| web_of_lies | RIGHT | RIGHT | RIGHT | correct | 59s |
+| word_sorting | WRONG | WRONG | WRONG | 9 | 10s |
+| zebra_puzzles | RIGHT | WRONG | **RIGHT** | 6 | 7m34s |
+
+### Key Sonnet vs Opus differences
+
+**Sonnet wins (solved what Opus couldn't):**
+- **boardgame_qa** — Opus's persistent failure. Sonnet correctly traced the preference chain where Rule2 overrides Rule8, then Rule5 fires because no animal refuses to help the goat. This was Opus's #1 "unknown unknown."
+- **zebra_puzzles** — Opus got this wrong on run 2 (52% certainty). Sonnet solved 137 clues in 7m34s and got it right.
+- **object_properties** — Opus missed on run 1 (off-by-one). Sonnet got 34 correctly.
+- **causal_understanding** — Opus run 2 miss (52% certainty). Sonnet answered correctly.
+
+**Opus wins (Sonnet regressed):**
+- **disambiguation_qa** — Sonnet answered (E) Ambiguous, but the correct answer is (A). Opus got this right both times. Sonnet overthought the pronoun ambiguity when the sentence structure makes it clear.
+- **dyck_languages** — Sonnet answered 19, correct is 18. Off-by-one error in stack tracking. Opus consistent.
+- **geometric_shapes** — Sonnet couldn't identify the parallelogram, answered (B) "none of the above" instead of (C) "only 5". Opus consistent.
+- **multistep_arithmetic** — Numbers exploded to millions of digits. Sonnet used Python but still couldn't converge. Same failure mode as Opus run 1.
+
+**Both models consistently fail (4 tasks):**
+- **hyperbaton** — Both over-select adjective orderings (Opus: ABDEF, Sonnet: BDE). Neither can learn the full custom ordering from examples alone.
+- **sarc_triples** — Both miss sarcasm on at least one reply. Different error patterns (Opus: 1,0,1; Sonnet: 0,1,0).
+- **sportqa** — Both over-select answers on sub-question 2. Neither gets the restrictive "B only" answer.
+- **word_sorting** — Both find *a* mistake but not the *first* mistake (Opus: Thought 11, Sonnet: Thought 15, correct: Thought 9).
+
+### Sonnet timing profile
+
+| Duration | Tasks |
+|----------|-------|
+| < 15s | causal_understanding, spatial_reasoning, sportqa, sarc_triples, time_arithmetic, word_sorting, nycc, object_counting, linguini, disambiguation_qa |
+| 15-60s | boardgame_qa, movie_recommendation, dyck_languages, boolean_expressions, geometric_shapes, buggy_tables, web_of_lies |
+| 1-3m | shuffled_objects, object_properties, hyperbaton, temporal_sequence |
+| 3-10m | zebra_puzzles (7m34s) |
+| 10m+ | multistep_arithmetic (still running, using Python) |
+
+Total wall-clock time for all 23 tasks run in parallel: ~10 minutes (dominated by multistep_arithmetic and zebra_puzzles).
 
 ## Run 2 Results (with Certainty)
 

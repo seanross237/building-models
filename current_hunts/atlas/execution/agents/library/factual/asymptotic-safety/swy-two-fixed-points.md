@@ -16,6 +16,12 @@ Sen, Wetterich, and Yamada (SWY, 2022) computed non-perturbative flow equations 
 
 These are distinct fixed points with different critical exponents, different numbers of relevant directions, and different physical predictions along the RG trajectories flowing from them.
 
+## SWY Follow-up: Scaling Solutions (2023)
+
+Sen, Wetterich, and Yamada (JHEP 02 (2023) 054) computed **scaling solutions** connecting the AF UV fixed point to the non-perturbative IR region. These show that the AF fixed point can produce viable low-energy physics (Einstein gravity in the IR) via its own trajectory, independent of the NGFP. "If the proposed scaling solution is confirmed beyond our approximations, asymptotic freedom is a viable alternative to asymptotic safety for quantum gravity."
+
+For the broader question of whether AF and NGFP are the same or distinct fixed points, including evidence from Codello-Percacci (2006), Niedermaier (2009), Ohta-Percacci (2014), and Falls et al. (2023), see `af-ngfp-fixed-point-connection.md`.
+
 ## Implications for the AS-QG+F Relationship
 
 The SWY result creates genuine ambiguity about which fixed point Nature selects. In the IR, both flow toward Einstein gravity plus small corrections. But they differ in:

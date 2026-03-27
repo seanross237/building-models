@@ -7,37 +7,66 @@ source: https://cerncourier.com/a/a-safe-approach-to-quantum-gravity/, explorati
 
 # Asymptotic Safety: Cosmological and Physical Applications
 
-## Inflation Without an Inflaton
+## AS Inflation: Four Distinct Classes
 
-A distinctive non-perturbative prediction of AS: inflation driven purely by quantum gravitational effects at the Reuter fixed point -- no inflaton field needed.
+There are **four distinct classes** of AS inflation models in the literature, with different mechanisms and predictions. Critically, most of them produce Starobinsky inflation, not alternatives to it. The characterization of AS inflation as purely "inflaton-free" applies only to the most primitive model.
 
-### Mechanism
+### Class 1: Bonanno-Reuter Inflaton-Free Inflation (2002)
 
-Near the Reuter fixed point, all couplings run. The effective cosmological constant is large (~M_P^4), driving exponential expansion. As the universe expands and cools, the RG flow moves away from the fixed point toward the GR regime, ending inflation naturally.
+The original AS inflation model. Running Λ(k) and G(k) near the NGFP drive quasi-de Sitter expansion without an inflaton field — a pure quantum gravity effect.
 
-The cosmological constant at the fixed point lambda* ~ 0.3 is O(1), but flows to its tiny observed value lambda ~ 10^{-122} in the IR. This provides a *trajectory* connecting UV and IR, though it does not solve the CC problem (why this particular trajectory is selected).
+- **Paper:** Bonanno & Reuter, PRD 65, 043508 (2002)
+- **Mechanism:** Near the Reuter fixed point, the effective cosmological constant is large (~M_P^4), driving exponential expansion. As the RG flow moves away from the fixed point, inflation ends naturally.
+- **Predictions for r:** NOT sharply predicted — operates in Einstein-Hilbert truncation (only G, Λ running). Perturbation spectrum approximately scale-invariant.
+- **Status:** Foundational but incomplete. The "r up to ~0.01" number commonly attributed to AS does NOT come from this model.
 
-### Specific Predictions (Different from QG+F/Starobinsky)
+### Class 2: Bonanno-Platania Modified Starobinsky (2015, 2018)
 
-- QG+F gives Starobinsky inflation with n_s ~ 0.967, r in [0.0004, 0.0035] from the R^2 term
-- AS inflaton-free inflation predicts: n_s from the fixed-point anomalous dimensions, r up to ~0.01
-- The transition scale epsilon_c from the Reuter fixed point to classical GR is a new parameter constrained by CMB
-- Nearly scale-invariant primordial spectrum (from near-fixed-point behavior)
-- The smallness of the R^2 coupling required for CMB normalization is *naturally* ensured by its vanishing at the UV fixed point
+RG improvement of R+R² gravity near NGFP generates a logarithmic correction:
 
-### Emergent Cosmological Model from Running G (Bonanno et al. 2024)
+    L_eff = M²_P R/2 + (a/2) R² / [1 + b ln(R/μ²)]
 
-Bonanno et al. (PRD 111, 103519, 2025; arXiv:2405.02636) derive a complete cosmological model:
-- G(epsilon) = G_N / (1 + epsilon/epsilon_c) where epsilon_c is a critical energy density
-- Universe naturally enters a quasi-de Sitter phase at early times
-- Flatness and horizon problems solved without inflaton
-- Primordial power spectrum: nearly scale-invariant, constrained by CMB data
-- Key prediction: epsilon_c encodes the Reuter fixed point value g* = 540pi/833
-- **Testable:** The transition scale epsilon_c can be constrained by CMB measurements
+Parameter b encodes anomalous scaling from NGFP critical exponents.
+
+- **Papers:** Bonanno & Platania, arXiv:1507.03375; Liu, Prokopec & Starobinsky, PRD 98, 043505 (2018)
+- **Key predictions:**
+  - b = 0: Reduces EXACTLY to standard Starobinsky. r ≈ 0.003, n_s ≈ 0.965
+  - b ~ 10⁻² (maximal AS correction): r ≈ 0.01, n_s ≈ 0.970–0.975
+  - Running α ≈ −5 × 10⁻⁴ (same as Starobinsky) across all b
+  - For N = 50–65 e-folds, r spans [0.003, 0.01] depending on b
+- **CRITICAL:** This is NOT inflaton-free. It IS Starobinsky inflation with a quantum gravity correction to the R² coefficient's running. The R² scalaron is still the inflaton.
+- **Note:** b is NOT uniquely determined by AS — it depends on truncation-dependent critical exponents at the NGFP.
+
+### Class 3: Starobinsky from AS RG Flow (Codello 2014, Gubitosi 2018)
+
+Multiple groups show the NGFP naturally generates Starobinsky inflation:
+
+- **Codello, D'Odorico, Pagani (2014):** Non-perturbative RG for G and R² coupling. At the NGFP, the R² coupling VANISHES, explaining the smallness of primordial fluctuations. Predictions identical to Starobinsky: r ≈ 0.003, n_s ≈ 0.965. Paper: PRD 91, 103530; arXiv:1311.0881
+- **Gubitosi, Ooijer, Ripken, Saueressig (2018):** f(R) truncation to second order shows trans-Planckian dynamics **flows to Starobinsky inflation** at early times, standard Einstein + Λ at late times. Same predictions as Starobinsky. Paper: JCAP 1812, 004; arXiv:1806.10147
+
+### Class 4: Emergent Inflaton Potential / Running G Cosmology (2024)
+
+- **Bonanno et al. (2024/2025):** PRD 111, 103519; arXiv:2405.02636. Running G(ε) = G_N/(1 + ε/ε_c) generates quasi-de Sitter phase. ε_c encodes g* = 540π/833. Focuses on background evolution; sharp r, n_s predictions not yet published.
+- **Pawlowski et al. (2024):** arXiv:2406.10170. Scalar-tensor AS inflation. Inflaton potential emerges from integration of RG flow equations starting at NGFP. Approximate plateau potential (not exactly R²). Predictions: n_s ≈ 0.965, r ≈ 0.005, N_ef ≈ 66 — compatible with observations and slightly above pure Starobinsky.
+
+### Summary Table: AS Inflation Predictions for r
+
+| Model | Truncation | Mechanism | r prediction | n_s |
+|-------|-----------|-----------|-------------|-----|
+| Bonanno-Reuter 2002 | Einstein-Hilbert | Λ(k) running, inflaton-free | Not sharply predicted | ~scale-inv. |
+| Bonanno-Platania 2015/18 | R+R²+log | Modified Starobinsky | 0.003–0.01 (b-dependent) | 0.965–0.975 |
+| Codello et al. 2014 | R+R²+R³ | Starobinsky from NGFP | ~0.003 | ~0.965 |
+| Gubitosi et al. 2018 | f(R) to O(R²) | RG flow → Starobinsky | ~0.003 | ~0.965 |
+| Bonanno et al. 2024 | Einstein-Hilbert+matter | Running G cosmology | Not computed | — |
+| Pawlowski et al. 2024 | Scalar-tensor | Emergent potential from RG | ~0.005 | ~0.965 |
+
+### Key Insight: Most AS Inflation IS Starobinsky Inflation
+
+The truly "inflaton-free" model is only the original Bonanno-Reuter (2002), which is the most primitive (Einstein-Hilbert truncation) and has the least sharp predictions. All refinements converge toward Starobinsky or Starobinsky-like inflation. The "r up to ~0.01" comes specifically from Bonanno-Platania's maximal b correction; the majority of AS inflation papers predict r ≈ 0.003, indistinguishable from QG+F.
 
 ### Discriminating Test: Tensor-to-Scalar Ratio
 
-If AS inflation gives r ~ 0.01, this is ~3x larger than QG+F's prediction -- distinguishable by next-generation experiments. If r < 0.004 is confirmed, this would *rule out* the simplest AS inflation models while being consistent with QG+F.
+See `cross-cutting/qgf-vs-as-cmb-discrimination.md` for full discrimination analysis. Summary: r > 0.005 favors Bonanno-Platania AS (large b) over QG+F; r < 0.003 favors QG+F; r ≈ 0.003 cannot distinguish them.
 
 ## Gravitational Vacuum Condensate and Running G at Cosmological Scales
 
@@ -70,7 +99,7 @@ The non-perturbative sector makes at least 4 predictions invisible to perturbati
 |-----------|----------------------|-----------|-----------|
 | Planck remnants | BR black holes from RG improvement | Via PBH dark matter, GW | 2030s (LISA) |
 | Running G at cosmic scales | Vacuum condensate (Hamber) | Precision cosmology | 2030s |
-| Inflation without inflaton | Reuter fixed point | r ~ 0.01 vs r ~ 0.003 | 2030s (CMB-S4) |
+| Inflation without inflaton | Reuter fixed point (Bonanno-Reuter 2002 only; most AS models predict Starobinsky) | r ~ 0.003–0.01 vs r ~ 0.0004–0.0035 | 2030s (LiteBIRD) |
 | Higgs mass prediction | SM at the fixed point | Already confirmed (125 GeV) | Done |
 
 ## Connections to Particle Physics
@@ -87,4 +116,4 @@ Research has progressed from theoretical foundations toward empirical testing, b
 
 Martin Reuter and Frank Saueressig: "Quantum Gravity and the Functional Renormalization Group: The Road towards Asymptotic Safety" (Cambridge Monographs on Mathematical Physics).
 
-Sources: CERN Courier; Bonanno et al. (2024/2025, PRD 111, 103519; arXiv:2405.02636); Hamber (arXiv:1707.08188; Symmetry 11(1), 87, 2019); Shaposhnikov & Wetterich (2010)
+Sources: CERN Courier; Bonanno & Reuter (2002, PRD 65, 043508); Bonanno & Platania (arXiv:1507.03375); Liu, Prokopec & Starobinsky (2018, PRD 98, 043505); Codello, D'Odorico, Pagani (2014, PRD 91, 103530; arXiv:1311.0881); Gubitosi et al. (2018, JCAP 1812, 004; arXiv:1806.10147); Bonanno et al. (2024/2025, PRD 111, 103519; arXiv:2405.02636); Pawlowski et al. (2024, arXiv:2406.10170); Hamber (arXiv:1707.08188; Symmetry 11(1), 87, 2019); Shaposhnikov & Wetterich (2010); exploration-004-inflation-prediction-reconciliation

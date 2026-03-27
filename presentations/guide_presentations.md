@@ -11,15 +11,35 @@ Presentations are built on request to context-load Sean back into the project. T
 ### Visual Style
 - **Lighter backgrounds.** Slides should render inside a distinct square/card with a lighter background, clearly separated from the dark page behind it. Not dark-on-dark.
 - **Less text.** Keep slides sparse. Visuals and short labels over paragraphs. If it feels like reading, there's too much.
+- **Make it fun.** Slides should feel visually engaging, not like a document. Use color, layout variety, and whitespace generously. Avoid walls of text even if the content is interesting.
+- **Short chunks, not walls.** When you land on a slide, the first impression should be clean and scannable — headlines, labels, small cards. Never hit the reader with a block of text. If detail is needed, put it behind a collapsible section (collapsed by default). Use `<details><summary>` or a click-to-expand pattern so the reader can drill in when they want to and skip when they don't. The slide should feel light on arrival and rich on demand.
+- **Lively and visual.** Use color-coded tags, stat boxes, visual hierarchies, icons, and layout variety to keep energy up. Each slide should feel different from the last. Monotonous card grids are boring — mix up the layout.
 
 ### Structure
-- **Table of contents first.** Every presentation starts with a slide showing what's coming — the topics/sections at a glance. Lets Sean orient before diving in.
+- **Table of contents first.** Every presentation starts with a slide showing what's coming — the topics/sections at a glance. Lets Sean orient before diving in. The TOC should look good — chunk items into logical sections with clear visual grouping, not just a flat list.
+- **TL;DR slide right after the TOC.** The second slide should be a quick summary of what happened and what the takeaway is. Hit the reader with the punchline up front so they have context for everything that follows. Keep it to a few short bullets — no detail, just the story arc and conclusion.
 - **Keep it short.** ~6-8 slides max unless Sean asks for more. 12 is too many. Each slide should earn its spot.
+- **One message per slide.** Each slide should focus on one major takeaway. If a slide is making two or three points, split it up. Combining the pipeline diagram, stats, parameters, AND information flow into one slide is too much — those are separate messages.
+
+### Project Emojis
+
+Every presentation should include its project emoji in the title slide and meta.json title. These help Sean context-switch quickly between projects.
+
+| Project | Emoji | Character |
+|---------|-------|-----------|
+| Adversarial Logic | ⚔️ | crossed swords |
+| Atlas | 🌍 | globe |
+| Rhyme-Eval / Feedback Looper | 🔄 | cycle |
+| BBEH Benchmark | 📊 | bar chart |
+
+Use the emoji at the start of the presentation title (e.g., `"title": "⚔️ Adversarial Logic — Run 004"`). Also include it visually on the title slide itself.
 
 ### Content
 - **Light on history.** The presentation catches you up on where things are *now*. Historical context is for the timeline stage — don't repeat it heavily in the presentation. A brief "how we got here" is fine, but it shouldn't dominate.
 - **Don't extrapolate.** Stick to Sean's stated goals and actual results. Don't invent priorities, suggest directions, or editorialize about what should happen next unless Sean has said it. Present what is, not what could be.
-- **Methodology over science.** The focus is on how the system performed, not the physics details. Science results are context, not the story.
+- **Methodology over science.** The focus is on how the system performed, not the physics details. Science results are context, not the story. Gear content toward a non-physicist audience.
+- **Conclusions over raw data.** Don't dump all the information — focus on what was learned and what the takeaways are. Data supports the conclusion, it doesn't replace it.
+- **Show how information flowed.** When presenting results from a multi-agent system, highlight what was passed between agents, how knowledge accumulated, and where the system self-corrected. The structure's performance is the story.
 - **Make agents visible.** When a system uses agents, make it immediately clear how many agents are involved and what each one's job is. You should be able to glance at a slide and instantly know the agent architecture.
 - **No quotes.** Don't put quotes in presentations. Present insights directly.
 
@@ -45,3 +65,34 @@ Every presentation must include a per-slide feedback mechanism so Sean can leave
 
 ### Reference implementation
 See `building_models/presentations/getting-caught-up-on-old-attempts-2026-03-25/` for a working example with all the CSS, JS, and server code.
+
+## Unified Server & Index Page
+
+All presentations are served from a single server at `presentations/serve.py` (port 8900). It auto-discovers any subdirectory containing `presentation.html` and serves them all at `/{folder-name}/`. The index page at `/` lists all presentations.
+
+### meta.json (Required)
+
+Every presentation folder must include a `meta.json` with a human-readable display title. The index page uses this — do NOT rely on the folder name for the display title.
+
+```json
+{"title": "Your Nice Title Here"}
+```
+
+- The folder name is for filesystem organization (kebab-case, with date suffix like `my-presentation-2026-03-25`)
+- The `meta.json` title is what the user sees in the index — make it readable
+- Optionally override the date: `{"title": "...", "date": "Mar 25"}`
+- The server auto-extracts the date from the folder name suffix, so you only need the `date` field if you want to override it
+
+### Viewed / New tracking
+
+The index page tracks which presentations have been viewed. Unviewed presentations show a blue "New" badge and are full opacity; viewed ones are dimmed. This is tracked in `viewed.json` at the presentations root and synced to localStorage.
+
+- The index page has two sections: **New** at the top and **Reviewed** below, separated by a divider. Unviewed presentations appear in New with a blue badge; viewed ones are moved to the Reviewed section and dimmed.
+- Clicking a presentation card automatically marks it as viewed
+- New presentations appear with a "New" badge by default — no action needed from the creating agent
+- Both sections are always visible, even when empty
+- The `viewed.json` is the source of truth; localStorage merges on load
+
+### Feedback API paths
+
+When served via the unified server, feedback API paths are automatically rewritten from `/api/feedback` to `/{folder-name}/api/feedback`. No changes needed in presentation HTML — the server handles the rewrite. Individual `serve.py` files per presentation are no longer needed but can be kept as standalone fallbacks.

@@ -361,3 +361,178 @@ Automatically updated at midnight PST.
   https://www.youtube.com/watch?v=9MsquXirw6E
 - **Why “The Size of the Universe” Is a Misleading Question** — Imagine The Universe (23:51, 671 views)
   https://www.youtube.com/watch?v=aL27k_RiQN8
+
+## 2026-03-26 — 86 videos
+
+- **Quantum Mechanics One Shot Revision | Padekar Sir | D PHYSICS** — D PHYSICS - CSIR NET, GATE & JEST (2:22:00, 886 views)
+  https://www.youtube.com/watch?v=l8PE37tR9lQ
+- **The Most Terrifying Quantum Truth Nobody Wants To Face** — Quantum Reflex (19:28, 726 views)
+  https://www.youtube.com/watch?v=jiN4oyYJfCw
+- **Scientists Just Discovered Life Is Running a Quantum Computer** — Julia McCoy (15:38, 33.8K views)
+  https://www.youtube.com/watch?v=4JBiYzjJSh4
+- **Do structures exist without humans to perceive them?** — Mental Reps (45, 983 views)
+  https://www.youtube.com/watch?v=uBDyE01wG5k
+- **Quantum Physics and Customer Experience | Ken Hughes** — Ken Hughes | The King of CX | Keynote Speaker (10:58, 2.6K views)
+  https://www.youtube.com/watch?v=eq0V0dtQ6nI
+- **Why Light Is BACKWARDS In Time? The Secret Will REVERSE Reality** — Feynman Light Files (28:52, 1.4K views)
+  https://www.youtube.com/watch?v=InfB3Xf_nBs
+- **3I/ATLAS Just REPELLED All Space Junk — Clearing Orbit Around Earth | Michio Kaku** — ASTRO AVI (21:38, 2.0K views)
+  https://www.youtube.com/watch?v=RvcTEl3LUyc
+- **A Particle Vanished Inside Stanford's Accelerator — Here's Why That Matters** — Luminox (19:17, 569 views)
+  https://www.youtube.com/watch?v=l0Z-H7iov2k
+- **Quantum Consciousness: Do you know how your mind surprisingly controls the universe?   #1** — Documentary With Sleep (52:34, new)
+  https://www.youtube.com/watch?v=qbtys3akexk
+- **3I/ATLAS Just SHADOWED ISS for 4 Hours — Following Station Exactly | Michio Kaku** — ASTRO AVI (24:36, 955 views)
+  https://www.youtube.com/watch?v=_l7U3d-TNOs
+- **The Universe Was Always Empty... We're the Accident!** — Boring Space (2:04:17, 607 views)
+  https://www.youtube.com/watch?v=Mrrfjxin3X4
+- **What Stops White Dwarfs and Neutron Stars From Collapsing?** — The Sleeping Physicist (1:00:47, 478 views)
+  https://www.youtube.com/watch?v=Ero_chYt6RE
+- **Quantum Theory Seminar** — Quantum Theory Seminar (46:11, 41 views)
+  https://www.youtube.com/watch?v=aos1frvPvu8
+- **The Most Mind Bending Problem in Physics - Double Slit Experiment | Quantum World Ep. 2** — Entropian (11:26, 51 views)
+  https://www.youtube.com/watch?v=ZbQvQ27-kjw
+- **Hydrogen: The Simplest Atom That Powers the Universe | Quantum Physics, Fusion & Future of Energy** — Science Information (8:04, 5 views)
+  https://www.youtube.com/watch?v=PIWIxzF09ZI
+- **These are the Coldest Atoms of All Time** — 632nm (32, 17.4K views)
+  https://www.youtube.com/watch?v=8yh3vDJhtcg
+- **Starseed Quantum Physics!** — Noti Fawkes (5:03, 6 views)
+  https://www.youtube.com/watch?v=VHGoQzDioio
+- **Quantum Physics और सनातन ज्ञान #QuantumPhysics  #Navratri #SpiritualWisdom #EnergyUniverse** — SBTLifeCoach (16, 118 views)
+  https://www.youtube.com/watch?v=0En81hbTMn4
+- **Most Probable Topics For UPSC Pre 2026 | AI Summit, Quantum Tunneling & Digital Currency | StudyIQ** — StudyIQ IAS (26:01, 2.4K views)
+  https://www.youtube.com/watch?v=JKwERt1Q8Yg
+- **Across Frequencies The Quantum Spirit Dialogue** — Quantum Spirituality (39, 14 views)
+  https://www.youtube.com/watch?v=5wJw0vhs8EU
+- **7 Science Book Excerpts (Hindi)** — SyllabuswithRohit (1:00:05, 6.1K views)
+  https://www.youtube.com/watch?v=396hDfNdTkc
+- **This Should Not Be Possible** — Ecletic S (5:08, 30 views)
+  https://www.youtube.com/watch?v=rDPdqAn0W9o
+- **WE DO NOT EXIST? | Mind-Blowing Theory Richard Feynman** — Feynman Physics (18:27, 2 views)
+  https://www.youtube.com/watch?v=3p3grbX8h4w
+- **3I/ATLAS Just Released a Mysterious Liquid… And It Formed Perfect Spheres** — Henry Noah (29:59, 868 views)
+  https://www.youtube.com/watch?v=Ld1_44NEn3E
+- **CHOSEN ONE‼️You WON without knowing it was a WAR 🥱 — JESUS watched it all… SMILING! 😊🔥** — The Illuminator (33:51, 4.3K views)
+  https://www.youtube.com/watch?v=fwBQz7gP2go
+- **I Manifested Multiple Lottery Wins & Multiple Things Using Quantum Physics (Step-by-Step)** — Gabriel Coetzee (8:28, 519 views)
+  https://www.youtube.com/watch?v=-RnqUeFGuM4
+- **Episode #32 — “The Language of Reality— Is Mathematics the Code of the Universe?”** — AI Speaks (4:15, new)
+  https://www.youtube.com/watch?v=gBC7KF7flTU
+- **Introduction to Atoms  : Part 3 CBSE NCERT 12th Physics** — Decoding Universe with Scientists (7:31, 10 views)
+  https://www.youtube.com/watch?v=kb_LGu2qA3w
+- **The Quantum Realm, Explained Simply | Sleepy Science with Galactic Chad** — Galactic Chad (48:25, new)
+  https://www.youtube.com/watch?v=PIsgjLkNcIk
+- **UG-TET-நியமனத்தேர்வு-PHYSICS-UNIT-6-QUANTUM MECHANICS -THEORY OF RELATIVITY - IMPORTANT TOPIC -13** — UG - TET - நியமனத்தேர்வு ( SGT & BRTE ) (2:04, 5 views)
+  https://www.youtube.com/watch?v=5smH_2yh9fk
+- **7PM |Quantum Mechanics for Absolute Beginners  | Week 01 | Day 03** — iCodeGuru (54:48, 15 views)
+  https://www.youtube.com/watch?v=6QMaAybcKD4
+- **WARNING: Once You Master This State, The Archons Can't See You** — Beyond the Veil (28:40, 4.3K views)
+  https://www.youtube.com/watch?v=bDQyf_6g5LE
+- **Application of quantum Mechanics** — Self Feeler Indoctrinate & Defender (5:36, 1 views)
+  https://www.youtube.com/watch?v=hfVGcOmRqhM
+- **Project Looking Glass - They Already Know You Can Shift Timelines** — Brian Scott (33:31, 6.0K views)
+  https://www.youtube.com/watch?v=882A-PeE2Dk
+- **Bsc 4th Semester Chemistry 2026 🔥 Quantum Mechanics & Analytical Techniques 75 Important MCQ** — Nitin Kumar Gupta Classes (14:12, 6 views)
+  https://www.youtube.com/watch?v=gcXiunISBhU
+- **Topic – QUANTUM MECHANICSAssignment-1-Part-2** — Physics Vision by Dr. Isha Gawri (1:02:13, 86 views)
+  https://www.youtube.com/watch?v=O70t-T8G8yQ
+- **The Universe Is One Giant Mind (And Physics Proves It) | Roger Penrose Reveals** — Quantum Cosmos Decoded (21:06, 162 views)
+  https://www.youtube.com/watch?v=G2fq4b6zvEM
+- **3-0 The Roadmap of Chapter 3, Basic Quantum Mechanics, OS7160** — 張殷榮教授的課程 (6:49, 7 views)
+  https://www.youtube.com/watch?v=Z91OO9Qw8gg
+- **We Broke Reality With a Single Experiment  #shorts #space #universe #cosmicexploration** — Space Science Documentary (1:16, 31 views)
+  https://www.youtube.com/watch?v=j8dCHD1m6wc
+- **IMU Chemistry Part 3 🔥 | Stoichiometry to Quantum Theory | Complete Revision 🚀** — The_Scientific_Rishu (30:16, new)
+  https://www.youtube.com/watch?v=CKTgYeWCO4M
+- **Gautam Satishchandran (Princeton)  “Generalized Entropy is von Neumann Entropy"** — Bousso Group at Berkeley (1:06:14, 94 views)
+  https://www.youtube.com/watch?v=zlZCywJRmIM
+- **Casey McCoy (Yonsei University): The measurement problem in quantum cosmology** — Geneva Symmetry Group (1:32:00, 1 views)
+  https://www.youtube.com/watch?v=U5NGFf2xSnc
+- **3I/ATLAS Just CALIBRATED With Pulsars — Matching Their Exact Timing Signals | Michio Kaku** — ASTRO AVI (23:45, 2.6K views)
+  https://www.youtube.com/watch?v=66ytngDCNTI
+- **UG-TET-நியமனத்தேர்வு-PHYSICS-UNIT-6-QUANTUM MECHANICS -PARTICLE IN A 1 D BOX - IMPORTANT TOPIC -14** — UG - TET - நியமனத்தேர்வு ( SGT & BRTE ) (2:17, 25 views)
+  https://www.youtube.com/watch?v=bIPPNjMOxoI
+- **What is a Tau Particle Actually Made Of?** — Still Science Lab (1:56:35, 228 views)
+  https://www.youtube.com/watch?v=kFKJjCwbOZw
+- **The Limits of Quantum Computing in Fluid Dynamics (Quantum vs CFD Turbulence)** — Quantum Articles (7:31, 1 views)
+  https://www.youtube.com/watch?v=9IQo11OrdUU
+- **Microsoft's New Quantum Computer Breakthrough** — Dr. Anu Asokan | Stem A Chip (1:29, 199 views)
+  https://www.youtube.com/watch?v=ZGZZKM5zW9Y
+- **The Quantum Paradox: What Supply Chain Leaders Need To Know** — Supply Chain Now (1:01:18, 28 views)
+  https://www.youtube.com/watch?v=YLCNU4GPzwY
+- **Quantum Chips Explained: The Race to Build the World’s Most Powerful Computer** — Concept Vault Education (8:21, 1 views)
+  https://www.youtube.com/watch?v=cbOnlM2k5VA
+- **Can quantum computers help us achieve fusion on Earth? Watch to find out!** — The Quantum Kid (26, 47 views)
+  https://www.youtube.com/watch?v=lO7_C5wgVoE
+- **The Quantum Computer Race: The Machine That Could Break the Internet** — FutureShock Lab (4:42, 2 views)
+  https://www.youtube.com/watch?v=i0F4lA6eeOE
+- **Quantum Entanglement Explained in 20 Seconds! 🤯⚛️ #computerscience #quantumcomputing** — BILAL OFFICIAL (18, 313 views)
+  https://www.youtube.com/watch?v=gwSTfSYKCYs
+- **Incentivizing Demand-Side Response Through Discount Scheduling Using Hybrid Quantum Optimization** — TQ Science (1:39, 3 views)
+  https://www.youtube.com/watch?v=vUG5okCWFSo
+- **Quantum Computing Threat: Your Data is Not Safe** — GovExec+ (42, 87 views)
+  https://www.youtube.com/watch?v=Ipf_5oEbI80
+- **Asia's Quantum Race: China Claims 1M× Faster Than Google** — Asia Tech Macro (17:28, 9 views)
+  https://www.youtube.com/watch?v=Y8lPQgJCJ18
+- **China Sells World's First Commercial Atomic Quantum Computer: Hanyuan-1 Hits Market Milestone** — Boreal Times (6:22, 3 views)
+  https://www.youtube.com/watch?v=asahfgQRUUA
+- **A New Era of Information ✨ Understanding Qubits Before Sleep** — Sleep Story for Grown Ups (1:25, 3 views)
+  https://www.youtube.com/watch?v=1gMNsmXboA8
+- **Quantum networking: Issues, challenges and opportunities | ITU Journal | Webinar** — ITU (1:39:17, 26 views)
+  https://www.youtube.com/watch?v=T84rXg_fO6E
+- **Metrology, Not Mythology: How to Control Noise in Quantum Computers | John Martinis** — Quantum Machines (25:32, 59 views)
+  https://www.youtube.com/watch?v=f972JRlDYPw
+- **From universal genetic code. & Nautilus design towards future quantum computers and AI** — jean-claude Perez (8:43, 6 views)
+  https://www.youtube.com/watch?v=066dsOyV-Iw
+- **Why Governments Are Secretly Replacing All Encryption Right Now #shorts  #privacyrevolution** — SmartStack (1:49, new)
+  https://www.youtube.com/watch?v=N1_UEWRkZpc
+- **Quantum Fit for Manufacturing: A Conversation on Solving Complex Production Challenges** — D-Wave (41:15, 134 views)
+  https://www.youtube.com/watch?v=zsE7alBl2_w
+- **Quantum Spin Liquids A State Of Matter That Never Freezes** — Quantum Space (1:37:25, 13 views)
+  https://www.youtube.com/watch?v=P2Q_RSsqRVY
+- **Advanced Shuttle Strategies for Parallel QCCD Architectures** — TQ Science (1:44, new)
+  https://www.youtube.com/watch?v=gxyH_zYYnYg
+- **Janet Rehberg on Why Utilities Are Moving Into Quantum** — Fierce Network TV (4:50, 20 views)
+  https://www.youtube.com/watch?v=EUOdYI-7FlQ
+- **Creating and Visualizing Quantum Circuits - Live Session** — WISER (NA, new)
+  https://www.youtube.com/watch?v=2k7nYKyK16o
+- **How Ultrafast Lasers Create Quantum Entanglement | Simple Animation** — Group of Laser Development [GoLD] (40, 6 views)
+  https://www.youtube.com/watch?v=bBpoSOnn6DE
+- **Grover’s Algorithm-accelerated Quantum Treasure Hunt | Quantum Lings Camp 6.1** — QuantumLings (4:47, 3 views)
+  https://www.youtube.com/watch?v=iDfEp6j21P8
+- **Quantum Hidden Champions: Think Quantum #shorts #QuantumComputing #QuantumTech #QuantumLearning** — School of Quantum (50, 28 views)
+  https://www.youtube.com/watch?v=dqFh1zrdzXg
+- **Michael Freedman: Compression Is All You Need** — SAIR (31:59, 3.3K views)
+  https://www.youtube.com/watch?v=RhA6hnh-peM
+- **Inside America’s Secret Quantum Arms Race** — ShadowTechUSA (10:37, new)
+  https://www.youtube.com/watch?v=h5cQy7m15ho
+- **Quantum Computing Explained in Telugu 🔥 Future Tech That Can Break Internet Security!** — Mahitechtalks (5:57, 19 views)
+  https://www.youtube.com/watch?v=zFBBru8AvY8
+- **Why Your Brain Does NOT Create Consciousness | Leonard Susskind** — The Universe of Susskind (31:12, 277 views)
+  https://www.youtube.com/watch?v=7JjDgdT2PWU
+- **Susskind at 85: How the Father of String Theory Sees the Future of Physics in 2026** — Susskind Speaks (27:20, 697 views)
+  https://www.youtube.com/watch?v=cZoteIBdN88
+- **Parallel Worlds Exist? Here's the Evidence | Scientific Evidence Explained | Sir David Attenborough** — Everything You See Is a Beautiful Illusion (2:40:40, 6 views)
+  https://www.youtube.com/watch?v=3d2JHIf3Sw4
+- **Quantum Theory** — Luca Bondi (6:10, 1 views)
+  https://www.youtube.com/watch?v=M86Os-YVhs0
+- **Nikola Tesla Discovered the Akashic Field After Meeting a Swami (Sanskrit Physics)** — Quantum Spirituality Lab (17:38, 1.9K views)
+  https://www.youtube.com/watch?v=ujcTDM4aUCQ
+- **The Science That Makes Parallel Universes IMPOSSIBLE | Leonard Susskind** — Divine Intelligence (19:29, new)
+  https://www.youtube.com/watch?v=DXLtZwpd-Y4
+- **This Is What the Quantum Field Is Waiting for You to Realize** — Quantum Pulse (27:11, new)
+  https://www.youtube.com/watch?v=HBvgl3xcnDI
+- **The Most Terrifying Solution to Schrödinger's Cat Nobody Wants to Be True | Brian Greene** — Brian Greene Teaching (47:28, 10 views)
+  https://www.youtube.com/watch?v=y3nYYridAFc
+- **45 Time Symmetric Quantum Paradoxes Flowing Backward Through the Void to Fall Asleep** — Quantum Paradoxes (3:46:51, 5 views)
+  https://www.youtube.com/watch?v=95Gd8sp-Su8
+- **Why We Will Never Know What Caused the Big Bang | Leonard Susskind** — Divine Intelligence (18:36, 4 views)
+  https://www.youtube.com/watch?v=HGjwI2XUlLU
+- **What if shortcuts through space actually exist? (Einstein’s Theory)** — Beyond The Particles (3:48, 1 views)
+  https://www.youtube.com/watch?v=8jjd2KsKNhY
+- **Energy That Appeared From Nowhere** — The Emerging Sciences Stories (9:20, new)
+  https://www.youtube.com/watch?v=hXV9TPfbs70
+- **Wolfgang Pauli & Jung: Synchronicity, Physics & the Psyche Explained** — Tarot Assistant (19:04, 4 views)
+  https://www.youtube.com/watch?v=hRZN5PW9cTw
+- **10 Physics Glitches That Suggest We Live in a Simulation** — Orbiting Truths (9:39, 4 views)
+  https://www.youtube.com/watch?v=JGHvcnrgUnA

@@ -48,6 +48,8 @@ Experiments testing whether gravity can entangle two massive objects (Bose 2017,
 
 **For QG+F:** BMV tests whether gravity is quantum at all — a binary yes/no question. QG+F predicts YES, but so do ALL quantum gravity theories. At BMV energies (E ≪ M₂), only the massless graviton mediates; fakeon and scalaron don't contribute. **Cannot discriminate QG+F from alternatives.**
 
+**2025 controversy:** Marletto et al. (*Nature*, 2025) claim classical gravity + QFT can generate entanglement — disputed by Diósi, Oppenheim et al. If correct, the standard GIE test for quantum gravity is compromised. Separately, the Diósi-Penrose model (classical gravity + modified QM) independently predicts GIE with entanglement surviving >1 day. The classical/quantum boundary for gravity remains unsettled. See [`gravitize-the-quantum/classical-gravity-entanglement-controversy.md`](../gravitize-the-quantum/classical-gravity-entanglement-controversy.md) for details.
+
 ## First GW Ringdown Constraints on Quadratic Gravity (2025)
 
 **arXiv:2506.14695 (June 2025):** First gravitational wave ringdown constraints on quadratic-gravity theories. Analyzed GW150914, GW190521, GW200129 with ringdown-only SNR ≲ 7. 90% C.I. bounds on coupling length scales: ℓ < 34-49 km (depending on variant). Constrains M₂ > 5×10⁻¹² eV — **40 orders of magnitude weaker** than QG+F's expected M₂ ~ M_Planck, but an important methodological milestone.

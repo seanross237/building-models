@@ -19,6 +19,7 @@ A toolkit for autonomous research agents working on quantum gravity, unified the
 | [VALIDATION-TESTS.md](VALIDATION-TESTS.md) | Structured test suite, Tier 1-5 | Progressive validation as your theory matures |
 | [AGENT-INSTRUCTIONS.md](AGENT-INSTRUCTIONS.md) | How to run tests and report results | First time using this suite, or when unsure about process |
 | [DATA-SOURCES.md](DATA-SOURCES.md) | Real datasets you can download and analyze | When you want to test predictions against actual data (LIGO, Planck, etc.) |
+| [KNOWN-ANOMALIES.md](KNOWN-ANOMALIES.md) | Catalog of 39 known anomalies and open tensions across physics | When choosing what to explain, checking if a problem is real, or finding data sources for a specific anomaly |
 
 ## Quick Start
 
