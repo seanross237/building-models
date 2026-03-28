@@ -690,3 +690,148 @@ Automatically updated at midnight PST.
   https://www.youtube.com/watch?v=qBd90QZ_MBc
 - **3I/ATLAS Just BOUNCED Off Magnetic Field — Ricocheted Into Different Path | Michio Kaku** — ASTRO AVI (26:00, 807 views)
   https://www.youtube.com/watch?v=C1AgMaKarOI
+
+## 2026-03-28 — 71 videos
+
+- **Modern physics is forcing us to rethink existence | Michelle Thaller: Full Interview** — Big Think (1:16:43, 94.5K views)
+  https://www.youtube.com/watch?v=RGbZsE7qFgw
+- **Black Holes May Not Be What We Thought | World Science Festival** — World Science Festival (1:00:24, 10.9K views)
+  https://www.youtube.com/watch?v=bhK849bDqik
+- **Michio Kaku Explains Time Like You've Never Seen It Before** — The universe of Michio Kaku (41:08, 1.4K views)
+  https://www.youtube.com/watch?v=3hHTzSbVP6c
+- **Why the Universe Has No Beginning - The Physics Nobody Explains** — Physics with Feynman (45:13, 2.4K views)
+  https://www.youtube.com/watch?v=RVXN_yq19PA
+- **Aliens Use Black Holes to Travel. String Theory of Multiverse & Interstellar Travel | Michio Kaku** — Dr. Mayim Bialik (12:32, 16.0K views)
+  https://www.youtube.com/watch?v=xuvxuQ7bImQ
+- **Welcome To The Final Layer of The Quantum Field** — Quantum Reflex (19:46, 1.3K views)
+  https://www.youtube.com/watch?v=X-8k2fqBg2M
+- **Stanford Scanned the Buga Sphere Twice in 2026 — The Second Time, Something Had Moved** — Luminox (19:56, 746 views)
+  https://www.youtube.com/watch?v=0eUD-ECH93g
+- **Why the Muon Might Point Beyond the Standard Model** — The Sleeping Physicist (1:08:28, 834 views)
+  https://www.youtube.com/watch?v=MByBFSlgXYY
+- **Why Did Feynman Say 'Nobody Understands Quantum Mechanics'?** — Feynman Reborn (42:16, 516 views)
+  https://www.youtube.com/watch?v=h0ZImI_rgtU
+- **3 Free Energy Inventors That Were ELIMINATED & SUPPRESSED** — Universe Inside You (40:56, 9.4K views)
+  https://www.youtube.com/watch?v=6mKgWDp4C1U
+- **What CERN Found Inside a Particle Collision Rewrote Physics** — Luminox (21:11, 630 views)
+  https://www.youtube.com/watch?v=9GfhnhR5LTw
+- **Antimatter & The Quran: Physics Reveals “Creation in Pairs” | Quran & Science** — Where Faith Leads (26:06, 1.3K views)
+  https://www.youtube.com/watch?v=F-H6Jbl5zbE
+- **10 Theories That Prove Our Universe Is Not Real** — Astro Matt (20:57, 31.4K views)
+  https://www.youtube.com/watch?v=zzEKPhakEBU
+- **Your Future Self Is Rewriting Your Past Right Now—Quantum Retrocausality Explained | Penrose** — Quantum Cosmos Decoded (21:26, 67 views)
+  https://www.youtube.com/watch?v=c07POrCoBmg
+- **Quantum Mechanics Finally Makes Sense — If Donald Hoffman Is Right** — The Hoffman Universe (29:16, 12 views)
+  https://www.youtube.com/watch?v=DzeGQXvv7ag
+- **12 Quantum Mysteries Science Still Can’t Explain** — Space Guy (25:50, 2.2K views)
+  https://www.youtube.com/watch?v=6N1VmQaIc-o
+- **3I/ATLAS Just POURED Particles Toward Earth — Stream Visible From Ground | Michio Kaku** — ASTRO AVI (24:50, 837 views)
+  https://www.youtube.com/watch?v=c9fqWViryF4
+- **Why Does The Universe DELETE Time? My Answer Will COLLAPSE Your Reality** — Feynman Light Files (29:53, 683 views)
+  https://www.youtube.com/watch?v=cKtHk66tses
+- **Feynman's Physics Explains Quantum Mechanics (No Math Required)** — Feynman's Physics (21:33, 15 views)
+  https://www.youtube.com/watch?v=WnhrIKwtvNc
+- **3I/ATLAS Just SNAGGED Passing Meteor — Catching It Mid-Flight | Michio Kaku** — ASTRO AVI (25:02, 450 views)
+  https://www.youtube.com/watch?v=wZtQ0UpZXy4
+- **Rutherford Told Bohr This Cannot Work And It Became The Foundation Of Physics** — Mathematically Proven (15:17, 2.2K views)
+  https://www.youtube.com/watch?v=5iHGHLhV64k
+- **Feynman Reveals What Physics Gets Completely Wrong** — Feynman Laureate (39:05, 14 views)
+  https://www.youtube.com/watch?v=l5JAj0HJZWk
+- **Who am I ？ Quantum restructuring ?** — Explore New Horizons (13:17, 1 views)
+  https://www.youtube.com/watch?v=B8VR6UGmHLI
+- **This Is Why Quantum Computers Are Impossible to Build #quantum #physics #challenge** — TheBlissInTheDarkness☄️ (50, 36 views)
+  https://www.youtube.com/watch?v=f01SIGvspWk
+- **QUANTUM PHYSICS  Part 13  [Solved Past paper Questions]** — Learn PHYSICS with IBM (35:48, 1 views)
+  https://www.youtube.com/watch?v=m9HQMZknAaQ
+- **Physics and the Paranormal, Part II, with Jack Sarfatti** — New Thinking Allowed with Jeffrey Mishlove (27:47, 518 views)
+  https://www.youtube.com/watch?v=uh5j0ty05dg
+- **QUANTUM PHYSICS  Part 11  [Solved Past paper Questions]** — Learn PHYSICS with IBM (31:58, new)
+  https://www.youtube.com/watch?v=hrWrFWebc8o
+- **QUANTUM PHYSICS  Part 12  [Solved Past paper Questions]** — Learn PHYSICS with IBM (32:10, new)
+  https://www.youtube.com/watch?v=SZShFit7M0E
+- **QUANTUM PHYSICS  Part 19  [Solved Past paper Questions]** — Learn PHYSICS with IBM (29:41, 1 views)
+  https://www.youtube.com/watch?v=eWHuTaGiPlE
+- **QUANTUM PHYSICS  Part 15  [Solved Past paper Questions]** — Learn PHYSICS with IBM (33:38, 1 views)
+  https://www.youtube.com/watch?v=Es1Ds1klyY0
+- **You'll See This When It's Finally Your Turn to SHIFT Your TIMELINE** — Quantum Shift (32:29, 3.2K views)
+  https://www.youtube.com/watch?v=VbvqtRU0Jlo
+- **Quantum Mechanics vs Black Holes: Why No One Can Hack the Universe?** — Quantum Articles (6:32, 2 views)
+  https://www.youtube.com/watch?v=w0M3Xn25fDQ
+- **Quantum Mechanics Says You’ve Already Died — Infinite Times  Science For Sleep** — Science for Sleep Channel. (1:07:49, 4 views)
+  https://www.youtube.com/watch?v=N2RI-Ix9oq8
+- **It's About To Get Weird !** — Michael DellaRocca | Our Everyday Lives (19:09, 6.2K views)
+  https://www.youtube.com/watch?v=hR8fv7fHSdA
+- **Why 40°C Water Transfers MORE Energy Than You'd Survive From Any Other Source** — Physics with Feynman (44:05, 467 views)
+  https://www.youtube.com/watch?v=2_RlPzqfvQ0
+- **Double-Slit Experiment in Pilot-Wave Theory Visualized** — Imagining Physics by Anssi Kuha (7:45, 281 views)
+  https://www.youtube.com/watch?v=HwbhDchFQq0
+- **Death Isn’t The End — Physics Proves Something Strange Happens** — Feynman Method (16:00, 45 views)
+  https://www.youtube.com/watch?v=deZr3gjnCCo
+- **Why ELECTRONS Don’t Orbit Atoms — Feynman’s Strange Reality** — Feynman’s Blackboard (27:07, 32 views)
+  https://www.youtube.com/watch?v=rTIRYliHd5M
+- **Be ready, your reality is about to shift suddenly with quantum thinking** — JAMIE LAUDER (12:39, 1.9K views)
+  https://www.youtube.com/watch?v=lKu34tt3j1I
+- **LIVE DEBATE [Your God is Fiction] 3-26-2026** — DZ Debates (8:21:33, 23.7K views)
+  https://www.youtube.com/watch?v=bTNfGrrwTX8
+- **SMBC Session: Quantum Computing - A New Discovery of a Two-Layer Quantum Structure** — FinTech Observer (31:26, 4 views)
+  https://www.youtube.com/watch?v=EpKVvLh2Zc4
+- **Quantum Computing: How Scientists Finally Fixed Its Biggest Flaw [Breakthrough]** — Fernandes' Science (6:45, 4 views)
+  https://www.youtube.com/watch?v=JNCOQTRHAts
+- **Shor’s Algorithm and Scaling Quantum Circuits | Craig Gidney Google Quantum AI** — 632nm (2:03:47, 406 views)
+  https://www.youtube.com/watch?v=lnHgYvkkC9o
+- **CS Colloquium: "When to Use Quantum Algorithms," with Eric Anschuetz** — CU Engineering Academics (1:04:21, 26 views)
+  https://www.youtube.com/watch?v=S7OTwN55p7A
+- **Why We Invested: Quantum Computing Infrastructure** — Alumni Ventures (1:31, new)
+  https://www.youtube.com/watch?v=zcUpVq3Ox-Q
+- **The New Quantum Era | Quantum Computing, Techology and Innovation** — The New Quantum Era (2:21, 5 views)
+  https://www.youtube.com/watch?v=ZeQg0bPV84I
+- **Quantum Nudges #behavioraleconomics #quantummechanics #nadge** — Coco_Highlights (7:26, 4 views)
+  https://www.youtube.com/watch?v=UZazk4e-wmE
+- **Quantum computing: capturing opportunity in an emerging ecosystem** — WisdomTree in Europe (11:51, 6 views)
+  https://www.youtube.com/watch?v=jT5LwO-fw8I
+- **Quantum + AI = Singularity? The Brutal Engineering Reality** — OsirisPerseus (11:56, 1 views)
+  https://www.youtube.com/watch?v=mXpDLK_zu3s
+- **QUBT Stock (Quantum Computing Inc.) QUBT Stock Analysis | March 30, 2026** — Candle Point (54, 6 views)
+  https://www.youtube.com/watch?v=AIwDTqvGKjY
+- **The fast-approaching future of quantum computing with Colorado Governor Jared Polis** — Western Governors' Association (26:47, 42 views)
+  https://www.youtube.com/watch?v=yDPcX7i5gDQ
+- **CS Colloquium: "A Systems Approach to Fault-Tolerant Quantum Computing," with Joshua Viszlai** — CU Engineering Academics (50:32, 8 views)
+  https://www.youtube.com/watch?v=FdXUdiF_Baw
+- **Quantum Entanglement Isn’t Free 😳 What Are We Really Paying?** — Quantum Articles (6:36, 2 views)
+  https://www.youtube.com/watch?v=Q75vM2kavS4
+- **The problem at the heart of quantum computing** — Pebble Finder (3:28, 2 views)
+  https://www.youtube.com/watch?v=eixdYJb9CUY
+- **Intuitive Quantum Computing: Deterministic Computing (Part 1)** — khoraski (7:16, 23 views)
+  https://www.youtube.com/watch?v=hTwhYxkaChg
+- **The Biggest Lie in Quantum Right Now** — Anders Indset (59, 66 views)
+  https://www.youtube.com/watch?v=E4WtMAQhE6c
+- **Quantum computing** — Emerson Braun Dev (55, 24 views)
+  https://www.youtube.com/watch?v=N1eY9C-RSUY
+- **Quantum-Safe Security Explained by Palo Alto Networks** — Palo Alto Networks (27:13, 33.1K views)
+  https://www.youtube.com/watch?v=oWyVgddJyyg
+- **The Theoretical Foundations of Quantum Computing: Beyond the Classical Bit** — Rambler's Tales (7:42, new)
+  https://www.youtube.com/watch?v=aUxZKk5k63M
+- **Quantum Computing &  Post-Quantum Cryptography** — Advanced Persistent Threats (APT) & Cyber Security (1:01:52, 8 views)
+  https://www.youtube.com/watch?v=noZzh0hSSbg
+- **Quantum Webinar - Pathways to Hybrid Quantum and High-Performance Computing - Bruno Abreu, PhD** — Northeast Big Data Innovation Hub (1:05:34, 8 views)
+  https://www.youtube.com/watch?v=csAynpclACw
+- **How will quantum computing affect AI?** — AI Diatribe (33, 304 views)
+  https://www.youtube.com/watch?v=oRiQkd2kGXI
+- **Probing Quantum Telecloning on Superconducting Quantum Processors** — TQ Science (1:43, new)
+  https://www.youtube.com/watch?v=Xeoo4pMiW68
+- **Quantum computing firm Xanadu debuts on TSX** — The Canadian Press (1:43, 170 views)
+  https://www.youtube.com/watch?v=TYVgoWgLVIo
+- **Einstein Was WRONG About This! 😱⚛️ #shorts  #bilalofficial_21 #quantumcomputing** — BILAL OFFICIAL (21, 1.4K views)
+  https://www.youtube.com/watch?v=JX9CbyyM2uA
+- **Technology and the Bomb: Evaluating Proliferation Risks in a Rapidly Evolving World** — Carnegie Endowment (1:00:30, 431 views)
+  https://www.youtube.com/watch?v=AgFk1ci2Vaw
+- **A Comparative Study on Solving Optimization Problems With Exponentially Fewer Qubits** — TQ Science (1:50, 23 views)
+  https://www.youtube.com/watch?v=4DDqFK0eVq8
+- **We Need To Figure This Out Now... Or We're In Trouble (Oil, Markets, Crypto)** — Bankless (1:00:43, 3.3K views)
+  https://www.youtube.com/watch?v=JYQFJpiM5P0
+- **Quantum Evidence Explains: How Consciousness is Immortal** — Theodore, the Researcher (2:17:33, 175 views)
+  https://www.youtube.com/watch?v=eBoSX22K_0I
+- **The Quantum Field Only Responds When You FINALLY Stop Looking Away** — Quantum Watcher (1:23:28, 14 views)
+  https://www.youtube.com/watch?v=0ODGIi3Wf_o
+- **"Feynman: Atoms Communicate Faster Than Light — And That's Allowed"** — Unveiling Science (25:29, 304 views)
+  https://www.youtube.com/watch?v=0Tv-SZdyF-o
