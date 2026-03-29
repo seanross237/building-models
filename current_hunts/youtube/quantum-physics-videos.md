@@ -835,3 +835,140 @@ Automatically updated at midnight PST.
   https://www.youtube.com/watch?v=0ODGIi3Wf_o
 - **"Feynman: Atoms Communicate Faster Than Light — And That's Allowed"** — Unveiling Science (25:29, 304 views)
   https://www.youtube.com/watch?v=0Tv-SZdyF-o
+
+## 2026-03-29 — 67 videos
+
+- **Quantum Mind Theory Explains How Your Brain Shapes Reality | Explained Through Michio Kaku’s Insight** — Understanding Kaku’s Universe (1:01:33, 1 views)
+  https://www.youtube.com/watch?v=f0FXbjq7AHU
+- **Why I'm Quitting Physics Youtube** — Looking Glass Universe (12:57, 45.9K views)
+  https://www.youtube.com/watch?v=iz7sCKbW8KM
+- **Quantum Physics Proved Something So Disturbing, Einstein Refused To Believe It** — Thinking Like Feynman (29:05, 4 views)
+  https://www.youtube.com/watch?v=wuW6r1ce4dg
+- **The 7 Hidden Layers of Reality — Most Physicists Only Know 3** — Physics with Feynman (41:35, 1.1K views)
+  https://www.youtube.com/watch?v=U9bD9SBJSag
+- **Civilizations at the End of Time - How Intelligence Survives the Death of the Universe** — Isaac Arthur (3:42:40, 11.8K views)
+  https://www.youtube.com/watch?v=y5VCAjI_pq8
+- **Why SOLID Matter Is an Illusion — Quantum Physics Explains** — Physics Explained Simply (19:31, 2 views)
+  https://www.youtube.com/watch?v=39PWqTfWMLM
+- **"Feynman Explains: What If Aliens Found a Way?"** — The Sum Over Histories (19:27, 7.6K views)
+  https://www.youtube.com/watch?v=5m89vWdCVEc
+- **Consciousness Collapses the Wave? | The Physics Nobody Agrees On** — Infinite Now (37:00, 98 views)
+  https://www.youtube.com/watch?v=1R3xTUZ1abU
+- **Quantum Mechanics: is free will an illusion?** — Renderium (14:42, 1 views)
+  https://www.youtube.com/watch?v=MvrdyLIHqr4
+- **Your Quantum Blueprint: Decoding Life Purpose** — Quantum Sovereignty (7:01, 1 views)
+  https://www.youtube.com/watch?v=za8zEFcTOJ4
+- **Quantum Superposition: Particles in Two Places?! #QuantumPhysics #MindBlown #SchrodingersCat #fyp** — Minor Wonder (22, 40 views)
+  https://www.youtube.com/watch?v=Pr6DiCDXxD8
+- **3I/ATLAS Just BENT All Incoming Light — Creating Lens Effect Around Itself | Michio Kaku** — ASTRO AVI (23:24, 747 views)
+  https://www.youtube.com/watch?v=DlOqFXZ9cAQ
+- **3I/ATLAS  Harnesses Fuel the Universe Forbids? | Atlas Oracle** — Atlas Oracle (17:56, 1.0K views)
+  https://www.youtube.com/watch?v=jrq2_ktElaU
+- **Dirac Proved Space Is Made of Numbers (Not Geometry)—Here's The Shocking Math | Nobel Winner** — Quantum Cosmos Decoded (20:42, 78 views)
+  https://www.youtube.com/watch?v=7H5fFHjicPU
+- **4.6 Billion-Year-Old Space Rock is Deadly Near-Earth Orbit!** — Bright Side News (3:00:15, 846 views)
+  https://www.youtube.com/watch?v=XgDyXYETnao
+- **Your Brain Is Rewriting Your Past — Every Time You Remember It** — Physics After Dark (23:35, 42 views)
+  https://www.youtube.com/watch?v=6b4rB45UHt4
+- **Why You're Technically a Different Person Than You Were 7 Years Ago — The Physics Nobody Explains** — Feynman Explains and 2 more (23:56, 144 views)
+  https://www.youtube.com/watch?v=k4dXtbNhx0s
+- **What Is the Planck Scale, Really? | Leonard Susskind** — SK Explains the Universe (22:43, 763 views)
+  https://www.youtube.com/watch?v=QuJ7tN6Oi_s
+- **Quantum Tunneling Explained: Why Particles Walk Through Walls (And Power the Sun)** — Shapath Explains Physics (3:23, 1 views)
+  https://www.youtube.com/watch?v=C3eA18wnYUg
+- **Quantum Natural Language Processing Explained | Future of AI & Quantum Computing** — Professor Rahul Jain (1:55, 1 views)
+  https://www.youtube.com/watch?v=Wc1o_dGAL4Q
+- **The_Code_of_Life | Three in One | Scripture Insight** — Three in One | Scripture Insight (8:35, new)
+  https://www.youtube.com/watch?v=rK7ILuPHA4g
+- **QP 11 | Double-Slit Experiment | प्रकाश की द्वैत प्रकृति | Birth of Quantum Mechanics | Aftermaths** — MathematiGS = Mathematics + GS (10:08, 11 views)
+  https://www.youtube.com/watch?v=U1DPNd8-pxU
+- **WATER Breaks The Rules of Physics — Roger Disturbing Answer** — Penrose Cosmos (12:56, 1 views)
+  https://www.youtube.com/watch?v=2axmScc9LwI
+- **Compress the Entire Universe to This Size — The Math is Insane!** — DigitalUniverse (5:28, 3 views)
+  https://www.youtube.com/watch?v=rW1JO5Y_-Xw
+- **Feynman Explains How Does Light Choose to Be a Wave or a Particle** — The Jesus Way (44:24, 28 views)
+  https://www.youtube.com/watch?v=M6c3jgdoiBU
+- **Quantum Physics | Introduction to Quantum Physics | Class 12th Physics NBF | Aqib Rehman** — BACKBENCHERS ACADEMY (3:23, 18 views)
+  https://www.youtube.com/watch?v=arYSGG2eBus
+- **Richard Feynman Explains Time Like You’ve Never Seen Before** — Unstoppable Mind (1:46:12, new)
+  https://www.youtube.com/watch?v=qLknLW1HKCY
+- **I Found the Pattern Behind Everything (Encontrei o padrão por trás de tudo)** — Ecletic S (7:02, 28 views)
+  https://www.youtube.com/watch?v=XWVYLWf755E
+- **¿Dónde Nace el Pensamiento?** — Lo Que No Sabemos (1:15:32, 3.6K views)
+  https://www.youtube.com/watch?v=YpoNEHIVtZA
+- **Schrödinger’s Cat Explained — What It Really Means** — Plain Explain (9:17, 2 views)
+  https://www.youtube.com/watch?v=jw8P8hI_Xyc
+- **⁠Why Your Old Life Fights Hardest Right Before It Ends - Quantum Mechanics Explanation** — Quantum Shift (34:29, 2.6K views)
+  https://www.youtube.com/watch?v=YfK_4cqr5KU
+- **The Sun Has Never Burned — Not Even Once In 5 Billion Years** — Feynman Mastery (40:26, 3 views)
+  https://www.youtube.com/watch?v=Q_fIcTNac80
+- **Black Holes Aren't Black** — Spin Electron (4:21, 1 views)
+  https://www.youtube.com/watch?v=6JvlW9hSA-0
+- **Rally Urdaibai 2026 by QMM** — Quantum Mechanics Motorsport (7:42, 751 views)
+  https://www.youtube.com/watch?v=P7uzYtKS_zo
+- **Proof of Observer Dependent Reality  #shorts #space #universe** — Space Science Documentary (1:23, 113 views)
+  https://www.youtube.com/watch?v=jlL4PIVPn1U
+- **Live Twitch Lesson: Irish Physicists and Irish Physics** — TinyToxicTofu (5:27:23, 66 views)
+  https://www.youtube.com/watch?v=M_yNa6EBa6E
+- **Postulates of Classical & Quantum Mechanics | Bose Einstein & Fermi-Dirac Statistics | Vis#12(a)** — Pak MN academy (13:50, 18 views)
+  https://www.youtube.com/watch?v=nMfEmxJjiXQ
+- **🔥 “The Deepest Layer of Reality… Where Physics Completely Breaks”** — The Physics Lab (17:25, new)
+  https://www.youtube.com/watch?v=CXl51jIDduU
+- **Quantum Computing vs Encryption: Why ‘Harvest Now, Decrypt Later’ Changes Everything** — Tan Kian Hua (10:04, 4 views)
+  https://www.youtube.com/watch?v=dxAJQsNMdEA
+- **Google's Willow Achieves the IMPOSSIBLE** — Click Future (13:16, 574 views)
+  https://www.youtube.com/watch?v=m6Z87JqrRGI
+- **What's REALLY Holding Back Quantum Computing?** — WhatIs? Defined: From Science to Society (5:18, 10 views)
+  https://www.youtube.com/watch?v=CM7In_IdI38
+- **Fusion Energy Meets Quantum Computing: Inside a Tokamak + MIT Expert Explains** — The Quantum Kid (22:20, 67 views)
+  https://www.youtube.com/watch?v=hvIW-3GYGhc
+- **Why the Gripen is Now the World's Most Electronically Secure Fighter** — skyjet wings (17:14, 2.0K views)
+  https://www.youtube.com/watch?v=Kot1nIylRfE
+- **You've Been Wrong About Quantum Computers This Whole Time #quantum #science #physics** — TheBlissInTheDarkness☄️ (1:03, 13 views)
+  https://www.youtube.com/watch?v=miZOHABQEtU
+- **The Problem At The Heart Of Quantum Computing** — Pebble Finder (3:28, 4 views)
+  https://www.youtube.com/watch?v=ISqBu9aGAFk
+- **The resonance of quantum** — Quantus Network (51, 528 views)
+  https://www.youtube.com/watch?v=I0PagNa2ijg
+- **Intuitive Quantum Computing: Probabilistic Computing (Part 2)** — khoraski (10:15, 20 views)
+  https://www.youtube.com/watch?v=xFNkRNbffV4
+- **Google Warns: Quantum Computers Will Break ALL Internet Encryption by 2029 😱** — The 2040 Almanac (1:34, 5 views)
+  https://www.youtube.com/watch?v=K84A9IVy2Z4
+- **A year of Distributed Quantum Computing Research** — María Gragera Garcés (7:15, 66 views)
+  https://www.youtube.com/watch?v=C0ky5r9c4cQ
+- **The Quantum Apocalypse is Coming... Are You Ready? #shorts** — Hype Digest (2:53, 1 views)
+  https://www.youtube.com/watch?v=-KYOTR04xoQ
+- **Why I Collect Millennials: Insights on Tech Trends** — John Lothian News (JLN) (19, 2 views)
+  https://www.youtube.com/watch?v=HdUNgZDFiIA
+- **8 Game-Changers (not just AI): Civizational Reset and Paradigm Shifts** — Gerd Leonhard (4:35, 67 views)
+  https://www.youtube.com/watch?v=Vr0DOPXsMDc
+- **Quantum Meets HPC: Towards a Sustainable and Open Hybrid HPCQC Stack - Martin Schulz** — HPSF (29:51, 2 views)
+  https://www.youtube.com/watch?v=vmd1gMvdTh4
+- **Session 4 - Quantum Computing and Cybersecurity Lecture Series (March 21, 2026)** — Quantum Computing Society of the Philippines (1:50:54, 2 views)
+  https://www.youtube.com/watch?v=6OzeatqdA-k
+- **The Wise Capitalist: 10 Stocks Under $5 — Which One Could Be the Next Palantir?** — Wise Capitalist (14:47, 13 views)
+  https://www.youtube.com/watch?v=SW890HkEG9g
+- **We're Barely Scraping The Tip Of The Iceberg When It Comes To Reality, The Physics of Faith** — Moviemaker Ministry (9:31, 5 views)
+  https://www.youtube.com/watch?v=bTyJi_7BpDU
+- **Matrices to Multiverses | Math - O - Mania 2026** — VIT Mathematical Association Student Chapter (NA, new)
+  https://www.youtube.com/watch?v=m8gxJvK7mvQ
+- **IIT Madras Launches Arvind Raghunathan Centre for Theoretical Computer Science for AI & Research** — NT Media (2:58, 13 views)
+  https://www.youtube.com/watch?v=42q1wgZ_pRs
+- **Your Phone Knows You’re Depressed: Why Emotional AI is the End of Privacy** — AXIOM FUTURE (4:45, 1 views)
+  https://www.youtube.com/watch?v=7aCKK4F0aUU
+- **Ethereum: Finally Going Home** — Investing Geek Tv (7:25, new)
+  https://www.youtube.com/watch?v=odggvMqXeOs
+- **Ubuntu 26.04 Beta: GNOME 50, Rust Tools & Wayland** — ASK Linux (14:34, 311 views)
+  https://www.youtube.com/watch?v=qakbmZXfhAQ
+- **Rain Sounds for Sleeping - 99% Instantly Fall Asleep Fast with Relaxing Rain and Thunder at Night** — Sleeping In the Rain (NA, new)
+  https://www.youtube.com/watch?v=t628nFiXumw
+- **Rain In Village 99% Rain Sounds for Deep Sleep Success Tonight 😴 Fall Asleep Fast 💤 Relax Instantly** — Sleeping In the Rain (NA, new)
+  https://www.youtube.com/watch?v=YS7xoISxGck
+- **Rain Sounds for Sleeping - 99% Instantly Fall Asleep Fast with Relaxing Rain and Thunder at Night** — Sleeping In the Rain (10:54:12, 1 views)
+  https://www.youtube.com/watch?v=ULw6gPcaAnY
+- **30 Theories About the Universes Quantum Consciousness Beyond Matter** — Lost in Lagrange (2:00:29, new)
+  https://www.youtube.com/watch?v=_OjPpNkFkDA
+- **Dropping Markovianity pairing Quantum theory and classical probability** — KhanTheRath (19:07, 1 views)
+  https://www.youtube.com/watch?v=v-GjJfaIK6o
+- **Quantum Chakra & Kundalini Energy Mastery** — Dr. Aravind Padmaraju (1:47:41, 47 views)
+  https://www.youtube.com/watch?v=nCepoE3uBUw
