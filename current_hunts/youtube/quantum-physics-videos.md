@@ -972,3 +972,156 @@ Automatically updated at midnight PST.
   https://www.youtube.com/watch?v=v-GjJfaIK6o
 - **Quantum Chakra & Kundalini Energy Mastery** — Dr. Aravind Padmaraju (1:47:41, 47 views)
   https://www.youtube.com/watch?v=nCepoE3uBUw
+
+## 2026-03-30 — 75 videos
+
+- **Why Most Quantum Computers are Worthless at Room Temperature | What The Future** — CNET (7:20, 5.9K views)
+  https://www.youtube.com/watch?v=2L3kPFQOKvg
+- **🧠Quantum physics proves that your energy creates a ripple effect⬆️ #spirituality #manifestation** — D1v1ne M1ndset (52, 1 views)
+  https://www.youtube.com/watch?v=ihCi2gNqzos
+- **Once You Learn These Quantum Experiments, Everything You Know Stops Making Sense** — Quantum Reflex (20:35, 681 views)
+  https://www.youtube.com/watch?v=RqxY5XExujc
+- **What a Quantum Field Really Is… And Why Particles Exist** — Sleep On Space (2:16:23, 1.1K views)
+  https://www.youtube.com/watch?v=jMk4crXfK4Y
+- **Science For Sleep | Planck Length: The Smallest Distance That Can Exist** — Physics With William (3:02:01, 1.0K views)
+  https://www.youtube.com/watch?v=8sUfa31wuCY
+- **DISTANCE IN SPACE IS ILLUSION | Richard Feynman** — Feynman Explains and 2 more (22:19, 3.6K views)
+  https://www.youtube.com/watch?v=bl_-NabDnFo
+- **Why Does Magnetism ERASE Light? My Answer Will DESTROY Your Reality** — Feynman Light Files (26:44, 1.3K views)
+  https://www.youtube.com/watch?v=PCeGG7KOFhE
+- **THE CONSTANT OF RATIONAL FAITH: The Conscious Observer and the Physics of Reality (Full audioBook)** — Path of Knowledge (2:59:37, 317 views)
+  https://www.youtube.com/watch?v=Lg1RzbJWYFg
+- **Einstein's Lost Theory Just Got Proven Right (And It Changes Everything) | Quantum Truth** — Quantum Cosmos Decoded (22:06, 226 views)
+  https://www.youtube.com/watch?v=U1nTmkALs-s
+- **The Emerald Tablet: The One Paragraph That Changed the World** — Secret Origins (26:05, 4.0K views)
+  https://www.youtube.com/watch?v=YS3J0lCws2E
+- **The Strange Particle That Reshaped Physics** — The Sleeping Physicist (1:12:48, 1.2K views)
+  https://www.youtube.com/watch?v=ivcesonE3co
+- **All of Quantum Physics Explained in 1 Video** — Space and Sleep (2:11:27, 11 views)
+  https://www.youtube.com/watch?v=Bf29LT0PvnY
+- **Physicists Just Discovered Space Might Not Be Real || And It Changes Everything** — Feynman Laureate (51:09, 2 views)
+  https://www.youtube.com/watch?v=B4n-BGiJLVw
+- **The Scariest Scenario in Quantum Physics** — Echoes of the Blue Marble (22:22, 26 views)
+  https://www.youtube.com/watch?v=5Y3ovJkaVsc
+- **Why We Still Don’t Know What Spacetime Is — Feynman Explains** — The Physics According to Feynman (56:19, 1.2K views)
+  https://www.youtube.com/watch?v=H8LhhkQpqgo
+- **This 5 min Video Will Change The Way You See The Universe! | Double Slit Experiment Explained** — Imagine Physics (5:01, 16 views)
+  https://www.youtube.com/watch?v=F-1ceEdlLtE
+- **If You're Seeing This, Your Quantum Halo Is Activating (You're Becoming UNTOUCHABLE!)** — Quantum Discipline (32:29, 10.4K views)
+  https://www.youtube.com/watch?v=1lek1iuR57U
+- **Something Cool Happens at Low Temperatures (Feynman Was Right)** — The Deep Physics (12:15, 3 views)
+  https://www.youtube.com/watch?v=j_l65xOwh3c
+- **Your Brain Is A Quantum Computer  And Scientists Just Proved It** — Earth Scope Studio (43:06, 4 views)
+  https://www.youtube.com/watch?v=QSaz-2cVV74
+- **Why Quantum Gravity Is the Biggest Unsolved Problem in Physics** — Science for Deep Sleep (3:26:34, 1 views)
+  https://www.youtube.com/watch?v=eqZErvABOgk
+- **The IMPOSSIBLE LAW of Quantum Physics: What Is SUPERPOSITION?** — Growing Science (2:00:42, 3 views)
+  https://www.youtube.com/watch?v=MkO5a-NsVaY
+- **Quantum Mechanics Is Right About Everything. That's The Problem.** — Levinne's universe (17:35, 37 views)
+  https://www.youtube.com/watch?v=At9ugO8NBdo
+- **Reality Doesn't Exist Until You Look At It! 🤯⚛️ #shorts  #bilalofficial_21 #quantumcomputing** — BILAL OFFICIAL (36, 1.4K views)
+  https://www.youtube.com/watch?v=5BhsNIE6VLM
+- **Why Do Magnets Work? Feynman's Answer Will SHATTER Your Reality | Physics Explained** — Feynman Method (22:06, 12 views)
+  https://www.youtube.com/watch?v=5VKLFTn9o1k
+- **What If Your Thoughts Shape Your Reality? | Mindset, Quantum Physics & Manifestation** — Machanja Boys Podcast (1:19:21, 7 views)
+  https://www.youtube.com/watch?v=b0EMkTUFnkc
+- **QUANTUM PHYSICS & NEUROSCIENCE TRIVIA** — LadyStringers (4:38, 1 views)
+  https://www.youtube.com/watch?v=KCO_bw_1EFQ
+- **Quantum Physics of Kriya Yoga** — Modern Kriya (13:54, 186 views)
+  https://www.youtube.com/watch?v=uXUTTF05XJ0
+- **The Physics That Proves Consciousness is Real** — Susskind Explained Universe (19:24, 276 views)
+  https://www.youtube.com/watch?v=W9kXxlnEnBk
+- **WHY CAN'T YOU TRULY DIE? — String Theory Explains Life After Death ?** — The Feynman Equation (32:13, 598 views)
+  https://www.youtube.com/watch?v=fbk6XPwmHiY
+- **What Is the Planck Scale, Really? | Leonard Susskind** — Cosmic Imagination Studio (19:36, 24 views)
+  https://www.youtube.com/watch?v=NYCEtFlhzeo
+- **Why Does Mass Create Gravity? Richard Feynman’s Answer Changes Everything** — Feynman’s Blackboard (24:14, 55 views)
+  https://www.youtube.com/watch?v=-IDLsptV7E8
+- **Why Reality as We Know It Doesn’t Exist _ Leonard Susskind** — Universe Unfolded (12:21, 5 views)
+  https://www.youtube.com/watch?v=UnkH1kiOj4s
+- **Unifying Quantum Reality** — STARstream Research | A.I. interpretation (8:11, 1 views)
+  https://www.youtube.com/watch?v=9kdn5AM9f24
+- **3I/ATLAS Just REDIRECTED Lightning Bolts — Sending Them Into Space | Michio Kaku** — ASTRO AVI and Astro IN (24:57, 1.7K views)
+  https://www.youtube.com/watch?v=q8YHT-Z7HOM
+- **Upcoming Event: "Extra Credit" lecture on music and quantum mechanics** — Mark Van Raamsdonk (1:24, 14 views)
+  https://www.youtube.com/watch?v=Ub817CKoico
+- **Once You Meet the Quantum Watcher, Your Entire Life SHIFTS FOREVER** — Quantum Watcher (1:32:30, 8 views)
+  https://www.youtube.com/watch?v=yIM7TG6wgFI
+- **Does Reality Exist Before Measurement? | A Quantum Philosophy Audiobook** — Broken Certainties (2:07:31, 4 views)
+  https://www.youtube.com/watch?v=DfWy4FOLx2U
+- **The Quantum Shroud: Was the Resurrection a Hologram?** — The Nexus of Paradox (1:22, new)
+  https://www.youtube.com/watch?v=sPxFZB_RPs4
+- **The One Equation That Explains Everything The Impossible Dream of Reality** — Thinking Like Feynman (16:14, 3 views)
+  https://www.youtube.com/watch?v=WdAeZXgPvAc
+- **Why Causality Is Not Fundamental | Leonard Susskind** — Susskind Style Science (23:19, 103 views)
+  https://www.youtube.com/watch?v=Cr6l2pXXTEQ
+- **Horizon Quantum (HQ) CEO on IPO, Commercial Adoption & RGTI Ties** — Schwab Network (9:48, 507 views)
+  https://www.youtube.com/watch?v=0w5pI5r03Lk
+- **Quantum Data Science: When Quantum Computers Solve the Impossible** — DataSuperiority (6:15, 3 views)
+  https://www.youtube.com/watch?v=SpRn32_SvYo
+- **When the Universe Talks Back, Tesla, Google Willow, and the Echo That Changed Everything** — AI Curator X (6:25, 6 views)
+  https://www.youtube.com/watch?v=tuKP50z8qGI
+- **LIMDD A Decision Diagram for Simulation of Quantum Computing Including Stabilizer States** — HonHai (Foxconn) QC meeting (1:05:48, 3 views)
+  https://www.youtube.com/watch?v=rHyFkDBxpd4
+- **Quantum Computing's Capabilities and our Modern Finance** — Noctis Finance (3:50, 1 views)
+  https://www.youtube.com/watch?v=Z_9DZAbfR9g
+- **Computer vision meets quantum - a look into the bloch sphere** — IDS Imaging Development Systems GmbH (23:58, 3 views)
+  https://www.youtube.com/watch?v=tNkshwizxb8
+- **OpenQuantum ( Bittensor SN48) – The Future of Quantum Computing is Decentralized.** — Subnet Summer (1:53, 7 views)
+  https://www.youtube.com/watch?v=W-TzuVEVIWg
+- **Intuitive Quantum Computing: Quantum Computing (Part 3)** — khoraski (15:30, 20 views)
+  https://www.youtube.com/watch?v=QknYrrKHcTA
+- **Using Quantum Statistics to create Work: The Pauli Engine and Beyond by Thomas Busch** — International Centre for Theoretical Sciences (NA, new)
+  https://www.youtube.com/watch?v=zu3a_ZXZVc0
+- **How Quantum Computers Actually Work 🤯** — Future Tech Tamil (5:53, 6 views)
+  https://www.youtube.com/watch?v=20YknBzHppo
+- **Quantum Computing Threat: Why Your Bank Is Not Safe 💻** — David D. Schein (32, 3 views)
+  https://www.youtube.com/watch?v=92zMuY1haGk
+- **What is QKAN? Is This the Next Big Thing in Quantum Machine Learning?** — Quantum Articles (7:42, 7 views)
+  https://www.youtube.com/watch?v=a7mKMd2WlfQ
+- **LIVE | Meet My Mentor 5: Basics of Quantum Computing & Risk Management | UPSIFS** — UPSIFS (NA, new)
+  https://www.youtube.com/watch?v=eb9-gYSqnww
+- **Are Small Cap Stocks Ready to Run? Iran, AI & 6 Big Earnings Previews** — Navellier Market Buzz (18:50, 1.9K views)
+  https://www.youtube.com/watch?v=clgNQTi6RWc
+- **Revolutionary Math What to start learning for Quantum Computing & AI today** — Dr.K.V.N.Rajesh (33:22, 92 views)
+  https://www.youtube.com/watch?v=OB6pWqokCG8
+- **Raoul Pal Just Warned That What's Coming For Bitcoin Will Shock Every Investor On The Planet** — Money Talks (16:40, 1.5K views)
+  https://www.youtube.com/watch?v=xoYAlLT5EAk
+- **(Podcast) Quantum Leap Is Your Data Ready for Post Quantum Cryptography** — Eddy Says Hi #EddySaysHi (18:58, 1 views)
+  https://www.youtube.com/watch?v=C9fuym4PQcY
+- **Why O and 1 are No Longer Enough: The Power of Qubits** — Planetary Curiosities (31, new)
+  https://www.youtube.com/watch?v=tNgQ9gYUO7g
+- **This Technology Can Break Every Password #CyberSecurity #FutureTech #AI** — Mystery World Secrets (3:54, new)
+  https://www.youtube.com/watch?v=zu-iWPbNKqQ
+- **[IonQ Analysis] [IonQ] "Even Google Stops Without Helium": The Quantum Computer Reversal Brought ...** — 나스닥 패밀리 (13:22, new)
+  https://www.youtube.com/watch?v=Jt8kich51Bw
+- **WQCG, Episode LXXV, Michał Parniak, "Rydberg atoms: between quantum sensing and quantum computing"** — Fundacja Quantum AI (1:13:27, 9 views)
+  https://www.youtube.com/watch?v=1vvcJggGFAM
+- **Your Texts Are Being Harvested Right Now #shorts** — Letspeak Quantum AI For All (1:05, 5 views)
+  https://www.youtube.com/watch?v=aVwoMtv5czA
+- **Learn English Story: Decoding Quantum Computing’s Everyday Impact | English Practice | Vintube Five** — vintube five (7:50, 1 views)
+  https://www.youtube.com/watch?v=qvVwtyDl9ok
+- **"Integrating the Qur'an with Artificial Intelligence and Quantum Computing"** — The Muslim Standards (33:46, 28 views)
+  https://www.youtube.com/watch?v=xon7o8N7GUY
+- **From Newton to ISRO | Interesting JEE Physics in Nature** — |Nimbus Education (13:01, 1.9K views)
+  https://www.youtube.com/watch?v=7W3dVuQ3zao
+- **My Digital Jesus | When AI Becomes God (Q-Day Prophits)** — Q-Day Prophits (3:13, 4 views)
+  https://www.youtube.com/watch?v=ZBH_8fWjGEY
+- **You’re Not Losing Your Job… You’re Losing the Old World (AI Explained)** — Future Ready (3:31, 16 views)
+  https://www.youtube.com/watch?v=hmb-vkHkZ2w
+- **Can You Really Compute Fibonacci Using Only Quantum Gates and Classical Logic?** — Quantum Articles (6:08, new)
+  https://www.youtube.com/watch?v=_tyIIGtLExE
+- **Quantum Immortality - The Terrifying Idea That You Can’t Die** — Cosmic Research (1:57:18, 5 views)
+  https://www.youtube.com/watch?v=NXP6CoswWIA
+- **Fall Asleep To The Science Of Time | No Mid-Video Ads** — Orbital Dreams (2:16:27, 184 views)
+  https://www.youtube.com/watch?v=HtN8qRyPkHs
+- **The Age of Scientism, and the Purge of Physicality from Physics** — The Dialectical (1:26:07, 1.3K views)
+  https://www.youtube.com/watch?v=wXk-r1uqpVg
+- **3I/ATLAS Just WRAPPED Around Uranus — Encircling Entire Planet Now | Michio Kaku** — Astro IN and ASTRO AVI (26:04, 900 views)
+  https://www.youtube.com/watch?v=KbIUWBuAjZk
+- **The Ancient Code: Was Sasanian Music Secretly Quantum Physics?** — Dark Discovery (6:35, 2 views)
+  https://www.youtube.com/watch?v=3h3aIzDIjFw
+- **Parmenides vs Heraclitus: The Conflict That Built Western Philosophy** — The Midnight Library and 2 more (12:50, 132 views)
+  https://www.youtube.com/watch?v=PxsDDiOiCQc
+- **Quantum Jumps: Why Change Sometimes Happens Overnight | The Quantum Slumber** — The Quantum Slumber (1:30:16, new)
+  https://www.youtube.com/watch?v=nOdCH6Q4J7o
