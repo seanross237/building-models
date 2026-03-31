@@ -1125,3 +1125,142 @@ Automatically updated at midnight PST.
   https://www.youtube.com/watch?v=PxsDDiOiCQc
 - **Quantum Jumps: Why Change Sometimes Happens Overnight | The Quantum Slumber** — The Quantum Slumber (1:30:16, new)
   https://www.youtube.com/watch?v=nOdCH6Q4J7o
+
+## 2026-03-31 — 68 videos
+
+- **Quantum Mechanics Contradicts Itself (and He Proved It)** — Curt Jaimungal (3:19:14, 11.6K views)
+  https://www.youtube.com/watch?v=6PJ8NI3v5Ss
+- **Daniel Harlow on What Quantum Gravity Teaches Us About Quantum Mechanics | Mindscape 349** — Sean Carroll (1:25:33, 8.0K views)
+  https://www.youtube.com/watch?v=ScCBj-kb9ME
+- **Why The Western Worldview Limits Human Potential** — Academy of Ideas (15:27, 18.3K views)
+  https://www.youtube.com/watch?v=fw2UqZMnuhU
+- **Quantum Physics Explains Lottery Wins (Nobody Talks About This)** — Mark Haughton (17:27, 1.9K views)
+  https://www.youtube.com/watch?v=fgI2b8IdhAk
+- **The Quantum Measurement Problem Is INSIDE Your Body — The Physics of Placebo** — Physics with Feynman (44:39, 239 views)
+  https://www.youtube.com/watch?v=kSBhDZwmSY8
+- **Physicist Brian Cox explains quantum physics in 22 minutes** — The Physics Breakdown (16:42, new)
+  https://www.youtube.com/watch?v=I7ybxqv2A5E
+- **What Physics Says About The Afterlife {PROF MICHIO KAKU ANALYSIS}** — Physics with Michio Kaku (25:24, 5 views)
+  https://www.youtube.com/watch?v=MjtlfUE0o4Y
+- **You Didn’t Imagine It — Quantum Physics Says Reality Really Did React to You** — Mindshift Protocol (42:08, 441 views)
+  https://www.youtube.com/watch?v=xWjyC-CK87c
+- **ALL OF QUANTUM MECHANICS explained in 8 Minutes** — Cole Nexus (8:47, 2 views)
+  https://www.youtube.com/watch?v=V-nuJWg2ALk
+- **The Most Interesting Relaxing Facts About Quantum Physics** — Sleep & Learn (22:10, 1 views)
+  https://www.youtube.com/watch?v=xT7uw1BoCP0
+- **"Why Quantum Mechanics Does NOT Require a Conscious Observer — Feynman Explains"** — Feynman Method (22:12, 7 views)
+  https://www.youtube.com/watch?v=b5eialqpLS0
+- **What Quantum Physics Says About LIMITS Of Control** — First Principles (18:24, new)
+  https://www.youtube.com/watch?v=BwHC_Gzur4c
+- **The Most Relaxing Facts About Cosmic Mysteries to Fall Asleep To — No Adverts** — Sleepy Science Channel (2:16:01, 8.0K views)
+  https://www.youtube.com/watch?v=0QMYxybYIdU
+- **The Simulation Glitch: Is Reality Just Code?** — The Nexus of Paradox (54, 3 views)
+  https://www.youtube.com/watch?v=PG4WLXDmrd8
+- **SPOOKY ACTION AT A DISTANCE | QUANTUM MECHANICS STUDY WITH ME #physicsclass #quantumphysics #books** — Baji and Physics (50, 4 views)
+  https://www.youtube.com/watch?v=EydcljRbSgk
+- **3I/ATLAS Just WIRED Itself to Earth's Grid — Connecting Directly to Power | Michio Kaku** — ASTRO AVI and Astro IN (25:16, 520 views)
+  https://www.youtube.com/watch?v=L8n-Yw-v-tY
+- **Why Teleportation Is Basically Fatal (According to Physics)** — Envisage Physics (15:22, 20 views)
+  https://www.youtube.com/watch?v=J18EDiDt0qo
+- **Quantum Physics CAN'T Save the Trinity (And Here's Why) | Matt Dillahunty & Dr. Blitz PhD** — The Line Edge (12:26, 2.1K views)
+  https://www.youtube.com/watch?v=MU8AzO6vRvw
+- **The Awakening Within Cells: Healing Breakthroughs No One Can Ignore | Dave Asprey & Jason Shurka** — Jason Shurka (1:01:27, 999 views)
+  https://www.youtube.com/watch?v=W5mW3-hwrdg
+- **Quantum Healing & Reiki: What Every Healer Needs to Know** — Reiki Alchemy With Katya Ki (4:11, 58 views)
+  https://www.youtube.com/watch?v=K8BE_DWGpDs
+- **If You Don't Know This, Faith Won't Work: THE 33-NODE VERTEBRAL ANTENNA. (FULL AUDIOBOOK)** — Path of Knowledge (2:19:04, 1.1K views)
+  https://www.youtube.com/watch?v=0NitfJi2PYY
+- **Magneto Moves Metal: Quantum Physics, Consciousness & the Science of Superhuman Powers** — UniquilibriuM (1:01:46, new)
+  https://www.youtube.com/watch?v=XI3EyN4ZK6E
+- **10 Physics Paradoxes That Suggest Reality Is Glitched** — How Factories Work (18:24, 29 views)
+  https://www.youtube.com/watch?v=YBpQJvwAdr8
+- **3I/ATLAS Just INFLATED Gas Bladder — Expanding Like Living Organism | Michio Kaku** — Astro IN and ASTRO AVI (25:51, 836 views)
+  https://www.youtube.com/watch?v=PQT-a9CBPL4
+- **Stop Forcing Change. Do This Instead.** — Sifu John Cogan (15:46, 41 views)
+  https://www.youtube.com/watch?v=67WP6f2U7hc
+- **Leonard Susskind on Black Holes as Quantum Bridges** — Susskind Explained Universe (20:18, 250 views)
+  https://www.youtube.com/watch?v=cl4P6crP68Y
+- **Guest: Audrey Rumbers** — Numbers and You (1:03:03, 252 views)
+  https://www.youtube.com/watch?v=p3OoimkJcAs
+- **US West Coast Faces Catastrophic Collapse From Hidden Fault Line** — Bright Side News (1:22:22, 915 views)
+  https://www.youtube.com/watch?v=1TZIirOtgq0
+- **Atomic Physics in ONE SHOT || All Concepts, Tricks & PYQ || NEET 2026** — PW NEET (2:21:50, 50.5K views)
+  https://www.youtube.com/watch?v=dreFqN-YNKM
+- **NEW Argument for God! - Uncertainty** — All Nations Apologetics (14:29, 6 views)
+  https://www.youtube.com/watch?v=QN1d6SGjPws
+- **The UPC–Quantum Bridge: A Clear Structural Resolution of the Measurement Problem** — ROCK N WOODWORKS (1:09:19, 5 views)
+  https://www.youtube.com/watch?v=I7CwKUBMMDc
+- **The Ultimate Nature of Consciousness, Quantum Mechanics, and the Fabric of the Universe by J. Gray** — Julie Wise (9:46, 9 views)
+  https://www.youtube.com/watch?v=n526nKEGT_A
+- **1-Development of quantum mechanics; potential steps and barriers; schrodinger eq for infinite well;** — PHYSICS MADE EASY (KOTA) (8:46, 3 views)
+  https://www.youtube.com/watch?v=p7blGI-ZoKc
+- **Leonard Susskind Last Lecture Changed Physics FOREVER — Here's What He Said** — Leonard Susskind Explains (12:41, 383 views)
+  https://www.youtube.com/watch?v=_VQmq9YJxz0
+- **Why Everything in the Universe Is Spinning  The Mind Boggling Truth Leonard Susskind Uncovered”** — Leonard Susskind Explains (10:51, 367 views)
+  https://www.youtube.com/watch?v=jEPkx5qXy4k
+- **HQSpectrum: NMR Software based on quantum mechanics** — HQS Quantum Simulations (3:00, 6 views)
+  https://www.youtube.com/watch?v=DWziPawZNVQ
+- **Creationism is FALSE!!! Disagree? Call Aron Ra & Aaron Adair| SkepTalk 03.30.26** — The Line (2:26:54, 6.6K views)
+  https://www.youtube.com/watch?v=ViyTVk_eGuk
+- **How Big Is TON 618 Really?** — Boring Science (2:45:59, 1.1K views)
+  https://www.youtube.com/watch?v=pNoWK0XAi4I
+- **The Quantum Version of You That Kept Shrinking Is GONE** — Quantum Flux (1:19:23, 3 views)
+  https://www.youtube.com/watch?v=hOaWYLusDlc
+- **This Pattern Appears Everywhere** — Ecletic S (7:02, 24 views)
+  https://www.youtube.com/watch?v=s17pcX3yOG0
+- **These Breakthrough Stocks Are Set to 10X — Here's Why 2030 Is the Deadline** — WallStreetZen (14:48, 1.4K views)
+  https://www.youtube.com/watch?v=wKQ4I_0woYg
+- **Buy Quantum Computing QUBT Dip: $17 Target + $1.6B Cash! | QUBT Stock Analysis** — Investing Talk Podcast (19:46, 60 views)
+  https://www.youtube.com/watch?v=nwSYP8d_TM8
+- **#IonQ Crashes 70% -- Where Is the Bottom for This Quantum Stock?** — Humble Market Timer (14:02, 133 views)
+  https://www.youtube.com/watch?v=EOIyvu798U0
+- **Quantum Computing and the Future of AI: An Interview with Eclipse** — UniquilibriuM (17:54, new)
+  https://www.youtube.com/watch?v=T983mNQLBMc
+- **Q&A | EP.117 | Quantum Computing, Nummus Aeternitas & Crypto ETP Selection** — Eugenio Benetazzo (1:03:57, 307 views)
+  https://www.youtube.com/watch?v=FJ6qHwPoTpI
+- **Is Bitcoin Dead? Quantum Computing vs. The 80K Bull Run 🚀** — FX Strategies Asia (57, 3 views)
+  https://www.youtube.com/watch?v=zMjiGuWq3GU
+- **D-Wave Quantum QBTS: $30M Deals to $45 Explosion! QBTS Stock Analysis** — Smart Wealth With Joshua (16:28, 62 views)
+  https://www.youtube.com/watch?v=gyPgrWP1IjE
+- **Quantum Computing, Inc. (QUBT) Stock Analysis | Investment Review: Valuation, SWOT & more** — MARKETSnap (11:06, 8 views)
+  https://www.youtube.com/watch?v=lLYPmyn_w-8
+- **Michio Kaku Reacts to a Breakthrough in Quantum Artificial Intelligence** — Neon Comet (13:19, 8 views)
+  https://www.youtube.com/watch?v=EqTrr-yNs_M
+- **IQM becomes the first listed European quantum computing company: Jan Goetz, CEO & Co-Founder at IQM** — Scaling-Europe (19:29, 37 views)
+  https://www.youtube.com/watch?v=z1aA23eDA98
+- **Quantum Sensing — The Other Quantum Revolution #quantumcomputing #space #quantumshifting #universe** — Quantum SystemHub (1:36, 132 views)
+  https://www.youtube.com/watch?v=dDpxvNB5-Jg
+- **Building the Quantum Internet Security First Principles for the Future of Networking** — ImpactQuantum (57:11, 2 views)
+  https://www.youtube.com/watch?v=IdBrtZn9rWU
+- **Building the Quantum Internet: Unhackable Future Networks** — I Had No Clue! (16:54, 3 views)
+  https://www.youtube.com/watch?v=Y2SMwW5vjUI
+- **The Future of Quantum Computing and Impact on Global Data Security | Explainer Video Educational** — Tamil Knowledgepedia (9:17, 5 views)
+  https://www.youtube.com/watch?v=P0U5UnRELqE
+- **Inside the $10 Billion Factory Making Quantum Chips** — Nexus Labs (7:20, 2 views)
+  https://www.youtube.com/watch?v=eMdFrRg3C0g
+- **Intuitive Quantum Computing: Measurement Process (Part 4)** — khoraski (11:03, 21 views)
+  https://www.youtube.com/watch?v=Lulp8ih-u5w
+- **Can AI Predict Quantum Behavior It Has Never Seen Before?🤯** — Quantum Articles (7:43, 2 views)
+  https://www.youtube.com/watch?v=SwqmxECAiWU
+- **NTT R&D Forum 2025: A showcase of innovation** — NTT official channel (4:48, 64 views)
+  https://www.youtube.com/watch?v=Jvz0pw1zSCA
+- **"Quantum computers are toys." — QuEra's CCO Yuval Boger says what nobody else will | Episode 20** — Thomas Ehmer (1:01:45, 40 views)
+  https://www.youtube.com/watch?v=_jQhVq5uz20
+- **NTT DATA: Agentic AI and the Future of Industry** — NTT official channel (3:44, 36 views)
+  https://www.youtube.com/watch?v=3LU2TAQlDUY
+- **A General Quantum Duality for Representations of Groups with Applications to... - Barak Nehoran** — Institute for Advanced Study (1:34:00, 503 views)
+  https://www.youtube.com/watch?v=Nj1TmtnLkCY
+- **Marty Bent on CLARITY, Jameson Lopp on AI risk, and Alex Pruden on quantum** — Blockspace (1:26:48, 90 views)
+  https://www.youtube.com/watch?v=pbtKLCrIfVA
+- **Nvidia Is About to Break a 10-Month Rectangle. Tim Knight Says That's What We've Been Waiting For.** — tastylive and Slope of Hope (15:37, 4.7K views)
+  https://www.youtube.com/watch?v=HnZfNO2vlrI
+- **Microsoft’s Quantum Computers: Colder Than Outer Space** — Ingles GoGo (1:59, 1 views)
+  https://www.youtube.com/watch?v=hRHm5kac6Ys
+- **Unlocking Quantum Secrets: Hydrogen Entanglement Experiment Explained** — UniquilibriuM (32:07, new)
+  https://www.youtube.com/watch?v=XZErLdwS42o
+- **GPS 26: Kavli Symposium: Quantum Sci & Tech: Bridging a Shared Future for Physics & Humanity** — American Physical Society (2:47:00, 5 views)
+  https://www.youtube.com/watch?v=ZjySLNjf2HY
+- **The chilling Warning from the Godfather of AI** — Future Ready (42, new)
+  https://www.youtube.com/watch?v=8pVvB-uFrTU
+- **NASA Chief: "We Just Built Antigravity Propulsion!”** — Jesse Michels (2:33:28, 134.0K views)
+  https://www.youtube.com/watch?v=mOWwdIuyaQA
