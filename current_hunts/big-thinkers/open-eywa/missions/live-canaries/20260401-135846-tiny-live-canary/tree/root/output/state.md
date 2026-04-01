@@ -1,0 +1,2 @@
+The user's request to create a short operator-style note has been successfully completed. The note has been decomposed into smaller steps, completed, and then synthesized and refined. The final note is:
+"Open-Eywa considers the node as the durable unit of work. Mission runs are stored in their respective mission folders. Testing is crucial for improving reliability."

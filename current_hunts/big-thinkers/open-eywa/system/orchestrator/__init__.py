@@ -13,6 +13,12 @@ from .node_controls import ResumeComputationResult, cancel_node, record_computat
 from .node_recovery import NodeRecoveryError, NodeRecoveryResult, prepare_node_for_fresh_attempt
 from .node_preparation import PreparedNodeContextResult, prepare_node_context_packet
 from .mission_contract import MissionLayout, create_mission, mission_layout
+from .live_canary import (
+    DEFAULT_LIVE_CANARY_GOAL,
+    LiveCanaryConfig,
+    build_default_live_canary_mission_path,
+    run_live_canary,
+)
 from .mission_driver import MissionDriveResult, MissionDriver, MissionDriverError
 from .orchestrator_core import NodeOrchestratorCore, NodeRunStepResult, OrchestratorCoreError
 from .orchestrator_progression import (
@@ -38,6 +44,8 @@ __all__ = [
     "MissionDriver",
     "MissionDriverError",
     "MissionLayout",
+    "DEFAULT_LIVE_CANARY_GOAL",
+    "LiveCanaryConfig",
     "NODE_STATUSES",
     "NodeOrchestratorCore",
     "NodeProgressionEngine",
@@ -68,8 +76,10 @@ __all__ = [
     "prepare_node_context_packet",
     "record_computation_result",
     "prepare_node_for_fresh_attempt",
+    "run_live_canary",
     "role_contract_for",
     "resume_waiting_node_if_ready",
     "transition_node",
     "validate_node",
+    "build_default_live_canary_mission_path",
 ]

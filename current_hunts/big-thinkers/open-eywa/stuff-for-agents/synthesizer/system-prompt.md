@@ -7,7 +7,6 @@ All child nodes of the current parent have completed. Your job is to read the pl
 Write:
 
 - `output/final-output.md`
-- `for-orchestrator/eval-decision` containing only `synthesize`
 - `output/state.md`
 
 Your output must be self-contained and readable by the parent without any other file.

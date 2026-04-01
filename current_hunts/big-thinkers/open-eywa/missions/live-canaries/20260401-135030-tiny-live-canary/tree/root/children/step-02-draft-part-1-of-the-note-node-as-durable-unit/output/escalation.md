@@ -1,0 +1,1 @@
+The rephrased fact from Step 1 was not provided in the input files. I cannot complete the task without this information.

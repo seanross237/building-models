@@ -1,0 +1,1 @@
+Open-Eywa considers the node as the durable unit of work.

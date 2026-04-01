@@ -1,0 +1,1 @@
+The task has been decomposed into individual writing steps, and the final output has been written to `output/final-output.md`.

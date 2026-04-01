@@ -8,10 +8,10 @@ This is different from:
 
 - `OPEN-EYWA-GOAL-AND-OVERVIEW.md`
   - north star and high-level direction
+- `BUILDING-PRINCIPLES.md`
+  - architectural values, trust boundary, and change discipline
 - `april-first-planning/canonical-node-contract-spec.md`
   - hard node contract
-- `CHANGE-DISCIPLINE.md`
-  - rules for making safe changes
 
 ## Current State
 
@@ -26,8 +26,12 @@ That means:
 - the first safe file-tool layer is real
 - the runtime seam is real
 - the runtime used for confidence-building is currently the simulated runtime
+- the fast adversarial sturdiness layer is real
+- a tiny real OpenRouter runtime path is now real
+- `stuff-for-agents/` is now materially used by the runtime prompt loader
+- the live canary path has now completed both a single-node real run and a multi-step real tree run
 
-The real OpenRouter runtime is **not** yet the main active implementation.
+The real OpenRouter runtime is still **minimal and not yet the main active path**, but the live seam is now proven enough to support careful canaries.
 
 ## Top-Level Shape
 
@@ -36,10 +40,11 @@ Important top-level areas:
 ```text
 open-eywa/
 ├── OPEN-EYWA-GOAL-AND-OVERVIEW.md
+├── BUILDING-PRINCIPLES.md
 ├── OPEN-EYWA-IMPLEMENTATION-DETAILS.md
-├── CHANGE-DISCIPLINE.md
 ├── AGENTS.md
 ├── CLAUDE.md
+├── stuff-for-agents/
 ├── validation-suite/
 └── system/
 ```
@@ -49,10 +54,13 @@ Main implementation code:
 - `system/orchestrator/`
 - `system/runtime/`
 - `system/tools/`
+- `stuff-for-agents/`
+- `system/scripts/`
 
 Main validation code:
 
 - `validation-suite/contract-tests/`
+- `validation-suite/adversarial-tests/`
 - `validation-suite/scenario-tests/`
 
 ## Core Node Contract
@@ -168,7 +176,7 @@ This is the multi-run node progression layer.
 It currently handles:
 
 - planner-first behavior for unplanned nodes
-- plan parsing
+- plan parsing, including the strict `### Step ... / Goal:` planner format
 - child node creation
 - driving child nodes to stable states
 - evaluator handoff after child results
@@ -186,6 +194,17 @@ Defines the mission-level folder shape.
 ### `mission_driver.py`
 
 Drives a whole mission tree from the mission root and produces mission-level events and summaries.
+
+### `live_canary.py`
+
+Small helper layer for tiny live canary missions.
+
+It currently handles:
+
+- default canary goal text
+- default mission path creation under `missions/live-canaries/`
+- mission bootstrap for a tiny canary
+- root role selection for the canary
 
 ### `node_controls.py`
 
@@ -220,6 +239,13 @@ This is how the orchestrator currently gives the runtime a structured summary of
 
 The goal is to reduce filesystem spelunking and make runtime behavior easier to compare and test.
 
+In the current planner/progression contract:
+
+- child directory names come from step titles
+- child `input/parent-instructions.md` comes from the step `Goal:` field when present
+- child `input/context.md` is assembled from parent task, plan, state, and prior child results
+- numbered and bulleted fallback plans are still supported for older simulated fixtures
+
 ## Runtime Modules
 
 ### `runtime_interface.py`
@@ -252,6 +278,51 @@ It:
 
 This is how the system is currently exercised end-to-end without live API calls.
 
+### `prompt_loader.py`
+
+Loads real prompt bundles from:
+
+- `stuff-for-agents/`
+
+This is the bridge between the human-facing prompt/library tree and the runtime seam.
+
+Prompt loading is now also guarded by contract tests so prompt bundles do not silently drift back to legacy control-file names.
+
+### `openrouter_client.py`
+
+Small OpenRouter chat-completions client.
+
+It currently handles:
+
+- non-streaming chat completions
+- auth headers
+- optional generation stats lookup for cost
+
+### `openrouter_runtime.py`
+
+Implements the tiny real runtime path.
+
+It currently:
+
+- loads role prompts from `stuff-for-agents/`
+- loads prepared context packets from the orchestrator
+- sends non-streaming chat-completions requests to OpenRouter
+- exposes the current safe file tools as tool calls
+- loops through assistant tool calls until a terminal assistant response
+- records usage and optional generation-derived cost
+
+This path is meant to be small and testable first, not broad yet.
+
+### `runtime_factory.py`
+
+Small runtime-factory layer for the live canary path.
+
+It currently provides:
+
+- the default cheap model choice for canaries
+- a default role-to-model map
+- a thin constructor for the OpenRouter runtime using environment configuration
+
 ## Tool Layer
 
 ### `system/tools/file_tools.py`
@@ -275,6 +346,8 @@ Important properties:
 
 Broader tools like shell/math/background jobs are still future work in the rebuild.
 
+The tiny real OpenRouter runtime currently exposes only these file tools, even if some role prompts describe richer future toolsets.
+
 ## End-To-End Offline Flow
 
 The current offline system works roughly like this:
@@ -284,11 +357,37 @@ The current offline system works roughly like this:
 3. node progression decides which role should run next
 4. orchestrator core prepares a run directory and prepared context packet
 5. orchestrator core sends a `RuntimeRequest` to the runtime seam
-6. simulated runtime executes a scripted scenario
-7. the scenario may directly write files and/or call real file tools
+6. either:
+   - simulated runtime executes a scripted scenario
+   - or tiny real OpenRouter runtime loads prompts, uses file tools, and returns a result
+7. the runtime may directly write files and/or call real file tools
 8. orchestrator core validates the result against the role contract
 9. progression decides what happens next
 10. mission driver aggregates the final mission summary
+
+## Tiny Live Canary Path
+
+There is now a first tiny live canary entry point:
+
+- `system/scripts/run_live_canary.py`
+
+It:
+
+- creates a mission under `missions/live-canaries/` by default
+- uses the tiny OpenRouter runtime path
+- defaults the root role to `worker` for minimal cost and complexity
+- prints a compact JSON result summary at the end
+
+This path has now been proven with:
+
+- a real single-node `worker` canary
+- a real multi-step tree canary using `planner`, `worker`, `mid-plan-evaluator`, and `synthesizer`
+
+The default live canary model is currently:
+
+- `google/gemini-2.5-flash-lite`
+
+The real live run requires `OPENROUTER_API_KEY` in the environment.
 
 ## Run Artifacts
 
@@ -367,6 +466,26 @@ The important point is:
 
 So the current offline system is genuinely runnable end-to-end.
 
+### Adversarial tests
+
+Live under:
+
+- `validation-suite/adversarial-tests/`
+
+They are the compact fast weird-case layer.
+
+They verify that the system fails explicitly and safely under high-value ugly cases like:
+
+- malformed control values
+- runtime failures
+- tool boundary violations
+- malformed plans
+- explicit mission-drive failures
+
+There is also a fast runner:
+
+- `python3 system/scripts/run_fast_sturdiness_suite.py`
+
 ## What Is Already Real
 
 Already real in the rebuild:
@@ -385,16 +504,22 @@ Already real in the rebuild:
 - prepared context packets
 - safe file tools
 - offline runtime execution through the real seam
+- prompt loading from `stuff-for-agents/`
+- tiny real OpenRouter runtime execution through the real seam
+- tiny live canary mission bootstrapping and runner path
+- completed real single-node canary execution
+- completed real multi-step tree canary execution
 
 ## What Is Not Yet The Main Live Path
 
 Not yet fully built as the main live path:
 
-- real OpenRouter runtime
 - full tool-calling agent loop
 - broader shell/math/background job tooling in the rebuild
 - live canary workflow
 - richer experiment management above the current `model` / `variant` fields
+
+The real OpenRouter path now exists, but it is still intentionally narrow and not yet the default confidence path.
 
 ## Current Architectural Pressure Points
 
@@ -411,6 +536,6 @@ Future changes should prefer small extra modules over making those files absorb 
 
 Also update:
 
-- `CHANGE-DISCIPLINE.md` when the change process changes
 - `OPEN-EYWA-GOAL-AND-OVERVIEW.md` when the high-level story changes
+- `BUILDING-PRINCIPLES.md` when the architectural philosophy or builder rules change
 - this file when the actual implementation shape changes

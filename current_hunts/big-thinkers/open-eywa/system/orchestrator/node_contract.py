@@ -95,6 +95,10 @@ class NodeLayout:
         return self.input_dir / "parent-instructions.md"
 
     @property
+    def context_file(self) -> Path:
+        return self.input_dir / "context.md"
+
+    @property
     def retrieved_knowledge_file(self) -> Path:
         return self.input_dir / "retrieved_relevant_knowledge_from_library.md"
 

@@ -6,7 +6,7 @@ Choose continue when the plan is still on track and the next step still makes se
 
 Action:
 
-- write `continue` to `for-orchestrator/eval-decision`
+- write `continue` to `for-orchestrator/next-action-after-child-report`
 - if needed, write `output/context-for-next-step.md`
 - update `output/state.md`
 
@@ -17,7 +17,7 @@ Choose replan when the goal is still achievable but the remaining steps should c
 Action:
 
 - write an updated `output/plan.md` with `Status: draft`
-- write `replan` to `for-orchestrator/eval-decision`
+- write `replan` to `for-orchestrator/next-action-after-child-report`
 - update `output/state.md`
 
 Preserve completed valid work when you replan.
@@ -29,7 +29,7 @@ Choose escalate when you can no longer produce what your parent expects.
 Action:
 
 - write `output/escalation.md`
-- write `escalate` to `for-orchestrator/eval-decision`
+- write `escalate` to `for-orchestrator/next-action-after-child-report`
 - update `output/state.md`
 
 ## The Core Question

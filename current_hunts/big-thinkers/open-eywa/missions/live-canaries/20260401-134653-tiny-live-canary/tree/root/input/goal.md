@@ -1,0 +1,1 @@
+Create a short operator briefing about Open-Eywa in three parts: what it is, why the node is the durable unit of work, and which mission files a human should inspect first. Decompose the work into a few small steps, complete them, then synthesize a final note.

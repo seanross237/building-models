@@ -1,0 +1,3 @@
+- Open-Eywa treats the node as the durable unit of work.
+- Mission runs are stored in mission folders.
+- Testing improves reliability.

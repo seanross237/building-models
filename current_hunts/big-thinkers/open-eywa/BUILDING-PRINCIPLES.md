@@ -224,6 +224,14 @@ Use contract tests for:
 - tool boundaries
 - schema validity
 
+Use adversarial tests for:
+
+- compact weird-case regression coverage
+- malformed control values
+- runtime failure handling
+- tool boundary violations
+- explicit mission-drive failures
+
 Use scenario tests for:
 
 - parent and child progression
@@ -258,8 +266,17 @@ If a change makes one of these much more complex, extract first.
 
 Run these after meaningful system changes:
 
+Fast sturdiness check:
+
+```bash
+python3 system/scripts/run_fast_sturdiness_suite.py
+```
+
+Full validation:
+
 ```bash
 python3 -m unittest discover -s validation-suite/contract-tests -p 'test_*.py'
+python3 -m unittest discover -s validation-suite/adversarial-tests -p 'test_*.py'
 python3 -m unittest discover -s validation-suite/scenario-tests -p 'test_*.py'
 python3 -m py_compile $(find system -name '*.py' | sort)
 ```

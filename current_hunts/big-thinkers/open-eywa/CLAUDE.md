@@ -3,9 +3,10 @@
 ## Rules
 
 - Keep responses relatively short unless asked to expand.
-- For Open-Eywa architectural values and design instincts, follow `BUILDING-PRINCIPLES.md`.
-- For rebuild work under `system/`, follow `CHANGE-DISCIPLINE.md`.
-- For current rebuild behavior, prefer `GROUND-UP-REBUILD.md` and `april-first-planning/canonical-node-contract-spec.md`.
+- For Open-Eywa architectural values, trust boundary, and change discipline, follow `BUILDING-PRINCIPLES.md`.
+- Strongly prefer lower complexity over cleverness.
+- Strongly prefer small compartmentalized modules over growing large files.
+- Strongly prefer changes that keep future iteration, testing, and A/B comparison easy.
 - `OPEN-EYWA-GOAL-AND-OVERVIEW.md` should stay high-level and should be updated when high-level behavior changes.
 - `OPEN-EYWA-IMPLEMENTATION-DETAILS.md` should be updated when the current implementation shape changes.
 - `BUILDING-PRINCIPLES.md` should be updated when the architectural philosophy or design principles change.
@@ -19,6 +20,7 @@
 OPEN-EYWA-GOAL-AND-OVERVIEW.md                - goal + high-level architecture doc
 OPEN-EYWA-IMPLEMENTATION-DETAILS.md           - current implementation details
 BUILDING-PRINCIPLES.md                        - architectural values and builder philosophy
+april-first-planning/canonical-node-contract-spec.md
 stuff-for-agents/planning/planner/system-prompt.md
 stuff-for-agents/planning/planner/plan-design.md
 stuff-for-agents/planning/planner/execute-vs-plan.md

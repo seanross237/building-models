@@ -46,10 +46,10 @@ High-level layout:
 
 ```text
 open-eywa/
-├── OPEN-EYWA-OVERVIEW.md
+├── OPEN-EYWA-GOAL-AND-OVERVIEW.md
+├── BUILDING-PRINCIPLES.md
 ├── CLAUDE.md
 ├── AGENTS.md
-├── CHANGE-DISCIPLINE.md
 ├── stuff-for-agents/
 ├── missions/
 ├── validation-suite/
@@ -63,11 +63,11 @@ Core rebuild areas:
 - `system/orchestrator/`
   - node contract, lifecycle, progression, mission driving, recovery, preparation
 - `system/runtime/`
-  - runtime seam and simulated runtime
+  - runtime seam, simulated runtime, and tiny real OpenRouter runtime path
 - `system/tools/`
   - controlled local tool layer
 - `validation-suite/`
-  - contract tests and scenario tests
+  - contract tests, adversarial tests, and scenario tests
 
 ## Node Model
 
@@ -99,23 +99,29 @@ Current terminal outcomes are:
 
 The orchestrator talks to a runtime through a stable runtime interface.
 
-Right now, the main runtime used for confidence-building is the simulated runtime:
+Right now:
 
 - the real orchestrator runs
 - the runtime seam is real
-- the runtime behavior is scripted by scenario fixtures
-- the system checks whether orchestration, transitions, events, and summaries behave correctly
+- the main confidence-building runtime is still the simulated runtime
+- a tiny real OpenRouter runtime path now exists for initial integration work
+- the system can already load real prompt bundles from `stuff-for-agents/`
+- the live canary path has now completed both a real single-node run and a real multi-step tree run
 
-This lets Open-Eywa be exercised offline before live API spend.
+This lets Open-Eywa stay offline-first while beginning to bridge toward real model execution.
+
+There is now also a tiny live canary path for cheap real-runtime trials once an API key is present.
 
 ## Validation Model
 
 Validation is a first-class part of the architecture.
 
-There are two main layers:
+There are three main layers:
 
 - contract tests
   - hard rules and invariants
+- adversarial tests
+  - compact weird-case tests for fast sturdiness checks
 - scenario tests
   - end-to-end orchestration behavior under simulated runtime conditions
 
@@ -124,27 +130,26 @@ The design goal is that meaningful system changes should either:
 - keep tests unchanged because the contract stayed stable, or
 - require focused test updates because the real behavior changed
 
-## Build Discipline
+The system also now has a one-command fast sturdiness loop for quick confidence checks during iteration:
+
+```bash
+python3 system/scripts/run_fast_sturdiness_suite.py
+```
+
+## Builder Guidance
 
 Open-Eywa should be changed in a way that keeps the implementation, tests, docs, and runtime seam aligned.
 
-The repo-level guide for this is:
+The main builder guide for this is:
 
-- `CHANGE-DISCIPLINE.md`
-
-That guide exists so future changes preserve:
-
-- simplicity
-- compartmentalization
-- offline confidence
-- future A/B testability
+- `BUILDING-PRINCIPLES.md`
 
 ## Near-Term Direction
 
 The current journey is:
 
 1. finish making the offline system sturdy and easy to evolve
-2. preserve strong testing and clear contracts as the system grows
-3. only then bring in the real live runtime and model integration
+2. keep the fast validation loop strong as the system grows
+3. expand the tiny real runtime path carefully and test it with cheap canaries
 
 The point is not just to get something working. The point is to get something that can keep improving without collapsing into a brittle mess.

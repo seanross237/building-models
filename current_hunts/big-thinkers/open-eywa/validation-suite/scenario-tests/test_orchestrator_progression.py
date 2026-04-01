@@ -241,6 +241,62 @@ class OrchestratorProgressionScenarioTests(unittest.TestCase):
             self.assertIn("parent_next_action_chosen", event_types)
             self.assertIn("plan_step_completed", event_types)
 
+    def test_structured_planner_format_creates_children_from_goal_fields(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            node_path = Path(temp_dir) / "root"
+            create_node(node_path, task_source_name="goal", task_text="Use strict planner format.")
+
+            runtime = SimulatedRuntime(
+                {
+                    "planner_strict_format": load_scenario(
+                        FIXTURES_DIR / "planner_strict_format.json"
+                    ),
+                    "worker_success": load_scenario(FIXTURES_DIR / "worker_success.json"),
+                    "evaluator_continue": load_scenario(FIXTURES_DIR / "evaluator_continue.json"),
+                    "synthesizer_success": load_scenario(FIXTURES_DIR / "synthesizer_success.json"),
+                }
+            )
+
+            def resolver(mission_id: str, node_id: str, role: str, node_root: Path) -> dict[str, str]:
+                del mission_id, node_id, node_root
+                if role == "planner":
+                    return {"scenario_name": "planner_strict_format"}
+                if role == "worker":
+                    return {"scenario_name": "worker_success"}
+                if role == "mid-plan-evaluator":
+                    return {"scenario_name": "evaluator_continue"}
+                if role == "synthesizer":
+                    return {"scenario_name": "synthesizer_success"}
+                raise AssertionError(f"Unexpected role: {role}")
+
+            result = NodeProgressionEngine(
+                runtime,
+                runtime_metadata_resolver=resolver,
+            ).drive_until_stable(
+                node_path,
+                mission_id="mission-001",
+                node_id="root",
+            )
+
+            self.assertEqual(result.final_status, "finished")
+            first_child = node_path / "children" / "step-01-gather-background"
+            second_child = node_path / "children" / "step-02-explain-inspection-priorities"
+            self.assertTrue(first_child.exists())
+            self.assertTrue(second_child.exists())
+            self.assertEqual(
+                (first_child / "input" / "parent-instructions.md").read_text(encoding="utf-8").strip(),
+                "Research what Open-Eywa is and produce a concise summary suitable for an operator note.",
+            )
+            self.assertEqual(
+                (second_child / "input" / "parent-instructions.md").read_text(encoding="utf-8").strip(),
+                "Identify which mission files a human should inspect first and explain why they matter.",
+            )
+            second_context = (second_child / "input" / "context.md").read_text(encoding="utf-8")
+            self.assertIn("## Parent Task", second_context)
+            self.assertIn("Use strict planner format.", second_context)
+            self.assertIn("## Prior Completed Step Results", second_context)
+            self.assertIn("The work is complete.", second_context)
+
     def test_waiting_child_can_resume_and_parent_then_complete(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             node_path = Path(temp_dir) / "root"
@@ -292,6 +348,72 @@ class OrchestratorProgressionScenarioTests(unittest.TestCase):
             )
             self.assertEqual(final_result.final_status, "finished")
             self.assertEqual(final_result.terminal_outcome, "completed")
+
+    def test_live_tree_like_plan_passes_prior_child_results_into_later_child_contexts(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            node_path = Path(temp_dir) / "root"
+            create_node(
+                node_path,
+                task_source_name="goal",
+                task_text=(
+                    "Using only these facts, create a short operator note: "
+                    "(1) nodes are durable units of work, "
+                    "(2) mission runs live in mission folders, "
+                    "(3) testing improves reliability."
+                ),
+            )
+
+            runtime = SimulatedRuntime(
+                {
+                    "planner_live_tree_shape": load_scenario(
+                        FIXTURES_DIR / "planner_live_tree_shape.json"
+                    ),
+                    "worker_success": load_scenario(FIXTURES_DIR / "worker_success.json"),
+                    "evaluator_continue": load_scenario(FIXTURES_DIR / "evaluator_continue.json"),
+                    "synthesizer_success": load_scenario(FIXTURES_DIR / "synthesizer_success.json"),
+                }
+            )
+
+            def resolver(mission_id: str, node_id: str, role: str, node_root: Path) -> dict[str, str]:
+                del mission_id, node_id, node_root
+                if role == "planner":
+                    return {"scenario_name": "planner_live_tree_shape"}
+                if role == "worker":
+                    return {"scenario_name": "worker_success"}
+                if role == "mid-plan-evaluator":
+                    return {"scenario_name": "evaluator_continue"}
+                if role == "synthesizer":
+                    return {"scenario_name": "synthesizer_success"}
+                raise AssertionError(f"Unexpected role: {role}")
+
+            result = NodeProgressionEngine(
+                runtime,
+                runtime_metadata_resolver=resolver,
+            ).drive_until_stable(
+                node_path,
+                mission_id="mission-001",
+                node_id="root",
+            )
+
+            self.assertEqual(result.final_status, "finished")
+            self.assertEqual(result.terminal_outcome, "completed")
+
+            synth_child = node_path / "children" / "step-03-synthesize-final-note"
+            review_child = node_path / "children" / "step-04-review-and-refine-note"
+            self.assertTrue(synth_child.exists())
+            self.assertTrue(review_child.exists())
+
+            synth_context = (synth_child / "input" / "context.md").read_text(encoding="utf-8")
+            self.assertIn("## Prior Completed Step Results", synth_context)
+            self.assertIn("### Gather Facts", synth_context)
+            self.assertIn("### Draft Operator Note", synth_context)
+            self.assertIn("The work is complete.", synth_context)
+
+            review_context = (review_child / "input" / "context.md").read_text(encoding="utf-8")
+            self.assertIn("## Prior Completed Step Results", review_context)
+            self.assertIn("### Synthesize Final Note", review_context)
+            self.assertIn("## Parent Plan", review_context)
+            self.assertIn("## Parent Task", review_context)
 
     def test_failed_leaf_node_can_be_prepared_for_retry_and_then_complete(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:

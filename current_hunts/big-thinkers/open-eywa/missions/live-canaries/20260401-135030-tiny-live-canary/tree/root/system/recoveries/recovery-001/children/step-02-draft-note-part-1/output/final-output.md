@@ -1,0 +1,3 @@
+## Open-Eywa Node as a Durable Unit of Work
+
+In Open-Eywa, each node is treated as a durable unit of work. This means that once a node is created and assigned a task, its state and progress are preserved. This design ensures that even if there are interruptions or system restarts, the work can resume from its last known state without loss of information. This durability is a fundamental aspect of Open-Eywa's resilience and ability to manage complex, long-running tasks.

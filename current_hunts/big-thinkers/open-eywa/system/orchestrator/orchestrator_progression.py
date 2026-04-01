@@ -162,13 +162,14 @@ class NodeProgressionEngine:
             "steps": [
                 {
                     "index": index,
-                    "title": title,
-                    "child_name": f"step-{index + 1:02d}-{self._slugify(title)}",
+                    "title": step["title"],
+                    "goal": step["goal"],
+                    "child_name": f"step-{index + 1:02d}-{self._slugify(step['title'])}",
                     "latest_child_status": None,
                     "latest_terminal_outcome": None,
                     "latest_failure_reason": None,
                 }
-                for index, title in enumerate(steps)
+                for index, step in enumerate(steps)
             ],
             "current_step_index": 0,
         }
@@ -223,6 +224,7 @@ class NodeProgressionEngine:
                 child_node_id=child_node_id,
                 step_index=step["index"],
                 step_title=step["title"],
+                step_goal=step["goal"],
             )
             return True
 
@@ -459,13 +461,20 @@ class NodeProgressionEngine:
         child_node_id: str,
         step_index: int,
         step_title: str,
+        step_goal: str,
     ) -> None:
         child_layout = create_node(
             child_path,
             task_source_name="parent-instructions",
-            task_text=step_title,
+            task_text=step_goal,
             agent_mode="worker",
         )
+        child_context = self._build_child_context(
+            parent_layout,
+            step_index=step_index,
+        )
+        if child_context:
+            write_text(child_layout.context_file, child_context)
         self._emit_event(
             parent_layout,
             EventRecord(
@@ -493,6 +502,61 @@ class NodeProgressionEngine:
         report = validate_node(child_layout.root)
         if not report.is_valid:
             raise OrchestratorProgressionError(f"Created child node is invalid: {report.issues!r}")
+
+    def _build_child_context(
+        self,
+        parent_layout,
+        *,
+        step_index: int,
+    ) -> str:
+        sections: list[str] = []
+
+        parent_task = self._task_source_text(parent_layout)
+        if parent_task:
+            sections.append("## Parent Task\n" + parent_task)
+
+        if parent_layout.plan_file.exists():
+            sections.append("## Parent Plan\n" + parent_layout.plan_file.read_text(encoding="utf-8").strip())
+
+        if parent_layout.state_file.exists():
+            sections.append("## Parent State\n" + parent_layout.state_file.read_text(encoding="utf-8").strip())
+
+        completed_child_sections: list[str] = []
+        state = self._read_progression_state(parent_layout) if parent_layout.progression_state_file.exists() else None
+        previous_steps = state["steps"][:step_index] if state else []
+        for previous_step in previous_steps:
+            child_layout = node_layout(parent_layout.children_dir / previous_step["child_name"])
+            if child_layout.final_output_file.exists():
+                completed_child_sections.append(
+                    "\n".join(
+                        [
+                            f"### {previous_step['title']}",
+                            child_layout.final_output_file.read_text(encoding="utf-8").strip(),
+                        ]
+                    )
+                )
+            elif child_layout.escalation_file.exists():
+                completed_child_sections.append(
+                    "\n".join(
+                        [
+                            f"### {previous_step['title']} (Escalated)",
+                            child_layout.escalation_file.read_text(encoding="utf-8").strip(),
+                        ]
+                    )
+                )
+        if completed_child_sections:
+            sections.append("## Prior Completed Step Results\n" + "\n\n".join(completed_child_sections))
+
+        if not sections:
+            return ""
+        return "\n\n".join(sections).strip() + "\n"
+
+    def _task_source_text(self, layout) -> str:
+        if layout.goal_file.exists():
+            return layout.goal_file.read_text(encoding="utf-8").strip()
+        if layout.parent_instructions_file.exists():
+            return layout.parent_instructions_file.read_text(encoding="utf-8").strip()
+        return ""
 
     def _maybe_resume_waiting_node(self, layout, *, mission_id: str, node_id: str) -> bool:
         resume_result = resume_waiting_node_if_ready(layout.root)
@@ -624,19 +688,50 @@ class NodeProgressionEngine:
     def _read_progression_state(self, layout) -> dict[str, Any]:
         return json.loads(layout.progression_state_file.read_text(encoding="utf-8"))
 
-    def _parse_plan_steps(self, plan_text: str) -> list[str]:
-        steps: list[str] = []
+    def _parse_plan_steps(self, plan_text: str) -> list[dict[str, str]]:
+        structured_steps = self._parse_structured_plan_steps(plan_text)
+        if structured_steps:
+            return structured_steps
+        return self._parse_list_plan_steps(plan_text)
+
+    def _parse_structured_plan_steps(self, plan_text: str) -> list[dict[str, str]]:
+        steps: list[dict[str, str]] = []
+        current_title: str | None = None
+        current_goal: str | None = None
+        for line in plan_text.splitlines():
+            stripped = line.strip()
+            if not stripped:
+                continue
+            step_match = re.match(r"^#{3,}\s*Step\s+\d+\s*:\s*(.+?)\s*$", stripped, re.IGNORECASE)
+            if step_match:
+                if current_title and current_goal:
+                    steps.append({"title": current_title, "goal": current_goal})
+                current_title = step_match.group(1).strip()
+                current_goal = None
+                continue
+            if current_title and current_goal is None:
+                goal_match = re.match(r"^Goal:\s*(.+?)\s*$", stripped, re.IGNORECASE)
+                if goal_match:
+                    current_goal = goal_match.group(1).strip()
+        if current_title and current_goal:
+            steps.append({"title": current_title, "goal": current_goal})
+        return steps
+
+    def _parse_list_plan_steps(self, plan_text: str) -> list[dict[str, str]]:
+        steps: list[dict[str, str]] = []
         for line in plan_text.splitlines():
             stripped = line.strip()
             if not stripped:
                 continue
             numbered_match = re.match(r"^\d+\.\s+(.*)$", stripped)
             if numbered_match:
-                steps.append(numbered_match.group(1).strip())
+                title = numbered_match.group(1).strip()
+                steps.append({"title": title, "goal": title})
                 continue
             bullet_match = re.match(r"^[-*]\s+(.*)$", stripped)
             if bullet_match:
-                steps.append(bullet_match.group(1).strip())
+                title = bullet_match.group(1).strip()
+                steps.append({"title": title, "goal": title})
         return steps
 
     def _slugify(self, text: str) -> str:

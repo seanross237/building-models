@@ -70,9 +70,8 @@ Make sure the rebuild starts from stable source documents instead of shifting id
 ### Inputs To Treat As Source Of Truth
 
 - `april-first-planning/canonical-node-contract-spec.md`
-- `TRUST-BOUNDARY.md`
-- `CANONICAL-CONTRACTS.md`
-- `GROUND-UP-REBUILD.md`
+- `BUILDING-PRINCIPLES.md`
+- `OPEN-EYWA-GOAL-AND-OVERVIEW.md`
 
 ### Deliverables
 

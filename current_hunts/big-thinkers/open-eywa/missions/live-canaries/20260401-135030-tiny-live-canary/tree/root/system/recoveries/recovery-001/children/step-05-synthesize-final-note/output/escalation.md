@@ -1,0 +1,1 @@
+The three drafted parts to be synthesized are not available in the current node's file system. I cannot complete the task without these files.

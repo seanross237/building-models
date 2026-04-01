@@ -1,0 +1,1 @@
+Rephrased facts into concise, clear statements.

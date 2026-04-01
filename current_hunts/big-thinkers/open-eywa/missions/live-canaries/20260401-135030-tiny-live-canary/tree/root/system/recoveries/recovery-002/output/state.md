@@ -1,0 +1,1 @@
+The first step, "Extract and List Facts", escalated because it was looking for facts in `input/parent-instructions.md` but they were provided in `input/goal.md`. The overall goal is still achievable, and the plan remains valid. The first step needs to be re-executed with the correct input source.

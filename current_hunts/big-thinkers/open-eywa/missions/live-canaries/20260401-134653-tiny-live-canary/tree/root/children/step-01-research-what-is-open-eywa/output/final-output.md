@@ -1,0 +1,1 @@
+I was unable to gather information about Open-Eywa as there were no relevant files in the current node directory and I do not have access to external resources. Therefore, I could not formulate a concise explanation of what Open-Eywa is.

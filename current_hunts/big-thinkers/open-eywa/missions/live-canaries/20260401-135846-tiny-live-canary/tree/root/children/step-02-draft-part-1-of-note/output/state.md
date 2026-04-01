@@ -1,0 +1,1 @@
+Drafted the first part of the operator-style note, focusing on the node as the durable unit of work.

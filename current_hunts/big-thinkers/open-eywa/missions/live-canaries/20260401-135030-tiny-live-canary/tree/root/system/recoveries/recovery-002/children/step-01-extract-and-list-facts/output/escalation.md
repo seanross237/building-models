@@ -1,0 +1,1 @@
+The provided prompt in `input/parent-instructions.md` does not contain any facts about Open-Eywa. It is an instruction to extract facts, but no source material for Open-Eywa facts was provided. Therefore, I cannot complete the task of extracting three distinct facts about Open-Eywa.

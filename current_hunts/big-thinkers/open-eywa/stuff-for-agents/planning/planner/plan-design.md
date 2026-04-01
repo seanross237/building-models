@@ -103,5 +103,6 @@ N+1. Synthesis
 - too many tiny steps
 - vague goals
 - goals that depend on hidden plan context
+- including a final parent-level synthesis step as a child step
 - predetermined conclusions
 - plans with no honest failure path

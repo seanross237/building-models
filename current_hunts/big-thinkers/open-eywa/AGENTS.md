@@ -1,12 +1,14 @@
 # Agent Triggers
 
-For Open-Eywa architectural values and design instincts, follow:
+For Open-Eywa architectural values, trust boundary, and change discipline, follow:
 
 `/Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/open-eywa/BUILDING-PRINCIPLES.md`
 
-For any `Open-Eywa` system, runtime, orchestrator, tool, or validation changes, follow:
+When making Open-Eywa changes, strongly prefer:
 
-`/Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/open-eywa/CHANGE-DISCIPLINE.md`
+- lower complexity over cleverness
+- small compartmentalized modules over growing large ones
+- changes that keep future iteration and comparison easy
 
 If you change guidance in `AGENTS.md` and that same guidance should also apply to Claude-facing instructions, update `CLAUDE.md` too.
 

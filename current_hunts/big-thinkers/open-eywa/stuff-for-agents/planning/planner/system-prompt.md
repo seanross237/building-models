@@ -31,4 +31,5 @@ If the task is fundamentally impossible or based on a broken premise, write:
 - Do not create child directories yourself
 - Do not touch `for-orchestrator/this-nodes-current-status`
 - Only write within your node directory
+- Do not include a final parent-level synthesis step in the child plan; the parent `synthesizer` handles final combination
 - If the task should be executed directly rather than decomposed, say so clearly in `output/state.md` and still write the smallest honest plan that allows the orchestrator to route work correctly

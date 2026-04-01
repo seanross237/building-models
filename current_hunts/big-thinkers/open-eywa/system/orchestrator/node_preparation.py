@@ -57,6 +57,7 @@ def _task_source_section(layout: NodeLayout) -> dict[str, Any]:
 
 def _available_sections(layout: NodeLayout) -> dict[str, Any]:
     sections: dict[str, Any] = {}
+    maybe_add_text_section(sections, layout, "context", layout.context_file)
     maybe_add_text_section(sections, layout, "retrieved_knowledge", layout.retrieved_knowledge_file)
     maybe_add_text_section(sections, layout, "plan", layout.plan_file)
     maybe_add_text_section(sections, layout, "review", layout.review_file)
@@ -137,8 +138,8 @@ def _child_summaries(layout: NodeLayout) -> list[dict[str, Any]]:
 
 def _focus_sections_for_role(role: str) -> tuple[str, ...]:
     role_to_sections: dict[str, tuple[str, ...]] = {
-        "planner": ("task_source", "retrieved_knowledge"),
-        "worker": ("task_source", "retrieved_knowledge", "plan", "state"),
+        "planner": ("task_source", "context", "retrieved_knowledge"),
+        "worker": ("task_source", "context", "retrieved_knowledge", "plan", "state"),
         "mid-plan-evaluator": (
             "task_source",
             "plan",
