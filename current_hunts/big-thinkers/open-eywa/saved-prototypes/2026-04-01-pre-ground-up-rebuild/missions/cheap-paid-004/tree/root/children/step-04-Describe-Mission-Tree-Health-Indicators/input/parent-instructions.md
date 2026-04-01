@@ -1,0 +1,1 @@
+Describe how to determine if a run is healthy or stuck by examining the mission tree alone. This should include observable indicators and potential red flags.

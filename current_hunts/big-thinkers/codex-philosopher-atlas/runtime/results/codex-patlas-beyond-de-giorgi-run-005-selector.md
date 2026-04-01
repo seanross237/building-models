@@ -1,0 +1,5 @@
+Selection is complete.
+
+I ranked the full set as `01 > 02 > 03 > 04`, selected Chains `01`, `02`, and `03`, and wrote the rationale to [selector.md](/Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-005/selector.md). The selected full-chain files are [chain-01.md](/Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-005/selected/chain-01.md), [chain-02.md](/Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-005/selected/chain-02.md), and [chain-03.md](/Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-005/selected/chain-03.md).
+
+I also verified that each selected chain file is an exact full-text copy of its planner-chain source.

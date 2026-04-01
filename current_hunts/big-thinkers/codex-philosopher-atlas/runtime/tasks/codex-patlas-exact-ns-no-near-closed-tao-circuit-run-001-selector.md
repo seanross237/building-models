@@ -1,0 +1,16 @@
+Select the best three chains from this planning run.
+
+Inputs:
+- Portfolio summary: /Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/codex-philosopher-atlas/missions/exact-ns-no-near-closed-tao-circuit/planning-runs/run-001/planner.md
+- Candidate chains: /Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/codex-philosopher-atlas/missions/exact-ns-no-near-closed-tao-circuit/planning-runs/run-001/planner-chains/chain-*.md
+
+Write these outputs:
+- /Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/codex-philosopher-atlas/missions/exact-ns-no-near-closed-tao-circuit/planning-runs/run-001/selector.md
+- /Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/codex-philosopher-atlas/missions/exact-ns-no-near-closed-tao-circuit/planning-runs/run-001/selected/chain-01.md
+- /Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/codex-philosopher-atlas/missions/exact-ns-no-near-closed-tao-circuit/planning-runs/run-001/selected/chain-02.md
+- /Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/codex-philosopher-atlas/missions/exact-ns-no-near-closed-tao-circuit/planning-runs/run-001/selected/chain-03.md
+
+Requirements:
+- Rank the full set of generated chains.
+- selector.md must explain why the selected three make the strongest portfolio.
+- Each selected chain file must contain the full text of the chosen chain, not just a pointer back to planner output.

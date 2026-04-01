@@ -1,0 +1,1 @@
+Combine the answers from the previous steps into a concise, single-page operator note.

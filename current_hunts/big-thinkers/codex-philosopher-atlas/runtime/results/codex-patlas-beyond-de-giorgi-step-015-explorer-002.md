@@ -1,0 +1,5 @@
+Wrote the required artifacts: [REPORT.md](/Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/codex-philosopher-atlas/missions/beyond-de-giorgi/steps/step-015/explorations/exploration-002/REPORT.md) and [REPORT-SUMMARY.md](/Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/codex-philosopher-atlas/missions/beyond-de-giorgi/steps/step-015/explorations/exploration-002/REPORT-SUMMARY.md).
+
+Frozen result: the route is directly admissible on the suitable-weak / LEI floor, but only in a transport-dependent sense; the single primary comparator is `vorticity-direction coherence` in the Constantin-Fefferman direction-regularity neighborhood. The earliest honest kill is already pre-package: `descriptive-convenience obstruction`, because the only claimed delta over that comparator is an unearned tube-persistence mechanism rather than a frozen theorem-facing gain.
+
+No tests were needed; this was a source-synthesis exploration.

@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌍 Yang-Mills — Mission Complete</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --slide-bg: #f9fafb;
+  --border: #e5e7eb;
+  --text: #111827;
+  --muted: #6b7280;
+  --green: #059669;
+  --green-bg: #ecfdf5;
+  --green-border: #a7f3d0;
+  --blue: #2563eb;
+  --blue-bg: #eff6ff;
+  --blue-border: #bfdbfe;
+  --purple: #7c3aed;
+  --purple-bg: #f5f3ff;
+  --purple-border: #ddd6fe;
+  --amber: #d97706;
+  --amber-bg: #fffbeb;
+  --amber-border: #fde68a;
+  --red: #dc2626;
+  --red-bg: #fef2f2;
+  --red-border: #fecaca;
+  --accent: #4f46e5;
+  --accent-bg: #eef2ff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  display: flex; flex-direction: column; align-items: center;
+  padding: 40px 20px 100px;
+  gap: 0;
+}
+
+.slide {
+  display: none;
+  width: 100%; max-width: 860px;
+  background: var(--slide-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 52px 60px 36px;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.35);
+  animation: fadeIn 0.2s ease;
+}
+.slide.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Nav */
+.nav {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(15,15,20,0.92); backdrop-filter: blur(10px);
+  padding: 8px 18px; border-radius: 999px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  z-index: 100;
+}
+.nav-btn {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: transparent; border: 1px solid rgba(255,255,255,0.18);
+  color: white; font-size: 15px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+}
+.nav-btn:hover { background: rgba(255,255,255,0.1); }
+.nav-btn:disabled { opacity: 0.25; cursor: default; }
+.nav-counter { color: rgba(255,255,255,0.5); font-size: 13px; min-width: 48px; text-align: center; }
+
+/* Type */
+h1 { font-size: 34px; font-weight: 800; color: var(--text); line-height: 1.15; margin-bottom: 6px; }
+h2 { font-size: 26px; font-weight: 700; color: var(--text); margin-bottom: 20px; }
+h3 { font-size: 15px; font-weight: 600; color: var(--text); }
+.eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); margin-bottom: 10px; }
+.subtitle { font-size: 16px; color: var(--muted); margin-bottom: 32px; line-height: 1.5; }
+.divider { height: 1px; background: var(--border); margin: 28px 0; }
+
+/* Tags */
+.tag {
+  display: inline-block; font-size: 11px; font-weight: 700;
+  padding: 3px 9px; border-radius: 6px; margin-right: 4px;
+}
+.tag-green { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+.tag-blue { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+.tag-purple { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-border); }
+.tag-amber { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+.tag-red { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+.tag-accent { background: var(--accent-bg); color: var(--accent); }
+
+/* Stat boxes */
+.stats { display: grid; gap: 14px; margin: 20px 0; }
+.stats-2 { grid-template-columns: 1fr 1fr; }
+.stats-3 { grid-template-columns: 1fr 1fr 1fr; }
+.stats-4 { grid-template-columns: repeat(4, 1fr); }
+.stat {
+  background: white; border: 1px solid var(--border);
+  border-radius: 12px; padding: 18px 16px; text-align: center;
+}
+.stat-value { font-size: 32px; font-weight: 800; line-height: 1; }
+.stat-label { font-size: 11px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* Cards */
+.card {
+  background: white; border: 1px solid var(--border);
+  border-radius: 12px; padding: 18px 20px; margin-bottom: 10px;
+}
+.card-row { display: flex; align-items: flex-start; gap: 14px; }
+.card-icon {
+  width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+}
+.card-body { flex: 1; min-width: 0; }
+.card-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+.card-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+/* TOC items */
+.toc-item {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 18px; border: 1px solid var(--border);
+  border-radius: 12px; background: white; margin-bottom: 8px;
+  cursor: pointer; transition: all 0.15s;
+}
+.toc-item:hover { border-color: var(--accent); background: var(--accent-bg); }
+.toc-num {
+  width: 30px; height: 30px; border-radius: 8px; font-size: 13px;
+  font-weight: 700; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.toc-text { font-size: 14px; font-weight: 500; color: var(--text); flex: 1; }
+.toc-badge { font-size: 11px; color: var(--muted); }
+
+/* Pill list */
+.pill-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.pill {
+  padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 500;
+  border: 1px solid var(--border); background: white; color: var(--text);
+}
+
+/* Progress bar */
+.bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.bar-label { font-size: 12px; color: var(--muted); width: 72px; text-align: right; flex-shrink: 0; }
+.bar-track { flex: 1; height: 22px; background: #f3f4f6; border-radius: 6px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 6px; display: flex; align-items: center; padding: 0 10px; }
+.bar-fill span { font-size: 11px; font-weight: 700; color: white; }
+.bar-end { font-size: 12px; color: var(--muted); width: 40px; flex-shrink: 0; }
+
+/* Agent flow */
+.agent-flow { display: flex; flex-direction: column; gap: 6px; }
+.agent-box {
+  border-radius: 12px; padding: 14px 18px;
+  display: flex; align-items: center; gap: 14px;
+}
+.agent-role { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; }
+.agent-desc { font-size: 13px; color: var(--muted); margin-top: 1px; }
+.flow-down { text-align: center; font-size: 18px; color: var(--muted); line-height: 1; }
+.agent-count { font-size: 22px; font-weight: 800; margin-right: 8px; }
+
+/* Big number highlight */
+.big-result {
+  background: var(--green-bg); border: 2px solid var(--green-border);
+  border-radius: 16px; padding: 24px 28px; margin: 20px 0;
+}
+.big-result-value { font-size: 42px; font-weight: 900; color: var(--green); line-height: 1; }
+.big-result-label { font-size: 14px; color: var(--green); margin-top: 4px; font-weight: 600; }
+.big-result-sub { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+/* Timeline */
+.timeline { position: relative; padding-left: 28px; }
+.timeline::before { content: ''; position: absolute; left: 8px; top: 8px; bottom: 8px; width: 2px; background: var(--border); }
+.timeline-item { position: relative; margin-bottom: 18px; }
+.timeline-item::before {
+  content: ''; position: absolute; left: -24px; top: 4px;
+  width: 10px; height: 10px; border-radius: 50%;
+  border: 2px solid var(--accent); background: white;
+}
+.timeline-item.done::before { background: var(--accent); }
+.timeline-label { font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--accent); letter-spacing: 0.8px; margin-bottom: 2px; }
+.timeline-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+.timeline-body { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+/* Comparison table */
+.compare { width: 100%; border-collapse: collapse; font-size: 13px; margin: 16px 0; }
+.compare th { text-align: left; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); padding: 8px 12px; border-bottom: 2px solid var(--border); }
+.compare td { padding: 10px 12px; border-bottom: 1px solid #f3f4f6; vertical-align: middle; }
+.compare tr:last-child td { border-bottom: none; }
+.compare tr.highlight td { background: var(--green-bg); font-weight: 600; color: var(--text); }
+.compare tr.highlight td:first-child { border-radius: 8px 0 0 8px; }
+.compare tr.highlight td:last-child { border-radius: 0 8px 8px 0; }
+
+/* Feedback */
+.feedback-section { margin-top: 28px; padding-top: 16px; border-top: 1px dashed var(--border); }
+.feedback-toggle {
+  display: flex; align-items: center; gap: 7px;
+  background: none; border: none; cursor: pointer;
+  font-size: 12px; font-weight: 600; color: var(--muted);
+  padding: 3px 0; transition: color 0.15s;
+}
+.feedback-toggle:hover { color: var(--text); }
+.feedback-toggle .chevron { font-size: 10px; transition: transform 0.2s; }
+.feedback-toggle .chevron.open { transform: rotate(90deg); }
+.feedback-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); display: none; }
+.feedback-dot.show { display: inline-block; }
+.feedback-body { display: none; margin-top: 10px; }
+.feedback-body.open { display: block; }
+.feedback-textarea {
+  width: 100%; min-height: 60px; padding: 10px 12px;
+  border: 1px solid var(--border); border-radius: 8px;
+  font-family: inherit; font-size: 13px; color: var(--text);
+  background: white; resize: vertical; outline: none; transition: border-color 0.15s;
+}
+.feedback-textarea:focus { border-color: var(--accent); }
+.feedback-actions { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+.feedback-save {
+  padding: 5px 14px; border-radius: 6px; border: none;
+  background: var(--accent); color: white; font-size: 12px; font-weight: 600;
+  cursor: pointer; transition: opacity 0.15s;
+}
+.feedback-save:hover { opacity: 0.85; }
+.feedback-save:disabled { opacity: 0.4; cursor: default; }
+.feedback-saved { font-size: 11px; color: var(--green); opacity: 0; transition: opacity 0.3s; }
+.feedback-saved.show { opacity: 1; }
+.feedback-list { margin-top: 8px; }
+.feedback-entry { display: flex; gap: 8px; align-items: flex-start; padding: 6px 0; border-bottom: 1px solid #f3f4f6; font-size: 12px; }
+.feedback-entry:last-child { border-bottom: none; }
+.feedback-time { color: var(--muted); font-size: 11px; white-space: nowrap; flex-shrink: 0; }
+.feedback-text { flex: 1; color: var(--text); line-height: 1.4; }
+.feedback-del { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 11px; padding: 0 4px; flex-shrink: 0; }
+.feedback-del:hover { color: var(--red); }
+</style>
+</head>
+<body>
+
+<!-- ===================== SLIDE 0: Title + TOC ===================== -->
+<div class="slide active" id="slide-0">
+  <div style="font-size:40px; margin-bottom:12px;">🌍</div>
+  <h1>Yang-Mills<br>Mission Complete</h1>
+  <p class="subtitle">Atlas ran autonomous agents on a $1M unsolved math problem for 24 hours.<br>Here's what happened.</p>
+  <div class="divider"></div>
+  <p class="eyebrow">What's inside</p>
+
+  <div class="toc-item" onclick="goTo(1)">
+    <div class="toc-num" style="background:var(--blue-bg);color:var(--blue)">1</div>
+    <div class="toc-text">The Setup — what problem, why it matters</div>
+    <div class="toc-badge">context</div>
+  </div>
+  <div class="toc-item" onclick="goTo(2)">
+    <div class="toc-num" style="background:var(--amber-bg);color:var(--amber)">2</div>
+    <div class="toc-text">TL;DR — the punchline</div>
+    <div class="toc-badge">summary</div>
+  </div>
+  <div class="toc-item" onclick="goTo(3)">
+    <div class="toc-num" style="background:var(--purple-bg);color:var(--purple)">3</div>
+    <div class="toc-text">The System — how Atlas is structured</div>
+    <div class="toc-badge">agents</div>
+  </div>
+  <div class="toc-item" onclick="goTo(4)">
+    <div class="toc-num" style="background:var(--accent-bg);color:var(--accent)">4</div>
+    <div class="toc-text">The Arc — 3 strategies, how they connected</div>
+    <div class="toc-badge">mission</div>
+  </div>
+  <div class="toc-item" onclick="goTo(5)">
+    <div class="toc-num" style="background:var(--green-bg);color:var(--green)">5</div>
+    <div class="toc-text">The Result — what was actually proved</div>
+    <div class="toc-badge">findings</div>
+  </div>
+  <div class="toc-item" onclick="goTo(6)">
+    <div class="toc-num" style="background:var(--red-bg);color:var(--red)">6</div>
+    <div class="toc-text">What's Left — the one open conjecture</div>
+    <div class="toc-badge">open</div>
+  </div>
+</div>
+
+<!-- ===================== SLIDE 1: Setup / Context ===================== -->
+<div class="slide" id="slide-1">
+  <p class="eyebrow">The Setup</p>
+  <h2>There's a $1M math prize that's been open for 23 years</h2>
+
+  <div class="card" style="margin-bottom:10px;">
+    <div class="card-row">
+      <div class="card-icon" style="background:var(--amber-bg); font-size:22px;">🏆</div>
+      <div class="card-body">
+        <div class="card-title">Millennium Prize — Yang-Mills Mass Gap</div>
+        <div class="card-desc">One of 7 unsolved math problems with a $1M prize each. Posted by the Clay Mathematics Institute in 2000. Only one has ever been solved (Poincaré Conjecture, 2003).</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:10px;">
+    <div class="card-row">
+      <div class="card-icon" style="background:var(--blue-bg); font-size:22px;">⚛️</div>
+      <div class="card-body">
+        <div class="card-title">What is Yang-Mills, in plain English?</div>
+        <div class="card-desc">The equations that describe how particles like quarks and gluons interact. The "mass gap" question asks: why do some particles have mass when the theory seems to predict they shouldn't? Physics has used the answer for 60 years — but no one has ever <em>proved</em> it rigorously.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-row">
+      <div class="card-icon" style="background:var(--green-bg); font-size:22px;">🎯</div>
+      <div class="card-body">
+        <div class="card-title">What Atlas was asked to do</div>
+        <div class="card-desc">Not solve the full prize — that's decades away. Make concrete, defensible, <em>rigorous</em> progress. Find where the frontier actually is and push it forward.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SLIDE 2: TL;DR ===================== -->
+<div class="slide" id="slide-2">
+  <p class="eyebrow">TL;DR</p>
+  <h2>What happened in 24 hours</h2>
+
+  <div class="big-result">
+    <div class="big-result-value">8×</div>
+    <div class="big-result-label">improvement over the published state of the art</div>
+    <div class="big-result-sub">Proved a stronger mass gap theorem than any prior paper, in one day, autonomously.</div>
+  </div>
+
+  <div class="stats stats-3" style="margin-bottom:20px;">
+    <div class="stat">
+      <div class="stat-value" style="color:var(--purple)">3</div>
+      <div class="stat-label">Strategies</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--blue)">30</div>
+      <div class="stat-label">Explorations</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--green)">24h</div>
+      <div class="stat-label">Runtime</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div style="font-size:13px; color:var(--muted); line-height:1.7;">
+      <div style="margin-bottom:6px;"><span class="tag tag-green">PROVED</span> A rigorous mass gap bound — 8× tighter than Shen-Zhu-Zhu (2023) and 4× tighter than the most recent published result.</div>
+      <div style="margin-bottom:6px;"><span class="tag tag-amber">CONJECTURED</span> One clean inequality that, if proved, extends the result another 1.5× further. Zero violations across 500+ numerical tests.</div>
+      <div><span class="tag tag-blue">MAPPED</span> 9 approaches to the full prize, with precise obstruction classification — more current than any published review.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SLIDE 3: The System ===================== -->
+<div class="slide" id="slide-3">
+  <p class="eyebrow">The System</p>
+  <h2>Three tiers of agents, running autonomously</h2>
+
+  <div class="agent-flow">
+    <div class="agent-box" style="background:var(--amber-bg); border:1px solid var(--amber-border);">
+      <div style="font-size:28px;">🧭</div>
+      <div>
+        <div class="agent-role" style="color:var(--amber)">Missionary</div>
+        <div class="agent-desc">Sets the mission, defines strategy, declares done. One per mission. Runs the whole time.</div>
+      </div>
+      <div style="margin-left:auto;"><span class="tag tag-amber">1 agent</span></div>
+    </div>
+    <div class="flow-down">↓ strategy brief</div>
+    <div class="agent-box" style="background:var(--purple-bg); border:1px solid var(--purple-border);">
+      <div style="font-size:28px;">🗂️</div>
+      <div>
+        <div class="agent-role" style="color:var(--purple)">Strategizer</div>
+        <div class="agent-desc">Plans explorations, launches explorers in tmux, reads results, adapts. One per strategy.</div>
+      </div>
+      <div style="margin-left:auto;"><span class="tag tag-purple">1 per strategy</span></div>
+    </div>
+    <div class="flow-down">↓ goal prompts</div>
+    <div class="agent-box" style="background:var(--blue-bg); border:1px solid var(--blue-border);">
+      <div style="font-size:28px;">🔬</div>
+      <div>
+        <div class="agent-role" style="color:var(--blue)">Explorer</div>
+        <div class="agent-desc">Runs one focused investigation. Does literature, proofs, computation. Writes a report. Runs in parallel when goals are independent.</div>
+      </div>
+      <div style="margin-left:auto;"><span class="tag tag-blue">up to ~3 parallel</span></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="stats stats-3">
+    <div class="stat">
+      <div class="stat-value" style="color:var(--amber)">1</div>
+      <div class="stat-label">Missionary</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--purple)">3</div>
+      <div class="stat-label">Strategizers</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--blue)">30</div>
+      <div class="stat-label">Explorers</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SLIDE 4: The Arc ===================== -->
+<div class="slide" id="slide-4">
+  <p class="eyebrow">Mission Arc</p>
+  <h2>Knowledge built across three strategies</h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item done">
+      <div class="timeline-label">Strategy 001 · 10 explorations</div>
+      <div class="timeline-title">Map the battlefield</div>
+      <div class="timeline-body">
+        Catalogued every known approach to the prize. Found the best recent paper to build on (Shen-Zhu-Zhu 2023). Discovered the Adhikari-Cao bounds are 57–69× too weak for any SU(2) subgroup.
+        <div style="margin-top:6px;"><span class="tag tag-blue">output</span> <span style="font-size:12px;color:var(--muted)">9-approach obstruction atlas · target identified</span></div>
+      </div>
+    </div>
+
+    <div class="timeline-item done">
+      <div class="timeline-label">Strategy 002 · 10 explorations</div>
+      <div class="timeline-title">Build the proof</div>
+      <div class="timeline-body">
+        Attacked the Shen-Zhu-Zhu bound directly. Found its Hessian estimate was 8× too conservative. Proved a tighter bound from scratch. An adversarial explorer (E007) independently confirmed the tight case.
+        <div style="margin-top:6px;"><span class="tag tag-green">proved</span> <span style="font-size:12px;color:var(--muted)">β &lt; 1/6 — 8× improvement over SZZ</span></div>
+      </div>
+    </div>
+
+    <div class="timeline-item done">
+      <div class="timeline-label">Strategy 003 · 10 explorations</div>
+      <div class="timeline-title">Close the gap</div>
+      <div class="timeline-body">
+        Tried 7 approaches to prove the final conjecture. Every approach hit a structural obstruction. Proved the conjecture for 4 special families of gauge configurations. One inequality remains.
+        <div style="margin-top:6px;"><span class="tag tag-amber">conjectured</span> <span style="font-size:12px;color:var(--muted)">β &lt; 1/4 — fully characterized, 500+ tests, zero violations</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+  <div style="font-size:12px; color:var(--muted); line-height:1.6;">
+    <strong style="color:var(--text)">Key self-correction:</strong> Strategy 001 mapped 9 approaches and picked the right one. Strategy 002 pivoted mid-run from one proof technique to a more direct attack — the single most important adaptive decision of the mission.
+  </div>
+</div>
+
+<!-- ===================== SLIDE 5: The Result ===================== -->
+<div class="slide" id="slide-5">
+  <p class="eyebrow">The Result</p>
+  <h2>What was actually proved</h2>
+
+  <table class="compare">
+    <thead>
+      <tr>
+        <th>Who</th>
+        <th>Year</th>
+        <th>Bound</th>
+        <th>How tight</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Shen-Zhu-Zhu</td>
+        <td>2023</td>
+        <td style="font-weight:600;">β &lt; 1/48</td>
+        <td><span class="tag tag-red">baseline</span></td>
+      </tr>
+      <tr>
+        <td>Cao-Nissim-Sheffield</td>
+        <td>2025</td>
+        <td style="font-weight:600;">β &lt; 1/24</td>
+        <td><span class="tag tag-amber">2× SZZ</span></td>
+      </tr>
+      <tr class="highlight">
+        <td>🌍 Atlas (this mission)</td>
+        <td>2026</td>
+        <td style="font-weight:700; color:var(--green);">β &lt; 1/6</td>
+        <td><span class="tag tag-green">8× SZZ · 4× CNS</span></td>
+      </tr>
+      <tr>
+        <td style="color:var(--muted)">Atlas (if conjecture holds)</td>
+        <td style="color:var(--muted)">—</td>
+        <td style="color:var(--muted);">β &lt; 1/4</td>
+        <td><span class="tag tag-blue">12× SZZ</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <details style="margin-top:4px;">
+    <summary style="font-size:12px;color:var(--muted);cursor:pointer;padding:6px 0;">How did they get 8×? (expand for details)</summary>
+    <div class="card" style="margin-top:8px; background:#fafafa;">
+      <div class="card-desc">
+        SZZ bounded a quantity called H_norm at ≤ 1 (too conservative). Atlas found the true bound is ≤ 1/8, using a tighter version of the same triangle inequality. The improvement is elementary once you know where to look — the hard part was knowing which bound to target. Strategy 001 mapped to SZZ; Strategy 002 found the slack; Strategy 003 tried to close the remaining gap to 1/12.
+      </div>
+    </div>
+  </details>
+
+  <div class="divider"></div>
+
+  <div style="font-size:13px; color:var(--muted); line-height:1.6;">
+    <strong style="color:var(--text);">Important context:</strong> The physical deconfinement transition is at β ≈ 2.3. These bounds are all deep in the strongly-confined regime. The Millennium Prize requires the continuum limit (β → ∞). This is real progress on the mathematical frontier — not a prize solution.
+  </div>
+</div>
+
+<!-- ===================== SLIDE 6: What's Left ===================== -->
+<div class="slide" id="slide-6">
+  <p class="eyebrow">What's Left</p>
+  <h2>One inequality away from 12×</h2>
+
+  <div class="card" style="border:2px solid var(--amber-border); background:var(--amber-bg); margin-bottom:16px;">
+    <div class="card-title" style="margin-bottom:6px;">Conjecture 1 — the single remaining gap</div>
+    <div class="card-desc">For all gauge configurations Q, the staggered eigenspace of the Hessian operator M(Q) doesn't exceed its value at Q=I. One linear algebra inequality. Clean formulation. 7 proof approaches have already been ruled out.</div>
+    <div style="margin-top:10px; display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="tag tag-green">500+ tests, zero violations</span>
+      <span class="tag tag-amber">7 approaches eliminated</span>
+      <span class="tag tag-blue">4 special cases proved</span>
+    </div>
+  </div>
+
+  <details>
+    <summary style="font-size:12px;color:var(--muted);cursor:pointer;padding:4px 0 8px;">What are the longer-term gaps? (expand)</summary>
+    <div class="timeline" style="margin-top:8px;">
+      <div class="timeline-item">
+        <div class="timeline-label">~5-10 years</div>
+        <div class="timeline-title">Prove existence of 4D Yang-Mills (Balaban's program)</div>
+        <div class="timeline-body">Turning Balaban's UV stability work into a uniqueness proof for the continuum limit.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-label">~10+ years</div>
+        <div class="timeline-title">Mass gap at ANY weak coupling</div>
+        <div class="timeline-body">Our β &lt; 1/6 is the best known, but still far from the physical regime. Getting to β ~ 1 would be revolutionary.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-label">decades</div>
+        <div class="timeline-title">Continuum limit + Millennium Prize</div>
+        <div class="timeline-body">The full prize requires control as β → ∞. The 5-bottleneck map from Strategy 001 lays out exactly what's needed.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="divider"></div>
+
+  <div class="stats stats-4">
+    <div class="stat">
+      <div class="stat-value" style="color:var(--green); font-size:22px;">Proved</div>
+      <div class="stat-label">β &lt; 1/6</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--amber); font-size:22px;">If C1</div>
+      <div class="stat-label">β &lt; 1/4</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--red); font-size:22px;">Prize</div>
+      <div class="stat-label">β → ∞</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--muted); font-size:22px;">~24h</div>
+      <div class="stat-label">to get here</div>
+    </div>
+  </div>
+</div>
+
+<!-- Nav -->
+<div class="nav">
+  <button class="nav-btn" id="prev-btn" onclick="prevSlide()" disabled>←</button>
+  <span class="nav-counter" id="nav-counter">1 / 7</span>
+  <button class="nav-btn" id="next-btn" onclick="nextSlide()">→</button>
+</div>
+
+<script>
+const PRESENTATION = 'yang-mills-mission-complete';
+const slides = document.querySelectorAll('.slide');
+let current = 0;
+
+function showSlide(n) {
+  slides[current].classList.remove('active');
+  current = Math.max(0, Math.min(n, slides.length - 1));
+  slides[current].classList.add('active');
+  document.getElementById('nav-counter').textContent = `${current + 1} / ${slides.length}`;
+  document.getElementById('prev-btn').disabled = current === 0;
+  document.getElementById('next-btn').disabled = current === slides.length - 1;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function nextSlide() { showSlide(current + 1); }
+function prevSlide() { showSlide(current - 1); }
+function goTo(n) { showSlide(n); }
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') nextSlide();
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') prevSlide();
+});
+
+// ── Feedback ──
+let feedbackData = {};
+
+async function loadFeedback() {
+  try {
+    const res = await fetch('/api/feedback');
+    if (res.ok) {
+      const server = await res.json();
+      const local = JSON.parse(localStorage.getItem(PRESENTATION + '-feedback') || '{}');
+      feedbackData = Object.assign({}, local, server);
+      localStorage.setItem(PRESENTATION + '-feedback', JSON.stringify(feedbackData));
+    }
+  } catch(e) {
+    feedbackData = JSON.parse(localStorage.getItem(PRESENTATION + '-feedback') || '{}');
+  }
+  renderAllFeedback();
+}
+
+async function saveFeedback() {
+  localStorage.setItem(PRESENTATION + '-feedback', JSON.stringify(feedbackData));
+  try { await fetch('/api/feedback', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(feedbackData) }); } catch(e) {}
+}
+
+function renderAllFeedback() {
+  document.querySelectorAll('.slide').forEach(slide => {
+    const key = slide.id;
+    const entries = feedbackData[key] || [];
+    const dot = slide.querySelector('.feedback-dot');
+    if (dot) dot.classList.toggle('show', entries.length > 0);
+    const list = slide.querySelector('.feedback-list');
+    if (!list) return;
+    list.innerHTML = entries.map((e, i) => `
+      <div class="feedback-entry">
+        <span class="feedback-time">${e.time}</span>
+        <span class="feedback-text">${e.text}</span>
+        <button class="feedback-del" onclick="deleteFeedback('${key}',${i})">✕</button>
+      </div>`).join('');
+  });
+}
+
+function deleteFeedback(key, idx) {
+  feedbackData[key] = (feedbackData[key] || []).filter((_, i) => i !== idx);
+  saveFeedback();
+  renderAllFeedback();
+}
+
+function injectFeedback() {
+  document.querySelectorAll('.slide').forEach(slide => {
+    const title = slide.querySelector('h2')?.textContent || slide.querySelector('h1')?.textContent || slide.id;
+    const section = document.createElement('div');
+    section.className = 'feedback-section';
+    section.innerHTML = `
+      <button class="feedback-toggle" onclick="toggleFeedback(this)">
+        <span class="chevron">▶</span>
+        <span class="feedback-dot"></span>
+        Leave feedback on this slide
+      </button>
+      <div class="feedback-body">
+        <textarea class="feedback-textarea" placeholder="Notes, reactions, corrections..."></textarea>
+        <div class="feedback-actions">
+          <button class="feedback-save" onclick="submitFeedback(this, '${slide.id}', '${title.replace(/'/g,"\\'")}')">Save (⌘↵)</button>
+          <span class="feedback-saved">Saved!</span>
+        </div>
+        <div class="feedback-list"></div>
+      </div>`;
+    slide.appendChild(section);
+
+    const ta = section.querySelector('.feedback-textarea');
+    ta.addEventListener('keydown', e => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
+        section.querySelector('.feedback-save').click();
+      }
+    });
+  });
+}
+
+function toggleFeedback(btn) {
+  const chevron = btn.querySelector('.chevron');
+  const body = btn.nextElementSibling;
+  chevron.classList.toggle('open');
+  body.classList.toggle('open');
+}
+
+function submitFeedback(btn, slideId, slideTitle) {
+  const ta = btn.closest('.feedback-body').querySelector('.feedback-textarea');
+  const text = ta.value.trim();
+  if (!text) return;
+  if (!feedbackData[slideId]) feedbackData[slideId] = [];
+  feedbackData[slideId].push({
+    text,
+    time: new Date().toLocaleString(),
+    slide: slideTitle
+  });
+  ta.value = '';
+  saveFeedback();
+  renderAllFeedback();
+  const saved = btn.nextElementSibling;
+  saved.classList.add('show');
+  setTimeout(() => saved.classList.remove('show'), 2000);
+}
+
+injectFeedback();
+loadFeedback();
+</script>
+</body>
+</html>

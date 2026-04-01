@@ -1,0 +1,10 @@
+# Exploration 002 Summary
+
+- Goal: audit `\dot H^{1/2}` against the Step-1 extraction-package checklist and decide whether `BMO^{-1}` should even be admitted for audit under this chain's standard.
+- What I tried: read the Step-007 goal and reasoning files, the selected / judged / attacked Chain 02 files, the mission memo, the fixed suitable-weak / LEI compatibility files, and the CKN / Lin / Vasseur proof-architecture notes; then scanned `missions/` and `library/` for any dedicated `\dot H^{1/2}` or `BMO^{-1}` theorem packet.
+- Outcome: succeeded.
+- Classification: `\dot H^{1/2}` is `not viable because extraction package is diffuse`; `BMO^{-1}` is `not admitted for this chain`.
+- One key takeaway: the local record gives `\dot H^{1/2}` only generic Hilbert-space compactness appeal, not a frozen theorem stack in the mission's suitable-weak / LEI architecture, while `BMO^{-1}` fails even earlier because the repo does not state the replacement large-data compactness package that the chain requires before a weaker space can enter.
+- Leads worth pursuing: use Exploration 001 together with this report to decide whether Step 1 ends in a full no-host obstruction; if anyone tries to rescue `\dot H^{1/2}`, the next bounded question is whether a single explicit bridge theorem to suitable weak + LEI can even be formulated from the local record.
+- Unexpected findings: the sharpest local exclusion rule for `BMO^{-1}` came from `planning-runs/run-003/refined/chain-03.md`, which says weaker spaces enter only if an explicit replacement compactness package is already stated; a repo scan found no dedicated `\dot H^{1/2}` or `BMO^{-1}` theorem packet in `missions/` or `library/`, only planning / governance mentions.
+- Computations worth doing later if outside scope: a separate theorem-inventory pass could test whether any actual `\dot H^{1/2}` mild-theory / profile / stability results can be mapped into suitable weak + LEI without changing architecture, but that computation is not present in the current local record and would go beyond this local-source audit.

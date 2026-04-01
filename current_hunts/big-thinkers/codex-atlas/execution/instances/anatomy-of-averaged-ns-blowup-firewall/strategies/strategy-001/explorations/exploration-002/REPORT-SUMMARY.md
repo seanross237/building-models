@@ -1,0 +1,27 @@
+# REPORT SUMMARY
+
+- Goal: map Tao's literal cascade `X_{1,n} -> X_{2,n} -> X_{3,n} -> X_{4,n} -> X_{1,n+1}` against exact Navier-Stokes and identify the smallest exact-NS structures that could interfere with the mechanism.
+- What I tried: reused exploration 001's reconstruction of Tao's gate equations and shell ODE; reused the receptionist's closure stack; compared each Tao step against the exact Fourier/Leray NS interaction law `∂t û(k) + |k|^2 û(k) = -i ∑_{p+q=k} (q·û(p)) P_k û(q)`; added one exact-triad comparison source to sharpen the nonlocal-feedback picture.
+- Outcome: succeeded.
+- One key takeaway: the strongest live firewall candidates are structural exact-NS constraints on couplings, not estimate improvements. In particular, Tao's five engineered gate strengths look hardest to realize inside one exact quadratic law with full triad summation and Leray projection.
+- Strongest surviving candidates:
+  - triadic coefficient rigidity;
+  - unavoidable extra same-scale / cross-scale / conjugate couplings;
+  - exact Leray-projection rigidity as the mechanism enforcing the first two.
+- Already closed:
+  - generic frame-shift / Galilean pressure ideas;
+  - generic LP / Bernstein cleanup;
+  - generic commutator / CLMS reformulations;
+  - generic div-free level-set improvement;
+  - near-Beltrami perturbative route;
+  - exact Beltrami as a generic firewall.
+- Unexpected findings:
+  - the cleanest mismatch is not "pressure is nonlocal" but "Tao's circuit is unusually isolated, while exact NS seems to force spectator couplings";
+  - the "tiny gate variable" issue is mostly cosmetic by itself; the live issue is exact isolation of the amplifier channel.
+- Leads worth pursuing:
+  - build the minimal exact Fourier/helical support that could mimic the five Tao variables;
+  - write the exact projected amplitude equations including all forced conjugate and spectator modes;
+  - test whether the hierarchy `ε, ε^2 exp(-K^10), ε^(-1)K^10, ε^(-2), K` can appear with every unwanted coupling genuinely lower order.
+- Computations worth doing later:
+  - explicit symbolic or computational helical-triad reduction for the smallest plausible five-mode-plus-spectators ansatz;
+  - a shell-rescaled sign/size feasibility test for exact NS coefficients across one transfer step and then across repeated shells.

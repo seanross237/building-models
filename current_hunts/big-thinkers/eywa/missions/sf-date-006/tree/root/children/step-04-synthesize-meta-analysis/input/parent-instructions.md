@@ -1,0 +1,1 @@
+Three complete SF date plans have been designed — one for an adventurous adrenaline junkie, one for a quiet intellectual, and one for a foodie artist. The actual plans will be provided as context. Your job is to compare them and extract reusable principles of great date design.

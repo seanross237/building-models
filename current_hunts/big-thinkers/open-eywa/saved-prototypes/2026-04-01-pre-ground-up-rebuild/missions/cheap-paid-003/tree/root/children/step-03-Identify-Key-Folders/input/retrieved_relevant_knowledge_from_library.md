@@ -1,0 +1,1 @@
+I could not find any relevant information in the library regarding the identification of key or top-level folders within a mission or project structure. Therefore, I cannot create a retrieval file.

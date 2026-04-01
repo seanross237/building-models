@@ -1,0 +1,1 @@
+No goal, plan, or state information was available, and there were no child outputs to synthesize. This is a placeholder output.

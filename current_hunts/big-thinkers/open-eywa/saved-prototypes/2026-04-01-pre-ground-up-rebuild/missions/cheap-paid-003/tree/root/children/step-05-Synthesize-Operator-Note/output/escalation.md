@@ -1,0 +1,1 @@
+The previous steps' answers are not available, so the operator note cannot be synthesized.

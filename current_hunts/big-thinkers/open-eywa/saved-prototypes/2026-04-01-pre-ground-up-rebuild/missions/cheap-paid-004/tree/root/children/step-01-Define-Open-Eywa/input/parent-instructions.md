@@ -1,0 +1,1 @@
+Write a concise definition of Open-Eywa, suitable for a human operator skimming the mission folder for the first time.

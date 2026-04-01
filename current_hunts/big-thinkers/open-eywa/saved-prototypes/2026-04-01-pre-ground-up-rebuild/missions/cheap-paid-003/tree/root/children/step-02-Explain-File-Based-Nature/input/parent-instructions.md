@@ -1,0 +1,1 @@
+Explain why Open-Eywa is file-based, focusing on benefits for human operators.

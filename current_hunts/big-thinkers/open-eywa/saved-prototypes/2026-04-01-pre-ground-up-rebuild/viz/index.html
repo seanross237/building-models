@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eywa — Mission Tree</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --surface2: #21262d;
+  --border: #30363d;
+  --text: #c9d1d9;
+  --text-dim: #8b949e;
+  --text-bright: #f0f6fc;
+  --green: #3fb950;
+  --blue: #58a6ff;
+  --yellow: #d29922;
+  --red: #f85149;
+  --gray: #484f58;
+  --dark-gray: #30363d;
+  --purple: #bc8cff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* --- Layout --- */
+.app {
+  display: grid;
+  grid-template-rows: 48px 1fr auto;
+  grid-template-columns: 1fr 420px;
+  height: 100vh;
+}
+
+.header {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.header h1 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-bright);
+  letter-spacing: 0.5px;
+}
+
+.header select {
+  background: var(--surface2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.header .status-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.header .refresh-label {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+/* --- Tree Area --- */
+.tree-area {
+  grid-column: 1;
+  overflow: auto;
+  padding: 32px;
+  position: relative;
+}
+
+.tree-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: max-content;
+}
+
+/* --- Node --- */
+.node-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.node-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  min-width: 180px;
+  position: relative;
+}
+
+.node-box:hover {
+  border-color: var(--blue);
+  background: var(--surface2);
+}
+
+.node-box.selected {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.15);
+}
+
+.node-box .status-badge {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.node-box .node-name {
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--text-bright);
+  white-space: nowrap;
+}
+
+.node-box .node-status {
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.node-box .depth-tag {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 10px;
+  padding: 1px 6px;
+  color: var(--text-dim);
+}
+
+/* --- Children --- */
+.children-container {
+  display: flex;
+  gap: 24px;
+  margin-top: 0;
+  position: relative;
+}
+
+/* SVG connector lines */
+.connectors {
+  position: relative;
+  width: 100%;
+  height: 32px;
+}
+
+.connectors svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.connectors svg line {
+  stroke: var(--border);
+  stroke-width: 2;
+}
+
+/* --- Detail Panel --- */
+.detail-panel {
+  grid-column: 2;
+  grid-row: 2 / 4;
+  background: var(--surface);
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.detail-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-header-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.detail-header .node-title {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text-bright);
+}
+
+.detail-meta {
+  font-size: 12px;
+  color: var(--text-dim);
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+
+.detail-header .detail-status {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.detail-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+}
+
+.detail-tabs button {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  padding: 8px 14px;
+  font-size: 12px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: all 0.1s;
+}
+
+.detail-tabs button:hover {
+  color: var(--text);
+}
+
+.detail-tabs button.active {
+  color: var(--blue);
+  border-bottom-color: var(--blue);
+}
+
+.detail-content {
+  flex: 1;
+  overflow: auto;
+  padding: 16px;
+}
+
+.detail-content pre {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--text);
+}
+
+.detail-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.detail-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.detail-card h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+}
+
+.detail-card p,
+.detail-card li {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.detail-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.artifact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.artifact-row {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.artifact-row-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.artifact-path {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 12px;
+  color: var(--text-bright);
+}
+
+.artifact-category {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 1px 6px;
+}
+
+.artifact-preview {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-dim);
+}
+
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.event-row {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.event-row strong {
+  color: var(--text-bright);
+}
+
+.event-row-meta {
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+}
+
+.artifact-details {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.artifact-details summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 10px 12px;
+  color: var(--text-bright);
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 12px;
+}
+
+.artifact-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.artifact-details[open] summary {
+  border-bottom: 1px solid var(--border);
+}
+
+.artifact-details pre {
+  margin: 0;
+  padding: 12px;
+}
+
+.orchestrator-box {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.orchestrator-box summary {
+  padding: 10px 12px;
+  cursor: pointer;
+  color: var(--text-dim);
+  font-size: 12px;
+  user-select: none;
+}
+
+.orchestrator-box summary::-webkit-details-marker {
+  display: none;
+}
+
+.orchestrator-box[open] summary {
+  border-bottom: 1px solid var(--border);
+}
+
+.orchestrator-box .artifact-list {
+  padding: 12px;
+}
+
+.detail-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--text-dim);
+  font-size: 13px;
+}
+
+/* --- Event Log --- */
+.event-log {
+  grid-column: 1;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  max-height: 200px;
+  overflow: auto;
+  font-size: 12px;
+}
+
+.event-log-header {
+  padding: 6px 16px;
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--text-dim);
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.event-log-header .toggle {
+  font-size: 10px;
+  transition: transform 0.15s;
+}
+
+.event-log-header .toggle.collapsed {
+  transform: rotate(-90deg);
+}
+
+.event-log table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.event-log td {
+  padding: 3px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.event-log td:first-child {
+  color: var(--text-dim);
+  width: 80px;
+  font-family: monospace;
+}
+
+.event-log td:nth-child(2) {
+  color: var(--text-dim);
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.event-log td:nth-child(3) {
+  font-weight: 500;
+}
+
+.event-log .evt-status_change { color: var(--blue); }
+.event-log .evt-spawn { color: var(--purple); }
+.event-log .evt-plan_parsed { color: var(--yellow); }
+.event-log .evt-zombie { color: var(--red); }
+
+/* --- Status Colors --- */
+.status-pending, .status-retrieving { background: var(--gray); }
+.status-running, .status-reviewing, .status-deciding, .status-evaluating { background: var(--blue); }
+.status-needs_review, .status-needs_decision, .status-approved { background: var(--yellow); }
+.status-complete { background: var(--green); }
+.status-escalated, .status-failed { background: var(--red); }
+.status-cancelled { background: var(--dark-gray); }
+.status-unknown { background: var(--gray); }
+
+.status-pill-pending, .status-pill-retrieving { background: var(--gray); color: var(--text-bright); }
+.status-pill-running, .status-pill-reviewing, .status-pill-deciding, .status-pill-evaluating { background: rgba(88,166,255,0.15); color: var(--blue); }
+.status-pill-needs_review, .status-pill-needs_decision, .status-pill-approved { background: rgba(210,153,34,0.15); color: var(--yellow); }
+.status-pill-complete { background: rgba(63,185,80,0.15); color: var(--green); }
+.status-pill-escalated, .status-pill-failed { background: rgba(248,81,73,0.15); color: var(--red); }
+.status-pill-cancelled { background: var(--dark-gray); color: var(--text-dim); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gray); }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <!-- Header -->
+  <div class="header">
+    <h1>EYWA</h1>
+    <select id="mission-select"></select>
+    <div class="status-dot" id="live-dot"></div>
+    <span class="refresh-label" id="refresh-label">auto-refresh: 5s</span>
+    <span class="refresh-label" id="mission-summary"></span>
+    <span class="refresh-label" style="margin-left: auto" id="last-refresh"></span>
+  </div>
+
+  <!-- Tree -->
+  <div class="tree-area" id="tree-area">
+    <div class="tree-container" id="tree-container"></div>
+  </div>
+
+  <!-- Detail Panel -->
+  <div class="detail-panel" id="detail-panel">
+    <div class="detail-empty" id="detail-empty">Click a node to inspect</div>
+    <div id="detail-view" style="display:none;flex-direction:column;height:100%;">
+      <div class="detail-header">
+        <div class="detail-header-top">
+          <span class="node-title" id="detail-title"></span>
+          <span class="detail-status" id="detail-status"></span>
+        </div>
+        <div class="detail-meta" id="detail-meta"></div>
+      </div>
+      <div class="detail-tabs" id="detail-tabs"></div>
+      <div class="detail-content" id="detail-content"></div>
+    </div>
+  </div>
+
+  <!-- Event Log -->
+  <div class="event-log" id="event-log">
+    <div class="event-log-header" id="event-log-header">
+      <span class="toggle" id="log-toggle">▼</span>
+      Event Log
+      <span id="event-count" style="font-weight:400"></span>
+    </div>
+    <div id="event-log-body">
+      <table><tbody id="event-tbody"></tbody></table>
+    </div>
+  </div>
+</div>
+
+<script>
+const API = '';
+let currentMission = null;
+let selectedNodePath = null;
+let selectedActiveTab = null;  // preserve across refreshes
+let missionData = null;
+let logCollapsed = false;
+const DERIVED_TABS = ['inputs', 'outputs', 'events'];
+const ACTIVE_STATUSES = ['running','reviewing','deciding','evaluating','retrieving','needs_review','needs_decision','approved'];
+
+// --- Init ---
+async function init() {
+  const res = await fetch(`${API}/api/missions`);
+  const missions = await res.json();
+  const sel = document.getElementById('mission-select');
+  sel.innerHTML = missions.map(m => `<option value="${m}">${m}</option>`).join('');
+  if (missions.length > 0) {
+    // prefer the newest sf-date mission if present, else newest mission
+    const sfMissions = missions.filter(m => m.includes('sf-date'));
+    const pref = sfMissions.at(-1) || missions.at(-1) || missions[0];
+    sel.value = pref;
+    currentMission = pref;
+    await refresh();
+  }
+  sel.addEventListener('change', () => {
+    currentMission = sel.value;
+    selectedNodePath = null;
+    refresh();
+  });
+
+  // auto-refresh
+  setInterval(refresh, 5000);
+
+  // event log toggle
+  document.getElementById('event-log-header').addEventListener('click', () => {
+    logCollapsed = !logCollapsed;
+    document.getElementById('event-log-body').style.display = logCollapsed ? 'none' : '';
+    document.getElementById('log-toggle').classList.toggle('collapsed', logCollapsed);
+  });
+}
+
+async function refresh() {
+  if (!currentMission) return;
+  try {
+    const res = await fetch(`${API}/api/mission/${currentMission}`);
+    missionData = await res.json();
+    if (missionData.error) {
+      document.getElementById('tree-container').innerHTML = `<div style="color:var(--red)">${missionData.error}</div>`;
+      return;
+    }
+    renderTree(missionData.tree);
+    renderEvents(missionData.events);
+    const stats = collectNodeStats(missionData.tree);
+    document.getElementById('mission-summary').textContent =
+      `nodes: ${stats.total}  active: ${stats.active}  complete: ${stats.complete}  failed/escalated: ${stats.failed}`;
+    if (!selectedNodePath) {
+      selectedNodePath = missionData.tree.path;
+      selectedActiveTab = 'inputs';
+      showDetail(missionData.tree, false);
+      renderTree(missionData.tree);
+    } else {
+      const node = findNode(missionData.tree, selectedNodePath);
+      if (node) showDetail(node, true);
+    }
+    document.getElementById('last-refresh').textContent = `Last: ${new Date().toLocaleTimeString()}`;
+    document.getElementById('live-dot').style.background =
+      isAnyActive(missionData.tree) ? 'var(--blue)' : 'var(--green)';
+  } catch (e) {
+    console.error('Refresh failed:', e);
+  }
+}
+
+function isAnyActive(node) {
+  if (ACTIVE_STATUSES.includes(node.status)) return true;
+  return (node.children || []).some(isAnyActive);
+}
+
+function collectNodeStats(node) {
+  const stats = { total: 1, active: 0, complete: 0, failed: 0 };
+  if (ACTIVE_STATUSES.includes(node.status)) stats.active += 1;
+  if (node.status === 'complete') stats.complete += 1;
+  if (node.status === 'failed' || node.status === 'escalated') stats.failed += 1;
+  for (const child of (node.children || [])) {
+    const childStats = collectNodeStats(child);
+    stats.total += childStats.total;
+    stats.active += childStats.active;
+    stats.complete += childStats.complete;
+    stats.failed += childStats.failed;
+  }
+  return stats;
+}
+
+function findNode(node, path) {
+  if (node.path === path) return node;
+  for (const c of (node.children || [])) {
+    const found = findNode(c, path);
+    if (found) return found;
+  }
+  return null;
+}
+
+// --- Render Tree ---
+function renderTree(root) {
+  const container = document.getElementById('tree-container');
+  container.innerHTML = '';
+  container.appendChild(buildNodeEl(root));
+}
+
+function buildNodeEl(node) {
+  const group = document.createElement('div');
+  group.className = 'node-group';
+
+  // The box
+  const box = document.createElement('div');
+  box.className = `node-box${selectedNodePath === node.path ? ' selected' : ''}`;
+  box.innerHTML = `
+    <div class="status-badge status-${node.status}"></div>
+    <span class="node-name">${formatName(node.name)}</span>
+    <span class="node-status">${node.status}</span>
+    <span class="depth-tag">d${node.depth}</span>
+  `;
+  box.addEventListener('click', (e) => {
+    e.stopPropagation();
+    selectedNodePath = node.path;
+    selectedActiveTab = null;  // reset tab on new node selection
+    showDetail(node, false);
+    // re-render to update selection highlight
+    renderTree(missionData.tree);
+  });
+  group.appendChild(box);
+
+  // Children
+  if (node.children && node.children.length > 0) {
+    // Connector SVG
+    const connWrap = document.createElement('div');
+    connWrap.className = 'connectors';
+    connWrap.style.height = '32px';
+    group.appendChild(connWrap);
+
+    const childRow = document.createElement('div');
+    childRow.className = 'children-container';
+
+    for (const child of node.children) {
+      childRow.appendChild(buildNodeEl(child));
+    }
+    group.appendChild(childRow);
+
+    // Draw lines after layout
+    requestAnimationFrame(() => drawConnectors(connWrap, box, childRow));
+  }
+
+  return group;
+}
+
+function drawConnectors(wrap, parentBox, childRow) {
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.style.position = 'absolute';
+  svg.style.top = '0';
+  svg.style.left = '0';
+  svg.style.width = '100%';
+  svg.style.height = '100%';
+  svg.style.overflow = 'visible';
+  svg.style.pointerEvents = 'none';
+
+  const wrapRect = wrap.getBoundingClientRect();
+  const parentRect = parentBox.getBoundingClientRect();
+  const parentMidX = parentRect.left + parentRect.width / 2 - wrapRect.left;
+
+  const childBoxes = childRow.querySelectorAll(':scope > .node-group > .node-box');
+  childBoxes.forEach(cb => {
+    const cbRect = cb.getBoundingClientRect();
+    const childMidX = cbRect.left + cbRect.width / 2 - wrapRect.left;
+
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line.setAttribute('x1', parentMidX);
+    line.setAttribute('y1', 0);
+    line.setAttribute('x2', childMidX);
+    line.setAttribute('y2', 32);
+    svg.appendChild(line);
+  });
+
+  wrap.innerHTML = '';
+  wrap.appendChild(svg);
+}
+
+function formatName(name) {
+  // "step-01-romantic-dinners" → "Romantic Dinners"
+  return name
+    .replace(/^step-\d+-/, '')
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, c => c.toUpperCase());
+}
+
+function formatTabLabel(tab) {
+  if (DERIVED_TABS.includes(tab)) {
+    return tab;
+  }
+  return tab.replace(/\.md$/, '').replace(/\/(?!.*\/)/, ' / ');
+}
+
+function normalizeEventNodePath(path) {
+  const normalized = (path || '').replace(/^tree\//, '');
+  return normalized || 'root';
+}
+
+function getArtifactPreview(content) {
+  const line = (content || '')
+    .split('\n')
+    .map(s => s.trim())
+    .find(Boolean);
+  if (!line) return '(empty)';
+  return line.length > 180 ? `${line.slice(0, 177)}...` : line;
+}
+
+function getNodeEvents(node) {
+  return (missionData?.events || []).filter(ev => normalizeEventNodePath(ev.node) === node.path);
+}
+
+function getArtifactCounts(node) {
+  const counts = { input: 0, output: 0, control: 0, other: 0 };
+  for (const artifact of (node.artifacts || [])) {
+    counts[artifact.category] = (counts[artifact.category] || 0) + 1;
+  }
+  return counts;
+}
+
+function renderSection(contentEl, html) {
+  contentEl.innerHTML = `<div class="detail-section">${html}</div>`;
+}
+
+function renderArtifactRows(artifacts, openFirst = false) {
+  return artifacts.map((artifact, index) => `
+    <div class="artifact-row">
+      <div class="artifact-row-top">
+        <span class="artifact-path">${escapeHtml(artifact.path)}</span>
+        <span class="artifact-category">${escapeHtml(artifact.category)}</span>
+      </div>
+      <div class="artifact-preview">${escapeHtml(getArtifactPreview(artifact.content))}</div>
+      <details class="artifact-details"${openFirst && index === 0 ? ' open' : ''}>
+        <summary>Show full file</summary>
+        <pre>${escapeHtml(artifact.content)}</pre>
+      </details>
+    </div>
+  `).join('');
+}
+
+function renderInputsTab(contentEl, node) {
+  const inputArtifacts = (node.artifacts || []).filter(a => a.category === 'input' || a.category === 'other');
+  const controlArtifacts = (node.artifacts || []).filter(a => a.category === 'control');
+  const counts = getArtifactCounts(node);
+
+  renderSection(contentEl, `
+    <div class="detail-grid">
+      <div class="detail-card">
+        <h3>Node</h3>
+        <p><strong>Status:</strong> ${escapeHtml(node.status)}</p>
+        <p><strong>Mode:</strong> ${escapeHtml(node.agent_mode || 'unknown')}</p>
+        <p><strong>Depth:</strong> ${node.depth}</p>
+      </div>
+      <div class="detail-card">
+        <h3>Inputs</h3>
+        <p><strong>Visible inputs:</strong> ${inputArtifacts.length}</p>
+        <p><strong>For orchestrator:</strong> ${counts.control}</p>
+        <p><strong>Path:</strong> ${escapeHtml(node.path)}</p>
+      </div>
+    </div>
+    ${
+      inputArtifacts.length
+        ? `<div class="artifact-list">${renderArtifactRows(inputArtifacts, true)}</div>`
+        : '<div class="detail-card"><h3>Inputs</h3><p>No input artifacts yet.</p></div>'
+    }
+    ${
+      controlArtifacts.length
+        ? `<details class="orchestrator-box">
+            <summary>For Orchestrator</summary>
+            <div class="artifact-list">${renderArtifactRows(controlArtifacts)}</div>
+          </details>`
+        : ''
+    }
+  `);
+}
+
+function renderEventsTab(contentEl, node) {
+  const events = getNodeEvents(node).slice().reverse();
+  if (!events.length) {
+    renderSection(contentEl, '<div class="detail-card"><h3>Events</h3><p>No events logged for this node yet.</p></div>');
+    return;
+  }
+
+  renderSection(contentEl, `
+    <div class="event-list">
+      ${events.map(ev => `
+        <div class="event-row">
+          <div class="event-row-meta">${escapeHtml(new Date(ev.ts).toLocaleString())}</div>
+          <strong>${escapeHtml(ev.event || 'event')}</strong>
+          <div>${escapeHtml(ev.from && ev.to ? `${ev.from} → ${ev.to}` : (ev.details || ''))}</div>
+        </div>
+      `).join('')}
+    </div>
+  `);
+}
+
+function renderOutputsTab(contentEl, node) {
+  const outputArtifacts = (node.artifacts || []).filter(a => a.category === 'output');
+  if (!outputArtifacts.length) {
+    renderSection(contentEl, '<div class="detail-card"><h3>Outputs</h3><p>No output artifacts yet.</p></div>');
+    return;
+  }
+
+  renderSection(contentEl, `
+    <div class="artifact-list">
+      ${renderArtifactRows(outputArtifacts, true)}
+    </div>
+  `);
+}
+
+// --- Detail Panel ---
+function showDetail(node, isAutoRefresh, forcedTab = null) {
+  document.getElementById('detail-empty').style.display = 'none';
+  const view = document.getElementById('detail-view');
+  view.style.display = 'flex';
+
+  document.getElementById('detail-title').textContent = formatName(node.name);
+  document.getElementById('detail-meta').textContent =
+    `path: ${node.path}${node.agent_mode ? `  |  mode: ${node.agent_mode}` : ''}`;
+  const statusEl = document.getElementById('detail-status');
+  statusEl.textContent = node.status;
+  statusEl.className = `detail-status status-pill-${node.status}`;
+
+  // Tabs
+  const available = [...DERIVED_TABS];
+
+  const tabsEl = document.getElementById('detail-tabs');
+  const contentEl = document.getElementById('detail-content');
+
+  // Preserve active tab if it still exists, otherwise pick default
+  let activeTab;
+  if (forcedTab && available.includes(forcedTab)) {
+    activeTab = forcedTab;
+  } else if (isAutoRefresh && selectedActiveTab && available.includes(selectedActiveTab)) {
+    activeTab = selectedActiveTab;
+  } else {
+    activeTab = (node.artifacts || []).some(a => a.category === 'output') ? 'outputs' : 'inputs';
+  }
+
+  // Save scroll position before re-rendering
+  const prevScroll = contentEl.scrollTop;
+
+  function renderTab(tab, preserveScroll) {
+    activeTab = tab;
+    selectedActiveTab = tab;
+    tabsEl.querySelectorAll('button').forEach(b => {
+      b.classList.toggle('active', b.dataset.tab === tab);
+    });
+    if (tab === 'inputs') renderInputsTab(contentEl, node);
+    else if (tab === 'outputs') renderOutputsTab(contentEl, node);
+    else if (tab === 'events') renderEventsTab(contentEl, node);
+    if (preserveScroll) contentEl.scrollTop = prevScroll;
+  }
+
+  tabsEl.innerHTML = '';
+  for (const f of available) {
+    const btn = document.createElement('button');
+    btn.textContent = formatTabLabel(f);
+    btn.title = f;
+    btn.dataset.tab = f;
+    btn.addEventListener('click', () => renderTab(f, false));
+    tabsEl.appendChild(btn);
+  }
+
+  if (activeTab) renderTab(activeTab, isAutoRefresh);
+  else contentEl.innerHTML = '<div class="detail-empty">No files yet</div>';
+}
+
+// --- Event Log ---
+function renderEvents(events) {
+  document.getElementById('event-count').textContent = `(${events.length})`;
+  const tbody = document.getElementById('event-tbody');
+  // Show most recent first, limit to 100
+  const recent = events.slice(-100).reverse();
+  tbody.innerHTML = recent.map(ev => {
+    const t = ev.ts ? new Date(ev.ts).toLocaleTimeString() : '??';
+    const shortNode = ev.node ? normalizeEventNodePath(ev.node) : '';
+    const detail = ev.from && ev.to ? `${ev.from} → ${ev.to}` : (ev.details || '');
+    return `<tr>
+      <td>${t}</td>
+      <td title="${escapeHtml(ev.node || '')}">${escapeHtml(shortNode)}</td>
+      <td class="evt-${ev.event || ''}">${ev.event || ''}</td>
+      <td>${escapeHtml(detail)}</td>
+    </tr>`;
+  }).join('');
+}
+
+function escapeHtml(s) {
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+// --- Start ---
+init();
+</script>
+</body>
+</html>

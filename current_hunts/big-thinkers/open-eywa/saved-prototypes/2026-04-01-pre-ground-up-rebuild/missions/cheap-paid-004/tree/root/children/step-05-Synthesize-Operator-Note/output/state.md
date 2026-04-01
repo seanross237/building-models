@@ -1,0 +1,1 @@
+The mission is blocked due to missing knowledge files (`stuff-for-agents/library/factual/INDEX.md` and `stuff-for-agents/library/meta/INDEX.md`). The next step is to locate or provide these files.

@@ -1,0 +1,1 @@
+I could not find any specific documents in the library that directly explain the file-based nature of Open-Eywa and its benefits. Therefore, I cannot provide a retrieved knowledge file at this time.

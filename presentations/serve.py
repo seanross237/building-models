@@ -40,6 +40,19 @@ def save_feedback(pres_name, data):
     path.write_text(json.dumps(data, indent=2))
 
 
+def get_state(pres_name):
+    path = PRESENTATIONS_DIR / pres_name / "state.json"
+    try:
+        return json.loads(path.read_text())
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
+
+def save_state(pres_name, data):
+    path = PRESENTATIONS_DIR / pres_name / "state.json"
+    path.write_text(json.dumps(data, indent=2))
+
+
 def get_viewed():
     try:
         return json.loads(VIEWED_PATH.read_text())
@@ -271,6 +284,12 @@ class Handler(BaseHTTPRequestHandler):
             self._respond(200, "application/json", body)
             return
 
+        # /{name}/api/state
+        if len(parts) >= 3 and parts[1] == "api" and parts[2] == "state":
+            body = json.dumps(get_state(pres_name)).encode()
+            self._respond(200, "application/json", body)
+            return
+
         # /{name}/ or /{name} — serve the presentation HTML
         # Rewrite internal API paths so feedback works
         html = (pres_dir / "presentation.html").read_text()
@@ -300,7 +319,7 @@ class Handler(BaseHTTPRequestHandler):
                 self._respond(400, "application/json", json.dumps({"error": str(e)}).encode())
             return
 
-        if len(parts) >= 3 and parts[1] == "api" and parts[2] == "feedback":
+        if len(parts) >= 3 and parts[1] == "api":
             pres_name = parts[0]
             pres_dir = PRESENTATIONS_DIR / pres_name
             if not pres_dir.is_dir():
@@ -311,7 +330,13 @@ class Handler(BaseHTTPRequestHandler):
             raw = self.rfile.read(length)
             try:
                 data = json.loads(raw)
-                save_feedback(pres_name, data)
+                if parts[2] == "feedback":
+                    save_feedback(pres_name, data)
+                elif parts[2] == "state":
+                    save_state(pres_name, data)
+                else:
+                    self._respond(404, "text/plain", b"Not found")
+                    return
                 self._respond(200, "application/json", b'{"ok":true}')
             except (json.JSONDecodeError, Exception) as e:
                 self._respond(400, "application/json", json.dumps({"error": str(e)}).encode())

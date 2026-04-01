@@ -1,0 +1,1 @@
+Design a fully detailed date in San Francisco for an adventurous adrenaline junkie who loves heights and physical challenges. This person craves physical intensity, elevated perspectives, and the thrill of doing something that requires nerve. They find meaning in shared physical accomplishment and want a date that feels earned.

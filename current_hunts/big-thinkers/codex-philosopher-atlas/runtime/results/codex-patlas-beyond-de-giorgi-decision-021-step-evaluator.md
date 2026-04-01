@@ -1,0 +1,5 @@
+Wrote the controller outputs as a `proceed` bootstrap decision. The new decision record is at [decision-021.json](/Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/codex-philosopher-atlas/missions/beyond-de-giorgi/controller/decisions/decision-021.json) and [decision-021.md](/Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/codex-philosopher-atlas/missions/beyond-de-giorgi/controller/decisions/decision-021.md). The rationale is that `run-009` already selected the reformulation-audit chain, `CHAIN.md` matches that winner, and there is no post-step result yet that would justify replanning or termination.
+
+I also wrote the next step brief at [step-013/GOAL.md](/Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/codex-philosopher-atlas/missions/beyond-de-giorgi/steps/step-013/GOAL.md). It keeps the strategizer strictly on Chain Step 1: freeze the endpoint window, burden ledger, comparability rules, anti-repackaging classifier, solution-class/localization regime, and prior-art audit format before any candidate reformulation work begins.
+
+Validation: `decision-021.json` parses with `jq`.

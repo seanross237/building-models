@@ -1,0 +1,1 @@
+Write a concise definition of Open-Eywa for a human operator.

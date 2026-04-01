@@ -1,0 +1,3 @@
+Wrote the attack memo to [chain-01.md](/Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-008/attacks/chain-01.md).
+
+It critiques each step concretely, then calls out whole-chain weaknesses: overreliance on the Tao filter, weak cross-architecture comparability, path dependence on prior mission screens, under-policed prior-art overlap, and a bias toward a tidy ranked outcome. I also included the fair strengths so the attack stays ruthless but not distorted.

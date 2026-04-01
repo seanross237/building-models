@@ -1,0 +1,1 @@
+Design a fully detailed date in San Francisco for a quiet intellectual who loves books, history, and hidden gems. This person values discovery, depth, and conversation. They are energized by places with layers of meaning, by stumbling onto something obscure and feeling like they've found a secret. Spectacle without substance bores them.

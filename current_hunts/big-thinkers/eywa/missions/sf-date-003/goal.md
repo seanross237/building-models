@@ -1,0 +1,1 @@
+Create the best date idea for San Francisco for a sporty, nerdy person that likes cliffs and sunsets. The recommendation should be a specific, detailed plan — not just a list of places. It should feel like a complete date from start to finish, with specific locations, timing, and why each part works for this person's interests.

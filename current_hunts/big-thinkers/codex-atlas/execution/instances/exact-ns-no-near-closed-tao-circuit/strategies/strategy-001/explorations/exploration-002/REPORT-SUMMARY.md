@@ -1,0 +1,25 @@
+# REPORT SUMMARY
+
+- Goal: choose one explicit minimal singleton helical support `(K,σ)` for the five distinguished amplitudes `a1,...,a5` and write the exact desired-vs-leakage interaction ledger for the Phase 0 Tao-role monomials.
+- What I tried: read exploration 001 and the local Navier-Stokes notes; fixed the exact helical NS coefficient law from the Waleffe helical decomposition; implemented a reproducible audit script under `code/`; chose the smallest nondegenerate integer support compatible with the only plausible forward triad `k1+k3=k4`; computed the exact internal equations, support-breaking external emissions, and all 32 helicity sign patterns on that fixed support; then checked one adversarial sign pattern designed to suppress leakage.
+- Chosen minimal support: `k1=(1,0,0)`, `k2=(2,0,0)`, `k3=(0,1,0)`, `k4=(1,1,0)`, `k5=(2,2,0)` with `σ=(+,+,-,+,+)`, plus mandatory mirrors.
+- Outcome: the singleton five-amplitude configuration is `already killed statically`.
+- Sharp reason: only `a1 a3 -> a4` survives as an exact desired monomial. The square channels `a1^2 -> a2`, `a1^2 -> a3`, and `a4^2 -> a5` vanish identically; `a2 a3 -> a3` has no singleton exact triad; and the return leg is forced by mirror closure to be `\bar a3 a4 -> a1`, not `a3 a4 -> a1`.
+- Exact chosen-support equations:
+  - `(∂t + ν)a1 = -0.176776695297 i \bar a3 a4 + F1^ext`
+  - `(∂t + 4ν)a2 = F2^ext`
+  - `(∂t + ν)a3 = -0.176776695297 i \bar a1 a4 + F3^ext`
+  - `(∂t + 2ν)a4 = 0.353553390593 i a1 a3 + F4^ext`
+  - `(∂t + 8ν)a5 = F5^ext`
+- Verification scorecard:
+  - `[VERIFIED]` exact helical coefficient law and Tao target mechanism from Waleffe/Tao primary sources
+  - `[COMPUTED]` self-interaction coefficients for `k+k->2k` are exactly zero for both target helicities
+  - `[COMPUTED]` chosen-support internal ledger and external-emission ledger
+  - `[COMPUTED]` helicity scan over all 32 sign patterns on the chosen wavevector support
+  - `[CHECKED]` adversarial helicity arrangement `σ_alt=(+,+,+,-,+)` suppresses the only surviving desired channel but does not rescue the support
+- Key takeaway: the singleton Phase 0 object fails before dynamics. The obstruction is not only leakage; the exact monomial architecture itself is incompatible with singleton helical roles.
+- Proof gaps or computation gaps identified: I did not prove a global minimality theorem over every possible five-wavevector singleton support. What is proved and computed is stronger for this branch: the target monomial list already fails on structural grounds that do not depend on delicate coefficient estimates.
+- Unexpected findings:
+  - the strongest obstruction is the exact vanishing of same-mode helical squares, not merely coefficient hierarchy or weak leakage;
+  - even the best-case support with one surviving desired channel already emits to many outside modes, notably `(2,1,0)`, `(1,2,0)`, `(0,2,0)`, and `(2,3,0)`;
+  - the “leakage-suppressing” helicity choice kills the desired activation channel first.

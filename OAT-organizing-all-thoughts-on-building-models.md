@@ -17,6 +17,7 @@ To research and build towards more capable systems of AI by exploring novel meth
 ## Ways to Use Validation Source to Improve Models
 
 1. **Evolution (A/B/C mutation):** Breed several alternatives, test them against validation, take winner and breed alternatives.
+2. **Architect-Critic-Judge loop:** When constructing a logical argument or plan, have one agent build it (Architect), another try to destroy it (Critic/Adversary), and a third impartially rule on which attacks landed (Judge). The judge prevents overcorrection — without it, the architect over-reacts to overstated attacks and abandons good ideas. The loop produces tighter logic than any single agent pass. Works for theories, plans, strategies — anything with a logical structure that can be attacked.
 
 ## Getting Back on the Horse
 

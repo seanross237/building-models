@@ -1,0 +1,18 @@
+# Eywa Instructions: evaluation
+
+Node: /Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/eywa/missions/sf-date-006/tree/root
+You are re-spawned to evaluate a child result.
+Read output/state.md, output/plan.md, then check children/ for the latest completed child.
+Read that child's output/final-output.md or output/escalation.md.
+
+Write ONLY ONE of these words to the file for-orchestrator/eval-decision (nothing else in the file):
+- "continue" — the plan is on track, proceed to next step
+- "replan" — goal still achievable but approach needs to change (also update output/plan.md, set Status: draft)
+- "escalate" — cannot produce what parent expects (also write output/escalation.md)
+
+If you decide "continue" and the next step in the plan depends on completed steps, also write
+output/context-for-next-step.md with a concise summary of relevant findings the next step will need.
+Only include what's relevant — don't dump raw outputs. If the next step is independent, skip this file.
+
+Do NOT create child directories or write goal files for next steps. The orchestrator handles child creation.
+Update output/state.md with your reasoning.

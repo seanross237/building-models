@@ -1,0 +1,1 @@
+Open-Eywa is a mission-driven execution framework designed to automate complex tasks through a hierarchical structure of workers and steps. It facilitates the management and execution of defined missions, allowing for the systematic completion of objectives.

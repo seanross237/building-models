@@ -1,0 +1,1 @@
+You are given three structured per-archetype analyses of San Francisco date itineraries (adrenaline junkie, quiet intellectual, foodie artist), each covering emotional arc, pacing, sensory engagement, location coherence, and archetype alignment. These analyses will be provided by the orchestrator as context from step 1. The three full itinerary texts are at:

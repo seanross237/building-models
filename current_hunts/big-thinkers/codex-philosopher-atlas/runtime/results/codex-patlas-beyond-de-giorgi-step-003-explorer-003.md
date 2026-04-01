@@ -1,0 +1,5 @@
+Wrote the bounded Step-3 observable table in [REPORT.md](/Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/codex-philosopher-atlas/missions/beyond-de-giorgi/steps/step-003/explorations/exploration-003/REPORT.md) and the sentinel summary in [REPORT-SUMMARY.md](/Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/codex-philosopher-atlas/missions/beyond-de-giorgi/steps/step-003/explorations/exploration-003/REPORT-SUMMARY.md).
+
+The final ranking is narrow: `direction coherence + tube persistence` remains primary, `vorticity-direction coherence` and `tube coherence / persistence` remain secondary comparators, and all Beltrami variants are effectively dead except as fragility screens. The recommendation is to advance to the dynamic plausibility screen only under the fixed Eulerian package, with an immediate kill trigger if the hybrid needs tube-adapted relocalization, tuned thresholds/windows, or stronger direction-derivative control than the bounded package contains.
+
+Verified both report files exist in the exploration directory.

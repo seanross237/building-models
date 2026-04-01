@@ -1,0 +1,1 @@
+The files `stuff-for-agents/library/factual/INDEX.md` and `stuff-for-agents/library/meta/INDEX.md` were not found in the current working directory. Please ensure these files exist at the specified paths relative to the mission directory. If they are located elsewhere, please provide the correct paths.
