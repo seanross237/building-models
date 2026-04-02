@@ -11,6 +11,20 @@ exec > >(tee -a "$LOG_FILE") 2>&1
 
 failures=0
 successes=0
+RADAR_TRANSCRIPT_LIMIT="${RADAR_TRANSCRIPT_LIMIT:-10}"
+RADAR_ANALYZE_LIMIT="${RADAR_ANALYZE_LIMIT:-10}"
+RADAR_PAPER_LOOKBACK_HOURS="${RADAR_PAPER_LOOKBACK_HOURS:-24}"
+TOPIC_ARGS=()
+
+if [[ -n "${RADAR_TOPICS:-}" ]]; then
+  IFS=',' read -r -a raw_topics <<< "$RADAR_TOPICS"
+  for topic in "${raw_topics[@]}"; do
+    topic="${topic//[[:space:]]/}"
+    if [[ -n "$topic" ]]; then
+      TOPIC_ARGS+=(--topic "$topic")
+    fi
+  done
+fi
 
 run_step() {
   local step_name="$1"
@@ -30,10 +44,32 @@ run_step() {
 }
 
 echo "[research-radar] starting nightly radar run at $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
-run_step collect-youtube bash "$ROOT/pipelines/collect-youtube.sh"
-run_step collect-transcripts bash "$ROOT/pipelines/collect-transcripts.sh"
-run_step collect-papers bash "$ROOT/pipelines/collect-papers.sh"
-run_step analyze-items bash "$ROOT/pipelines/analyze-items.sh"
+echo "[research-radar] topic_filter=${RADAR_TOPICS:-all} transcript_limit=$RADAR_TRANSCRIPT_LIMIT analyze_limit=$RADAR_ANALYZE_LIMIT paper_lookback_hours=$RADAR_PAPER_LOOKBACK_HOURS"
+
+youtube_args=("${TOPIC_ARGS[@]}")
+if [[ -n "${RADAR_YOUTUBE_MAX_RESULTS:-}" ]]; then
+  youtube_args+=(--max-results "$RADAR_YOUTUBE_MAX_RESULTS")
+fi
+run_step collect-youtube bash "$ROOT/pipelines/collect-youtube.sh" "${youtube_args[@]}"
+
+transcript_args=("${TOPIC_ARGS[@]}" --limit "$RADAR_TRANSCRIPT_LIMIT")
+if [[ -n "${RADAR_TRANSCRIPT_FORCE:-}" ]]; then
+  transcript_args+=(--force)
+fi
+run_step collect-transcripts bash "$ROOT/pipelines/collect-transcripts.sh" "${transcript_args[@]}"
+
+paper_args=("${TOPIC_ARGS[@]}" --lookback-hours "$RADAR_PAPER_LOOKBACK_HOURS")
+if [[ -n "${RADAR_PAPER_MAX_RESULTS:-}" ]]; then
+  paper_args+=(--max-results "$RADAR_PAPER_MAX_RESULTS")
+fi
+run_step collect-papers bash "$ROOT/pipelines/collect-papers.sh" "${paper_args[@]}"
+
+analyze_args=("${TOPIC_ARGS[@]}" --limit "$RADAR_ANALYZE_LIMIT")
+if [[ -n "${RADAR_ANALYZE_FORCE:-}" ]]; then
+  analyze_args+=(--force)
+fi
+run_step analyze-items bash "$ROOT/pipelines/analyze-items.sh" "${analyze_args[@]}"
+
 run_step build-presentations bash "$ROOT/pipelines/build-presentations.sh"
 
 echo "[research-radar] finished nightly radar run at $(date -u '+%Y-%m-%dT%H:%M:%SZ') failures=$failures successes=$successes"
