@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import subprocess
 import sys
 from datetime import datetime, timezone
@@ -26,6 +27,15 @@ MODEL_REQUIRED_KEYS = {
     "why_it_matters_now",
 }
 OPTIONAL_MODEL_KEYS = {"presentation_candidate", "key_takeaways"}
+AUTH_ERROR_MARKERS = (
+    "OAuth token has expired",
+    "authentication_error",
+    "Failed to authenticate",
+)
+
+
+class ClaudeUnavailableError(RuntimeError):
+    pass
 
 
 def load_threshold(default: int = 9) -> int:
@@ -140,7 +150,159 @@ def load_item(item_path: Path) -> dict[str, object]:
         "source_url": metadata.get("url", "").strip(),
         "priority": strip_ticks(metadata.get("priority", "unknown")),
         "source_context": strip_ticks(metadata.get("source context", "unknown")),
+        "metadata": metadata,
         "text": text,
+    }
+
+
+def extract_section(text: str, heading: str) -> str:
+    pattern = rf"^{re.escape(heading)}\n\n(.*?)(?=^## |\Z)"
+    match = re.search(pattern, text, flags=re.MULTILINE | re.DOTALL)
+    if not match:
+        return ""
+    return match.group(1).strip()
+
+
+def sentence_excerpt(text: str, max_sentences: int = 2, max_chars: int = 500) -> str:
+    cleaned = " ".join(text.split())
+    if not cleaned:
+        return ""
+    parts = [part.strip() for part in re.split(r"(?<=[.!?])\s+", cleaned) if part.strip()]
+    excerpt = " ".join(parts[:max_sentences]) if parts else cleaned
+    if len(excerpt) > max_chars:
+        excerpt = excerpt[: max_chars - 3].rstrip() + "..."
+    return excerpt
+
+
+def heuristic_focus_matches(item: dict[str, object]) -> list[str]:
+    haystack = f"{item['title']} {item['text']} {item['source_context']}".lower()
+    groups = [
+        ("self-evolving AI systems", ["self-evolving", "self-improving", "recursive self-improvement", "meta-optimization"]),
+        ("eval and experimentation loops", ["eval", "evaluation", "experiment", "regression", "feedback loop", "a/b testing", "ab testing"]),
+        ("durable agent orchestration", ["agent", "orchestration", "planner", "worker", "retrieval", "parallel agent"]),
+        ("agent systems for hard science problems", ["physics", "theorem", "proof", "science", "scientific", "math"]),
+    ]
+    matches: list[str] = []
+    for label, keywords in groups:
+        if any(keyword in haystack for keyword in keywords):
+            matches.append(label)
+    return matches
+
+
+def heuristic_relevance(item: dict[str, object]) -> int:
+    haystack = f"{item['title']} {item['text']} {item['source_context']}".lower()
+    score = 2
+    priority = str(item.get("priority", "unknown"))
+    if priority == "super_relevant":
+        score += 3
+    elif priority == "relevant":
+        score += 2
+
+    weighted_keywords = [
+        ("self-evolving", 2),
+        ("self-improving", 2),
+        ("agent", 1),
+        ("orchestration", 1),
+        ("eval", 1),
+        ("experiment", 1),
+        ("feedback", 1),
+        ("science", 1),
+        ("physics", 1),
+        ("math", 1),
+        ("theorem", 1),
+        ("retrieval", 1),
+    ]
+    for keyword, weight in weighted_keywords:
+        if keyword in haystack:
+            score += weight
+
+    metadata = item.get("metadata", {})
+    if isinstance(metadata, dict):
+        transcript_status = strip_ticks(str(metadata.get("transcript status", "")))
+        full_text_status = strip_ticks(str(metadata.get("full text status", "")))
+        if transcript_status == "ready":
+            score += 1
+        elif transcript_status in {"retry-needed", "unavailable", "missing"}:
+            score -= 1
+        if full_text_status == "abstract-only":
+            score -= 1
+
+    return max(1, min(10, score))
+
+
+def fallback_analysis(item: dict[str, object], threshold: int, reason: str) -> dict[str, object]:
+    metadata = item.get("metadata", {})
+    if not isinstance(metadata, dict):
+        metadata = {}
+
+    focus_matches = heuristic_focus_matches(item)
+    relevance_score = heuristic_relevance(item)
+    caveats: list[str] = []
+    key_takeaways: list[str] = [f"Fallback analysis used because {reason}."]
+
+    if item["item_type"] == "paper":
+        abstract = extract_section(str(item["text"]), "## Abstract")
+        summary = sentence_excerpt(abstract, max_sentences=3)
+        if not summary:
+            summary = f"A paper titled '{item['title']}' was collected for this topic, but only limited metadata was available during fallback analysis."
+        full_text_status = strip_ticks(str(metadata.get("full text status", "unknown")))
+        if full_text_status != "ready":
+            caveats.append(f"full text status was `{full_text_status}`")
+            key_takeaways.append(f"Full text was not available during analysis; current summary is based on the abstract and metadata.")
+        authors = str(metadata.get("authors", "")).strip()
+        if authors:
+            key_takeaways.append(f"Collected paper metadata includes authors: {authors}.")
+    else:
+        transcript = extract_section(str(item["text"]), "## Transcript")
+        channel = strip_ticks(str(metadata.get("channel", "unknown")))
+        duration = strip_ticks(str(metadata.get("duration", "unknown")))
+        transcript_status = strip_ticks(str(metadata.get("transcript status", "unknown")))
+        if transcript_status == "ready" and transcript and "Transcript fetch" not in transcript:
+            summary = sentence_excerpt(transcript, max_sentences=3)
+        else:
+            summary = (
+                f"A YouTube video titled '{item['title']}' from {channel} ({duration}) was collected for this topic. "
+                "Transcript content was not reliably available, so this fallback summary is based on metadata only."
+            )
+            caveats.append(f"transcript status was `{transcript_status}`")
+            key_takeaways.append(f"Transcript content was unavailable during analysis, so deeper content validation is still needed.")
+        key_takeaways.append(f"Source channel during collection: {channel}.")
+
+    if focus_matches:
+        why_it_matters_now = (
+            f"This item maps to {', '.join(focus_matches)} within the current Eywa and Atlas lens. "
+            "It is relevant because the system is prioritizing durable agent improvement, evaluation, and hard-problem-solving workflows."
+        )
+    else:
+        why_it_matters_now = (
+            "This item appears adjacent to the current Eywa and Atlas lens, but the connection is weaker based on the available metadata. "
+            "It is worth storing, but it should stay low-confidence until richer source content is available."
+        )
+
+    if caveats:
+        why_it_matters_now += " Current caveat: " + "; ".join(caveats) + "."
+
+    if not any("focus" in takeaway.lower() for takeaway in key_takeaways):
+        if focus_matches:
+            key_takeaways.append(f"Strongest current match: {focus_matches[0]}.")
+        else:
+            key_takeaways.append("No strong focus-area keyword match was found beyond the topic assignment.")
+
+    key_takeaways = key_takeaways[:5]
+
+    return {
+        "item_id": str(item["item_id"]),
+        "topic_slug": str(item["topic_slug"]),
+        "item_type": str(item["item_type"]),
+        "title": str(item["title"]),
+        "source_url": str(item["source_url"]),
+        "summary": summary,
+        "relevance_score": relevance_score,
+        "why_it_matters_now": why_it_matters_now,
+        "key_takeaways": key_takeaways,
+        "presentation_candidate": relevance_score >= threshold,
+        "analysis_mode": "fallback",
+        "analysis_error": reason,
     }
 
 
@@ -244,6 +406,9 @@ def validate_analysis(data: dict[str, object], item: dict[str, object], threshol
     if isinstance(model_candidate, str):
         model_candidate = model_candidate.strip().lower() in {"true", "yes", "1"}
     data["model_presentation_candidate"] = bool(model_candidate)
+    data["analysis_mode"] = str(data.get("analysis_mode", "claude")).strip() or "claude"
+    if "analysis_error" in data:
+        data["analysis_error"] = str(data["analysis_error"]).strip()
     data["presentation_candidate"] = relevance_score >= threshold
     data["presentation_threshold"] = threshold
     return data
@@ -265,10 +430,12 @@ def run_claude_raw(prompt: str, model: str, max_turns: int, cwd: Path) -> str:
         str(max_turns),
     ]
     result = subprocess.run(command, cwd=cwd, capture_output=True, text=True, check=False)
+    stdout = result.stdout.strip() or result.stderr.strip()
+    if any(marker in stdout for marker in AUTH_ERROR_MARKERS):
+        raise ClaudeUnavailableError("Claude authentication is unavailable in the current runtime")
     if result.returncode != 0 and not result.stdout.strip():
         raise RuntimeError(result.stderr.strip() or f"claude exited with code {result.returncode}")
 
-    stdout = result.stdout.strip() or result.stderr.strip()
     try:
         outer = json.loads(stdout)
         raw_result = str(outer.get("result", "")).strip()
@@ -276,6 +443,8 @@ def run_claude_raw(prompt: str, model: str, max_turns: int, cwd: Path) -> str:
         raw_result = stdout
     if not raw_result:
         raise RuntimeError("claude produced no analysis payload")
+    if any(marker in raw_result for marker in AUTH_ERROR_MARKERS):
+        raise ClaudeUnavailableError("Claude authentication is unavailable in the current runtime")
     return raw_result
 
 
@@ -307,7 +476,10 @@ def run_claude_analysis(
     last_output = ""
 
     for attempt in range(MAX_ANALYSIS_ATTEMPTS):
-        raw_output = run_claude_raw(attempt_prompt, model=model, max_turns=max_turns, cwd=cwd)
+        try:
+            raw_output = run_claude_raw(attempt_prompt, model=model, max_turns=max_turns, cwd=cwd)
+        except ClaudeUnavailableError as exc:
+            return fallback_analysis(item, threshold=threshold, reason=str(exc))
         last_output = raw_output
         try:
             parsed = extract_json_block(raw_output)
@@ -320,7 +492,7 @@ def run_claude_analysis(
     preview = " ".join(last_output.split())
     if len(preview) > 400:
         preview = preview[:400] + "..."
-    raise RuntimeError(f"claude produced invalid analysis payload: {last_error}. preview={preview}")
+    return fallback_analysis(item, threshold=threshold, reason=f"Claude response invalid: {last_error}. preview={preview}")
 
 
 def summary_markdown(item: dict[str, object], analysis: dict[str, object]) -> str:
@@ -334,6 +506,7 @@ def summary_markdown(item: dict[str, object], analysis: dict[str, object]) -> st
         f"- Relevance score: `{analysis['relevance_score']}`\n",
         f"- Presentation candidate: `{str(analysis['presentation_candidate']).lower()}`\n",
         f"- Model presentation candidate: `{str(analysis['model_presentation_candidate']).lower()}`\n",
+        f"- Analysis mode: `{analysis.get('analysis_mode', 'claude')}`\n",
         f"- Generated at UTC: `{generated_at}`\n\n",
         "## Summary\n\n",
         f"{analysis['summary']}\n\n",
@@ -345,6 +518,11 @@ def summary_markdown(item: dict[str, object], analysis: dict[str, object]) -> st
         lines.append(f"- {takeaway}\n")
     if not analysis.get("key_takeaways"):
         lines.append("- No key takeaways provided.\n")
+    if analysis.get("analysis_error"):
+        lines.extend([
+            "\n## Analysis Notes\n\n",
+            f"{analysis['analysis_error']}\n\n",
+        ])
     lines.extend([
         "\n## Structured Output\n\n",
         "```json\n",

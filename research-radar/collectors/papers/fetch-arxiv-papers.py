@@ -28,6 +28,10 @@ class ArxivRateLimitError(RuntimeError):
     pass
 
 
+class ArxivTransientError(RuntimeError):
+    pass
+
+
 def load_topics() -> list[dict[str, object]]:
     topics: list[dict[str, object]] = []
     current: dict[str, object] | None = None
@@ -226,7 +230,7 @@ def request_feed(url: str) -> bytes:
             if attempt == 0:
                 time.sleep(3)
                 continue
-            raise RuntimeError(f"arXiv request failed: {exc}") from exc
+            raise ArxivTransientError(f"arXiv request failed: {exc}") from exc
 
     raise RuntimeError(f"arXiv request failed: {last_error}")
 
@@ -472,19 +476,19 @@ def main() -> int:
     max_results = args.max_results or load_max_results()
     total = 0
     failures = 0
-    rate_limited = 0
+    soft_failures = 0
     for topic in topics:
         try:
             total += run_topic(topic, max_results=max_results, lookback_hours=args.lookback_hours, dry_run=args.dry_run)
-        except ArxivRateLimitError as exc:  # pragma: no cover
-            rate_limited += 1
-            print(f"[collect-papers] topic={topic['slug']} rate-limited: {exc}", file=sys.stderr)
+        except (ArxivRateLimitError, ArxivTransientError) as exc:  # pragma: no cover
+            soft_failures += 1
+            print(f"[collect-papers] topic={topic['slug']} transient-skip: {exc}", file=sys.stderr)
         except Exception as exc:  # pragma: no cover
             failures += 1
             print(f"[collect-papers] topic={topic['slug']} failed: {exc}", file=sys.stderr)
 
     print(
-        f"[collect-papers] completed topics={len(topics)} total_new_papers={total} failures={failures} rate_limited={rate_limited}"
+        f"[collect-papers] completed topics={len(topics)} total_new_papers={total} failures={failures} transient_skips={soft_failures}"
     )
     return 1 if failures else 0
 
