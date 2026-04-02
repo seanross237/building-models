@@ -2,16 +2,16 @@
 
 ## Goal
 
-Retire `home-base/current_hunts/youtube/` once Research Radar is actually handling the flow.
+Retire `home-base/current_hunts/youtube/` and leave Research Radar as the only active path.
 
 ## Phases
 
-1. Keep the old YouTube folder as a temporary legacy source while the new structure is being wired.
-2. Point the runner at `home-base/research-radar/pipelines/nightly-radar.sh`.
-3. Verify that new runs write into `home-base/research-radar/data/topics/...`.
-4. Verify transcripts, paper links, and summaries are landing in the new per-topic layout.
-5. After the new path is trusted, delete `home-base/current_hunts/youtube/`.
+1. Point the runner at `home-base/research-radar/pipelines/nightly-radar.sh`.
+2. Verify that new runs write into `home-base/research-radar/data/topics/...`.
+3. Verify transcripts, paper links, and summaries are landing in the new per-topic layout.
+4. Delete `home-base/current_hunts/youtube/`.
+5. Keep Research Radar as the only active YouTube collection path.
 
 ## Rule
 
-There should only be one canonical YouTube collection location once the new system is working.
+There is now only one canonical YouTube collection location: `home-base/research-radar/`.

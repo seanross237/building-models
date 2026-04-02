@@ -38,8 +38,8 @@ The local copy of the Railway service lives under:
 - `runner/agent-runner/`
 
 Supabase task rows should stay thin. Repo config should remain canonical.
+
 ## Migration Note
 
-Keep `home-base/current_hunts/youtube/` only as a temporary legacy source while Research Radar is being verified.
-Once the new nightly path is running correctly and writing into `home-base/research-radar/`, remove the old `current_hunts/youtube/` folder so there is only one canonical YouTube collection location.
-
+`home-base/current_hunts/youtube/` has been retired.
+`home-base/research-radar/` is now the only canonical YouTube collection location.
