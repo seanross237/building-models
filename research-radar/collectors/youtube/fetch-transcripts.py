@@ -8,7 +8,7 @@ import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 
-ROOT = Path("/Users/seanross/kingdom_of_god/home-base/research-radar")
+ROOT = Path(__file__).resolve().parents[2]
 ITEM_GLOB = "data/topics/*/youtube/items/*.md"
 SECTION_PATTERN = re.compile(r"(^## (?P<section>.+?)\n\n)(?P<body>.*?)(?=^## |\Z)", re.MULTILINE | re.DOTALL)
 URL_PATTERN = re.compile(r"^- URL: (?P<url>.+)$", re.MULTILINE)

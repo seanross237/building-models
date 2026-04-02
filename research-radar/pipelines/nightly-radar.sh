@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-ROOT="/Users/seanross/kingdom_of_god/home-base/research-radar"
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 LOG_DIR="$ROOT/logs"
 mkdir -p "$LOG_DIR"
 STAMP="$(date +%Y-%m-%dT%H-%M-%S)"

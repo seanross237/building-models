@@ -8,7 +8,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import quote
 
-ROOT = Path("/Users/seanross/kingdom_of_god/home-base/research-radar")
+ROOT = Path(__file__).resolve().parents[2]
 TOPICS_FILE = ROOT / "config/topics-we-care-about.yaml"
 THRESHOLDS_FILE = ROOT / "config/thresholds.yaml"
 YOUTUBE_FILTER = "EgQIAhAB"

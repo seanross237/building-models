@@ -1,9 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 
-ROOT="/Users/seanross/kingdom_of_god/home-base/research-radar"
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+REPO_ROOT="$(cd "$ROOT/.." && pwd)"
 QUEUE_DIR="$ROOT/data/queues/presentation-candidates"
-OUTPUT_ROOT="/Users/seanross/kingdom_of_god/home-base/presentations"
+OUTPUT_ROOT="$REPO_ROOT/presentations"
 
 mkdir -p "$QUEUE_DIR"
 count=$(find "$QUEUE_DIR" -maxdepth 1 -name "*.json" | wc -l | tr -d " ")

@@ -8,7 +8,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-ROOT = Path("/Users/seanross/kingdom_of_god/home-base/research-radar")
+ROOT = Path(__file__).resolve().parents[2]
 THRESHOLDS_FILE = ROOT / "config/thresholds.yaml"
 LENS_FILE = ROOT / "config/what-we-care-about-right-now.md"
 PROMPT_FILE = ROOT / "analyzers/summarize-and-score/prompt.md"
