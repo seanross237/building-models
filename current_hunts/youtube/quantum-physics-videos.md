@@ -1482,3 +1482,146 @@ Automatically updated at midnight PST.
   https://www.youtube.com/watch?v=Ik0jGoO2B4U
 - **Planck’s Quantum Theory & Einstein Equation (Class 12 Physics)** — VAA_Nanded_Official (47:22, 10 views)
   https://www.youtube.com/watch?v=qnh5-xAb6cY
+
+## 2026-04-02 — 70 videos
+
+- **Why Reality Feels Real — Quantum Physics Keeps Getting It Wrong** — Sleepy Physicist (1:56:46, 216 views)
+  https://www.youtube.com/watch?v=ygFzZcpVJxg
+- **He Proved Quantum Mechanics Contradicts Itself** — Curt Jaimungal (10:28, 3.1K views)
+  https://www.youtube.com/watch?v=hVoHOYjtdZU
+- **7 Signs Your Quantum Manifestation Is Closer Than You Think** — Quantum Shift (21:09, 2.8K views)
+  https://www.youtube.com/watch?v=Ez0ChPcVM-M
+- **Why Not Nothing? | Stuart Kauffman** — Closer To Truth (8:20, 2.6K views)
+  https://www.youtube.com/watch?v=FtW4wWiUu68
+- **This Hidden Ancient Code Reveals EXACTLY How Your Words Control Reality (No BS)** — Philosophical Essence (1:01:46, 3.9K views)
+  https://www.youtube.com/watch?v=WQ9drhVIbiE
+- **Your Body Is Running a Quantum Computer - And Scientists Just Proved It** — FutureSketchLab (10:37, 77 views)
+  https://www.youtube.com/watch?v=mpueHBkZoSQ
+- **Something Strange Happens When You Trust Quantum Mechanics   — Feynman' Explains** — Feynman Method (22:40, 10 views)
+  https://www.youtube.com/watch?v=XoeCQALM_QY
+- **The Quantum Physics of Aging: Summarizing Prof. Alistair Nunn's Revolutionary Health Theories** — Wellness On My Brain (3:58, 2 views)
+  https://www.youtube.com/watch?v=8O7R6bjadkM
+- **The Quantum Law of Being: Master This and Reality Bends to You | leanord Explains** — The Era of Physics (21:03, 4 views)
+  https://www.youtube.com/watch?v=AUkru6WMC0Q
+- **Everything in the universe might be the same particle from the Big Bang | Michelle Thaller** — Big Think Clips (22:47, 9.2K views)
+  https://www.youtube.com/watch?v=p4iXB1hp2zI
+- **Quantum Computers Are Breaking Physics — Richard Feynman Explained Why** — Physics After Dark (1:02:07, 10 views)
+  https://www.youtube.com/watch?v=DVdkoVBuiFY
+- **When You Trust Quantum Mechanics, Strange Things Happen | Richard Feynman** — Physics, Clearly (29:21, 2 views)
+  https://www.youtube.com/watch?v=p5Pm_G72unI
+- **Quantum Physics Reveals: the TRUTH about Life After Death and Eternity** — Theodore, the Researcher (2:31:38, 203 views)
+  https://www.youtube.com/watch?v=9Nl2BKcXKNM
+- **Quantum Physics Is Happening Inside Your Body Right Now** — physics phyco (11:49, 3 views)
+  https://www.youtube.com/watch?v=K7v0dZ9D3XA
+- **At This FREQUENCY, You CREATE A New Reality FASTER (Nikola Tesla Was Right!)** — Spiritual Dive (59:34, 1.1K views)
+  https://www.youtube.com/watch?v=wLDkUFAlb54
+- **You are not who you think you are.** — CatWithBlueHat (6:26, 7.3K views)
+  https://www.youtube.com/watch?v=ONGlCbl3jbo
+- **Why The Universe Is MADE Of Just One Photon? The Truth Will COLLAPSE Everything** — Feynman Light Files (26:00, 804 views)
+  https://www.youtube.com/watch?v=nhb6U2mSXtQ
+- **What Is Quantum Mechanics, Really? | Leonard Susskind** — Susskind Style Science (21:37, 156 views)
+  https://www.youtube.com/watch?v=7Z87rezazwY
+- **Why Interstellar Travel Is Physically Impossible | Susskind Explains** — Leonard Susskind Explains (20:51, 1.6K views)
+  https://www.youtube.com/watch?v=wIlS6luTK8k
+- **XRP vs Quantum Attack!** — Zach Rector (18:46, 3.9K views)
+  https://www.youtube.com/watch?v=HaD4RRSBIpI
+- **The Invisible Fortune -  Perceiving and Claiming the Wealth That Already Exists** — Brian Scott (37:57, 3.0K views)
+  https://www.youtube.com/watch?v=BonzNLZJ-70
+- **Richard Feynman: Teleportation Kills You (Here's Why Physics Proves It)** — The Jesus Way (1:52:33, 28 views)
+  https://www.youtube.com/watch?v=Ms-XFanTGzg
+- **Fall Asleep to Quantum Physics | The Universe's Strangest Rules Explained** — Sleepy Logic (2:04:22, 4 views)
+  https://www.youtube.com/watch?v=yqFet31CQCg
+- **Quantum Physics Just Explained Why Coincidences Are Not Random** — Cosmic Sleep (2:34:38, 2.4K views)
+  https://www.youtube.com/watch?v=X4G9TbfTRCs
+- **3I/ATLAS Just LOOPED Around Moon 300 Times — Creating Spiral Trail | Michio Kaku** — Astro IN and ASTRO AVI (24:05, 6.0K views)
+  https://www.youtube.com/watch?v=Dd5zAVmOzsU
+- **Feynman Explains What is the Schrödinger Equation? A basic introduction to Quantum Mechanics** — Physics Unplugged (27:11, 1 views)
+  https://www.youtube.com/watch?v=3Sy8Ri9T3Yw
+- **Antimatter: why does it cost 62 trillion dollars per gram?** — Renderium (13:12, 1.2K views)
+  https://www.youtube.com/watch?v=rlD4ADiR6mA
+- **We Went Inside CERN... Something Bigger is Happening** — New Scientist (37:35, 6.0K views)
+  https://www.youtube.com/watch?v=lZ9OdP1B_TI
+- **This is why Contradiction IS the Foundation of REALITY!!!** — The BottomTurtle (5:00, 13 views)
+  https://www.youtube.com/watch?v=zEhUVvh9paY
+- **Why the Universe Has No Beginning |  Leonard Susskind** — Leonard Susskind Explains (23:27, 702 views)
+  https://www.youtube.com/watch?v=FjMPMomg6O8
+- **What Is a Singularity, Really? | Leonard Susskind** — SK Explains the Universe (22:58, 436 views)
+  https://www.youtube.com/watch?v=oSxqtmIhaB0
+- **A Path To Quantum Gravity | Sabrina Pasterski** — Legends of Modern Science (51:24, 3 views)
+  https://www.youtube.com/watch?v=DiIS4_CasFM
+- **The Quantum Field Only Responds When You STOP Fighting the Collapse** — Quantum Watcher (1:20:08, 8 views)
+  https://www.youtube.com/watch?v=JaiQiJg-ZOk
+- **THIS IS YOUR ENTRY POINT** — Ecletic S (6:06, 24 views)
+  https://www.youtube.com/watch?v=bsqwAPoCyso
+- **Atoms in two places at once #quantumentaglement #physics, #physicsmadesimple, #physicsteacher** — Physics & Physicists (4:50, 2 views)
+  https://www.youtube.com/watch?v=QFPX776j14U
+- **Why We've Been Thinking About Consciousness Backwards** — The Unfinishable Map (5:16, 11 views)
+  https://www.youtube.com/watch?v=Bok4EVB_LeA
+- **Carl Sagan Explains Why You Have Never Touched Anything In Your Entire Life** — Sagan Cosmic Way (15:42, 3 views)
+  https://www.youtube.com/watch?v=11w-Vw0s_E8
+- **Quantum Mechanics,Solid state & Gaseous State | 2nd Sem | Calicut University | Prediction Series - 1** — UniPrep - മലയാളം (NA, new)
+  https://www.youtube.com/watch?v=BZ2pKahhgkw
+- **Nobody Taught You This Difference Between Math and Physics — But Feynman Did_** — Feynman Method (22:47, 12 views)
+  https://www.youtube.com/watch?v=QklqYnx-hpE
+- **Punjab Master Cadre Physics Demo Lecture | Quantum Mechanics Basics for Exams 2026 Batch | Gyanm** — Gyanm Punjab (NA, new)
+  https://www.youtube.com/watch?v=kJCoKeILzR0
+- **Why Nothing Can Ever Truly Be Touched** — The Physics Stories (8:39, new)
+  https://www.youtube.com/watch?v=YALN_u12JJM
+- **Bitcoin's Quantum Computing Threat** — Bitcoin University (7:14, 6.4K views)
+  https://www.youtube.com/watch?v=m-7M07H27ew
+- **Crypto Corner: Mined in America Act & Quantum Computing Risk** — Schwab Network (7:52, 548 views)
+  https://www.youtube.com/watch?v=lzok-RXADVc
+- **$470 Billion Risk: Bitcoin’s Quantum Countdown Starts** — Coin Bureau (22:41, 17.3K views)
+  https://www.youtube.com/watch?v=Ykwi-3S1bYs
+- **Google's Quantum Chip Just Detected the Signal Tesla Heard in 1899** — Luminox (23:33, 2.4K views)
+  https://www.youtube.com/watch?v=CQ0WdY-b7vI
+- **Did Google Just CRACK Bitcoin? (Here's What They're Hiding)** — Simply Bitcoin (35:23, 8.2K views)
+  https://www.youtube.com/watch?v=5wLBnSMy2Vc
+- **Can Bitcoin Survive Quantum Computing? w/ Ark Invest** — Milk Road (37:18, 580 views)
+  https://www.youtube.com/watch?v=KsmJrUk2pxE
+- **Google Just Lowered the Barrier Could Bitcoin Be at Risk | My Two Sats** — RoxomTV Originals (51:03, 16 views)
+  https://www.youtube.com/watch?v=T2eBl5E6xhE
+- **They Just Solved Quantum Computing's 'Impossible' Problem (And The Timeline Just Changed)** — The Intelligence Shift (11:26, new)
+  https://www.youtube.com/watch?v=yIL03Mt7yEE
+- **U of S acquires powerful quantum computer to aid cutting-edge research** — CBC News Saskatchewan (2:10, 85 views)
+  https://www.youtube.com/watch?v=hoas8cURZkM
+- **Google's WARNING About CRYPTO Facing Quantum Computing… XRP and ALGORAND Are Prepared** — Decrypting Crypto | Crypto Finance News & Updates (23:59, 163 views)
+  https://www.youtube.com/watch?v=dc0h79BnWDw
+- **New Quantum Breakthrough & Iran War Escalations - More Pain for Bitcoin?** — BTC Sessions and 3 more (1:42:22, 2.2K views)
+  https://www.youtube.com/watch?v=lZk1oIty3II
+- **Is Quantum Computing a REAL Threat to Bitcoin? 🔒 #QuantumComputing #CryptoNews ##CryptoInvesting** — Less Noise More Signal (59, 17 views)
+  https://www.youtube.com/watch?v=Bjg-T_1keSc
+- **Quantapalooza™ Podcast No 15   Quantum Computing Breaks Everything in 2029   Is that really so bad?** — Justin Lacche (Dr. J) (11:03, 140 views)
+  https://www.youtube.com/watch?v=oVuD4IUonKA
+- **Algorand Crypto Pump on Google Quantum Computing Documents** — Jacob Crypto Bury (4:00, 51 views)
+  https://www.youtube.com/watch?v=LG6SuVGHANU
+- **EMERGENCY: Google Confirms Bitcoin Can Be Hacked in 9 Minutes — $470B at Risk RIGHT NOW** — Mystery Market Vault (18:52, 301 views)
+  https://www.youtube.com/watch?v=Qh2rCK036-U
+- **Xanadu Quantum Technologies Limited (TSX: XNDU) Opens the Market Wednesday, April 1, 2026** — TMX Group (21, 287 views)
+  https://www.youtube.com/watch?v=Jwc9RTYY1ZM
+- **Google's Quantum Bombshell Just Made Algorand the Leader** — Passive Income Network (28:44, 111 views)
+  https://www.youtube.com/watch?v=EtzmXAmuhLg
+- **Bitcoin’s Quantum Computing Threat Just Got Real** — THE BLOCK ANALYST (NA, new)
+  https://www.youtube.com/watch?v=Zk24TUX3SQA
+- **Can quantum computing crack Bitcoin?!** — mbio (6:49, 6 views)
+  https://www.youtube.com/watch?v=rYYnEtpOJWQ
+- **3 Months Without a Qubit Failure?! The Quantum Miracle Nobody Planned😱** — Quantum Articles (6:34, 19 views)
+  https://www.youtube.com/watch?v=eJ1DYXXK_N8
+- **💥MEGA GOOGLE, XRP BOMBSHELL! (THEY WARNED EVERYONE)** — Crypto Sensei (13:53, 13.2K views)
+  https://www.youtube.com/watch?v=dWDY2kvc75w
+- **Quantum Computer Fail Ho Gaya… 😨 | The Biggest Problem No One Talks About** — NeoToon Studios (2:59, 6 views)
+  https://www.youtube.com/watch?v=vUTm_MD7PZQ
+- **Weekly Crypto Update March 31st, 2026 (part 1). Will Quantum Computing Wipe Out Bitcoin??** — Psychic Liz Cross (18:00, 533 views)
+  https://www.youtube.com/watch?v=1rLHY0_FVFs
+- **👍💯XRP ALGO ADA EDX BANKING!!!** — CRYPTO with KLAUS (14:33, 3.2K views)
+  https://www.youtube.com/watch?v=CMwbjYRlXsY
+- **Google Just Warned About Crypto… And Nobody’s Ready #crypto #cryptonews #bitcoin** — Paula Talks Crypto (6:57, 470 views)
+  https://www.youtube.com/watch?v=H_FEBLtV9ig
+- **Building Future-Ready Interns: AI & Quantum Computing in Early Careers | Neueda** — Neueda (1:04, 11 views)
+  https://www.youtube.com/watch?v=ljBCsxYsyao
+- **Federico Faggin: Mind is Quantum Information (Quantum Reality and Consciousness)** — Quantum Wisdom (36:32, 100 views)
+  https://www.youtube.com/watch?v=r3k11SWuvfo
+- **How Juan Maldacena and I United Einstein's Theories** — Susskind Speaks (16:00, 215 views)
+  https://www.youtube.com/watch?v=Zn2tVb4LBvw
+- **Your Brain Doesn't Observe Reality — It Creates It (Quantum Consciousness)** — MindBody Cosmos (16:58, 10 views)
+  https://www.youtube.com/watch?v=Oh3FxxCnzno

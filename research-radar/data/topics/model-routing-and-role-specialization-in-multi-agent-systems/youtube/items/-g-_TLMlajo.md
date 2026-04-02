@@ -1,0 +1,26 @@
+# New❗【Multi Sub】Archmage Omnipotent: I Am the Rules EP 1-67 #anime #animation
+
+- Topic: `model routing and role specialization in multi-agent systems`
+- Priority: `relevant`
+- Source context: `eywa`
+- Type: `youtube`
+- Video ID: `-g-_TLMlajo`
+- Channel: `Quartic element Anime`
+- Duration: `5:02:39`
+- Views: `1.4K views`
+- Upload date: `NA`
+- URL: https://www.youtube.com/watch?v=-g-_TLMlajo
+- Collected at UTC: `2026-04-02T06:43:35Z`
+- Transcript status: `retry-needed`
+
+## Summary
+
+Not analyzed yet.
+
+## Transcript
+
+Transcript fetch needs retry. ERROR: [youtube] -g-_TLMlajo: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies Checked at `2026-04-02T06:52:12Z`.
+
+## Notes
+
+- Freshly collected by Research Radar.
