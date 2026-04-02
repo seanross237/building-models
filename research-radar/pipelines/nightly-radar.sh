@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-LOG_DIR="$ROOT/logs"
+LOG_DIR="${RADAR_LOG_DIR:-/tmp/research-radar-logs}"
 mkdir -p "$LOG_DIR"
 STAMP="$(date +%Y-%m-%dT%H-%M-%S)"
 LOG_FILE="$LOG_DIR/nightly-radar-$STAMP.log"

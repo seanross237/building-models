@@ -24,6 +24,10 @@ ATOM_NS = {
 ARXIV_DATETIME_FORMAT = "%Y-%m-%dT%H:%M:%SZ"
 
 
+class ArxivRateLimitError(RuntimeError):
+    pass
+
+
 def load_topics() -> list[dict[str, object]]:
     topics: list[dict[str, object]] = []
     current: dict[str, object] | None = None
@@ -214,6 +218,8 @@ def request_feed(url: str) -> bytes:
             if exc.code == 429 and attempt == 0:
                 time.sleep(5)
                 continue
+            if exc.code == 429:
+                raise ArxivRateLimitError("arXiv HTTP error 429") from exc
             raise RuntimeError(f"arXiv HTTP error {exc.code}") from exc
         except (URLError, TimeoutError, RuntimeError) as exc:
             last_error = exc
@@ -466,14 +472,20 @@ def main() -> int:
     max_results = args.max_results or load_max_results()
     total = 0
     failures = 0
+    rate_limited = 0
     for topic in topics:
         try:
             total += run_topic(topic, max_results=max_results, lookback_hours=args.lookback_hours, dry_run=args.dry_run)
+        except ArxivRateLimitError as exc:  # pragma: no cover
+            rate_limited += 1
+            print(f"[collect-papers] topic={topic['slug']} rate-limited: {exc}", file=sys.stderr)
         except Exception as exc:  # pragma: no cover
             failures += 1
             print(f"[collect-papers] topic={topic['slug']} failed: {exc}", file=sys.stderr)
 
-    print(f"[collect-papers] completed topics={len(topics)} total_new_papers={total} failures={failures}")
+    print(
+        f"[collect-papers] completed topics={len(topics)} total_new_papers={total} failures={failures} rate_limited={rate_limited}"
+    )
     return 1 if failures else 0
 
 

@@ -14,22 +14,18 @@ LENS_FILE = ROOT / "config/what-we-care-about-right-now.md"
 PROMPT_FILE = ROOT / "analyzers/summarize-and-score/prompt.md"
 SCHEMA_FILE = ROOT / "analyzers/summarize-and-score/schema.json"
 QUEUE_DIR = ROOT / "data/queues/presentation-candidates"
+MAX_ANALYSIS_ATTEMPTS = 2
 SYSTEM_PROMPT = "\n".join([
     "You are running an automated scheduled task.",
     "Work autonomously and output only the requested JSON object.",
     "Do not wrap the JSON in markdown fences.",
 ])
-REQUIRED_KEYS = {
-    "item_id",
-    "topic_slug",
-    "item_type",
-    "title",
-    "source_url",
+MODEL_REQUIRED_KEYS = {
     "summary",
     "relevance_score",
     "why_it_matters_now",
-    "presentation_candidate",
 }
+OPTIONAL_MODEL_KEYS = {"presentation_candidate", "key_takeaways"}
 
 
 def load_threshold(default: int = 9) -> int:
@@ -152,6 +148,9 @@ def build_prompt(item: dict[str, object], lens: str, prompt_template: str, schem
     return "\n\n".join(
         [
             "Analyze this Research Radar item and return only one JSON object.",
+            "The system will fill stable metadata fields from the source item.",
+            "Your generated fields must include: summary, relevance_score, why_it_matters_now.",
+            "If you include presentation_candidate, it must be a boolean.",
             "Required schema:",
             schema_text,
             "Scoring lens:",
@@ -187,11 +186,44 @@ def extract_json_block(raw: str) -> dict[str, object]:
     end = candidate.rfind("}")
     if start == -1 or end == -1 or end <= start:
         raise ValueError("Claude output did not include a JSON object")
-    return json.loads(candidate[start : end + 1])
+    parsed = json.loads(candidate[start : end + 1])
+    return best_analysis_object(parsed)
+
+
+def iter_objects(value: object) -> list[dict[str, object]]:
+    objects: list[dict[str, object]] = []
+    if isinstance(value, dict):
+        objects.append(value)
+        for nested in value.values():
+            objects.extend(iter_objects(nested))
+    elif isinstance(value, list):
+        for nested in value:
+            objects.extend(iter_objects(nested))
+    return objects
+
+
+def best_analysis_object(value: object) -> dict[str, object]:
+    candidates = iter_objects(value)
+    if not candidates:
+        raise ValueError("Claude output did not contain a JSON object")
+
+    best: dict[str, object] | None = None
+    best_score = -1
+    for candidate in candidates:
+        score = len(MODEL_REQUIRED_KEYS & set(candidate))
+        if OPTIONAL_MODEL_KEYS & set(candidate):
+            score += 1
+        if score > best_score:
+            best = candidate
+            best_score = score
+
+    if best is None or best_score <= 0:
+        raise ValueError("Claude output did not contain an analysis object")
+    return best
 
 
 def validate_analysis(data: dict[str, object], item: dict[str, object], threshold: int) -> dict[str, object]:
-    missing = REQUIRED_KEYS - set(data)
+    missing = MODEL_REQUIRED_KEYS - set(data)
     if missing:
         raise ValueError(f"Missing required analysis keys: {sorted(missing)}")
 
@@ -208,13 +240,16 @@ def validate_analysis(data: dict[str, object], item: dict[str, object], threshol
     data["summary"] = str(data["summary"]).strip()
     data["why_it_matters_now"] = str(data["why_it_matters_now"]).strip()
     data["key_takeaways"] = [str(entry).strip() for entry in data.get("key_takeaways", []) if str(entry).strip()]
-    data["model_presentation_candidate"] = bool(data.get("presentation_candidate"))
+    model_candidate = data.get("presentation_candidate")
+    if isinstance(model_candidate, str):
+        model_candidate = model_candidate.strip().lower() in {"true", "yes", "1"}
+    data["model_presentation_candidate"] = bool(model_candidate)
     data["presentation_candidate"] = relevance_score >= threshold
     data["presentation_threshold"] = threshold
     return data
 
 
-def run_claude(prompt: str, model: str, max_turns: int, cwd: Path) -> dict[str, object]:
+def run_claude_raw(prompt: str, model: str, max_turns: int, cwd: Path) -> str:
     command = [
         "claude",
         "-p",
@@ -241,7 +276,51 @@ def run_claude(prompt: str, model: str, max_turns: int, cwd: Path) -> dict[str, 
         raw_result = stdout
     if not raw_result:
         raise RuntimeError("claude produced no analysis payload")
-    return extract_json_block(raw_result)
+    return raw_result
+
+
+def build_retry_prompt(base_prompt: str, raw_output: str, error: Exception) -> str:
+    return "\n\n".join(
+        [
+            base_prompt,
+            "Your previous response was invalid for the analysis pipeline.",
+            f"Validation issue: {error}",
+            "Return one corrected JSON object only.",
+            "Generated fields required: summary, relevance_score, why_it_matters_now.",
+            "presentation_candidate is optional, but if included it must be boolean.",
+            "Previous invalid response:",
+            raw_output,
+        ]
+    )
+
+
+def run_claude_analysis(
+    prompt: str,
+    model: str,
+    max_turns: int,
+    cwd: Path,
+    item: dict[str, object],
+    threshold: int,
+) -> dict[str, object]:
+    attempt_prompt = prompt
+    last_error: Exception | None = None
+    last_output = ""
+
+    for attempt in range(MAX_ANALYSIS_ATTEMPTS):
+        raw_output = run_claude_raw(attempt_prompt, model=model, max_turns=max_turns, cwd=cwd)
+        last_output = raw_output
+        try:
+            parsed = extract_json_block(raw_output)
+            return validate_analysis(parsed, item, threshold=threshold)
+        except Exception as exc:
+            last_error = exc
+            if attempt + 1 < MAX_ANALYSIS_ATTEMPTS:
+                attempt_prompt = build_retry_prompt(prompt, raw_output, exc)
+
+    preview = " ".join(last_output.split())
+    if len(preview) > 400:
+        preview = preview[:400] + "..."
+    raise RuntimeError(f"claude produced invalid analysis payload: {last_error}. preview={preview}")
 
 
 def summary_markdown(item: dict[str, object], analysis: dict[str, object]) -> str:
@@ -337,8 +416,14 @@ def main() -> int:
         prompt = build_prompt(item, lens, prompt_template, schema_text)
 
         try:
-            analysis = run_claude(prompt, model=args.model, max_turns=args.max_turns, cwd=ROOT)
-            analysis = validate_analysis(analysis, item, threshold=threshold)
+            analysis = run_claude_analysis(
+                prompt,
+                model=args.model,
+                max_turns=args.max_turns,
+                cwd=ROOT,
+                item=item,
+                threshold=threshold,
+            )
             summary_path.write_text(summary_markdown(item, analysis), encoding="utf-8")
             append_overview(overview_path, summary_path, analysis)
             if analysis["presentation_candidate"]:
