@@ -1,0 +1,3 @@
+Wrote the required outputs to [final-decider.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-007/final-decider.md) and [winning-chain.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-007/winning-chain.md).
+
+The decision selects **Refined Chain 03** as the single next execution chain, with stricter Tao calibration imported from Chain 01 and baseline/quantitative-gain plus missing-lemma narrowness tests imported from Chain 02. I also verified both files after writing them.

@@ -1,0 +1,5 @@
+Wrote the controller decision as `replan` in [decision-009.json](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/exact-ns-no-near-closed-tao-circuit/controller/decisions/decision-009.json) and [decision-009.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/exact-ns-no-near-closed-tao-circuit/controller/decisions/decision-009.md).
+
+Reasoning: `step-006` successfully completed the current chain by freezing two promoted downstream objects with explicit next-test handoffs, but it did not answer the mission. That makes the chain `completed`, not `active`, so the next move has to be a fresh branch comparison rather than an in-order `step-007` continuation. No `GOAL.md` was created for `step-007` for that reason.
+
+Validation: the JSON parses cleanly with `python -m json.tool`.

@@ -1,0 +1,1 @@
+The initial step, "Extract facts," failed due to a runtime error. This prevents the subsequent steps from proceeding as they rely on the extracted facts. The overall goal remains achievable, but the plan needs to be adjusted to re-attempt the failed step.

@@ -10,7 +10,12 @@ from .node_contract import (
     node_layout,
 )
 from .node_controls import ResumeComputationResult, cancel_node, record_computation_result, resume_waiting_node_if_ready
-from .node_recovery import NodeRecoveryError, NodeRecoveryResult, prepare_node_for_fresh_attempt
+from .node_recovery import (
+    NodeRecoveryError,
+    NodeRecoveryResult,
+    prepare_node_for_fresh_attempt,
+    prepare_node_for_retry,
+)
 from .node_preparation import PreparedNodeContextResult, prepare_node_context_packet
 from .mission_contract import MissionLayout, create_mission, mission_layout
 from .live_canary import (
@@ -76,6 +81,7 @@ __all__ = [
     "prepare_node_context_packet",
     "record_computation_result",
     "prepare_node_for_fresh_attempt",
+    "prepare_node_for_retry",
     "run_live_canary",
     "role_contract_for",
     "resume_waiting_node_if_ready",

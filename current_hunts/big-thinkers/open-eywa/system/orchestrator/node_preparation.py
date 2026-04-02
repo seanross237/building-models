@@ -5,7 +5,8 @@ import json
 from pathlib import Path
 from typing import Any
 
-from .node_contract import NodeLayout, read_trimmed_text, write_text
+from .node_contract import NodeLayout, write_text
+from .node_record import read_node_record
 
 
 @dataclass(frozen=True)
@@ -21,17 +22,20 @@ def prepare_node_context_packet(
     role: str,
 ) -> PreparedNodeContextResult:
     packet_path = layout.run_prepared_node_context_file(run_id)
+    node_record = read_node_record(layout)
     packet = {
         "role": role,
         "node": {
             "path": str(layout.root),
-            "status": read_trimmed_text(layout.status_file),
-            "agent_mode": read_trimmed_text(layout.agent_mode_file),
+            "identity": dict(node_record.get("identity") or {}),
+            "lifecycle": dict(node_record.get("lifecycle") or {}),
+            "control": dict(node_record.get("control") or {}),
+            "parameters": dict(node_record.get("parameters") or {}),
         },
         "task_source": _task_source_section(layout),
         "focus_sections": _focus_sections_for_role(role),
-        "available_sections": _available_sections(layout),
-        "progression": _progression_section(layout),
+        "available_sections": _available_sections(layout, node_record),
+        "progression": dict(node_record.get("progression") or {}),
         "children": _child_summaries(layout),
     }
     write_text(packet_path, json.dumps(packet, indent=2, sort_keys=True) + "\n")
@@ -55,7 +59,7 @@ def _task_source_section(layout: NodeLayout) -> dict[str, Any]:
     }
 
 
-def _available_sections(layout: NodeLayout) -> dict[str, Any]:
+def _available_sections(layout: NodeLayout, node_record: dict[str, Any]) -> dict[str, Any]:
     sections: dict[str, Any] = {}
     maybe_add_text_section(sections, layout, "context", layout.context_file)
     maybe_add_text_section(sections, layout, "retrieved_knowledge", layout.retrieved_knowledge_file)
@@ -64,16 +68,13 @@ def _available_sections(layout: NodeLayout) -> dict[str, Any]:
     maybe_add_text_section(sections, layout, "state", layout.state_file)
     maybe_add_text_section(sections, layout, "final_output", layout.final_output_file)
     maybe_add_text_section(sections, layout, "escalation", layout.escalation_file)
-    if layout.latest_child_node_report_file.exists():
-        sections["latest_child_report"] = {
-            "path": str(layout.latest_child_node_report_file.relative_to(layout.root)),
-            "json": json.loads(layout.latest_child_node_report_file.read_text(encoding="utf-8")),
-        }
-    if layout.progression_state_file.exists():
-        sections["progression_state"] = {
-            "path": str(layout.progression_state_file.relative_to(layout.root)),
-            "json": json.loads(layout.progression_state_file.read_text(encoding="utf-8")),
-        }
+
+    progression = dict(node_record.get("progression") or {})
+    latest_child_report = progression.get("latest_child_report")
+    if latest_child_report is not None:
+        sections["latest_child_report"] = {"json": latest_child_report}
+    if progression.get("steps"):
+        sections["progression_state"] = {"json": progression}
     return sections
 
 
@@ -91,30 +92,20 @@ def maybe_add_text_section(
     }
 
 
-def _progression_section(layout: NodeLayout) -> dict[str, Any]:
-    return {
-        "next_action_after_child_report": read_trimmed_text(
-            layout.next_action_after_child_report_file
-        ),
-        "terminal_outcome": read_trimmed_text(layout.terminal_outcome_file),
-        "failure_reason": read_trimmed_text(layout.failure_reason_file),
-        "cancellation_reason": read_trimmed_text(layout.cancellation_reason_file),
-        "waiting_on_computation_note": read_trimmed_text(layout.waiting_marker_file),
-    }
-
-
 def _child_summaries(layout: NodeLayout) -> list[dict[str, Any]]:
     summaries: list[dict[str, Any]] = []
     if not layout.children_dir.exists():
         return summaries
     for child_root in sorted(path for path in layout.children_dir.iterdir() if path.is_dir()):
         child_layout = NodeLayout(child_root)
+        child_record = read_node_record(child_layout)
+        lifecycle = dict(child_record.get("lifecycle") or {})
         summary = {
             "child_name": child_root.name,
             "path": str(child_root.relative_to(layout.root)),
-            "status": read_trimmed_text(child_layout.status_file),
-            "terminal_outcome": read_trimmed_text(child_layout.terminal_outcome_file),
-            "failure_reason": read_trimmed_text(child_layout.failure_reason_file),
+            "status": lifecycle.get("status"),
+            "terminal_outcome": lifecycle.get("terminal_outcome"),
+            "failure_reason": lifecycle.get("failure_reason"),
             "has_final_output": child_layout.final_output_file.exists(),
             "has_escalation": child_layout.escalation_file.exists(),
         }

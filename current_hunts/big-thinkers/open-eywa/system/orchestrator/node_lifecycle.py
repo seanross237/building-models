@@ -2,7 +2,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from .node_contract import NODE_STATUSES, TERMINAL_OUTCOMES, NodeStatus, TerminalOutcome, node_layout, read_trimmed_text, unlink_if_exists, write_text
+from .node_contract import NODE_STATUSES, TERMINAL_OUTCOMES, NodeStatus, TerminalOutcome, node_layout
+from .node_record import read_node_record, write_node_record
 
 LEGAL_STATUS_TRANSITIONS: dict[NodeStatus, tuple[NodeStatus, ...]] = {
     "pending": ("active", "finished", "failed"),
@@ -32,9 +33,11 @@ def transition_node(
     waiting_note: str | None = None,
 ) -> None:
     layout = node_layout(node_path)
-    current_status = read_trimmed_text(layout.status_file)
+    record = read_node_record(layout)
+    lifecycle = record["lifecycle"]
+    current_status = lifecycle.get("status")
     if current_status is None:
-        raise NodeTransitionError("Cannot transition a node without a status file.")
+        raise NodeTransitionError("Cannot transition a node without a node record status.")
     if current_status not in NODE_STATUSES:
         raise NodeTransitionError(f"Current node status is invalid: {current_status!r}.")
     if next_status not in NODE_STATUSES:
@@ -50,36 +53,37 @@ def transition_node(
 
     if next_status == "finished":
         _validate_finished_transition(layout, terminal_outcome, cancellation_reason)
-        write_text(layout.terminal_outcome_file, terminal_outcome + "\n")
-        unlink_if_exists(layout.failure_reason_file)
-        unlink_if_exists(layout.waiting_marker_file)
-        unlink_if_exists(layout.computation_result_file)
-        if terminal_outcome == "cancelled":
-            write_text(layout.cancellation_reason_file, cancellation_reason.strip() + "\n")
-        else:
-            unlink_if_exists(layout.cancellation_reason_file)
+        lifecycle["terminal_outcome"] = terminal_outcome
+        lifecycle["failure_reason"] = None
+        lifecycle["waiting_on_computation_note"] = None
+        lifecycle["computation_result_note"] = None
+        lifecycle["cancellation_reason"] = (
+            cancellation_reason.strip() if terminal_outcome == "cancelled" else None
+        )
     elif next_status == "failed":
         _validate_failed_transition(failure_reason)
-        write_text(layout.failure_reason_file, failure_reason.strip() + "\n")
-        unlink_if_exists(layout.terminal_outcome_file)
-        unlink_if_exists(layout.cancellation_reason_file)
-        unlink_if_exists(layout.waiting_marker_file)
-        unlink_if_exists(layout.computation_result_file)
+        lifecycle["terminal_outcome"] = None
+        lifecycle["failure_reason"] = failure_reason.strip()
+        lifecycle["cancellation_reason"] = None
+        lifecycle["waiting_on_computation_note"] = None
+        lifecycle["computation_result_note"] = None
     elif next_status == "waiting_on_computation":
-        note = (waiting_note or "waiting for background computation").strip()
-        write_text(layout.waiting_marker_file, note + "\n")
-        unlink_if_exists(layout.terminal_outcome_file)
-        unlink_if_exists(layout.failure_reason_file)
-        unlink_if_exists(layout.cancellation_reason_file)
-        unlink_if_exists(layout.computation_result_file)
+        lifecycle["terminal_outcome"] = None
+        lifecycle["failure_reason"] = None
+        lifecycle["cancellation_reason"] = None
+        lifecycle["waiting_on_computation_note"] = (
+            waiting_note or "waiting for background computation"
+        ).strip()
+        lifecycle["computation_result_note"] = None
     else:
-        unlink_if_exists(layout.terminal_outcome_file)
-        unlink_if_exists(layout.failure_reason_file)
-        unlink_if_exists(layout.cancellation_reason_file)
-        unlink_if_exists(layout.waiting_marker_file)
-        unlink_if_exists(layout.computation_result_file)
+        lifecycle["terminal_outcome"] = None
+        lifecycle["failure_reason"] = None
+        lifecycle["cancellation_reason"] = None
+        lifecycle["waiting_on_computation_note"] = None
+        lifecycle["computation_result_note"] = None
 
-    write_text(layout.status_file, next_status + "\n")
+    lifecycle["status"] = next_status
+    write_node_record(layout, record)
 
 
 def _validate_finished_transition(

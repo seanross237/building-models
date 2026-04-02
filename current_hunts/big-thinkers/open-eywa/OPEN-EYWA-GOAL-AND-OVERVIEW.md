@@ -15,6 +15,32 @@ Code should own protocol and correctness. Models should contribute bounded intel
 - system for self experimenting with strong feedback loops
 - an efficient plan simulation system
 
+## Areas To Experiment / Optimize
+
+Open-Eywa is meant to support experimentation not only on prompts, but also on deeper system choices.
+
+Important areas to compare over time include:
+
+- planning method
+- plan review tier thresholds
+- mid-plan evaluation method
+- worker prompt and execution style
+- retrieval / librarian behavior
+- knowledge retrieval ownership model
+- synthesis strategy
+- separate synthesizer vs planner-owned synthesis
+- agent persistence model
+- fresh agents vs persistent agents receiving child results
+- child-result handoff model
+- node context scope
+- complexity / importance threshold calibration
+- model assignment by role
+- context packet design
+- tool policy
+- retry / recovery policy
+- plan simulation method
+- self-experimentation and feedback-loop method
+
 ## Current Foundation
 
 The rebuild is currently grounded in these principles:
@@ -77,9 +103,12 @@ Each node centers on:
 
 - `input/`
 - `output/`
-- `for-orchestrator/`
 - `system/`
 - `children/`
+
+The authoritative machine state for a node now lives in:
+
+- `system/node.json`
 
 The current closed node statuses are:
 

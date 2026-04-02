@@ -1,0 +1,5 @@
+Wrote the exploration deliverables in [REPORT.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/exact-ns-no-near-closed-tao-circuit/steps/step-002/explorations/exploration-001/REPORT.md) and [REPORT-SUMMARY.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/exact-ns-no-near-closed-tao-circuit/steps/step-002/explorations/exploration-001/REPORT-SUMMARY.md).
+
+The report promotes three exact candidate notions: `Template-Defect Near-Closure`, `Windowed Spectator-Leakage Budget`, and `Delayed-Threshold Itinerary`. It also explicitly rejects graph-closure-only, projection-rigidity-only, and threshold-only slogan candidates. The summary records the main lesson as a split shortlist rather than one universal definition, with `Delayed-Threshold Itinerary` retained as the honest pro-near-circuit-friendly option.
+
+No code or numerical tests were run; this was a local-source synthesis and definition audit.

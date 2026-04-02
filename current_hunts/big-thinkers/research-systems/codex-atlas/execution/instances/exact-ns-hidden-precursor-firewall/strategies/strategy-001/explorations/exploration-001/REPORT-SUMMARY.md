@@ -1,0 +1,9 @@
+# Exploration 001 Summary
+
+- Goal: define one preferred physical-space delayed-transfer event corresponding to Tao's delayed abrupt transfer, or kill the object at the definition gate.
+- What I tried: used the local Tao/circuit notes to isolate the causal content that must survive in physical space, rejected shell/helical and Beltrami-first formulations as preferred objects, and pulled the primary smooth coarse-graining / Duchon-Robert literature to test whether exact NS itself supplies one adjacent-band handoff event with a named output channel.
+- Outcome: succeeded.
+- One key takeaway: the right Phase 0 event is an exact-NS localized adjacent-band handoff, measured by a short-window burst in the exact nonlinear transfer `F_n^phi` together with abrupt growth of the exact localized band-energy channel `K_n^phi`; no packet/circuit engineering is needed at the event-definition layer.
+- Leads worth pursuing: Phase 1 should choose one precursor observable for this exact event, most plausibly an earlier same-scale or backward-region quantity tied to the same adjacent-band transfer, and then test whether that precursor can stay small before the handoff.
+- Unexpected findings: the best faithful event lives on exact NS itself rather than on any reduced model; the only viable backup from primary literature is the more singularity-facing Duchon-Robert burst, while Lamb-vector / Beltrami geometry fails as a preferred event because it is not the handoff object and is perturbatively fragile.
+- Computations worth doing later: quantify sensitivity of `E_flux` to the kernel `G`, scale ratio `rho`, and cutoff `phi`; compare `E_flux` against the Duchon-Robert backup on the same windows; and test whether a transport-corrected or boundary-robust version of the event changes the Phase 1 precursor question.

@@ -1,12 +1,12 @@
 # Eywa Task: node
 
-EYWA_ROOT: /Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/eywa
-Node: /Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/eywa/missions/sf-date-003
-Agents: /Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/eywa/agents
+EYWA_ROOT: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/eywa
+Node: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/eywa/missions/sf-date-003
+Agents: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/eywa/agents
 Read goal.md, retrieved_relevant_knowledge_from_library.md, then guidance docs:
-- /Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/eywa/agents/node/execute-vs-plan.md
-- /Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/eywa/agents/node/plan-design.md
-- /Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/eywa/agents/node/escalation.md
+- /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/eywa/agents/node/execute-vs-plan.md
+- /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/eywa/agents/node/plan-design.md
+- /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/eywa/agents/node/escalation.md
 
 If state.md exists, you are re-spawned — read it first.
 

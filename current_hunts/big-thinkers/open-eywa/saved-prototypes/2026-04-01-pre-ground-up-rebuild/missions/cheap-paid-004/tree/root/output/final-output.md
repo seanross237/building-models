@@ -1,5 +1,5 @@
 The following inputs were missing:
-- `/Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/open-eywa/missions/cheap-paid-004/tree/root/children/step-03-Identify-Top-Level-Folders-for-Inspection/output/final-output.md`
+- `/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/open-eywa/missions/cheap-paid-004/tree/root/children/step-03-Identify-Top-Level-Folders-for-Inspection/output/final-output.md`
 
 # Open-Eywa Operator Note
 
@@ -53,4 +53,4 @@ You can assess the health of a mission run by observing the state of the files w
 By monitoring these file-based indicators, you can gain a clear understanding of the mission's status and identify potential issues early on.
 
 ---
-**Note:** The input file `/Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/open-eywa/missions/cheap-paid-004/tree/root/children/step-03-Identify-Top-Level-Folders-for-Inspection/output/final-output.md` was not found. The information regarding top-level folders for inspection was therefore not included in this synthesis.
+**Note:** The input file `/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/open-eywa/missions/cheap-paid-004/tree/root/children/step-03-Identify-Top-Level-Folders-for-Inspection/output/final-output.md` was not found. The information regarding top-level folders for inspection was therefore not included in this synthesis.

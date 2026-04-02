@@ -3,7 +3,14 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from .node_contract import NODE_STATUSES, TERMINAL_OUTCOMES, NodeLayout, node_layout, read_trimmed_text
+from .node_contract import (
+    NODE_STATUSES,
+    TERMINAL_OUTCOMES,
+    NODE_SUBDIRECTORIES,
+    NodeLayout,
+    node_layout,
+)
+from .node_record import ASSIGNMENT_SOURCES, NODE_RECORD_SCHEMA_VERSION, read_node_record
 
 
 @dataclass(frozen=True)
@@ -41,20 +48,17 @@ def validate_node(node_path: str | Path) -> NodeValidationReport:
 
     _validate_required_directories(layout, report)
     _validate_task_source(layout, report)
-    _validate_status_block(layout, report)
+    record = _validate_node_record(layout, report)
+    if record is not None:
+        _validate_lifecycle(layout, record, report)
+        _validate_parameters(layout, record, report)
 
     return report
 
 
 def _validate_required_directories(layout: NodeLayout, report: NodeValidationReport) -> None:
-    required_directories = (
-        layout.input_dir,
-        layout.output_dir,
-        layout.orchestrator_dir,
-        layout.system_dir,
-        layout.children_dir,
-    )
-    for directory in required_directories:
+    for subdirectory in NODE_SUBDIRECTORIES:
+        directory = layout.root / subdirectory
         if not directory.exists():
             report.add_issue("required_directory_missing", "Required directory is missing.", directory)
         elif not directory.is_dir():
@@ -67,9 +71,7 @@ def _validate_required_directories(layout: NodeLayout, report: NodeValidationRep
 
 def _validate_task_source(layout: NodeLayout, report: NodeValidationReport) -> None:
     task_sources = [
-        path
-        for path in (layout.goal_file, layout.parent_instructions_file)
-        if path.exists()
+        path for path in (layout.goal_file, layout.parent_instructions_file) if path.exists()
     ]
     if len(task_sources) != 1:
         report.add_issue(
@@ -79,132 +81,246 @@ def _validate_task_source(layout: NodeLayout, report: NodeValidationReport) -> N
         )
 
 
-def _validate_status_block(layout: NodeLayout, report: NodeValidationReport) -> None:
-    status = read_trimmed_text(layout.status_file)
-    if status is None:
+def _validate_node_record(
+    layout: NodeLayout,
+    report: NodeValidationReport,
+) -> dict[str, object] | None:
+    if not layout.node_record_file.exists():
         report.add_issue(
-            "status_missing",
-            "The node is missing its authoritative status file.",
-            layout.status_file,
+            "node_record_missing",
+            "The node is missing its authoritative system/node.json record.",
+            layout.node_record_file,
+        )
+        return None
+
+    try:
+        record = read_node_record(layout)
+    except Exception as exc:  # pragma: no cover - defensive parsing path
+        report.add_issue(
+            "node_record_invalid_json",
+            f"system/node.json could not be parsed: {exc}",
+            layout.node_record_file,
+        )
+        return None
+
+    required_top_level = (
+        "schema_version",
+        "identity",
+        "task",
+        "lifecycle",
+        "control",
+        "parameters",
+        "progression",
+    )
+    for key in required_top_level:
+        if key not in record:
+            report.add_issue(
+                "node_record_missing_field",
+                f"system/node.json is missing top-level field {key!r}.",
+                layout.node_record_file,
+            )
+
+    if record.get("schema_version") != NODE_RECORD_SCHEMA_VERSION:
+        report.add_issue(
+            "node_record_schema_version_invalid",
+            f"Unsupported node schema version: {record.get('schema_version')!r}.",
+            layout.node_record_file,
+        )
+
+    identity = record.get("identity")
+    if not isinstance(identity, dict) or not isinstance(identity.get("node_id"), str):
+        report.add_issue(
+            "node_identity_invalid",
+            "system/node.json must include identity.node_id.",
+            layout.node_record_file,
+        )
+
+    task = record.get("task")
+    if not isinstance(task, dict):
+        report.add_issue(
+            "node_task_invalid",
+            "system/node.json must include a task block.",
+            layout.node_record_file,
+        )
+    else:
+        source_name = task.get("source_name")
+        source_path = task.get("source_path")
+        if source_name not in ("goal", "parent-instructions"):
+            report.add_issue(
+                "task_source_name_invalid",
+                f"Unknown task.source_name: {source_name!r}.",
+                layout.node_record_file,
+            )
+        if not isinstance(source_path, str) or not source_path.strip():
+            report.add_issue(
+                "task_source_path_invalid",
+                "task.source_path must be a non-empty string.",
+                layout.node_record_file,
+            )
+
+    progression = record.get("progression")
+    if not isinstance(progression, dict):
+        report.add_issue(
+            "node_progression_invalid",
+            "system/node.json must include a progression block.",
+            layout.node_record_file,
+        )
+
+    control = record.get("control")
+    if not isinstance(control, dict):
+        report.add_issue(
+            "node_control_invalid",
+            "system/node.json must include a control block.",
+            layout.node_record_file,
+        )
+
+    parameters = record.get("parameters")
+    if not isinstance(parameters, dict):
+        report.add_issue(
+            "node_parameters_invalid",
+            "system/node.json must include a parameters block.",
+            layout.node_record_file,
+        )
+
+    return record
+
+
+def _validate_lifecycle(
+    layout: NodeLayout,
+    record: dict[str, object],
+    report: NodeValidationReport,
+) -> None:
+    lifecycle = record.get("lifecycle")
+    if not isinstance(lifecycle, dict):
+        report.add_issue(
+            "node_lifecycle_invalid",
+            "system/node.json must include a lifecycle block.",
+            layout.node_record_file,
         )
         return
+
+    status = lifecycle.get("status")
     if status not in NODE_STATUSES:
         report.add_issue(
             "status_invalid",
             f"Unknown node status: {status!r}.",
-            layout.status_file,
+            layout.node_record_file,
         )
         return
+
+    terminal_outcome = lifecycle.get("terminal_outcome")
+    failure_reason = lifecycle.get("failure_reason")
+    cancellation_reason = lifecycle.get("cancellation_reason")
+    waiting_note = lifecycle.get("waiting_on_computation_note")
+    computation_result_note = lifecycle.get("computation_result_note")
+    retry_count = lifecycle.get("retry_count")
+
+    if retry_count is not None and (not isinstance(retry_count, int) or retry_count < 0):
+        report.add_issue(
+            "retry_count_invalid",
+            "lifecycle.retry_count must be a non-negative integer when present.",
+            layout.node_record_file,
+        )
 
     if status == "finished":
-        _validate_finished_node(layout, report)
-    else:
-        if layout.terminal_outcome_file.exists():
+        if terminal_outcome not in TERMINAL_OUTCOMES:
             report.add_issue(
-                "stale_terminal_outcome",
-                "Non-finished nodes must not keep a terminal outcome file.",
-                layout.terminal_outcome_file,
+                "terminal_outcome_missing",
+                "finished nodes must have a valid terminal outcome in system/node.json.",
+                layout.node_record_file,
             )
-        if layout.cancellation_reason_file.exists():
+        elif terminal_outcome == "completed" and not layout.final_output_file.exists():
             report.add_issue(
-                "stale_cancellation_reason",
-                "Only cancelled nodes may keep a cancellation reason file.",
-                layout.cancellation_reason_file,
+                "completed_output_missing",
+                "Completed nodes must have output/final-output.md.",
+                layout.final_output_file,
             )
-
-    if status == "failed":
-        _validate_failed_node(layout, report)
-    else:
-        if layout.failure_reason_file.exists():
+        elif terminal_outcome == "escalated" and not layout.escalation_file.exists():
             report.add_issue(
-                "stale_failure_reason",
-                "Non-failed nodes must not keep a failure reason file.",
-                layout.failure_reason_file,
+                "escalation_output_missing",
+                "Escalated nodes must have output/escalation.md.",
+                layout.escalation_file,
             )
-
-    if status == "waiting_on_computation":
-        if not layout.waiting_marker_file.exists():
-            report.add_issue(
-                "waiting_marker_missing",
-                "waiting_on_computation nodes must have a WAITING_FOR_COMPUTATION marker.",
-                layout.waiting_marker_file,
-            )
-    elif layout.waiting_marker_file.exists():
-        report.add_issue(
-            "stale_waiting_marker",
-            "Only waiting_on_computation nodes may keep a WAITING_FOR_COMPUTATION marker.",
-            layout.waiting_marker_file,
-        )
-
-    if status != "waiting_on_computation" and layout.computation_result_file.exists():
-        report.add_issue(
-            "stale_computation_result",
-            "Only waiting_on_computation nodes may keep a computation result marker.",
-            layout.computation_result_file,
-        )
-
-
-def _validate_finished_node(layout: NodeLayout, report: NodeValidationReport) -> None:
-    outcome = read_trimmed_text(layout.terminal_outcome_file)
-    if outcome is None:
-        report.add_issue(
-            "terminal_outcome_missing",
-            "finished nodes must have a terminal outcome file.",
-            layout.terminal_outcome_file,
-        )
-        return
-    if outcome not in TERMINAL_OUTCOMES:
-        report.add_issue(
-            "terminal_outcome_invalid",
-            f"Unknown terminal outcome: {outcome!r}.",
-            layout.terminal_outcome_file,
-        )
-        return
-    if outcome == "completed" and not layout.final_output_file.exists():
-        report.add_issue(
-            "completed_output_missing",
-            "Completed nodes must have output/final-output.md.",
-            layout.final_output_file,
-        )
-    if outcome == "escalated" and not layout.escalation_file.exists():
-        report.add_issue(
-            "escalation_output_missing",
-            "Escalated nodes must have output/escalation.md.",
-            layout.escalation_file,
-        )
-    if outcome == "cancelled":
-        cancellation_reason = read_trimmed_text(layout.cancellation_reason_file)
-        if cancellation_reason is None:
+        elif terminal_outcome == "cancelled" and not isinstance(cancellation_reason, str):
             report.add_issue(
                 "cancellation_reason_missing",
-                "Cancelled nodes must have a cancellation reason file.",
-                layout.cancellation_reason_file,
+                "Cancelled nodes must have a cancellation reason in system/node.json.",
+                layout.node_record_file,
             )
-        elif not cancellation_reason:
+    elif terminal_outcome is not None:
+        report.add_issue(
+            "stale_terminal_outcome",
+            "Non-finished nodes must not keep a terminal outcome in system/node.json.",
+            layout.node_record_file,
+        )
+
+    if status == "failed":
+        if not isinstance(failure_reason, str) or not failure_reason.strip():
             report.add_issue(
-                "cancellation_reason_blank",
-                "Cancelled nodes must have a non-empty cancellation reason.",
-                layout.cancellation_reason_file,
+                "failure_reason_missing",
+                "failed nodes must have a non-empty failure reason in system/node.json.",
+                layout.node_record_file,
             )
-    elif layout.cancellation_reason_file.exists():
+    elif failure_reason is not None:
+        report.add_issue(
+            "stale_failure_reason",
+            "Non-failed nodes must not keep a failure reason in system/node.json.",
+            layout.node_record_file,
+        )
+
+    if status == "waiting_on_computation":
+        if not isinstance(waiting_note, str) or not waiting_note.strip():
+            report.add_issue(
+                "waiting_note_missing",
+                "waiting_on_computation nodes must have a waiting note in system/node.json.",
+                layout.node_record_file,
+            )
+    elif waiting_note is not None:
+        report.add_issue(
+            "stale_waiting_note",
+            "Only waiting_on_computation nodes may keep a waiting note in system/node.json.",
+            layout.node_record_file,
+        )
+
+    if status != "waiting_on_computation" and computation_result_note is not None:
+        report.add_issue(
+            "stale_computation_result_note",
+            "Only waiting_on_computation nodes may keep a computation result note.",
+            layout.node_record_file,
+        )
+
+    if status != "finished" and cancellation_reason is not None:
         report.add_issue(
             "stale_cancellation_reason",
-            "Only cancelled nodes may keep a cancellation reason file.",
-            layout.cancellation_reason_file,
+            "Only finished/cancelled nodes may keep a cancellation reason.",
+            layout.node_record_file,
         )
 
 
-def _validate_failed_node(layout: NodeLayout, report: NodeValidationReport) -> None:
-    failure_reason = read_trimmed_text(layout.failure_reason_file)
-    if failure_reason is None:
+def _validate_parameters(
+    layout: NodeLayout,
+    record: dict[str, object],
+    report: NodeValidationReport,
+) -> None:
+    parameters = record.get("parameters")
+    if not isinstance(parameters, dict):
+        return
+
+    sources = parameters.get("sources")
+    if not isinstance(sources, dict):
         report.add_issue(
-            "failure_reason_missing",
-            "failed nodes must have a failure reason file.",
-            layout.failure_reason_file,
+            "parameter_sources_invalid",
+            "parameters.sources must be a dictionary.",
+            layout.node_record_file,
         )
-    elif not failure_reason:
-        report.add_issue(
-            "failure_reason_blank",
-            "failed nodes must have a non-empty failure reason.",
-            layout.failure_reason_file,
-        )
+        return
+
+    for key, value in sources.items():
+        if value is None:
+            continue
+        if value not in ASSIGNMENT_SOURCES:
+            report.add_issue(
+                "parameter_source_invalid",
+                f"parameters.sources[{key!r}] has invalid source {value!r}.",
+                layout.node_record_file,
+            )

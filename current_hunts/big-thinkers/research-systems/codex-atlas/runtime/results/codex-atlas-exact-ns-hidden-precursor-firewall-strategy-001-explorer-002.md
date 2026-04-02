@@ -1,0 +1,7 @@
+Wrote the required artifacts at [REPORT.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-hidden-precursor-firewall/strategies/strategy-001/explorations/exploration-002/REPORT.md) and [REPORT-SUMMARY.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-hidden-precursor-firewall/strategies/strategy-001/explorations/exploration-002/REPORT-SUMMARY.md).
+
+The gate verdict is `pass`. I selected the earlier localized feeder-band energy `K_{n-1}^{phi_r}` on `R_- = B_r(x_*) x [t_* - r^2, t_* - delta]` as the one surviving precursor-and-region pair, with no backup retained. Same-band earlier flux was rejected as too tautology-adjacent; Duchon-Robert, Lamb-vector / Beltrami-deficit, and vortex-stretching candidates were rejected as second-event, fragile / pressure-adjacent, or too generic.
+
+Primary sources used to lock the choice and region were Eyink-Aluie 2009 on exact smooth coarse-grained band energy / transfer identities and Barker-Seregin 2017 on standard backward parabolic cylinder notation: https://www.researchgate.net/publication/45872335_Localness_of_energy_cascade_in_hydrodynamic_turbulence_I_Smooth_coarse-graining and https://link.springer.com/article/10.1007/s00208-016-1488-9
+
+No quantitative theorem test was run here; this turn stopped at the Phase 1 gate as requested.

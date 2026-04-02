@@ -11,10 +11,38 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from system.orchestrator import NodeOrchestratorCore, create_node, validate_node
-from system.orchestrator.node_contract import read_trimmed_text
+from system.orchestrator.node_record import read_node_record
+from system.orchestrator.usage_schema import UsageRecord
+from system.runtime.runtime_interface import RuntimeRequest, RuntimeResult
 from system.runtime import SimulatedRuntime, load_scenario
 
 FIXTURES_DIR = Path(__file__).resolve().parent / "fixtures"
+
+
+class _DefaultModelRuntime:
+    def __init__(self) -> None:
+        self.config = type("Config", (), {"default_models": {"worker": "default-worker-model"}})()
+
+    def run(self, request: RuntimeRequest) -> RuntimeResult:
+        output_path = Path(request.node_path) / "output" / "final-output.md"
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text("done\n", encoding="utf-8")
+        return RuntimeResult(
+            mission_id=request.mission_id,
+            node_id=request.node_id,
+            node_path=request.node_path,
+            run_id=request.run_id,
+            role=request.role,
+            model=request.model,
+            variant=request.variant,
+            exit_reason="completed",
+            started_at_utc="2026-04-01T00:00:00Z",
+            finished_at_utc="2026-04-01T00:00:01Z",
+            duration_seconds=1.0,
+            artifacts_produced=("output/final-output.md",),
+            tool_call_count=0,
+            usage=UsageRecord(),
+        )
 
 
 class OrchestratorCoreScenarioTests(unittest.TestCase):
@@ -46,9 +74,15 @@ class OrchestratorCoreScenarioTests(unittest.TestCase):
                     encoding="utf-8"
                 )
             )
+            snapshot_json = json.loads(
+                (node_path / "system" / "runs" / "run-001" / "node.json").read_text(
+                    encoding="utf-8"
+                )
+            )
             prepared_inputs = request_json["prepared_inputs"]
             self.assertEqual(len(prepared_inputs), 1)
             self.assertTrue(Path(prepared_inputs[0]).exists())
+            self.assertEqual(snapshot_json["control"]["next_role"], "planner")
             self.assertTrue((node_path / "system" / "events.jsonl").exists())
             self.assertTrue(validate_node(node_path).is_valid)
 
@@ -75,7 +109,7 @@ class OrchestratorCoreScenarioTests(unittest.TestCase):
             self.assertEqual(result.status_after, "finished")
             self.assertEqual(result.terminal_outcome, "completed")
             self.assertEqual(
-                read_trimmed_text(node_path / "for-orchestrator" / "terminal-outcome"),
+                read_node_record(node_path)["lifecycle"]["terminal_outcome"],
                 "completed",
             )
             usage_summary = json.loads(
@@ -107,7 +141,7 @@ class OrchestratorCoreScenarioTests(unittest.TestCase):
             self.assertEqual(result.status_after, "failed")
             self.assertEqual(result.failure_reason, "missing_required_artifact")
             self.assertEqual(
-                read_trimmed_text(node_path / "for-orchestrator" / "failure-reason"),
+                read_node_record(node_path)["lifecycle"]["failure_reason"],
                 "missing_required_artifact",
             )
             self.assertTrue(validate_node(node_path).is_valid)
@@ -137,8 +171,9 @@ class OrchestratorCoreScenarioTests(unittest.TestCase):
             )
 
             self.assertEqual(result.status_after, "waiting_on_computation")
-            self.assertTrue(
-                (node_path / "for-orchestrator" / "WAITING_FOR_COMPUTATION").exists()
+            self.assertEqual(
+                read_node_record(node_path)["lifecycle"]["waiting_on_computation_note"],
+                "Background computation is running.",
             )
             self.assertTrue(validate_node(node_path).is_valid)
 
@@ -165,7 +200,7 @@ class OrchestratorCoreScenarioTests(unittest.TestCase):
             self.assertEqual(result.status_after, "finished")
             self.assertEqual(result.terminal_outcome, "escalated")
             self.assertEqual(
-                read_trimmed_text(node_path / "for-orchestrator" / "terminal-outcome"),
+                read_node_record(node_path)["lifecycle"]["terminal_outcome"],
                 "escalated",
             )
             self.assertTrue(validate_node(node_path).is_valid)
@@ -205,6 +240,41 @@ class OrchestratorCoreScenarioTests(unittest.TestCase):
             event_types = {event["event_type"] for event in events}
             self.assertIn("tool_called", event_types)
             self.assertIn("tool_finished", event_types)
+            self.assertTrue(validate_node(node_path).is_valid)
+
+    def test_runtime_default_model_is_persisted_into_node_json_and_run_snapshot(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            node_path = Path(temp_dir) / "root"
+            create_node(
+                node_path,
+                task_source_name="goal",
+                task_text="Finish the work.",
+                agent_mode="worker",
+            )
+
+            result = NodeOrchestratorCore(_DefaultModelRuntime()).run_once(
+                node_path,
+                mission_id="mission-001",
+                node_id="root",
+            )
+
+            self.assertEqual(result.status_after, "finished")
+            record = read_node_record(node_path)
+            snapshot = json.loads(
+                (node_path / "system" / "runs" / "run-001" / "node.json").read_text(
+                    encoding="utf-8"
+                )
+            )
+            request = json.loads(
+                (node_path / "system" / "runs" / "run-001" / "request.json").read_text(
+                    encoding="utf-8"
+                )
+            )
+            self.assertEqual(record["parameters"]["resolved"]["model"], "default-worker-model")
+            self.assertEqual(record["parameters"]["sources"]["model"], "default")
+            self.assertEqual(snapshot["parameters"]["resolved"]["model"], "default-worker-model")
+            self.assertEqual(snapshot["parameters"]["sources"]["model"], "default")
+            self.assertEqual(request["model"], "default-worker-model")
             self.assertTrue(validate_node(node_path).is_valid)
 
 

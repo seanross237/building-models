@@ -1,0 +1,1 @@
+The operator note has been synthesized from the three drafted parts.

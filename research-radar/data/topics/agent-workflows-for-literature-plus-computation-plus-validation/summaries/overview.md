@@ -1,0 +1,5 @@
+# agent workflows for literature plus computation plus validation — Summaries Overview
+
+Keep this file short. Roll up the strongest summaries and highest-relevance findings for this topic here.
+
+Full item files belong in `items/`.

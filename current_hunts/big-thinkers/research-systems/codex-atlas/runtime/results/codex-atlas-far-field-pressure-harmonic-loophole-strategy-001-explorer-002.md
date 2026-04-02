@@ -1,0 +1,5 @@
+Wrote the exploration report and sentinel summary at [REPORT.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/far-field-pressure-harmonic-loophole/strategies/strategy-001/explorations/exploration-002/REPORT.md) and [REPORT-SUMMARY.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/far-field-pressure-harmonic-loophole/strategies/strategy-001/explorations/exploration-002/REPORT-SUMMARY.md).
+
+The verdict is `Tao-incompatible`: Tao’s averaged primitive-form equation gives `-Δp = div T(u,u)`, with `T(u,u)` already a nonlocal averaged pseudodifferential bilinear operator, so the loophole’s needed pre-Poisson locality of `u ⊗ u` is lost. I also specified exploration 003 as an explicit toy-model computation comparing `S_NS := ∂i∂j(u_i u_j)` against `S_avg := div T(u,u)` for concrete order-zero multipliers.
+
+I verified the output files exist. Direct shell retrieval of the paper was blocked by network/DNS, so the Tao formulas were fixed from AMS/JAMS and arXiv primary-source snippets via the browser tool.

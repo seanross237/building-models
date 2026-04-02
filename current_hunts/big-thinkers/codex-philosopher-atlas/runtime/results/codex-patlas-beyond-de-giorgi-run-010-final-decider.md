@@ -1,5 +1,0 @@
-Wrote the decision memo to [final-decider.md](/Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-010/final-decider.md) and the canonical winner to [winning-chain.md](/Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-010/winning-chain.md).
-
-The winner is the refined geometry stress-test chain, with Chain 02’s theorem-floor admissibility and same-currency ledger gates merged in as mandatory front-end conditions, plus Chain 03’s “real but too weak after full debt” failure mode retained as a calibration check.
-
-I verified both files after writing them. No code tests were needed here since the task was document output only.

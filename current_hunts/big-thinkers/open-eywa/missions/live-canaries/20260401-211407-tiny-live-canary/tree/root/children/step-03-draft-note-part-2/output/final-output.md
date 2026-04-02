@@ -1,0 +1,1 @@
+Part 2: All mission runs are systematically stored within dedicated mission folders for easy retrieval and auditing.

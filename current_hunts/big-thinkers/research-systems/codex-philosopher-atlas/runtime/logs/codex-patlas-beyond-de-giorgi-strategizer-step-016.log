@@ -1,0 +1,465 @@
+OpenAI Codex v0.117.0 (research preview)
+--------
+workdir: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR, /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/runtime/tmp/home/.codex/memories]
+reasoning effort: high
+reasoning summaries: none
+session id: 019d45ba-40a5-73b0-a59c-5ca17190edc2
+--------
+user
+You are running inside codex-philosopher-atlas.
+
+Follow the role prompt first, then satisfy the task exactly.
+
+## Runtime Context
+
+- Repository root: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas
+- Codex workspace root: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas
+- Operational workdir: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/steps/step-016
+- Session name: codex-patlas-beyond-de-giorgi-strategizer-step-016
+- Session prefix: codex-patlas
+- Use only files inside the repository root.
+- Use the local launcher scripts instead of invoking Codex directly:
+  - /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/bin/run-role.sh
+  - /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/bin/launch-role.sh
+  - /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/bin/monitor-sessions.sh
+- Shared local resources live inside this repository:
+  - /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/available-tools.md
+  - /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/promising-findings.md
+  - /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/idea-exploration/
+- Required sentinel output: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/steps/step-016/RESULTS.md
+
+## Role Prompt
+
+# Strategizer System Prompt
+
+## The System
+
+You are part of Codex Philosopher Atlas, a self-contained research system that
+uses a wide-funnel planning loop to produce step-by-step chains, then executes
+one step at a time.
+
+Your role is the Strategizer.
+
+You receive one scoped step goal. You decide how to execute that step by
+querying the local library, launching explorers when needed, synthesizing what
+they found, and writing the step result.
+
+## Runtime Assumptions
+
+- The Codex workspace root is the repository root, not your step directory.
+- Your true operational workdir is provided in the runtime context.
+- The repository root is available as `$CODEX_PATLAS_ROOT`.
+- Use only files inside this repository.
+- Do not invoke raw `codex exec` yourself. Use the local wrapper scripts:
+  - `$CODEX_PATLAS_ROOT/bin/run-role.sh`
+  - `$CODEX_PATLAS_ROOT/bin/launch-role.sh`
+  - `$CODEX_PATLAS_ROOT/bin/monitor-sessions.sh`
+
+## Your Directory
+
+You operate inside a step directory with the usual files:
+
+- `GOAL.md`
+- `RESULTS.md`
+- `state.json`
+- `REASONING.md`
+- `HISTORY-OF-REPORT-SUMMARIES.md`
+- `explorations/exploration-NNN/...`
+
+Mission-level context is nearby:
+
+- `../../CHAIN.md`
+- `../../CHAIN-HISTORY.md`
+- `../../library-inbox/`
+- `../../meta-inbox/`
+
+The shared local library is at:
+
+- `../../../../library/factual/`
+- `../../../../library/meta/`
+
+## Startup Sequence
+
+When you start or resume:
+
+1. Read `GOAL.md`.
+2. Read `state.json`.
+3. Read `HISTORY-OF-REPORT-SUMMARIES.md` if it exists.
+4. Read nearby chain context if it matters.
+5. If you plan a new exploration, query the receptionist first.
+
+## Library Queries
+
+Use the receptionist synchronously via `bin/run-role.sh`.
+
+Create a small task file under `$CODEX_PATLAS_ROOT/runtime/tasks/` that:
+
+- states the question you need answered
+- points the receptionist at the local factual library root
+- points it at the local meta library root
+- points it at the mission meta-inbox if relevant
+- tells it where to append its log
+
+Then run:
+
+```bash
+"$CODEX_PATLAS_ROOT/bin/run-role.sh" \
+  --role receptionist \
+  --workdir "$CODEX_PATLAS_ROOT/library" \
+  --task-file "$TASK_FILE"
+```
+
+Read the receptionist result before designing the next exploration.
+
+## Exploration Cycle
+
+For each exploration:
+
+1. Decide the exact sub-task.
+2. Append your reasoning to `REASONING.md`.
+3. Create `explorations/exploration-NNN/GOAL.md` with:
+   - the specific objective
+   - success and failure criteria
+   - the relevant library context
+   - any constraints or references the explorer needs
+4. Choose the explorer type:
+   - `explorer` for literature, conceptual synthesis, and comparison
+   - `math-explorer` for computation, proof attempts, or formal verification
+5. Launch the explorer through `bin/launch-role.sh`.
+6. Wait on the sentinel file `REPORT-SUMMARY.md`.
+7. Read the summary and then the full report as needed.
+8. Append the summary to `HISTORY-OF-REPORT-SUMMARIES.md`.
+9. Copy the report into `../../library-inbox/` with a descriptive name.
+10. Write a meta-learning note into `../../meta-inbox/`.
+11. Launch the curator through `bin/launch-role.sh`.
+12. Update `state.json`.
+13. Continue or complete the step.
+
+## Launching Explorers
+
+Use explicit session names with the `codex-patlas-` prefix and set the
+sentinel file to the exploration summary:
+
+```bash
+"$CODEX_PATLAS_ROOT/bin/launch-role.sh" \
+  --role explorer \
+  --workdir "$EXPLORATION_DIR" \
+  --task-file "$TASK_FILE" \
+  --session-name "codex-patlas-explorer-001" \
+  --sentinel-file "$EXPLORATION_DIR/REPORT-SUMMARY.md"
+```
+
+For the math explorer, change `--role math-explorer`.
+
+Parallelism is encouraged when sub-tasks are independent.
+
+## Waiting
+
+Polling with shell sleep loops is allowed in this fork because it does not
+re-send your model context. Prefer sentinel-file waits or status-file waits
+through shell commands rather than repeated ad hoc investigative tool calls.
+
+Good patterns:
+
+```bash
+while [ ! -f "$EXPLORATION_DIR/REPORT-SUMMARY.md" ]; do sleep 20; done
+```
+
+```bash
+"$CODEX_PATLAS_ROOT/bin/monitor-sessions.sh"
+```
+
+Bad patterns:
+
+- repeated manual pane inspection
+- checking unrelated files just to infer progress
+- writing outside the repository root
+
+## Curator Handoff
+
+When an exploration completes, create a curator task file that names:
+
+- the report you copied into `../../library-inbox/`
+- the meta note you wrote into `../../meta-inbox/`
+- the local library roots
+- a receipt file path, for example
+  `../../meta-inbox/meta-exploration-NNN-curation-receipt.md`
+
+Launch the curator with the receipt file as its sentinel output.
+
+## Completion
+
+When the step goal is satisfied or the kill condition is met:
+
+- write `RESULTS.md`
+- update `state.json`
+- make sure `RESULTS.md` clearly states whether the kill condition fired
+- stop cleanly once the step is complete
+
+Be decisive, honest, and structured. Your job is to complete the step, not to
+invent the next one.
+
+## Task
+
+Execute the Strategizer role for the copied mission step below.
+
+- Mission: beyond-de-giorgi
+- Step: step-016
+- Operational workdir: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/steps/step-016
+- Primary input: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/steps/step-016/GOAL.md
+- Mission chain context: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/CHAIN.md
+- Chain history: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/CHAIN-HISTORY.md
+- Local library root: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/library
+
+Required behavior:
+- Run the full strategizer loop for this step until you either complete the step or hit a clear blocker.
+- Write or update RESULTS.md in the step directory before finishing.
+- Keep state.json, REASONING.md, and HISTORY-OF-REPORT-SUMMARIES.md in sync with the work you do.
+- Use $CODEX_PATLAS_ROOT/bin/run-role.sh for synchronous receptionist queries.
+- Use $CODEX_PATLAS_ROOT/bin/launch-role.sh to launch explorers and curator sessions.
+- Use session names beginning with codex-patlas.
+- For each explorer, set the sentinel file to that exploration's REPORT-SUMMARY.md.
+- For curator runs, set the sentinel file to the expected library/meta output you just created or updated.
+- Do not read or write anything outside this repository.
+
+codex
+I’m treating this as a full strategizer run for `beyond-de-giorgi/step-016`. I’ll read the step inputs and nearby chain context first, then decide whether this step needs a receptionist query and any explorer launches before I update the step artifacts.
+exec
+/bin/zsh -lc "sed -n '1,220p' state.json" in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/steps/step-016
+exec
+/bin/zsh -lc "if [ -f HISTORY-OF-REPORT-SUMMARIES.md ]; then sed -n '1,260p' HISTORY-OF-REPORT-SUMMARIES.md; fi" in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/steps/step-016
+exec
+/bin/zsh -lc "sed -n '1,220p' GOAL.md" in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/steps/step-016
+ succeeded in 0ms:
+{
+  "iteration": 0,
+  "done": false,
+  "current_exploration": null,
+  "explorations_completed": []
+}
+
+ succeeded in 0ms:
+# History of Report Summaries
+
+Exploration summaries will be appended here as they land.
+
+ succeeded in 0ms:
+# Step 16 Goal: Chain Step 1 Calibrate Tao Differential Contract And Freeze Scope Lock
+
+## Mission Context
+
+**Mission:** Beyond De Giorgi — What Structural Property Could Break the NS
+Regularity Barrier?
+
+**Active chain:** `Calibrated Tao Differential Audit With Exact Theorem-Floor Freeze And Mandatory Evidence Gate`
+
+**Why this step exists now:** `step-015` killed the previous geometry-first
+branch at its theorem-floor gate, and planning run `run-011` responded by
+selecting a stricter mission-wide audit chain rather than another single-family
+mechanism bet. No executed step has weakened this new chain yet. The correct
+first move is therefore to activate it properly: freeze the exact comparison
+contract, the theorem-facing frame, and the admission standard before building
+candidate cards or spending budget on any one NS-specific feature.
+
+Chronological `step-016` executes **logical Chain Step 1**, together with the
+pre-activation scope lock that `CHAIN.md` requires before the chain is treated
+as live.
+
+## This Step Covers
+
+This strategizer execution covers **Chain Step 1 only**:
+
+- choose one exact Navier-Stokes formulation and one exact Tao averaged
+  comparator;
+- choose one comparison level only:
+  `identity-level`, `coercivity-level`, `localization-level`,
+  `propagation-level`, or `blowup-scenario-level`;
+- state exactly what counts as `destroyed by averaging` at that chosen level;
+- distinguish at least these statuses:
+  `exact identity lost`,
+  `formally preserved but no longer coercive`,
+  `preserved globally but broken by localization`,
+  `preserved statically but not dynamically propagated`,
+  or `preserved`;
+- freeze one intended theorem floor only:
+  `suitable-weak / LEI` by default, or one named proxy class with explicit
+  bridge debt;
+- freeze one primary endpoint family only for the audit;
+- freeze the four ledgers:
+  `Tao distinctiveness`,
+  `theorem-floor admissibility`,
+  `endpoint contact`,
+  and `bridge debt`;
+- write one candidate that clearly passes the Tao filter and one that clearly
+  fails; and
+- decide whether the chain has earned entry into candidate-card construction.
+
+Do **not** build the full candidate register yet. That belongs to Chain Step 2.
+Do **not** rank mechanisms yet. Do **not** freeze one theorem-facing route per
+candidate yet. Do **not** produce any same-currency artifact yet. Those belong
+to later chain steps.
+
+## Scope-Lock Discipline
+
+This step must leave behind a single executable comparison frame rather than an
+atmosphere of caution. Every promoted choice must be singular and explicit:
+
+- one exact comparator pair only;
+- one comparison level only;
+- one theorem floor only;
+- one primary endpoint family only; and
+- one ledger structure only.
+
+If the step needs multiple comparison levels, multiple theorem floors, or a
+candidate-specific rescue story before it can define Tao distinctiveness, that
+counts against the branch rather than for it.
+
+## Required Deliverables
+
+Produce all of the following inside `RESULTS.md`:
+
+1. **Comparison-contract memo**
+   - state the exact Navier-Stokes formulation and exact Tao averaged comparator
+     being used;
+   - state the chosen comparison level and why that is the correct level for
+     this audit;
+   - define what counts as a real Tao differential at that level.
+
+2. **Status-table packet**
+   - define the allowed status classes for the Tao differential;
+   - explain how each class differs operationally;
+   - state what evidence would be needed later for a candidate to move through
+     this table honestly.
+
+3. **Scope-lock packet**
+   - freeze one intended theorem floor and explain why it is the correct floor
+     now;
+   - freeze one primary endpoint family for the audit and explain why it is the
+     right endpoint family for the current branch;
+   - freeze the four ledgers:
+     `Tao distinctiveness`,
+     `theorem-floor admissibility`,
+     `endpoint contact`,
+     and `bridge debt`.
+
+4. **Pass/fail example packet**
+   - give one candidate example that clearly passes the Tao filter at the chosen
+     level;
+   - give one candidate example that clearly fails;
+   - explain why each example is non-rhetorical and repository-supported.
+
+5. **Step verdict**
+   - classify the outcome as one of:
+     - `scope lock passed, proceed to typed candidate cards`
+     - `under-specified Tao-filter obstruction, branch should stop before candidate cards`
+   - if the step passes, freeze exactly the comparator pair, comparison level,
+     theorem floor, endpoint family, ledger structure, and pass/fail examples
+     that Chain Step 2 must inherit;
+   - if the step fails, say plainly that the branch should not continue into
+     candidate-card construction.
+
+6. **Source map**
+   - name the exact source files used for comparator choice, comparison-level
+     choice, theorem-floor choice, endpoint-family choice, pass/fail examples,
+     and verdict claims;
+   - distinguish planning-run evidence, prior mission evidence, and new
+     synthesis created in this step.
+
+## Exploration Tasks
+
+Use **2-3 explorations total** unless a kill condition fires early.
+
+### Exploration A: Freeze the comparison contract
+
+Tasks:
+- choose the exact NS formulation and exact Tao averaged comparator;
+- choose one comparison level only;
+- define what `destroyed by averaging` means at that level.
+
+Success standard:
+- the step exits with one concrete Tao-differential contract rather than a
+  general statement that exact NS has "more structure."
+
+### Exploration B: Freeze the theorem-facing scope lock
+
+Tasks:
+- choose one theorem floor only;
+- choose one primary endpoint family only;
+- freeze the four ledgers the rest of the chain must use.
+
+Success standard:
+- later candidate work will inherit one fixed frame instead of renegotiating
+  admissibility and endpoint currency candidate by candidate.
+
+### Exploration C: Write the pass/fail examples and verdict
+
+Only run this after the comparison contract and scope lock are concrete.
+
+Tasks:
+- write one clear passing example and one clear failing example for the Tao
+  filter;
+- decide whether the chain has earned entry into typed candidate cards.
+
+Success standard:
+- mission control receives a calibrated Tao filter with enforcement power, not
+  just definitions.
+
+## Kill Conditions
+
+Trigger an early negative conclusion for this step if any of the following
+happens:
+
+- no exact Tao averaged comparator can be fixed concretely enough for a
+  candidate-by-candidate audit;
+- the step cannot distinguish a clear pass example from a clear fail example;
+- the comparison level drifts between identity, localization, propagation, or
+  scenario language depending on the candidate;
+- the theorem floor or endpoint family cannot be frozen without already
+  branching into multiple incompatible routes;
+- the four ledgers cannot be stated in a way that later candidate work could
+  actually use; or
+- the surviving output is only rhetorical Tao-sensitivity language rather than
+  an executable comparison contract.
+
+If a kill condition fires, count that as a successful bounded negative result
+for this step and recommend chain invalidation before candidate-card work.
+
+## Constraints
+
+- Do **not** build the full candidate register yet. That is Chain Step 2.
+- Do **not** merge or demote overlapping candidate cards yet. That is Chain
+  Step 3 work after the register exists.
+- Do **not** freeze candidate-specific theorem comparators yet. That is Chain
+  Step 4.
+- Do **not** produce a same-currency artifact yet. That is Chain Step 6.
+- Keep the step tied to the local repository record. Do not widen into a full
+  external literature survey.
+
+## Validation Requirements
+
+- State exactly which NS formulation and Tao comparator were frozen.
+- State exactly which comparison level was frozen and why.
+- State exactly what the allowed Tao-differential status classes are.
+- State exactly which theorem floor and primary endpoint family were frozen.
+- State exactly what the four ledgers are and how later steps are supposed to
+  use them.
+- State exactly which example passes the Tao filter and which one fails.
+- Separate `[VERIFIED]`, `[INFERRED]`, and `[PROPOSED]` claims throughout.
+- Keep the final verdict narrow enough that failure here really stops the chain
+  before candidate-card construction.
+
+exec
+/bin/zsh -lc "pwd && printf '\\n---\\n' && rg --files ." in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/steps/step-016
+ succeeded in 0ms:
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/steps/step-016
+
+---
+./HISTORY-OF-REPORT-SUMMARIES.md
+./GOAL.md
+./state.json
+./REASONING.md
+

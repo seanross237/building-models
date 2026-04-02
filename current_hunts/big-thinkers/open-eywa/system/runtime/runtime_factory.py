@@ -4,7 +4,7 @@ from dataclasses import dataclass
 
 from .openrouter_runtime import OpenRouterRuntime, OpenRouterRuntimeConfig
 
-LIVE_CANARY_DEFAULT_MODEL = "google/gemini-2.5-flash-lite"
+LIVE_CANARY_DEFAULT_MODEL = "openai/gpt-4.1-mini"
 
 LIVE_CANARY_ROLE_ORDER: tuple[str, ...] = (
     "librarian",

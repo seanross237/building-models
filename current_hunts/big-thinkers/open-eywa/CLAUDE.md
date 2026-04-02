@@ -10,6 +10,7 @@
 - `OPEN-EYWA-GOAL-AND-OVERVIEW.md` should stay high-level and should be updated when high-level behavior changes.
 - `OPEN-EYWA-IMPLEMENTATION-DETAILS.md` should be updated when the current implementation shape changes.
 - `BUILDING-PRINCIPLES.md` should be updated when the architectural philosophy or design principles change.
+- If you create an Open-Eywa presentation, follow `/Users/seanross/kingdom_of_god/home-base/presentations/guide_presentations.md` and put it under `/Users/seanross/kingdom_of_god/home-base/presentations/`.
 - If you change guidance in `CLAUDE.md` and that same guidance should also apply to agent-facing instructions, update `AGENTS.md` too.
 - Keep the top level human-readable. Hide implementation detail under `system/`.
 - Do not edit the existing `eywa` folder from inside Open-Eywa work.

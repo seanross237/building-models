@@ -1,0 +1,28 @@
+# Step 005 Receptionist Search Log
+
+- Scope searched: `library/factual`, `library/meta`, `missions/exact-ns-no-near-closed-tao-circuit/steps/step-004`, `missions/exact-ns-no-near-closed-tao-circuit/steps/step-005`, `missions/exact-ns-no-near-closed-tao-circuit/library-inbox`, and the Step-4 helper scripts under `steps/step-004/explorations`.
+- Core Step-4 evidence read: `steps/step-004/RESULTS.md`, `steps/step-004/REASONING.md`, `steps/step-004/HISTORY-OF-REPORT-SUMMARIES.md`, and the three Step-4 exploration reports plus summaries.
+- Library materials that mattered most:
+  - `library/factual/exact-ns-tao-circuit-near-closure-screening/INDEX.md`
+  - `library/factual/exact-ns-tao-circuit-near-closure-screening/template-defect-near-closure-compares-one-canonical-packet-to-one-fixed-five-channel-tao-template-on-one-window.md`
+  - `library/factual/exact-ns-tao-circuit-near-closure-screening/windowed-spectator-leakage-budget-compares-off-template-mass-to-the-desired-five-channels-class-by-class.md`
+  - `library/factual/exact-ns-tao-circuit-near-closure-screening/delayed-threshold-itinerary-fixes-one-exact-ordered-activation-sequence-with-predeclared-spectator-budgets.md`
+  - `library/factual/exact-ns-tao-circuit-near-closure-screening/step-4-is-well-posed-because-two-candidates-are-stable-after-canonicalization-and-the-third-remains-an-honest-admission-filter.md`
+  - `library/factual/exact-ns-tao-circuit-near-closure-screening/near-degenerate-tiny-trigger-stress-fails-all-three-step-4-gates-on-one-fixed-exact-ledger.md`
+  - `library/factual/exact-ns-tao-circuit-near-closure-screening/static-beltrami-mirror-complete-family-is-only-an-admissibility-filter-test-on-the-frozen-step-4-sheet.md`
+  - `library/meta/INDEX.md`
+  - `library/meta/obstruction-screening/INDEX.md`
+  - `library/meta/obstruction-screening/separate-true-symmetries-canonicalization-and-substantive-object-changes-before-claiming-support-stability.md`
+  - `library/meta/obstruction-screening/robustness-audits-may-keep-several-honest-survivors-with-different-statuses.md`
+  - `library/meta/obstruction-screening/write-anti-repackaging-rules-in-the-branchs-own-burden-currency.md`
+  - `library/meta/obstruction-screening/use-the-low-leakage-friendly-family-to-distinguish-event-trace-rigidity-from-isolation-failure.md`
+  - `library/meta/obstruction-screening/demand-estimate-level-action-on-the-live-obstruction.md`
+- Helper artifacts that mattered:
+  - `steps/step-004/explorations/exploration-002/code/f_dt_trigger_bound.py`
+  - `steps/step-004/explorations/exploration-002/code/f_dt_trigger_bound.txt`
+  - `steps/step-004/explorations/exploration-003/code/pro_circuit_dossier_check.py`
+- Main conclusions supported by the search:
+  - Step-4 exact friendly witnesses are pinned by `F_SS(mu=1/12)` and `F_SL(rho=1/16)`.
+  - The anti-family `F_DT` is still only partially pinned on template/leakage, but its trigger-bound script confirms `t_trig > 1` on the frozen window under the stated small-parameter regime.
+  - The itinerary split is not frozen as a precise object anywhere in the local record; the strongest local diagnosis is missing family-wide exact `t_next` on the scale-separated friendly side.
+  - The best reusable discipline for Step 5 is: separate canonicalization from object change, keep multiple honest survivor labels if needed, and treat any cosmetic or bookkeeping-dependent rewrite as a non-survivor.

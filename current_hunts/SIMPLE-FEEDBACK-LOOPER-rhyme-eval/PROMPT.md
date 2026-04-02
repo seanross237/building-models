@@ -4,9 +4,9 @@ You are running an iterative loop that optimizes a prompt for predicting which s
 
 ## Files
 
-- **State:** `../../building_models/attempts/SIMPLE-FEEDBACK-LOOPER-rhyme-eval-03-24/state.json`
-- **Truth set:** `../../building_models/attempts/SIMPLE-FEEDBACK-LOOPER-rhyme-eval-03-24/truth-set.json`
-- **Seed prompt:** `../../building_models/attempts/SIMPLE-FEEDBACK-LOOPER-rhyme-eval-03-24/seed-prompt.txt`
+- **State:** `../../home-base/attempts/SIMPLE-FEEDBACK-LOOPER-rhyme-eval-03-24/state.json`
+- **Truth set:** `../../home-base/attempts/SIMPLE-FEEDBACK-LOOPER-rhyme-eval-03-24/truth-set.json`
+- **Seed prompt:** `../../home-base/attempts/SIMPLE-FEEDBACK-LOOPER-rhyme-eval-03-24/seed-prompt.txt`
 
 **Read state.json first.** If `done` is true, print the final summary and stop. If `current_generation` > 0, you are resuming — pick up from the next generation.
 
@@ -31,7 +31,7 @@ To prevent position bias, shuffle options before presenting them to the guesser.
 
 ```bash
 node -e "
-const data = require('./../../building_models/attempts/SIMPLE-FEEDBACK-LOOPER-rhyme-eval-03-24/truth-set.json');
+const data = require('./../../home-base/attempts/SIMPLE-FEEDBACK-LOOPER-rhyme-eval-03-24/truth-set.json');
 
 function seededShuffle(arr, seed) {
   const result = [...arr];

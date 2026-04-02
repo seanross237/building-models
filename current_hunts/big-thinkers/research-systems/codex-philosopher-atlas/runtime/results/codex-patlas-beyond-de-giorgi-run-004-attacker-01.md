@@ -1,0 +1,3 @@
+Wrote the critique to [chain-01.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-004/attacks/chain-01.md).
+
+It attacks each step concretely, then the whole-chain structure. The main line is that the chain is decent as a falsification/obstruction program, but weak as a genuine discovery-ranking program because its comparison standard and cross-architecture ranking remain too soft.

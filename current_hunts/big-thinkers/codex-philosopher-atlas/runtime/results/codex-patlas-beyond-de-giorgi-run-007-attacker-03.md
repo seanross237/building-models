@@ -1,3 +1,0 @@
-Wrote the critique to [chain-03.md](/Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-007/attacks/chain-03.md).
-
-It attacks all five steps concretely, then evaluates the whole chain’s structural weaknesses. The main line is that the route is stronger as an obstruction program than as a positive proof route, because helicity is sign-indefinite and the supposed coupled-flux gain is likely to collapse under mixed-helicity restoration and localization.

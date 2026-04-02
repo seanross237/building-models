@@ -12,7 +12,8 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from system.orchestrator import NodeProgressionEngine, create_node
 from system.orchestrator import prepare_node_for_fresh_attempt, record_computation_result
-from system.orchestrator.node_contract import node_layout, read_trimmed_text
+from system.orchestrator.node_contract import node_layout
+from system.orchestrator.node_record import read_node_record
 from system.runtime import SimulatedRuntime, load_scenario
 
 FIXTURES_DIR = Path(__file__).resolve().parent / "fixtures"
@@ -60,18 +61,17 @@ class OrchestratorProgressionScenarioTests(unittest.TestCase):
             child_dirs = sorted((node_path / "children").iterdir())
             self.assertEqual(len(child_dirs), 2)
             for child_dir in child_dirs:
+                child_record = read_node_record(child_dir)
                 self.assertEqual(
-                    read_trimmed_text(child_dir / "for-orchestrator" / "this-nodes-current-status"),
+                    child_record["lifecycle"]["status"],
                     "finished",
                 )
                 self.assertEqual(
-                    read_trimmed_text(child_dir / "for-orchestrator" / "terminal-outcome"),
+                    child_record["lifecycle"]["terminal_outcome"],
                     "completed",
                 )
 
-            progress_state = json.loads(
-                (node_path / "system" / "progression-state.json").read_text(encoding="utf-8")
-            )
+            progress_state = read_node_record(node_path)["progression"]
             self.assertEqual(progress_state["current_step_index"], 2)
 
     def test_replan_decision_resets_parent_plan_state(self) -> None:
@@ -102,12 +102,9 @@ class OrchestratorProgressionScenarioTests(unittest.TestCase):
             for _ in range(5):
                 engine._advance_once(layout, mission_id="mission-001", node_id="root")
 
-            self.assertFalse((node_path / "system" / "progression-state.json").exists())
             self.assertFalse((node_path / "output" / "plan.md").exists())
-            self.assertEqual(
-                read_trimmed_text(node_path / "for-orchestrator" / "agent-mode"),
-                "planner",
-            )
+            self.assertEqual(read_node_record(node_path)["control"]["next_role"], "planner")
+            self.assertEqual(read_node_record(node_path)["progression"]["steps"], [])
             self.assertTrue((node_path / "system" / "recoveries" / "recovery-001").exists())
             self.assertTrue(
                 (
@@ -189,7 +186,7 @@ class OrchestratorProgressionScenarioTests(unittest.TestCase):
 
             self.assertEqual(result.final_status, "waiting_on_computation")
             self.assertEqual(
-                read_trimmed_text(node_path / "for-orchestrator" / "this-nodes-current-status"),
+                read_node_record(node_path)["lifecycle"]["status"],
                 "waiting_on_computation",
             )
 
@@ -467,6 +464,90 @@ class OrchestratorProgressionScenarioTests(unittest.TestCase):
             self.assertEqual(second_result.final_status, "finished")
             self.assertEqual(second_result.terminal_outcome, "completed")
             self.assertTrue((node_path / "system" / "recoveries" / "recovery-001").exists())
+
+    def test_missing_required_artifact_is_retried_once_and_then_completes(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            node_path = Path(temp_dir) / "leaf"
+            create_node(
+                node_path,
+                task_source_name="goal",
+                task_text="Retry automatically after missing output.",
+                agent_mode="worker",
+            )
+
+            runtime = SimulatedRuntime(
+                {
+                    "missing_artifact": load_scenario(FIXTURES_DIR / "missing_artifact.json"),
+                    "worker_success": load_scenario(FIXTURES_DIR / "worker_success.json"),
+                }
+            )
+
+            def resolver(mission_id: str, node_id: str, role: str, node_root: Path) -> dict[str, str]:
+                del mission_id, node_id, role
+                retry_count = read_node_record(node_root)["lifecycle"].get("retry_count", 0)
+                scenario_name = "worker_success" if retry_count >= 1 else "missing_artifact"
+                return {"scenario_name": scenario_name}
+
+            result = NodeProgressionEngine(
+                runtime,
+                runtime_metadata_resolver=resolver,
+            ).drive_until_stable(
+                node_path,
+                mission_id="mission-001",
+                node_id="leaf",
+            )
+
+            self.assertEqual(result.final_status, "finished")
+            self.assertEqual(result.terminal_outcome, "completed")
+            record = read_node_record(node_path)
+            self.assertEqual(record["lifecycle"]["retry_count"], 1)
+            self.assertTrue((node_path / "system" / "runs" / "run-001").exists())
+            self.assertTrue((node_path / "system" / "runs" / "run-002").exists())
+            events = [
+                json.loads(line)
+                for line in (node_path / "system" / "events.jsonl").read_text(encoding="utf-8").splitlines()
+                if line.strip()
+            ]
+            retry_events = [
+                event
+                for event in events
+                if event["event_type"] == "node_recovery_prepared"
+            ]
+            self.assertEqual(len(retry_events), 1)
+            self.assertEqual(retry_events[0]["payload"]["retry_count"], 1)
+            self.assertEqual(retry_events[0]["payload"]["recovery_mode"], "retry")
+
+    def test_missing_required_artifact_stops_after_three_retries(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            node_path = Path(temp_dir) / "leaf"
+            create_node(
+                node_path,
+                task_source_name="goal",
+                task_text="Stop after bounded automatic retries.",
+                agent_mode="worker",
+            )
+
+            runtime = SimulatedRuntime(
+                {"missing_artifact": load_scenario(FIXTURES_DIR / "missing_artifact.json")}
+            )
+
+            result = NodeProgressionEngine(
+                runtime,
+                runtime_metadata_resolver=lambda mission_id, node_id, role, node_root: {
+                    "scenario_name": "missing_artifact"
+                },
+            ).drive_until_stable(
+                node_path,
+                mission_id="mission-001",
+                node_id="leaf",
+            )
+
+            self.assertEqual(result.final_status, "failed")
+            self.assertEqual(result.failure_reason, "missing_required_artifact")
+            record = read_node_record(node_path)
+            self.assertEqual(record["lifecycle"]["retry_count"], 3)
+            self.assertTrue((node_path / "system" / "recoveries" / "recovery-003").exists())
+            self.assertTrue((node_path / "system" / "runs" / "run-004").exists())
 
 
 if __name__ == "__main__":

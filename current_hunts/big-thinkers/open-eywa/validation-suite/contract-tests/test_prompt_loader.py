@@ -24,7 +24,7 @@ class PromptLoaderTests(unittest.TestCase):
         with self.assertRaises(PromptLoaderError):
             PromptLoader().load("not-a-real-role")
 
-    def test_prompt_bundles_do_not_reference_legacy_eval_decision_name(self) -> None:
+    def test_prompt_bundles_use_node_json_control_language(self) -> None:
         loader = PromptLoader()
         evaluator_bundle = loader.load("mid-plan-evaluator")
         synthesizer_bundle = loader.load("synthesizer")
@@ -37,10 +37,8 @@ class PromptLoaderTests(unittest.TestCase):
         )
 
         self.assertNotIn("for-orchestrator/eval-decision", evaluator_text)
-        self.assertIn(
-            "for-orchestrator/next-action-after-child-report",
-            evaluator_text,
-        )
+        self.assertNotIn("for-orchestrator/next-action-after-child-report", evaluator_text)
+        self.assertIn("NEXT_ACTION_AFTER_CHILD_REPORT", evaluator_text)
         self.assertNotIn("for-orchestrator/eval-decision", synthesizer_text)
 
     def test_worker_prompt_mentions_input_context_handoff(self) -> None:

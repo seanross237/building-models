@@ -129,4 +129,4 @@ A function: `task_description → recommended_architecture` that works for new t
 - `FINDINGS.md` — All 29 findings from benchmark experiments
 - `round-2-architecture-tests.md` — Detailed Round 2 results
 - `question-bank/` — 60 questions, answer key, baseline results, exploration set
-- Atlas explorer tasks: `current_hunts/atlas/execution/instances/*/strategies/*/explorations/*/`
+- Atlas explorer tasks: `current_hunts/big-thinkers/research-systems/atlas/execution/instances/*/strategies/*/explorations/*/`

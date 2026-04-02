@@ -9,7 +9,8 @@ from typing import Any
 from .event_schema import EventRecord
 from .event_writer import AppendOnlyJsonlWriter
 from .mission_contract import MissionLayout, create_mission, mission_layout
-from .node_contract import node_layout, read_trimmed_text, write_text
+from .node_contract import node_layout, write_text
+from .node_record import node_failure_reason, node_next_role, node_status, node_terminal_outcome, read_node_record
 from .orchestrator_progression import (
     NodeProgressionEngine,
     NodeProgressionResult,
@@ -163,9 +164,9 @@ class MissionDriver:
 
         for node_root in node_roots:
             node = node_layout(node_root)
-            status = read_trimmed_text(node.status_file)
-            terminal_outcome = read_trimmed_text(node.terminal_outcome_file)
-            failure_reason = read_trimmed_text(node.failure_reason_file)
+            status = node_status(node)
+            terminal_outcome = node_terminal_outcome(node)
+            failure_reason = node_failure_reason(node)
 
             if status == "finished" and terminal_outcome == "completed":
                 completed_count += 1
@@ -198,8 +199,12 @@ class MissionDriver:
                     continue
                 run_count += 1
                 summary_data = json.loads(summary_file.read_text(encoding="utf-8"))
-                role = summary_data.get("role")
-                model = summary_data.get("model")
+                role = summary_data.get("role") or node_next_role(node)
+                model = summary_data.get("model") or (
+                    (read_node_record(node).get("parameters") or {})
+                    .get("resolved", {})
+                    .get("model")
+                )
                 if role:
                     role_names.add(role)
                 if model:
@@ -230,5 +235,5 @@ class MissionDriver:
         )
 
     def _collect_node_roots(self, tree_dir: Path) -> list[Path]:
-        status_files = sorted(tree_dir.rglob("for-orchestrator/this-nodes-current-status"))
-        return [status_file.parents[1] for status_file in status_files]
+        node_records = sorted(tree_dir.rglob("system/node.json"))
+        return [record_file.parents[1] for record_file in node_records]

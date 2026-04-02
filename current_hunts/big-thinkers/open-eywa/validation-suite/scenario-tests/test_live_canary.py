@@ -34,6 +34,31 @@ class LiveCanaryScenarioTests(unittest.TestCase):
             PROJECT_ROOT / "missions" / "live-canaries" / "20260401-150405-my-tiny-canary",
         )
 
+    def test_build_default_live_canary_mission_path_avoids_existing_path_collisions(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            project_root = Path(temp_dir).resolve()
+            existing = (
+                project_root
+                / "missions"
+                / "live-canaries"
+                / "20260401-150405-my-tiny-canary"
+            )
+            existing.mkdir(parents=True)
+
+            mission_path = build_default_live_canary_mission_path(
+                project_root,
+                label="My Tiny Canary",
+                now=datetime(2026, 4, 1, 15, 4, 5),
+            )
+
+            self.assertEqual(
+                mission_path,
+                project_root
+                / "missions"
+                / "live-canaries"
+                / "20260401-150405-my-tiny-canary-001",
+            )
+
     def test_run_live_canary_with_worker_root_completes_cleanly(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             mission_path = Path(temp_dir) / "canary"

@@ -71,9 +71,12 @@ Current canonical node directories:
 
 - `input/`
 - `output/`
-- `for-orchestrator/`
 - `system/`
 - `children/`
+
+Current authoritative node record:
+
+- `system/node.json`
 
 Important implementation file:
 
@@ -84,7 +87,7 @@ That module provides:
 - current status and terminal-outcome enums
 - the `NodeLayout` path model
 - node creation helpers
-- path helpers for runs, control files, summaries, and recovery folders
+- path helpers for runs, summaries, node snapshots, and recovery folders
 
 ### Current statuses
 
@@ -106,6 +109,12 @@ That module provides:
 
 Defines the durable node layout and path model.
 
+### `node_record.py`
+
+Defines the authoritative `system/node.json` schema helpers and read/write access layer.
+
+The lifecycle block now carries a visible `retry_count` field so repeated attempts are inspectable in the live node state.
+
 ### `node_lifecycle.py`
 
 Defines legal status transitions and enforces transition rules.
@@ -114,7 +123,7 @@ This is where the system ensures things like:
 
 - completed nodes must have `output/final-output.md`
 - escalated nodes must have `output/escalation.md`
-- cancelled nodes must have `for-orchestrator/cancellation-reason`
+- cancelled nodes must have a cancellation reason in `system/node.json`
 
 ### `node_validator.py`
 
@@ -152,7 +161,7 @@ This is where the system knows, for example:
 
 - `planner` must produce `output/plan.md`
 - `worker` must produce `output/final-output.md`
-- `mid-plan-evaluator` must produce `for-orchestrator/next-action-after-child-report`
+- `mid-plan-evaluator` must set `control.next_action_after_child_report` in `system/node.json`
 
 ### `orchestrator_core.py`
 
@@ -163,10 +172,12 @@ It is responsible for:
 - validating the node before a run
 - moving `pending -> active` when needed
 - creating a run directory
+- snapshotting `system/node.json` into the run directory
 - preparing a runtime request
 - calling the runtime
 - persisting request/result/summary/usage files
 - updating node usage and cost summaries
+- applying runtime control/lifecycle updates back into `system/node.json`
 - enforcing post-run contract outcomes
 
 ### `orchestrator_progression.py`
@@ -180,10 +191,19 @@ It currently handles:
 - child node creation
 - driving child nodes to stable states
 - evaluator handoff after child results
-- consuming `next-action-after-child-report`
+- consuming `control.next_action_after_child_report` from `system/node.json`
 - continue / replan / escalate behavior
 - waiting-on-child behavior
 - synthesizer triggering
+- bounded automatic retries for contract-output failures (`missing_required_artifact` and `invalid_decision_value`)
+
+Current automatic retry policy:
+
+- retry happens in the progression layer, not inside the runtime client
+- retry is limited to 3 automatic retries per node
+- retries increment `lifecycle.retry_count` in `system/node.json`
+- retries create `node_recovery_prepared` events and `system/recoveries/recovery-XXX/` snapshots
+- when the retry limit is reached, the node stays failed
 
 This is currently the main orchestration pressure point and should be watched carefully for creeping complexity.
 
@@ -223,6 +243,13 @@ It currently archives prior attempt state into:
 - `system/recoveries/recovery-XXX/`
 
 and resets the live node back to a clean `pending` state.
+
+There are now two recovery shapes:
+
+- fresh-attempt recovery
+  - archives output, children, and the old node record, then resets progression state
+- narrow retry recovery
+  - snapshots the current output and node record, increments `retry_count`, and resets the lifecycle back to `pending` without wiping children or progression state
 
 ### `node_preparation.py`
 
@@ -321,7 +348,7 @@ It currently provides:
 
 - the default cheap model choice for canaries
 - a default role-to-model map
-- a thin constructor for the OpenRouter runtime using environment configuration
+- a thin constructor for the OpenRouter runtime using environment configuration, with repo-root `.env` fallback for `OPENROUTER_API_KEY`
 
 ## Tool Layer
 
@@ -385,9 +412,12 @@ This path has now been proven with:
 
 The default live canary model is currently:
 
-- `google/gemini-2.5-flash-lite`
+- `openai/gpt-4.1-mini`
 
-The real live run requires `OPENROUTER_API_KEY` in the environment.
+The real live run currently accepts `OPENROUTER_API_KEY` from either:
+
+- the process environment
+- the repo-root `.env` file
 
 ## Run Artifacts
 

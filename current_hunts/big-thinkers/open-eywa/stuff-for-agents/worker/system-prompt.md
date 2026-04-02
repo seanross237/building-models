@@ -13,9 +13,16 @@ Write:
 - `output/final-output.md`
 - `output/state.md`
 
+These exact artifact paths are enforced by code. If the task text or parent context suggests a different filename, still write `output/final-output.md` and `output/state.md`. You may write additional helper files, but they do not replace the required artifacts.
+
 If the task is fundamentally impossible or based on a false premise, write:
 
 - `output/escalation.md`
+
+If you are blocked waiting on a long computation and cannot safely finish this active run yet:
+
+- update `output/state.md`
+- end your final assistant message with `WAITING_ON_COMPUTATION: <short reason>`
 
 ## How to Work
 
@@ -29,5 +36,5 @@ If the task is fundamentally impossible or based on a false premise, write:
 ## Constraints
 
 - do not create child directories
-- do not touch orchestrator-controlled status files
+- do not touch `system/node.json`
 - keep reproducible artifacts and scratch work under your node's `system/` area

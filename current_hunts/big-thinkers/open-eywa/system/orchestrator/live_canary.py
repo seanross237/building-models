@@ -8,7 +8,8 @@ from typing import Callable
 
 from .mission_contract import create_mission
 from .mission_driver import MissionDriveResult, MissionDriver
-from .node_contract import node_layout, write_text
+from .node_contract import node_layout
+from .node_record import update_node_record
 from .orchestrator_progression import NodeProgressionEngine
 
 DEFAULT_LIVE_CANARY_GOAL = (
@@ -35,8 +36,16 @@ def build_default_live_canary_mission_path(
     root = Path(project_root).expanduser().resolve()
     current_time = now or datetime.now()
     timestamp = current_time.strftime("%Y%m%d-%H%M%S")
+    if now is None:
+        timestamp = f"{timestamp}-{current_time.microsecond:06d}"
     slug = _slugify(label)
-    return root / "missions" / "live-canaries" / f"{timestamp}-{slug}"
+    base_name = f"{timestamp}-{slug}"
+    candidate = root / "missions" / "live-canaries" / base_name
+    suffix = 1
+    while candidate.exists():
+        candidate = root / "missions" / "live-canaries" / f"{base_name}-{suffix:03d}"
+        suffix += 1
+    return candidate
 
 
 def run_live_canary(
@@ -47,7 +56,12 @@ def run_live_canary(
     create_mission(mission_path, goal_text=config.goal_text)
 
     root_layout = node_layout(mission_path / "tree" / "root")
-    write_text(root_layout.agent_mode_file, config.root_agent_mode.strip() + "\n")
+    update_node_record(
+        root_layout,
+        lambda record: record.setdefault("control", {}).__setitem__(
+            "next_role", config.root_agent_mode.strip()
+        ),
+    )
 
     return MissionDriver(progression_engine).drive_until_stable(
         mission_path,

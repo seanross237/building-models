@@ -19,7 +19,7 @@ No specific factual knowledge relevant to identifying top-level folders for insp
 ## Meta Knowledge
 
 The meta library contains general categories such as planning patterns, execution lessons, review heuristics, orchestration lessons, and methodology notes. However, no specific lessons or heuristics were found that directly address how to identify top-level folders for mission inspection. The INDEX files themselves indicate the purpose of these branches but do not provide actionable content for this specific task.
-Source: /Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/open-eywa/stuff-for-agents/library/meta/INDEX.md
-Source: /Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/open-eywa/stuff-for-agents/library/factual/INDEX.md
+Source: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/open-eywa/stuff-for-agents/library/meta/INDEX.md
+Source: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/open-eywa/stuff-for-agents/library/factual/INDEX.md
 
 Write `output/final-output.md` and `output/state.md`. If impossible, write `output/escalation.md`.

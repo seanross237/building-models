@@ -18,8 +18,8 @@ Presentations are built on request to context-load Sean back into the project. T
 ### Structure
 - **Table of contents first.** Every presentation starts with a slide showing what's coming — the topics/sections at a glance. Lets Sean orient before diving in. The TOC should look good — chunk items into logical sections with clear visual grouping, not just a flat list.
 - **TL;DR slide right after the TOC.** The second slide should be a quick summary of what happened and what the takeaway is. Hit the reader with the punchline up front so they have context for everything that follows. Keep it to a few short bullets — no detail, just the story arc and conclusion.
-- **Keep it short.** ~6-8 slides max unless Sean asks for more. 12 is too many. Each slide should earn its spot.
-- **One message per slide.** Each slide should focus on one major takeaway. If a slide is making two or three points, split it up. Combining the pipeline diagram, stats, parameters, AND information flow into one slide is too much — those are separate messages.
+- **One message per slide.** Each slide should focus on one major takeaway and very little text. If a slide is making two or three points, split it up. Combining the pipeline diagram, stats, parameters, AND information flow into one slide is too much — those are separate messages. Prefer visuals, diagrams, and short labels over sentences. If you're reading more than a few words per element, there's too much text.
+- **Title every slide with the question it answers.** Each slide's title should be the question that slide is answering. This forces clarity about what the slide is for and helps the reader know exactly what they're about to learn (e.g., "How did the agents coordinate?" instead of "Agent Coordination").
 
 ### Project Emojis
 
@@ -64,7 +64,7 @@ Every presentation must include a per-slide feedback mechanism so Sean can leave
 - **Merge on load:** On startup, fetch from `/api/feedback` and merge with localStorage so feedback survives across browsers/devices
 
 ### Reference implementation
-See `building_models/presentations/getting-caught-up-on-old-attempts-2026-03-25/` for a working example with all the CSS, JS, and server code.
+See `home-base/presentations/getting-caught-up-on-old-attempts-2026-03-25/` for a working example with all the CSS, JS, and server code.
 
 ## Unified Server & Index Page
 

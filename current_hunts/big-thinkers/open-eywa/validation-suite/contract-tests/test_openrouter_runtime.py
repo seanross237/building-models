@@ -189,6 +189,74 @@ class OpenRouterRuntimeTests(unittest.TestCase):
             self.assertEqual(len(fake_client.requests), 2)
             first_user_message = fake_client.requests[0]["messages"][1]["content"]
             self.assertIn("Prepared context packet", first_user_message)
+            self.assertIn("Role contract required artifacts: output/final-output.md", first_user_message)
+            self.assertIn("These exact artifact paths are enforced by code.", first_user_message)
+
+    def test_runtime_materializes_required_artifact_from_direct_assistant_text(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            node_path = Path(temp_dir) / "root"
+            layout = create_node(
+                node_path,
+                task_source_name="goal",
+                task_text="Write a simple answer.",
+                agent_mode="worker",
+            )
+            prepared = prepare_node_context_packet(layout, run_id="run-001", role="worker")
+
+            fake_client = FakeOpenRouterClient(
+                responses=[
+                    {
+                        "id": "gen-plain-001",
+                        "model": "openai/gpt-4.1-mini",
+                        "choices": [
+                            {
+                                "message": {
+                                    "role": "assistant",
+                                    "content": "Hello from direct assistant text.",
+                                },
+                                "finish_reason": "stop",
+                            }
+                        ],
+                        "usage": {
+                            "prompt_tokens": 5,
+                            "completion_tokens": 4,
+                            "total_tokens": 9,
+                        },
+                    }
+                ],
+                generation_costs={"gen-plain-001": 0.0005},
+            )
+
+            runtime = OpenRouterRuntime(
+                OpenRouterRuntimeConfig(
+                    api_key="test-key",
+                    default_models={"worker": "openai/gpt-4.1-mini"},
+                    fetch_generation_stats=True,
+                ),
+                client=fake_client,
+            )
+
+            result = runtime.run(
+                RuntimeRequest(
+                    mission_id="mission-plain-001",
+                    node_id="root",
+                    node_path=str(node_path),
+                    run_id="run-001",
+                    role="worker",
+                    prepared_inputs=(prepared.packet_path,),
+                )
+            )
+
+            self.assertEqual(result.exit_reason, "completed")
+            self.assertEqual(result.artifacts_produced, ("output/final-output.md",))
+            self.assertEqual(
+                (node_path / "output" / "final-output.md").read_text(encoding="utf-8"),
+                "Hello from direct assistant text.\n",
+            )
+            self.assertEqual(
+                result.details["assistant_content_materialized_to"],
+                "output/final-output.md",
+            )
 
     def test_runtime_fails_cleanly_on_tool_boundary_violation(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:

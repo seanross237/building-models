@@ -3,7 +3,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Literal
 
-from .node_contract import NodeLayout, read_trimmed_text
+from .node_contract import NodeLayout
+from .node_record import node_next_action_after_child_report
 
 RoleSuccessMode = Literal["nonterminal", "terminal"]
 
@@ -27,7 +28,7 @@ class RoleContract:
     def invalid_decision_value(self, layout: NodeLayout) -> str | None:
         if not self.required_decision_values:
             return None
-        decision = read_trimmed_text(layout.next_action_after_child_report_file)
+        decision = node_next_action_after_child_report(layout)
         if decision not in self.required_decision_values:
             return decision
         return None
@@ -62,7 +63,7 @@ ROLE_CONTRACTS: dict[str, RoleContract] = {
     ),
     "mid-plan-evaluator": RoleContract(
         role="mid-plan-evaluator",
-        required_artifacts=("for-orchestrator/next-action-after-child-report",),
+        required_artifacts=(),
         success_mode="nonterminal",
         required_decision_values=("continue", "replan", "escalate"),
     ),

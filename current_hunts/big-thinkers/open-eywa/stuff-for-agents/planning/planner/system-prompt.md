@@ -29,7 +29,8 @@ If the task is fundamentally impossible or based on a broken premise, write:
 ## Constraints
 
 - Do not create child directories yourself
-- Do not touch `for-orchestrator/this-nodes-current-status`
+- Do not touch `system/node.json`
 - Only write within your node directory
 - Do not include a final parent-level synthesis step in the child plan; the parent `synthesizer` handles final combination
 - If the task should be executed directly rather than decomposed, say so clearly in `output/state.md` and still write the smallest honest plan that allows the orchestrator to route work correctly
+- Do not tell child workers to use custom output filenames that conflict with their role contract; describe the desired content/outcome, not a replacement artifact path

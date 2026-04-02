@@ -1,3 +1,0 @@
-Wrote the attack to [chain-03.md](/Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-005/attacks/chain-03.md).
-
-It critiques each step concretely, then calls out whole-chain weaknesses: late novelty screening, vague Tao-sensitivity filtering, overreliance on a privileged local tensor observable, and a structural tendency to rephrase the original pressure-coupling difficulty instead of reducing it. I also included the strongest parts of the chain so the assessment stays fair.

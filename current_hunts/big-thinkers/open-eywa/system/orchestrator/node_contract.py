@@ -4,6 +4,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Literal
 
+from .node_record import AssignmentSource, build_initial_node_record, write_node_record
+
 NodeStatus = Literal["pending", "active", "waiting_on_computation", "finished", "failed"]
 TaskSourceName = Literal["goal", "parent-instructions"]
 TerminalOutcome = Literal["completed", "escalated", "cancelled"]
@@ -22,7 +24,7 @@ TERMINAL_OUTCOMES: tuple[TerminalOutcome, ...] = (
     "cancelled",
 )
 
-NODE_SUBDIRECTORIES = ("input", "output", "for-orchestrator", "system", "children")
+NODE_SUBDIRECTORIES = ("input", "output", "system", "children")
 SYSTEM_SUBDIRECTORIES = ("runs", "artifacts", "jobs", "recoveries")
 
 
@@ -37,10 +39,6 @@ class NodeLayout:
     @property
     def output_dir(self) -> Path:
         return self.root / "output"
-
-    @property
-    def orchestrator_dir(self) -> Path:
-        return self.root / "for-orchestrator"
 
     @property
     def system_dir(self) -> Path:
@@ -67,6 +65,10 @@ class NodeLayout:
         return self.system_dir / "recoveries"
 
     @property
+    def node_record_file(self) -> Path:
+        return self.system_dir / "node.json"
+
+    @property
     def events_log_file(self) -> Path:
         return self.system_dir / "events.jsonl"
 
@@ -77,14 +79,6 @@ class NodeLayout:
     @property
     def cost_summary_file(self) -> Path:
         return self.system_dir / "cost-summary.json"
-
-    @property
-    def progression_state_file(self) -> Path:
-        return self.system_dir / "progression-state.json"
-
-    @property
-    def latest_child_node_report_file(self) -> Path:
-        return self.system_dir / "latest-child-node-report.json"
 
     @property
     def goal_file(self) -> Path:
@@ -122,38 +116,6 @@ class NodeLayout:
     def escalation_file(self) -> Path:
         return self.output_dir / "escalation.md"
 
-    @property
-    def agent_mode_file(self) -> Path:
-        return self.orchestrator_dir / "agent-mode"
-
-    @property
-    def status_file(self) -> Path:
-        return self.orchestrator_dir / "this-nodes-current-status"
-
-    @property
-    def next_action_after_child_report_file(self) -> Path:
-        return self.orchestrator_dir / "next-action-after-child-report"
-
-    @property
-    def terminal_outcome_file(self) -> Path:
-        return self.orchestrator_dir / "terminal-outcome"
-
-    @property
-    def failure_reason_file(self) -> Path:
-        return self.orchestrator_dir / "failure-reason"
-
-    @property
-    def cancellation_reason_file(self) -> Path:
-        return self.orchestrator_dir / "cancellation-reason"
-
-    @property
-    def waiting_marker_file(self) -> Path:
-        return self.orchestrator_dir / "WAITING_FOR_COMPUTATION"
-
-    @property
-    def computation_result_file(self) -> Path:
-        return self.orchestrator_dir / "computation_result"
-
     def run_dir(self, run_id: str) -> Path:
         return self.runs_dir / run_id
 
@@ -171,6 +133,9 @@ class NodeLayout:
 
     def run_prepared_node_context_file(self, run_id: str) -> Path:
         return self.run_dir(run_id) / "prepared-node-context.json"
+
+    def run_node_record_file(self, run_id: str) -> Path:
+        return self.run_dir(run_id) / "node.json"
 
 
 def node_layout(node_path: str | Path) -> NodeLayout:
@@ -199,11 +164,18 @@ def create_node(
     task_source_name: TaskSourceName,
     task_text: str,
     initial_status: NodeStatus = "pending",
+    next_role: str | None = None,
     agent_mode: str | None = None,
     terminal_outcome: TerminalOutcome | None = None,
     failure_reason: str | None = None,
     cancellation_reason: str | None = None,
     waiting_note: str | None = None,
+    node_id: str | None = None,
+    parent_node_id: str | None = None,
+    model: str | None = None,
+    variant: str | None = None,
+    model_source: AssignmentSource | None = None,
+    variant_source: AssignmentSource | None = None,
 ) -> NodeLayout:
     if initial_status not in NODE_STATUSES:
         raise ValueError(f"Unknown node status: {initial_status}")
@@ -231,32 +203,31 @@ def create_node(
     write_text(task_path, task_text.rstrip() + "\n")
     unlink_if_exists(other_task_path)
 
-    write_text(layout.status_file, initial_status + "\n")
-
-    if agent_mode:
-        write_text(layout.agent_mode_file, agent_mode.strip() + "\n")
-    else:
-        unlink_if_exists(layout.agent_mode_file)
-
-    if initial_status == "finished":
-        write_text(layout.terminal_outcome_file, terminal_outcome + "\n")
-    else:
-        unlink_if_exists(layout.terminal_outcome_file)
-
-    if initial_status == "finished" and terminal_outcome == "cancelled":
-        write_text(layout.cancellation_reason_file, cancellation_reason.strip() + "\n")
-    else:
-        unlink_if_exists(layout.cancellation_reason_file)
-
-    if initial_status == "failed":
-        write_text(layout.failure_reason_file, failure_reason.strip() + "\n")
-    else:
-        unlink_if_exists(layout.failure_reason_file)
-
-    if initial_status == "waiting_on_computation":
-        note = (waiting_note or "waiting for background computation").strip()
-        write_text(layout.waiting_marker_file, note + "\n")
-    else:
-        unlink_if_exists(layout.waiting_marker_file)
-
+    resolved_next_role = (next_role or agent_mode or "").strip() or None
+    waiting_on_computation_note = (
+        (waiting_note or "waiting for background computation").strip()
+        if initial_status == "waiting_on_computation"
+        else None
+    )
+    record = build_initial_node_record(
+        node_id=node_id or layout.root.name,
+        parent_node_id=parent_node_id,
+        task_source_name=task_source_name,
+        task_source_path=str(task_path.relative_to(layout.root)),
+        initial_status=initial_status,
+        next_role=resolved_next_role,
+        terminal_outcome=terminal_outcome if initial_status == "finished" else None,
+        failure_reason=failure_reason.strip() if initial_status == "failed" else None,
+        cancellation_reason=(
+            cancellation_reason.strip()
+            if initial_status == "finished" and terminal_outcome == "cancelled"
+            else None
+        ),
+        waiting_on_computation_note=waiting_on_computation_note,
+        model=model,
+        variant=variant,
+        model_source=model_source,
+        variant_source=variant_source,
+    )
+    write_node_record(layout, record)
     return layout

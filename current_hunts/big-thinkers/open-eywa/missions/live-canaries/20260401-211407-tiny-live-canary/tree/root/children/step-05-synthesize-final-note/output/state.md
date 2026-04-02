@@ -1,0 +1,1 @@
+The final operator-style note has been synthesized from the three drafted parts and written to `output/final-output.md`.

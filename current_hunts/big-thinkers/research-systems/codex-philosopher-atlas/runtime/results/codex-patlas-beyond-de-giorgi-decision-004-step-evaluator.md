@@ -1,0 +1,5 @@
+Wrote the controller outputs and advanced the mission with `proceed`.
+
+The decision JSON is at [decision-004.json](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/controller/decisions/decision-004.json), the memo is at [decision-004.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/controller/decisions/decision-004.md), and the next step goal is at [GOAL.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/steps/step-003/GOAL.md).
+
+The decision is `proceed`: `step-002` narrowed the geometry branch but did not invalidate it. The new `step-003` goal keeps the strategizer strictly on Chain Step 2, with `direction coherence + tube persistence` as the only primary survivor, standalone direction/tube routes as comparators, and Beltrami-based items downgraded to fragility screens. I also verified the JSON schema and the written files.

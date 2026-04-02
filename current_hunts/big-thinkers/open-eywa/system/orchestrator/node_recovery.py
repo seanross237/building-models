@@ -7,7 +7,8 @@ from pathlib import Path
 
 from .event_schema import EventRecord
 from .event_writer import AppendOnlyJsonlWriter
-from .node_contract import node_layout, read_trimmed_text, unlink_if_exists, write_text
+from .node_contract import node_layout, write_text
+from .node_record import node_next_role, read_node_record, write_node_record
 
 
 @dataclass(frozen=True)
@@ -16,10 +17,29 @@ class NodeRecoveryResult:
     previous_status: str
     current_status: str
     next_role: str | None
+    retry_count: int
 
 
 class NodeRecoveryError(RuntimeError):
-    """Raised when a node cannot be safely prepared for a fresh attempt."""
+    """Raised when a node cannot be safely prepared for recovery."""
+
+
+def prepare_node_for_retry(
+    node_path: str | Path,
+    *,
+    recovery_reason: str,
+    next_role: str | None = None,
+    mission_id: str | None = None,
+    node_id: str | None = None,
+) -> NodeRecoveryResult:
+    return _prepare_node_recovery(
+        node_path,
+        recovery_reason=recovery_reason,
+        next_role=next_role,
+        mission_id=mission_id,
+        node_id=node_id,
+        recovery_mode="retry",
+    )
 
 
 def prepare_node_for_fresh_attempt(
@@ -30,79 +50,95 @@ def prepare_node_for_fresh_attempt(
     mission_id: str | None = None,
     node_id: str | None = None,
 ) -> NodeRecoveryResult:
+    return _prepare_node_recovery(
+        node_path,
+        recovery_reason=recovery_reason,
+        next_role=next_role,
+        mission_id=mission_id,
+        node_id=node_id,
+        recovery_mode="fresh_attempt",
+    )
+
+
+def _prepare_node_recovery(
+    node_path: str | Path,
+    *,
+    recovery_reason: str,
+    next_role: str | None,
+    mission_id: str | None,
+    node_id: str | None,
+    recovery_mode: str,
+) -> NodeRecoveryResult:
     layout = node_layout(node_path)
-    previous_status = read_trimmed_text(layout.status_file)
+    record = read_node_record(layout)
+    lifecycle = dict(record.get("lifecycle") or {})
+    previous_status = lifecycle.get("status")
     if previous_status is None:
-        raise NodeRecoveryError("Cannot recover a node without a status file.")
+        raise NodeRecoveryError("Cannot recover a node without a node record status.")
     if previous_status == "pending":
         raise NodeRecoveryError("Pending nodes do not need recovery.")
 
-    terminal_outcome = read_trimmed_text(layout.terminal_outcome_file)
+    terminal_outcome = lifecycle.get("terminal_outcome")
     if previous_status == "finished" and terminal_outcome == "completed":
-        raise NodeRecoveryError("Completed nodes cannot be retried with fresh-attempt recovery.")
+        raise NodeRecoveryError("Completed nodes cannot be retried through node recovery.")
+    if recovery_mode == "retry" and previous_status != "failed":
+        raise NodeRecoveryError("Narrow retry recovery only applies to failed nodes.")
 
-    previous_role = read_trimmed_text(layout.agent_mode_file)
+    previous_role = node_next_role(layout)
+    retry_count = _read_retry_count(lifecycle) + 1
     recovery_id = _next_recovery_id(layout)
     recovery_dir = layout.recoveries_dir / recovery_id
     recovery_dir.mkdir(parents=True, exist_ok=False)
 
-    _archive_directory(layout.output_dir, recovery_dir / "output")
-    _archive_directory(layout.children_dir, recovery_dir / "children")
-
-    archived_orchestrator_dir = recovery_dir / "for-orchestrator"
-    archived_orchestrator_dir.mkdir(parents=True, exist_ok=True)
-    for path in (
-        layout.agent_mode_file,
-        layout.status_file,
-        layout.next_action_after_child_report_file,
-        layout.terminal_outcome_file,
-        layout.failure_reason_file,
-        layout.cancellation_reason_file,
-        layout.waiting_marker_file,
-        layout.computation_result_file,
-    ):
-        _archive_file_if_exists(path, archived_orchestrator_dir / path.name)
-
-    _archive_file_if_exists(
-        layout.progression_state_file,
-        recovery_dir / layout.progression_state_file.name,
-    )
-    _archive_file_if_exists(
-        layout.latest_child_node_report_file,
-        recovery_dir / layout.latest_child_node_report_file.name,
-    )
+    if recovery_mode == "fresh_attempt":
+        _archive_directory(layout.output_dir, recovery_dir / "output")
+        _archive_directory(layout.children_dir, recovery_dir / "children")
+        _archive_file_if_exists(layout.node_record_file, recovery_dir / "node.json")
+    else:
+        _snapshot_directory_if_exists(layout.output_dir, recovery_dir / "output")
+        _snapshot_file_if_exists(layout.node_record_file, recovery_dir / "node.json")
 
     recovery_record = {
         "recovery_id": recovery_id,
+        "recovery_mode": recovery_mode,
         "recovery_reason": recovery_reason,
         "previous_status": previous_status,
         "previous_terminal_outcome": terminal_outcome,
-        "previous_failure_reason": read_trimmed_text(layout.failure_reason_file),
-        "previous_cancellation_reason": read_trimmed_text(layout.cancellation_reason_file),
+        "previous_failure_reason": lifecycle.get("failure_reason"),
+        "previous_cancellation_reason": lifecycle.get("cancellation_reason"),
         "previous_role": previous_role,
         "next_role": next_role or previous_role,
+        "retry_count": retry_count,
     }
     write_text(
         recovery_dir / "recovery-record.json",
         json.dumps(recovery_record, indent=2, sort_keys=True) + "\n",
     )
 
-    layout.output_dir.mkdir(parents=True, exist_ok=True)
-    layout.children_dir.mkdir(parents=True, exist_ok=True)
-    unlink_if_exists(layout.next_action_after_child_report_file)
-    unlink_if_exists(layout.terminal_outcome_file)
-    unlink_if_exists(layout.failure_reason_file)
-    unlink_if_exists(layout.cancellation_reason_file)
-    unlink_if_exists(layout.waiting_marker_file)
-    unlink_if_exists(layout.computation_result_file)
-    unlink_if_exists(layout.progression_state_file)
-    unlink_if_exists(layout.latest_child_node_report_file)
+    if recovery_mode == "fresh_attempt":
+        layout.output_dir.mkdir(parents=True, exist_ok=True)
+        layout.children_dir.mkdir(parents=True, exist_ok=True)
 
-    write_text(layout.status_file, "pending\n")
-    if next_role or previous_role:
-        write_text(layout.agent_mode_file, (next_role or previous_role or "").strip() + "\n")
-    else:
-        unlink_if_exists(layout.agent_mode_file)
+    control = dict(record.get("control") or {})
+    progression = dict(record.get("progression") or {})
+    control["next_role"] = next_role or previous_role
+    control["next_action_after_child_report"] = None
+    if recovery_mode == "fresh_attempt":
+        progression["current_step_index"] = None
+        progression["steps"] = []
+        progression["latest_child_report"] = None
+
+    lifecycle["status"] = "pending"
+    lifecycle["terminal_outcome"] = None
+    lifecycle["failure_reason"] = None
+    lifecycle["cancellation_reason"] = None
+    lifecycle["waiting_on_computation_note"] = None
+    lifecycle["computation_result_note"] = None
+    lifecycle["retry_count"] = retry_count
+    record["lifecycle"] = lifecycle
+    record["control"] = control
+    record["progression"] = progression
+    write_node_record(layout, record)
 
     AppendOnlyJsonlWriter(layout.events_log_file).append_event(
         EventRecord(
@@ -114,8 +150,10 @@ def prepare_node_for_fresh_attempt(
             payload={
                 "recovery_reason": recovery_reason,
                 "recovery_attempt": recovery_id,
+                "recovery_mode": recovery_mode,
                 "previous_status": previous_status,
                 "previous_terminal_outcome": terminal_outcome,
+                "retry_count": retry_count,
             },
         )
     )
@@ -125,6 +163,7 @@ def prepare_node_for_fresh_attempt(
         previous_status=previous_status,
         current_status="pending",
         next_role=next_role or previous_role,
+        retry_count=retry_count,
     )
 
 
@@ -151,3 +190,23 @@ def _archive_file_if_exists(source: Path, destination: Path) -> None:
         return
     destination.parent.mkdir(parents=True, exist_ok=True)
     shutil.move(str(source), str(destination))
+
+
+def _snapshot_directory_if_exists(source: Path, destination: Path) -> None:
+    if not source.exists():
+        return
+    shutil.copytree(source, destination)
+
+
+def _snapshot_file_if_exists(source: Path, destination: Path) -> None:
+    if not source.exists():
+        return
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(source, destination)
+
+
+def _read_retry_count(lifecycle: dict[str, object]) -> int:
+    retry_count = lifecycle.get("retry_count")
+    if isinstance(retry_count, int) and retry_count >= 0:
+        return retry_count
+    return 0

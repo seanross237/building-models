@@ -1,0 +1,1 @@
+Using only the facts in this prompt, create a short operator-style note in three parts. Facts: (1) Open-Eywa treats the node as the durable unit of work. (2) Mission runs are stored in mission folders. (3) Testing improves reliability. Decompose this into a few small writing steps that require no external research, complete them, then synthesize a final note.

@@ -1,0 +1,1 @@
+Drafted part 2 of the operator note.

@@ -1,0 +1,2227 @@
+OpenAI Codex v0.117.0 (research preview)
+--------
+workdir: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR, /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/runtime/tmp/home/.codex/memories]
+reasoning effort: high
+reasoning summaries: none
+session id: 019d4690-9bd6-7ce3-82be-8abe7e1eef81
+--------
+user
+You are running inside codex-atlas.
+
+Follow the role prompt first, then satisfy the task exactly.
+
+## Runtime Context
+
+- Repository root: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas
+- Codex workspace root: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas
+- Operational workdir: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit
+- Session name: codex-atlas-exact-ns-no-near-closed-tao-circuit-missionary
+- Session prefix: codex-atlas
+- Use only files inside the repository root.
+- Use the local launcher scripts instead of invoking Codex directly:
+  - /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/bin/run-role.sh
+  - /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/bin/launch-role.sh
+  - /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/bin/monitor-sessions.sh
+- Shared local resources live inside this repository:
+  - /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/available-tools.md
+  - /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/promising-findings.md
+  - /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/idea-exploration/
+
+## Role Prompt
+
+# Missionary System Prompt
+
+## Role
+
+You are the Missionary in Codex Atlas.
+
+You own the mission-level loop. Your job is to decide what strategy should run
+next, evaluate completed strategies honestly, write missionary meta-learning,
+and declare the mission complete only when it truly is.
+
+You are above the Strategizer. You do not perform exploration work yourself.
+
+## Runtime Assumptions
+
+- The repository root is available as `$CODEX_ATLAS_ROOT`.
+- Your operational workdir is a mission instance directory under
+  `execution/instances/<mission>/`.
+- Stay entirely inside this repository.
+- Use local launcher scripts rather than invoking Codex directly:
+  - `$CODEX_ATLAS_ROOT/bin/start-strategy.sh`
+  - `$CODEX_ATLAS_ROOT/bin/run-role.sh`
+  - `$CODEX_ATLAS_ROOT/bin/launch-role.sh`
+  - `$CODEX_ATLAS_ROOT/bin/monitor-sessions.sh`
+
+## Mission Context
+
+Within the mission instance directory, the important files are:
+
+- `MISSION.md`
+- `MISSION-VALIDATION-GUIDE.md` if present
+- `MISSION-COMPLETE.md` if it exists
+- `COMPUTATIONS-FOR-LATER.md`
+- `strategies/strategy-NNN/`
+- `library-inbox/`
+- `meta-inbox/`
+
+Shared strategic memory is nearby:
+
+- missionary meta library:
+  `../../agents/library/meta/missionary/`
+- factual and meta library roots:
+  `../../agents/library/factual/`
+  `../../agents/library/meta/`
+- setup guide:
+  `../../SETUP-GUIDE.md`
+
+## Startup Sequence
+
+When you begin:
+
+1. Read `MISSION.md`.
+2. Read `MISSION-VALIDATION-GUIDE.md` if it exists.
+3. Read the missionary meta library index and the most relevant entries.
+4. Read prior strategy `FINAL-REPORT.md` files if they exist.
+5. Determine the current mission state:
+   - no strategy yet
+   - latest strategy still in progress
+   - latest strategy complete and ready for evaluation
+   - mission already complete
+
+## Strategy Responsibilities
+
+When a new strategy is needed:
+
+1. Choose the next strategy id.
+2. Write `strategies/strategy-NNN/STRATEGY.md`.
+3. Ensure the standard scaffold exists:
+   - `state.json`
+   - `LOOP-STATE.md`
+   - `HISTORY-OF-REPORT-SUMMARIES.md`
+   - `REASONING.md`
+   - `explorations/`
+4. Ensure `COMPUTATIONS-FOR-LATER.md` exists at the mission level.
+5. Launch the Strategizer with the local launcher.
+
+The strategy should specify:
+
+- objective
+- methodology
+- validation criteria
+- relevant context from prior strategies or the shared library
+
+Do not over-prescribe exact exploration ids. The Strategizer owns the
+direction-level decisions within your methodology.
+
+## Evaluating Completed Strategies
+
+When a strategy has `FINAL-REPORT.md`:
+
+1. Read:
+   - `FINAL-REPORT.md`
+   - `HISTORY-OF-REPORT-SUMMARIES.md`
+   - `REASONING.md`
+   - relevant `meta-inbox/` notes
+2. Evaluate the science against the mission and validation guide.
+3. Evaluate the methodology:
+   - what worked
+   - what failed
+   - what should be reused
+   - what should be abandoned
+4. Write a missionary meta-learning note into
+   `../../agents/library/meta/missionary/`.
+5. Decide:
+   - mission complete
+   - next strategy needed
+   - blocked pending clearer external input
+
+## Launching Strategizers
+
+Prefer the local helper script:
+
+```bash
+"$CODEX_ATLAS_ROOT/bin/start-strategy.sh" "<mission-name>" "strategy-001"
+```
+
+If you need direct control, you may use `bin/launch-role.sh` with:
+
+- role `strategizer`
+- workdir set to the strategy directory
+- a task file under `runtime/tasks/`
+- sentinel file set to `FINAL-REPORT.md`
+
+## Waiting
+
+If your task explicitly requires you to keep mission control until a strategy
+finishes, wait on the strategy's `FINAL-REPORT.md` with a shell sleep loop or
+watch the runtime status file. Do not repeatedly perform ad hoc exploratory
+checks.
+
+Good pattern:
+
+```bash
+while [ ! -f "$STRATEGY_DIR/FINAL-REPORT.md" ]; do sleep 20; done
+```
+
+## Completion Standard
+
+Write `MISSION-COMPLETE.md` only when the mission has earned a terminal result.
+That can be positive or negative, but it must be clear, honest, and supported
+by the accumulated strategy record.
+
+Your highest-value outputs are:
+
+- good strategy design
+- correct mission-level judgment
+- durable missionary meta-learning
+
+## Task
+
+Take the next mission-level action for Atlas mission "exact-ns-no-near-closed-tao-circuit".
+
+Operational workdir:
+- /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit
+
+Required behavior:
+- Read MISSION.md and MISSION-VALIDATION-GUIDE.md if it exists.
+- Read prior strategy outputs and the missionary meta library before deciding.
+- If no usable strategy exists, create the next strategy directory, write STRATEGY.md, ensure the standard scaffold exists, and launch a strategizer run for it.
+- If the latest strategy has FINAL-REPORT.md, evaluate it, write a missionary meta-learning note, and then either:
+  - write MISSION-COMPLETE.md, or
+  - create the next strategy and launch its strategizer.
+- If a relevant strategizer session is already active, do not duplicate it.
+- Use only local launcher scripts inside this repository.
+- Do not invoke raw codex exec directly.
+
+Helpful local paths:
+- Strategy root: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/strategies
+- Shared library: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library
+- Setup guide: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/SETUP-GUIDE.md
+- Strategy launcher: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/bin/start-strategy.sh
+
+codex
+I’m checking the mission state first: mission brief, validation guide, prior strategy outputs, and missionary meta notes. Then I’ll decide whether this mission needs evaluation, a new strategy, or no action because a strategizer is already running.
+exec
+/bin/zsh -lc pwd in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit
+ succeeded in 0ms:
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit
+
+exec
+/bin/zsh -lc 'rg --files .' in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit
+ succeeded in 0ms:
+./MISSION-VALIDATION-GUIDE.md
+./library-inbox/exploration-001-definition-gate-near-closed-tao-circuit-report.md
+./strategies/strategy-001/HISTORY-OF-REPORT-SUMMARIES.md
+./strategies/strategy-001/STRATEGY.md
+./strategies/strategy-001/LOOP-STATE.md
+./strategies/strategy-001/state.json
+./strategies/strategy-001/REASONING.md
+./COMPUTATIONS-FOR-LATER.md
+./MISSION.md
+./strategies/strategy-001/FINAL-REPORT.md
+./strategies/strategy-001/explorations/exploration-001/REPORT-SUMMARY.md
+./strategies/strategy-001/explorations/exploration-001/GOAL.md
+./strategies/strategy-001/explorations/exploration-001/REPORT.md
+./meta-inbox/meta-exploration-001-curation-receipt.md
+./meta-inbox/meta-exploration-001.md
+./strategies/strategy-001/explorations/exploration-003/REPORT-SUMMARY.md
+./strategies/strategy-001/explorations/exploration-003/GOAL.md
+./strategies/strategy-001/explorations/exploration-003/REPORT.md
+./strategies/strategy-001/explorations/exploration-002/REPORT-SUMMARY.md
+./strategies/strategy-001/explorations/exploration-002/code/sign_constraints_output.txt
+./strategies/strategy-001/explorations/exploration-002/code/sign_constraints.py
+./strategies/strategy-001/explorations/exploration-002/code/helical_support_audit.py
+./strategies/strategy-001/explorations/exploration-002/code/README.md
+./strategies/strategy-001/explorations/exploration-002/code/audit-output.txt
+./strategies/strategy-001/explorations/exploration-002/GOAL.md
+./strategies/strategy-001/explorations/exploration-002/REPORT.md
+
+exec
+/bin/zsh -lc "if [ -f MISSION-VALIDATION-GUIDE.md ]; then sed -n '1,220p' MISSION-VALIDATION-GUIDE.md; fi" in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit
+exec
+/bin/zsh -lc "sed -n '1,220p' MISSION.md" in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit
+ succeeded in 0ms:
+# Mission Validation Guide — Exact NS No-Near-Closed Tao Circuit
+
+## Tier 1: Definition Precision
+
+- "Near-closed Tao circuit" is defined concretely, not metaphorically.
+- Active modes, desired couplings, and leakage thresholds are explicit.
+- The definition is narrow enough that it could in principle be true or false.
+
+## Tier 2: Exact-NS Fidelity
+
+- The interaction law used is exact Navier-Stokes in the chosen representation.
+- Leray projection and triadic geometry are handled explicitly.
+- Any helical simplification is stated exactly and not confused with the full equation.
+
+## Tier 3: Quantitative Content
+
+- The mission produces either a lower bound, an impossibility statement, or a construction.
+- "Too much entanglement" is not accepted without a quantitative witness.
+- If the obstruction fails, the counterexample is explicit enough to invalidate the idea.
+
+## Tier 4: Prior-Work Discipline
+
+- Closed estimate-level routes are not reopened.
+- The mission uses the prior mechanism reconstruction rather than redoing it.
+- Any proposed host connection is clearly separate from De Giorgi / pressure / compactness dead routes.
+
+## Tier 5: Outcome Sharpness
+
+- The final result says one of:
+  - concrete no-circuit theorem candidate
+  - concrete near-circuit counterexample
+  - idea too vague / not testable
+- Every substantial claim is tagged `[VERIFIED]`, `[COMPUTED]`, `[CHECKED]`, or `[CONJECTURED]`.
+- The next-step implication is unambiguous: pursue, kill, or reformulate.
+
+ succeeded in 0ms:
+# Mission: Exact NS No-Near-Closed Tao Circuit
+
+## The Question
+
+The last mission reconstructed Tao's averaged-NS blowup mechanism as a five-mode delayed-threshold circuit embedded into a shell cascade. The strongest surviving real-NS discrepancy was:
+
+```text
+exact NS may be too interaction-entangled to realize Tao's near-isolated gate logic
+```
+
+That was a mechanism-level insight, not yet a theorem.
+
+This mission asks the narrow follow-up:
+
+```text
+Can one formulate and test a quantitative "no near-closed Tao circuit" statement for exact Navier-Stokes?
+```
+
+The target is not a regularity proof. The target is a concrete mathematical object:
+
+- an impossibility theorem
+- a lower bound on unavoidable spectator leakage
+- a rigidity statement for exact triadic/helical couplings
+- or a counterexample showing the whole idea is false
+
+## What Success Looks Like
+
+One of the following:
+
+1. **Positive obstruction**
+   A precise statement of the form:
+
+   - any exact-NS mode packet approximating Tao's five-stage circuit must generate unavoidable extra couplings of size at least `...`
+   - or no almost-closed subsystem with Tao's pump/amplifier/rotor hierarchy can exist under exact NS triadic geometry and Leray projection
+
+2. **Negative kill**
+   A concrete exact-NS or helical/Fourier model shows that a near-closed Tao-like circuit is in fact possible, so this whole firewall idea should be dropped.
+
+Either is a good result.
+
+## What Failure Looks Like
+
+- The notion of "near-closed Tao circuit" cannot be made precise.
+- The statement can be made precise but cannot be tested even in a simplified Fourier/helical setting.
+- The candidate reduces to vague language about "entanglement" with no quantitative content.
+
+These are valid negative outcomes if reported sharply.
+
+## Established Results (Do Not Re-Derive)
+
+- De Giorgi / epsilon-regularity / pressure / host-space routes are closed at estimate level.
+- The far-field harmonic pressure loophole is closed.
+- Tao's cascade has already been reconstructed at mechanism level.
+- The prior mission already identified the strongest qualitative candidate:
+
+```text
+exact-NS circuit non-isolability
+```
+
+Do not repeat those analyses from scratch.
+
+## What Must Be Avoided
+
+- Do **not** drift back into estimate improvement.
+- Do **not** re-survey Tao's paper broadly.
+- Do **not** accept a slogan like "NS has too much coupling" as a result.
+- Do **not** attempt a full regularity proof.
+
+## Core Mission Structure
+
+### Step 1: Define a Tao-like circuit quantitatively
+
+Using the prior mission's mechanism reconstruction, define the smallest exact notion of a Tao-like circuit in terms of:
+
+- a finite set of active modes or helical mode packets
+- a target coupling graph
+- desired hierarchy of dominant couplings
+- admissible spectator couplings / leakage
+- threshold or timescale separation conditions
+
+The definition can be simplified, but it must be concrete enough to test.
+
+**Deliverable:** a definition or small family of definitions for "near-closed Tao circuit."
+
+**Kill condition:** if no precise definition can be made, stop and report that the idea is too vague to pursue.
+
+### Step 2: Translate exact NS into the right language
+
+Work in the most appropriate exact framework, likely:
+
+- Fourier triads
+- helical decomposition
+- exact Leray-projected bilinear interactions
+
+Recover the exact interaction law relevant to the candidate circuit and identify:
+
+- which couplings are desired
+- which extra couplings are forced automatically
+- which are forbidden by geometry or helicity selection
+- which can be tuned by mode choice and which cannot
+
+**Deliverable:** a concrete interaction table for the exact NS candidate subsystem.
+
+### Step 3: Test the obstruction
+
+Choose the smallest meaningful configuration and ask:
+
+- can the Tao-like desired couplings dominate?
+- do unavoidable spectator couplings exceed any reasonable leakage threshold?
+- is there a lower bound on leakage coming from exact triadic geometry or Leray projection?
+- or can a clever helical/geometric choice suppress enough unwanted couplings to realize a near-circuit?
+
+This may be analytical, computational, or mixed.
+
+**Deliverable:** either
+
+- a quantitative no-circuit / leakage lower bound
+
+or
+
+- a concrete near-circuit construction showing the obstruction fails.
+
+### Step 4: Final report
+
+One of three outcomes:
+
+1. **Concrete no-circuit statement found**
+2. **Counterexample / near-circuit found**
+3. **Definition-level failure: idea too vague or too unconstrained**
+
+## Budget
+
+3-5 explorations.
+
+Expected shape:
+
+- 1 exploration to define the object
+- 1 exploration to compute exact NS couplings
+- 1 exploration to prove or disprove near-closure
+- optional adversarial pass
+
+## Connection to Prior Work
+
+Direct successor to:
+
+- [anatomy-of-averaged-ns-blowup-firewall/MISSION-COMPLETE.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/anatomy-of-averaged-ns-blowup-firewall/MISSION-COMPLETE.md)
+
+That mission narrowed the live candidate to exact-NS circuit non-isolability but could not formalize it.
+
+This mission does only that formalization/test.
+
+exec
+/bin/zsh -lc 'rg --files /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary' in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas
+ succeeded in 0ms:
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-002-classicality-budget-learnings.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-yang-mills-conjecture-learnings.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-thermal-time-learnings.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-navier-stokes-learnings.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-003-yang-mills-learnings.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-002-riemann-hypothesis-learnings.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-classicality-budget-learnings.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-riemann-hypothesis-learnings.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-barandes-stochastic-learnings.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-002-vasseur-pressure-learnings.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/INDEX.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-003-thermal-time-learnings.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-learnings.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-002-yang-mills-validation-learnings.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-002-sed-learnings.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-vasseur-pressure-learnings.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-compton-unruh-learnings.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-002-yang-mills-learnings.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-002-thermal-time-learnings.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-002-navier-stokes-learnings.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-003-yang-mills-conjecture-learnings.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-yang-mills-validation-learnings.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-amplituhedron-learnings.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-003-sed-learnings.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-002-yang-mills-conjecture-learnings.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-003-riemann-hypothesis-learnings.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-yang-mills-learnings.md
+
+codex
+The mission already has one completed strategy on disk. I’m reading the missionary patterns and the strategy-001 record next so I can judge whether this is actually finished or needs a tighter follow-up.
+exec
+/bin/zsh -lc "sed -n '1,240p' /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/INDEX.md" in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas
+ succeeded in 0ms:
+# Missionary Meta-Learning
+
+Lessons from previous missionaries about strategy design, methodology choices, and what works at the strategic level. These lessons generalize across missions — they're about how to design effective strategies, not about specific domains.
+
+## Entries
+
+- [`strategy-001-vasseur-pressure-learnings.md`](strategy-001-vasseur-pressure-learnings.md) — Ground-clearing strategies for obstruction mapping. Phase 0 redefines targets, "adversarial → targeted test" is the strongest quality pattern, test generalization of mechanisms early, prescribe lead-pursuit phases. (vasseur-pressure, strategy-001, 2026-03-30)
+- [`strategy-002-vasseur-pressure-learnings.md`](strategy-002-vasseur-pressure-learnings.md) — Dual-track obstruction+construction for impossibility proofs. Phase 0 decomposition audit is highest-leverage for proof-improvement missions; Direction Status Tracker enables clean stopping; two-strategy map→attack arc produces strongest impossibility results. (vasseur-pressure, strategy-002, 2026-03-31)
+
+| File | Date | Summary |
+|------|------|---------|
+| `strategy-001-classicality-budget-learnings.md` | 2026-03-27 | Three-phase derive-compute-adjudicate protocol for formula verification. Parallel Phase 1 is optimal. Mandate mission-critical explorations (don't leave experimental tests as optional). Best findings often emerge as side effects of stress-test fixes. Front-load computation. |
+| `strategy-001-riemann-hypothesis-learnings.md` | 2026-03-27 | Constraint-catalog methodology for hard unsolved problems. Ground-clearing strategies produce Tier 2-3 results but not Tier 1 novelty. Make synthesis/adversarial phases mandatory with minimum allocations. Force constructive work (building operators), not just testing known ones. Prescribe data scale (millions of zeros, not thousands). |
+| `strategy-001-learnings.md` | 2026-03-27 | Reproduce→Extend→Stress-Test for computational missions. Survey explorations at the start pay for themselves. Pre-loading verified formulas compounds across explorations. Adversarial review should come early, not just at end. "Computation mandatory" was the single most important rule. First strategies should prioritize breadth over depth. |
+| `strategy-001-compton-unruh-learnings.md` | 2026-03-27 | Adversarial Derivation Protocol for hypothesis-testing missions. Dimensional analysis as Phase 1 gatekeeper saves entire budgets. Adversarial tests must come early (slot 3-4), not late (slot 8). Pre-launch algebra checks prevent trivially-doomed explorations. Side-effects of failures produce the most interesting findings. One strategy can be sufficient for binary yes/no missions. |
+| `strategy-001-yang-mills-learnings.md` | 2026-03-27 | Probe-Attack-Synthesize for hard unsolved problems. First strategy = ground-clearing, second = constructive. Adversarial review must come early (slot 6-7), not at the end. Require math specificity in methodology. Quantitative negative results (AC bounds 57-69x vacuous) reach Tier 3; qualitative ones don't. Pre-load all prior findings into next strategy. |
+| `strategy-002-classicality-budget-learnings.md` | 2026-03-27 | Focused claim-deepening protocol after a survey strategy. All explorations mandatory (no optional). Second strategies should target specific gaps, not re-explore. Prescriptive literature search (specific papers + search terms) beats exploratory. Two-strategy arc (survey → deepen) may be default for formula-verification missions. |
+| `strategy-001-amplituhedron-learnings.md` | 2026-03-27 | Compute-first methodology for framework comparison missions. "Compute first" was wrong emphasis for structural/conceptual domains — surveys produced better results. Match methodology to domain type. Framework-comparison missions follow map→characterize→probe→synthesize arc. Novel claims from well-studied fields will be synthesis, not discovery. One strategy can suffice for clearly scoped questions. |
+| `strategy-002-sed-learnings.md` | 2026-03-27 | Parallel probes for frontier mapping. All three probes produced novel data (none wasted). Two-strategy arc (depth then breadth) is natural for computational missions. Physical constant verification must be a cross-phase rule. Adversarial review MUST find prior art or it hasn't done its job. Tunneling formula R²=0.9998 was the mission's strongest result — emerged from a "quick probe" design. |
+| `strategy-002-riemann-hypothesis-learnings.md` | 2026-03-27 | Tournament methodology for constructive research. Tournament→Deep Dive→Mandatory Adversarial is the best three-phase arc for constructive missions. Adversarial review is the highest-ROI phase — it caught two false claims. Construction strategies produce better novelty than testing strategies. Prescribe specific null-hypothesis control experiments. Explorer death rate (4/9) is the #1 operational problem. |
+| `strategy-003-riemann-hypothesis-learnings.md` | 2026-03-28 | Focused-attack strategy for a quantitative gap. Check formula validity in target regime before making it the strategy centerpiece. Don't designate one computation as "the most important" — creates brittleness. Three-strategy arc has diminishing returns by strategy 3. Adversarial self-refutation chains (find→validate→refute) are the system's most honest output. 24 explorations across 3 strategies is the natural scale for hard problems. |
+| `strategy-001-thermal-time-learnings.md` | 2026-03-27 | Phased foundation-then-comparison for hypothesis-testing. "Explorers must compute" was the single most important rule. Interpretation questions (local vs global) are blocking — resolve before computing consequences. Negative results in the obvious regime are efficient but leave interesting territory untouched. 4 explorations can suffice for a definitive conclusion. Pre-specify comparison baselines explicitly. |
+| `strategy-003-sed-learnings.md` | 2026-03-27 | Finishing strategy: 3+1 (parallel cleanup + adversarial synthesis). Full 3-strategy arc: depth→breadth→synthesis is natural for computational missions. Adversarial synthesis in finishing strategy is the most valuable exploration — catches overclaiming. Survey missions on well-studied topics have a natural Tier 3-4 ceiling. Budget 3 strategies upfront. Don't defer theoretical frameworks to the finishing strategy. |
+| `strategy-002-yang-mills-learnings.md` | 2026-03-27 | Constructive attack producing novel rigorous result. Adversarial review (E007) after first surprise produced the most important finding (staggered mode tight bound). Original attack vector (RG+BE) correctly abandoned for simpler tighter analysis. 3-exploration proof arc (slack → tight bound → proof) is the natural unit. Prescribe methodology not attack vector — let strategizer pivot. β < 1/6 proved (4× state of art), β < 1/4 with one remaining inequality. |
+| `strategy-002-thermal-time-learnings.md` | 2026-03-28 | Parallel computational probes for regime exploration. All-mandatory parallel probes + pre-loaded context is the highest-efficiency pattern. Adversarial review must be structurally enforced (not just labeled mandatory) — strategizer skipped it. Approximation caveats need built-in resolution paths. Early stopping at 3/10 explorations was mixed: results decisive but claims unverified. Physics errors in GOALs for QFT must specify which symmetry generator. |
+| `strategy-003-thermal-time-learnings.md` | 2026-03-28 | Finishing strategy for verification and synthesis. Tight budget (4 mandatory, no early stopping) ensured adversarial review ran. 3-strategy arc (depth→breadth→synthesis) is the natural pattern for hypothesis-testing missions. Parameter sweeps are discovery machines (found spectrum-preservation discriminant). 11 explorations across 3 strategies is the natural scale. Adversarial review belongs in a finishing strategy where it can't be skipped. |
+| `strategy-003-yang-mills-learnings.md` | 2026-03-28 | Proof tournament finishing strategy for closing one inequality. Parallel proof attempts eliminate false premises faster than sequential (found M(Q)≼M(I) FALSE in round 1). Finishing strategies should expect NOT to close the gap — value is in obstruction mapping. "Check X numerically before proving X" is mandatory. 30 explorations across 3 strategies is the natural scale for Millennium-adjacent problems. Obstruction atlases are a publishable contribution. |
+| `strategy-001-barandes-stochastic-learnings.md` | 2026-03-28 | Single-strategy framework analysis with pre-loaded adversarial context. Pre-loading adversarial findings from prior missions is the highest-leverage move for framework analysis — saves 1-2 explorations. One strategy suffices for well-scoped "is this X?" evaluation questions. Steelman requirement transforms adversarial reviews from dismissive to nuanced. For reformulation missions, explicitly require a "what computation would upgrade this to new physics?" exploration. 6 explorations in 1 strategy is the natural scale for evaluation missions. |
+| `strategy-001-yang-mills-validation-learnings.md` | 2026-03-28 | Adversarial proof audit for validation missions. Adversarial posture is the single most important rule — it found a genuine proof gap. "Independent rederivation" can reproduce known errors if conventions aren't pinned. Convention verification deserves its own exploration. Numerical extensions as Phase 2 are robust because they're independent of proof gaps. Validation missions are 1-2 strategy affairs. 8 explorations with 190+ configs, 0 violations. |
+| `strategy-002-yang-mills-validation-learnings.md` | 2026-03-29 | Focused gap repair with check-before-prove methodology. Stress tests need systematic TYPE coverage (all-link/single-link × large/small angle), not just volume — 300 configs missed a violation that systematic types caught. 3/5-6 budget used for definitive negative result. Novel permanent results (analytical Hessian formula) can emerge from failed repairs. Two-strategy validation arc (audit → repair attempt) is the natural pattern. Early termination on negative results saves budget. |
+| `strategy-001-yang-mills-conjecture-learnings.md` | 2026-03-28 | Three-phase decompose-construct-verify for proof problems. Parallel Phase 1 decompositions all contributed. ONE approach per proof exploration (never three — causes thinking paralysis). Combined Bound Lemma discovered computationally, not algebraically — validates "compute first." Failed explorations have downstream value. Strategizer's best decisions were deviations from the strategy. 8/10 budget, partial proof + precise gap characterization. |
+| `strategy-002-yang-mills-conjecture-learnings.md` | 2026-03-29 | Upstream logic verification must precede proof construction. Proved full 9D staggered bound via affine-in-D + Cauchy-Schwarz, but staggered bound doesn't imply full conjecture — non-staggered eigenvalues uncontrolled. "Wrong target" is the costliest failure mode (wastes entire strategies, not just explorations). Mandatory Phase 0: verify that proof target implies desired conclusion. ONE approach per exploration strongly validated. Formula cross-checking against source paper is essential. |
+| `strategy-003-yang-mills-conjecture-learnings.md` | 2026-03-29 | Phase 0 upstream verification can redirect entire missions. Conjecture 1 (on M(Q)) FALSE — correct target is HessS. Phase 0 was the single highest-ROI exploration in the 20-exploration mission. "N configs zero violations" ≠ "bound holds" — gradient ascent on exact target found 17% violation. Code written but not run is a budget planning failure — run most promising approach first. Norm-additive bounds are a dead end class for d≥3. Anti-instantons are the universal stress test. |
+| `strategy-001-navier-stokes-learnings.md` | 2026-03-30 | Catalog-Measure-Tighten for inequality analysis. Cross-phase computable function pairs were the best design decision — made catalog immediately actionable. Decomposition consistency checks caught critical error (reversed Ladyzhenskaya vs Hölder priority). Phase 3 "Tighten" failed because it didn't prescribe theorem targets. Single-IC dependence was a blind spot. 8/20 explorations for ground-clearing is the right scale. |
+| `strategy-002-navier-stokes-learnings.md` | 2026-03-30 | Constructive proof strategy with Phase 0 gating. Phase 0 gate (T_BKM/T_Lad > 10) exceeded by 10⁶ — validates entire direction instantly. ONE theorem per exploration works. Two-strategy arc (map→attack) is natural for Millennium-adjacent problems. Missionaries must verify empirical claims before building strategies on them (C(F₄) waste). Structural impossibilities (logical circles) are permanent findings. "Modest but genuine" novelty is the realistic ceiling for well-studied problems. 4/20 explorations — efficient early stopping. |
+
+exec
+/bin/zsh -lc "sed -n '1,240p' strategies/strategy-001/HISTORY-OF-REPORT-SUMMARIES.md" in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit
+ succeeded in 0ms:
+# Exploration History
+
+## Exploration 001
+
+# Exploration 001 Summary
+
+- Goal: define a concrete, testable notion of a "near-closed Tao circuit" in exact Fourier/helical Navier-Stokes, or kill the object at the definition gate.
+- What I tried: used the local Atlas circuit/firewall notes to reconstruct Tao's five-role architecture, then pulled the exact helical Fourier interaction law from primary-source literature to decide what the smallest honest exact object should be.
+- Outcome: succeeded.
+- One key takeaway: the right Phase 0 object is a five-role helical-mode directed hypergraph with a coefficient-weighted leakage ratio, not a vague five-node isolation slogan and not a coarse packet-energy model.
+- Leads worth pursuing: Phase 1 should audit the smallest explicit support `(K,σ)` in the exact helical basis, classify every exact term as desired vs leakage, and test at least one adversarial helicity arrangement designed to suppress leakage.
+- Unexpected findings: the real definition choice is not "mode vs packet" in the abstract; it is amplitude-level exact bookkeeping versus packet-energy coarse graining, and only the former is sharp enough for the next ledger phase.
+- Computations worth doing later: once a candidate support is chosen, compute the exact helical coefficients and leakage ratios for all conjugate-forced companion triads on the activation windows.
+
+## Exploration 002
+
+# Exploration 002 Summary
+
+- Goal: choose one explicit minimal helical support for the preferred Phase 0 definition and write the exact desired-vs-leakage interaction ledger.
+- What I tried: translated the desired Tao monomials into exact triad-closure equations with full conjugate-sign freedom, then used a small brute-force sign check to see whether the pump, seed, and amplifier channels can coexist on a singleton helical support.
+- Outcome: succeeded.
+- One key takeaway: the preferred singleton-support object is already impossible before coefficient comparisons or spectator leakage, because the two `a1^2` channels force roles 2 and 3 onto the same conjugate wavevector pair, after which the amplifier `a2 a3 -> a3` cannot exist.
+- Leads worth pursuing: the only live route is the packetized backup definition from exploration 001; the next exploration should decide whether a minimally packetized exact object can be made canonical enough to test, or whether the remaining freedom makes the whole idea definition-level weak again.
+- Unexpected findings: the obstruction is stronger than the original leakage story. The cleanest failure is not "too many spectators" but "the target monomial pattern cannot even be embedded on singleton helical supports."
+- Computations worth doing later: search for the smallest packet support that can realize distinct pump and seed targets while preserving an exact amplitude-level ledger, or prove that any such packet support necessarily explodes in size.
+
+## Exploration 003
+
+# Exploration 003 Summary
+
+- Goal: decide whether the packetized backup definition can be sharpened into one canonical exact-channel mission object after the singleton-support version failed.
+- What I tried: used exploration 002's singleton obstruction plus the receptionist's refine/stop criterion to test whether the packet backup has one canonical support, projection, leakage split, and exact-network restoration rule.
+- Outcome: succeeded.
+- One key takeaway: once singleton supports fail, the packetized backup stops being one object and becomes a family of packetization/projection choices, so it does not survive as a clean mission target.
+- Leads worth pursuing: none inside this strategy. A future mission would need to start by inventing and defending a canonical packet model as its primary object rather than treating packetization as an escape hatch.
+- Unexpected findings: the strongest negative result is not merely a leakage story. It is a two-step definitional collapse: the sharp exact version is false, and the only surviving replacement is underconstrained.
+- Computations worth doing later: none unless someone first proposes a specific canonical packet support and projection rule worth testing as a new mission.
+
+exec
+/bin/zsh -lc "sed -n '1,220p' /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-navier-stokes-learnings.md" in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas
+ succeeded in 0ms:
+---
+topic: Catalog-Measure-Tighten for computational inequality analysis
+category: missionary
+date: 2026-03-30
+source: navier-stokes, strategy-001
+---
+
+# Strategy-001 Navier-Stokes Learnings
+
+## What the methodology was
+
+Three-phase **Catalog → Measure → Tighten** with a cross-phase rule requiring every identified inequality to be written as computable Python function pairs (bound vs actual). Prescribed computation scale: ≥5 Reynolds numbers, ≥3 initial conditions, two-resolution convergence. Budget: 20 explorations, 8 used.
+
+## What worked exceptionally well
+
+1. **Cross-phase computable function pairs.** Requiring every inequality to be written as `bound(u)` and `actual(u)` Python functions was the single best design decision. It made the catalog immediately actionable (Phase 1 → Phase 2 transition was seamless), forced precision in the catalog, and created reusable infrastructure that every subsequent exploration built on. **This should be a standard rule for any mission involving inequalities, estimates, or bounds.**
+
+2. **Decomposition with multiplicative consistency checks.** Requiring α × β × γ = total slack, verified at every timestep, caught a critical error — exploration 002's rough estimates (9× geometric / 18.6× Ladyzhenskaya) were corrected by exploration 004 (5.3× / 31×). The correction reversed the strategic priority (Ladyzhenskaya dominates, not Hölder). **Always require consistency checks in decomposition explorations.**
+
+3. **Survey first paid off again.** The literature catalog (exploration 001) with Tao's generic/NS-specific classification changed the entire strategic direction. This is now validated across 6+ missions. The innovation here was requiring a structural classification (generic vs NS-specific), not just a catalog.
+
+4. **Prescribed computation scale.** Requiring ≥4 Reynolds numbers, convergence checks at two resolutions, and ≥5 initial condition types meant results had real statistical weight. The strategizer was disciplined about this.
+
+5. **Budget efficiency.** 8 of 20 explorations used. The strategizer correctly stopped when the Phase 3 tightening paths were mapped rather than spending 12 more explorations on diminishing returns. This was the right call — the remaining budget is better spent on a focused constructive strategy.
+
+## What didn't work
+
+1. **Phase 3 (Tighten) never actually tightened.** The methodology said "tighten the loosest one" but didn't prescribe HOW. It listed approaches (sharp constant, better exponent, structural argument) without requiring a proof attempt. The result: Phase 3 became "characterize what a tighter bound would look like" rather than "prove a tighter bound." **For constructive phases, require a specific proof attempt with a stated theorem target.**
+
+2. **Literature survey should have preceded the spectral Ladyzhenskaya computation.** Exploration 006 (spectral Ladyzhenskaya) was predictably a dead end if you read Tao (2014). The strategizer recognized this in hindsight. **When a direction depends on whether harmonic analysis alone can improve things, check for known obstructions FIRST.**
+
+3. **Single-IC dependence.** Most findings (decomposition, BMO ratios, conditional bound) are Taylor-Green-specific. The adversarial search (exploration 003) tested multiple ICs for vortex stretching slack but not for the other quantities. **Cross-phase rules should require multi-IC validation for every key finding, not just the headline number.**
+
+4. **Adversarial review was standard-only.** The review caught logical errors and did novelty search but couldn't independently recompute. A math explorer adversarial review on the 2-3 most important numerical claims would have been more powerful. **Budget one math-explorer adversarial and one standard-explorer adversarial for missions with heavy computation.**
+
+## Surprising findings about methodology
+
+- The correction of exploration 002 by exploration 004 was the single most valuable moment. It's worth designing strategies that expect to correct their own early estimates. One approach: always run a dedicated decomposition exploration rather than trusting back-of-envelope estimates.
+- The strategizer pivoted well when directions failed (spectral Ladyzhenskaya → BKM). But the pivots were reactive, not proactive. The methodology could have structured alternative paths from the start.
+- 8 explorations was the right scale for a ground-clearing + initial tightening strategy on a Millennium-adjacent problem. Consistent with the 24-30 exploration total seen in Yang-Mills and Riemann missions across 3 strategies.
+
+## Lessons that generalize
+
+1. **Cross-phase computable deliverables** (not just text reports) dramatically improve phase transitions. For inequality missions: function pairs. For proof missions: stated lemma targets. For construction missions: code artifacts.
+2. **Decomposition explorations need multiplicative/additive consistency checks.** These catch real errors and are trivially cheap.
+3. **Tightening phases need theorem targets.** "Try to prove a tighter version" produces characterization. "Prove this specific statement or identify exactly where the proof breaks" produces either a result or a precise obstruction.
+4. **Match adversarial review type to exploration type.** Standard reviewers for logical claims + novelty. Math reviewers for numerical claims + recomputation.
+5. **Ground-clearing strategies reach Tier 2-3. Constructive strategies are needed for Tier 4-5.** This is now validated across 8+ missions. The two-strategy arc (survey → construct) or three-strategy arc (survey → construct → verify) is the natural pattern.
+
+exec
+/bin/zsh -lc "sed -n '1,220p' /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-002-navier-stokes-learnings.md" in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas
+ succeeded in 0ms:
+---
+topic: Constructive proof strategy with Phase 0 gating
+category: missionary
+date: 2026-03-30
+source: navier-stokes, strategy-002
+---
+
+# Strategy-002 Navier-Stokes Learnings
+
+## What the methodology was
+
+Three-phase **Validate Premise → Construct Proof → Adversarial Verification** with a Phase 0 gate (clear go/no-go criterion: T_BKM/T_Lad > 10). One theorem target per exploration. Mandatory math + standard adversarial review. 4 of 20 explorations used.
+
+## What worked exceptionally well
+
+1. **Phase 0 gating with quantitative criterion.** The success threshold (T_BKM/T_Lad > 10) was clear, unambiguous, and exceeded by a factor of 10⁶. This immediately validated the entire strategic direction and meant no pivoting was needed. **For constructive strategies following ground-clearing, always include a quantitative Phase 0 gate.** If the gate fails, you save 15+ explorations. If it passes (as here), you proceed with confidence.
+
+2. **"ONE theorem per exploration, state first, prove second."** Exploration 002 stated the BKM enstrophy theorem, then proved it in 4 steps. The proof gap (BGW on T³) was identified precisely. This produced a clean, reviewable result. **This instruction format works — use it for all proof explorations.**
+
+3. **Ground-clearing → constructive arc.** Strategy-001 (8 explorations) mapped the landscape. Strategy-002 (4 explorations) attacked the best target. The 2:1 ratio of ground-clearing to constructive explorations is about right for a well-characterized problem. **The two-strategy arc is the natural pattern for Millennium-adjacent problems: map → attack.**
+
+4. **Killing dead ends immediately.** The C(F₄) direction was killed in exploration 003 via the exact algebraic identity. No time wasted on further investigation. **Always check for algebraic identities behind empirical correlations before making them a strategy direction.** This was knowable before Strategy-002 was designed — a 3-line calculation. The lesson: missionary should verify key empirical findings computationally before building a strategy around them.
+
+5. **4 of 20 explorations — stopping when done.** The strategizer recognized that the strategy's goals were met and stopped. This takes discipline. Budget efficiency across both strategies: 12 of 40 possible explorations. **"Done" is not "budget exhausted" — it's "goals met or obstruction identified."**
+
+## What didn't work
+
+1. **Math adversarial review was prescribed but not done.** The strategy called for both a math explorer adversarial recomputation AND a standard adversarial review. Only the standard review was done. The strategizer judged 4 explorations sufficient and skipped the math adversarial. **This is a recurring pattern: when budgets are tight, adversarial recomputation gets cut first.** Consider making math adversarial mandatory by placing it before the strategizer's completion decision, not after.
+
+2. **Protas-type adversarial IC search not done.** This would have been the strongest validation of Claim 1. It was listed as optional (Phase 2C, "if budget allows"), and budget was allocated elsewhere. **If a validation step is important enough to include in the strategy, make it non-optional or accept its absence in the final assessment.** Don't put critical validations in "if budget allows" slots.
+
+3. **C(F₄) direction should have been killed before becoming a strategy direction.** The algebraic identity C_Leff⁴ = F₄ · R³ is trivially derivable from the definitions. The missionary (me) should have checked this before including it as Direction B. **Missionary should computationally verify key empirical claims from prior strategies before building the next strategy around them.** A 5-minute sub-agent computation would have caught this.
+
+4. **Explorer output latency (30+ minutes before first file written).** All four explorations had the same pattern: 20-30 minutes of reading/thinking/coding before producing any output file. The "write section by section" instruction in the goals was consistently ignored. **This appears to be a structural limitation of the explorer prompt, not a strategy design issue.** The meta-inbox notes all flag it. Consider requiring "create REPORT.md skeleton IMMEDIATELY after reading goal" in the explorer system prompt itself.
+
+## Surprising findings
+
+- **The BKM advantage was 10⁶-10¹⁵× larger than expected.** I designed the Phase 0 gate at T_BKM/T_Lad > 10, expecting 10-100×. The actual advantage is 10⁷ to 10¹⁶. This is because the ν⁻³ factor in the Ladyzhenskaya ODE is catastrophic at high Re. The lesson: when designing Phase 0 gates, set the threshold conservatively. Being surprised on the upside is fine; being surprised by a marginal result requires re-evaluation.
+
+- **The "logical circle" is the most important strategic finding.** The adversarial reviewer identified that BKM enstrophy → regularity requires ||ω||_{L^∞} control → which IS the BKM criterion → which is equivalent to regularity. This means no enstrophy-based approach can prove regularity — the entire direction has a structural ceiling. **This kind of "impossibility identification" is as valuable as a positive result. It saves future strategies from attacking a provably closed direction.**
+
+- **C(F₄) killed by algebra, not physics.** The Strategy-001 empirical correlation was between algebraically linked quantities along a single trajectory. This is a pure statistics mistake (confounding variables), not a physics insight. **Lesson: always check whether your regression variables are algebraically dependent before interpreting a correlation as causal.**
+
+## Lessons that generalize
+
+1. **Two-strategy arc for hard problems: map (8-10 explorations) → attack (4-6 explorations).** The ground-clearing strategy produces Tier 2-3. The constructive strategy attempts Tier 4-5. If the attack succeeds, you're done. If it identifies a structural obstruction, you're also done (differently). This is now validated on Navier-Stokes, Yang-Mills, and Riemann missions.
+
+2. **Phase 0 gates save or validate entire strategies.** Set quantitative thresholds. If the gate passes overwhelmingly (as here), the strategy proceeds with confidence and minimal pivoting. If it fails, you save 80% of the budget. Phase 0 is the highest-ROI exploration in a constructive strategy.
+
+3. **Missionaries should verify before prescribing.** Don't build a strategy direction around an unverified empirical claim from a prior strategy. Spawn a 5-minute sub-agent to check the key assumption first. The C(F₄) waste was entirely avoidable.
+
+4. **Structural impossibilities (logical circles, Tao obstructions) are permanent findings.** They constrain all future strategies, not just the current one. Document them prominently in MISSION-COMPLETE.md and the library.
+
+5. **"Modest but genuine" novelty is the realistic ceiling for well-studied problems.** The BKM enstrophy theorem is correct, proved, computationally verified, and adversarially reviewed — but experts would consider it "obvious." The quantitative slack atlas (237×) has higher novelty precisely because nobody bothered to measure it before. **Sometimes the most novel contribution is not a theorem but a measurement.**
+
+exec
+/bin/zsh -lc "sed -n '1,260p' strategies/strategy-001/FINAL-REPORT.md" in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit
+ succeeded in 0ms:
+# Final Report: Strategy 001
+
+## Executive Verdict
+
+```text
+definition-level negative
+```
+
+[CHECKED] A testable exact object was found at Phase 0, but it did not survive the first exact-support audit.
+
+[COMPUTED] The sharp singleton-support version of a near-closed Tao circuit is already false: the two desired `a1^2` channels force roles 2 and 3 onto the same conjugate wavevector pair, after which the amplifier `a2 a3 -> a3` cannot satisfy exact triad closure for any sign choice.
+
+[CHECKED] The only surviving replacement is a packetized backup, but that object is not canonical enough to count as one theorem-facing exact-NS target. It depends on packet support choice, projection choice, leakage scalarization, and exact-network restoration conventions.
+
+So the mission ends at outcome 3 from the strategy brief:
+
+```text
+the near-closed Tao circuit idea does not survive as one precise exact-NS object
+```
+
+## Directions Tried
+
+### 1. Phase 0 definition gate
+
+[CHECKED] Exploration 001 succeeded. It sharpened the mission object into a five-role helical-mode directed hypergraph with a coefficient-weighted leakage functional and delayed-trigger windows. This showed that the idea does not fail immediately as a slogan.
+
+### 2. Exact interaction audit on the preferred exact object
+
+[COMPUTED] Exploration 002 killed the preferred singleton-support version before coefficient or leakage analysis. The exact triad-closure constraints imply:
+
+- `a1^2 -> a2` forces `k2 = ± 2k1`,
+- `a1^2 -> a3` forces `k3 = ± 2k1`,
+- hence roles 2 and 3 occupy the same conjugate wavevector pair,
+- and then `a2 a3 -> a3` has no exact triad realization for any conjugate-sign choice.
+
+[CHECKED] This is a stronger obstruction than the original spectator-coupling story. The cleanest failure is non-embeddability of the target monomial pattern on singleton exact supports.
+
+### 3. Refine-or-stop test on the packetized backup
+
+[CHECKED] Exploration 003 asked whether the packetized backup could replace the failed singleton object as one canonical exact-channel table.
+
+[CHECKED] It could not. Once packetization is introduced, the object depends on extra choices not fixed by exact NS:
+
+- which exact modes belong to each packet,
+- how packet roles are projected or coordinatized,
+- how desired channels are separated from internal packet cross-terms,
+- how leakage is measured after restoring the full exact network.
+
+That means the backup is not one exact object but a family of engineering choices.
+
+## Strongest Findings
+
+1. [VERIFIED] Tao's mechanism remains the right reference object: a five-role delayed-trigger circuit is the load-bearing structure to compare against exact NS.
+2. [COMPUTED] The most precise exact singleton-mode version of that circuit is statically impossible.
+3. [CHECKED] The remaining packetized versions are too underconstrained to serve as one mission object without a new canonical packet model.
+
+## Negative Results and Dead Ends
+
+- [COMPUTED] The preferred singleton-support object dies before any coefficient-ratio or leakage lower-bound computation.
+- [CHECKED] Helicity/sign adversarial checks do not rescue the singleton object, because they do not change triad-closure geometry.
+- [CHECKED] The packetized backup does not rescue the mission in its current form; it moves the ambiguity into packet support, projection, and leakage bookkeeping.
+
+## Recommended Next Move For The Missionary
+
+[CHECKED] Stop this line as currently posed.
+
+[CHECKED] Only reopen it under a differently framed mission whose primary job is:
+
+```text
+invent and defend a canonical exact packet model for Tao-like circuit roles
+before asking any obstruction/construction question
+```
+
+[CHECKED] Without that, further work would not be testing one object. It would be designing the object ad hoc while simultaneously trying to prove things about it.
+
+## Claims Worth Carrying Forward
+
+- [COMPUTED] The singleton exact-mode Tao-circuit object is false for structural wavevector reasons, not merely because leakage looks large.
+- [CHECKED] Any future "near-closed Tao circuit" mission must start by fixing a canonical packet model, not by treating packetization as a fallback after singleton failure.
+- [CHECKED] The original firewall slogan sharpens into a stronger negative: the crisp exact version dies, and the flexible replacement loses object-level precision.
+
+exec
+/bin/zsh -lc "sed -n '1,240p' strategies/strategy-001/REASONING.md" in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit
+ succeeded in 0ms:
+# Reasoning Log
+
+## Direction Status Tracker
+
+| Direction | Status | Evidence | Exploration |
+|---|---|---|---|
+| Phase 0 definition gate for a near-closed Tao circuit | CLOSED | Exploration 001 passed the definition gate and fixed the preferred exact object as a five-role helical-mode directed hypergraph with coefficient-weighted leakage. | Exploration 001 |
+| Exact interaction audit for the minimal exact subsystem | CLOSED | Exploration 002 showed the preferred singleton-support object is statically impossible: the two `a1^2` channels force roles 2 and 3 onto the same conjugate wavevector pair, killing the amplifier before coefficient or leakage analysis. | Exploration 002 |
+| Refine-or-stop test for the packetized backup | CLOSED | Exploration 003 showed the packetized backup cannot be promoted into one canonical exact-channel object; it remains basis-dependent and packetization-dependent. | Exploration 003 |
+| Quantitative obstruction or construction test on a surviving exact object | EXHAUSTED | No single exact object survived the previous two directions. The singleton version is false; the packetized backup is underconstrained. | Not reached |
+
+## Iteration 1 decision
+
+The strategy has no completed explorations yet, so the critical path is exactly the Phase 0 gate from `STRATEGY.md`. That gate has to decide whether "near-closed Tao circuit" can be made concrete enough to be true or false in exact Fourier/helical Navier-Stokes.
+
+I queried the receptionist before choosing the first exploration, as required. The returned material confirms:
+
+- the strongest local mechanism reconstruction is already in `tao-averaged-ns-delayed-transfer-circuit.md`,
+- the only live exact-NS discrepancies are still coefficient rigidity and unavoidable spectator couplings,
+- pressure / Leray should be treated as the enforcement mechanism for those discrepancies rather than a separate route,
+- there is no local Waleffe-style or helical-triad corpus sufficient to define the exact leakage metric from library material alone.
+
+That means exploration 001 should be a definition-gate exploration, not an interaction audit yet. It should use the local Atlas notes to reconstruct the architecture and should use primary sources immediately for the exact Fourier/helical coefficient language needed to make the object quantitative.
+
+The required output from exploration 001 is:
+
+1. one preferred definition of "near-closed Tao circuit" and at most one backup definition,
+2. a notation table mapping Tao's five-stage logic to exact Fourier/helical objects,
+3. an explicit separation between exact NS data and user-chosen tolerances,
+4. a concrete pass/fail criterion for moving on to the exact interaction ledger,
+5. a definition-level negative verdict if the object still cannot be stated sharply enough to test.
+
+## Iteration 1 result
+
+Exploration 001 succeeded. The definition gate did not collapse into vagueness.
+
+The preferred exact object is now:
+
+- five distinguished helical amplitudes `a1,...,a5`,
+- a directed hypergraph of desired quadratic monomials,
+- a leakage decomposition `F^des + F^int-leak + F^ext-leak`,
+- windowed dominance conditions encoding Tao's delayed trigger logic.
+
+The critical gain is that the object is now Phase 1-ready: a future exact interaction audit can classify every exact term as desired, internal leakage, or external leakage.
+
+The gate also clarified the right representation choice:
+
+- preferred: singleton helical modes with conjugate closure,
+- backup: finite helical packets,
+- rejected: coarse packet-energy or triad-count definitions.
+
+So the mission has passed from "can the object be defined?" to "does any explicit exact support realize it?"
+
+## Iteration 2 decision
+
+I queried the receptionist again before choosing exploration 002, as required. The result is decisive:
+
+- the local library still has no actual `(K,σ)` support-selection catalog,
+- it has no usable helical triad-class atlas for leakage-suppressing sign patterns,
+- it does contain the mechanism notes and the meta guidance for a literal desired-vs-leakage ledger.
+
+Therefore exploration 002 must go directly to primary-source helical triad analysis. It should not ask the library to choose the support for us.
+
+The next exploration should:
+
+1. choose one explicit minimal support `(K,σ)` for the five Tao roles,
+2. write the exact helical interaction ledger including mirror/conjugate closure,
+3. test one adversarial helicity arrangement designed to suppress leakage,
+4. end with one minimal configuration only, unless the adversarial support is genuinely inequivalent.
+
+## Iteration 2 result
+
+Exploration 002 produced a stronger negative result than the original spectator-leakage story.
+
+The preferred singleton-support object is statically impossible. Even allowing full conjugate-sign freedom:
+
+- `a1^2 -> a2` forces `k2 = ± 2k1`,
+- `a1^2 -> a3` forces `k3 = ± 2k1`,
+- therefore roles 2 and 3 lie on the same conjugate wavevector pair,
+- and then the amplifier `a2 a3 -> a3` cannot satisfy exact triad closure for any sign choice.
+
+So the preferred exact object does not survive to the coefficient-ledger stage at all. The cheap adversarial screen was already included here: helicity/sign choices do not rescue the obstruction because they do not alter triad-closure geometry.
+
+That leaves only the packetized backup definition from exploration 001.
+
+## Iteration 3 decision
+
+I queried the receptionist a third time before deciding what to do with the packetized backup. The answer was clear:
+
+- there is no hidden local packet-model branch,
+- the backup is acceptable only if it can be converted into one canonical exact-channel table,
+- otherwise it should be treated as a definition-level failure.
+
+So exploration 003 had to be a short refine-or-stop pass, not another heavy computation.
+
+## Iteration 3 result
+
+Exploration 003 closed the strategy.
+
+After the singleton-support object fails, the packetized backup does not become one sharpened replacement object. It becomes a family of choices:
+
+- packet support choice,
+- projection / basis choice,
+- leakage scalarization,
+- exact-network restoration convention.
+
+None of those are fixed canonically by the exact NS law or by existing Atlas work. Therefore the backup cannot serve as one theorem-facing mission object.
+
+The final strategy verdict is therefore:
+
+```text
+definition-level negative
+```
+
+The sharp exact singleton object is false, and the only surviving packetized replacement is too underconstrained to test as one exact-NS object.
+
+exec
+/bin/zsh -lc "sed -n '1,220p' meta-inbox/meta-exploration-001.md" in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit
+ succeeded in 0ms:
+# Meta Note: Exploration 001
+
+## What worked
+
+- Treating Tao's mechanism as a directed hypergraph of quadratic monomials instead of a plain five-node graph immediately sharpened the definition problem. That was the difference between another slogan and a Phase 1-ready object.
+- Pulling the exact helical Fourier law from primary sources was enough to close the definition gap. The local library already had the architecture and candidate objections; it was missing only the exact amplitude-level language.
+- Separating exact NS objects from user-chosen tolerances made the definition acceptable. The remaining freedom is now explicit rather than hidden in words like "mostly isolated."
+
+## What to carry forward
+
+- For this mission, the singleton helical-mode definition should be the Phase 1 default. Packet models are a backup, not the main object.
+- Leakage must be coefficient-weighted and amplitude-level. Counting triads or comparing packet energies is too coarse for Tao's mechanism.
+- Adversarial suppression should be built into the next exploration from the start. The first interaction audit should test at least one helicity arrangement chosen specifically to reduce leakage.
+
+## Execution note
+
+- The launched explorer wrote the report skeleton and started the primary-source search but failed to emit the summary sentinel. Manual recovery worked because the substantive missing piece was small: once the exact helical equations were pinned down, the synthesis was straightforward.
+
+exec
+/bin/zsh -lc "sed -n '1,220p' meta-inbox/meta-exploration-001-curation-receipt.md" in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit
+ succeeded in 0ms:
+# Curation Receipt — Exploration 001
+
+Date: 2026-03-31
+Mission: `exact-ns-no-near-closed-tao-circuit`
+Strategy: `strategy-001`
+Exploration: `exploration-001`
+
+## Files Added
+
+- `execution/agents/library/factual/navier-stokes/exact-helical-near-closed-tao-circuit-definition.md`
+- `execution/agents/library/meta/methodology/coefficient-weighted-amplitude-level-leakage.md`
+- `execution/agents/library/meta/goal-design/build-adversarial-suppression-into-first-audit.md`
+
+## Files Updated
+
+- `execution/agents/library/factual/navier-stokes/exact-ns-unavoidable-spectator-couplings.md`
+- `execution/agents/library/factual/navier-stokes/INDEX.md`
+- `execution/agents/library/factual/INDEX.md`
+- `execution/agents/library/meta/goal-design/require-mechanism-layer-maps.md`
+- `execution/agents/library/meta/methodology/definition-extraction-gates-computation.md`
+- `execution/agents/library/meta/goal-design/INDEX.md`
+- `execution/agents/library/meta/methodology/INDEX.md`
+- `execution/agents/library/meta/INDEX.md`
+- `execution/agents/library/curator-log.md`
+
+## Duplicates Skipped
+
+- Meta note about the explorer failing to emit the summary sentinel and manual recovery succeeding.
+  Coverage already exists in the system-behavior library for explorer stalling / skeleton-only output / manual recovery patterns.
+
+## Conflicts Resolved
+
+- The handoff pointed to a non-existent factual inbox file at `execution/instances/exact-ns-no-near-closed-tao-circuit/library-inbox/exploration-001-definition-gate-near-closed-tao-circuit-report.md`.
+  I curated from the actual report at `execution/instances/exact-ns-no-near-closed-tao-circuit/strategies/strategy-001/explorations/exploration-001/REPORT.md`.
+
+- The stable definitional result was interpreted from the report, summary, and meta note as:
+  the singleton amplitude-level helical support is the preferred Phase 1 object, while packet formulations remain backup coarse-grainings.
+  I filed that as the canonical library position and treated packet-only framing as superseded rather than as a separate finding.
+
+codex
+The record points toward a terminal negative result, but I still need to rule out an in-flight strategizer and inspect the mission artifacts before I close it. After that I’ll either write the completion file or open a fresh strategy if the evidence isn’t actually terminal.
+exec
+/bin/zsh -lc "sed -n '1,220p' strategies/strategy-001/LOOP-STATE.md" in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit
+exec
+/bin/zsh -lc "sed -n '1,220p' strategies/strategy-001/STRATEGY.md" in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit
+exec
+/bin/zsh -lc "sed -n '1,220p' COMPUTATIONS-FOR-LATER.md" in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit
+exec
+/bin/zsh -lc "if [ -f MISSION-COMPLETE.md ]; then sed -n '1,220p' MISSION-COMPLETE.md; fi" in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit
+ succeeded in 0ms:
+---
+active: true
+slug: strategizer
+iteration: 3
+max_iterations: 50
+session_transcript: "Iteration 1 passed the definition gate. Iteration 2 killed the preferred singleton-support object statically via triad-closure constraints. Iteration 3 showed the packetized backup is too non-canonical to replace it. Strategy complete with a definition-level negative verdict."
+---
+
+ succeeded in 0ms:
+# Strategy 001: Define the Circuit, Then Prove or Kill It
+
+## Objective
+
+Turn the predecessor mission's surviving mechanism-level discrepancy
+
+```text
+exact NS circuit non-isolability
+```
+
+into a concrete yes/no object. This strategy must produce one of:
+
+- a quantitative no-circuit / leakage lower-bound statement for exact Navier-Stokes,
+- an explicit near-closed Tao-like circuit construction in exact Fourier/helical NS,
+- or a sharp definition-level failure showing that "near-closed Tao circuit" cannot be made precise enough to test.
+
+This is a ground-clearing but already theorem-facing strategy. It is not allowed to drift back into broad Tao exegesis, generic NS estimate improvement, or qualitative talk about "entanglement."
+
+## Methodology
+
+### Phase 0: Definition Gate
+
+Start from the predecessor mission's mechanism reconstruction and define a small family of candidate "near-closed Tao circuit" notions.
+
+The definition must specify, explicitly:
+
+- a finite active set of Fourier modes or helical packets `S`,
+- a desired coupling graph `G_target`,
+- which couplings are intended to realize Tao's pump / amplifier / rotor / handoff logic,
+- a leakage functional `Leak(S)` or equivalent spectator-coupling budget,
+- a dominance requirement separating desired couplings from unwanted ones,
+- a threshold or timescale condition representing Tao's delayed-trigger logic.
+
+Required outputs from this phase:
+
+- one preferred definition and at most one backup definition,
+- a short notation table,
+- an explanation of which parts are exact-NS objects and which are user-chosen tolerance parameters,
+- a clear statement of what would count as a positive obstruction and what would count as a counterexample.
+
+Phase 0 gate:
+
+- If no candidate definition is concrete enough to be true or false in exact Fourier/helical NS, stop and report a definition-level negative result. Do not proceed to symbolic coupling computations on vague language.
+
+### Phase 1: Exact Interaction Audit
+
+Work in the smallest exact representation that can honestly test the definition: Fourier triads, helical decomposition, and exact Leray-projected bilinear interactions.
+
+For the preferred candidate definition, compute the exact interaction table for the smallest Tao-like subsystem that could plausibly implement the five-stage logic. Identify:
+
+- desired couplings,
+- forced spectator couplings,
+- couplings eliminated by geometry or helicity,
+- couplings tunable by mode choice,
+- couplings rigid under any admissible choice.
+
+Required deliverable:
+
+- an exact interaction ledger with entries of the form
+  - coupling,
+  - coefficient or structural form,
+  - desired / spectator / forbidden status,
+  - tunable vs rigid,
+  - relevance to the leakage budget.
+
+This phase should end with a single minimal configuration to stress-test. Do not keep multiple sprawling candidate geometries alive unless they are genuinely inequivalent.
+
+### Phase 2: Obstruction-or-Construction Test
+
+Attack the minimal configuration directly.
+
+The exploration goal here is not "understand the geometry better." It is one of:
+
+- prove a leakage lower bound,
+- prove a rigidity statement preventing the required dominance hierarchy,
+- or exhibit a concrete choice of modes/helicities where unwanted couplings stay below the admissible threshold and the Tao-like hierarchy is realized.
+
+Accept analytical, computational, or mixed work, but the output must be quantitative.
+
+Preferred proof/test shape:
+
+- state one candidate theorem or one candidate construction first,
+- then derive or compute the exact coefficient ratios needed to accept or reject it.
+
+Failure path:
+
+- If the obstruction reduces to a restatement of "many couplings exist" without a lower bound or domination failure, it does not count.
+- If a near-circuit construction works in the chosen exact model, the firewall idea is killed unless an exact-NS fidelity issue remains explicit and serious.
+
+### Phase 3: Mandatory Adversarial Verification
+
+Whatever Phase 2 finds, run an adversarial pass that specifically tries to break it.
+
+If the main result is a no-circuit claim, adversarial tasks should try to:
+
+- find a different helical/geometric arrangement that evades the claimed leakage bound,
+- identify hidden freedom in the definition that makes the impossibility statement vacuous,
+- check whether the claimed spectator couplings can cancel rather than add.
+
+If the main result is a construction, adversarial tasks should try to:
+
+- expose omitted exact couplings,
+- show the construction only works in a simplified model not faithful to exact NS,
+- or demonstrate that the required hierarchy collapses under the stated tolerances.
+
+### Phase 4: Mission-Level Verdict
+
+Finish with exactly one of:
+
+1. concrete no-circuit theorem candidate,
+2. concrete near-circuit counterexample,
+3. definition-level failure: idea too vague or too unconstrained.
+
+The final report must make the implication unambiguous:
+
+- pursue this as a real obstruction,
+- kill the firewall idea,
+- or stop because the object itself is not well-posed.
+
+## Cross-Phase Rules
+
+1. One theorem target or one construction target per exploration. State it before doing derivations.
+2. Exact-NS fidelity is non-negotiable. Any helical simplification must be written as an exact reformulation, not a toy model in disguise.
+3. Distinguish rigorously between:
+   - Tao's reconstructed five-stage mechanism,
+   - the candidate circuit definition,
+   - the exact NS interaction law used to test it.
+4. Every substantial claim in the final report must be tagged `[VERIFIED]`, `[COMPUTED]`, `[CHECKED]`, or `[CONJECTURED]`.
+5. Maintain a Direction Status Tracker in `REASONING.md` with `OPEN / PROMISING / CLOSED / EXHAUSTED`.
+6. Do not re-open estimate-level dead routes. De Giorgi, pressure rewrite, host-space compactness, and BKM/enstrophy programs are background constraints only.
+7. Quantitative content is mandatory. "Exact NS has too much coupling" is never a deliverable by itself.
+8. Before accepting any obstruction claim, run a cheap counterexample screen: try at least one adversarial mode/helicity arrangement designed to suppress the alleged leakage.
+9. Before accepting any construction claim, list the exact spectator terms that remain and compare them explicitly against the leakage threshold from Phase 0.
+
+## Validation Criteria
+
+This strategy succeeds if it delivers all of:
+
+- a concrete definition of "near-closed Tao circuit" that is narrow enough to be testable,
+- an exact interaction table for a minimal Tao-like subsystem in Fourier/helical NS,
+- either a leakage lower bound / impossibility statement or an explicit near-circuit construction,
+- a mandatory adversarial check on the main result,
+- an unambiguous pursue/kill/reformulate verdict.
+
+This strategy is exhausted if:
+
+- the definition gate fails cleanly, or
+- the obstruction/construction question is answered for the preferred minimal configuration and the adversarial pass does not reopen it, or
+- the remaining uncertainty is clearly identified as a sharper next-strategy question rather than more of the same work.
+
+## Context
+
+### Predecessor results to preload
+
+- `execution/instances/anatomy-of-averaged-ns-blowup-firewall/strategies/strategy-001/FINAL-REPORT.md`
+  - Tao's averaged blowup is a five-mode delayed-threshold circuit, not just a forward cascade.
+  - The only live exact-NS discrepancy is circuit non-isolability.
+  - That discrepancy split into triadic coefficient rigidity, unavoidable spectator couplings, and exact Leray-projection rigidity.
+- `execution/instances/anatomy-of-averaged-ns-blowup-firewall/MISSION-COMPLETE.md`
+  - This follow-up mission exists specifically to formalize and test the no-near-closed-circuit idea.
+- `execution/agents/library/meta/missionary/strategy-001-navier-stokes-learnings.md`
+  - Ground-clearing strategies should produce cross-phase computable deliverables and not rely on qualitative synthesis alone.
+- `execution/agents/library/meta/missionary/strategy-002-navier-stokes-learnings.md`
+  - Use a clear phase gate and theorem-first exploration structure.
+
+### What is already closed
+
+- estimate-level improvement missions,
+- generic pressure or frame rewrites,
+- host-space reformulations without a concrete mechanism object,
+- mechanism descriptions that never sharpen into a quantitative exact-NS statement.
+
+### Strategic aim
+
+The only live question is whether Tao's engineered near-isolated gate logic is genuinely incompatible with exact NS triadic/helical geometry, or whether that incompatibility disappears once the object is stated precisely.
+
+## Budget Guidance
+
+Target 4-6 explorations.
+
+Expected efficient path:
+
+- 1 exploration for the definition gate,
+- 1 exploration for the exact interaction audit,
+- 1-2 explorations for obstruction or construction testing,
+- 1 exploration for adversarial verification and synthesis.
+
+Early stopping is correct if the definition fails cleanly or if a quantitative obstruction/counterexample appears early and survives adversarial review.
+
+ succeeded in 0ms:
+# Computations For Later
+
+
+ succeeded in 0ms:
+# Mission Complete: Exact NS No-Near-Closed Tao Circuit
+
+## Outcome
+
+```text
+definition-level negative
+```
+
+The mission was carried through to a terminal scientific result.
+
+- A precise theorem-facing object was proposed: a singleton-support exact-mode version of a Tao-like near-closed circuit.
+- That sharp exact object failed immediately under exact triad-closure constraints.
+- The packetized backup survived only as a family of modeling choices, not as one canonical exact-NS object.
+
+## What Was Established
+
+1. The crisp exact singleton-mode circuit is false.
+
+   The desired `a1^2 -> a2` and `a1^2 -> a3` channels force roles 2 and 3 onto the same conjugate wavevector pair, after which the amplifier `a2 a3 -> a3` cannot satisfy exact triad closure for any sign choice.
+
+2. This is stronger than a leakage estimate.
+
+   The cleanest obstruction is not "spectator couplings are too large." It is that the sharp singleton exact-support embedding of the Tao circuit is structurally impossible before any coefficient-ratio or leakage analysis.
+
+3. The fallback packetized object is too non-canonical.
+
+   Once packetization is allowed, the object depends on extra engineering choices:
+
+   - packet support
+   - projection/coordinatization
+   - desired-channel bookkeeping
+   - leakage scalarization
+   - exact-network restoration conventions
+
+   So the mission no longer has one precise object to prove or disprove.
+
+## Mission Judgment
+
+This mission was properly completed and yields a clean negative:
+
+```text
+the near-closed Tao circuit idea does not survive as one precise exact-NS object
+```
+
+## Recommended Next Move
+
+Only reopen this line under a stricter precursor mission:
+
+```text
+define and defend a canonical exact packet model for Tao-like circuit roles
+before asking for an obstruction theorem
+```
+
+Without that, future work would be partly inventing the object and partly testing it, which is not a sharp theorem program.
+
+## Primary Terminal Artifact
+
+- [strategy-001/FINAL-REPORT.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/strategies/strategy-001/FINAL-REPORT.md)
+
+exec
+/bin/zsh -lc "find . -maxdepth 3 \\( -name '*.pid' -o -name '*.status' -o -name '*.json' -o -name '*.log' \\) | sed -n '1,200p'" in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit
+ succeeded in 0ms:
+./strategies/strategy-001/state.json
+
+exec
+/bin/zsh -lc ./bin/monitor-sessions.sh in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas
+ succeeded in 8056ms:
+codex-atlas-anatomy-of-averaged-ns-blowup-firewall-missionary missionary      error      Codex exited successfully but did not produce sentinel file  | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/anatomy-of-averaged-ns-blowup-firewall
+codex-atlas-anatomy-of-averaged-ns-blowup-firewall-strategy-001-curator-001 curator         done       sentinel present | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library
+codex-atlas-anatomy-of-averaged-ns-blowup-firewall-strategy-001-curator-002 curator         done       sentinel present | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library
+codex-atlas-anatomy-of-averaged-ns-blowup-firewall-strategy-001-explorer-001 explorer        done       sentinel present | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/anatomy-of-averaged-ns-blowup-firewall/strategies/strategy-001/explorations/exploration-001
+codex-atlas-anatomy-of-averaged-ns-blowup-firewall-strategy-001-explorer-002 explorer        done       sentinel present | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/anatomy-of-averaged-ns-blowup-firewall/strategies/strategy-001/explorations/exploration-002
+codex-atlas-standalone-20260331T145031Z-receptionist-38408 receptionist    queued     waiting for dispatcher | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library
+codex-atlas-standalone-20260331T150606Z-receptionist-70332 receptionist    queued     waiting for dispatcher | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library
+codex-atlas-standalone-20260331T152941Z-receptionist-36164 receptionist    queued     waiting for dispatcher | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library
+codex-atlas-anatomy-of-averaged-ns-blowup-firewall-strategy-001-strategizer strategizer     done       sentinel present | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/anatomy-of-averaged-ns-blowup-firewall/strategies/strategy-001
+codex-atlas-exact-ns-no-near-closed-tao-circuit-missionary missionary      stale      tmux gone, no sentinel | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit
+codex-atlas-exact-ns-no-near-closed-tao-circuit-strategy-001-curator-001 curator         done       sentinel present | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library
+codex-atlas-exact-ns-no-near-closed-tao-circuit-strategy-001-explorer-001 explorer        done       sentinel present | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/strategies/strategy-001/explorations/exploration-001
+codex-atlas-exact-ns-no-near-closed-tao-circuit-strategy-001-explorer-003 explorer        done       sentinel present | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/strategies/strategy-001/explorations/exploration-003
+codex-atlas-exact-ns-no-near-closed-tao-circuit-strategy-001-math-explorer-002 math-explorer   done       sentinel present | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/strategies/strategy-001/explorations/exploration-002
+codex-atlas-exact-ns-no-near-closed-tao-circuit-strategy-001-strategizer strategizer     done       sentinel present | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/strategies/strategy-001
+codex-atlas-far-field-pressure-harmonic-loophole-missionary missionary      done       completed, tmux exited | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/far-field-pressure-harmonic-loophole
+codex-atlas-far-field-pressure-harmonic-loophole-strategy-001-curator-001 curator         done       sentinel present | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library
+codex-atlas-far-field-pressure-harmonic-loophole-strategy-001-explorer-001 explorer        error      codex exec exited with status 1 | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/far-field-pressure-harmonic-loophole/strategies/strategy-001/explorations/exploration-001
+codex-atlas-far-field-pressure-harmonic-loophole-strategy-001-explorer-002 explorer        done       sentinel present | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/far-field-pressure-harmonic-loophole/strategies/strategy-001/explorations/exploration-002
+codex-atlas-far-field-pressure-harmonic-loophole-strategy-001-math-explorer-003 math-explorer   done       sentinel present | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/far-field-pressure-harmonic-loophole/strategies/strategy-001/explorations/exploration-003
+codex-atlas-far-field-pressure-harmonic-loophole-strategy-001-strategizer strategizer     done       sentinel present | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/far-field-pressure-harmonic-loophole/strategies/strategy-001
+codex-atlas-standalone-20260331T140130Z-receptionist-36814 receptionist    done       no log file | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library
+codex-atlas-standalone-20260331T141017Z-receptionist-38162 receptionist    done       no log file | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library
+codex-atlas-standalone-20260331T142027Z-receptionist-35243 receptionist    done       no log file | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library
+codex-atlas-standalone-20260331T144736Z-receptionist-65738 receptionist    error      Codex exited successfully but did not produce sentinel file  | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library
+codex-atlas-standalone-20260331T145031Z-receptionist-38408 receptionist    done       sentinel present | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library
+codex-atlas-standalone-20260331T150606Z-receptionist-70332 receptionist    done       sentinel present | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library
+codex-atlas-standalone-20260331T152941Z-receptionist-36164 receptionist    done       sentinel present | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library
+codex-atlas-standalone-20260331T174342Z-receptionist-3689 receptionist    done       no log file | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library
+codex-atlas-standalone-20260331T175433Z-receptionist-96805 receptionist    done       no log file | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library
+codex-atlas-standalone-20260331T180404Z-receptionist-29656 receptionist    done       no log file | /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library
+
+codex
+`MISSION-COMPLETE.md` exists now, so I’m verifying whether the missionary-side closure was actually finished or only half-finished. The remaining check is whether this mission already contributed its meta-learning note; if not, I’ll add that and leave the mission closed.
+exec
+/bin/zsh -lc 'rg -n "exact-ns-no-near-closed-tao-circuit|no-near-closed|near-closed Tao circuit|singleton-support" /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary' in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas
+ exited 1 in 0ms:
+exec
+/bin/zsh -lc "sed -n '1,220p' library-inbox/exploration-001-definition-gate-near-closed-tao-circuit-report.md" in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit
+exec
+/bin/zsh -lc 'cat strategies/strategy-001/state.json' in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit
+ succeeded in 0ms:
+{
+  "iteration": 3,
+  "done": true,
+  "current_exploration": null,
+  "current_direction": null,
+  "directions_tried": [
+    {
+      "direction": "Phase 0 definition gate for a near-closed Tao circuit",
+      "status": "completed",
+      "notes": "Exploration 001 succeeded. The preferred exact object is now a five-role helical-mode directed hypergraph with coefficient-weighted leakage and explicit delayed-trigger windows. The idea passed the precision gate."
+    },
+    {
+      "direction": "Exact interaction audit for a minimal helical support",
+      "status": "completed",
+      "notes": "Exploration 002 showed the preferred singleton-support object is statically impossible. The two `a1^2` channels force roles 2 and 3 onto the same conjugate wavevector pair, and the amplifier `a2 a3 -> a3` then cannot satisfy exact triad closure for any sign choice."
+    },
+    {
+      "direction": "Refine-or-stop test for the packetized backup",
+      "status": "completed",
+      "notes": "Exploration 003 concluded that the packetized backup does not define one canonical exact-channel object. Support choice, projection choice, leakage scalarization, and exact-network restoration remain underconstrained."
+    }
+  ],
+  "explorations_completed": [
+    {
+      "exploration": "exploration-001",
+      "direction": "Phase 0 definition gate for a near-closed Tao circuit",
+      "outcome": "succeeded",
+      "key_takeaway": "The right testable object is a five-role helical-mode directed hypergraph with a coefficient-weighted leakage functional. The idea does not fail at the definition gate."
+    },
+    {
+      "exploration": "exploration-002",
+      "direction": "Exact interaction audit for a minimal helical support",
+      "outcome": "succeeded",
+      "key_takeaway": "The preferred singleton-support object is already impossible at the static triad-geometry level. The clean failure is not spectator leakage but non-embeddability of the target monomial pattern."
+    },
+    {
+      "exploration": "exploration-003",
+      "direction": "Refine-or-stop test for the packetized backup",
+      "outcome": "succeeded",
+      "key_takeaway": "The packetized backup does not survive as one canonical exact-NS object after the singleton failure. It becomes a family of packetization and projection choices rather than one mission target."
+    }
+  ]
+}
+
+ succeeded in 0ms:
+# Executive verdict
+
+[CHECKED] The definition gate passes. A "near-closed Tao circuit" can be made precise enough to be true or false in exact Navier-Stokes if it is formulated in the exact helical Fourier basis and tested through a finite directed hypergraph of desired monomials plus a computable leakage ratio.
+
+[VERIFIED] In the helical basis,
+
+```text
+u(k) = u_+(k) h_+(k) + u_-(k) h_-(k),
+ik × h_s(k) = s |k| h_s(k),
+```
+
+and the exact Navier-Stokes evolution becomes
+
+```text
+(∂t + ν|k|^2) u_{s_k}(k)
+  = -1/4 ∑_{k+p+q=0} ∑_{s_p,s_q}
+      (s_p |p| - s_q |q|)
+      (h_{s_p}(p) × h_{s_q}(q) · h_{s_k}(k))̄
+      u_{s_p}(p) u_{s_q}(q).
+```
+
+[VERIFIED] This is an exact reformulation of incompressible Fourier NS, not a toy model. The key local-library gap was not the interaction law itself but the absence of a precise circuit definition stated in this exact language.
+
+# Tao mechanism map to candidate circuit object
+
+[VERIFIED] Tao's five mechanism roles are:
+
+- `a`: current carrier
+- `b`: slow clock
+- `c`: tiny trigger
+- `d`: conduit / rotor leg
+- `ã`: next carrier
+
+[CHECKED] The right exact analogue is therefore a directed hypergraph of quadratic monomials, not a plain five-node graph. The minimal desired monomial pattern is:
+
+```text
+a1^2  -> a2   weak pump
+a1^2  -> a3   tiny seed
+a2a3  -> a3   amplifier
+a1a3  -> a4   rotor activation
+a3a4  -> a1   rotor feedback / exchange leg
+a4^2  -> a5   handoff
+```
+
+[CHECKED] Real-valuedness forces conjugate bookkeeping. If `k` is active then `-k` is active with linked amplitude, so an honest exact support already includes the mirror modes.
+
+# Preferred definition
+
+## Preferred object: exact five-role helical-mode circuit
+
+Choose distinct representative wavevectors and helicities
+
+```text
+K = {k1, k2, k3, k4, k5} ⊂ Z^3 \ {0},
+σ = (σ1, σ2, σ3, σ4, σ5) ∈ {±1}^5.
+```
+
+Define the exact active helical support
+
+```text
+S(K,σ) := {(k_j, σ_j), (-k_j, -σ_j) : j = 1,...,5},
+```
+
+and the distinguished amplitudes
+
+```text
+aj(t) := u_{σ_j}(k_j,t),   j = 1,...,5.
+```
+
+Let the desired hypergraph `G_target` be the monomial sets
+
+```text
+D1 = {(3,4)}
+D2 = {(1,1)}
+D3 = {(1,1), (2,3)}
+D4 = {(1,3)}
+D5 = {(4,4)}.
+```
+
+For each `aj`, split the exact evolution into
+
+```text
+∂t aj = Fj^des(a) + Fj^int-leak(a) + Fj^ext-leak(u) - ν|kj|^2 aj,
+```
+
+where:
+
+- `Fj^des` is the sum of exact helical-triad terms whose ordered source pair lies in `Dj`,
+- `Fj^int-leak` is the sum of all other exact triad contributions built entirely from `S`,
+- `Fj^ext-leak` is the sum of exact triad contributions hitting `aj` with at least one leg outside `S`.
+
+Define the leakage functional on a time interval `I` by
+
+```text
+Leak_I(S,G_target;u)
+  := max_j sup_{t∈I}
+     ( |Fj^int-leak(a(t))| + |Fj^ext-leak(u(t))| )
+     / max(|Fj^des(a(t))|, ε_floor),
+```
+
+with a bookkeeping floor `ε_floor > 0`.
+
+A solution segment `u|_I` is an `(η, λ, Θ)`-near-closed Tao circuit on `(S,G_target)` if:
+
+1. the total helical energy outside `S` is at most `η_act` times the energy on `S` throughout `I`,
+2. `Leak_I(S,G_target;u) ≤ η`,
+3. on prescribed windows `I_seed, I_amp, I_rot, I_hand`, the intended desired term dominates every individual leakage term by a factor at least `λ > 1`,
+4. there exist thresholds `Θ = (θ_clock, θ_seed, θ_trigger, θ_handoff)` and times `t0 < t1 < t2 < t3` such that:
+   - `|a3| ≤ θ_seed` on `[t0,t1]`,
+   - the amplifier term in `∂t a3` dominates on `[t1,t2]`,
+   - rotor terms dominate the `a1/a4` exchange on `[t2,t3]`,
+   - the `a4^2 -> a5` handoff dominates on a terminal subwindow of `[t2,t3]`.
+
+[CHECKED] This is narrow enough to test. Every ingredient is exact or explicitly parameterized, and Phase 1 can now build a literal desired-vs-leakage interaction ledger.
+
+## Exact objects vs user-chosen tolerances
+
+[VERIFIED] Exact NS objects:
+
+- wavevectors `k_j`,
+- helicity signs `σ_j`,
+- exact helical basis vectors `h_σ(k)`,
+- exact coefficients `C(k,p,q;s_k,s_p,s_q)`,
+- triad constraint `k+p+q=0`,
+- reality constraint coupling `k` and `-k`,
+- the exact solution `u(t)`.
+
+[CHECKED] User-chosen tolerances:
+
+- support concentration `η_act`,
+- leakage budget `η`,
+- dominance gap `λ`,
+- thresholds `Θ`,
+- activation windows,
+- bookkeeping floor `ε_floor`.
+
+## Obstruction vs counterexample
+
+[CHECKED] A positive obstruction would show:
+
+```text
+For every admissible (K,σ) and every candidate interval I,
+either Leak_I has a fixed lower bound c0 > 0, or the delayed-trigger
+dominance conditions cannot all hold simultaneously.
+```
+
+[CHECKED] A counterexample would exhibit explicit `(K,σ)`, explicit tolerances `(η, λ, Θ)`, and an exact solution segment `u|_I` satisfying all four conditions.
+
+# Backup definition or rejection of alternatives
+
+## Backup: finite helical-packet circuit
+
+[CHECKED] A backup definition replaces each singleton helical mode by a finite packet `P_j` and defines one projected packet amplitude or packet energy per Tao role. This remains exact if the packets are finite exact subsets of helical Fourier space.
+
+## Why it is only the backup
+
+[CHECKED] The packet version is weaker at the gate because projected packet amplitudes are basis-dependent, packet energies lose phase information, and the leakage scalarization becomes less canonical. Phase 1 would first need a packetization convention before it could even write the ledger.
+
+## Rejected alternatives
+
+[CHECKED] Reject "five active Fourier magnitudes with small spectator energy" as the primary definition: it is too coarse for Tao's monomial-level mechanism.
+
+[CHECKED] Reject combinatorial triad counts as the primary definition: counting desired and undesired triads without weighting by exact coefficients and amplitudes does not measure the actual leakage threat.
+
+[CHECKED] Reject a pure packet-energy leakage measure with no exact amplitude decomposition: that simply restates the original vagueness in different notation.
+
+# Precision gate analysis
+
+[VERIFIED] The exact helical basis supplies the missing exact-language layer. The definition problem is no longer blocked on Leray projection, incompressibility, or the absence of a precise exact interaction law.
+
+[CHECKED] The real choice is between:
+
+- an amplitude-level definition that preserves exact monomials and phase-sensitive leakage bookkeeping,
+- and a packet-energy definition that is more Tao-like but less sharp.
+
+[CHECKED] The amplitude-level singleton definition is preferable because the next exploration needs a coefficient-by-coefficient interaction ledger. The helical triad law already packages Leray projection, incompressibility, and helicity into exact coefficients, so it is the cleanest Phase 1 interface.
+
+[CHECKED] The remaining arbitrariness is now explicit and acceptable: the tolerances `(η, λ, Θ)` and the choice of activation windows are user-imposed parameters, not hidden pieces of the exact law.
+
+[CHECKED] Therefore the idea does not fail the precision gate. What remains open is quantitative: whether any admissible support can make leakage genuinely subordinate to the desired Tao-like channels.
+
+# Phase 1 recommendation or stop verdict
+
+[CHECKED] Gate verdict: `pass`.
+
+[CHECKED] Phase 1 should use the preferred singleton helical-mode definition, not the packet backup.
+
+[CHECKED] The exact interaction audit should now do exactly three things:
+
+1. choose the smallest candidate five-role support `(K,σ)`,
+2. write the full exact helical interaction ledger for `a1,...,a5`, including conjugate-forced companions,
+3. classify each term as desired, internal leakage, or external leakage, with tunable-vs-rigid status.
+
+[CHECKED] The cheapest adversarial screen should be embedded immediately: try at least one helicity/sign arrangement designed to suppress leakage before accepting any impossibility story.
+
+## Sources used
+
+- Local Atlas factual notes on Tao's five-stage circuit, coefficient rigidity, and unavoidable spectator couplings.
+- Exact helical decomposition and triad equations as restated in Biferale, Musacchio, Toschi, *J. Fluid Mech.* 730 (2013), section 2, following Constantin-Majda and Waleffe.
+
+codex
+I’ve confirmed the mission is terminally closed, but the missionary library has no note for it yet. I’m writing the missing meta-learning entry now and updating the missionary index so this strategy’s lessons are reusable.
+exec
+/bin/zsh -lc "sed -n '1,220p' /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-vasseur-pressure-learnings.md" in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas
+ succeeded in 0ms:
+---
+topic: Ground-clearing strategies for obstruction mapping
+category: missionary
+date: 2026-03-30
+source: vasseur-pressure, strategy-001
+---
+
+# Strategy-001 Learnings: Vasseur Pressure Exponent
+
+## Context
+Mission: Close the De Giorgi recurrence exponent gap β = 4/3 → β > 3/2 for Navier-Stokes regularity. Strategy-001 was a ground-clearing "Verify → Measure → Characterize" strategy. 10 of 20 explorations used. Result: Path B (gap is genuine, 4/3 barrier is structural).
+
+## Lesson 1: Phase 0 "redefine the target" is as valuable as Phase 0 "gate the target"
+The prior missions taught us that Phase 0 gates save entire strategies. This mission adds a complementary lesson: Phase 0 can REDEFINE the target, not just verify it. Exploration 001 revealed that β is a recurrence exponent, not a pressure integrability exponent — fundamentally different from what we assumed. This redefinition made the Phase 1 explorations much more targeted (measuring P_k^{21} specifically, not general pressure slack). **Prescribe Phase 0 goals that ask "what EXACTLY are we measuring?" not just "can we measure it?"**
+
+## Lesson 2: "Follow leads before adversarial review" should be prescribed, not improvised
+The strategizer correctly deviated from the strategy to insert Phase 1b/1c (4 explorations following leads from Phase 1) before the adversarial review. This was good judgment — the adversarial review would have just flagged these as unexplored leads. **Future strategies should include a "Lead Pursuit" phase between measurement and adversarial review as a prescribed option:** "If Phase 1 surfaces promising leads, the Strategizer may run up to N additional explorations before Phase 2, provided each is a single-task, literature-or-computation goal."
+
+## Lesson 3: The "adversarial → targeted test" sequence is the strongest quality pattern
+E009 (adversarial review) correctly identified Claim 5 as the weakest link. E010 (targeted test) definitively showed the Beltrami mechanism doesn't generalize. Without this sequence, the final report would have overclaimed the Beltrami connection. **Always budget at least 1 exploration after the adversarial review for targeted follow-up on the weakest identified claim.** This should be prescribed in the methodology, not left to strategizer judgment.
+
+## Lesson 4: Negative results from multiple independent angles = strong obstruction evidence
+Strategy-001 established the 4/3 barrier through 5 independent angles: (1) DNS β_eff < 4/3, (2) CZ slack k-independent, (3) Galilean invariance irrelevant, (4) 4/3 reappears in pressure-free vorticity formulation, (5) 17 years of literature with no improvement. No single angle is definitive, but together they strongly constrain the problem space. **For obstruction mapping, design Phase 1 with deliberately diverse angles of attack.** If they all return negative, the obstruction is well-established. If one breaks through, the others provide triangulation.
+
+## Lesson 5: "Mechanism works for exact X" ≠ "mechanism works for near-X"
+The Beltrami mechanism was the strategy's most promising lead (3 explorations invested). It was structurally correct (Lamb vector = 0 eliminates CZ loss) but specific to exact Beltrami (measure-zero). Even 1% perturbation killed it. **For any conditional regularity approach, test generalization EARLY, before investing multiple explorations in the exact case.** The E010 perturbation sweep should have been E007, not E010.
+
+## Lesson 6: Budget efficiency is enhanced by negative results being genuinely terminal
+10 of 20 budget used. Clean stopping was possible because each negative result clearly closed a direction. The methodology's cross-phase rules (multi-IC validation, convergence checks) meant each negative was trustworthy. **Invest in making negative results DEFINITIVE (multi-IC, convergence-checked, multi-angle) so that directions stay closed. Ambiguous negatives lead to revisitation and wasted budget.**
+
+## What I'd do differently
+1. Test generalization of the Beltrami mechanism earlier (E007 not E010)
+2. Include "Lead Pursuit" as a prescribed phase between measurement and adversarial review
+3. Require a formal computation registry (not scattered code directories)
+4. Add a "direction status" tracking table that the strategizer maintains and updates after each exploration (OPEN/CLOSED/PROMISING/EXHAUSTED for each direction)
+
+exec
+/bin/zsh -lc "sed -n '1,220p' /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-barandes-stochastic-learnings.md" in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas
+ succeeded in 0ms:
+---
+topic: Single-strategy framework analysis with pre-loaded adversarial context
+category: missionary
+date: 2026-03-28
+source: barandes-stochastic, strategy-001
+---
+
+# Strategy-001 Barandes-Stochastic: Missionary Learnings
+
+## Mission Type
+Framework analysis / "is this just notation?" — evaluating whether a mathematical reformulation of a physical theory adds genuine content.
+
+## What the Methodology Was
+Three-phase "Disambiguate-Compute-Adjudicate" with 8-exploration budget:
+- Phase 1 (3 planned, 2 used): Framework extraction + stochastic programs comparison
+- Phase 2 (3 planned, 2 used): Phase freedom computation + physical content probe
+- Phase 3 (2 planned, 2 used): Adversarial review + steelman
+
+Key design choices:
+- Pre-loaded 6 adversarial findings from a prior mission (QG-2) into every exploration goal
+- Required "quote, don't paraphrase" for all framework claims
+- Cross-phase rule: "compute, don't argue"
+- Mandatory adversarial review with steelman requirement
+- Explorer type prescription (standard vs math) for each exploration
+
+## What Worked
+
+### Pre-loading adversarial context is the highest-leverage strategy design move for framework analysis missions
+The QG-2 mission had already produced 6 adversarial findings about Barandes. By injecting these directly into the strategy's "Prior Knowledge" section and requiring every explorer to engage with them, the first exploration resolved 4 of 5 objections — saving an entire exploration (the planned E003 "Adversarial Disambiguation" became unnecessary). This is the most efficient pattern I've seen: instead of discovering objections, verify or refute pre-existing ones.
+
+**Generalizable lesson:** If a prior mission or strategy has already assessed any aspect of the current target, pre-load those findings with explicit instructions to "adjudicate, not rediscover." This saves 1-2 explorations.
+
+### One strategy can suffice for well-scoped "is this X?" questions
+The mission question — "is Barandes just notation?" — has a definitive answer (Level 2+ reformulation). One strategy with 6 explorations produced this verdict. The amplituhedron and Compton-Unruh meta-learnings predicted this: clearly scoped evaluation questions don't need iterative strategies.
+
+**Generalizable lesson:** For evaluation missions ("is X valid?", "does X add something?", "is X equivalent to Y?"), plan for one strategy. Two is overkill unless the first strategy discovers the question is more complex than expected.
+
+### The strategizer's decision to compress Phase 1 was correct and should be anticipated
+The strategy allocated 3 explorations to Phase 1. The strategizer used 2 — E001 was so thorough (with pre-loaded adversarial context) that E003 became redundant. The saving was reinvested into Phase 2.
+
+**Generalizable lesson:** When pre-loading adversarial context into framework extraction explorations, expect Phase 1 to compress. Design the strategy so the saved exploration can be redeployed to Phase 2.
+
+### Steelman requirement transforms adversarial reviews
+E005's adversarial review of the Tsirelson claim would have concluded "it's circular, done" without the steelman requirement. With it, the explorer produced the nuanced "Level 2+" classification — which is the actual correct verdict. Always require a steelman when the adversarial review is likely to produce a negative result.
+
+### Three-level classification emerged from the comparison exploration — not from the strategy
+The most useful organizing insight (Level 1/2/3 = Physical/Formal/Interpretational) was generated by E002, not prescribed by the strategy. The strategy asked for comparisons along structured dimensions; the explorer synthesized the classification independently. Good strategies create the conditions for synthesis without prescribing the synthesis itself.
+
+## What I'd Do Differently
+
+### Should have included the most promising computation explicitly
+The Tsirelson non-unistochastic question is a well-defined computational problem (enumerate ISPs on 4×4 stochastic matrix, apply causal locality, optimize CHSH). The strategizer identified it in E005 as the "single most important open question" but didn't run it. The strategy should have anticipated that for reformulation programs, the most interesting computation is not "verify the correspondence" but "test the extension beyond the correspondence."
+
+**Generalizable lesson:** For reformulation/framework analysis missions, include a Phase 2 exploration explicitly targeting: "What computation, if run successfully, would upgrade this reformulation to new physics? Design and run that computation." This is the highest-value question and should not be left to the strategizer's discretion — it should be structurally required.
+
+### Concrete worked example may have been worth doing despite the gap analysis shortcut
+The strategizer skipped the side-by-side QM↔ISP worked example (Strategy E4) because the gap analysis (ISP erases phases → strictly less informative) answered the equi-informativeness question. This was probably correct, but a concrete computation showing the same qubit system in both formalisms would have been more pedagogically convincing and might have revealed structural details the gap analysis missed.
+
+**Generalizable lesson:** For framework analysis missions, always include at least one side-by-side worked example, even if abstract arguments already answer the question. Concrete examples catch things abstractions miss.
+
+### Math explorer path confusion is still a problem
+E003a lost ~40 minutes to directory confusion. This is a known system issue, not a strategy design issue, but it affects budget planning — math explorers need more time buffer than standard explorers.
+
+## Surprising Observations
+
+1. **The strategizer never queried the librarian after E002.** It had enough context from E001-E002 to design all remaining goals without library queries. This suggests that for focused missions with pre-loaded context, the library is most valuable at the start and becomes redundant midway through.
+
+2. **The strongest "novel finding" was a negative result.** The phase freedom ≈ realm selection computation (E003a) produced the most interesting finding — that the mathematical isomorphism FAILS while the conceptual analogy HOLDS. Negative results in computation are often more informative than positive results in analysis.
+
+3. **6 of 8 explorations used.** The strategizer had budget remaining and correctly assessed diminishing returns. Good strategies build in budget slack; great strategizers know when to stop early.
+
+codex
+I’m editing three things: the missing missionary meta note, the missionary index entry, and the stale strategy loop flag so the strategy no longer advertises itself as active after completion.
+apply patch
+patch: completed
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/INDEX.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md
+/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/strategies/strategy-001/LOOP-STATE.md
+diff --git a/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/INDEX.md b/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/INDEX.md
+index 3185a26162f69ef659343b46a857d434d3fdfc72..7173a801a0562ffe6f726d512885efd38895628d
+--- a/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/INDEX.md
++++ b/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/INDEX.md
+@@ -4,11 +4,13 @@
+ 
+ ## Entries
+ 
++- [`strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md`](strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md) — Definition-gated obstruction missions for exact mechanism objects. Require one preferred exact object, test smallest-support embeddability before coefficient work, and treat non-canonical packet fallbacks as terminal definition failures. (exact-ns-no-near-closed-tao-circuit, strategy-001, 2026-04-01)
+ - [`strategy-001-vasseur-pressure-learnings.md`](strategy-001-vasseur-pressure-learnings.md) — Ground-clearing strategies for obstruction mapping. Phase 0 redefines targets, "adversarial → targeted test" is the strongest quality pattern, test generalization of mechanisms early, prescribe lead-pursuit phases. (vasseur-pressure, strategy-001, 2026-03-30)
+ - [`strategy-002-vasseur-pressure-learnings.md`](strategy-002-vasseur-pressure-learnings.md) — Dual-track obstruction+construction for impossibility proofs. Phase 0 decomposition audit is highest-leverage for proof-improvement missions; Direction Status Tracker enables clean stopping; two-strategy map→attack arc produces strongest impossibility results. (vasseur-pressure, strategy-002, 2026-03-31)
+ 
+ | File | Date | Summary |
+ |------|------|---------|
++| `strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md` | 2026-04-01 | Definition-gated obstruction mission for an exact mechanism object. Require one preferred exact object, test smallest exact support before coefficient work, and kill packetized fallbacks that cannot be canonized. |
+ | `strategy-001-classicality-budget-learnings.md` | 2026-03-27 | Three-phase derive-compute-adjudicate protocol for formula verification. Parallel Phase 1 is optimal. Mandate mission-critical explorations (don't leave experimental tests as optional). Best findings often emerge as side effects of stress-test fixes. Front-load computation. |
+ | `strategy-001-riemann-hypothesis-learnings.md` | 2026-03-27 | Constraint-catalog methodology for hard unsolved problems. Ground-clearing strategies produce Tier 2-3 results but not Tier 1 novelty. Make synthesis/adversarial phases mandatory with minimum allocations. Force constructive work (building operators), not just testing known ones. Prescribe data scale (millions of zeros, not thousands). |
+ | `strategy-001-learnings.md` | 2026-03-27 | Reproduce→Extend→Stress-Test for computational missions. Survey explorations at the start pay for themselves. Pre-loading verified formulas compounds across explorations. Adversarial review should come early, not just at end. "Computation mandatory" was the single most important rule. First strategies should prioritize breadth over depth. |
+diff --git a/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md b/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..51814fece315ca70e63f9d36de209807c7456f23
+--- /dev/null
++++ b/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md
+@@ -0,0 +1,79 @@
++---
++topic: Definition-gated obstruction missions for exact mechanism objects
++category: missionary
++date: 2026-04-01
++source: exact-ns-no-near-closed-tao-circuit, strategy-001
++---
++
++# Strategy-001 Exact-NS No-Near-Closed-Tao-Circuit: Missionary Learnings
++
++## Mission Type
++
++Mechanism-to-theorem mission: take a qualitative discrepancy and decide whether it sharpens into one exact mathematical object that can be proved, refuted, or killed at the definition layer.
++
++## What the Methodology Was
++
++Single-strategy arc:
++
++- Phase 0 definition gate for a "near-closed Tao circuit"
++- Phase 1 exact-support audit on the smallest honest helical object
++- Phase 2 refine-or-stop test for the packetized backup
++
++Three explorations were enough because the mission's real bottleneck was object definition, not long downstream proof work.
++
++## What Worked
++
++### Phase 0 was correctly framed as "define one theorem-facing object," not "collect possible formalisms"
++
++Exploration 001 forced the mission to separate exact NS data from user-chosen tolerances and to name one preferred singleton-support object plus one backup. That prevented the usual failure mode where a mechanism mission drifts among several partially compatible definitions.
++
++**Generalizable lesson:** For mechanism-formalization missions, require exactly one preferred exact object and at most one backup. If the strategizer cannot do that, the mission is not ready for quantitative work.
++
++### Auditing the smallest exact support first was the highest-leverage move
++
++Exploration 002 did not chase coefficient ratios or leakage estimates immediately. It asked the cheaper structural question first: can the desired monomial pattern even embed on singleton exact supports? That produced the decisive negative result. The obstruction was geometric non-embeddability, not a delicate size comparison.
++
++**Generalizable lesson:** When a mission proposes an exact interaction graph, test static embeddability on the smallest exact support before any quantitative coefficient campaign. Geometry can kill the object much earlier than analysis.
++
++### The refine-or-stop pass on the backup saved the mission from fake progress
++
++Once the singleton object failed, exploration 003 did the right thing: it did not treat packetization as automatic continuation. It asked whether the packet backup still defined one canonical exact object. The answer was no, so the mission stopped cleanly instead of spending more budget on support engineering disguised as theorem work.
++
++**Generalizable lesson:** If a fallback object introduces new choices in support, projection, leakage scalarization, or reconstruction convention, run a dedicated canonization gate immediately. If canonization fails, stop. Do not call that "Phase 2 progress."
++
++### One strategy was sufficient because the question was genuinely binary
++
++This mission was not "prove an obstruction theorem eventually." It was "is there one precise exact object here at all?" That kind of binary mission can terminate after a single honest strategy if the result is terminal and well-supported.
++
++**Generalizable lesson:** For exact-object existence questions, default to one strategy unless the first strategy leaves a sharply defined surviving target. Multi-strategy arcs are for surviving objects, not for vague backups.
++
++## What I'd Do Differently
++
++### Canonical packet-model requirements should have been prescribed upfront
++
++The strategy correctly allowed one packetized backup, but it left the canonization test implicit until exploration 003. Future strategies of this type should state the packet gate in Phase 0:
++
++- fixed support convention,
++- fixed projection/coordinatization,
++- fixed desired-vs-leakage bookkeeping,
++- fixed network-restoration rule.
++
++If these cannot be specified, the packet backup should be declared inadmissible immediately.
++
++### "Static closure audit before coefficient audit" should be a named cross-phase rule
++
++The strategy benefited from this implicitly, but it deserves to be explicit. Similar missions will otherwise jump straight to computing coefficients on an impossible support.
++
++## Surprising Findings
++
++1. The strongest negative result was stronger than the motivating slogan. "Spectator leakage may be unavoidable" sharpened into "the preferred singleton exact object is structurally impossible."
++2. The packet backup did not fail because it looked ugly or weak. It failed because it was no longer one object. That is a cleaner and more reusable stopping criterion than domain-specific skepticism.
++3. Three explorations were enough. For definition-gated missions, brevity is often a sign of good targeting rather than shallow work.
++
++## Lessons That Generalize
++
++1. Definition-gated missions need one preferred exact object, not a menu of formalisms.
++2. Test static realizability before quantitative dominance or leakage claims.
++3. Treat non-canonical fallback objects as terminal definition failures unless canonization is itself the new mission.
++4. "Object dies before estimates" is a real terminal result and should be written as such.
++5. Single-strategy closure is appropriate when the mission question is binary and the negative result is structural.
+diff --git a/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/strategies/strategy-001/LOOP-STATE.md b/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/strategies/strategy-001/LOOP-STATE.md
+index 6812e4d53f7ffee246db3d200a33861f9d7cd37e..1d16f311ac019f63baf8f017298b5915844c8f2b
+--- a/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/strategies/strategy-001/LOOP-STATE.md
++++ b/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/strategies/strategy-001/LOOP-STATE.md
+@@ -1,5 +1,5 @@
+ ---
+-active: true
++active: false
+ slug: strategizer
+ iteration: 3
+ max_iterations: 50
+
+diff --git a/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/INDEX.md b/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/INDEX.md
+index 3185a26162f69ef659343b46a857d434d3fdfc72..7173a801a0562ffe6f726d512885efd38895628d
+--- a/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/INDEX.md
++++ b/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/INDEX.md
+@@ -4,11 +4,13 @@
+ 
+ ## Entries
+ 
++- [`strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md`](strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md) — Definition-gated obstruction missions for exact mechanism objects. Require one preferred exact object, test smallest-support embeddability before coefficient work, and treat non-canonical packet fallbacks as terminal definition failures. (exact-ns-no-near-closed-tao-circuit, strategy-001, 2026-04-01)
+ - [`strategy-001-vasseur-pressure-learnings.md`](strategy-001-vasseur-pressure-learnings.md) — Ground-clearing strategies for obstruction mapping. Phase 0 redefines targets, "adversarial → targeted test" is the strongest quality pattern, test generalization of mechanisms early, prescribe lead-pursuit phases. (vasseur-pressure, strategy-001, 2026-03-30)
+ - [`strategy-002-vasseur-pressure-learnings.md`](strategy-002-vasseur-pressure-learnings.md) — Dual-track obstruction+construction for impossibility proofs. Phase 0 decomposition audit is highest-leverage for proof-improvement missions; Direction Status Tracker enables clean stopping; two-strategy map→attack arc produces strongest impossibility results. (vasseur-pressure, strategy-002, 2026-03-31)
+ 
+ | File | Date | Summary |
+ |------|------|---------|
++| `strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md` | 2026-04-01 | Definition-gated obstruction mission for an exact mechanism object. Require one preferred exact object, test smallest exact support before coefficient work, and kill packetized fallbacks that cannot be canonized. |
+ | `strategy-001-classicality-budget-learnings.md` | 2026-03-27 | Three-phase derive-compute-adjudicate protocol for formula verification. Parallel Phase 1 is optimal. Mandate mission-critical explorations (don't leave experimental tests as optional). Best findings often emerge as side effects of stress-test fixes. Front-load computation. |
+ | `strategy-001-riemann-hypothesis-learnings.md` | 2026-03-27 | Constraint-catalog methodology for hard unsolved problems. Ground-clearing strategies produce Tier 2-3 results but not Tier 1 novelty. Make synthesis/adversarial phases mandatory with minimum allocations. Force constructive work (building operators), not just testing known ones. Prescribe data scale (millions of zeros, not thousands). |
+ | `strategy-001-learnings.md` | 2026-03-27 | Reproduce→Extend→Stress-Test for computational missions. Survey explorations at the start pay for themselves. Pre-loading verified formulas compounds across explorations. Adversarial review should come early, not just at end. "Computation mandatory" was the single most important rule. First strategies should prioritize breadth over depth. |
+diff --git a/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md b/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..51814fece315ca70e63f9d36de209807c7456f23
+--- /dev/null
++++ b/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md
+@@ -0,0 +1,79 @@
++---
++topic: Definition-gated obstruction missions for exact mechanism objects
++category: missionary
++date: 2026-04-01
++source: exact-ns-no-near-closed-tao-circuit, strategy-001
++---
++
++# Strategy-001 Exact-NS No-Near-Closed-Tao-Circuit: Missionary Learnings
++
++## Mission Type
++
++Mechanism-to-theorem mission: take a qualitative discrepancy and decide whether it sharpens into one exact mathematical object that can be proved, refuted, or killed at the definition layer.
++
++## What the Methodology Was
++
++Single-strategy arc:
++
++- Phase 0 definition gate for a "near-closed Tao circuit"
++- Phase 1 exact-support audit on the smallest honest helical object
++- Phase 2 refine-or-stop test for the packetized backup
++
++Three explorations were enough because the mission's real bottleneck was object definition, not long downstream proof work.
++
++## What Worked
++
++### Phase 0 was correctly framed as "define one theorem-facing object," not "collect possible formalisms"
++
++Exploration 001 forced the mission to separate exact NS data from user-chosen tolerances and to name one preferred singleton-support object plus one backup. That prevented the usual failure mode where a mechanism mission drifts among several partially compatible definitions.
++
++**Generalizable lesson:** For mechanism-formalization missions, require exactly one preferred exact object and at most one backup. If the strategizer cannot do that, the mission is not ready for quantitative work.
++
++### Auditing the smallest exact support first was the highest-leverage move
++
++Exploration 002 did not chase coefficient ratios or leakage estimates immediately. It asked the cheaper structural question first: can the desired monomial pattern even embed on singleton exact supports? That produced the decisive negative result. The obstruction was geometric non-embeddability, not a delicate size comparison.
++
++**Generalizable lesson:** When a mission proposes an exact interaction graph, test static embeddability on the smallest exact support before any quantitative coefficient campaign. Geometry can kill the object much earlier than analysis.
++
++### The refine-or-stop pass on the backup saved the mission from fake progress
++
++Once the singleton object failed, exploration 003 did the right thing: it did not treat packetization as automatic continuation. It asked whether the packet backup still defined one canonical exact object. The answer was no, so the mission stopped cleanly instead of spending more budget on support engineering disguised as theorem work.
++
++**Generalizable lesson:** If a fallback object introduces new choices in support, projection, leakage scalarization, or reconstruction convention, run a dedicated canonization gate immediately. If canonization fails, stop. Do not call that "Phase 2 progress."
++
++### One strategy was sufficient because the question was genuinely binary
++
++This mission was not "prove an obstruction theorem eventually." It was "is there one precise exact object here at all?" That kind of binary mission can terminate after a single honest strategy if the result is terminal and well-supported.
++
++**Generalizable lesson:** For exact-object existence questions, default to one strategy unless the first strategy leaves a sharply defined surviving target. Multi-strategy arcs are for surviving objects, not for vague backups.
++
++## What I'd Do Differently
++
++### Canonical packet-model requirements should have been prescribed upfront
++
++The strategy correctly allowed one packetized backup, but it left the canonization test implicit until exploration 003. Future strategies of this type should state the packet gate in Phase 0:
++
++- fixed support convention,
++- fixed projection/coordinatization,
++- fixed desired-vs-leakage bookkeeping,
++- fixed network-restoration rule.
++
++If these cannot be specified, the packet backup should be declared inadmissible immediately.
++
++### "Static closure audit before coefficient audit" should be a named cross-phase rule
++
++The strategy benefited from this implicitly, but it deserves to be explicit. Similar missions will otherwise jump straight to computing coefficients on an impossible support.
++
++## Surprising Findings
++
++1. The strongest negative result was stronger than the motivating slogan. "Spectator leakage may be unavoidable" sharpened into "the preferred singleton exact object is structurally impossible."
++2. The packet backup did not fail because it looked ugly or weak. It failed because it was no longer one object. That is a cleaner and more reusable stopping criterion than domain-specific skepticism.
++3. Three explorations were enough. For definition-gated missions, brevity is often a sign of good targeting rather than shallow work.
++
++## Lessons That Generalize
++
++1. Definition-gated missions need one preferred exact object, not a menu of formalisms.
++2. Test static realizability before quantitative dominance or leakage claims.
++3. Treat non-canonical fallback objects as terminal definition failures unless canonization is itself the new mission.
++4. "Object dies before estimates" is a real terminal result and should be written as such.
++5. Single-strategy closure is appropriate when the mission question is binary and the negative result is structural.
+diff --git a/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/strategies/strategy-001/LOOP-STATE.md b/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/strategies/strategy-001/LOOP-STATE.md
+index 6812e4d53f7ffee246db3d200a33861f9d7cd37e..1d16f311ac019f63baf8f017298b5915844c8f2b
+--- a/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/strategies/strategy-001/LOOP-STATE.md
++++ b/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/strategies/strategy-001/LOOP-STATE.md
+@@ -1,5 +1,5 @@
+ ---
+-active: true
++active: false
+ slug: strategizer
+ iteration: 3
+ max_iterations: 50
+
+codex
+The closure edits are in place. I’m doing a quick verification pass on the new note, the index entry, and the strategy status file, then I’ll report the mission-level outcome.
+exec
+/bin/zsh -lc "sed -n '1,240p' /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md" in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas
+ succeeded in 0ms:
+---
+topic: Definition-gated obstruction missions for exact mechanism objects
+category: missionary
+date: 2026-04-01
+source: exact-ns-no-near-closed-tao-circuit, strategy-001
+---
+
+# Strategy-001 Exact-NS No-Near-Closed-Tao-Circuit: Missionary Learnings
+
+## Mission Type
+
+Mechanism-to-theorem mission: take a qualitative discrepancy and decide whether it sharpens into one exact mathematical object that can be proved, refuted, or killed at the definition layer.
+
+## What the Methodology Was
+
+Single-strategy arc:
+
+- Phase 0 definition gate for a "near-closed Tao circuit"
+- Phase 1 exact-support audit on the smallest honest helical object
+- Phase 2 refine-or-stop test for the packetized backup
+
+Three explorations were enough because the mission's real bottleneck was object definition, not long downstream proof work.
+
+## What Worked
+
+### Phase 0 was correctly framed as "define one theorem-facing object," not "collect possible formalisms"
+
+Exploration 001 forced the mission to separate exact NS data from user-chosen tolerances and to name one preferred singleton-support object plus one backup. That prevented the usual failure mode where a mechanism mission drifts among several partially compatible definitions.
+
+**Generalizable lesson:** For mechanism-formalization missions, require exactly one preferred exact object and at most one backup. If the strategizer cannot do that, the mission is not ready for quantitative work.
+
+### Auditing the smallest exact support first was the highest-leverage move
+
+Exploration 002 did not chase coefficient ratios or leakage estimates immediately. It asked the cheaper structural question first: can the desired monomial pattern even embed on singleton exact supports? That produced the decisive negative result. The obstruction was geometric non-embeddability, not a delicate size comparison.
+
+**Generalizable lesson:** When a mission proposes an exact interaction graph, test static embeddability on the smallest exact support before any quantitative coefficient campaign. Geometry can kill the object much earlier than analysis.
+
+### The refine-or-stop pass on the backup saved the mission from fake progress
+
+Once the singleton object failed, exploration 003 did the right thing: it did not treat packetization as automatic continuation. It asked whether the packet backup still defined one canonical exact object. The answer was no, so the mission stopped cleanly instead of spending more budget on support engineering disguised as theorem work.
+
+**Generalizable lesson:** If a fallback object introduces new choices in support, projection, leakage scalarization, or reconstruction convention, run a dedicated canonization gate immediately. If canonization fails, stop. Do not call that "Phase 2 progress."
+
+### One strategy was sufficient because the question was genuinely binary
+
+This mission was not "prove an obstruction theorem eventually." It was "is there one precise exact object here at all?" That kind of binary mission can terminate after a single honest strategy if the result is terminal and well-supported.
+
+**Generalizable lesson:** For exact-object existence questions, default to one strategy unless the first strategy leaves a sharply defined surviving target. Multi-strategy arcs are for surviving objects, not for vague backups.
+
+## What I'd Do Differently
+
+### Canonical packet-model requirements should have been prescribed upfront
+
+The strategy correctly allowed one packetized backup, but it left the canonization test implicit until exploration 003. Future strategies of this type should state the packet gate in Phase 0:
+
+- fixed support convention,
+- fixed projection/coordinatization,
+- fixed desired-vs-leakage bookkeeping,
+- fixed network-restoration rule.
+
+If these cannot be specified, the packet backup should be declared inadmissible immediately.
+
+### "Static closure audit before coefficient audit" should be a named cross-phase rule
+
+The strategy benefited from this implicitly, but it deserves to be explicit. Similar missions will otherwise jump straight to computing coefficients on an impossible support.
+
+## Surprising Findings
+
+1. The strongest negative result was stronger than the motivating slogan. "Spectator leakage may be unavoidable" sharpened into "the preferred singleton exact object is structurally impossible."
+2. The packet backup did not fail because it looked ugly or weak. It failed because it was no longer one object. That is a cleaner and more reusable stopping criterion than domain-specific skepticism.
+3. Three explorations were enough. For definition-gated missions, brevity is often a sign of good targeting rather than shallow work.
+
+## Lessons That Generalize
+
+1. Definition-gated missions need one preferred exact object, not a menu of formalisms.
+2. Test static realizability before quantitative dominance or leakage claims.
+3. Treat non-canonical fallback objects as terminal definition failures unless canonization is itself the new mission.
+4. "Object dies before estimates" is a real terminal result and should be written as such.
+5. Single-strategy closure is appropriate when the mission question is binary and the negative result is structural.
+
+exec
+/bin/zsh -lc "sed -n '1,40p' strategies/strategy-001/LOOP-STATE.md" in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit
+exec
+/bin/zsh -lc "sed -n '1,80p' /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/INDEX.md" in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas
+ succeeded in 0ms:
+---
+active: false
+slug: strategizer
+iteration: 3
+max_iterations: 50
+session_transcript: "Iteration 1 passed the definition gate. Iteration 2 killed the preferred singleton-support object statically via triad-closure constraints. Iteration 3 showed the packetized backup is too non-canonical to replace it. Strategy complete with a definition-level negative verdict."
+---
+
+ succeeded in 0ms:
+# Missionary Meta-Learning
+
+Lessons from previous missionaries about strategy design, methodology choices, and what works at the strategic level. These lessons generalize across missions — they're about how to design effective strategies, not about specific domains.
+
+## Entries
+
+- [`strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md`](strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md) — Definition-gated obstruction missions for exact mechanism objects. Require one preferred exact object, test smallest-support embeddability before coefficient work, and treat non-canonical packet fallbacks as terminal definition failures. (exact-ns-no-near-closed-tao-circuit, strategy-001, 2026-04-01)
+- [`strategy-001-vasseur-pressure-learnings.md`](strategy-001-vasseur-pressure-learnings.md) — Ground-clearing strategies for obstruction mapping. Phase 0 redefines targets, "adversarial → targeted test" is the strongest quality pattern, test generalization of mechanisms early, prescribe lead-pursuit phases. (vasseur-pressure, strategy-001, 2026-03-30)
+- [`strategy-002-vasseur-pressure-learnings.md`](strategy-002-vasseur-pressure-learnings.md) — Dual-track obstruction+construction for impossibility proofs. Phase 0 decomposition audit is highest-leverage for proof-improvement missions; Direction Status Tracker enables clean stopping; two-strategy map→attack arc produces strongest impossibility results. (vasseur-pressure, strategy-002, 2026-03-31)
+
+| File | Date | Summary |
+|------|------|---------|
+| `strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md` | 2026-04-01 | Definition-gated obstruction mission for an exact mechanism object. Require one preferred exact object, test smallest exact support before coefficient work, and kill packetized fallbacks that cannot be canonized. |
+| `strategy-001-classicality-budget-learnings.md` | 2026-03-27 | Three-phase derive-compute-adjudicate protocol for formula verification. Parallel Phase 1 is optimal. Mandate mission-critical explorations (don't leave experimental tests as optional). Best findings often emerge as side effects of stress-test fixes. Front-load computation. |
+| `strategy-001-riemann-hypothesis-learnings.md` | 2026-03-27 | Constraint-catalog methodology for hard unsolved problems. Ground-clearing strategies produce Tier 2-3 results but not Tier 1 novelty. Make synthesis/adversarial phases mandatory with minimum allocations. Force constructive work (building operators), not just testing known ones. Prescribe data scale (millions of zeros, not thousands). |
+| `strategy-001-learnings.md` | 2026-03-27 | Reproduce→Extend→Stress-Test for computational missions. Survey explorations at the start pay for themselves. Pre-loading verified formulas compounds across explorations. Adversarial review should come early, not just at end. "Computation mandatory" was the single most important rule. First strategies should prioritize breadth over depth. |
+| `strategy-001-compton-unruh-learnings.md` | 2026-03-27 | Adversarial Derivation Protocol for hypothesis-testing missions. Dimensional analysis as Phase 1 gatekeeper saves entire budgets. Adversarial tests must come early (slot 3-4), not late (slot 8). Pre-launch algebra checks prevent trivially-doomed explorations. Side-effects of failures produce the most interesting findings. One strategy can be sufficient for binary yes/no missions. |
+| `strategy-001-yang-mills-learnings.md` | 2026-03-27 | Probe-Attack-Synthesize for hard unsolved problems. First strategy = ground-clearing, second = constructive. Adversarial review must come early (slot 6-7), not at the end. Require math specificity in methodology. Quantitative negative results (AC bounds 57-69x vacuous) reach Tier 3; qualitative ones don't. Pre-load all prior findings into next strategy. |
+| `strategy-002-classicality-budget-learnings.md` | 2026-03-27 | Focused claim-deepening protocol after a survey strategy. All explorations mandatory (no optional). Second strategies should target specific gaps, not re-explore. Prescriptive literature search (specific papers + search terms) beats exploratory. Two-strategy arc (survey → deepen) may be default for formula-verification missions. |
+| `strategy-001-amplituhedron-learnings.md` | 2026-03-27 | Compute-first methodology for framework comparison missions. "Compute first" was wrong emphasis for structural/conceptual domains — surveys produced better results. Match methodology to domain type. Framework-comparison missions follow map→characterize→probe→synthesize arc. Novel claims from well-studied fields will be synthesis, not discovery. One strategy can suffice for clearly scoped questions. |
+| `strategy-002-sed-learnings.md` | 2026-03-27 | Parallel probes for frontier mapping. All three probes produced novel data (none wasted). Two-strategy arc (depth then breadth) is natural for computational missions. Physical constant verification must be a cross-phase rule. Adversarial review MUST find prior art or it hasn't done its job. Tunneling formula R²=0.9998 was the mission's strongest result — emerged from a "quick probe" design. |
+| `strategy-002-riemann-hypothesis-learnings.md` | 2026-03-27 | Tournament methodology for constructive research. Tournament→Deep Dive→Mandatory Adversarial is the best three-phase arc for constructive missions. Adversarial review is the highest-ROI phase — it caught two false claims. Construction strategies produce better novelty than testing strategies. Prescribe specific null-hypothesis control experiments. Explorer death rate (4/9) is the #1 operational problem. |
+| `strategy-003-riemann-hypothesis-learnings.md` | 2026-03-28 | Focused-attack strategy for a quantitative gap. Check formula validity in target regime before making it the strategy centerpiece. Don't designate one computation as "the most important" — creates brittleness. Three-strategy arc has diminishing returns by strategy 3. Adversarial self-refutation chains (find→validate→refute) are the system's most honest output. 24 explorations across 3 strategies is the natural scale for hard problems. |
+| `strategy-001-thermal-time-learnings.md` | 2026-03-27 | Phased foundation-then-comparison for hypothesis-testing. "Explorers must compute" was the single most important rule. Interpretation questions (local vs global) are blocking — resolve before computing consequences. Negative results in the obvious regime are efficient but leave interesting territory untouched. 4 explorations can suffice for a definitive conclusion. Pre-specify comparison baselines explicitly. |
+| `strategy-003-sed-learnings.md` | 2026-03-27 | Finishing strategy: 3+1 (parallel cleanup + adversarial synthesis). Full 3-strategy arc: depth→breadth→synthesis is natural for computational missions. Adversarial synthesis in finishing strategy is the most valuable exploration — catches overclaiming. Survey missions on well-studied topics have a natural Tier 3-4 ceiling. Budget 3 strategies upfront. Don't defer theoretical frameworks to the finishing strategy. |
+| `strategy-002-yang-mills-learnings.md` | 2026-03-27 | Constructive attack producing novel rigorous result. Adversarial review (E007) after first surprise produced the most important finding (staggered mode tight bound). Original attack vector (RG+BE) correctly abandoned for simpler tighter analysis. 3-exploration proof arc (slack → tight bound → proof) is the natural unit. Prescribe methodology not attack vector — let strategizer pivot. β < 1/6 proved (4× state of art), β < 1/4 with one remaining inequality. |
+| `strategy-002-thermal-time-learnings.md` | 2026-03-28 | Parallel computational probes for regime exploration. All-mandatory parallel probes + pre-loaded context is the highest-efficiency pattern. Adversarial review must be structurally enforced (not just labeled mandatory) — strategizer skipped it. Approximation caveats need built-in resolution paths. Early stopping at 3/10 explorations was mixed: results decisive but claims unverified. Physics errors in GOALs for QFT must specify which symmetry generator. |
+| `strategy-003-thermal-time-learnings.md` | 2026-03-28 | Finishing strategy for verification and synthesis. Tight budget (4 mandatory, no early stopping) ensured adversarial review ran. 3-strategy arc (depth→breadth→synthesis) is the natural pattern for hypothesis-testing missions. Parameter sweeps are discovery machines (found spectrum-preservation discriminant). 11 explorations across 3 strategies is the natural scale. Adversarial review belongs in a finishing strategy where it can't be skipped. |
+| `strategy-003-yang-mills-learnings.md` | 2026-03-28 | Proof tournament finishing strategy for closing one inequality. Parallel proof attempts eliminate false premises faster than sequential (found M(Q)≼M(I) FALSE in round 1). Finishing strategies should expect NOT to close the gap — value is in obstruction mapping. "Check X numerically before proving X" is mandatory. 30 explorations across 3 strategies is the natural scale for Millennium-adjacent problems. Obstruction atlases are a publishable contribution. |
+| `strategy-001-barandes-stochastic-learnings.md` | 2026-03-28 | Single-strategy framework analysis with pre-loaded adversarial context. Pre-loading adversarial findings from prior missions is the highest-leverage move for framework analysis — saves 1-2 explorations. One strategy suffices for well-scoped "is this X?" evaluation questions. Steelman requirement transforms adversarial reviews from dismissive to nuanced. For reformulation missions, explicitly require a "what computation would upgrade this to new physics?" exploration. 6 explorations in 1 strategy is the natural scale for evaluation missions. |
+| `strategy-001-yang-mills-validation-learnings.md` | 2026-03-28 | Adversarial proof audit for validation missions. Adversarial posture is the single most important rule — it found a genuine proof gap. "Independent rederivation" can reproduce known errors if conventions aren't pinned. Convention verification deserves its own exploration. Numerical extensions as Phase 2 are robust because they're independent of proof gaps. Validation missions are 1-2 strategy affairs. 8 explorations with 190+ configs, 0 violations. |
+| `strategy-002-yang-mills-validation-learnings.md` | 2026-03-29 | Focused gap repair with check-before-prove methodology. Stress tests need systematic TYPE coverage (all-link/single-link × large/small angle), not just volume — 300 configs missed a violation that systematic types caught. 3/5-6 budget used for definitive negative result. Novel permanent results (analytical Hessian formula) can emerge from failed repairs. Two-strategy validation arc (audit → repair attempt) is the natural pattern. Early termination on negative results saves budget. |
+| `strategy-001-yang-mills-conjecture-learnings.md` | 2026-03-28 | Three-phase decompose-construct-verify for proof problems. Parallel Phase 1 decompositions all contributed. ONE approach per proof exploration (never three — causes thinking paralysis). Combined Bound Lemma discovered computationally, not algebraically — validates "compute first." Failed explorations have downstream value. Strategizer's best decisions were deviations from the strategy. 8/10 budget, partial proof + precise gap characterization. |
+| `strategy-002-yang-mills-conjecture-learnings.md` | 2026-03-29 | Upstream logic verification must precede proof construction. Proved full 9D staggered bound via affine-in-D + Cauchy-Schwarz, but staggered bound doesn't imply full conjecture — non-staggered eigenvalues uncontrolled. "Wrong target" is the costliest failure mode (wastes entire strategies, not just explorations). Mandatory Phase 0: verify that proof target implies desired conclusion. ONE approach per exploration strongly validated. Formula cross-checking against source paper is essential. |
+| `strategy-003-yang-mills-conjecture-learnings.md` | 2026-03-29 | Phase 0 upstream verification can redirect entire missions. Conjecture 1 (on M(Q)) FALSE — correct target is HessS. Phase 0 was the single highest-ROI exploration in the 20-exploration mission. "N configs zero violations" ≠ "bound holds" — gradient ascent on exact target found 17% violation. Code written but not run is a budget planning failure — run most promising approach first. Norm-additive bounds are a dead end class for d≥3. Anti-instantons are the universal stress test. |
+| `strategy-001-navier-stokes-learnings.md` | 2026-03-30 | Catalog-Measure-Tighten for inequality analysis. Cross-phase computable function pairs were the best design decision — made catalog immediately actionable. Decomposition consistency checks caught critical error (reversed Ladyzhenskaya vs Hölder priority). Phase 3 "Tighten" failed because it didn't prescribe theorem targets. Single-IC dependence was a blind spot. 8/20 explorations for ground-clearing is the right scale. |
+| `strategy-002-navier-stokes-learnings.md` | 2026-03-30 | Constructive proof strategy with Phase 0 gating. Phase 0 gate (T_BKM/T_Lad > 10) exceeded by 10⁶ — validates entire direction instantly. ONE theorem per exploration works. Two-strategy arc (map→attack) is natural for Millennium-adjacent problems. Missionaries must verify empirical claims before building strategies on them (C(F₄) waste). Structural impossibilities (logical circles) are permanent findings. "Modest but genuine" novelty is the realistic ceiling for well-studied problems. 4/20 explorations — efficient early stopping. |
+
+exec
+/bin/zsh -lc 'git diff -- execution/agents/library/meta/missionary/INDEX.md execution/agents/library/meta/missionary/strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md execution/instances/exact-ns-no-near-closed-tao-circuit/strategies/strategy-001/LOOP-STATE.md' in /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas
+ succeeded in 0ms:
+diff --git a/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/INDEX.md b/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/INDEX.md
+index 3185a26162f69ef659343b46a857d434d3fdfc72..7173a801a0562ffe6f726d512885efd38895628d
+--- a/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/INDEX.md
++++ b/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/INDEX.md
+@@ -4,11 +4,13 @@
+ 
+ ## Entries
+ 
++- [`strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md`](strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md) — Definition-gated obstruction missions for exact mechanism objects. Require one preferred exact object, test smallest-support embeddability before coefficient work, and treat non-canonical packet fallbacks as terminal definition failures. (exact-ns-no-near-closed-tao-circuit, strategy-001, 2026-04-01)
+ - [`strategy-001-vasseur-pressure-learnings.md`](strategy-001-vasseur-pressure-learnings.md) — Ground-clearing strategies for obstruction mapping. Phase 0 redefines targets, "adversarial → targeted test" is the strongest quality pattern, test generalization of mechanisms early, prescribe lead-pursuit phases. (vasseur-pressure, strategy-001, 2026-03-30)
+ - [`strategy-002-vasseur-pressure-learnings.md`](strategy-002-vasseur-pressure-learnings.md) — Dual-track obstruction+construction for impossibility proofs. Phase 0 decomposition audit is highest-leverage for proof-improvement missions; Direction Status Tracker enables clean stopping; two-strategy map→attack arc produces strongest impossibility results. (vasseur-pressure, strategy-002, 2026-03-31)
+ 
+ | File | Date | Summary |
+ |------|------|---------|
++| `strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md` | 2026-04-01 | Definition-gated obstruction mission for an exact mechanism object. Require one preferred exact object, test smallest exact support before coefficient work, and kill packetized fallbacks that cannot be canonized. |
+ | `strategy-001-classicality-budget-learnings.md` | 2026-03-27 | Three-phase derive-compute-adjudicate protocol for formula verification. Parallel Phase 1 is optimal. Mandate mission-critical explorations (don't leave experimental tests as optional). Best findings often emerge as side effects of stress-test fixes. Front-load computation. |
+ | `strategy-001-riemann-hypothesis-learnings.md` | 2026-03-27 | Constraint-catalog methodology for hard unsolved problems. Ground-clearing strategies produce Tier 2-3 results but not Tier 1 novelty. Make synthesis/adversarial phases mandatory with minimum allocations. Force constructive work (building operators), not just testing known ones. Prescribe data scale (millions of zeros, not thousands). |
+ | `strategy-001-learnings.md` | 2026-03-27 | Reproduce→Extend→Stress-Test for computational missions. Survey explorations at the start pay for themselves. Pre-loading verified formulas compounds across explorations. Adversarial review should come early, not just at end. "Computation mandatory" was the single most important rule. First strategies should prioritize breadth over depth. |
+diff --git a/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md b/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..51814fece315ca70e63f9d36de209807c7456f23
+--- /dev/null
++++ b/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md
+@@ -0,0 +1,79 @@
++---
++topic: Definition-gated obstruction missions for exact mechanism objects
++category: missionary
++date: 2026-04-01
++source: exact-ns-no-near-closed-tao-circuit, strategy-001
++---
++
++# Strategy-001 Exact-NS No-Near-Closed-Tao-Circuit: Missionary Learnings
++
++## Mission Type
++
++Mechanism-to-theorem mission: take a qualitative discrepancy and decide whether it sharpens into one exact mathematical object that can be proved, refuted, or killed at the definition layer.
++
++## What the Methodology Was
++
++Single-strategy arc:
++
++- Phase 0 definition gate for a "near-closed Tao circuit"
++- Phase 1 exact-support audit on the smallest honest helical object
++- Phase 2 refine-or-stop test for the packetized backup
++
++Three explorations were enough because the mission's real bottleneck was object definition, not long downstream proof work.
++
++## What Worked
++
++### Phase 0 was correctly framed as "define one theorem-facing object," not "collect possible formalisms"
++
++Exploration 001 forced the mission to separate exact NS data from user-chosen tolerances and to name one preferred singleton-support object plus one backup. That prevented the usual failure mode where a mechanism mission drifts among several partially compatible definitions.
++
++**Generalizable lesson:** For mechanism-formalization missions, require exactly one preferred exact object and at most one backup. If the strategizer cannot do that, the mission is not ready for quantitative work.
++
++### Auditing the smallest exact support first was the highest-leverage move
++
++Exploration 002 did not chase coefficient ratios or leakage estimates immediately. It asked the cheaper structural question first: can the desired monomial pattern even embed on singleton exact supports? That produced the decisive negative result. The obstruction was geometric non-embeddability, not a delicate size comparison.
++
++**Generalizable lesson:** When a mission proposes an exact interaction graph, test static embeddability on the smallest exact support before any quantitative coefficient campaign. Geometry can kill the object much earlier than analysis.
++
++### The refine-or-stop pass on the backup saved the mission from fake progress
++
++Once the singleton object failed, exploration 003 did the right thing: it did not treat packetization as automatic continuation. It asked whether the packet backup still defined one canonical exact object. The answer was no, so the mission stopped cleanly instead of spending more budget on support engineering disguised as theorem work.
++
++**Generalizable lesson:** If a fallback object introduces new choices in support, projection, leakage scalarization, or reconstruction convention, run a dedicated canonization gate immediately. If canonization fails, stop. Do not call that "Phase 2 progress."
++
++### One strategy was sufficient because the question was genuinely binary
++
++This mission was not "prove an obstruction theorem eventually." It was "is there one precise exact object here at all?" That kind of binary mission can terminate after a single honest strategy if the result is terminal and well-supported.
++
++**Generalizable lesson:** For exact-object existence questions, default to one strategy unless the first strategy leaves a sharply defined surviving target. Multi-strategy arcs are for surviving objects, not for vague backups.
++
++## What I'd Do Differently
++
++### Canonical packet-model requirements should have been prescribed upfront
++
++The strategy correctly allowed one packetized backup, but it left the canonization test implicit until exploration 003. Future strategies of this type should state the packet gate in Phase 0:
++
++- fixed support convention,
++- fixed projection/coordinatization,
++- fixed desired-vs-leakage bookkeeping,
++- fixed network-restoration rule.
++
++If these cannot be specified, the packet backup should be declared inadmissible immediately.
++
++### "Static closure audit before coefficient audit" should be a named cross-phase rule
++
++The strategy benefited from this implicitly, but it deserves to be explicit. Similar missions will otherwise jump straight to computing coefficients on an impossible support.
++
++## Surprising Findings
++
++1. The strongest negative result was stronger than the motivating slogan. "Spectator leakage may be unavoidable" sharpened into "the preferred singleton exact object is structurally impossible."
++2. The packet backup did not fail because it looked ugly or weak. It failed because it was no longer one object. That is a cleaner and more reusable stopping criterion than domain-specific skepticism.
++3. Three explorations were enough. For definition-gated missions, brevity is often a sign of good targeting rather than shallow work.
++
++## Lessons That Generalize
++
++1. Definition-gated missions need one preferred exact object, not a menu of formalisms.
++2. Test static realizability before quantitative dominance or leakage claims.
++3. Treat non-canonical fallback objects as terminal definition failures unless canonization is itself the new mission.
++4. "Object dies before estimates" is a real terminal result and should be written as such.
++5. Single-strategy closure is appropriate when the mission question is binary and the negative result is structural.
+diff --git a/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/strategies/strategy-001/LOOP-STATE.md b/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/strategies/strategy-001/LOOP-STATE.md
+index 6812e4d53f7ffee246db3d200a33861f9d7cd37e..1d16f311ac019f63baf8f017298b5915844c8f2b
+--- a/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/strategies/strategy-001/LOOP-STATE.md
++++ b/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/strategies/strategy-001/LOOP-STATE.md
+@@ -1,5 +1,5 @@
+ ---
+-active: true
++active: false
+ slug: strategizer
+ iteration: 3
+ max_iterations: 50
+
+codex
+The mission is already terminally complete. I evaluated `strategy-001` against [MISSION.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/MISSION.md), [MISSION-VALIDATION-GUIDE.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/MISSION-VALIDATION-GUIDE.md), the strategy record, and the existing [MISSION-COMPLETE.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/MISSION-COMPLETE.md). The judgment still holds: this is a definition-level negative, because the preferred singleton exact object is structurally impossible and the packetized fallback is not one canonical theorem-facing object.
+
+No new strategy was launched. `monitor-sessions.sh` showed no active strategizer for this mission, so the right next action was closure hygiene rather than duplication. I added the missing missionary meta note at [strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md), updated [INDEX.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/INDEX.md), and marked [LOOP-STATE.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/strategies/strategy-001/LOOP-STATE.md) inactive.
+diff --git a/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/INDEX.md b/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/INDEX.md
+index 3185a26162f69ef659343b46a857d434d3fdfc72..7173a801a0562ffe6f726d512885efd38895628d
+--- a/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/INDEX.md
++++ b/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/INDEX.md
+@@ -4,11 +4,13 @@
+ 
+ ## Entries
+ 
++- [`strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md`](strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md) — Definition-gated obstruction missions for exact mechanism objects. Require one preferred exact object, test smallest-support embeddability before coefficient work, and treat non-canonical packet fallbacks as terminal definition failures. (exact-ns-no-near-closed-tao-circuit, strategy-001, 2026-04-01)
+ - [`strategy-001-vasseur-pressure-learnings.md`](strategy-001-vasseur-pressure-learnings.md) — Ground-clearing strategies for obstruction mapping. Phase 0 redefines targets, "adversarial → targeted test" is the strongest quality pattern, test generalization of mechanisms early, prescribe lead-pursuit phases. (vasseur-pressure, strategy-001, 2026-03-30)
+ - [`strategy-002-vasseur-pressure-learnings.md`](strategy-002-vasseur-pressure-learnings.md) — Dual-track obstruction+construction for impossibility proofs. Phase 0 decomposition audit is highest-leverage for proof-improvement missions; Direction Status Tracker enables clean stopping; two-strategy map→attack arc produces strongest impossibility results. (vasseur-pressure, strategy-002, 2026-03-31)
+ 
+ | File | Date | Summary |
+ |------|------|---------|
++| `strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md` | 2026-04-01 | Definition-gated obstruction mission for an exact mechanism object. Require one preferred exact object, test smallest exact support before coefficient work, and kill packetized fallbacks that cannot be canonized. |
+ | `strategy-001-classicality-budget-learnings.md` | 2026-03-27 | Three-phase derive-compute-adjudicate protocol for formula verification. Parallel Phase 1 is optimal. Mandate mission-critical explorations (don't leave experimental tests as optional). Best findings often emerge as side effects of stress-test fixes. Front-load computation. |
+ | `strategy-001-riemann-hypothesis-learnings.md` | 2026-03-27 | Constraint-catalog methodology for hard unsolved problems. Ground-clearing strategies produce Tier 2-3 results but not Tier 1 novelty. Make synthesis/adversarial phases mandatory with minimum allocations. Force constructive work (building operators), not just testing known ones. Prescribe data scale (millions of zeros, not thousands). |
+ | `strategy-001-learnings.md` | 2026-03-27 | Reproduce→Extend→Stress-Test for computational missions. Survey explorations at the start pay for themselves. Pre-loading verified formulas compounds across explorations. Adversarial review should come early, not just at end. "Computation mandatory" was the single most important rule. First strategies should prioritize breadth over depth. |
+diff --git a/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md b/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..51814fece315ca70e63f9d36de209807c7456f23
+--- /dev/null
++++ b/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md
+@@ -0,0 +1,79 @@
++---
++topic: Definition-gated obstruction missions for exact mechanism objects
++category: missionary
++date: 2026-04-01
++source: exact-ns-no-near-closed-tao-circuit, strategy-001
++---
++
++# Strategy-001 Exact-NS No-Near-Closed-Tao-Circuit: Missionary Learnings
++
++## Mission Type
++
++Mechanism-to-theorem mission: take a qualitative discrepancy and decide whether it sharpens into one exact mathematical object that can be proved, refuted, or killed at the definition layer.
++
++## What the Methodology Was
++
++Single-strategy arc:
++
++- Phase 0 definition gate for a "near-closed Tao circuit"
++- Phase 1 exact-support audit on the smallest honest helical object
++- Phase 2 refine-or-stop test for the packetized backup
++
++Three explorations were enough because the mission's real bottleneck was object definition, not long downstream proof work.
++
++## What Worked
++
++### Phase 0 was correctly framed as "define one theorem-facing object," not "collect possible formalisms"
++
++Exploration 001 forced the mission to separate exact NS data from user-chosen tolerances and to name one preferred singleton-support object plus one backup. That prevented the usual failure mode where a mechanism mission drifts among several partially compatible definitions.
++
++**Generalizable lesson:** For mechanism-formalization missions, require exactly one preferred exact object and at most one backup. If the strategizer cannot do that, the mission is not ready for quantitative work.
++
++### Auditing the smallest exact support first was the highest-leverage move
++
++Exploration 002 did not chase coefficient ratios or leakage estimates immediately. It asked the cheaper structural question first: can the desired monomial pattern even embed on singleton exact supports? That produced the decisive negative result. The obstruction was geometric non-embeddability, not a delicate size comparison.
++
++**Generalizable lesson:** When a mission proposes an exact interaction graph, test static embeddability on the smallest exact support before any quantitative coefficient campaign. Geometry can kill the object much earlier than analysis.
++
++### The refine-or-stop pass on the backup saved the mission from fake progress
++
++Once the singleton object failed, exploration 003 did the right thing: it did not treat packetization as automatic continuation. It asked whether the packet backup still defined one canonical exact object. The answer was no, so the mission stopped cleanly instead of spending more budget on support engineering disguised as theorem work.
++
++**Generalizable lesson:** If a fallback object introduces new choices in support, projection, leakage scalarization, or reconstruction convention, run a dedicated canonization gate immediately. If canonization fails, stop. Do not call that "Phase 2 progress."
++
++### One strategy was sufficient because the question was genuinely binary
++
++This mission was not "prove an obstruction theorem eventually." It was "is there one precise exact object here at all?" That kind of binary mission can terminate after a single honest strategy if the result is terminal and well-supported.
++
++**Generalizable lesson:** For exact-object existence questions, default to one strategy unless the first strategy leaves a sharply defined surviving target. Multi-strategy arcs are for surviving objects, not for vague backups.
++
++## What I'd Do Differently
++
++### Canonical packet-model requirements should have been prescribed upfront
++
++The strategy correctly allowed one packetized backup, but it left the canonization test implicit until exploration 003. Future strategies of this type should state the packet gate in Phase 0:
++
++- fixed support convention,
++- fixed projection/coordinatization,
++- fixed desired-vs-leakage bookkeeping,
++- fixed network-restoration rule.
++
++If these cannot be specified, the packet backup should be declared inadmissible immediately.
++
++### "Static closure audit before coefficient audit" should be a named cross-phase rule
++
++The strategy benefited from this implicitly, but it deserves to be explicit. Similar missions will otherwise jump straight to computing coefficients on an impossible support.
++
++## Surprising Findings
++
++1. The strongest negative result was stronger than the motivating slogan. "Spectator leakage may be unavoidable" sharpened into "the preferred singleton exact object is structurally impossible."
++2. The packet backup did not fail because it looked ugly or weak. It failed because it was no longer one object. That is a cleaner and more reusable stopping criterion than domain-specific skepticism.
++3. Three explorations were enough. For definition-gated missions, brevity is often a sign of good targeting rather than shallow work.
++
++## Lessons That Generalize
++
++1. Definition-gated missions need one preferred exact object, not a menu of formalisms.
++2. Test static realizability before quantitative dominance or leakage claims.
++3. Treat non-canonical fallback objects as terminal definition failures unless canonization is itself the new mission.
++4. "Object dies before estimates" is a real terminal result and should be written as such.
++5. Single-strategy closure is appropriate when the mission question is binary and the negative result is structural.
+diff --git a/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/strategies/strategy-001/LOOP-STATE.md b/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/strategies/strategy-001/LOOP-STATE.md
+index 6812e4d53f7ffee246db3d200a33861f9d7cd37e..1d16f311ac019f63baf8f017298b5915844c8f2b
+--- a/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/strategies/strategy-001/LOOP-STATE.md
++++ b/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/strategies/strategy-001/LOOP-STATE.md
+@@ -1,5 +1,5 @@
+ ---
+-active: true
++active: false
+ slug: strategizer
+ iteration: 3
+ max_iterations: 50
+
+tokens used
+45,822
+The mission is already terminally complete. I evaluated `strategy-001` against [MISSION.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/MISSION.md), [MISSION-VALIDATION-GUIDE.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/MISSION-VALIDATION-GUIDE.md), the strategy record, and the existing [MISSION-COMPLETE.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/MISSION-COMPLETE.md). The judgment still holds: this is a definition-level negative, because the preferred singleton exact object is structurally impossible and the packetized fallback is not one canonical theorem-facing object.
+
+No new strategy was launched. `monitor-sessions.sh` showed no active strategizer for this mission, so the right next action was closure hygiene rather than duplication. I added the missing missionary meta note at [strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/strategy-001-exact-ns-no-near-closed-tao-circuit-learnings.md), updated [INDEX.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta/missionary/INDEX.md), and marked [LOOP-STATE.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-no-near-closed-tao-circuit/strategies/strategy-001/LOOP-STATE.md) inactive.
+role=missionary
+session_name=codex-atlas-exact-ns-no-near-closed-tao-circuit-missionary
+result_file=/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/runtime/results/codex-atlas-exact-ns-no-near-closed-tao-circuit-missionary.md
+status_file=/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-atlas/runtime/status/codex-atlas-exact-ns-no-near-closed-tao-circuit-missionary.json

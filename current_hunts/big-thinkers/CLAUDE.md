@@ -1,12 +1,12 @@
 # Big Thinkers
 
-Autonomous agent orchestration systems for tackling complex research problems. Each system has a different architecture, but they share infrastructure.
+Autonomous agent orchestration systems for tackling complex research problems. The canonical home for the research systems and their shared research resources is `research-systems/`.
 
 ## Shared Resources
 
-- **Idea pipeline:** `idea-exploration/` — ideas spotted during any mission go here, regardless of which system found them
-- **Promising findings:** `promising-findings.md` — validated novel claims from completed missions across all systems
-- **Available tools:** `available-tools.md` — shared tooling reference
+- **Idea pipeline:** `research-systems/idea-exploration/` — ideas spotted during any mission go here, regardless of which system found them
+- **Promising findings:** `research-systems/promising-findings.md` — validated novel claims from completed missions across all systems
+- **Available tools:** `research-systems/available-tools.md` — shared tooling reference
 
 ## The Systems
 
@@ -23,10 +23,10 @@ Autonomous agent orchestration systems for tackling complex research problems. E
 When any agent encounters a finding worth investigating outside the current mission's scope, hand it off to a background sub-agent. Don't do the validation work yourself.
 
 The sub-agent's job:
-1. Read the idea validator guide at `idea-exploration/agents/idea-validator/system-prompt.md`
+1. Read the idea validator guide at `research-systems/idea-exploration/agents/idea-validator/system-prompt.md`
 2. Score the idea using the validator's rubric
-3. Create a detailed idea file at `idea-exploration/ideas/atlas-idea-NNN.md` (next available number)
-4. Add a row to the index at `idea-exploration/ATLAS-IDEAS.md`
+3. Create a detailed idea file at `research-systems/idea-exploration/ideas/atlas-idea-NNN.md` (next available number)
+4. Add a row to the index at `research-systems/idea-exploration/ATLAS-IDEAS.md`
 
 ## Model Assignment
 
@@ -35,4 +35,4 @@ The sub-agent's job:
 
 ## After Any Mission Completes
 
-Review novel claims from final reports. Any claims that survived adversarial review and passed validation should be added to `promising-findings.md`, following the format already in that file.
+Review novel claims from final reports. Any claims that survived adversarial review and passed validation should be added to `research-systems/promising-findings.md`, following the format already in that file.

@@ -11,7 +11,8 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from system.orchestrator import create_node, prepare_node_context_packet
-from system.orchestrator.node_contract import node_layout, write_text
+from system.orchestrator.node_contract import write_text
+from system.orchestrator.node_record import update_node_record
 
 
 class NodePreparationTests(unittest.TestCase):
@@ -24,16 +25,15 @@ class NodePreparationTests(unittest.TestCase):
             write_text(layout.context_file, "shared context\n")
             write_text(layout.plan_file, "# Plan\n\n1. Do the work.\n")
             write_text(layout.state_file, "parent notes\n")
-            write_text(
-                layout.latest_child_node_report_file,
-                json.dumps(
+            update_node_record(
+                layout,
+                lambda record: record.setdefault("progression", {}).__setitem__(
+                    "latest_child_report",
                     {
                         "child_node_id": "root.step-01-do-the-work",
                         "child_status": "failed",
                     },
-                    indent=2,
-                )
-                + "\n",
+                ),
             )
             child_layout = create_node(
                 layout.children_dir / "step-01-do-the-work",

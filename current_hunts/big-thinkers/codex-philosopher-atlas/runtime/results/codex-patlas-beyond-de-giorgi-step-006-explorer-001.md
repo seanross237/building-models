@@ -1,5 +1,0 @@
-Wrote [REPORT.md](/Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/codex-philosopher-atlas/missions/beyond-de-giorgi/steps/step-006/explorations/exploration-001/REPORT.md) and [REPORT-SUMMARY.md](/Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/codex-philosopher-atlas/missions/beyond-de-giorgi/steps/step-006/explorations/exploration-001/REPORT-SUMMARY.md).
-
-The screen comes out narrow and negative. `divergence / stress form` only offers incompressibility-based derivative relocation, which Tao-style averaging preserves at the relevant estimate level, so it is rejected as Tao-insufficient. `Lamb-vector / Helmholtz-projected form` has a stronger literal NS identity, but after localization its usable gain is weakened back into the same projection/pressure/commutator debt; the only sharper rescue in the local record is Beltrami-style geometry, which leaves the fixed branch. It is also rejected as Tao-insufficient.
-
-Result: neither of these two candidates reaches Step 3 in the fixed localized LEI architecture. No tests were run; this was a local source audit only.

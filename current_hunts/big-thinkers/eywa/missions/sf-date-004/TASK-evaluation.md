@@ -1,8 +1,8 @@
 # Eywa Task: evaluation
 
-EYWA_ROOT: /Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/eywa
-Node: /Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/eywa/missions/sf-date-004
-Agents: /Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/eywa/agents
+EYWA_ROOT: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/eywa
+Node: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/eywa/missions/sf-date-004
+Agents: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/eywa/agents
 You are re-spawned to evaluate a child result.
 Read state.md, plan.md, then check children/ for the latest terminal child.
 Read that child's result.md or escalation.md.

@@ -1,23 +1,39 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-import json
 import re
 from pathlib import Path
-from typing import Any, Callable
+from typing import TYPE_CHECKING, Any, Callable
 
-from system.runtime import RuntimeAdapter
+if TYPE_CHECKING:
+    from system.runtime.runtime_interface import RuntimeAdapter
 
 from .event_schema import EventRecord
 from .event_writer import AppendOnlyJsonlWriter
-from .node_contract import create_node, node_layout, read_trimmed_text, unlink_if_exists, write_text
+from .node_contract import create_node, node_layout, write_text
 from .node_controls import resume_waiting_node_if_ready
 from .node_lifecycle import transition_node
-from .node_recovery import prepare_node_for_fresh_attempt
-from .orchestrator_core import NodeOrchestratorCore, NodeRunStepResult
+from .node_record import (
+    node_computation_result_note,
+    node_failure_reason,
+    node_next_action_after_child_report,
+    node_next_role,
+    node_retry_count,
+    node_status,
+    node_terminal_outcome,
+    read_node_record,
+    update_node_record,
+)
+from .node_recovery import prepare_node_for_fresh_attempt, prepare_node_for_retry
 from .node_validator import validate_node
+from .orchestrator_core import NodeOrchestratorCore, NodeRunStepResult
 
 RuntimeMetadataResolver = Callable[[str, str, str, Path], dict[str, Any]]
+RETRYABLE_CONTRACT_FAILURE_REASONS: tuple[str, ...] = (
+    "missing_required_artifact",
+    "invalid_decision_value",
+)
+DEFAULT_MAX_CONTRACT_RETRIES = 3
 
 
 class OrchestratorProgressionError(RuntimeError):
@@ -41,9 +57,13 @@ class NodeProgressionEngine:
         runtime: RuntimeAdapter,
         *,
         runtime_metadata_resolver: RuntimeMetadataResolver | None = None,
+        max_contract_retries: int = DEFAULT_MAX_CONTRACT_RETRIES,
     ) -> None:
+        if max_contract_retries < 0:
+            raise ValueError("max_contract_retries must be non-negative.")
         self.core = NodeOrchestratorCore(runtime)
         self.runtime_metadata_resolver = runtime_metadata_resolver
+        self.max_contract_retries = max_contract_retries
 
     def drive_until_stable(
         self,
@@ -55,7 +75,7 @@ class NodeProgressionEngine:
     ) -> NodeProgressionResult:
         layout = node_layout(node_path)
         for iteration in range(1, max_iterations + 1):
-            status = read_trimmed_text(layout.status_file)
+            status = node_status(layout)
             if status == "waiting_on_computation":
                 if self._maybe_resume_waiting_node(layout, mission_id=mission_id, node_id=node_id):
                     continue
@@ -66,7 +86,21 @@ class NodeProgressionEngine:
                     iterations=iteration - 1,
                 )
 
-            if status in ("finished", "failed"):
+            if status == "failed":
+                if self._maybe_retry_contract_failure(
+                    layout,
+                    mission_id=mission_id,
+                    node_id=node_id,
+                ):
+                    continue
+                return self._stable_result(
+                    layout,
+                    mission_id=mission_id,
+                    node_id=node_id,
+                    iterations=iteration - 1,
+                )
+
+            if status == "finished":
                 return self._stable_result(
                     layout,
                     mission_id=mission_id,
@@ -96,39 +130,54 @@ class NodeProgressionEngine:
             mission_id=mission_id,
             node_id=node_id,
             node_path=str(layout.root),
-            final_status=read_trimmed_text(layout.status_file) or "failed",
-            terminal_outcome=read_trimmed_text(layout.terminal_outcome_file),
-            failure_reason=read_trimmed_text(layout.failure_reason_file),
+            final_status=node_status(layout) or "failed",
+            terminal_outcome=node_terminal_outcome(layout),
+            failure_reason=node_failure_reason(layout),
             iterations=iterations,
         )
 
     def _advance_once(self, layout, *, mission_id: str, node_id: str) -> bool:
-        if read_trimmed_text(layout.status_file) in (
-            "finished",
-            "failed",
-            "waiting_on_computation",
-        ):
+        if node_status(layout) in ("finished", "failed", "waiting_on_computation"):
             return False
 
         if self._should_run_direct_role(layout):
-            role = read_trimmed_text(layout.agent_mode_file) or "planner"
-            write_text(layout.agent_mode_file, role + "\n")
+            role = node_next_role(layout) or "planner"
+            self._set_next_role(layout, role)
             self._run_role(layout, mission_id=mission_id, node_id=node_id, role=role)
             return True
 
-        if layout.plan_file.exists() and not layout.progression_state_file.exists():
+        progression = self._read_progression_state(layout)
+        if layout.plan_file.exists() and not progression["steps"]:
             self._initialize_progression_state(layout, mission_id=mission_id, node_id=node_id)
             return True
 
-        if layout.progression_state_file.exists():
+        if progression["steps"]:
             return self._advance_planned_parent(layout, mission_id=mission_id, node_id=node_id)
 
         return False
 
+    def _maybe_retry_contract_failure(self, layout, *, mission_id: str, node_id: str) -> bool:
+        failure_reason = node_failure_reason(layout)
+        if failure_reason not in RETRYABLE_CONTRACT_FAILURE_REASONS:
+            return False
+        retry_count = node_retry_count(layout)
+        if retry_count >= self.max_contract_retries:
+            return False
+
+        prepare_node_for_retry(
+            layout.root,
+            recovery_reason=f"automatic_retry_after_{failure_reason}",
+            next_role=node_next_role(layout),
+            mission_id=mission_id,
+            node_id=node_id,
+        )
+        return True
+
     def _should_run_direct_role(self, layout) -> bool:
+        progression = self._read_progression_state(layout)
         return (
             not layout.plan_file.exists()
-            and not layout.progression_state_file.exists()
+            and not progression["steps"]
             and not layout.final_output_file.exists()
             and not layout.escalation_file.exists()
         )
@@ -158,7 +207,7 @@ class NodeProgressionEngine:
         steps = self._parse_plan_steps(layout.plan_file.read_text(encoding="utf-8"))
         if not steps:
             raise OrchestratorProgressionError("Planner produced a plan with no executable steps.")
-        state = {
+        progression_state = {
             "steps": [
                 {
                     "index": index,
@@ -172,8 +221,9 @@ class NodeProgressionEngine:
                 for index, step in enumerate(steps)
             ],
             "current_step_index": 0,
+            "latest_child_report": None,
         }
-        write_text(layout.progression_state_file, json.dumps(state, indent=2, sort_keys=True) + "\n")
+        self._write_progression_state(layout, progression_state)
         self._emit_event(
             layout,
             EventRecord(
@@ -184,7 +234,7 @@ class NodeProgressionEngine:
                 payload={"step_count": len(steps)},
             ),
         )
-        for step in state["steps"]:
+        for step in progression_state["steps"]:
             self._emit_event(
                 layout,
                 EventRecord(
@@ -204,9 +254,11 @@ class NodeProgressionEngine:
         state = self._read_progression_state(layout)
         steps = state["steps"]
         current_step_index = state["current_step_index"]
+        if current_step_index is None:
+            raise OrchestratorProgressionError("Planned parent is missing current_step_index.")
 
         if current_step_index >= len(steps):
-            write_text(layout.agent_mode_file, "synthesizer\n")
+            self._set_next_role(layout, "synthesizer")
             self._run_role(layout, mission_id=mission_id, node_id=node_id, role="synthesizer")
             return True
 
@@ -229,7 +281,7 @@ class NodeProgressionEngine:
             return True
 
         child_layout = node_layout(child_path)
-        child_status = read_trimmed_text(child_layout.status_file)
+        child_status = node_status(child_layout)
         if child_status not in ("finished", "failed", "waiting_on_computation"):
             self.drive_until_stable(
                 child_path,
@@ -238,8 +290,8 @@ class NodeProgressionEngine:
             )
             return True
 
-        child_terminal_outcome = read_trimmed_text(child_layout.terminal_outcome_file)
-        child_failure_reason = read_trimmed_text(child_layout.failure_reason_file)
+        child_terminal_outcome = node_terminal_outcome(child_layout)
+        child_failure_reason = node_failure_reason(child_layout)
         self._write_latest_child_report(
             layout,
             child_node_id=child_node_id,
@@ -266,7 +318,7 @@ class NodeProgressionEngine:
         )
 
         if child_status == "waiting_on_computation":
-            current_status = read_trimmed_text(layout.status_file)
+            current_status = node_status(layout)
             if current_status == "active":
                 transition_node(
                     layout.root,
@@ -291,7 +343,7 @@ class NodeProgressionEngine:
             )
             return True
 
-        write_text(layout.agent_mode_file, "mid-plan-evaluator\n")
+        self._set_next_role(layout, "mid-plan-evaluator")
         self._run_role(layout, mission_id=mission_id, node_id=node_id, role="mid-plan-evaluator")
         return self._consume_next_action_after_child_report(
             layout,
@@ -316,7 +368,7 @@ class NodeProgressionEngine:
         child_status: str,
         child_terminal_outcome: str | None,
     ) -> bool:
-        next_action = read_trimmed_text(layout.next_action_after_child_report_file)
+        next_action = node_next_action_after_child_report(layout)
         if not next_action:
             raise OrchestratorProgressionError(
                 "Evaluator completed without next-action-after-child-report."
@@ -364,11 +416,8 @@ class NodeProgressionEngine:
             state["steps"][step["index"]]["latest_child_status"] = child_status
             state["steps"][step["index"]]["latest_terminal_outcome"] = child_terminal_outcome
             state["current_step_index"] += 1
-            write_text(
-                layout.progression_state_file,
-                json.dumps(state, indent=2, sort_keys=True) + "\n",
-            )
-            unlink_if_exists(layout.next_action_after_child_report_file)
+            self._clear_next_action(layout)
+            self._write_progression_state(layout, state)
             return True
 
         if next_action == "replan":
@@ -412,8 +461,8 @@ class NodeProgressionEngine:
                     },
                 ),
             )
-            if read_trimmed_text(layout.status_file) == "finished":
-                unlink_if_exists(layout.next_action_after_child_report_file)
+            if node_status(layout) == "finished":
+                self._clear_next_action(layout)
                 return True
             if not layout.escalation_file.exists():
                 raise OrchestratorProgressionError(
@@ -444,7 +493,7 @@ class NodeProgressionEngine:
                     payload={"terminal_outcome": "escalated"},
                 )
             )
-            unlink_if_exists(layout.next_action_after_child_report_file)
+            self._clear_next_action(layout)
             return True
 
         raise OrchestratorProgressionError(
@@ -463,11 +512,20 @@ class NodeProgressionEngine:
         step_title: str,
         step_goal: str,
     ) -> None:
+        parent_record = read_node_record(parent_layout)
+        parent_parameters = dict((parent_record.get("parameters") or {}).get("resolved") or {})
+        parent_sources = dict((parent_record.get("parameters") or {}).get("sources") or {})
         child_layout = create_node(
             child_path,
             task_source_name="parent-instructions",
             task_text=step_goal,
-            agent_mode="worker",
+            next_role="worker",
+            node_id=child_node_id,
+            parent_node_id=parent_node_id,
+            model=parent_parameters.get("model"),
+            variant=parent_parameters.get("variant"),
+            model_source=parent_sources.get("model") or "inherited",
+            variant_source=parent_sources.get("variant") or "inherited",
         )
         child_context = self._build_child_context(
             parent_layout,
@@ -522,8 +580,8 @@ class NodeProgressionEngine:
             sections.append("## Parent State\n" + parent_layout.state_file.read_text(encoding="utf-8").strip())
 
         completed_child_sections: list[str] = []
-        state = self._read_progression_state(parent_layout) if parent_layout.progression_state_file.exists() else None
-        previous_steps = state["steps"][:step_index] if state else []
+        state = self._read_progression_state(parent_layout)
+        previous_steps = state["steps"][:step_index]
         for previous_step in previous_steps:
             child_layout = node_layout(parent_layout.children_dir / previous_step["child_name"])
             if child_layout.final_output_file.exists():
@@ -565,19 +623,16 @@ class NodeProgressionEngine:
                 layout,
                 mission_id=mission_id,
                 node_id=node_id,
-                role=read_trimmed_text(layout.agent_mode_file) or "worker",
+                role=node_next_role(layout) or "worker",
                 status_before="waiting_on_computation",
                 status_after="active",
             )
             return True
 
-        if not layout.progression_state_file.exists():
-            return False
-
         state = self._read_progression_state(layout)
         current_step_index = state["current_step_index"]
         steps = state["steps"]
-        if current_step_index >= len(steps):
+        if current_step_index is None or current_step_index >= len(steps):
             return False
 
         child_path = layout.children_dir / steps[current_step_index]["child_name"]
@@ -585,15 +640,15 @@ class NodeProgressionEngine:
             return False
 
         child_layout = node_layout(child_path)
-        child_status = read_trimmed_text(child_layout.status_file)
+        child_status = node_status(child_layout)
         child_node_id = f"{node_id}.{steps[current_step_index]['child_name']}"
-        if child_status == "waiting_on_computation" and child_layout.computation_result_file.exists():
+        if child_status == "waiting_on_computation" and node_computation_result_note(child_layout):
             self.drive_until_stable(
                 child_path,
                 mission_id=mission_id,
                 node_id=child_node_id,
             )
-            child_status = read_trimmed_text(child_layout.status_file)
+            child_status = node_status(child_layout)
         if child_status in ("finished", "failed"):
             transition_node(
                 layout.root,
@@ -632,10 +687,12 @@ class NodeProgressionEngine:
             "terminal_outcome": child_terminal_outcome,
             "failure_reason": child_failure_reason,
         }
-        write_text(
-            layout.latest_child_node_report_file,
-            json.dumps(report, indent=2, sort_keys=True) + "\n",
-        )
+
+        def updater(record: dict[str, Any]) -> None:
+            progression = record.setdefault("progression", {})
+            progression["latest_child_report"] = report
+
+        update_node_record(layout, updater)
 
     def _emit_parent_next_action(
         self,
@@ -686,7 +743,37 @@ class NodeProgressionEngine:
         AppendOnlyJsonlWriter(layout.events_log_file).append_event(event)
 
     def _read_progression_state(self, layout) -> dict[str, Any]:
-        return json.loads(layout.progression_state_file.read_text(encoding="utf-8"))
+        progression = dict((read_node_record(layout).get("progression") or {}))
+        steps = progression.get("steps")
+        return {
+            "current_step_index": progression.get("current_step_index"),
+            "steps": list(steps) if isinstance(steps, list) else [],
+            "latest_child_report": progression.get("latest_child_report"),
+        }
+
+    def _write_progression_state(self, layout, state: dict[str, Any]) -> None:
+        def updater(record: dict[str, Any]) -> None:
+            record["progression"] = {
+                "current_step_index": state.get("current_step_index"),
+                "steps": list(state.get("steps") or []),
+                "latest_child_report": state.get("latest_child_report"),
+            }
+
+        update_node_record(layout, updater)
+
+    def _set_next_role(self, layout, role: str | None) -> None:
+        def updater(record: dict[str, Any]) -> None:
+            control = record.setdefault("control", {})
+            control["next_role"] = role
+
+        update_node_record(layout, updater)
+
+    def _clear_next_action(self, layout) -> None:
+        def updater(record: dict[str, Any]) -> None:
+            control = record.setdefault("control", {})
+            control["next_action_after_child_report"] = None
+
+        update_node_record(layout, updater)
 
     def _parse_plan_steps(self, plan_text: str) -> list[dict[str, str]]:
         structured_steps = self._parse_structured_plan_steps(plan_text)

@@ -1,3 +1,0 @@
-Wrote the decision memo to [final-decider.md](/Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-001/final-decider.md) and the canonical winner to [winning-chain.md](/Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-001/winning-chain.md).
-
-The selected winner is Chain 01. I kept its pressure-tail obstruction core, and tightened it with two borrowings from the losing chains: Chain 02’s estimate-first definition of what counts as a real gain, and Chain 03’s rule that the nonlocal/exterior contribution is the decisive adversary. No tests were needed beyond verifying the written outputs.

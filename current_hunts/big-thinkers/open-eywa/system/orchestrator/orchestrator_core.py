@@ -3,15 +3,25 @@ from __future__ import annotations
 from dataclasses import dataclass
 import json
 from pathlib import Path
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
-from system.runtime import RuntimeAdapter, RuntimeRequest, RuntimeResult
+if TYPE_CHECKING:
+    from system.runtime.runtime_interface import RuntimeAdapter, RuntimeRequest, RuntimeResult
 
 from .event_schema import EventRecord
 from .event_writer import AppendOnlyJsonlWriter
-from .node_contract import NodeLayout, node_layout, read_trimmed_text, write_text
-from .node_lifecycle import NodeTransitionError, transition_node
+from .node_contract import NodeLayout, node_layout, write_text
+from .node_lifecycle import transition_node
 from .node_preparation import prepare_node_context_packet
+from .node_record import (
+    AssignmentSource,
+    node_next_role,
+    node_status,
+    node_waiting_on_computation_note,
+    read_node_record,
+    snapshot_node_record,
+    update_node_record,
+)
 from .node_validator import validate_node
 from .role_contracts import RoleContract, role_contract_for
 from .summary_schema import RunSummary
@@ -54,12 +64,18 @@ class NodeOrchestratorCore:
         layout = node_layout(node_path)
         self._assert_node_valid_before_run(layout)
 
-        requested_role = role or read_trimmed_text(layout.agent_mode_file)
+        requested_role = role or node_next_role(layout)
         if not requested_role:
-            raise OrchestratorCoreError("A node run requires an explicit role or agent-mode file.")
+            raise OrchestratorCoreError("A node run requires an explicit role or next_role.")
         contract = role_contract_for(requested_role)
+        resolved_model, resolved_model_source = self._resolve_model_assignment(
+            requested_role,
+            explicit_model=model,
+        )
+        resolved_variant = variant
+        resolved_variant_source: AssignmentSource | None = "manual" if variant is not None else None
 
-        status_before = read_trimmed_text(layout.status_file)
+        status_before = node_status(layout)
         if status_before == "pending":
             transition_node(layout.root, next_status="active", expected_current_status="pending")
             self._emit_event(
@@ -78,14 +94,27 @@ class NodeOrchestratorCore:
                 f"Node must be pending or active to run, found {status_before!r}."
             )
 
+        self._persist_resolved_run_state(
+            layout,
+            next_role=requested_role,
+            model=resolved_model,
+            variant=resolved_variant,
+            model_source=resolved_model_source,
+            variant_source=resolved_variant_source,
+        )
+
         run_id = self._next_run_id(layout)
         run_dir = layout.run_dir(run_id)
         run_dir.mkdir(parents=True, exist_ok=True)
+        snapshot_node_record(layout, layout.run_node_record_file(run_id))
+
         prepared_context = prepare_node_context_packet(
             layout,
             run_id=run_id,
             role=requested_role,
         )
+
+        from system.runtime.runtime_interface import RuntimeRequest
 
         request = RuntimeRequest(
             mission_id=mission_id,
@@ -93,8 +122,8 @@ class NodeOrchestratorCore:
             node_path=str(layout.root),
             run_id=run_id,
             role=requested_role,
-            model=model,
-            variant=variant,
+            model=resolved_model,
+            variant=resolved_variant,
             prepared_inputs=(prepared_context.packet_path,),
             metadata=dict(runtime_metadata or {}),
         )
@@ -108,15 +137,25 @@ class NodeOrchestratorCore:
                 node_path=str(layout.root),
                 run_id=run_id,
                 role=requested_role,
-                model=model,
-                variant=variant,
+                model=resolved_model,
+                variant=resolved_variant,
             ),
         )
 
         result = self.runtime.run(request)
+        self._persist_runtime_result_parameters(
+            layout,
+            next_role=requested_role,
+            request=request,
+            result=result,
+            fallback_model_source=resolved_model_source,
+            fallback_variant_source=resolved_variant_source,
+        )
         self._write_json(layout.run_result_file(run_id), self._result_to_dict(result))
         self._write_json(layout.run_summary_file(run_id), result.to_run_summary().to_dict())
         self._write_json(layout.run_usage_file(run_id), result.usage.to_dict())
+
+        self._apply_runtime_detail_updates(layout, result)
 
         self._emit_event(
             layout,
@@ -127,8 +166,8 @@ class NodeOrchestratorCore:
                 node_path=str(layout.root),
                 run_id=run_id,
                 role=requested_role,
-                model=model,
-                variant=variant,
+                model=result.model or resolved_model,
+                variant=result.variant or resolved_variant,
                 payload={"exit_reason": result.exit_reason},
             ),
         )
@@ -181,7 +220,7 @@ class NodeOrchestratorCore:
             result=result,
         )
 
-        self._assert_node_valid_after_run(layout)
+        self._assert_node_valid_after_run(layout, mission_id=mission_id, node_id=node_id)
 
         return NodeRunStepResult(
             mission_id=mission_id,
@@ -195,6 +234,99 @@ class NodeOrchestratorCore:
             artifacts_produced=result.artifacts_produced,
             run_summary=result.to_run_summary(),
         )
+
+    def _persist_resolved_run_state(
+        self,
+        layout: NodeLayout,
+        *,
+        next_role: str,
+        model: str | None,
+        variant: str | None,
+        model_source: AssignmentSource | None = None,
+        variant_source: AssignmentSource | None = None,
+    ) -> None:
+        def updater(record: dict[str, Any]) -> None:
+            control = record.setdefault("control", {})
+            parameters = record.setdefault("parameters", {})
+            resolved = parameters.setdefault("resolved", {})
+            sources = parameters.setdefault("sources", {})
+            control["next_role"] = next_role
+            if model is not None:
+                resolved["model"] = model
+                sources["model"] = model_source
+            if variant is not None:
+                resolved["variant"] = variant
+                sources["variant"] = variant_source
+
+        update_node_record(layout, updater)
+
+    def _resolve_model_assignment(
+        self,
+        role: str,
+        *,
+        explicit_model: str | None,
+    ) -> tuple[str | None, AssignmentSource | None]:
+        if explicit_model is not None:
+            return explicit_model, "manual"
+
+        config = getattr(self.runtime, "config", None)
+        default_models = getattr(config, "default_models", None)
+        if isinstance(default_models, dict):
+            default_model = default_models.get(role)
+            if isinstance(default_model, str) and default_model.strip():
+                return default_model.strip(), "default"
+
+        return None, None
+
+    def _persist_runtime_result_parameters(
+        self,
+        layout: NodeLayout,
+        *,
+        next_role: str,
+        request: RuntimeRequest,
+        result: RuntimeResult,
+        fallback_model_source: AssignmentSource | None,
+        fallback_variant_source: AssignmentSource | None,
+    ) -> None:
+        model = result.model or request.model
+        variant = result.variant or request.variant
+        if model is None and variant is None:
+            return
+
+        self._persist_resolved_run_state(
+            layout,
+            next_role=next_role,
+            model=model,
+            variant=variant,
+            model_source=fallback_model_source if model is not None else None,
+            variant_source=fallback_variant_source if variant is not None else None,
+        )
+
+    def _apply_runtime_detail_updates(self, layout: NodeLayout, result: RuntimeResult) -> None:
+        control_updates = dict(result.details.get("node_control_updates") or {})
+        lifecycle_updates = dict(result.details.get("node_lifecycle_updates") or {})
+        if not control_updates and not lifecycle_updates:
+            return
+
+        def updater(record: dict[str, Any]) -> None:
+            control = record.setdefault("control", {})
+            lifecycle = record.setdefault("lifecycle", {})
+            if "next_action_after_child_report" in control_updates:
+                control["next_action_after_child_report"] = control_updates[
+                    "next_action_after_child_report"
+                ]
+            if "next_role" in control_updates:
+                control["next_role"] = control_updates["next_role"]
+            if "waiting_on_computation_note" in lifecycle_updates:
+                lifecycle["waiting_on_computation_note"] = lifecycle_updates[
+                    "waiting_on_computation_note"
+                ]
+            if "computation_result_note" in lifecycle_updates:
+                lifecycle["computation_result_note"] = lifecycle_updates[
+                    "computation_result_note"
+                ]
+
+        update_node_record(layout, updater)
 
     def _resolve_post_run_state(
         self,
@@ -212,11 +344,12 @@ class NodeOrchestratorCore:
             self._fail_node(layout, mission_id, node_id, role, run_id, failure_reason)
             return "failed", None, failure_reason
 
-        if contract.allowed_waiting and layout.waiting_marker_file.exists():
+        if contract.allowed_waiting and node_waiting_on_computation_note(layout):
             transition_node(
                 layout.root,
                 next_status="waiting_on_computation",
                 expected_current_status="active",
+                waiting_note=node_waiting_on_computation_note(layout),
             )
             self._emit_status_change(
                 layout,
@@ -368,7 +501,13 @@ class NodeOrchestratorCore:
         if not report.is_valid:
             raise OrchestratorCoreError(f"Node is invalid before run: {report.issues!r}")
 
-    def _assert_node_valid_after_run(self, layout: NodeLayout) -> None:
+    def _assert_node_valid_after_run(
+        self,
+        layout: NodeLayout,
+        *,
+        mission_id: str,
+        node_id: str,
+    ) -> None:
         report = validate_node(layout.root)
         if report.is_valid:
             return
@@ -376,8 +515,8 @@ class NodeOrchestratorCore:
             layout,
             EventRecord(
                 event_type="node_validation_failed",
-                mission_id="unknown",
-                node_id=layout.root.name,
+                mission_id=mission_id,
+                node_id=node_id,
                 node_path=str(layout.root),
                 payload={"issues": [issue.code for issue in report.issues]},
             ),

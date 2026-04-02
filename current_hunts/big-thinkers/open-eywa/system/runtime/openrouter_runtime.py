@@ -7,9 +7,10 @@ from pathlib import Path
 from time import perf_counter
 from typing import Any
 
-from system.orchestrator import AppendOnlyJsonlWriter
 from system.orchestrator.event_schema import EventRecord, utc_now_iso
+from system.orchestrator.event_writer import AppendOnlyJsonlWriter
 from system.orchestrator.node_contract import node_layout
+from system.orchestrator.role_contracts import role_contract_for
 from system.orchestrator.usage_schema import UsageRecord
 from system.tools import FileToolExecutor, ToolExecutionError
 
@@ -20,6 +21,8 @@ from .openrouter_client import (
 )
 from .prompt_loader import PromptBundle, PromptLoader, PromptLoaderError
 from .runtime_interface import RuntimeRequest, RuntimeResult
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
 class OpenRouterRuntimeError(RuntimeError):
@@ -44,6 +47,7 @@ class OpenRouterRuntimeConfig:
         *,
         default_models: dict[str, str],
         base_url: str = "https://openrouter.ai/api/v1",
+        dotenv_path: str | Path | None = None,
         referer_url: str | None = None,
         title: str | None = "Open-Eywa",
         max_turns: int = 6,
@@ -53,7 +57,9 @@ class OpenRouterRuntimeConfig:
     ) -> "OpenRouterRuntimeConfig":
         api_key = os.environ.get("OPENROUTER_API_KEY", "").strip()
         if not api_key:
-            raise OpenRouterRuntimeError("OPENROUTER_API_KEY is not set.")
+            api_key = _load_env_file_value("OPENROUTER_API_KEY", dotenv_path=dotenv_path).strip()
+        if not api_key:
+            raise OpenRouterRuntimeError("OPENROUTER_API_KEY is not set in the environment or repo .env file.")
         return cls(
             api_key=api_key,
             default_models=dict(default_models),
@@ -65,6 +71,29 @@ class OpenRouterRuntimeConfig:
             temperature=temperature,
             fetch_generation_stats=fetch_generation_stats,
         )
+
+
+def _load_env_file_value(
+    name: str,
+    *,
+    dotenv_path: str | Path | None = None,
+) -> str:
+    path = Path(dotenv_path).expanduser().resolve() if dotenv_path else PROJECT_ROOT / ".env"
+    if not path.exists():
+        return ""
+
+    for raw_line in path.read_text(encoding="utf-8").splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        if key.strip() != name:
+            continue
+        cleaned = value.strip()
+        if len(cleaned) >= 2 and cleaned[0] == cleaned[-1] and cleaned[0] in {'"', "'"}:
+            return cleaned[1:-1]
+        return cleaned
+    return ""
 
 
 class OpenRouterRuntime:
@@ -193,6 +222,15 @@ class OpenRouterRuntime:
 
             finish_reason = choice.get("finish_reason")
             exit_reason = self._map_finish_reason_to_exit_reason(finish_reason)
+            node_updates = self._extract_node_updates(assistant_content)
+            materialized_artifact = self._maybe_materialize_required_artifact(
+                request,
+                role=request.role,
+                assistant_content=assistant_content,
+                model=model,
+            )
+            if materialized_artifact is not None:
+                artifacts_produced.append(materialized_artifact)
             return RuntimeResult(
                 mission_id=request.mission_id,
                 node_id=request.node_id,
@@ -214,6 +252,12 @@ class OpenRouterRuntime:
                     "prompt_bundle_paths": list(prompt_bundle.source_paths),
                     "prepared_inputs": list(request.prepared_inputs),
                     "finish_reason": finish_reason,
+                    **(
+                        {"assistant_content_materialized_to": materialized_artifact}
+                        if materialized_artifact is not None
+                        else {}
+                    ),
+                    **node_updates,
                 },
             )
 
@@ -277,12 +321,18 @@ class OpenRouterRuntime:
         prompt_bundle: PromptBundle,
     ) -> str:
         packet_text = json.dumps(prepared_packets, indent=2, sort_keys=True)
+        contract = role_contract_for(request.role)
+        required_artifacts = ", ".join(contract.required_artifacts) or "none"
         return (
             f"You are running one Open-Eywa node.\n\n"
             f"Role: {request.role}\n"
             f"Node root: {request.node_path}\n"
             f"Run id: {request.run_id}\n"
             f"Prompt bundle files: {', '.join(prompt_bundle.source_paths)}\n\n"
+            f"Role contract required artifacts: {required_artifacts}\n"
+            f"These exact artifact paths are enforced by code.\n"
+            f"If the task or any context mentions a different output filename, still write the required artifact path for your role.\n"
+            f"You may write additional files only if they help, but they do not replace the required artifacts.\n\n"
             f"Your job is to use the available file tools to read what you need and write the required artifacts for your role.\n"
             f"If the task is impossible under the node's assumptions, write output/escalation.md.\n"
             f"Do not write outside the node boundary.\n\n"
@@ -325,6 +375,32 @@ class OpenRouterRuntime:
                 "response_cost_usd": float(usage_data.get("cost", 0.0) or 0.0),
             },
         )
+
+    def _extract_node_updates(self, assistant_content: str | None) -> dict[str, Any]:
+        if not assistant_content:
+            return {}
+
+        control_updates: dict[str, Any] = {}
+        lifecycle_updates: dict[str, Any] = {}
+        for raw_line in assistant_content.splitlines():
+            line = raw_line.strip()
+            if not line:
+                continue
+            if line.startswith("NEXT_ACTION_AFTER_CHILD_REPORT:"):
+                control_updates["next_action_after_child_report"] = (
+                    line.split(":", 1)[1].strip().lower()
+                )
+            if line.startswith("WAITING_ON_COMPUTATION:"):
+                lifecycle_updates["waiting_on_computation_note"] = (
+                    line.split(":", 1)[1].strip()
+                )
+
+        details: dict[str, Any] = {}
+        if control_updates:
+            details["node_control_updates"] = control_updates
+        if lifecycle_updates:
+            details["node_lifecycle_updates"] = lifecycle_updates
+        return details
 
     def _usage_from_generation_stats(self, response_id: str) -> UsageRecord:
         try:
@@ -441,7 +517,60 @@ class OpenRouterRuntime:
             "artifact_paths": list(result.artifact_paths),
         }
 
+    def _maybe_materialize_required_artifact(
+        self,
+        request: RuntimeRequest,
+        *,
+        role: str,
+        assistant_content: str | None,
+        model: str,
+    ) -> str | None:
+        text = (assistant_content or "").strip()
+        if not text:
+            return None
+
+        contract = role_contract_for(role)
+        if len(contract.required_artifacts) != 1:
+            return None
+
+        relative_path = contract.required_artifacts[0]
+        artifact_path = request.node_root / relative_path
+        if artifact_path.exists():
+            return None
+
+        artifact_path.parent.mkdir(parents=True, exist_ok=True)
+        artifact_path.write_text(text + "\n", encoding="utf-8")
+        self._emit_event(
+            request,
+            event_type="artifact_written",
+            model=model,
+            payload={"artifact_path": relative_path},
+        )
+        return relative_path
+
     def _emit_tool_event(
+        self,
+        request: RuntimeRequest,
+        *,
+        event_type: str,
+        model: str,
+        payload: dict[str, Any],
+    ) -> None:
+        AppendOnlyJsonlWriter(node_layout(request.node_root).events_log_file).append_event(
+            EventRecord(
+                event_type=event_type,  # type: ignore[arg-type]
+                mission_id=request.mission_id,
+                node_id=request.node_id,
+                node_path=request.node_path,
+                run_id=request.run_id,
+                role=request.role,
+                model=model,
+                variant=request.variant,
+                payload=payload,
+            )
+        )
+
+    def _emit_event(
         self,
         request: RuntimeRequest,
         *,

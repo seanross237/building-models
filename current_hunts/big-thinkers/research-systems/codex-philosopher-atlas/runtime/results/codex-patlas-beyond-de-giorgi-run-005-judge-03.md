@@ -1,0 +1,5 @@
+Wrote the judgment to [chain-03.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-005/judgments/chain-03.md) and the refined chain to [chain-03.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-005/refined/chain-03.md).
+
+The judgment rules the attack mostly correct overall: Step 1 is partially valid, Step 2 through Step 5 are valid, structural critiques 1 and 5 are partially valid, and structural critiques 2 through 4 are valid. The refined chain moves novelty screening to the front, replaces the loose “find an observable” framing with a tighter tensor-package admission rule, requires cross-representation robustness, demotes Tao-sensitivity to a secondary check, and forces the first missing lemma to be named as soon as full stretching control is attempted. I set the presentable-result probability at `0.68`, with obstruction memo as the most likely outcome.
+
+Both files were verified after writing.

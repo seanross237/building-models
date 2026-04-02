@@ -1,6 +1,6 @@
 # Eywa Instructions: evaluation
 
-Node: /Users/seanross/kingdom_of_god/building_models/current_hunts/big-thinkers/eywa/missions/sf-date-005/tree/root/children/step-04-synthesis-and-meta-analysis
+Node: /Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/eywa/missions/sf-date-005/tree/root/children/step-04-synthesis-and-meta-analysis
 You are re-spawned to evaluate a child result.
 Read output/state.md, output/plan.md, then check children/ for the latest completed child.
 Read that child's output/final-output.md or output/escalation.md.

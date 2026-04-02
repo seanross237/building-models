@@ -19,7 +19,7 @@ from system.orchestrator import (
     create_mission,
     create_node,
 )
-from system.orchestrator.node_contract import read_trimmed_text
+from system.orchestrator.node_record import read_node_record
 from system.runtime import SimulatedRuntime, load_scenario
 
 FIXTURES_DIR = PROJECT_ROOT / "validation-suite" / "scenario-tests" / "fixtures"
@@ -57,7 +57,7 @@ class FastAdversarialSturdinessTests(unittest.TestCase):
             self.assertEqual(result.status_after, "failed")
             self.assertEqual(result.failure_reason, "runtime_failed")
             self.assertEqual(
-                read_trimmed_text(node_path / "for-orchestrator" / "failure-reason"),
+                read_node_record(node_path)["lifecycle"]["failure_reason"],
                 "runtime_failed",
             )
             self.assertIn("run_failed", _event_types(node_path / "system" / "events.jsonl"))
@@ -89,7 +89,7 @@ class FastAdversarialSturdinessTests(unittest.TestCase):
             self.assertEqual(result.status_after, "failed")
             self.assertEqual(result.failure_reason, "invalid_decision_value")
             self.assertEqual(
-                read_trimmed_text(node_path / "for-orchestrator" / "failure-reason"),
+                read_node_record(node_path)["lifecycle"]["failure_reason"],
                 "invalid_decision_value",
             )
             self.assertIn("node_failed", _event_types(node_path / "system" / "events.jsonl"))

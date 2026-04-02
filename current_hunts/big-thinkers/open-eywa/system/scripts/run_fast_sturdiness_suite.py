@@ -2,20 +2,13 @@ from __future__ import annotations
 
 import py_compile
 from pathlib import Path
+import subprocess
 import sys
-import unittest
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 CONTRACT_TESTS_DIR = PROJECT_ROOT / "validation-suite" / "contract-tests"
 ADVERSARIAL_TESTS_DIR = PROJECT_ROOT / "validation-suite" / "adversarial-tests"
 SYSTEM_DIR = PROJECT_ROOT / "system"
-
-
-def discover_suite(start_dir: Path) -> unittest.TestSuite:
-    return unittest.defaultTestLoader.discover(
-        start_dir=str(start_dir),
-        pattern="test_*.py",
-    )
 
 
 def compile_system_modules() -> list[str]:
@@ -28,16 +21,26 @@ def compile_system_modules() -> list[str]:
     return failures
 
 
-def main() -> int:
-    suite = unittest.TestSuite(
-        [
-            discover_suite(CONTRACT_TESTS_DIR),
-            discover_suite(ADVERSARIAL_TESTS_DIR),
-        ]
-    )
+def run_suite(start_dir: Path) -> int:
+    command = [
+        sys.executable,
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        str(start_dir),
+        "-p",
+        "test_*.py",
+    ]
+    completed = subprocess.run(command, cwd=str(PROJECT_ROOT))
+    return completed.returncode
 
-    print("Running fast sturdiness suite...")
-    result = unittest.TextTestRunner(verbosity=2).run(suite)
+
+def main() -> int:
+    print("Running contract tests...")
+    contract_exit = run_suite(CONTRACT_TESTS_DIR)
+    print("\nRunning adversarial tests...")
+    adversarial_exit = run_suite(ADVERSARIAL_TESTS_DIR)
 
     print("\nCompiling system modules...")
     compile_failures = compile_system_modules()
@@ -47,7 +50,7 @@ def main() -> int:
     else:
         print("compile check passed")
 
-    if result.wasSuccessful() and not compile_failures:
+    if contract_exit == 0 and adversarial_exit == 0 and not compile_failures:
         print("\nfast sturdiness suite passed")
         return 0
 

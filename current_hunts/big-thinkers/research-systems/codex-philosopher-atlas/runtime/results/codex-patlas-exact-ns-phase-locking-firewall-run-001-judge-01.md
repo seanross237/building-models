@@ -1,0 +1,5 @@
+Wrote the required judgment and refined chain to [chain-01.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/exact-ns-phase-locking-firewall/planning-runs/run-001/judgments/chain-01.md) and [chain-01.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/exact-ns-phase-locking-firewall/planning-runs/run-001/refined/chain-01.md).
+
+The judgment labels each major critique, preserves the chain’s existential upside, and narrows the valid attacker points into a stricter program. The refined chain now forces explicit search-class ordering, recursive exact closure, quantitative delayed-transfer metrics, early spectator/viscosity discipline, and bounded negative claims. The probability assessment in the judgment is `0.62`.
+
+Verified by reading both files back from disk.
