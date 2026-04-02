@@ -15,15 +15,17 @@ successes=0
 run_step() {
   local step_name="$1"
   shift
+  local step_log="$LOG_DIR/${STAMP}-${step_name}.log"
 
   echo "[research-radar] step:start $step_name"
-  if "$@"; then
+  if "$@" > "$step_log" 2>&1; then
     successes=$((successes + 1))
-    echo "[research-radar] step:ok $step_name"
+    echo "[research-radar] step:ok $step_name log=$(basename "$step_log")"
   else
     local exit_code=$?
     failures=$((failures + 1))
-    echo "[research-radar] step:failed $step_name exit=$exit_code"
+    echo "[research-radar] step:failed $step_name exit=$exit_code log=$(basename "$step_log")"
+    tail -n 20 "$step_log" || true
   fi
 }
 
