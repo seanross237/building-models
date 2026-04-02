@@ -5,20 +5,23 @@ import argparse
 import html
 import re
 import sys
+import time
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from urllib.error import HTTPError, URLError
 
 ROOT = Path("/Users/seanross/kingdom_of_god/home-base/research-radar")
 TOPICS_FILE = ROOT / "config/topics-we-care-about.yaml"
 THRESHOLDS_FILE = ROOT / "config/thresholds.yaml"
-ARXIV_API = "https://export.arxiv.org/api/query"
+ARXIV_API = "http://export.arxiv.org/api/query"
 ATOM_NS = {
     "atom": "http://www.w3.org/2005/Atom",
     "arxiv": "http://arxiv.org/schemas/atom",
 }
+ARXIV_DATETIME_FORMAT = "%Y-%m-%dT%H:%M:%SZ"
 
 
 def load_topics() -> list[dict[str, object]]:
@@ -31,7 +34,12 @@ def load_topics() -> list[dict[str, object]]:
         if line.startswith("  - slug: "):
             if current:
                 topics.append(current)
-            current = {"slug": line.split(": ", 1)[1], "collect_from": [], "source_context": []}
+            current = {
+                "slug": line.split(": ", 1)[1],
+                "collect_from": [],
+                "source_context": [],
+                "paper_queries": [],
+            }
             current_list = None
         elif current and line.startswith("    name: "):
             current["name"] = line.split(": ", 1)[1]
@@ -43,6 +51,8 @@ def load_topics() -> list[dict[str, object]]:
             current_list = "collect_from"
         elif current and line.startswith("    source_context:"):
             current_list = "source_context"
+        elif current and line.startswith("    paper_queries:"):
+            current_list = "paper_queries"
         elif current and line.startswith("      - ") and current_list:
             current.setdefault(current_list, []).append(line.split("- ", 1)[1].strip())
 
@@ -79,9 +89,98 @@ def read_seen_ids(path: Path) -> set[str]:
     return {line.strip() for line in path.read_text(encoding="utf-8").splitlines() if line.strip()}
 
 
-def build_query_url(topic_name: str, max_results: int) -> str:
+def collapse_whitespace(value: str) -> str:
+    return " ".join(value.split())
+
+
+def normalize_phrase(value: str) -> str:
+    return collapse_whitespace(re.sub(r"[/,+()]+", " ", value))
+
+
+def topic_query_phrases(topic: dict[str, object]) -> list[str]:
+    queries: list[str] = []
+    seen: set[str] = set()
+
+    def add(query: str) -> None:
+        clean = collapse_whitespace(query)
+        if not clean:
+            return
+        key = clean.lower()
+        if key in seen:
+            return
+        seen.add(key)
+        queries.append(clean)
+
+    topic_name = str(topic.get("name", ""))
+    source_context = [str(value).strip() for value in topic.get("source_context", []) if str(value).strip()]
+    explicit_queries = [str(value).strip() for value in topic.get("paper_queries", []) if str(value).strip()]
+
+    add(topic_name)
+    normalized_name = normalize_phrase(topic_name)
+    if normalized_name.lower() != topic_name.lower():
+        add(normalized_name)
+    for query in explicit_queries:
+        add(query)
+
+    lowered = f"{topic_name} {' '.join(source_context)}".lower()
+    keyword_expansions = [
+        (["self-evolving", "self-improving", "recursive improvement", "meta-optimization"], [
+            "self-improving agents",
+            "recursive self-improvement",
+            "agent optimization",
+        ]),
+        (["eval", "experimentation", "regression", "a/b testing", "ab testing"], [
+            "agent evaluation",
+            "LLM evaluation",
+            "automated experimentation",
+        ]),
+        (["orchestration", "planner", "worker", "multi-agent", "parallel agent"], [
+            "multi-agent systems",
+            "agent orchestration",
+        ]),
+        (["science", "research", "hypotheses", "literature", "validation"], [
+            "AI for science",
+            "research agents",
+            "autonomous scientific discovery",
+        ]),
+        (["math", "theorem", "proof"], [
+            "AI theorem proving",
+            "machine learning for theorem proving",
+        ]),
+        (["physics"], [
+            "AI for physics",
+            "physics reasoning language models",
+        ]),
+        (["retrieval"], ["retrieval-augmented agents"]),
+        (["observability", "logging", "tracing"], ["agent observability"]),
+        (["safe tool"], ["tool-using agents"]),
+        (["cost-aware", "token-aware"], ["efficient agent systems"]),
+    ]
+
+    for keywords, expansions in keyword_expansions:
+        if any(keyword in lowered for keyword in keywords):
+            for expansion in expansions:
+                add(expansion)
+
+    if "atlas" in source_context:
+        for expansion in ["AI for science", "autonomous scientific discovery", "research agents"]:
+            add(expansion)
+    if "eywa" in source_context:
+        for expansion in ["agent systems", "LLM agents"]:
+            add(expansion)
+
+    return queries[:6]
+
+
+def build_search_expression(queries: list[str]) -> str:
+    if not queries:
+        raise ValueError("At least one search query is required")
+    return " OR ".join(f'all:"{query}"' for query in queries)
+
+
+def build_query_url(search_expression: str, max_results: int) -> str:
     params = {
-        "search_query": f'all:"{topic_name}"',
+        "search_query": search_expression,
         "start": "0",
         "max_results": str(max_results),
         "sortBy": "submittedDate",
@@ -92,16 +191,51 @@ def build_query_url(topic_name: str, max_results: int) -> str:
 
 def request_feed(url: str) -> bytes:
     request = urllib.request.Request(url, headers={"User-Agent": "research-radar/0.1"})
-    with urllib.request.urlopen(request, timeout=30) as response:
-        return response.read()
+    last_error: Exception | None = None
 
+    for attempt in range(2):
+        buffer = bytearray()
+        try:
+            with urllib.request.urlopen(request, timeout=15) as response:
+                while True:
+                    chunk = response.read(8192)
+                    if not chunk:
+                        break
+                    buffer.extend(chunk)
+                    if b"</feed>" in buffer:
+                        break
 
-def collapse_whitespace(value: str) -> str:
-    return " ".join(value.split())
+            payload = bytes(buffer)
+            if b"</feed>" not in payload:
+                raise RuntimeError("arXiv feed did not finish cleanly")
+            return payload.split(b"</feed>", 1)[0] + b"</feed>"
+        except HTTPError as exc:
+            last_error = exc
+            if exc.code == 429 and attempt == 0:
+                time.sleep(5)
+                continue
+            raise RuntimeError(f"arXiv HTTP error {exc.code}") from exc
+        except (URLError, TimeoutError, RuntimeError) as exc:
+            last_error = exc
+            if attempt == 0:
+                time.sleep(3)
+                continue
+            raise RuntimeError(f"arXiv request failed: {exc}") from exc
+
+    raise RuntimeError(f"arXiv request failed: {last_error}")
 
 
 def safe_item_id(raw_identifier: str) -> str:
     return re.sub(r"[^A-Za-z0-9._-]+", "-", raw_identifier.replace("/", "--")).strip("-")
+
+
+def parse_arxiv_datetime(value: str) -> datetime | None:
+    if not value:
+        return None
+    try:
+        return datetime.strptime(value, ARXIV_DATETIME_FORMAT).replace(tzinfo=timezone.utc)
+    except ValueError:
+        return None
 
 
 def parse_entry(entry: ET.Element) -> dict[str, object]:
@@ -150,6 +284,8 @@ def parse_entry(entry: ET.Element) -> dict[str, object]:
         "summary": summary,
         "published": published,
         "updated": updated,
+        "published_at": parse_arxiv_datetime(published),
+        "updated_at": parse_arxiv_datetime(updated),
         "authors": [author for author in authors if author],
         "url": primary_url,
         "pdf_url": pdf_url,
@@ -161,8 +297,9 @@ def parse_entry(entry: ET.Element) -> dict[str, object]:
     }
 
 
-def fetch_entries(topic_name: str, max_results: int) -> list[dict[str, object]]:
-    payload = request_feed(build_query_url(topic_name, max_results=max_results))
+def fetch_entries(queries: list[str], max_results: int) -> list[dict[str, object]]:
+    search_expression = build_search_expression(queries)
+    payload = request_feed(build_query_url(search_expression, max_results=max_results))
     root = ET.fromstring(payload)
     entries = []
     for entry in root.findall("atom:entry", ATOM_NS):
@@ -170,6 +307,19 @@ def fetch_entries(topic_name: str, max_results: int) -> list[dict[str, object]]:
         if parsed["id"] and parsed["url"]:
             entries.append(parsed)
     return entries
+
+
+def filter_recent(entries: list[dict[str, object]], lookback_hours: int) -> list[dict[str, object]]:
+    if lookback_hours <= 0:
+        return entries
+
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=lookback_hours)
+    recent_entries = []
+    for entry in entries:
+        published_at = entry.get("published_at")
+        if isinstance(published_at, datetime) and published_at >= cutoff:
+            recent_entries.append(entry)
+    return recent_entries
 
 
 def ensure_overview_header(overview_path: Path, topic_name: str) -> None:
@@ -192,10 +342,11 @@ def metadata_line(label: str, value: str) -> str:
     return f"- {label}: {value}\n"
 
 
-def item_body(topic: dict[str, object], paper: dict[str, object]) -> str:
+def item_body(topic: dict[str, object], paper: dict[str, object], queries: list[str]) -> str:
     topic_name = str(topic["name"])
     priority = str(topic["priority"])
     source_context = ", ".join(topic.get("source_context", [])) or "unknown"
+    search_queries = " | ".join(queries)
     authors = ", ".join(paper["authors"]) if paper["authors"] else "Unknown"
     categories = ", ".join(paper["categories"]) if paper["categories"] else "unknown"
     collected_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -218,7 +369,7 @@ def item_body(topic: dict[str, object], paper: dict[str, object]) -> str:
         metadata_line("Comment", str(paper["comment"])),
         f"- URL: {paper['url']}\n",
         metadata_line("PDF", str(paper["pdf_url"])),
-        f"- Collected by query: `{topic_name}`\n",
+        f"- Search queries: {search_queries}\n",
         f"- Collected at UTC: `{collected_at}`\n",
         "- Full text status: `abstract-only`\n",
         "- Analysis status: `pending`\n\n",
@@ -254,29 +405,33 @@ def append_overview(overview_path: Path, papers: list[dict[str, object]]) -> Non
         handle.write("\n".join(section) + "\n")
 
 
-def run_topic(topic: dict[str, object], max_results: int, dry_run: bool) -> int:
+def run_topic(topic: dict[str, object], max_results: int, lookback_hours: int, dry_run: bool) -> int:
     slug = str(topic["slug"])
     name = str(topic["name"])
     paths = topic_paths(slug)
     paths["items"].mkdir(parents=True, exist_ok=True)
     ensure_overview_header(paths["overview"], name)
     seen = read_seen_ids(paths["seen"])
+    queries = topic_query_phrases(topic)
+    effective_max_results = max(max_results, min(15, max(5, len(queries) * 3)))
 
     if dry_run:
         print(f"[collect-papers] dry-run topic: {slug} :: {name}")
+        print(f"[collect-papers] queries: {' | '.join(queries)}")
         return 0
 
-    papers = fetch_entries(name, max_results=max_results)
+    papers = fetch_entries(queries, max_results=effective_max_results)
+    recent_papers = filter_recent(papers, lookback_hours=lookback_hours)
     new_papers: list[dict[str, object]] = []
     seen_this_run: set[str] = set()
 
-    for paper in papers:
+    for paper in recent_papers:
         paper_id = str(paper["id"])
         if paper_id in seen or paper_id in seen_this_run:
             continue
         seen_this_run.add(paper_id)
         item_path = paths["items"] / f"{paper['item_id']}.md"
-        item_path.write_text(item_body(topic, paper), encoding="utf-8")
+        item_path.write_text(item_body(topic, paper, queries), encoding="utf-8")
         new_papers.append(paper)
 
     if new_papers:
@@ -285,7 +440,9 @@ def run_topic(topic: dict[str, object], max_results: int, dry_run: bool) -> int:
                 handle.write(str(paper["id"]) + "\n")
         append_overview(paths["overview"], new_papers)
 
-    print(f"[collect-papers] topic={slug} new_papers={len(new_papers)}")
+    print(
+        f"[collect-papers] topic={slug} queries={len(queries)} candidates={len(papers)} recent_papers={len(recent_papers)} new_papers={len(new_papers)}"
+    )
     return len(new_papers)
 
 
@@ -293,6 +450,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Collect topic-driven paper metadata for Research Radar.")
     parser.add_argument("--topic", dest="topic_slugs", action="append", default=[], help="Limit collection to one or more topic slugs.")
     parser.add_argument("--max-results", type=int, default=None, help="Override max results per topic.")
+    parser.add_argument("--lookback-hours", type=int, default=24, help="Only keep papers published within the last N hours. Use 0 to disable.")
     parser.add_argument("--dry-run", action="store_true", help="Validate topic parsing without network access.")
     args = parser.parse_args()
 
@@ -310,7 +468,7 @@ def main() -> int:
     failures = 0
     for topic in topics:
         try:
-            total += run_topic(topic, max_results=max_results, dry_run=args.dry_run)
+            total += run_topic(topic, max_results=max_results, lookback_hours=args.lookback_hours, dry_run=args.dry_run)
         except Exception as exc:  # pragma: no cover
             failures += 1
             print(f"[collect-papers] topic={topic['slug']} failed: {exc}", file=sys.stderr)

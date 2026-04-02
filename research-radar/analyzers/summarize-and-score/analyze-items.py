@@ -1,0 +1,361 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import argparse
+import json
+import subprocess
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+
+ROOT = Path("/Users/seanross/kingdom_of_god/home-base/research-radar")
+THRESHOLDS_FILE = ROOT / "config/thresholds.yaml"
+LENS_FILE = ROOT / "config/what-we-care-about-right-now.md"
+PROMPT_FILE = ROOT / "analyzers/summarize-and-score/prompt.md"
+SCHEMA_FILE = ROOT / "analyzers/summarize-and-score/schema.json"
+QUEUE_DIR = ROOT / "data/queues/presentation-candidates"
+SYSTEM_PROMPT = "\n".join([
+    "You are running an automated scheduled task.",
+    "Work autonomously and output only the requested JSON object.",
+    "Do not wrap the JSON in markdown fences.",
+])
+REQUIRED_KEYS = {
+    "item_id",
+    "topic_slug",
+    "item_type",
+    "title",
+    "source_url",
+    "summary",
+    "relevance_score",
+    "why_it_matters_now",
+    "presentation_candidate",
+}
+
+
+def load_threshold(default: int = 9) -> int:
+    for raw_line in THRESHOLDS_FILE.read_text(encoding="utf-8").splitlines():
+        if raw_line.startswith("relevance_for_presentation:"):
+            _, value = raw_line.split(":", 1)
+            try:
+                return int(value.strip())
+            except ValueError:
+                return default
+    return default
+
+
+def summary_path_for(item_path: Path) -> Path:
+    topic_slug = item_path.parents[2].name
+    item_type = item_path.parents[1].name
+    item_id = item_path.stem
+    return ROOT / "data/topics" / topic_slug / "summaries/items" / f"{item_type}--{item_id}.md"
+
+
+def summary_overview_path(topic_slug: str) -> Path:
+    return ROOT / "data/topics" / topic_slug / "summaries/overview.md"
+
+
+def queue_manifest_path(analysis: dict[str, object]) -> Path:
+    return QUEUE_DIR / f"{analysis['topic_slug']}--{analysis['item_type']}--{analysis['item_id']}.json"
+
+
+def write_queue_manifest(item: dict[str, object], summary_path: Path, analysis: dict[str, object]) -> None:
+    QUEUE_DIR.mkdir(parents=True, exist_ok=True)
+    manifest_path = queue_manifest_path(analysis)
+    payload = {
+        "topic_slug": analysis["topic_slug"],
+        "item_type": analysis["item_type"],
+        "item_id": analysis["item_id"],
+        "title": analysis["title"],
+        "relevance_score": analysis["relevance_score"],
+        "source_url": analysis["source_url"],
+        "summary_path": str(summary_path.relative_to(ROOT)),
+        "source_item_path": str(Path(item["item_path"]).relative_to(ROOT)),
+        "queued_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+    }
+    manifest_path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def clear_queue_manifest(analysis: dict[str, object]) -> None:
+    manifest_path = queue_manifest_path(analysis)
+    if manifest_path.exists():
+        manifest_path.unlink()
+
+
+def ensure_summary_overview(path: Path, topic_slug: str) -> None:
+    if path.exists():
+        return
+    path.write_text(
+        (
+            f"# {topic_slug} — Summaries Overview\n\n"
+            "Keep this file short. Roll up the most relevant analyzed items here and use `items/` for the full details.\n"
+        ),
+        encoding="utf-8",
+    )
+
+
+def iter_item_paths(topic_filters: set[str] | None) -> list[Path]:
+    paths: list[Path] = []
+    topics_root = ROOT / "data/topics"
+    for topic_dir in sorted(path for path in topics_root.iterdir() if path.is_dir()):
+        if topic_filters and topic_dir.name not in topic_filters:
+            continue
+        for item_type in ("youtube", "papers"):
+            items_dir = topic_dir / item_type / "items"
+            if not items_dir.exists():
+                continue
+            for item_path in sorted(items_dir.glob("*.md")):
+                if item_path.name == ".gitkeep":
+                    continue
+                paths.append(item_path)
+    return paths
+
+
+def parse_title(text: str) -> str:
+    first_line = text.splitlines()[0].strip() if text.splitlines() else "Untitled"
+    return first_line.removeprefix("# ").strip() or "Untitled"
+
+
+def parse_metadata(text: str) -> dict[str, str]:
+    metadata: dict[str, str] = {}
+    for line in text.splitlines():
+        stripped = line.strip()
+        if not stripped.startswith("- ") or ":" not in stripped:
+            continue
+        label, value = stripped[2:].split(":", 1)
+        metadata[label.strip().lower()] = value.strip()
+    return metadata
+
+
+def strip_ticks(value: str) -> str:
+    return value.strip().strip("`")
+
+
+def load_item(item_path: Path) -> dict[str, object]:
+    text = item_path.read_text(encoding="utf-8")
+    metadata = parse_metadata(text)
+    topic_slug = item_path.parents[2].name
+    item_type = item_path.parents[1].name
+    return {
+        "item_path": item_path,
+        "topic_slug": topic_slug,
+        "item_type": "paper" if item_type == "papers" else "youtube",
+        "item_id": item_path.stem,
+        "title": parse_title(text),
+        "source_url": metadata.get("url", "").strip(),
+        "priority": strip_ticks(metadata.get("priority", "unknown")),
+        "source_context": strip_ticks(metadata.get("source context", "unknown")),
+        "text": text,
+    }
+
+
+def build_prompt(item: dict[str, object], lens: str, prompt_template: str, schema_text: str) -> str:
+    return "\n\n".join(
+        [
+            "Analyze this Research Radar item and return only one JSON object.",
+            "Required schema:",
+            schema_text,
+            "Scoring lens:",
+            lens,
+            "Prompt guidance:",
+            prompt_template,
+            "Item metadata:",
+            json.dumps(
+                {
+                    "item_id": item["item_id"],
+                    "topic_slug": item["topic_slug"],
+                    "item_type": item["item_type"],
+                    "title": item["title"],
+                    "source_url": item["source_url"],
+                    "priority": item["priority"],
+                    "source_context": item["source_context"],
+                },
+                indent=2,
+            ),
+            "Item markdown:",
+            str(item["text"]),
+        ]
+    )
+
+
+def extract_json_block(raw: str) -> dict[str, object]:
+    candidate = raw.strip()
+    if candidate.startswith("```"):
+        lines = candidate.splitlines()
+        if len(lines) >= 3:
+            candidate = "\n".join(lines[1:-1]).strip()
+    start = candidate.find("{")
+    end = candidate.rfind("}")
+    if start == -1 or end == -1 or end <= start:
+        raise ValueError("Claude output did not include a JSON object")
+    return json.loads(candidate[start : end + 1])
+
+
+def validate_analysis(data: dict[str, object], item: dict[str, object], threshold: int) -> dict[str, object]:
+    missing = REQUIRED_KEYS - set(data)
+    if missing:
+        raise ValueError(f"Missing required analysis keys: {sorted(missing)}")
+
+    relevance_score = int(data["relevance_score"])
+    if relevance_score < 1 or relevance_score > 10:
+        raise ValueError("relevance_score must be between 1 and 10")
+
+    data["item_id"] = str(item["item_id"])
+    data["topic_slug"] = str(item["topic_slug"])
+    data["item_type"] = str(item["item_type"])
+    data["title"] = str(item["title"])
+    data["source_url"] = str(item["source_url"])
+    data["relevance_score"] = relevance_score
+    data["summary"] = str(data["summary"]).strip()
+    data["why_it_matters_now"] = str(data["why_it_matters_now"]).strip()
+    data["key_takeaways"] = [str(entry).strip() for entry in data.get("key_takeaways", []) if str(entry).strip()]
+    data["model_presentation_candidate"] = bool(data.get("presentation_candidate"))
+    data["presentation_candidate"] = relevance_score >= threshold
+    data["presentation_threshold"] = threshold
+    return data
+
+
+def run_claude(prompt: str, model: str, max_turns: int, cwd: Path) -> dict[str, object]:
+    command = [
+        "claude",
+        "-p",
+        prompt,
+        "--output-format",
+        "json",
+        "--model",
+        model,
+        "--dangerously-skip-permissions",
+        "--append-system-prompt",
+        SYSTEM_PROMPT,
+        "--max-turns",
+        str(max_turns),
+    ]
+    result = subprocess.run(command, cwd=cwd, capture_output=True, text=True, check=False)
+    if result.returncode != 0 and not result.stdout.strip():
+        raise RuntimeError(result.stderr.strip() or f"claude exited with code {result.returncode}")
+
+    stdout = result.stdout.strip() or result.stderr.strip()
+    try:
+        outer = json.loads(stdout)
+        raw_result = str(outer.get("result", "")).strip()
+    except json.JSONDecodeError:
+        raw_result = stdout
+    if not raw_result:
+        raise RuntimeError("claude produced no analysis payload")
+    return extract_json_block(raw_result)
+
+
+def summary_markdown(item: dict[str, object], analysis: dict[str, object]) -> str:
+    generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    lines = [
+        f"# {analysis['title']}\n\n",
+        f"- Topic slug: `{analysis['topic_slug']}`\n",
+        f"- Item type: `{analysis['item_type']}`\n",
+        f"- Source item: `{item['item_path'].relative_to(ROOT)}`\n",
+        f"- Source URL: {analysis['source_url']}\n",
+        f"- Relevance score: `{analysis['relevance_score']}`\n",
+        f"- Presentation candidate: `{str(analysis['presentation_candidate']).lower()}`\n",
+        f"- Model presentation candidate: `{str(analysis['model_presentation_candidate']).lower()}`\n",
+        f"- Generated at UTC: `{generated_at}`\n\n",
+        "## Summary\n\n",
+        f"{analysis['summary']}\n\n",
+        "## Why It Matters Now\n\n",
+        f"{analysis['why_it_matters_now']}\n\n",
+        "## Key Takeaways\n\n",
+    ]
+    for takeaway in analysis.get("key_takeaways", []):
+        lines.append(f"- {takeaway}\n")
+    if not analysis.get("key_takeaways"):
+        lines.append("- No key takeaways provided.\n")
+    lines.extend([
+        "\n## Structured Output\n\n",
+        "```json\n",
+        json.dumps(analysis, indent=2, sort_keys=True),
+        "\n```\n",
+    ])
+    return "".join(lines)
+
+
+def append_overview(overview_path: Path, summary_path: Path, analysis: dict[str, object]) -> None:
+    stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    section = [
+        "",
+        f"## {stamp} — {analysis['item_type']} score {analysis['relevance_score']}",
+        "",
+        f"- **{analysis['title']}**",
+        f"  source: {analysis['source_url']}",
+        f"  summary file: `items/{summary_path.name}`",
+        f"  presentation candidate: `{str(analysis['presentation_candidate']).lower()}`",
+    ]
+    with overview_path.open("a", encoding="utf-8") as handle:
+        handle.write("\n".join(section) + "\n")
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Analyze Research Radar items with Claude and write per-item summaries.")
+    parser.add_argument("--topic", dest="topic_slugs", action="append", default=[], help="Limit analysis to one or more topic slugs.")
+    parser.add_argument("--limit", type=int, default=0, help="Stop after analyzing N items. Use 0 for no limit.")
+    parser.add_argument("--force", action="store_true", help="Reanalyze items even if a summary file already exists.")
+    parser.add_argument("--dry-run", action="store_true", help="Show which items would be analyzed without calling Claude or writing files.")
+    parser.add_argument("--model", default="sonnet", help="Claude model alias.")
+    parser.add_argument("--max-turns", type=int, default=8, help="Maximum Claude turns per item.")
+    args = parser.parse_args()
+
+    topic_filters = set(args.topic_slugs) if args.topic_slugs else None
+    threshold = load_threshold()
+    lens = LENS_FILE.read_text(encoding="utf-8")
+    prompt_template = PROMPT_FILE.read_text(encoding="utf-8")
+    schema_text = SCHEMA_FILE.read_text(encoding="utf-8")
+
+    items = []
+    for item_path in iter_item_paths(topic_filters):
+        summary_path = summary_path_for(item_path)
+        if summary_path.exists() and not args.force:
+            continue
+        items.append(item_path)
+
+    if args.limit > 0:
+        items = items[: args.limit]
+
+    if not items:
+        print("[analyze-items] no items matched the current selection")
+        return 0
+
+    if args.dry_run:
+        for item_path in items:
+            print(f"[analyze-items] dry-run: {item_path.relative_to(ROOT)}")
+        print(f"[analyze-items] completed dry-run items={len(items)}")
+        return 0
+
+    total = 0
+    failures = 0
+    for item_path in items:
+        item = load_item(item_path)
+        summary_path = summary_path_for(item_path)
+        summary_path.parent.mkdir(parents=True, exist_ok=True)
+        overview_path = summary_overview_path(str(item["topic_slug"]))
+        ensure_summary_overview(overview_path, str(item["topic_slug"]))
+        prompt = build_prompt(item, lens, prompt_template, schema_text)
+
+        try:
+            analysis = run_claude(prompt, model=args.model, max_turns=args.max_turns, cwd=ROOT)
+            analysis = validate_analysis(analysis, item, threshold=threshold)
+            summary_path.write_text(summary_markdown(item, analysis), encoding="utf-8")
+            append_overview(overview_path, summary_path, analysis)
+            if analysis["presentation_candidate"]:
+                write_queue_manifest(item, summary_path, analysis)
+            else:
+                clear_queue_manifest(analysis)
+            print(
+                f"[analyze-items] topic={item['topic_slug']} item={item['item_id']} score={analysis['relevance_score']} presentation_candidate={str(analysis['presentation_candidate']).lower()}"
+            )
+            total += 1
+        except Exception as exc:  # pragma: no cover
+            failures += 1
+            print(f"[analyze-items] failed {item_path.relative_to(ROOT)}: {exc}", file=sys.stderr)
+
+    print(f"[analyze-items] completed analyzed={total} failures={failures}")
+    return 1 if failures else 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -1,6 +1,19 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "[build-presentations] presentation scaffold"
-echo "[build-presentations] publish root: /Users/seanross/kingdom_of_god/home-base/presentations"
-echo "[build-presentations] TODO: generate compliant decks only for items with relevance >= 9"
+ROOT="/Users/seanross/kingdom_of_god/home-base/research-radar"
+QUEUE_DIR="$ROOT/data/queues/presentation-candidates"
+OUTPUT_ROOT="/Users/seanross/kingdom_of_god/home-base/presentations"
+
+mkdir -p "$QUEUE_DIR"
+count=$(find "$QUEUE_DIR" -maxdepth 1 -name "*.json" | wc -l | tr -d " ")
+
+if [ "$count" = "0" ]; then
+  echo "[build-presentations] no presentation candidates queued"
+  exit 0
+fi
+
+echo "[build-presentations] queued candidates: $count"
+echo "[build-presentations] output root: $OUTPUT_ROOT"
+find "$QUEUE_DIR" -maxdepth 1 -name "*.json" | sort
+echo "[build-presentations] TODO: generate guide-compliant decks from queued candidates"
