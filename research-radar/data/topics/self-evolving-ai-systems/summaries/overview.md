@@ -17,3 +17,10 @@ Full item files belong in `items/`.
   source: https://www.youtube.com/watch?v=2I0UIDCGE9s
   summary file: `items/youtube--2I0UIDCGE9s.md`
   presentation candidate: `false`
+
+## 2026-04-02 — youtube score 6
+
+- **OpenAI raises $122 billion funding to expand frontier AI globally | Next in AI | Astha La Vista**
+  source: https://www.youtube.com/watch?v=4Mh8YFPm6SE
+  summary file: `items/youtube--4Mh8YFPm6SE.md`
+  presentation candidate: `false`
