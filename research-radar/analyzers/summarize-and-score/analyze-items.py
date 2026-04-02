@@ -301,6 +301,7 @@ def fallback_analysis(item: dict[str, object], threshold: int, reason: str) -> d
         "why_it_matters_now": why_it_matters_now,
         "key_takeaways": key_takeaways,
         "presentation_candidate": relevance_score >= threshold,
+        "model_presentation_candidate": False,
         "analysis_mode": "fallback",
         "analysis_error": reason,
     }
@@ -479,7 +480,7 @@ def run_claude_analysis(
         try:
             raw_output = run_claude_raw(attempt_prompt, model=model, max_turns=max_turns, cwd=cwd)
         except ClaudeUnavailableError as exc:
-            return fallback_analysis(item, threshold=threshold, reason=str(exc))
+            return validate_analysis(fallback_analysis(item, threshold=threshold, reason=str(exc)), item, threshold=threshold)
         last_output = raw_output
         try:
             parsed = extract_json_block(raw_output)
@@ -492,7 +493,11 @@ def run_claude_analysis(
     preview = " ".join(last_output.split())
     if len(preview) > 400:
         preview = preview[:400] + "..."
-    return fallback_analysis(item, threshold=threshold, reason=f"Claude response invalid: {last_error}. preview={preview}")
+    return validate_analysis(
+        fallback_analysis(item, threshold=threshold, reason=f"Claude response invalid: {last_error}. preview={preview}"),
+        item,
+        threshold=threshold,
+    )
 
 
 def summary_markdown(item: dict[str, object], analysis: dict[str, object]) -> str:
