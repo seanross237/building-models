@@ -102,3 +102,15 @@ Full item files belong in `items/`.
 - **How AI is distorting politics and the media** — Connecticut Public (1:01:40, 104 views)
   https://www.youtube.com/watch?v=AymF3zTZBT0
   item: `items/AymF3zTZBT0.md`
+
+## 2026-04-03 — 3 new videos
+
+- **SAGE: Multi-Agent Self-Evolution for LLM Reasoning** — Praveen Govindaraj (5:12, 6 views)
+  https://www.youtube.com/watch?v=d7g_2aIoCQo
+  item: `items/d7g_2aIoCQo.md`
+- **Napoleon Hill 2.0: How I Built an AI Council of History’s Greatest Minds 🧠** — Dukta Feelgood (8:20, 7 views)
+  https://www.youtube.com/watch?v=LtOnT123AMk
+  item: `items/LtOnT123AMk.md`
+- **Why AI Should Be Grown, Not Trained** — Eye on AI (58:59, 147 views)
+  https://www.youtube.com/watch?v=uqH-P-qsdEc
+  item: `items/uqH-P-qsdEc.md`

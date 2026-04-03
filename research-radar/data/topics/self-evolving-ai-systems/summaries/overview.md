@@ -24,3 +24,10 @@ Full item files belong in `items/`.
   source: https://www.youtube.com/watch?v=4Mh8YFPm6SE
   summary file: `items/youtube--4Mh8YFPm6SE.md`
   presentation candidate: `false`
+
+## 2026-04-03 — youtube score 7
+
+- **AI Agents Gone Rogue: Google Exposed, Venom Persists & Anthropic Leaks 500K Lines | April 1, 2026**
+  source: https://www.youtube.com/watch?v=4w_BB3jeiNs
+  summary file: `items/youtube--4w_BB3jeiNs.md`
+  presentation candidate: `false`
