@@ -28,10 +28,12 @@ That means:
 - the runtime used for confidence-building is currently the simulated runtime
 - the fast adversarial sturdiness layer is real
 - a tiny real OpenRouter runtime path is now real
+- Claude CLI and Codex CLI runtime adapters are now real
+- a provider-selectable runtime factory is now real
 - `stuff-for-agents/` is now materially used by the runtime prompt loader
 - the live canary path has now completed both a single-node real run and a multi-step real tree run
 
-The real OpenRouter runtime is still **minimal and not yet the main active path**, but the live seam is now proven enough to support careful canaries.
+The live runtime supports three providers (`openrouter`, `claude`, `codex`) through the same seam. The orchestrator does not know or care which backend executed the work.
 
 ## Top-Level Shape
 
@@ -313,15 +315,56 @@ It currently:
 
 This path is meant to be small and testable first, not broad yet.
 
+### `runtime_task_builder.py`
+
+Builds a provider-neutral runtime task file from a prompt bundle and prepared context packets.
+
+The task file is a markdown document written to the node directory that any CLI runtime can consume. It packages:
+
+- role and run metadata
+- system prompt and support documents
+- prepared context packets
+- role contract required artifact paths
+- runtime note and instructions
+
+### `cli_runtime_base.py`
+
+Shared base class for CLI-backed runtime adapters (Claude CLI, Codex CLI).
+
+It handles:
+
+- prompt loading and task file assembly
+- subprocess execution with timeout
+- stdout/stderr capture to disk
+- artifact scanning from `output/`
+- `RuntimeResult` construction with honest subscription-mode usage accounting
+
+### `claude_cli_runtime.py`
+
+Claude CLI runtime adapter. Runs nodes via `claude -p` in non-interactive mode with:
+
+- `--permission-mode bypassPermissions` for unattended execution
+- `--allowedTools Read,Write,Edit,Glob,Grep` to match the OpenRouter tool boundary
+- OAuth/keychain auth preserved so subscription credits work
+
+### `codex_cli_runtime.py`
+
+Codex CLI runtime adapter. Runs nodes via `codex exec` in non-interactive mode with:
+
+- `--sandbox workspace-write` for controlled file access
+
 ### `runtime_factory.py`
 
-Small runtime-factory layer for the live canary path.
+Provider-selectable runtime factory for the live canary path.
 
 It currently provides:
 
-- the default cheap model choice for canaries
+- `RuntimeProvider` type: `"openrouter" | "claude" | "codex"`
+- `LiveRuntimeSettings` dataclass with provider-neutral settings
+- `build_live_runtime()` builder that selects the correct backend
+- the default model choice for canaries
 - a default role-to-model map
-- a thin constructor for the OpenRouter runtime using environment configuration
+- a legacy `build_openrouter_runtime_for_live_canary()` for backwards compatibility
 
 ## Tool Layer
 
@@ -367,27 +410,35 @@ The current offline system works roughly like this:
 
 ## Tiny Live Canary Path
 
-There is now a first tiny live canary entry point:
+There is now a tiny live canary entry point:
 
 - `system/scripts/run_live_canary.py`
 
 It:
 
 - creates a mission under `missions/live-canaries/` by default
-- uses the tiny OpenRouter runtime path
+- selects a runtime provider via `--runtime-provider openrouter|claude|codex`
 - defaults the root role to `worker` for minimal cost and complexity
 - prints a compact JSON result summary at the end
 
-This path has now been proven with:
+The runtime provider controls which backend executes node roles:
+
+- `openrouter` — API-backed via OpenRouter chat completions (requires `OPENROUTER_API_KEY`)
+- `claude` — local Claude CLI via `claude -p` (uses monthly subscription credits)
+- `codex` — local Codex CLI via `codex exec` (uses monthly subscription credits)
+
+The same orchestrator, node contract, role contracts, and mission artifacts are used regardless of provider. Success is always determined by artifact validation after the run, not by provider-specific behavior.
+
+CLI providers record honest usage metadata with `usage_unavailable: true` and `total_cost_usd: 0.0` since token counts and costs are not available from subscription-based CLI runs.
+
+This path has been proven with:
 
 - a real single-node `worker` canary
 - a real multi-step tree canary using `planner`, `worker`, `mid-plan-evaluator`, and `synthesizer`
 
 The default live canary model is currently:
 
-- `google/gemini-2.5-flash-lite`
-
-The real live run requires `OPENROUTER_API_KEY` in the environment.
+- `openai/gpt-4.1-mini`
 
 ## Run Artifacts
 
@@ -506,6 +557,10 @@ Already real in the rebuild:
 - offline runtime execution through the real seam
 - prompt loading from `stuff-for-agents/`
 - tiny real OpenRouter runtime execution through the real seam
+- Claude CLI runtime adapter via `claude -p`
+- Codex CLI runtime adapter via `codex exec`
+- provider-neutral runtime task builder
+- provider-selectable runtime factory
 - tiny live canary mission bootstrapping and runner path
 - completed real single-node canary execution
 - completed real multi-step tree canary execution

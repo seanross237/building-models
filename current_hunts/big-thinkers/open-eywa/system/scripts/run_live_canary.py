@@ -18,13 +18,19 @@ from system.orchestrator import (
 )
 from system.runtime import (
     LIVE_CANARY_DEFAULT_MODEL,
-    LiveCanaryRuntimeSettings,
-    build_openrouter_runtime_for_live_canary,
+    LiveRuntimeSettings,
+    build_live_runtime,
 )
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run a tiny live Open-Eywa canary mission.")
+    parser.add_argument(
+        "--runtime-provider",
+        choices=["openrouter", "claude", "codex"],
+        default="openrouter",
+        help="Runtime provider backend. Default: openrouter.",
+    )
     parser.add_argument(
         "--goal",
         default=DEFAULT_LIVE_CANARY_GOAL,
@@ -38,7 +44,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--model",
         default=LIVE_CANARY_DEFAULT_MODEL,
-        help="Cheap non-Chinese model to use for all current canary roles.",
+        help="Model to use for all current canary roles.",
     )
     parser.add_argument(
         "--root-role",
@@ -57,6 +63,13 @@ def parse_args() -> argparse.Namespace:
         help="Maximum mission-driving iterations before failing.",
     )
     parser.add_argument(
+        "--timeout-seconds",
+        type=int,
+        default=300,
+        help="Timeout in seconds for CLI provider subprocess calls. Default: 300.",
+    )
+    # OpenRouter-specific flags
+    parser.add_argument(
         "--referer-url",
         default=None,
         help="Optional HTTP-Referer header for OpenRouter.",
@@ -69,7 +82,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--no-generation-stats",
         action="store_true",
-        help="Skip follow-up generation stats requests.",
+        help="Skip follow-up generation stats requests (OpenRouter only).",
     )
     return parser.parse_args()
 
@@ -82,9 +95,11 @@ def main() -> int:
         else build_default_live_canary_mission_path(PROJECT_ROOT)
     )
 
-    runtime = build_openrouter_runtime_for_live_canary(
-        LiveCanaryRuntimeSettings(
+    runtime = build_live_runtime(
+        LiveRuntimeSettings(
+            runtime_provider=args.runtime_provider,
             model_name=args.model,
+            timeout_seconds=args.timeout_seconds,
             referer_url=args.referer_url,
             title=args.title,
             fetch_generation_stats=not args.no_generation_stats,
@@ -113,6 +128,7 @@ def main() -> int:
         "failure_reason": result.failure_reason,
         "node_count": result.node_count,
         "run_count": result.run_count,
+        "runtime_provider": args.runtime_provider,
         "summary_path": str(summary_path),
         "summary": summary,
     }

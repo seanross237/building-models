@@ -2,10 +2,11 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Literal, Protocol
+from typing import Any, Literal, Protocol, TYPE_CHECKING
 
-from system.orchestrator.summary_schema import RunSummary
-from system.orchestrator.usage_schema import UsageRecord
+if TYPE_CHECKING:
+    from system.orchestrator.summary_schema import RunSummary
+    from system.orchestrator.usage_schema import UsageRecord
 
 RunExitReason = Literal[
     "completed",
@@ -28,6 +29,11 @@ RUN_EXIT_REASONS: tuple[RunExitReason, ...] = (
 
 class RuntimeContractError(ValueError):
     """Raised when runtime requests or results violate the runtime seam."""
+
+
+def _default_usage() -> UsageRecord:
+    from system.orchestrator.usage_schema import UsageRecord
+    return UsageRecord()
 
 
 @dataclass(frozen=True)
@@ -72,7 +78,7 @@ class RuntimeResult:
     variant: str | None = None
     artifacts_produced: tuple[str, ...] = ()
     tool_call_count: int = 0
-    usage: UsageRecord = field(default_factory=UsageRecord)
+    usage: UsageRecord = field(default_factory=_default_usage)
     details: dict[str, Any] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
@@ -100,6 +106,7 @@ class RuntimeResult:
             raise RuntimeContractError("details must be a dictionary.")
 
     def to_run_summary(self) -> RunSummary:
+        from system.orchestrator.summary_schema import RunSummary
         return RunSummary(
             run_id=self.run_id,
             node_id=self.node_id,

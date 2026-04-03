@@ -1,0 +1,1 @@
+Open-Eywa is an autonomous multi-agent orchestration system that decomposes complex research problems into a tree of specialized nodes — planners, workers, and synthesizers — each executing locally with file-based coordination and ephemeral state.

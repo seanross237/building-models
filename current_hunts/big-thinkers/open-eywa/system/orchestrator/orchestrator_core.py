@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from system.runtime import RuntimeAdapter, RuntimeRequest, RuntimeResult
+from system.runtime.runtime_interface import RuntimeAdapter, RuntimeRequest, RuntimeResult
 
 from .event_schema import EventRecord
 from .event_writer import AppendOnlyJsonlWriter

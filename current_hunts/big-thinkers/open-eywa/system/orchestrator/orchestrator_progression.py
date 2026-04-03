@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 from typing import Any, Callable
 
-from system.runtime import RuntimeAdapter
+from system.runtime.runtime_interface import RuntimeAdapter
 
 from .event_schema import EventRecord
 from .event_writer import AppendOnlyJsonlWriter
