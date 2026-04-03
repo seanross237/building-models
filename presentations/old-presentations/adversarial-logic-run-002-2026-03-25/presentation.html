@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adversarial Logic — Run 002 (Prose)</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --slide-bg: #f8f9fa;
+  --slide-border: #e1e4e8;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #4f46e5;
+  --accent-light: #eef2ff;
+  --green: #059669;
+  --green-light: #ecfdf5;
+  --red: #dc2626;
+  --red-light: #fef2f2;
+  --amber: #d97706;
+  --amber-light: #fffbeb;
+  --blue: #2563eb;
+  --blue-light: #eff6ff;
+  --purple: #7c3aed;
+  --purple-light: #f5f3ff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  display: flex; flex-direction: column; align-items: center;
+  min-height: 100vh; padding: 40px 20px;
+}
+
+/* Nav */
+.nav {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+  padding: 10px 20px; border-radius: 999px; z-index: 100;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+.nav-btn {
+  background: transparent; border: 1px solid rgba(255,255,255,0.2);
+  color: white; width: 36px; height: 36px; border-radius: 50%;
+  cursor: pointer; font-size: 16px; display: flex; align-items: center;
+  justify-content: center; transition: all 0.15s;
+}
+.nav-btn:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.4); }
+.nav-btn:disabled { opacity: 0.3; cursor: default; }
+.nav-counter { color: rgba(255,255,255,0.6); font-size: 13px; min-width: 50px; text-align: center; }
+
+/* Slide */
+.slide {
+  display: none; width: 100%; max-width: 820px;
+  background: var(--slide-bg); border: 1px solid var(--slide-border);
+  border-radius: 16px; padding: 48px 56px 56px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+  animation: fadeIn 0.25s ease;
+}
+.slide.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Typography */
+h1 { font-size: 32px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+h2 { font-size: 24px; font-weight: 700; color: var(--text); margin-bottom: 16px; }
+h3 { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: var(--muted); margin-bottom: 32px; }
+.label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+
+/* Cards */
+.card {
+  border: 1px solid var(--slide-border); border-radius: 10px;
+  padding: 16px 20px; margin-bottom: 12px; background: white;
+}
+.card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.card-num {
+  width: 28px; height: 28px; border-radius: 8px; font-size: 13px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.card-title { font-size: 15px; font-weight: 600; color: var(--text); }
+.card-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+/* Stats */
+.stats { display: grid; gap: 12px; margin: 20px 0; }
+.stats-2 { grid-template-columns: 1fr 1fr; }
+.stats-3 { grid-template-columns: 1fr 1fr 1fr; }
+.stats-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.stat {
+  text-align: center; padding: 16px 12px; border-radius: 10px;
+  border: 1px solid var(--slide-border); background: white;
+}
+.stat-value { font-size: 28px; font-weight: 700; }
+.stat-label { font-size: 11px; color: var(--muted); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* Bars */
+.bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-size: 13px; }
+.bar-label { width: 120px; text-align: right; color: var(--muted); font-weight: 500; flex-shrink: 0; font-size: 12px; }
+.bar-track { flex: 1; height: 24px; background: #f3f4f6; border-radius: 6px; overflow: hidden; position: relative; }
+.bar-fill { height: 100%; border-radius: 6px; transition: width 0.5s; display: flex; align-items: center; padding-left: 8px; }
+.bar-fill span { font-size: 11px; font-weight: 700; color: white; }
+
+/* Tags */
+.tag {
+  display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px;
+  border-radius: 6px; margin-right: 4px; margin-bottom: 4px;
+}
+.tag-green { background: var(--green-light); color: var(--green); }
+.tag-red { background: var(--red-light); color: var(--red); }
+.tag-amber { background: var(--amber-light); color: var(--amber); }
+.tag-blue { background: var(--blue-light); color: var(--blue); }
+.tag-accent { background: var(--accent-light); color: var(--accent); }
+.tag-purple { background: var(--purple-light); color: var(--purple); }
+
+/* Misc */
+.divider { height: 1px; background: var(--slide-border); margin: 24px 0; }
+.finding {
+  display: flex; gap: 12px; margin-bottom: 12px; font-size: 13px; line-height: 1.5;
+}
+.finding-num {
+  width: 22px; height: 22px; border-radius: 50%; background: var(--accent);
+  color: white; font-size: 11px; font-weight: 700; display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0; margin-top: 1px;
+}
+.toc-item {
+  display: flex; align-items: center; gap: 12px; padding: 12px 16px;
+  border: 1px solid var(--slide-border); border-radius: 10px; margin-bottom: 8px;
+  cursor: pointer; transition: all 0.15s; background: white;
+}
+.toc-item:hover { border-color: var(--accent); background: var(--accent-light); }
+.toc-num {
+  width: 32px; height: 32px; border-radius: 8px; font-size: 14px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.toc-text { font-size: 15px; font-weight: 500; color: var(--text); }
+
+.flow-arrow { text-align: center; font-size: 20px; color: var(--muted); margin: 4px 0; }
+.flow-box {
+  border: 1px solid var(--slide-border); border-radius: 10px; padding: 12px 16px;
+  background: white; text-align: center; font-size: 13px; font-weight: 500;
+}
+
+/* Agent pipeline */
+.pipeline { display: flex; align-items: center; gap: 0; margin: 24px 0; }
+.pipeline-node {
+  flex: 1; text-align: center; padding: 16px 8px; border-radius: 12px;
+  border: 2px solid; position: relative;
+}
+.pipeline-node-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+.pipeline-node-desc { font-size: 12px; color: var(--muted); line-height: 1.4; }
+.pipeline-arrow {
+  width: 32px; text-align: center; font-size: 18px; color: var(--muted); flex-shrink: 0;
+}
+
+/* Severity grid */
+.severity-grid { display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; font-size: 13px; margin: 12px 0; }
+.severity-label { font-weight: 700; text-align: right; }
+.severity-dots { display: flex; gap: 4px; flex-wrap: wrap; align-items: center; }
+.severity-dot {
+  width: 20px; height: 20px; border-radius: 6px; font-size: 10px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; color: white;
+}
+
+/* v1 vs v2 comparison */
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+.compare-col { border-radius: 10px; padding: 16px; border: 1px solid var(--slide-border); background: white; }
+.compare-header { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
+
+/* Feedback */
+.feedback-section {
+  margin-top: 24px; padding-top: 16px;
+  border-top: 1px dashed var(--slide-border);
+}
+.feedback-toggle {
+  display: flex; align-items: center; gap: 8px; cursor: pointer;
+  font-size: 12px; font-weight: 600; color: var(--muted);
+  background: none; border: none; padding: 4px 0;
+  transition: color 0.15s;
+}
+.feedback-toggle:hover { color: var(--text); }
+.feedback-toggle .chevron { transition: transform 0.2s; font-size: 10px; }
+.feedback-toggle .chevron.open { transform: rotate(90deg); }
+.feedback-toggle .dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+  display: none;
+}
+.feedback-toggle .dot.has-feedback { display: inline-block; }
+.feedback-body { display: none; margin-top: 10px; }
+.feedback-body.open { display: block; }
+.feedback-textarea {
+  width: 100%; min-height: 60px; padding: 10px 12px;
+  border: 1px solid var(--slide-border); border-radius: 8px;
+  font-family: inherit; font-size: 13px; color: var(--text);
+  background: white; resize: vertical; outline: none;
+  transition: border-color 0.15s;
+}
+.feedback-textarea:focus { border-color: var(--accent); }
+.feedback-actions { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+.feedback-save {
+  padding: 6px 14px; border-radius: 6px; border: none;
+  background: var(--accent); color: white; font-size: 12px;
+  font-weight: 600; cursor: pointer; transition: opacity 0.15s;
+}
+.feedback-save:hover { opacity: 0.85; }
+.feedback-save:disabled { opacity: 0.4; cursor: default; }
+.feedback-status { font-size: 11px; color: var(--green); opacity: 0; transition: opacity 0.3s; }
+.feedback-status.show { opacity: 1; }
+.feedback-saved-list { margin-top: 8px; }
+.feedback-entry {
+  display: flex; gap: 8px; align-items: flex-start; padding: 6px 0;
+  font-size: 12px; color: var(--text); border-bottom: 1px solid #f3f4f6;
+}
+.feedback-entry:last-child { border-bottom: none; }
+.feedback-entry-time { color: var(--muted); font-size: 11px; white-space: nowrap; flex-shrink: 0; }
+.feedback-entry-text { line-height: 1.4; }
+.feedback-entry-delete {
+  background: none; border: none; color: var(--muted); cursor: pointer;
+  font-size: 11px; padding: 0 4px; flex-shrink: 0;
+}
+.feedback-entry-delete:hover { color: var(--red); }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 0: Title + TOC -->
+<div class="slide active" id="slide-0">
+  <h1>Adversarial Logic &mdash; Prose Format</h1>
+  <p class="subtitle">Run 002 &mdash; Same pipeline, philosophical prose instead of structured notation. What changed?</p>
+  <div class="divider"></div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <div>
+      <p class="label" style="color:var(--muted)">The System</p>
+      <div class="toc-item" onclick="goTo(1)">
+        <div class="toc-num" style="background:var(--accent-light);color:var(--accent)">1</div>
+        <div class="toc-text">Pipeline &amp; Parameters</div>
+      </div>
+    </div>
+    <div>
+      <p class="label" style="color:var(--muted)">The Arguments</p>
+      <div class="toc-item" onclick="goTo(2)">
+        <div class="toc-num" style="background:var(--blue-light);color:var(--blue)">2</div>
+        <div class="toc-text">Theory v1 &rarr; Attacks</div>
+      </div>
+      <div class="toc-item" onclick="goTo(3)">
+        <div class="toc-num" style="background:var(--amber-light);color:var(--amber)">3</div>
+        <div class="toc-text">Judge's Ruling</div>
+      </div>
+      <div class="toc-item" onclick="goTo(4)">
+        <div class="toc-num" style="background:var(--purple-light);color:var(--purple)">4</div>
+        <div class="toc-text">Theory v2 &mdash; What Changed</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+    <div>
+      <p class="label" style="color:var(--muted)">Comparison</p>
+      <div class="toc-item" onclick="goTo(5)">
+        <div class="toc-num" style="background:var(--green-light);color:var(--green)">5</div>
+        <div class="toc-text">Prose vs. Structured Notation</div>
+      </div>
+    </div>
+    <div>
+      <p class="label" style="color:var(--muted)">Takeaways</p>
+      <div class="toc-item" onclick="goTo(6)">
+        <div class="toc-num" style="background:var(--red-light);color:var(--red)">6</div>
+        <div class="toc-text">System Learnings</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:24px;display:flex;gap:8px;flex-wrap:wrap">
+    <span class="tag tag-accent">With Judge</span>
+    <span class="tag tag-accent">Prose Format</span>
+    <span class="tag tag-accent">No Attack Taxonomy</span>
+    <span class="tag tag-accent">No Exploration Phase</span>
+    <span class="tag tag-accent">No Seed</span>
+  </div>
+</div>
+
+<!-- SLIDE 1: Pipeline & Parameters -->
+<div class="slide" id="slide-1">
+  <p class="label" style="color:var(--accent)">The System</p>
+  <h2>Pipeline &amp; Parameters</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:24px">Same 4-agent pipeline as Run 001. The only change: prose instead of structured notation.</p>
+
+  <div class="pipeline">
+    <div class="pipeline-node" style="border-color:var(--blue);background:var(--blue-light)">
+      <div class="pipeline-node-label" style="color:var(--blue)">Architect</div>
+      <div class="pipeline-node-desc">Proposes theory in philosophical prose</div>
+    </div>
+    <div class="pipeline-arrow">&rarr;</div>
+    <div class="pipeline-node" style="border-color:var(--red);background:var(--red-light)">
+      <div class="pipeline-node-label" style="color:var(--red)">Adversary</div>
+      <div class="pipeline-node-desc">Attacks claims, arguments, and gaps</div>
+    </div>
+    <div class="pipeline-arrow">&rarr;</div>
+    <div class="pipeline-node" style="border-color:var(--amber);background:var(--amber-light)">
+      <div class="pipeline-node-label" style="color:var(--amber)">Judge</div>
+      <div class="pipeline-node-desc">Rules on each attack, recalibrates severity</div>
+    </div>
+    <div class="pipeline-arrow">&rarr;</div>
+    <div class="pipeline-node" style="border-color:var(--purple);background:var(--purple-light)">
+      <div class="pipeline-node-label" style="color:var(--purple)">Architect v2</div>
+      <div class="pipeline-node-desc">Revises theory from judge's fix list</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="stats stats-4">
+    <div class="stat">
+      <div class="stat-value" style="color:var(--blue)">1</div>
+      <div class="stat-label">Theory In</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--red)">12</div>
+      <div class="stat-label">Attacks</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--amber)">3</div>
+      <div class="stat-label">Must-Fix</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--purple)">9</div>
+      <div class="stat-label">Changes in v2</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <h3>What Changed from Run 001</h3>
+  <div class="compare">
+    <div class="compare-col" style="border-left:3px solid var(--muted)">
+      <div class="compare-header" style="color:var(--muted)">Run 001</div>
+      <p style="font-size:12px;color:var(--muted);line-height:1.6">Structured logical notation &mdash; numbered definitions, premises, derivations, conclusions</p>
+    </div>
+    <div class="compare-col" style="border-left:3px solid var(--accent)">
+      <div class="compare-header" style="color:var(--accent)">Run 002 (This Run)</div>
+      <p style="font-size:12px;color:var(--text);line-height:1.6">Philosophical prose &mdash; flowing arguments, hedging, extended reasoning. Same pipeline, same goal.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 2: Theory v1 + Attacks -->
+<div class="slide" id="slide-2">
+  <p class="label" style="color:var(--blue)">The Arguments</p>
+  <h2>Theory v1 &rarr; 12 Attacks</h2>
+
+  <div class="compare">
+    <div class="compare-col">
+      <div class="compare-header" style="color:var(--blue)">Architect's Theory: RCSM</div>
+      <p style="font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:10px">
+        <strong>Recursive Causal Self-Modeling.</strong> Consciousness IS a physical system building a causally efficacious model of itself that includes its own modeling activity.
+      </p>
+      <p style="font-size:12px;color:var(--text);line-height:1.5;margin-bottom:6px"><strong>3 core conditions:</strong></p>
+      <div style="display:flex;flex-wrap:wrap;gap:4px">
+        <span class="tag tag-blue">Self-modeling</span>
+        <span class="tag tag-blue">Recursion</span>
+        <span class="tag tag-blue">Causal coupling</span>
+      </div>
+      <p style="font-size:12px;color:var(--text);line-height:1.5;margin-top:10px">Claims to explain what consciousness is, why it arises, what determines its presence, and how the Hard Problem dissolves</p>
+    </div>
+    <div class="compare-col">
+      <div class="compare-header" style="color:var(--red)">Adversary's Verdict</div>
+      <p style="font-size:12px;color:var(--red);font-weight:600;margin-bottom:10px">Two load-bearing pillars are broken.</p>
+
+      <div class="severity-grid">
+        <div class="severity-label" style="color:var(--red)">Fatal &times;2</div>
+        <div class="severity-dots">
+          <div class="severity-dot" style="background:var(--red)" title="Recursion criterion underdefined">1</div>
+          <div class="severity-dot" style="background:var(--red)" title="Identity claim unjustified">4</div>
+        </div>
+        <div class="severity-label" style="color:var(--amber)">Major &times;7</div>
+        <div class="severity-dots">
+          <div class="severity-dot" style="background:var(--amber)">2</div>
+          <div class="severity-dot" style="background:var(--amber)">3</div>
+          <div class="severity-dot" style="background:var(--amber)">5</div>
+          <div class="severity-dot" style="background:var(--amber)">6</div>
+          <div class="severity-dot" style="background:var(--amber)">7</div>
+          <div class="severity-dot" style="background:var(--amber)">8</div>
+          <div class="severity-dot" style="background:var(--amber)">9</div>
+        </div>
+        <div class="severity-label" style="color:var(--muted)">Minor &times;3</div>
+        <div class="severity-dots">
+          <div class="severity-dot" style="background:#9ca3af">10</div>
+          <div class="severity-dot" style="background:#9ca3af">11</div>
+          <div class="severity-dot" style="background:#9ca3af">12</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <h3>The 2 "Fatal" Attacks</h3>
+  <div class="finding">
+    <div class="finding-num" style="background:var(--red)">1</div>
+    <div><strong>Recursion criterion is underdefined.</strong> "Models its own modeling" sounds precise in prose but has no operational criterion. A rat's uncertainty monitoring could go either way.</div>
+  </div>
+  <div class="finding">
+    <div class="finding-num" style="background:var(--red)">4</div>
+    <div><strong>Identity claim is asserted, not argued.</strong> Why is consciousness <em>identical to</em> RCSM rather than merely correlated? The boldest claim in the theory got the least justification.</div>
+  </div>
+
+  <div class="divider"></div>
+  <h3>Key Major Attacks</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px">
+    <div class="card" style="padding:10px 14px">
+      <div style="font-size:12px"><span class="tag tag-amber">5</span> Godel analogy is false &mdash; wrong source theorem</div>
+    </div>
+    <div class="card" style="padding:10px 14px">
+      <div style="font-size:12px"><span class="tag tag-amber">6</span> Evolution explains function, not phenomenality</div>
+    </div>
+    <div class="card" style="padding:10px 14px">
+      <div style="font-size:12px"><span class="tag tag-amber">8</span> Unity of consciousness completely unaddressed</div>
+    </div>
+    <div class="card" style="padding:10px 14px">
+      <div style="font-size:12px"><span class="tag tag-amber">9</span> "Model" equivocates between strong and weak readings</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3: Judge's Ruling -->
+<div class="slide" id="slide-3">
+  <p class="label" style="color:var(--amber)">The Arguments</p>
+  <h2>The Judge's Ruling</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">The judge downgraded one Fatal, affirmed the other, and found a critical dependency between attacks.</p>
+
+  <h3>Severity Recalibration</h3>
+  <div style="margin:12px 0 16px">
+    <div class="bar-row">
+      <div class="bar-label">Attack 1</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:100%;background:var(--red)"><span>Adversary: Fatal</span></div>
+      </div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label" style="font-size:11px;color:var(--amber)">recalibrated &darr;</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:75%;background:var(--amber)"><span>Judge: Major (fixable)</span></div>
+      </div>
+    </div>
+    <div style="font-size:12px;color:var(--muted);margin-bottom:12px">
+      <strong>Why?</strong> The recursion criterion is underdefined, not incoherent. The architect has a real distinction in mind &mdash; just needs to cash it out precisely.
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label">Attack 4</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:100%;background:var(--red)"><span>Adversary: Fatal &mdash; Affirmed</span></div>
+      </div>
+    </div>
+    <div style="font-size:12px;color:var(--muted);margin-bottom:4px">
+      <strong>Why affirmed?</strong> The identity claim is the theory's strongest assertion. Without a real argument for it, RCSM is just a correlational theory. Everything else depends on this.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h3>Key Insight: Attack Chain</h3>
+  <div class="card" style="border-left:3px solid var(--amber)">
+    <div class="card-desc" style="margin-top:0">
+      The judge identified that <strong>Attack 6</strong> (zombie objection / evolution) is <em>conditional</em> on Attack 4 (identity claim). If the identity claim is established, the zombie objection dissolves. If it fails, the objection is devastating. This dependency made the identity claim the single highest-priority fix.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+    <div>
+      <h3 style="color:var(--red)">Must Fix (3)</h3>
+      <div style="font-size:12px;line-height:1.8;color:var(--text);margin-top:8px">
+        <div>1. Identity claim</div>
+        <div>2. Recursion criterion</div>
+        <div>3. Unity of consciousness</div>
+      </div>
+    </div>
+    <div>
+      <h3 style="color:var(--amber)">Should Fix (5)</h3>
+      <div style="font-size:12px;line-height:1.8;color:var(--text);margin-top:8px">
+        <div>4. Godel analogy</div>
+        <div>5. Evolutionary argument</div>
+        <div>6. Testable predictions</div>
+        <div>7. Subject requirement</div>
+        <div>8. Definition of "model"</div>
+      </div>
+    </div>
+    <div>
+      <h3 style="color:var(--muted)">Can Ignore (1)</h3>
+      <div style="font-size:12px;line-height:1.8;color:var(--text);margin-top:8px">
+        <div>9. Hidden functionalism</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4: Theory v2 -->
+<div class="slide" id="slide-4">
+  <p class="label" style="color:var(--purple)">The Arguments</p>
+  <h2>Theory v2 &mdash; What Changed</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">All 3 must-fix and all 5 should-fix items addressed. The theory expanded from 3 conditions to 6 explicit criteria.</p>
+
+  <div class="card" style="border-left:3px solid var(--purple)">
+    <div class="card-header">
+      <div class="card-title">The Key Move: Argument for Identity</div>
+    </div>
+    <div class="card-desc" style="margin-top:4px">
+      Three-step argument: (1) RCSM predicts every feature of consciousness, (2) it explains <em>why</em> those features obtain, (3) positing a further "consciousness property" is explanatorily idle &mdash; Occam's Razor favors identification. Parallels water/H2O.
+    </div>
+  </div>
+
+  <h3 style="margin-top:20px">All Changes Mapped to Fixes</h3>
+  <div style="font-size:12px;line-height:1.8;color:var(--text)">
+    <div style="display:flex;gap:8px;margin-bottom:4px;align-items:flex-start">
+      <span class="tag tag-red" style="flex-shrink:0;margin-top:2px">MF 1</span>
+      <span>New "Case for Identity" section &mdash; three-step parsimony argument (not just assertion)</span>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:4px;align-items:flex-start">
+      <span class="tag tag-red" style="flex-shrink:0;margin-top:2px">MF 2</span>
+      <span>Recursion formalized as <strong>R1 + R2 + R3</strong> (meta-representation, iterated self-application, operational closure) with test-case verdicts</span>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:4px;align-items:flex-start">
+      <span class="tag tag-red" style="flex-shrink:0;margin-top:2px">MF 3</span>
+      <span>New "recursive dominance" principle &mdash; one globally integrated loop; split-brain = prediction confirmed</span>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:4px;align-items:flex-start">
+      <span class="tag tag-amber" style="flex-shrink:0;margin-top:2px">SF 4</span>
+      <span>Godel analogy replaced with computational-resource argument (models are compressions)</span>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:4px;align-items:flex-start">
+      <span class="tag tag-amber" style="flex-shrink:0;margin-top:2px">SF 5</span>
+      <span>Evolutionary argument explicitly linked to identity claim: explaining RCSM's evolution IS explaining consciousness</span>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:4px;align-items:flex-start">
+      <span class="tag tag-amber" style="flex-shrink:0;margin-top:2px">SF 6</span>
+      <span>5 empirical predictions distinguishing RCSM from IIT, GWT, and HOT</span>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:4px;align-items:flex-start">
+      <span class="tag tag-amber" style="flex-shrink:0;margin-top:2px">SF 7</span>
+      <span>Engaged subjectless consciousness &mdash; "pure awareness" reinterpreted as minimal recursive self-modeling</span>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:4px;align-items:flex-start">
+      <span class="tag tag-amber" style="flex-shrink:0;margin-top:2px">SF 8</span>
+      <span>"Model" tightened to 4-part criterion: covariance, decoupling, behavioral integration, structural mapping</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <h3>v1 &rarr; v2 at a Glance</h3>
+  <div class="stats stats-3">
+    <div class="stat">
+      <div class="stat-value" style="font-size:18px;color:var(--blue)">3 conditions</div>
+      <div class="stat-label">v1</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="font-size:24px;color:var(--muted)">&rarr;</div>
+      <div class="stat-label">&nbsp;</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="font-size:18px;color:var(--purple)">6 criteria</div>
+      <div class="stat-label">v2</div>
+    </div>
+  </div>
+  <p style="font-size:12px;color:var(--muted);text-align:center">4 model conditions + 3 recursion sub-criteria (R1, R2, R3) + causal efficacy</p>
+</div>
+
+<!-- SLIDE 5: Prose vs. Structured Notation -->
+<div class="slide" id="slide-5">
+  <p class="label" style="color:var(--green)">Comparison</p>
+  <h2>Prose vs. Structured Notation</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">The format change had measurable effects on adversarial quality.</p>
+
+  <div class="stats stats-4">
+    <div class="stat">
+      <div class="stat-value" style="color:var(--red)">12</div>
+      <div class="stat-label">Attacks (Prose)</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--muted)">16</div>
+      <div class="stat-label">Attacks (Notation)</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--red)">3</div>
+      <div class="stat-label">Must-Fix (Prose)</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--muted)">8</div>
+      <div class="stat-label">Must-Fix (Notation)</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h3>What Prose Did Well</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0">
+    <div class="card" style="border-left:3px solid var(--green);padding:12px 16px">
+      <div style="font-size:12px;font-weight:600;color:var(--green);margin-bottom:4px">Nuanced arguments</div>
+      <div style="font-size:12px;color:var(--muted);line-height:1.5">Hedging, qualification, extended reasoning &mdash; the Hard Problem treatment was more philosophically careful</div>
+    </div>
+    <div class="card" style="border-left:3px solid var(--green);padding:12px 16px">
+      <div style="font-size:12px;font-weight:600;color:var(--green);margin-bottom:4px">More pointed attacks</div>
+      <div style="font-size:12px;color:var(--muted);line-height:1.5">The adversary could quote exact phrases, making attacks more textually grounded and specific</div>
+    </div>
+  </div>
+
+  <h3>What Prose Did Badly</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0">
+    <div class="card" style="border-left:3px solid var(--red);padding:12px 16px">
+      <div style="font-size:12px;font-weight:600;color:var(--red);margin-bottom:4px">Hid weaknesses behind eloquence</div>
+      <div style="font-size:12px;color:var(--muted);line-height:1.5">The recursion criterion was left vague because "models itself-as-modeling" <em>sounds</em> precise in a flowing paragraph. Notation would have exposed the gap immediately.</div>
+    </div>
+    <div class="card" style="border-left:3px solid var(--red);padding:12px 16px">
+      <div style="font-size:12px;font-weight:600;color:var(--red);margin-bottom:4px">Fewer flaws detected</div>
+      <div style="font-size:12px;color:var(--muted);line-height:1.5">12 attacks vs. 16, and only 3 must-fix vs. 8. The logical structure was less transparent, so circularity and hidden assumptions were harder to spot.</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="card" style="border-left:3px solid var(--accent)">
+    <div class="card-header">
+      <div class="card-title" style="color:var(--accent)">Key Finding: Prose Converges Toward Formalism</div>
+    </div>
+    <div class="card-desc" style="margin-top:4px">
+      The architect's v2 naturally introduced quasi-formal criteria (R1, R2, R3; four-part model definition) even though the format was prose. The adversarial process pushes theories toward formalization regardless of starting format.
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6: System Learnings -->
+<div class="slide" id="slide-6">
+  <p class="label" style="color:var(--red)">Takeaways</p>
+  <h2>System Learnings</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:24px">What this run tells us about how format affects the adversarial pipeline.</p>
+
+  <div class="card" style="border-left:3px solid var(--green)">
+    <div class="card-header">
+      <div class="card-title" style="color:var(--green)">The Judge Found a Real Dependency</div>
+    </div>
+    <div class="card-desc" style="margin-top:4px">
+      Attack 6 was conditional on Attack 4 &mdash; if the identity claim holds, the zombie objection dissolves. This kind of inter-attack reasoning is something the adversary can't do (it only sees the theory, not its own attacks as a whole). The judge adds structural analysis.
+    </div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--amber)">
+    <div class="card-header">
+      <div class="card-title" style="color:var(--amber)">Prose Reduces Attack Surface Visibility</div>
+    </div>
+    <div class="card-desc" style="margin-top:4px">
+      Fewer attacks found (12 vs. 16), fewer must-fix items (3 vs. 8). Prose lets the architect mask vagueness with rhetoric. This doesn't mean the theory was better &mdash; it means the adversary was less effective at finding flaws.
+    </div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--purple)">
+    <div class="card-header">
+      <div class="card-title" style="color:var(--purple)">Adversarial Pressure Formalizes Regardless</div>
+    </div>
+    <div class="card-desc" style="margin-top:4px">
+      Even starting in prose, the v2 theory introduced R1/R2/R3 sub-criteria and a four-part model definition. The system's demand for precision is format-independent. This suggests a hybrid (prose + formal definitions) may be optimal.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h3>Implications for Pipeline Design</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+    <div class="card" style="text-align:center;padding:14px">
+      <div style="font-size:13px;font-weight:600;color:var(--text)">Structured Notation</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px">More flaws detected, more must-fix items, harder to hide vagueness. Better for stress-testing.</div>
+    </div>
+    <div class="card" style="text-align:center;padding:14px">
+      <div style="font-size:13px;font-weight:600;color:var(--text)">Prose Format</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px">Richer philosophical engagement, better for nuanced arguments, but easier to hide logical gaps.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Navigation -->
+<div class="nav">
+  <button class="nav-btn" id="prevBtn" onclick="prev()">&larr;</button>
+  <div class="nav-counter" id="navCounter">1 / 7</div>
+  <button class="nav-btn" id="nextBtn" onclick="next()">&rarr;</button>
+</div>
+
+<script>
+let current = 0;
+const total = document.querySelectorAll('.slide').length;
+
+// --- Feedback System ---
+const FEEDBACK_KEY = 'adversarial-logic-run-002-feedback';
+
+function loadFeedback() {
+  try { return JSON.parse(localStorage.getItem(FEEDBACK_KEY) || '{}'); }
+  catch { return {}; }
+}
+
+function saveFeedbackStore(store) {
+  localStorage.setItem(FEEDBACK_KEY, JSON.stringify(store));
+  fetch('/api/feedback', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(store)
+  }).catch(() => {});
+}
+
+function addFeedback(slideIdx, text) {
+  if (!text.trim()) return;
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  if (!store[key]) store[key] = [];
+  store[key].push({
+    text: text.trim(),
+    timestamp: new Date().toISOString(),
+    slideTitle: getSlideName(slideIdx)
+  });
+  saveFeedbackStore(store);
+  renderFeedbackForSlide(slideIdx);
+}
+
+function deleteFeedback(slideIdx, entryIdx) {
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  if (store[key] && store[key][entryIdx] !== undefined) {
+    store[key].splice(entryIdx, 1);
+    if (store[key].length === 0) delete store[key];
+    saveFeedbackStore(store);
+    renderFeedbackForSlide(slideIdx);
+  }
+}
+
+function getSlideName(idx) {
+  const names = ['Title & TOC', 'Pipeline & Parameters', 'Theory v1 & Attacks',
+                 'Judge\'s Ruling', 'Theory v2', 'Prose vs. Structured', 'System Learnings'];
+  return names[idx] || 'Slide ' + (idx + 1);
+}
+
+function renderFeedbackForSlide(slideIdx) {
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  const entries = store[key] || [];
+  const listEl = document.getElementById('feedback-list-' + slideIdx);
+  const dotEl = document.getElementById('feedback-dot-' + slideIdx);
+
+  if (dotEl) dotEl.classList.toggle('has-feedback', entries.length > 0);
+
+  if (!listEl) return;
+  if (entries.length === 0) { listEl.innerHTML = ''; return; }
+
+  listEl.innerHTML = entries.map((e, i) => `
+    <div class="feedback-entry">
+      <span class="feedback-entry-time">${new Date(e.timestamp).toLocaleDateString('en-US', {month:'short',day:'numeric'})}</span>
+      <span class="feedback-entry-text">${escapeHtml(e.text)}</span>
+      <button class="feedback-entry-delete" onclick="deleteFeedback(${slideIdx},${i})" title="Delete">&times;</button>
+    </div>
+  `).join('');
+}
+
+function escapeHtml(str) {
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+function submitFeedback(slideIdx) {
+  const ta = document.getElementById('feedback-input-' + slideIdx);
+  const status = document.getElementById('feedback-status-' + slideIdx);
+  if (!ta || !ta.value.trim()) return;
+  addFeedback(slideIdx, ta.value);
+  ta.value = '';
+  if (status) {
+    status.classList.add('show');
+    setTimeout(() => status.classList.remove('show'), 2000);
+  }
+}
+
+function toggleFeedback(slideIdx) {
+  const body = document.getElementById('feedback-body-' + slideIdx);
+  const chev = document.getElementById('feedback-chevron-' + slideIdx);
+  if (body) body.classList.toggle('open');
+  if (chev) chev.classList.toggle('open');
+}
+
+// Inject feedback UI into every slide
+document.querySelectorAll('.slide').forEach((slide, idx) => {
+  const section = document.createElement('div');
+  section.className = 'feedback-section';
+  section.innerHTML = `
+    <button class="feedback-toggle" onclick="toggleFeedback(${idx})">
+      <span class="chevron" id="feedback-chevron-${idx}">&#9654;</span>
+      <span>Leave feedback on this slide</span>
+      <span class="dot" id="feedback-dot-${idx}"></span>
+    </button>
+    <div class="feedback-body" id="feedback-body-${idx}">
+      <div class="feedback-saved-list" id="feedback-list-${idx}"></div>
+      <textarea class="feedback-textarea" id="feedback-input-${idx}" placeholder="Your thoughts on this slide..." onkeydown="if(event.key==='Enter'&&event.metaKey){submitFeedback(${idx});event.preventDefault();}"></textarea>
+      <div class="feedback-actions">
+        <button class="feedback-save" onclick="submitFeedback(${idx})">Save (&#8984;&#9166;)</button>
+        <span class="feedback-status" id="feedback-status-${idx}">Saved!</span>
+      </div>
+    </div>
+  `;
+  slide.appendChild(section);
+  renderFeedbackForSlide(idx);
+});
+
+// --- Load server feedback on startup ---
+(async function() {
+  try {
+    const resp = await fetch('/api/feedback');
+    const serverStore = await resp.json();
+    const localStore = loadFeedback();
+    let merged = false;
+    for (const key of Object.keys(serverStore)) {
+      if (!localStore[key]) { localStore[key] = serverStore[key]; merged = true; }
+      else {
+        const localTimestamps = new Set(localStore[key].map(e => e.timestamp));
+        for (const entry of serverStore[key]) {
+          if (!localTimestamps.has(entry.timestamp)) {
+            localStore[key].push(entry);
+            merged = true;
+          }
+        }
+      }
+    }
+    if (merged) {
+      localStorage.setItem(FEEDBACK_KEY, JSON.stringify(localStore));
+      document.querySelectorAll('.slide').forEach((_, idx) => renderFeedbackForSlide(idx));
+    }
+  } catch {}
+})();
+
+// --- Navigation ---
+function show(n) {
+  document.querySelectorAll('.slide').forEach((s, i) => {
+    s.classList.toggle('active', i === n);
+  });
+  document.getElementById('navCounter').textContent = (n + 1) + ' / ' + total;
+  document.getElementById('prevBtn').disabled = n === 0;
+  document.getElementById('nextBtn').disabled = n === total - 1;
+  current = n;
+}
+
+function next() { if (current < total - 1) show(current + 1); }
+function prev() { if (current > 0) show(current - 1); }
+function goTo(n) { show(n); }
+
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'TEXTAREA') return;
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+});
+</script>
+</body>
+</html>

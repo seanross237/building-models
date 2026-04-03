@@ -1,0 +1,979 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>🌳 Open-Eywa Nervous System Proposal</title>
+<style>
+:root {
+  --bg: #07110d;
+  --bg-2: #0d1813;
+  --slide-bg: #faf7ef;
+  --slide-line: #ded7c8;
+  --text: #1d2722;
+  --muted: #68746d;
+  --forest: #2f6f52;
+  --moss: #6d8f5a;
+  --leaf: #8fb36c;
+  --amber: #b68d3c;
+  --clay: #a35f3a;
+  --blue: #4c7ea8;
+  --rose: #9f5d6a;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.34);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  color: var(--text);
+  background:
+    radial-gradient(circle at 15% 10%, rgba(111, 143, 90, 0.20), transparent 24%),
+    radial-gradient(circle at 80% 20%, rgba(182, 141, 60, 0.16), transparent 20%),
+    radial-gradient(circle at 50% 100%, rgba(76, 126, 168, 0.14), transparent 28%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 34px 18px 88px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(circle at center, black 36%, transparent 100%);
+  opacity: 0.35;
+}
+
+.slide {
+  display: none;
+  width: min(1100px, 100%);
+  background: var(--slide-bg);
+  border: 1px solid rgba(255,255,255,0.65);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  padding: 38px 42px 26px;
+  position: relative;
+  overflow: hidden;
+}
+.slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(47,111,82,0.04), transparent 36%, rgba(182,141,60,0.05));
+  pointer-events: none;
+}
+.slide.active { display: block; animation: rise 180ms ease-out; }
+@keyframes rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--forest);
+}
+h1, h2 {
+  margin: 0;
+  font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+h1 { font-size: clamp(34px, 4vw, 56px); line-height: 0.98; max-width: 760px; }
+h2 { font-size: clamp(28px, 3vw, 42px); line-height: 1.02; max-width: 780px; }
+.hero-title {
+  margin-top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(47,111,82,0.12), rgba(111,143,90,0.08));
+  border: 1px solid rgba(47,111,82,0.18);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--forest);
+}
+.subtitle {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 16px;
+  max-width: 680px;
+  line-height: 1.45;
+}
+.section-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.pill-row, .tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pill {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+.pill.forest { background: rgba(47,111,82,0.10); color: var(--forest); border-color: rgba(47,111,82,0.15); }
+.pill.moss { background: rgba(109,143,90,0.12); color: #547143; border-color: rgba(109,143,90,0.16); }
+.pill.amber { background: rgba(182,141,60,0.12); color: #96722c; border-color: rgba(182,141,60,0.16); }
+.pill.blue { background: rgba(76,126,168,0.10); color: var(--blue); border-color: rgba(76,126,168,0.14); }
+.pill.clay { background: rgba(163,95,58,0.10); color: var(--clay); border-color: rgba(163,95,58,0.14); }
+
+.signal-chain {
+  margin: 22px 0 28px;
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+}
+.chain-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.chain-arrow {
+  color: var(--moss);
+  font-size: 20px;
+  line-height: 1;
+  opacity: 0.85;
+}
+.signal-chip {
+  min-width: 112px;
+  padding: 14px 18px;
+  border-radius: 18px;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.55);
+}
+.signal-chip.core { background: linear-gradient(180deg, #ffffff, #f0f5eb); color: var(--forest); }
+.signal-chip.eywa { background: linear-gradient(180deg, #eef7ef, #e3efe5); color: #35684a; }
+.signal-chip.bonsai { background: linear-gradient(180deg, #f3f7ea, #e8f0da); color: #577042; }
+.signal-chip.potter { background: linear-gradient(180deg, #fbf1e7, #f2e1cf); color: #8e5431; }
+.signal-chip.dry { background: linear-gradient(180deg, #eef3f7, #e5ecf2); color: var(--blue); }
+
+.toc-groups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.toc-group {
+  background: rgba(255,255,255,0.65);
+  border: 1px solid var(--slide-line);
+  border-radius: 18px;
+  padding: 14px;
+  position: relative;
+  z-index: 1;
+}
+.toc-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.toc-card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--slide-line);
+  background: #fffdf8;
+  border-radius: 14px;
+  padding: 12px 13px;
+  text-align: left;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: transform 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+}
+.toc-card:hover {
+  transform: translateY(-1px);
+  border-color: rgba(47,111,82,0.35);
+  box-shadow: 0 10px 24px rgba(47,111,82,0.08);
+}
+.toc-card:last-child { margin-bottom: 0; }
+.toc-index {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 13px;
+  flex: none;
+}
+.toc-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.25;
+}
+.toc-meta {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+.stack { display: grid; gap: 12px; }
+.panel, .mini-card, .question-card, .frame {
+  background: rgba(255,255,255,0.75);
+  border: 1px solid var(--slide-line);
+  border-radius: 18px;
+  position: relative;
+  z-index: 1;
+}
+.panel { padding: 18px; }
+.panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.panel-title {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+.diagram {
+  min-height: 340px;
+  padding: 18px;
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+.diagram-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.mini-card {
+  padding: 16px 16px 14px;
+}
+.mini-card h3, .question-card h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--text);
+}
+.mini-card p, .question-card p, .note {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.node-box {
+  min-width: 150px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  text-align: center;
+  font-weight: 800;
+  color: var(--text);
+  background: linear-gradient(180deg, #ffffff, #f3f4f0);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.node-box.root { color: var(--forest); }
+.node-box.green { color: #3f6c4e; background: linear-gradient(180deg, #f1f8f0, #e4efe1); }
+.node-box.gold { color: #8b6727; background: linear-gradient(180deg, #fbf1e2, #f2e5cd); }
+.node-box.blue { color: var(--blue); background: linear-gradient(180deg, #eff5fb, #e5edf4); }
+.node-box.rose { color: var(--rose); background: linear-gradient(180deg, #f8eff2, #eee2e7); }
+.arrow {
+  color: var(--moss);
+  font-size: 22px;
+  font-weight: 800;
+}
+.compact-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.compact-tags .pill { padding: 5px 9px; font-size: 11px; }
+
+.question-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+.question-card {
+  padding: 16px;
+  min-height: 150px;
+}
+.question-card strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.footer-band {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(47,111,82,0.16);
+  background: linear-gradient(135deg, rgba(47,111,82,0.08), rgba(182,141,60,0.06));
+  color: var(--forest);
+  font-weight: 800;
+  position: relative;
+  z-index: 1;
+}
+
+.nav {
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(8, 16, 12, 0.82);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 999px;
+  padding: 10px 14px;
+  z-index: 20;
+  backdrop-filter: blur(10px);
+}
+.nav-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+.nav-btn:disabled { opacity: 0.35; cursor: default; }
+.nav-counter {
+  min-width: 64px;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255,255,255,0.76);
+}
+
+.feedback-section {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px dashed rgba(103, 116, 109, 0.32);
+  position: relative;
+  z-index: 1;
+}
+.feedback-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 4px 0;
+}
+.feedback-toggle:hover { color: var(--text); }
+.feedback-toggle .chevron { transition: transform 150ms ease; font-size: 10px; }
+.feedback-toggle .chevron.open { transform: rotate(90deg); }
+.feedback-toggle .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--forest);
+  display: none;
+}
+.feedback-toggle .dot.has-feedback { display: inline-block; }
+.feedback-body { display: none; margin-top: 10px; }
+.feedback-body.open { display: block; }
+.feedback-textarea {
+  width: 100%;
+  min-height: 64px;
+  resize: vertical;
+  border-radius: 12px;
+  border: 1px solid var(--slide-line);
+  padding: 10px 12px;
+  font: inherit;
+  font-size: 13px;
+  background: #fffdf9;
+  color: var(--text);
+  outline: none;
+}
+.feedback-textarea:focus { border-color: rgba(47,111,82,0.55); }
+.feedback-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+.feedback-save {
+  border: 0;
+  border-radius: 10px;
+  padding: 7px 12px;
+  background: var(--forest);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.feedback-save:disabled { opacity: 0.45; cursor: default; }
+.feedback-status {
+  font-size: 11px;
+  color: var(--forest);
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+.feedback-status.show { opacity: 1; }
+.feedback-saved-list { margin-top: 8px; }
+.feedback-entry {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(103, 116, 109, 0.12);
+  font-size: 12px;
+}
+.feedback-entry:last-child { border-bottom: 0; }
+.feedback-entry-time {
+  color: var(--muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.feedback-entry-text {
+  flex: 1;
+  line-height: 1.45;
+}
+.feedback-entry-delete {
+  border: 0;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 12px;
+}
+.feedback-entry-delete:hover { color: var(--clay); }
+
+@media (max-width: 900px) {
+  .toc-groups, .split, .question-grid { grid-template-columns: 1fr; }
+  .slide { padding: 28px 20px 20px; border-radius: 22px; }
+  h1 { font-size: 34px; }
+  h2 { font-size: 28px; }
+  .nav { bottom: 10px; }
+}
+</style>
+</head>
+<body>
+
+<div class="slide active" id="slide-0">
+  <p class="eyebrow">Proposal for Sean</p>
+  <h1>What system are we building?</h1>
+  <div class="hero-title">🌳 Open-Eywa Nervous System</div>
+  <p class="subtitle">Task execution, learning, and code change control on one routed signal path.</p>
+
+  <div class="signal-chain" aria-hidden="true">
+    <div class="signal-chip core">Task</div>
+    <div class="chain-arrow">↓</div>
+    <div class="chain-row">
+      <div class="signal-chip eywa">Eywa</div>
+      <div class="chain-arrow">→</div>
+      <div class="signal-chip bonsai">Bonsai</div>
+      <div class="chain-arrow">→</div>
+      <div class="signal-chip potter">Potter</div>
+    </div>
+    <div class="chain-arrow">↓</div>
+    <div class="signal-chip dry">Dry Run</div>
+  </div>
+
+  <div class="section-label">TOC</div>
+  <div class="toc-groups">
+    <div class="toc-group">
+      <div class="toc-title">System shape</div>
+      <button class="toc-card" onclick="goTo(1)">
+        <div class="toc-index" style="background:rgba(47,111,82,0.12);color:var(--forest)">1</div>
+        <div class="toc-text">What is the shortest version?</div>
+        <div class="toc-meta">TL;DR</div>
+      </button>
+      <button class="toc-card" onclick="goTo(2)">
+        <div class="toc-index" style="background:rgba(111,143,90,0.12);color:#557143">2</div>
+        <div class="toc-text">What does Eywa guarantee?</div>
+        <div class="toc-meta">Runtime</div>
+      </button>
+    </div>
+    <div class="toc-group">
+      <div class="toc-title">Learning loop</div>
+      <button class="toc-card" onclick="goTo(3)">
+        <div class="toc-index" style="background:rgba(182,141,60,0.12);color:#956f29">3</div>
+        <div class="toc-text">How does Bonsai choose variables?</div>
+        <div class="toc-meta">Optimization</div>
+      </button>
+    </div>
+    <div class="toc-group">
+      <div class="toc-title">Change control</div>
+      <button class="toc-card" onclick="goTo(4)">
+        <div class="toc-index" style="background:rgba(163,95,58,0.12);color:var(--clay)">4</div>
+        <div class="toc-text">How does Potter improve code safely?</div>
+        <div class="toc-meta">Dry run gate</div>
+      </button>
+      <button class="toc-card" onclick="goTo(5)">
+        <div class="toc-index" style="background:rgba(76,126,168,0.12);color:var(--blue)">5</div>
+        <div class="toc-text">What still needs to be decided?</div>
+        <div class="toc-meta">Open questions</div>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="slide-1">
+  <p class="eyebrow">TL;DR</p>
+  <h2>What is the shortest version?</h2>
+  <p class="subtitle">Three loops. One trace language. One behavior gate.</p>
+
+  <div class="split">
+    <div class="panel">
+      <div class="panel-head">
+        <div class="panel-title">The proposal</div>
+        <span class="pill forest">signal in</span>
+      </div>
+      <div class="mini-card" style="border-color:rgba(47,111,82,0.2);margin-bottom:12px">
+        <h3>Eywa</h3>
+        <p>Runs the node tree. Same DNA everywhere. Only instructions and variables change.</p>
+      </div>
+      <div class="mini-card" style="border-color:rgba(182,141,60,0.2);margin-bottom:12px">
+        <h3>Bonsai</h3>
+        <p>Learns which variable settings work best for which task shapes using run history and benchmarks.</p>
+      </div>
+      <div class="mini-card" style="border-color:rgba(163,95,58,0.2)">
+        <h3>Potter</h3>
+        <p>Changes the code only through a dry-run oracle that rejects behavior drift.</p>
+      </div>
+    </div>
+
+    <div class="stack">
+      <div class="panel">
+        <div class="panel-head">
+          <div class="panel-title">The loop</div>
+          <span class="pill blue">trace out</span>
+        </div>
+        <div class="diagram">
+          <div class="diagram-line">
+            <div class="node-box root">task</div>
+            <div class="arrow">↓</div>
+            <div class="node-box green">Eywa</div>
+          </div>
+          <div class="diagram-line">
+            <div class="arrow">↓</div>
+            <div class="node-box gold">Bonsai</div>
+          </div>
+          <div class="diagram-line">
+            <div class="arrow">↓</div>
+            <div class="node-box blue">Potter</div>
+          </div>
+          <div class="diagram-line">
+            <div class="arrow">↓</div>
+            <div class="node-box rose">Dry run gate</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-band">Keep the bones stable. Move the intelligence into variables and verified trace data.</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="slide-2">
+  <p class="eyebrow">Runtime</p>
+  <h2>What does Eywa guarantee?</h2>
+  <p class="subtitle">Every node is the same machine. The only differences are instructions and parameter variables.</p>
+
+  <div class="split">
+    <div class="panel diagram">
+      <div class="panel-head">
+        <div class="panel-title">Signal routing</div>
+        <span class="pill moss">same DNA</span>
+      </div>
+      <div class="diagram-line">
+        <div class="node-box root">task</div>
+      </div>
+      <div class="diagram-line">
+        <div class="arrow">↓</div>
+      </div>
+      <div class="diagram-line">
+        <div class="node-box green">root node</div>
+      </div>
+      <div class="diagram-line">
+        <div class="arrow">↓</div>
+      </div>
+      <div class="diagram-line">
+        <div class="node-box gold">action choice</div>
+      </div>
+      <div class="diagram-line">
+        <div class="arrow">↓</div>
+      </div>
+      <div class="diagram-line">
+        <div class="node-box blue">trace packet</div>
+      </div>
+      <div class="compact-tags" style="margin-top:14px;justify-content:center">
+        <span class="pill forest">solve</span>
+        <span class="pill moss">plan</span>
+        <span class="pill amber">delegate</span>
+        <span class="pill clay">split</span>
+      </div>
+    </div>
+
+    <div class="stack">
+      <div class="mini-card">
+        <h3>Node contract</h3>
+        <p>Inputs are task, parent state, instruction bundle, tree vars, node vars, and context slice.</p>
+      </div>
+      <div class="mini-card">
+        <h3>Trace packet</h3>
+        <p>Write node id, parent id, variables, tools, outputs, score, cost, and elapsed time on every run.</p>
+      </div>
+      <div class="mini-card">
+        <h3>Invariant</h3>
+        <p>Take any node from the middle of the tree. It should still be the same machine at its core.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="slide-3">
+  <p class="eyebrow">Learning</p>
+  <h2>How does Bonsai choose variables?</h2>
+  <p class="subtitle">Bonsai sits around Eywa. It learns from run history, benchmarks, and task shape, then returns a variable profile.</p>
+
+  <div class="split">
+    <div class="panel diagram">
+      <div class="panel-head">
+        <div class="panel-title">Selection flow</div>
+        <span class="pill amber">heuristics first</span>
+      </div>
+      <div class="diagram-line">
+        <div class="node-box blue">runs history</div>
+        <div class="arrow">→</div>
+        <div class="node-box green">normalize task</div>
+      </div>
+      <div class="diagram-line">
+        <div class="arrow">↓</div>
+      </div>
+      <div class="diagram-line">
+        <div class="node-box gold">similar tasks</div>
+        <div class="arrow">→</div>
+        <div class="node-box rose">variable selector</div>
+      </div>
+      <div class="diagram-line">
+        <div class="arrow">↓</div>
+      </div>
+      <div class="diagram-line">
+        <div class="node-box root">tree vars + node vars</div>
+      </div>
+      <div class="compact-tags" style="margin-top:14px;justify-content:center">
+        <span class="pill forest">depth</span>
+        <span class="pill moss">fan-out</span>
+        <span class="pill amber">budget</span>
+        <span class="pill blue">verification</span>
+        <span class="pill clay">reflection</span>
+      </div>
+    </div>
+
+    <div class="stack">
+      <div class="mini-card">
+        <h3>What it reads</h3>
+        <p>Task tags, embeddings, scores, cost, time, and the variables used in previous runs.</p>
+      </div>
+      <div class="mini-card">
+        <h3>What it learns</h3>
+        <p>First heuristics. Then a variable policy model once the benchmark set is clean enough.</p>
+      </div>
+      <div class="mini-card">
+        <h3>What it writes</h3>
+        <p>Recommended variables, benchmark promotions, and task-family performance summaries.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="slide-4">
+  <p class="eyebrow">Change control</p>
+  <h2>How does Potter improve code safely?</h2>
+  <p class="subtitle">Potter may simplify and modularize the implementation, but only after dry runs prove that validated behavior stays identical.</p>
+
+  <div class="split">
+    <div class="panel diagram">
+      <div class="panel-head">
+        <div class="panel-title">Behavior gate</div>
+        <span class="pill clay">no drift</span>
+      </div>
+      <div class="diagram-line">
+        <div class="node-box green">candidate worktree</div>
+      </div>
+      <div class="diagram-line">
+        <div class="arrow">↓</div>
+      </div>
+      <div class="diagram-line">
+        <div class="node-box blue">dry run oracle</div>
+      </div>
+      <div class="diagram-line">
+        <div class="arrow">↓</div>
+      </div>
+      <div class="diagram-line">
+        <div class="node-box rose">exact output match</div>
+      </div>
+      <div class="diagram-line">
+        <div class="arrow">↓</div>
+      </div>
+      <div class="diagram-line">
+        <div class="node-box gold">accept or reject</div>
+      </div>
+    </div>
+
+    <div class="stack">
+      <div class="mini-card">
+        <h3>Allowed improvements</h3>
+        <p>Lower complexity, smaller modules, stronger boundaries, and cleaner traces.</p>
+      </div>
+      <div class="mini-card">
+        <h3>Allowed differences</h3>
+        <p>Execution time may move a little. Semantics may not.</p>
+      </div>
+      <div class="mini-card">
+        <h3>Potter output</h3>
+        <p>A pass or fail plus a report on modularity, intuitiveness, and robustness.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="slide-5">
+  <p class="eyebrow">Open questions</p>
+  <h2>What still needs to be decided?</h2>
+  <p class="subtitle">The proposal is concrete enough to build, but these contracts need a final decision before optimization can scale.</p>
+
+  <div class="question-grid">
+    <div class="question-card">
+      <strong>Which variables are tree level and which are node level?</strong>
+      <p>Freeze the first schema so future runs can compare like with like.</p>
+    </div>
+    <div class="question-card">
+      <strong>What is the minimum benchmark taxonomy?</strong>
+      <p>Choose the task tags that best predict the right variable profile.</p>
+    </div>
+    <div class="question-card">
+      <strong>What must the dry run machine fully simulate?</strong>
+      <p>Potter cannot change code until replay is deterministic enough to trust.</p>
+    </div>
+    <div class="question-card">
+      <strong>When does a run graduate into the benchmark bank?</strong>
+      <p>Set a promotion rule for verifiable runs and keep the history separate.</p>
+    </div>
+  </div>
+
+  <div class="footer-band">Freeze the trace packet and variable schema first. Then Eywa, Bonsai, and Potter can move independently without losing the contract.</div>
+</div>
+
+<div class="nav">
+  <button class="nav-btn" id="prevBtn" onclick="prev()">←</button>
+  <div class="nav-counter" id="navCounter">1 / 6</div>
+  <button class="nav-btn" id="nextBtn" onclick="next()">→</button>
+</div>
+
+<script>
+let current = 0;
+const total = document.querySelectorAll('.slide').length;
+const FEEDBACK_KEY = 'proposal-03-nervous-system-feedback';
+
+function slideTitle(index) {
+  const titles = [
+    'What are we building?',
+    'What is the shortest version?',
+    'What does Eywa guarantee?',
+    'How does Bonsai choose variables?',
+    'How does Potter improve code safely?',
+    'What still needs to be decided?'
+  ];
+  return titles[index] || `Slide ${index + 1}`;
+}
+
+function readStore() {
+  try { return JSON.parse(localStorage.getItem(FEEDBACK_KEY) || '{}'); }
+  catch { return {}; }
+}
+
+function writeStore(store) {
+  localStorage.setItem(FEEDBACK_KEY, JSON.stringify(store));
+  fetch('/api/feedback', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(store)
+  }).catch(() => {});
+}
+
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+function renderFeedback(idx) {
+  const store = readStore();
+  const entries = store[`slide-${idx}`] || [];
+  const list = document.getElementById(`feedback-list-${idx}`);
+  const dot = document.getElementById(`feedback-dot-${idx}`);
+  if (dot) dot.classList.toggle('has-feedback', entries.length > 0);
+  if (!list) return;
+  list.innerHTML = entries.map((entry, entryIdx) => `
+    <div class="feedback-entry">
+      <span class="feedback-entry-time">${new Date(entry.timestamp).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
+      <span class="feedback-entry-text">${escapeHtml(entry.text)}</span>
+      <button class="feedback-entry-delete" onclick="deleteFeedback(${idx}, ${entryIdx})">×</button>
+    </div>
+  `).join('');
+}
+
+function saveFeedback(idx) {
+  const input = document.getElementById(`feedback-input-${idx}`);
+  const status = document.getElementById(`feedback-status-${idx}`);
+  if (!input || !input.value.trim()) return;
+
+  const store = readStore();
+  const key = `slide-${idx}`;
+  if (!store[key]) store[key] = [];
+  store[key].push({
+    text: input.value.trim(),
+    timestamp: new Date().toISOString(),
+    slideTitle: slideTitle(idx)
+  });
+  writeStore(store);
+  input.value = '';
+  renderFeedback(idx);
+
+  if (status) {
+    status.classList.add('show');
+    setTimeout(() => status.classList.remove('show'), 1400);
+  }
+}
+
+function deleteFeedback(idx, entryIdx) {
+  const store = readStore();
+  const key = `slide-${idx}`;
+  if (!store[key] || store[key][entryIdx] === undefined) return;
+  store[key].splice(entryIdx, 1);
+  if (store[key].length === 0) delete store[key];
+  writeStore(store);
+  renderFeedback(idx);
+}
+
+function toggleFeedback(idx) {
+  const body = document.getElementById(`feedback-body-${idx}`);
+  const chevron = document.getElementById(`feedback-chevron-${idx}`);
+  if (body) body.classList.toggle('open');
+  if (chevron) chevron.classList.toggle('open');
+}
+
+document.querySelectorAll('.slide').forEach((slide, idx) => {
+  const section = document.createElement('div');
+  section.className = 'feedback-section';
+  section.innerHTML = `
+    <button class="feedback-toggle" onclick="toggleFeedback(${idx})">
+      <span class="chevron" id="feedback-chevron-${idx}">▶</span>
+      <span>Leave feedback on this slide</span>
+      <span class="dot" id="feedback-dot-${idx}"></span>
+    </button>
+    <div class="feedback-body" id="feedback-body-${idx}">
+      <div class="feedback-saved-list" id="feedback-list-${idx}"></div>
+      <textarea class="feedback-textarea" id="feedback-input-${idx}" placeholder="Your notes on this slide..." onkeydown="if(event.key==='Enter' && event.metaKey){saveFeedback(${idx});event.preventDefault();}"></textarea>
+      <div class="feedback-actions">
+        <button class="feedback-save" onclick="saveFeedback(${idx})">Save (⌘↵)</button>
+        <span class="feedback-status" id="feedback-status-${idx}">Saved</span>
+      </div>
+    </div>
+  `;
+  slide.appendChild(section);
+  renderFeedback(idx);
+});
+
+(async function mergeFeedback() {
+  try {
+    const response = await fetch('/api/feedback');
+    const serverStore = await response.json();
+    const localStore = readStore();
+    let changed = false;
+
+    for (const key of Object.keys(serverStore || {})) {
+      if (!localStore[key]) {
+        localStore[key] = serverStore[key];
+        changed = true;
+        continue;
+      }
+      const seen = new Set(localStore[key].map(entry => entry.timestamp));
+      for (const entry of serverStore[key]) {
+        if (!seen.has(entry.timestamp)) {
+          localStore[key].push(entry);
+          changed = true;
+        }
+      }
+    }
+
+    if (changed) {
+      localStorage.setItem(FEEDBACK_KEY, JSON.stringify(localStore));
+      document.querySelectorAll('.slide').forEach((_, idx) => renderFeedback(idx));
+    }
+  } catch {}
+})();
+
+function show(index) {
+  document.querySelectorAll('.slide').forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+  });
+  document.getElementById('navCounter').textContent = `${index + 1} / ${total}`;
+  document.getElementById('prevBtn').disabled = index === 0;
+  document.getElementById('nextBtn').disabled = index === total - 1;
+  current = index;
+}
+
+function next() { if (current < total - 1) show(current + 1); }
+function prev() { if (current > 0) show(current - 1); }
+function goTo(index) { show(index); }
+
+document.addEventListener('keydown', event => {
+  if (event.target && event.target.tagName === 'TEXTAREA') return;
+  if (event.key === 'ArrowRight' || event.key === ' ') {
+    event.preventDefault();
+    next();
+  }
+  if (event.key === 'ArrowLeft') {
+    event.preventDefault();
+    prev();
+  }
+});
+</script>
+</body>
+</html>

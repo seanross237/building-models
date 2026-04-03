@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atlas QG2 — Complete Mission Results</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --slide-bg: #f8f9fa;
+  --slide-border: #e1e4e8;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #4f46e5;
+  --accent-light: #eef2ff;
+  --green: #059669;
+  --green-light: #ecfdf5;
+  --red: #dc2626;
+  --red-light: #fef2f2;
+  --amber: #d97706;
+  --amber-light: #fffbeb;
+  --blue: #2563eb;
+  --blue-light: #eff6ff;
+  --purple: #7c3aed;
+  --purple-light: #f5f3ff;
+  --teal: #0d9488;
+  --teal-light: #f0fdfa;
+  --rose: #e11d48;
+  --rose-light: #fff1f2;
+  --slate: #475569;
+  --slate-light: #f1f5f9;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  display: flex; flex-direction: column; align-items: center;
+  min-height: 100vh; padding: 40px 20px;
+}
+
+/* Nav */
+.nav {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+  padding: 10px 20px; border-radius: 999px; z-index: 100;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+.nav-btn {
+  background: transparent; border: 1px solid rgba(255,255,255,0.2);
+  color: white; width: 36px; height: 36px; border-radius: 50%;
+  cursor: pointer; font-size: 16px; display: flex; align-items: center;
+  justify-content: center; transition: all 0.15s;
+}
+.nav-btn:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.4); }
+.nav-btn:disabled { opacity: 0.3; cursor: default; }
+.nav-counter { color: rgba(255,255,255,0.6); font-size: 13px; min-width: 50px; text-align: center; }
+
+/* Slide */
+.slide {
+  display: none; width: 100%; max-width: 860px;
+  background: var(--slide-bg); border: 1px solid var(--slide-border);
+  border-radius: 16px; padding: 48px 56px 56px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+  animation: fadeIn 0.25s ease;
+}
+.slide.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Typography */
+h1 { font-size: 32px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+h2 { font-size: 26px; font-weight: 700; color: var(--text); margin-bottom: 16px; }
+h3 { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: var(--muted); margin-bottom: 32px; }
+.label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+
+/* Big title for section headers */
+.slide-title-big {
+  font-size: 36px; font-weight: 800; letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+
+/* Cards */
+.card {
+  border: 1px solid var(--slide-border); border-radius: 10px;
+  padding: 16px 20px; margin-bottom: 12px; background: white;
+}
+.card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.card-num {
+  width: 28px; height: 28px; border-radius: 8px; font-size: 13px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.card-title { font-size: 15px; font-weight: 600; color: var(--text); }
+.card-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+/* Stats */
+.stats { display: grid; gap: 12px; margin: 20px 0; }
+.stats-2 { grid-template-columns: 1fr 1fr; }
+.stats-3 { grid-template-columns: 1fr 1fr 1fr; }
+.stats-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.stats-5 { grid-template-columns: 1fr 1fr 1fr 1fr 1fr; }
+.stat {
+  text-align: center; padding: 16px 12px; border-radius: 10px;
+  border: 1px solid var(--slide-border); background: white;
+}
+.stat-value { font-size: 28px; font-weight: 700; }
+.stat-label { font-size: 11px; color: var(--muted); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* Tags */
+.tag {
+  display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px;
+  border-radius: 6px; margin-right: 4px; margin-bottom: 4px;
+}
+.tag-green { background: var(--green-light); color: var(--green); }
+.tag-red { background: var(--red-light); color: var(--red); }
+.tag-amber { background: var(--amber-light); color: var(--amber); }
+.tag-blue { background: var(--blue-light); color: var(--blue); }
+.tag-accent { background: var(--accent-light); color: var(--accent); }
+.tag-purple { background: var(--purple-light); color: var(--purple); }
+.tag-teal { background: var(--teal-light); color: var(--teal); }
+
+/* Misc */
+.divider { height: 1px; background: var(--slide-border); margin: 24px 0; }
+.finding {
+  display: flex; gap: 12px; margin-bottom: 12px; font-size: 13px; line-height: 1.5;
+}
+.finding-num {
+  width: 22px; height: 22px; border-radius: 50%; background: var(--accent);
+  color: white; font-size: 11px; font-weight: 700; display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0; margin-top: 1px;
+}
+
+/* TOC */
+.toc-section-title {
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
+  margin-top: 24px; margin-bottom: 10px; padding-left: 4px;
+}
+.toc-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px;
+}
+.toc-item {
+  display: flex; align-items: center; gap: 12px; padding: 12px 16px;
+  border: 1px solid var(--slide-border); border-radius: 10px;
+  cursor: pointer; transition: all 0.15s; background: white;
+}
+.toc-item:hover { border-color: var(--accent); background: var(--accent-light); }
+.toc-num {
+  width: 28px; height: 28px; border-radius: 8px; font-size: 13px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.toc-text { font-size: 14px; font-weight: 500; color: var(--text); }
+
+/* Flow / architecture */
+.flow-arrow { text-align: center; font-size: 20px; color: var(--muted); margin: 4px 0; }
+.flow-box {
+  border: 1px solid var(--slide-border); border-radius: 10px; padding: 12px 16px;
+  background: white; text-align: center; font-size: 13px; font-weight: 500;
+}
+
+/* Agent hierarchy diagram */
+.agent-tree { display: flex; flex-direction: column; align-items: center; gap: 0; margin: 16px 0; }
+.agent-node {
+  padding: 10px 20px; border-radius: 10px; font-size: 13px; font-weight: 600;
+  text-align: center; border: 2px solid; min-width: 160px;
+}
+.agent-row { display: flex; gap: 16px; justify-content: center; align-items: flex-start; }
+.agent-connector {
+  width: 2px; height: 20px; background: var(--slide-border); margin: 0 auto;
+}
+.agent-branch {
+  display: flex; flex-direction: column; align-items: center;
+}
+
+/* Knowledge flow diagram */
+.flow-diagram {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0;
+}
+.flow-card {
+  border: 1px solid var(--slide-border); border-radius: 10px; padding: 14px 16px;
+  background: white;
+}
+.flow-card-icon {
+  font-size: 18px; margin-bottom: 6px;
+}
+.flow-card-title {
+  font-size: 13px; font-weight: 700; margin-bottom: 4px;
+}
+.flow-card-desc {
+  font-size: 12px; color: var(--muted); line-height: 1.4;
+}
+
+/* Conclusion callout */
+.callout {
+  border-radius: 12px; padding: 20px 24px; margin: 16px 0;
+}
+.callout-title {
+  font-size: 14px; font-weight: 700; margin-bottom: 6px;
+}
+.callout-text {
+  font-size: 14px; line-height: 1.6;
+}
+
+/* Timeline */
+.timeline-item {
+  display: flex; gap: 12px; margin-bottom: 14px; font-size: 13px; line-height: 1.5;
+}
+.timeline-marker {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 4px;
+}
+.timeline-content { flex: 1; }
+.timeline-title { font-weight: 600; color: var(--text); }
+.timeline-desc { color: var(--muted); margin-top: 2px; }
+
+/* Strategy evolution visual */
+.evo-track {
+  display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0; margin: 16px 0; position: relative;
+}
+.evo-track::before {
+  content: ''; position: absolute; top: 20px; left: 10%; right: 10%;
+  height: 3px; background: linear-gradient(90deg, var(--green), var(--blue), var(--purple), var(--amber));
+  border-radius: 2px; z-index: 0;
+}
+.evo-step {
+  display: flex; flex-direction: column; align-items: center; position: relative; z-index: 1;
+}
+.evo-dot {
+  width: 16px; height: 16px; border-radius: 50%; border: 3px solid white;
+  box-shadow: 0 0 0 2px var(--slide-border); margin-bottom: 10px;
+}
+.evo-label {
+  font-size: 11px; font-weight: 700; text-align: center; margin-bottom: 2px;
+}
+.evo-desc {
+  font-size: 11px; color: var(--muted); text-align: center; line-height: 1.3; max-width: 140px;
+}
+
+/* Scorecard */
+.scorecard { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin: 12px 0; }
+.score-item {
+  padding: 10px 12px; border-radius: 8px; text-align: center;
+  border: 1px solid var(--slide-border); background: white;
+}
+.score-label { font-size: 11px; font-weight: 600; color: var(--muted); margin-bottom: 4px; }
+.score-value { font-size: 14px; font-weight: 700; }
+
+/* Rule pill */
+.rule-pill {
+  display: flex; align-items: flex-start; gap: 10px; padding: 10px 14px;
+  border-radius: 8px; background: white; border: 1px solid var(--slide-border);
+  margin-bottom: 8px; font-size: 13px; line-height: 1.4;
+}
+.rule-icon {
+  width: 22px; height: 22px; border-radius: 6px; font-size: 12px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+
+/* Feedback */
+.feedback-section {
+  margin-top: 24px; padding-top: 16px;
+  border-top: 1px dashed var(--slide-border);
+}
+.feedback-toggle {
+  display: flex; align-items: center; gap: 8px; cursor: pointer;
+  font-size: 12px; font-weight: 600; color: var(--muted);
+  background: none; border: none; padding: 4px 0;
+  transition: color 0.15s;
+}
+.feedback-toggle:hover { color: var(--text); }
+.feedback-toggle .chevron { transition: transform 0.2s; font-size: 10px; }
+.feedback-toggle .chevron.open { transform: rotate(90deg); }
+.feedback-toggle .dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+  display: none;
+}
+.feedback-toggle .dot.has-feedback { display: inline-block; }
+.feedback-body { display: none; margin-top: 10px; }
+.feedback-body.open { display: block; }
+.feedback-textarea {
+  width: 100%; min-height: 60px; padding: 10px 12px;
+  border: 1px solid var(--slide-border); border-radius: 8px;
+  font-family: inherit; font-size: 13px; color: var(--text);
+  background: white; resize: vertical; outline: none;
+  transition: border-color 0.15s;
+}
+.feedback-textarea:focus { border-color: var(--accent); }
+.feedback-actions { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+.feedback-save {
+  padding: 6px 14px; border-radius: 6px; border: none;
+  background: var(--accent); color: white; font-size: 12px;
+  font-weight: 600; cursor: pointer; transition: opacity 0.15s;
+}
+.feedback-save:hover { opacity: 0.85; }
+.feedback-save:disabled { opacity: 0.4; cursor: default; }
+.feedback-status { font-size: 11px; color: var(--green); opacity: 0; transition: opacity 0.3s; }
+.feedback-status.show { opacity: 1; }
+.feedback-saved-list { margin-top: 8px; }
+.feedback-entry {
+  display: flex; gap: 8px; align-items: flex-start; padding: 6px 0;
+  font-size: 12px; color: var(--text); border-bottom: 1px solid #f3f4f6;
+}
+.feedback-entry:last-child { border-bottom: none; }
+.feedback-entry-time { color: var(--muted); font-size: 11px; white-space: nowrap; flex-shrink: 0; }
+.feedback-entry-text { line-height: 1.4; }
+.feedback-entry-delete {
+  background: none; border: none; color: var(--muted); cursor: pointer;
+  font-size: 11px; padding: 0 4px; flex-shrink: 0;
+}
+.feedback-entry-delete:hover { color: var(--red); }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 0: Title + TOC -->
+<div class="slide active" id="slide-0">
+  <div style="text-align:center;margin-bottom:28px">
+    <p class="label" style="color:var(--accent);letter-spacing:3px;margin-bottom:8px">MISSION DEBRIEF</p>
+    <h1 style="font-size:36px;letter-spacing:-0.5px">&#127757; Atlas QG2 &mdash; Complete Mission</h1>
+    <p style="font-size:15px;color:var(--muted);margin-top:8px">36 explorations, 4 strategies, one fundamental question: can AI text agents do original physics?</p>
+  </div>
+
+  <div style="height:2px;background:linear-gradient(90deg, var(--green), var(--blue), var(--purple), var(--amber));border-radius:2px;margin-bottom:28px"></div>
+
+  <!-- Stats bar -->
+  <div class="stats stats-4" style="margin-bottom:24px;margin-top:0">
+    <div class="stat">
+      <div class="stat-value" style="color:var(--accent)">4</div>
+      <div class="stat-label">Strategies</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--green)">36</div>
+      <div class="stat-label">Explorations</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--purple)">~12h</div>
+      <div class="stat-label">Total Runtime</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--amber)">3/2/0</div>
+      <div class="stat-label">Pass / Marginal / Fail</div>
+    </div>
+  </div>
+
+  <!-- Section: The System -->
+  <div class="toc-section-title" style="color:var(--accent)">The System</div>
+  <div class="toc-grid">
+    <div class="toc-item" onclick="goTo(1)">
+      <div class="toc-num" style="background:var(--accent-light);color:var(--accent)">1</div>
+      <div class="toc-text">Agent Architecture</div>
+    </div>
+    <div class="toc-item" onclick="goTo(2)">
+      <div class="toc-num" style="background:var(--blue-light);color:var(--blue)">2</div>
+      <div class="toc-text">The Four Strategies</div>
+    </div>
+  </div>
+
+  <!-- Section: Results -->
+  <div class="toc-section-title" style="color:var(--green)">Results</div>
+  <div class="toc-grid">
+    <div class="toc-item" onclick="goTo(3)">
+      <div class="toc-num" style="background:var(--green-light);color:var(--green)">3</div>
+      <div class="toc-text">Key Findings</div>
+    </div>
+    <div class="toc-item" onclick="goTo(4)">
+      <div class="toc-num" style="background:var(--teal-light);color:var(--teal)">4</div>
+      <div class="toc-text">System Performance</div>
+    </div>
+  </div>
+
+  <!-- Section: Takeaways -->
+  <div class="toc-section-title" style="color:var(--amber)">Takeaways</div>
+  <div class="toc-grid">
+    <div class="toc-item" onclick="goTo(5)">
+      <div class="toc-num" style="background:var(--amber-light);color:var(--amber)">5</div>
+      <div class="toc-text">Methodology Evolution</div>
+    </div>
+    <div class="toc-item" onclick="goTo(6)">
+      <div class="toc-num" style="background:var(--purple-light);color:var(--purple)">6</div>
+      <div class="toc-text">The Golden Rules</div>
+    </div>
+    <div class="toc-item" onclick="goTo(7)">
+      <div class="toc-num" style="background:var(--slate-light);color:var(--slate)">7</div>
+      <div class="toc-text">The Boundary</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 1: Agent Architecture -->
+<div class="slide" id="slide-1">
+  <p class="label" style="color:var(--accent)">The System</p>
+  <h2 class="slide-title-big" style="color:var(--accent)">5 Agents, 3 Levels</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:24px">Each agent is a Claude Code instance in its own tmux session. The hierarchy decides who owns which scope of decisions.</p>
+
+  <!-- Visual agent hierarchy -->
+  <div class="agent-tree">
+    <div class="agent-node" style="border-color:var(--accent);background:var(--accent-light);color:var(--accent);">
+      Missionary
+      <div style="font-size:11px;font-weight:400;color:var(--muted);margin-top:2px">Writes strategies. Evaluates results. Decides when to stop.</div>
+    </div>
+    <div class="agent-connector"></div>
+    <div class="agent-node" style="border-color:var(--blue);background:var(--blue-light);color:var(--blue);">
+      Strategizer
+      <div style="font-size:11px;font-weight:400;color:var(--muted);margin-top:2px">Owns one strategy. Designs explorations. Runs 8&ndash;16 per strategy.</div>
+    </div>
+    <div class="agent-connector"></div>
+    <div class="agent-row">
+      <div class="agent-branch">
+        <div class="agent-node" style="border-color:var(--green);background:var(--green-light);color:var(--green);min-width:130px;">
+          Explorer
+          <div style="font-size:11px;font-weight:400;color:var(--muted);margin-top:2px">Researches one question deeply</div>
+        </div>
+      </div>
+      <div class="agent-branch">
+        <div class="agent-node" style="border-color:var(--purple);background:var(--purple-light);color:var(--purple);min-width:130px;">
+          Librarian
+          <div style="font-size:11px;font-weight:400;color:var(--muted);margin-top:2px">Searches the shared knowledge base</div>
+        </div>
+      </div>
+      <div class="agent-branch">
+        <div class="agent-node" style="border-color:var(--amber);background:var(--amber-light);color:var(--amber);min-width:130px;">
+          Curator
+          <div style="font-size:11px;font-weight:400;color:var(--muted);margin-top:2px">Files findings into the library</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div style="display:flex;gap:12px">
+    <div class="card" style="flex:1">
+      <div style="font-size:12px;font-weight:700;color:var(--accent);margin-bottom:4px">OUTER LOOP</div>
+      <div class="card-desc">Missionary writes a strategy (methodology + goals), launches a strategizer, reads the final report, decides whether to write another strategy or declare mission complete.</div>
+    </div>
+    <div class="card" style="flex:1">
+      <div style="font-size:12px;font-weight:700;color:var(--blue);margin-bottom:4px">INNER LOOP</div>
+      <div class="card-desc">Strategizer queries the librarian, designs an exploration goal, launches an explorer in tmux, reads its report, launches the curator to file findings. Repeat until strategy is exhausted.</div>
+    </div>
+  </div>
+
+  <div class="callout" style="background:var(--accent-light);border:1px solid #c7d2fe;margin-top:12px">
+    <div class="callout-text" style="color:var(--text);font-size:13px">QG2 was the second full mission on this architecture. The missionary ran 4 strategies (vs. 2 in QG1), demonstrating the outer loop can sustain longer campaigns.</div>
+  </div>
+</div>
+
+<!-- SLIDE 2: The Four Strategies -->
+<div class="slide" id="slide-2">
+  <p class="label" style="color:var(--blue)">The Campaign</p>
+  <h2 class="slide-title-big" style="color:var(--blue)">Four Strategies, One Mission</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:16px">Each strategy built on what the last one learned. The missionary adapted the methodology every time.</p>
+
+  <!-- Evolution track -->
+  <div class="evo-track" style="margin-bottom:24px">
+    <div class="evo-step">
+      <div class="evo-dot" style="background:var(--green)"></div>
+      <div class="evo-label" style="color:var(--green)">S-001</div>
+      <div class="evo-desc">Build from scratch</div>
+    </div>
+    <div class="evo-step">
+      <div class="evo-dot" style="background:var(--blue)"></div>
+      <div class="evo-label" style="color:var(--blue)">S-002</div>
+      <div class="evo-desc">Mine gaps, sprint, build</div>
+    </div>
+    <div class="evo-step">
+      <div class="evo-dot" style="background:var(--purple)"></div>
+      <div class="evo-label" style="color:var(--purple)">S-003</div>
+      <div class="evo-desc">Conjecture-Prosecution</div>
+    </div>
+    <div class="evo-step">
+      <div class="evo-dot" style="background:var(--amber)"></div>
+      <div class="evo-label" style="color:var(--amber)">S-004</div>
+      <div class="evo-desc">Prediction Forge</div>
+    </div>
+  </div>
+
+  <!-- Strategy cards -->
+  <div class="card" style="border-left:3px solid var(--green);padding:14px 18px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+      <div class="card-title" style="color:var(--green)">Strategy 1: Axiom-Breaking Construction</div>
+      <span class="tag tag-green">9 explorations</span>
+    </div>
+    <div class="card-desc">Built Stochastic Computational Gravity from scratch. Devil's advocate found a fatal flaw, repaired it. Honest verdict: creative but couldn't compute anything.</div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--blue);padding:14px 18px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+      <div class="card-title" style="color:var(--blue)">Strategy 2: Focused Theory from QG+F Gaps</div>
+      <span class="tag tag-blue">10 explorations</span>
+    </div>
+    <div class="card-desc">Gap-mine, concept-sprint, deep-build, harden. Found the Wheeler propagator bridge (novel, unpublished). All concept sprints hit the classical-to-quantum gap.</div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--purple);padding:14px 18px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+      <div class="card-title" style="color:var(--purple)">Strategy 3: QG+F &ndash; AS Unification</div>
+      <span class="tag tag-purple">9 explorations</span>
+    </div>
+    <div class="card-desc">Best methodology overall. Conjecture-Prosecution: every exploration produces a verdict. Built a 415-line unified framework with 7 predictions. Devil's advocate: 3 serious attacks, 0 fatal.</div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--amber);padding:14px 18px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+      <div class="card-title" style="color:var(--amber)">Strategy 4: Prediction Forge</div>
+      <span class="tag tag-amber">8 explorations</span>
+    </div>
+    <div class="card-desc">Targeted prediction extraction + adversarial testing. Devil's advocate was devastating: zero discriminating predictions survived. Found the fundamental limit.</div>
+  </div>
+</div>
+
+<!-- SLIDE 3: Key Findings -->
+<div class="slide" id="slide-3">
+  <p class="label" style="color:var(--green)">Results</p>
+  <h2 class="slide-title-big" style="color:var(--green)">What It Found</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">The mission produced a Unified QG+F&ndash;AS Framework &mdash; and an honest assessment of its limits.</p>
+
+  <!-- Validation scorecard -->
+  <h3 style="margin-bottom:8px">Mission Validation Scorecard</h3>
+  <div class="scorecard">
+    <div class="score-item" style="border-top:3px solid var(--green)">
+      <div class="score-label">Logical Consistency</div>
+      <div class="score-value" style="color:var(--green)">PASS</div>
+    </div>
+    <div class="score-item" style="border-top:3px solid var(--green)">
+      <div class="score-label">Compatibility w/ Reality</div>
+      <div class="score-value" style="color:var(--green)">PASS</div>
+    </div>
+    <div class="score-item" style="border-top:3px solid var(--green)">
+      <div class="score-label">Depth</div>
+      <div class="score-value" style="color:var(--green)">PASS</div>
+    </div>
+    <div class="score-item" style="border-top:3px solid var(--amber)">
+      <div class="score-label">Novelty</div>
+      <div class="score-value" style="color:var(--amber)">MARGINAL</div>
+    </div>
+    <div class="score-item" style="border-top:3px solid var(--amber)">
+      <div class="score-label">Explanatory Power</div>
+      <div class="score-value" style="color:var(--amber)">MARGINAL</div>
+    </div>
+    <div class="score-item" style="border-top:3px solid var(--slate)">
+      <div class="score-label">Fail Count</div>
+      <div class="score-value" style="color:var(--slate)">0</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h3>Novel Contributions</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px">
+    <div class="card" style="border-left:3px solid var(--accent);margin-bottom:0">
+      <div style="font-size:12px;font-weight:600;color:var(--accent);margin-bottom:3px">Wheeler Propagator Bridge</div>
+      <div class="card-desc">Unpublished connection: fakeon = Wheeler propagator, and causal sets independently produce the Wheeler propagator. Novel, interpretive.</div>
+    </div>
+    <div class="card" style="border-left:3px solid var(--purple);margin-bottom:0">
+      <div style="font-size:12px;font-weight:600;color:var(--purple);margin-bottom:3px">QG+F &ndash; AS Prosecution</div>
+      <div class="card-desc">First systematic attempt to test whether QG+F and Asymptotic Safety are the same theory. Scorecard: 0 falsified, 3 supported, 2 inconclusive.</div>
+    </div>
+    <div class="card" style="border-left:3px solid var(--teal);margin-bottom:0">
+      <div style="font-size:12px;font-weight:600;color:var(--teal);margin-bottom:3px">Three Critical Computations</div>
+      <div class="card-desc">Precisely specified calculations that would upgrade the framework from interpretive to predictive. Requires human FRG expertise.</div>
+    </div>
+    <div class="card" style="border-left:3px solid var(--green);margin-bottom:0">
+      <div style="font-size:12px;font-weight:600;color:var(--green);margin-bottom:3px">&delta;&#8323; Sign Result + 23 Debts</div>
+      <div class="card-desc">NGFP predicts correct sign for n<sub>s</sub> tension. Plus a full 23-debt catalog of QG+F's explanatory gaps.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4: System Performance -->
+<div class="slide" id="slide-4">
+  <p class="label" style="color:var(--teal)">Results</p>
+  <h2 class="slide-title-big" style="color:var(--teal)">How the System Performed</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">Self-correction, parallel execution, and improving context efficiency across four strategies.</p>
+
+  <div class="stats stats-4">
+    <div class="stat">
+      <div class="stat-value" style="color:var(--teal)">36</div>
+      <div class="stat-label">Explorations</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--teal)">~12h+</div>
+      <div class="stat-label">Total runtime</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--teal)">15%</div>
+      <div class="stat-label">Best context usage (S-004)</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--teal)">4</div>
+      <div class="stat-label">Strategy pivots</div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:4px">System Behaviors</h3>
+  <div style="display:flex;gap:12px;margin-bottom:12px">
+    <div class="card" style="flex:1;border-top:3px solid var(--green)">
+      <div style="font-size:12px;font-weight:600;color:var(--green)">Self-Correction</div>
+      <div class="card-desc" style="margin-top:4px">Strategizer nudged stuck explorers, ran parallel explorers in S-004, and adapted methodology after each strategy's results came in.</div>
+    </div>
+    <div class="card" style="flex:1;border-top:3px solid var(--blue)">
+      <div style="font-size:12px;font-weight:600;color:var(--blue)">Parallel Execution</div>
+      <div class="card-desc" style="margin-top:4px">Strategy 2 ran parallel concept sprints (3 approaches simultaneously). Strategy 4 ran parallel prediction extractions across 5 topics.</div>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:12px">
+    <div class="card" style="flex:1;border-top:3px solid var(--purple)">
+      <div style="font-size:12px;font-weight:600;color:var(--purple)">Context Efficiency Improved</div>
+      <div class="card-desc" style="margin-top:4px">Strategy 4 used only 15% of context for 8 explorations &mdash; the best efficiency of any strategy. Pre-loaded context and one-task-per-exploration drove the improvement.</div>
+    </div>
+    <div class="card" style="flex:1;border-top:3px solid var(--amber)">
+      <div style="font-size:12px;font-weight:600;color:var(--amber)">Known Bug: Stop Hook Crash Loop</div>
+      <div class="card-desc" style="margin-top:4px">Stop hook entered a crash-restart loop at the end of every strategy. Didn't kill the mission but wasted cycles. Needs a clean exit detection.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5: Methodology Evolution (MAIN STORY) -->
+<div class="slide" id="slide-5">
+  <p class="label" style="color:var(--amber)">Takeaways</p>
+  <h2 class="slide-title-big" style="color:var(--amber)">How the Methodology Evolved</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:16px">This is the main story. Each strategy's methodology was a direct response to the last one's failures.</p>
+
+  <!-- Strategy 1 -->
+  <div class="timeline-item">
+    <div class="timeline-marker" style="background:var(--green)"></div>
+    <div class="timeline-content">
+      <div class="timeline-title" style="color:var(--green)">S-001: Diverge &rarr; Construct &rarr; Stress</div>
+      <div class="timeline-desc">Good divergence phase, but premature convergence. Multi-task explorations timed out regularly. Built something creative that couldn't compute anything.</div>
+      <div style="margin-top:4px"><span class="tag tag-red">Lesson: multi-task explorations fail</span> <span class="tag tag-amber">Lesson: need earlier adversarial testing</span></div>
+    </div>
+  </div>
+
+  <!-- Strategy 2 -->
+  <div class="timeline-item">
+    <div class="timeline-marker" style="background:var(--blue)"></div>
+    <div class="timeline-content">
+      <div class="timeline-title" style="color:var(--blue)">S-002: Gap-Mine &rarr; Sprint &rarr; Build &rarr; Harden</div>
+      <div class="timeline-desc">Best of the first two strategies. Parallel sprints were excellent. But interpretive targets don't produce testable theories &mdash; every sprint hit the classical-to-quantum gap.</div>
+      <div style="margin-top:4px"><span class="tag tag-green">Win: parallel sprints</span> <span class="tag tag-red">Lesson: interpretive targets are dead ends</span></div>
+    </div>
+  </div>
+
+  <!-- Strategy 3 -->
+  <div class="timeline-item">
+    <div class="timeline-marker" style="background:var(--purple)"></div>
+    <div class="timeline-content">
+      <div class="timeline-title" style="color:var(--purple)">S-003: Conjecture-Prosecution</div>
+      <div class="timeline-desc">Best methodology overall. Every exploration produces a verdict (not just a report). Pre-loaded context with specific paper names maximized efficiency. Built a real framework.</div>
+      <div style="margin-top:4px"><span class="tag tag-green">Win: every exploration has a verdict</span> <span class="tag tag-green">Win: pre-loaded context</span></div>
+    </div>
+  </div>
+
+  <!-- Strategy 4 -->
+  <div class="timeline-item">
+    <div class="timeline-marker" style="background:var(--amber)"></div>
+    <div class="timeline-content">
+      <div class="timeline-title" style="color:var(--amber)">S-004: Prediction Forge</div>
+      <div class="timeline-desc">Excellent for assessment. Found the fundamental limit: text reasoning alone can't produce discriminating predictions. The devil's advocate was devastating. Identified exactly what computation is needed.</div>
+      <div style="margin-top:4px"><span class="tag tag-green">Win: found the boundary</span> <span class="tag tag-amber">Limit: reasoning alone isn't enough</span></div>
+    </div>
+  </div>
+
+  <div class="callout" style="background:var(--amber-light);border:1px solid #fde68a;margin-top:8px">
+    <div class="callout-title" style="color:var(--amber)">Key insight</div>
+    <div class="callout-text" style="color:var(--text)">The system learned <em>across strategies</em>. Each strategy was designed by the missionary as a direct response to what failed before. This is exactly the behavior you want from the outer loop.</div>
+  </div>
+</div>
+
+<!-- SLIDE 6: The Golden Rules -->
+<div class="slide" id="slide-6">
+  <p class="label" style="color:var(--purple)">Takeaways</p>
+  <h2 class="slide-title-big" style="color:var(--purple)">The Golden Rules</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">Six rules the system discovered about how to run autonomous research. Learned the hard way, across 36 explorations.</p>
+
+  <div class="rule-pill">
+    <div class="rule-icon" style="background:var(--red-light);color:var(--red)">1</div>
+    <div><strong style="color:var(--text)">One task per exploration.</strong> <span style="color:var(--muted)">Non-negotiable. Multi-task explorations time out, produce shallow results, and waste context. Every exploration gets exactly one job.</span></div>
+  </div>
+
+  <div class="rule-pill">
+    <div class="rule-icon" style="background:var(--purple-light);color:var(--purple)">2</div>
+    <div><strong style="color:var(--text)">Devil's advocate immediately after first construction.</strong> <span style="color:var(--muted)">Don't build for 5 explorations then test. Build once, stress-test once, then iterate. Catches fatal flaws before you invest.</span></div>
+  </div>
+
+  <div class="rule-pill">
+    <div class="rule-icon" style="background:var(--blue-light);color:var(--blue)">3</div>
+    <div><strong style="color:var(--text)">Pre-load ALL relevant context.</strong> <span style="color:var(--muted)">Include specific paper names, equation numbers, and prior results in the exploration goal. Explorers that start cold produce shallow work.</span></div>
+  </div>
+
+  <div class="rule-pill">
+    <div class="rule-icon" style="background:var(--green-light);color:var(--green)">4</div>
+    <div><strong style="color:var(--text)">Every exploration gets a verdict.</strong> <span style="color:var(--muted)">Not just a report &mdash; a classification. Supported, refuted, inconclusive. Forces the explorer to commit to a conclusion.</span></div>
+  </div>
+
+  <div class="rule-pill">
+    <div class="rule-icon" style="background:var(--teal-light);color:var(--teal)">5</div>
+    <div><strong style="color:var(--text)">200&ndash;400 lines per focused exploration.</strong> <span style="color:var(--muted)">Longer than this means the task was too broad. Shorter means the explorer didn't go deep enough.</span></div>
+  </div>
+
+  <div class="rule-pill">
+    <div class="rule-icon" style="background:var(--amber-light);color:var(--amber)">6</div>
+    <div><strong style="color:var(--text)">&ldquo;If this fails, explain WHY&rdquo; in every goal.</strong> <span style="color:var(--muted)">Without this instruction, explorers paper over failures. With it, failed explorations are as informative as successful ones.</span></div>
+  </div>
+
+  <div class="callout" style="background:var(--purple-light);border:1px solid #ddd6fe;margin-top:12px">
+    <div class="callout-text" style="color:var(--text);font-size:13px">These rules are domain-agnostic. They apply to any research mission run on the Atlas architecture, not just quantum gravity.</div>
+  </div>
+</div>
+
+<!-- SLIDE 7: The Boundary -->
+<div class="slide" id="slide-7">
+  <p class="label" style="color:var(--slate)">Takeaways</p>
+  <h2 class="slide-title-big" style="color:var(--slate)">The Boundary</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:24px">The mission ended because the system discovered what AI text agents can and cannot do for research.</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div>
+      <h3 style="color:var(--green);margin-bottom:10px">What text agents CAN do</h3>
+      <div class="card" style="border-left:3px solid var(--green);margin-bottom:8px">
+        <div class="card-desc"><strong>Survey and synthesize.</strong> Map an entire field's landscape, find gaps, identify connections between theories.</div>
+      </div>
+      <div class="card" style="border-left:3px solid var(--green);margin-bottom:8px">
+        <div class="card-desc"><strong>Build frameworks.</strong> Construct logically consistent theoretical structures from existing pieces.</div>
+      </div>
+      <div class="card" style="border-left:3px solid var(--green);margin-bottom:8px">
+        <div class="card-desc"><strong>Stress-test ruthlessly.</strong> Devil's advocate mode finds real flaws. Three serious attacks, zero fatal &mdash; that's useful validation.</div>
+      </div>
+      <div class="card" style="border-left:3px solid var(--green);margin-bottom:0">
+        <div class="card-desc"><strong>Know when to stop.</strong> The system identified its own limit and specified exactly what computation was needed next.</div>
+      </div>
+    </div>
+    <div>
+      <h3 style="color:var(--red);margin-bottom:10px">What text agents CANNOT do</h3>
+      <div class="card" style="border-left:3px solid var(--red);margin-bottom:8px">
+        <div class="card-desc"><strong>Produce discriminating predictions.</strong> Strategy 4's devil's advocate wiped out every prediction. Reasoning about formulas is not computing them.</div>
+      </div>
+      <div class="card" style="border-left:3px solid var(--red);margin-bottom:8px">
+        <div class="card-desc"><strong>Run numerical calculations.</strong> The three critical computations require FRG flow equation solvers. No amount of text reasoning substitutes for this.</div>
+      </div>
+      <div class="card" style="border-left:3px solid var(--red);margin-bottom:0">
+        <div class="card-desc"><strong>Cross the classical-to-quantum gap.</strong> Every concept sprint in S-002 hit this wall. Bridging it requires new mathematical machinery, not argument.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="callout" style="background:var(--slate-light);border:1px solid #cbd5e1">
+    <div class="callout-title" style="color:var(--slate)">Bottom line</div>
+    <div class="callout-text" style="color:var(--text)">The program reached the boundary of what can be achieved by reasoning about existing theories without performing original calculations. The three critical computations it identified require numerical FRG expertise in human research groups. The system didn't just fail and stop &mdash; it diagnosed exactly <em>why</em> it couldn't go further and specified exactly <em>what</em> would be needed to continue. That's the product.</div>
+  </div>
+</div>
+
+<!-- Nav -->
+<div class="nav">
+  <button class="nav-btn" id="prevBtn" onclick="prev()">&larr;</button>
+  <div class="nav-counter" id="navCounter">1 / 8</div>
+  <button class="nav-btn" id="nextBtn" onclick="next()">&rarr;</button>
+</div>
+
+<script>
+let current = 0;
+const total = document.querySelectorAll('.slide').length;
+
+// --- Feedback System ---
+const FEEDBACK_KEY = 'atlas-qg2-complete-feedback';
+
+function loadFeedback() {
+  try { return JSON.parse(localStorage.getItem(FEEDBACK_KEY) || '{}'); }
+  catch { return {}; }
+}
+
+function saveFeedbackStore(store) {
+  localStorage.setItem(FEEDBACK_KEY, JSON.stringify(store));
+  fetch('/api/feedback', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(store)
+  }).catch(() => {});
+}
+
+function addFeedback(slideIdx, text) {
+  if (!text.trim()) return;
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  if (!store[key]) store[key] = [];
+  store[key].push({
+    text: text.trim(),
+    timestamp: new Date().toISOString(),
+    slideTitle: getSlideName(slideIdx)
+  });
+  saveFeedbackStore(store);
+  renderFeedbackForSlide(slideIdx);
+}
+
+function deleteFeedback(slideIdx, entryIdx) {
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  if (store[key] && store[key][entryIdx] !== undefined) {
+    store[key].splice(entryIdx, 1);
+    if (store[key].length === 0) delete store[key];
+    saveFeedbackStore(store);
+    renderFeedbackForSlide(slideIdx);
+  }
+}
+
+function getSlideName(idx) {
+  const names = ['Title & TOC', 'Agent Architecture', 'The Four Strategies',
+                 'Key Findings', 'System Performance', 'Methodology Evolution',
+                 'The Golden Rules', 'The Boundary'];
+  return names[idx] || 'Slide ' + (idx + 1);
+}
+
+function renderFeedbackForSlide(slideIdx) {
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  const entries = store[key] || [];
+  const listEl = document.getElementById('feedback-list-' + slideIdx);
+  const dotEl = document.getElementById('feedback-dot-' + slideIdx);
+
+  if (dotEl) dotEl.classList.toggle('has-feedback', entries.length > 0);
+  if (!listEl) return;
+  if (entries.length === 0) { listEl.innerHTML = ''; return; }
+
+  listEl.innerHTML = entries.map((e, i) => `
+    <div class="feedback-entry">
+      <span class="feedback-entry-time">${new Date(e.timestamp).toLocaleDateString('en-US', {month:'short',day:'numeric'})}</span>
+      <span class="feedback-entry-text">${escapeHtml(e.text)}</span>
+      <button class="feedback-entry-delete" onclick="deleteFeedback(${slideIdx},${i})" title="Delete">&times;</button>
+    </div>
+  `).join('');
+}
+
+function escapeHtml(str) {
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+function submitFeedback(slideIdx) {
+  const ta = document.getElementById('feedback-input-' + slideIdx);
+  const status = document.getElementById('feedback-status-' + slideIdx);
+  if (!ta || !ta.value.trim()) return;
+  addFeedback(slideIdx, ta.value);
+  ta.value = '';
+  if (status) {
+    status.classList.add('show');
+    setTimeout(() => status.classList.remove('show'), 2000);
+  }
+}
+
+function toggleFeedback(slideIdx) {
+  const body = document.getElementById('feedback-body-' + slideIdx);
+  const chev = document.getElementById('feedback-chevron-' + slideIdx);
+  if (body) body.classList.toggle('open');
+  if (chev) chev.classList.toggle('open');
+}
+
+// Inject feedback UI into every slide
+document.querySelectorAll('.slide').forEach((slide, idx) => {
+  const section = document.createElement('div');
+  section.className = 'feedback-section';
+  section.innerHTML = `
+    <button class="feedback-toggle" onclick="toggleFeedback(${idx})">
+      <span class="chevron" id="feedback-chevron-${idx}">&#9654;</span>
+      <span>Leave feedback on this slide</span>
+      <span class="dot" id="feedback-dot-${idx}"></span>
+    </button>
+    <div class="feedback-body" id="feedback-body-${idx}">
+      <div class="feedback-saved-list" id="feedback-list-${idx}"></div>
+      <textarea class="feedback-textarea" id="feedback-input-${idx}" placeholder="Your thoughts on this slide..." onkeydown="if(event.key==='Enter'&&event.metaKey){submitFeedback(${idx});event.preventDefault();}"></textarea>
+      <div class="feedback-actions">
+        <button class="feedback-save" onclick="submitFeedback(${idx})">Save (&#8984;&#9166;)</button>
+        <span class="feedback-status" id="feedback-status-${idx}">Saved!</span>
+      </div>
+    </div>
+  `;
+  slide.appendChild(section);
+  renderFeedbackForSlide(idx);
+});
+
+// --- Load server feedback on startup (merge with localStorage) ---
+(async function() {
+  try {
+    const resp = await fetch('/api/feedback');
+    const serverStore = await resp.json();
+    const localStore = loadFeedback();
+    let merged = false;
+    for (const key of Object.keys(serverStore)) {
+      if (!localStore[key]) { localStore[key] = serverStore[key]; merged = true; }
+      else {
+        const localTimestamps = new Set(localStore[key].map(e => e.timestamp));
+        for (const entry of serverStore[key]) {
+          if (!localTimestamps.has(entry.timestamp)) {
+            localStore[key].push(entry);
+            merged = true;
+          }
+        }
+      }
+    }
+    if (merged) {
+      localStorage.setItem(FEEDBACK_KEY, JSON.stringify(localStore));
+      document.querySelectorAll('.slide').forEach((_, idx) => renderFeedbackForSlide(idx));
+    }
+  } catch {}
+})();
+
+// --- Navigation ---
+function show(n) {
+  document.querySelectorAll('.slide').forEach((s, i) => {
+    s.classList.toggle('active', i === n);
+  });
+  document.getElementById('navCounter').textContent = (n + 1) + ' / ' + total;
+  document.getElementById('prevBtn').disabled = n === 0;
+  document.getElementById('nextBtn').disabled = n === total - 1;
+  current = n;
+}
+
+function next() { if (current < total - 1) show(current + 1); }
+function prev() { if (current > 0) show(current - 1); }
+function goTo(n) { show(n); }
+
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'TEXTAREA') return;
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+});
+</script>
+</body>
+</html>

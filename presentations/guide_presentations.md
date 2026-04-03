@@ -9,7 +9,8 @@ Presentations are built on request to context-load Sean back into the project. T
 ## Learnings
 
 ### Visual Style
-- **Lighter backgrounds.** Slides should render inside a distinct square/card with a lighter background, clearly separated from the dark page behind it. Not dark-on-dark.
+- **Dark theme by default.** Presentations should be dark themed unless Sean explicitly asks for something else.
+- **Keep slides distinct from the page.** Even in a dark theme, slides should still read as clear cards/panels with separation, depth, and strong contrast. Avoid muddy dark-on-dark layouts.
 - **Less text.** Keep slides sparse. Visuals and short labels over paragraphs. If it feels like reading, there's too much.
 - **Make it fun.** Slides should feel visually engaging, not like a document. Use color, layout variety, and whitespace generously. Avoid walls of text even if the content is interesting.
 - **Short chunks, not walls.** When you land on a slide, the first impression should be clean and scannable — headlines, labels, small cards. Never hit the reader with a block of text. If detail is needed, put it behind a collapsible section (collapsed by default). Use `<details><summary>` or a click-to-expand pattern so the reader can drill in when they want to and skip when they don't. The slide should feel light on arrival and rich on demand.

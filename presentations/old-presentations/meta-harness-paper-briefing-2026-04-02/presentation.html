@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meta-Harness — Paper Briefing</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --slide-bg: #f8f9fa;
+  --slide-border: #e2e8f0;
+  --text: #172033;
+  --muted: #667085;
+  --accent: #4f46e5;
+  --accent-light: #eef2ff;
+  --teal: #0f766e;
+  --teal-light: #ecfeff;
+  --green: #15803d;
+  --green-light: #f0fdf4;
+  --amber: #b45309;
+  --amber-light: #fffbeb;
+  --red: #b91c1c;
+  --red-light: #fef2f2;
+  --blue: #1d4ed8;
+  --blue-light: #eff6ff;
+  --purple: #7c3aed;
+  --purple-light: #f5f3ff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: radial-gradient(circle at top, #1a2233 0%, var(--bg) 55%);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  padding: 40px 20px 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  max-width: 960px;
+  background: var(--slide-bg);
+  border: 1px solid var(--slide-border);
+  border-radius: 18px;
+  padding: 42px 48px 52px;
+  box-shadow: 0 14px 60px rgba(0,0,0,0.35);
+  animation: fadeIn 0.25s ease;
+}
+
+.slide.active { display: block; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.nav {
+  position: fixed;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.84);
+  padding: 10px 18px;
+  border-radius: 999px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+  z-index: 100;
+}
+
+.nav-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.nav-btn:hover { background: rgba(255,255,255,0.08); }
+.nav-btn:disabled { opacity: 0.3; cursor: default; }
+.nav-counter { color: rgba(255,255,255,0.75); font-size: 13px; min-width: 54px; text-align: center; }
+
+h1 { font-size: 35px; line-height: 1.1; margin-bottom: 8px; }
+h2 { font-size: 26px; line-height: 1.15; margin-bottom: 14px; }
+h3 { font-size: 16px; margin-bottom: 6px; }
+.subtitle { font-size: 16px; color: var(--muted); margin-bottom: 22px; line-height: 1.5; }
+.label {
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.hero-stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.stat {
+  background: white;
+  border: 1px solid var(--slide-border);
+  border-radius: 12px;
+  padding: 16px 14px;
+}
+
+.stat-value { font-size: 28px; font-weight: 700; }
+.stat-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.toc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.toc-item {
+  padding: 16px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--slide-border);
+  background: white;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.toc-item:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
+
+.toc-num {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.toc-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.toc-desc { font-size: 12px; color: var(--muted); line-height: 1.45; }
+
+.tldr-stack { display: flex; flex-direction: column; gap: 10px; }
+
+.flow-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--slide-border);
+  background: white;
+}
+
+.flow-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.flow-title { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+.flow-desc { font-size: 12px; color: var(--muted); line-height: 1.45; }
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--slide-border);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+
+.card p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.mini-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 10px;
+}
+
+.mini-item {
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--text);
+  padding-left: 16px;
+  position: relative;
+}
+
+.mini-item::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  position: absolute;
+  left: 0;
+  top: 7px;
+}
+
+.pill {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.visual {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid var(--slide-border);
+  background: white;
+}
+
+.split-visual {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.big-number {
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.big-label {
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+details { margin-top: 12px; }
+details summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 700;
+}
+details summary::-webkit-details-marker { display: none; }
+details summary::before {
+  content: '\25B6';
+  font-size: 9px;
+  display: inline-block;
+  margin-right: 6px;
+  transition: transform 0.2s;
+}
+details[open] summary::before { transform: rotate(90deg); }
+.detail-content {
+  margin-top: 8px;
+  padding: 12px 14px;
+  border: 1px solid var(--slide-border);
+  border-radius: 10px;
+  background: #fbfcfe;
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.divider {
+  height: 1px;
+  background: var(--slide-border);
+  margin: 22px 0;
+}
+
+.feedback-section {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--slide-border);
+}
+.feedback-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  background: none;
+  border: none;
+  padding: 4px 0;
+}
+.feedback-toggle:hover { color: var(--text); }
+.feedback-toggle .chevron { transition: transform 0.2s; font-size: 10px; }
+.feedback-toggle .chevron.open { transform: rotate(90deg); }
+.feedback-toggle .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: none;
+}
+.feedback-toggle .dot.has-feedback { display: inline-block; }
+.feedback-body { display: none; margin-top: 10px; }
+.feedback-body.open { display: block; }
+.feedback-textarea {
+  width: 100%;
+  min-height: 62px;
+  padding: 10px 12px;
+  border: 1px solid var(--slide-border);
+  border-radius: 8px;
+  background: white;
+  font: inherit;
+  font-size: 13px;
+  resize: vertical;
+}
+.feedback-actions { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+.feedback-save {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.feedback-status { font-size: 11px; color: var(--green); opacity: 0; transition: opacity 0.25s; }
+.feedback-status.show { opacity: 1; }
+.feedback-saved-list { margin-top: 8px; }
+.feedback-entry {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 6px 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 12px;
+}
+.feedback-entry:last-child { border-bottom: none; }
+.feedback-entry-time { color: var(--muted); font-size: 11px; white-space: nowrap; }
+.feedback-entry-text { line-height: 1.4; }
+.feedback-entry-delete {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 11px;
+  padding: 0 4px;
+}
+.feedback-entry-delete:hover { color: var(--red); }
+
+@media (max-width: 900px) {
+  .slide { padding: 32px 24px 44px; }
+  .hero-grid, .grid-2, .grid-3, .split-visual, .toc-grid, .hero-stat-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="slide active" id="slide-0">
+  <div class="hero-grid">
+    <div>
+      <div style="font-size:62px; margin-bottom:14px;">🔄</div>
+      <h1>Meta-Harness</h1>
+      <p class="subtitle" style="font-size:19px; margin-bottom:10px;">End-to-end optimization of model harnesses</p>
+      <p style="font-size:14px; color:var(--muted); line-height:1.55;">
+        A short paper briefing on the core idea, the system architecture, and what the method actually improved.
+      </p>
+
+      <div class="hero-stat-row">
+        <div class="stat">
+          <div class="stat-value" style="color:var(--accent);">3</div>
+          <div class="stat-label">Domains tested</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" style="color:var(--green);">10M</div>
+          <div class="stat-label">Tokens of diagnostic context per eval</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" style="color:var(--amber);">82</div>
+          <div class="stat-label">Median files read per iteration</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <img class="visual" src="assets/x3.png" alt="Meta-Harness loop diagram">
+      <div class="card" style="margin-top:12px; background:var(--accent-light); border-color:#c7d2fe;">
+        <div class="pill" style="background:white; color:var(--accent);">Paper claim</div>
+        <p style="color:var(--text);">
+          Better harnesses can be found by a coding agent that reads full prior code, scores, and traces through a filesystem.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="slide-1">
+  <p class="label" style="color:var(--teal);">What is inside</p>
+  <h2>Table of Contents</h2>
+  <p class="subtitle">Short version first, then the method, then the strongest evidence.</p>
+
+  <div class="toc-grid">
+    <div class="toc-item" onclick="goTo(2)">
+      <div class="toc-num" style="background:var(--teal-light); color:var(--teal);">1</div>
+      <div class="toc-title">TL;DR</div>
+      <div class="toc-desc">The whole paper in four steps and one takeaway.</div>
+    </div>
+    <div class="toc-item" onclick="goTo(3)">
+      <div class="toc-num" style="background:var(--amber-light); color:var(--amber);">2</div>
+      <div class="toc-title">Why This Exists</div>
+      <div class="toc-desc">Why harness engineering breaks most text optimizers.</div>
+    </div>
+    <div class="toc-item" onclick="goTo(4)">
+      <div class="toc-num" style="background:var(--blue-light); color:var(--blue);">3</div>
+      <div class="toc-title">Architecture</div>
+      <div class="toc-desc">One coding agent, one evaluation loop, full history on disk.</div>
+    </div>
+    <div class="toc-item" onclick="goTo(5)">
+      <div class="toc-num" style="background:var(--purple-light); color:var(--purple);">4</div>
+      <div class="toc-title">Best Result</div>
+      <div class="toc-desc">Text classification is the cleanest proof point.</div>
+    </div>
+    <div class="toc-item" onclick="goTo(6)">
+      <div class="toc-num" style="background:var(--green-light); color:var(--green);">5</div>
+      <div class="toc-title">Transfer</div>
+      <div class="toc-desc">The same idea also helps math retrieval and agentic coding.</div>
+    </div>
+    <div class="toc-item" onclick="goTo(7)">
+      <div class="toc-num" style="background:var(--red-light); color:var(--red);">6</div>
+      <div class="toc-title">Limits and Bottom Line</div>
+      <div class="toc-desc">What seems real here, and what still needs caution.</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="slide-2">
+  <p class="label" style="color:var(--teal);">TL;DR</p>
+  <h2>The Story in 30 Seconds</h2>
+
+  <div class="tldr-stack">
+    <div class="flow-box">
+      <div class="flow-icon" style="background:var(--amber-light); color:var(--amber);">1</div>
+      <div>
+        <div class="flow-title">Harnesses matter as much as models</div>
+        <div class="flow-desc">The paper treats the wrapper around an LLM as a first-class optimization target, not just an implementation detail.</div>
+      </div>
+    </div>
+
+    <div class="flow-box">
+      <div class="flow-icon" style="background:var(--blue-light); color:var(--blue);">2</div>
+      <div>
+        <div class="flow-title">Compressed feedback is the bottleneck</div>
+        <div class="flow-desc">Most prior optimizers only see short summaries or scores, which is too little signal for long-horizon harness failures.</div>
+      </div>
+    </div>
+
+    <div class="flow-box">
+      <div class="flow-icon" style="background:var(--purple-light); color:var(--purple);">3</div>
+      <div>
+        <div class="flow-title">Meta-Harness gives the proposer full history</div>
+        <div class="flow-desc">The coding agent reads prior source code, evaluation traces, prompts, tool calls, and scores directly from a filesystem.</div>
+      </div>
+    </div>
+
+    <div class="flow-box">
+      <div class="flow-icon" style="background:var(--green-light); color:var(--green);">4</div>
+      <div>
+        <div class="flow-title">That richer access produces better harnesses</div>
+        <div class="flow-desc">The paper reports gains on text classification, retrieval-augmented math reasoning, and TerminalBench-2 agentic coding.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="card" style="background:var(--accent-light); border-color:#c7d2fe;">
+    <div class="pill" style="background:white; color:var(--accent);">Takeaway</div>
+    <p style="color:var(--text);">The strongest idea is not search over prompts. It is search over executable harness code with selective access to full prior experience.</p>
+  </div>
+</div>
+
+<div class="slide" id="slide-3">
+  <p class="label" style="color:var(--amber);">Why this paper exists</p>
+  <h2>Harness Engineering Is a Long-Horizon Diagnosis Problem</h2>
+
+  <div class="grid-2">
+    <div class="card" style="border-left:4px solid var(--amber);">
+      <div class="pill" style="background:var(--amber-light); color:var(--amber);">Problem</div>
+      <h3>One early harness decision can fail much later</h3>
+      <div class="mini-list">
+        <div class="mini-item">What to store in memory</div>
+        <div class="mini-item">When to retrieve it</div>
+        <div class="mini-item">How to show it to the model</div>
+      </div>
+    </div>
+
+    <div class="card" style="border-left:4px solid var(--red);">
+      <div class="pill" style="background:var(--red-light); color:var(--red);">Mismatch</div>
+      <h3>Most prior optimizers compress away the clues</h3>
+      <div class="mini-list">
+        <div class="mini-item">Scores only</div>
+        <div class="mini-item">Current candidate only</div>
+        <div class="mini-item">Short generated summaries</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-3" style="margin-top:16px;">
+    <div class="stat">
+      <div class="big-number" style="color:var(--red);">0.002</div>
+      <div class="big-label">Mtok per iter for OPRO</div>
+    </div>
+    <div class="stat">
+      <div class="big-number" style="color:var(--amber);">0.026</div>
+      <div class="big-label">Upper end of prior methods in Table 1</div>
+    </div>
+    <div class="stat">
+      <div class="big-number" style="color:var(--accent);">10.0</div>
+      <div class="big-label">Mtok per iter for Meta-Harness</div>
+    </div>
+  </div>
+
+  <details>
+    <summary>Open detail</summary>
+    <div class="detail-content">
+      The paper frames this as an information-access problem. Harness search can generate up to 10,000,000 tokens of diagnostic material per evaluation, so fixed prompt summaries are not just smaller, they are structurally too lossy.
+    </div>
+  </details>
+</div>
+
+<div class="slide" id="slide-4">
+  <p class="label" style="color:var(--blue);">Architecture</p>
+  <h2>One Coding Agent, One Evaluation Loop, Full History on Disk</h2>
+
+  <div class="split-visual">
+    <img class="visual" src="assets/x3.png" alt="Meta-Harness search loop">
+
+    <div>
+      <div class="card" style="margin-bottom:12px; border-left:4px solid var(--blue);">
+        <div class="pill" style="background:var(--blue-light); color:var(--blue);">Agent architecture</div>
+        <h3>Visible roles</h3>
+        <div class="mini-list">
+          <div class="mini-item">1 coding-agent proposer</div>
+          <div class="mini-item">1 evaluation loop over tasks</div>
+          <div class="mini-item">Filesystem as external memory</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:12px; border-left:4px solid var(--teal);">
+        <div class="pill" style="background:var(--teal-light); color:var(--teal);">Information flow</div>
+        <h3>What gets stored and reused</h3>
+        <div class="mini-list">
+          <div class="mini-item">Source code of prior harnesses</div>
+          <div class="mini-item">Scores and search outcomes</div>
+          <div class="mini-item">Raw execution traces and tool use</div>
+        </div>
+      </div>
+
+      <div class="card" style="border-left:4px solid var(--green); background:var(--green-light);">
+        <div class="pill" style="background:white; color:var(--green);">Behavioral signal</div>
+        <p style="color:var(--text);">In the hardest setting, the proposer reads a median of 82 files per iteration. The search is using history broadly, not just mutating the latest version.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="slide-5">
+  <p class="label" style="color:var(--purple);">Best result</p>
+  <h2>Text Classification Is the Cleanest Proof Point</h2>
+
+  <div class="split-visual">
+    <img class="visual" src="assets/x5.png" alt="Search progress chart">
+
+    <div>
+      <div class="grid-2" style="gap:12px;">
+        <div class="stat">
+          <div class="stat-value" style="color:var(--accent);">48.6%</div>
+          <div class="stat-label">Selected Meta-Harness accuracy</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" style="color:var(--green);">11.4K</div>
+          <div class="stat-label">Context tokens used</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px; border-left:4px solid var(--green);">
+        <div class="pill" style="background:var(--green-light); color:var(--green);">What matters</div>
+        <div class="mini-list">
+          <div class="mini-item">Beats ACE by 7.7 points</div>
+          <div class="mini-item">Beats MCE by 8.6 points</div>
+          <div class="mini-item">Uses less context than both</div>
+          <div class="mini-item">Matches the next-best text optimizer in 4 evaluations</div>
+        </div>
+      </div>
+
+      <details>
+        <summary>Open exact metrics</summary>
+        <div class="detail-content">
+          The paper also reports 73.1% average accuracy on 9 unseen text datasets, ahead of ACE at 70.2%. That matters because it suggests the discovered harness is not only a narrow search-set artifact.
+        </div>
+      </details>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="slide-6">
+  <p class="label" style="color:var(--green);">Transfer</p>
+  <h2>The Same Pattern Transfers Beyond One Benchmark</h2>
+
+  <div class="grid-3">
+    <div class="card" style="border-top:4px solid var(--blue);">
+      <div class="pill" style="background:var(--blue-light); color:var(--blue);">Math retrieval</div>
+      <div class="big-number" style="color:var(--blue);">+4.7</div>
+      <div class="big-label">Average points over no retrieval</div>
+      <p style="margin-top:10px;">One discovered retrieval harness improves performance on 200 unseen IMO-level problems across five held-out models.</p>
+    </div>
+
+    <div class="card" style="border-top:4px solid var(--purple);">
+      <div class="pill" style="background:var(--purple-light); color:var(--purple);">TerminalBench-2</div>
+      <div class="big-number" style="color:var(--purple);">76.4%</div>
+      <div class="big-label">Opus 4.6 pass rate</div>
+      <p style="margin-top:10px;">Beats Terminus-KIRA at 74.7% and ranks second overall among Opus 4.6 agents in the reported table.</p>
+    </div>
+
+    <div class="card" style="border-top:4px solid var(--teal);">
+      <div class="pill" style="background:var(--teal-light); color:var(--teal);">Haiku 4.5</div>
+      <div class="big-number" style="color:var(--teal);">37.6%</div>
+      <div class="big-label">Reported pass rate</div>
+      <p style="margin-top:10px;">Ranks first among Haiku 4.5 agents in the paper's comparison table.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="pill" style="background:var(--amber-light); color:var(--amber);">What was discovered</div>
+      <div class="mini-list">
+        <div class="mini-item">Classification: a label-primed, contrastive retrieval prompt</div>
+        <div class="mini-item">Math: a four-route BM25 retrieval policy by subject area</div>
+        <div class="mini-item">Coding: an environment bootstrap before the first LLM turn</div>
+      </div>
+    </div>
+    <div>
+      <img class="visual" src="assets/x2.png" alt="TerminalBench-2 chart">
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="slide-7">
+  <p class="label" style="color:var(--red);">Limits and takeaway</p>
+  <h2>What Looks Strong, and What Still Needs Caution</h2>
+
+  <div class="grid-2">
+    <div class="card" style="border-left:4px solid var(--green);">
+      <div class="pill" style="background:var(--green-light); color:var(--green);">Strongest evidence</div>
+      <div class="mini-list">
+        <div class="mini-item">Ablation says raw traces matter: 50.0 median accuracy for full Meta-Harness versus 34.6 and 34.9 for compressed variants</div>
+        <div class="mini-item">The discovered harnesses are readable procedures, not opaque weight changes</div>
+        <div class="mini-item">The proposer appears to self-correct by comparing regressions and isolating confounds</div>
+      </div>
+    </div>
+
+    <div class="card" style="border-left:4px solid var(--red);">
+      <div class="pill" style="background:var(--red-light); color:var(--red);">Caution</div>
+      <div class="mini-list">
+        <div class="mini-item">TerminalBench search and final evaluation happen on the same public benchmark</div>
+        <div class="mini-item">The system relies on a strong coding-agent proposer</div>
+        <div class="mini-item">This is persuasive evidence for harness search, not a final answer on general automated system design</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:18px; background:var(--accent-light); border-color:#c7d2fe;">
+    <div class="pill" style="background:white; color:var(--accent);">Bottom line</div>
+    <p style="color:var(--text);">
+      The paper makes a strong case that future gains may come from agents redesigning their own scaffolding, with full prior experience available as searchable external memory.
+    </p>
+  </div>
+
+  <details>
+    <summary>Open source note</summary>
+    <div class="detail-content">
+      Sources used for this briefing: the arXiv paper, the official project page, and the project-page figures copied into this folder for local serving.
+    </div>
+  </details>
+</div>
+
+<div class="nav">
+  <button class="nav-btn" id="prevBtn" onclick="prev()">&larr;</button>
+  <div class="nav-counter" id="navCounter">1 / 8</div>
+  <button class="nav-btn" id="nextBtn" onclick="next()">&rarr;</button>
+</div>
+
+<script>
+let current = 0;
+const total = document.querySelectorAll('.slide').length;
+const FEEDBACK_KEY = 'meta-harness-paper-briefing-feedback';
+
+function loadFeedback() {
+  try { return JSON.parse(localStorage.getItem(FEEDBACK_KEY) || '{}'); }
+  catch { return {}; }
+}
+
+function saveFeedbackStore(store) {
+  localStorage.setItem(FEEDBACK_KEY, JSON.stringify(store));
+  fetch('/api/feedback', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(store)
+  }).catch(() => {});
+}
+
+function getSlideName(idx) {
+  const names = [
+    'Title',
+    'Table of Contents',
+    'TL;DR',
+    'Why This Exists',
+    'Architecture',
+    'Best Result',
+    'Transfer',
+    'Limits and Takeaway'
+  ];
+  return names[idx] || 'Slide ' + (idx + 1);
+}
+
+function addFeedback(slideIdx, text) {
+  if (!text.trim()) return;
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  if (!store[key]) store[key] = [];
+  store[key].push({
+    text: text.trim(),
+    timestamp: new Date().toISOString(),
+    slideTitle: getSlideName(slideIdx)
+  });
+  saveFeedbackStore(store);
+  renderFeedbackForSlide(slideIdx);
+}
+
+function deleteFeedback(slideIdx, entryIdx) {
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  if (store[key] && store[key][entryIdx] !== undefined) {
+    store[key].splice(entryIdx, 1);
+    if (store[key].length === 0) delete store[key];
+    saveFeedbackStore(store);
+    renderFeedbackForSlide(slideIdx);
+  }
+}
+
+function escapeHtml(str) {
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+function renderFeedbackForSlide(slideIdx) {
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  const entries = store[key] || [];
+  const listEl = document.getElementById('feedback-list-' + slideIdx);
+  const dotEl = document.getElementById('feedback-dot-' + slideIdx);
+  if (dotEl) dotEl.classList.toggle('has-feedback', entries.length > 0);
+  if (!listEl) return;
+  if (entries.length === 0) { listEl.innerHTML = ''; return; }
+
+  listEl.innerHTML = entries.map((e, i) => `
+    <div class="feedback-entry">
+      <span class="feedback-entry-time">${new Date(e.timestamp).toLocaleDateString('en-US', {month:'short', day:'numeric'})}</span>
+      <span class="feedback-entry-text">${escapeHtml(e.text)}</span>
+      <button class="feedback-entry-delete" onclick="deleteFeedback(${slideIdx}, ${i})" title="Delete">&times;</button>
+    </div>
+  `).join('');
+}
+
+function submitFeedback(slideIdx) {
+  const ta = document.getElementById('feedback-input-' + slideIdx);
+  const status = document.getElementById('feedback-status-' + slideIdx);
+  if (!ta || !ta.value.trim()) return;
+  addFeedback(slideIdx, ta.value);
+  ta.value = '';
+  if (status) {
+    status.classList.add('show');
+    setTimeout(() => status.classList.remove('show'), 1800);
+  }
+}
+
+function toggleFeedback(slideIdx) {
+  const body = document.getElementById('feedback-body-' + slideIdx);
+  const chev = document.getElementById('feedback-chevron-' + slideIdx);
+  if (body) body.classList.toggle('open');
+  if (chev) chev.classList.toggle('open');
+}
+
+document.querySelectorAll('.slide').forEach((slide, idx) => {
+  const section = document.createElement('div');
+  section.className = 'feedback-section';
+  section.innerHTML = `
+    <button class="feedback-toggle" onclick="toggleFeedback(${idx})">
+      <span class="chevron" id="feedback-chevron-${idx}">&#9654;</span>
+      <span>Leave feedback on this slide</span>
+      <span class="dot" id="feedback-dot-${idx}"></span>
+    </button>
+    <div class="feedback-body" id="feedback-body-${idx}">
+      <div class="feedback-saved-list" id="feedback-list-${idx}"></div>
+      <textarea class="feedback-textarea" id="feedback-input-${idx}" placeholder="Your thoughts on this slide..." onkeydown="if(event.key==='Enter'&&event.metaKey){submitFeedback(${idx});event.preventDefault();}"></textarea>
+      <div class="feedback-actions">
+        <button class="feedback-save" onclick="submitFeedback(${idx})">Save (&#8984;&#9166;)</button>
+        <span class="feedback-status" id="feedback-status-${idx}">Saved!</span>
+      </div>
+    </div>
+  `;
+  slide.appendChild(section);
+  renderFeedbackForSlide(idx);
+});
+
+(async function() {
+  try {
+    const resp = await fetch('/api/feedback');
+    const serverStore = await resp.json();
+    const localStore = loadFeedback();
+    let merged = false;
+    for (const key of Object.keys(serverStore)) {
+      if (!localStore[key]) { localStore[key] = serverStore[key]; merged = true; }
+      else {
+        const localTimestamps = new Set(localStore[key].map(e => e.timestamp));
+        for (const entry of serverStore[key]) {
+          if (!localTimestamps.has(entry.timestamp)) {
+            localStore[key].push(entry);
+            merged = true;
+          }
+        }
+      }
+    }
+    if (merged) {
+      localStorage.setItem(FEEDBACK_KEY, JSON.stringify(localStore));
+      document.querySelectorAll('.slide').forEach((_, idx) => renderFeedbackForSlide(idx));
+    }
+  } catch {}
+})();
+
+function show(n) {
+  document.querySelectorAll('.slide').forEach((s, i) => {
+    s.classList.toggle('active', i === n);
+  });
+  document.getElementById('navCounter').textContent = (n + 1) + ' / ' + total;
+  document.getElementById('prevBtn').disabled = n === 0;
+  document.getElementById('nextBtn').disabled = n === total - 1;
+  current = n;
+}
+
+function next() { if (current < total - 1) show(current + 1); }
+function prev() { if (current > 0) show(current - 1); }
+function goTo(n) { show(n); }
+
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'TEXTAREA') return;
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+});
+</script>
+</body>
+</html>

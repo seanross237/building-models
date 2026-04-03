@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Only Quantum Gravity — QG+F Explained</title>
+<style>
+:root {
+  --bg: #0a0e1a;
+  --slide-bg: #f7f8fc;
+  --slide-border: #dde1ed;
+  --text: #1a1f36;
+  --muted: #5e6687;
+  --accent: #6c5ce7;
+  --accent-light: #f0edff;
+  --teal: #00b894;
+  --teal-light: #e8fdf5;
+  --coral: #e17055;
+  --coral-light: #fef0ec;
+  --gold: #fdcb6e;
+  --gold-light: #fff9e6;
+  --blue: #0984e3;
+  --blue-light: #edf5ff;
+  --deep: #2d3436;
+  --ghost-red: #d63031;
+  --ghost-red-light: #ffeaea;
+  --success: #00b894;
+  --success-light: #e8fdf5;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  display: flex; flex-direction: column; align-items: center;
+  min-height: 100vh; padding: 40px 20px;
+}
+
+/* Nav */
+.nav {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(10,14,26,0.92); backdrop-filter: blur(12px);
+  padding: 10px 20px; border-radius: 999px; z-index: 100;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.5);
+  border: 1px solid rgba(108,92,231,0.2);
+}
+.nav-btn {
+  background: transparent; border: 1px solid rgba(255,255,255,0.15);
+  color: white; width: 36px; height: 36px; border-radius: 50%;
+  cursor: pointer; font-size: 16px; display: flex; align-items: center;
+  justify-content: center; transition: all 0.15s;
+}
+.nav-btn:hover { background: rgba(108,92,231,0.2); border-color: var(--accent); }
+.nav-btn:disabled { opacity: 0.3; cursor: default; }
+.nav-counter { color: rgba(255,255,255,0.5); font-size: 13px; min-width: 50px; text-align: center; }
+
+/* Slide */
+.slide {
+  display: none; width: 100%; max-width: 860px;
+  background: var(--slide-bg); border: 1px solid var(--slide-border);
+  border-radius: 16px; padding: 48px 56px 56px;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.35);
+  animation: fadeIn 0.3s ease;
+}
+.slide.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Typography */
+h1 { font-size: 32px; font-weight: 700; color: var(--text); margin-bottom: 8px; line-height: 1.2; }
+h2 { font-size: 24px; font-weight: 700; color: var(--text); margin-bottom: 16px; line-height: 1.3; }
+h3 { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: var(--muted); margin-bottom: 32px; line-height: 1.5; }
+.label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 12px; }
+p { line-height: 1.6; }
+
+/* Cards */
+.card {
+  border: 1px solid var(--slide-border); border-radius: 12px;
+  padding: 18px 22px; margin-bottom: 12px; background: white;
+}
+.card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.card-num {
+  width: 30px; height: 30px; border-radius: 8px; font-size: 14px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.card-title { font-size: 15px; font-weight: 600; color: var(--text); }
+.card-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+/* Axiom cards */
+.axiom-card {
+  border: 1px solid var(--slide-border); border-radius: 12px;
+  padding: 14px 18px; margin-bottom: 10px; background: white;
+  display: flex; gap: 14px; align-items: flex-start;
+}
+.axiom-icon {
+  width: 36px; height: 36px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.axiom-name { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+.axiom-explain { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+/* Stats */
+.stats { display: grid; gap: 12px; margin: 20px 0; }
+.stats-2 { grid-template-columns: 1fr 1fr; }
+.stats-3 { grid-template-columns: 1fr 1fr 1fr; }
+.stats-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.stat {
+  text-align: center; padding: 18px 14px; border-radius: 12px;
+  border: 1px solid var(--slide-border); background: white;
+}
+.stat-value { font-size: 28px; font-weight: 700; }
+.stat-label { font-size: 11px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* Tags */
+.tag {
+  display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 10px;
+  border-radius: 6px; margin-right: 4px; margin-bottom: 4px;
+}
+.tag-teal { background: var(--teal-light); color: var(--teal); }
+.tag-coral { background: var(--coral-light); color: var(--coral); }
+.tag-gold { background: var(--gold-light); color: #b8860b; }
+.tag-blue { background: var(--blue-light); color: var(--blue); }
+.tag-accent { background: var(--accent-light); color: var(--accent); }
+.tag-ghost { background: var(--ghost-red-light); color: var(--ghost-red); }
+.tag-success { background: var(--success-light); color: var(--success); }
+
+/* Callout boxes */
+.callout {
+  border-radius: 12px; padding: 18px 22px; margin: 16px 0;
+  font-size: 14px; line-height: 1.6;
+}
+.callout-accent { background: var(--accent-light); border-left: 4px solid var(--accent); }
+.callout-teal { background: var(--teal-light); border-left: 4px solid var(--teal); }
+.callout-coral { background: var(--coral-light); border-left: 4px solid var(--coral); }
+.callout-gold { background: var(--gold-light); border-left: 4px solid #b8860b; }
+.callout-blue { background: var(--blue-light); border-left: 4px solid var(--blue); }
+.callout-ghost { background: var(--ghost-red-light); border-left: 4px solid var(--ghost-red); }
+.callout strong { color: var(--text); }
+
+/* Divider */
+.divider { height: 1px; background: var(--slide-border); margin: 24px 0; }
+
+/* TOC */
+.toc-item {
+  display: flex; align-items: center; gap: 14px; padding: 13px 18px;
+  border: 1px solid var(--slide-border); border-radius: 12px; margin-bottom: 8px;
+  cursor: pointer; transition: all 0.15s; background: white;
+}
+.toc-item:hover { border-color: var(--accent); background: var(--accent-light); }
+.toc-num {
+  width: 32px; height: 32px; border-radius: 8px; font-size: 14px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.toc-text { font-size: 14px; font-weight: 500; color: var(--text); }
+
+/* Flow diagram */
+.flow-row { display: flex; align-items: center; gap: 0; margin: 16px 0; flex-wrap: wrap; }
+.flow-box {
+  flex: 1; min-width: 120px; border: 1px solid var(--slide-border); border-radius: 10px;
+  padding: 12px 14px; background: white; text-align: center;
+  font-size: 12px; font-weight: 500; color: var(--text); line-height: 1.4;
+}
+.flow-arrow-h {
+  font-size: 18px; color: var(--muted); padding: 0 6px; flex-shrink: 0;
+}
+.flow-arrow-v { text-align: center; font-size: 18px; color: var(--muted); margin: 4px 0; }
+
+/* Convergence paths */
+.path-item {
+  display: flex; gap: 10px; align-items: flex-start; margin-bottom: 8px;
+  font-size: 13px; line-height: 1.5;
+}
+.path-num {
+  width: 22px; height: 22px; border-radius: 50%; background: var(--accent);
+  color: white; font-size: 11px; font-weight: 700; display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0; margin-top: 1px;
+}
+
+/* Prediction table */
+.pred-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+.pred-table th {
+  text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;
+  color: var(--muted); padding: 8px 12px; border-bottom: 2px solid var(--slide-border);
+  font-weight: 600;
+}
+.pred-table td { padding: 10px 12px; border-bottom: 1px solid #f0f1f5; color: var(--text); }
+.pred-table tr:last-child td { border-bottom: none; }
+
+/* Ghost diagram */
+.ghost-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+.ghost-option {
+  border: 2px solid var(--slide-border); border-radius: 12px; padding: 16px 18px;
+  background: white; position: relative;
+}
+.ghost-option.chosen { border-color: var(--accent); }
+.ghost-option.chosen::after {
+  content: "THE ANSWER"; position: absolute; top: -10px; right: 12px;
+  background: var(--accent); color: white; font-size: 10px; font-weight: 700;
+  padding: 2px 8px; border-radius: 4px; letter-spacing: 0.5px;
+}
+.ghost-option-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+.ghost-option-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+/* Visual metaphor blocks */
+.metaphor {
+  display: flex; gap: 16px; align-items: stretch; margin: 16px 0;
+}
+.metaphor-side {
+  flex: 1; border-radius: 12px; padding: 18px; text-align: center;
+}
+.metaphor-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+.metaphor-main { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+.metaphor-sub { font-size: 12px; line-height: 1.5; }
+
+/* Feedback */
+.feedback-section {
+  margin-top: 24px; padding-top: 16px;
+  border-top: 1px dashed var(--slide-border);
+}
+.feedback-toggle {
+  display: flex; align-items: center; gap: 8px; cursor: pointer;
+  font-size: 12px; font-weight: 600; color: var(--muted);
+  background: none; border: none; padding: 4px 0;
+  transition: color 0.15s;
+}
+.feedback-toggle:hover { color: var(--text); }
+.feedback-toggle .chevron { transition: transform 0.2s; font-size: 10px; }
+.feedback-toggle .chevron.open { transform: rotate(90deg); }
+.feedback-toggle .dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+  display: none;
+}
+.feedback-toggle .dot.has-feedback { display: inline-block; }
+.feedback-body { display: none; margin-top: 10px; }
+.feedback-body.open { display: block; }
+.feedback-textarea {
+  width: 100%; min-height: 60px; padding: 10px 12px;
+  border: 1px solid var(--slide-border); border-radius: 8px;
+  font-family: inherit; font-size: 13px; color: var(--text);
+  background: white; resize: vertical; outline: none;
+  transition: border-color 0.15s;
+}
+.feedback-textarea:focus { border-color: var(--accent); }
+.feedback-actions { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+.feedback-save {
+  padding: 6px 14px; border-radius: 6px; border: none;
+  background: var(--accent); color: white; font-size: 12px;
+  font-weight: 600; cursor: pointer; transition: opacity 0.15s;
+}
+.feedback-save:hover { opacity: 0.85; }
+.feedback-save:disabled { opacity: 0.4; cursor: default; }
+.feedback-status { font-size: 11px; color: var(--success); opacity: 0; transition: opacity 0.3s; }
+.feedback-status.show { opacity: 1; }
+.feedback-saved-list { margin-top: 8px; }
+.feedback-entry {
+  display: flex; gap: 8px; align-items: flex-start; padding: 6px 0;
+  font-size: 12px; color: var(--text); border-bottom: 1px solid #f3f4f6;
+}
+.feedback-entry:last-child { border-bottom: none; }
+.feedback-entry-time { color: var(--muted); font-size: 11px; white-space: nowrap; flex-shrink: 0; }
+.feedback-entry-text { line-height: 1.4; }
+.feedback-entry-delete {
+  background: none; border: none; color: var(--muted); cursor: pointer;
+  font-size: 11px; padding: 0 4px; flex-shrink: 0;
+}
+.feedback-entry-delete:hover { color: var(--ghost-red); }
+
+/* Responsive */
+@media (max-width: 700px) {
+  .slide { padding: 32px 28px 40px; }
+  h1 { font-size: 26px; }
+  h2 { font-size: 20px; }
+  .ghost-grid { grid-template-columns: 1fr; }
+  .metaphor { flex-direction: column; }
+  .stats-3, .stats-4 { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================ -->
+<!-- SLIDE 0: Title + Table of Contents           -->
+<!-- ============================================ -->
+<div class="slide active" id="slide-0">
+  <p class="label" style="color:var(--accent)">Science Explainer &middot; March 2025</p>
+  <h1>The Only Quantum Gravity</h1>
+  <p class="subtitle">How 5 rules, 1 clue, and a mathematical trick called a "fakeon" pinpoint the unique theory of quantum gravity &mdash; and the experiment that could prove it right.</p>
+  <div class="divider"></div>
+  <p class="label" style="color:var(--muted)">What's Inside</p>
+
+  <div class="toc-item" onclick="goTo(1)">
+    <div class="toc-num" style="background:var(--coral-light);color:var(--coral)">1</div>
+    <div class="toc-text">The Problem &mdash; Why gravity breaks quantum mechanics</div>
+  </div>
+  <div class="toc-item" onclick="goTo(2)">
+    <div class="toc-num" style="background:var(--blue-light);color:var(--blue)">2</div>
+    <div class="toc-text">The 5 Rules &mdash; What any theory of gravity must obey</div>
+  </div>
+  <div class="toc-item" onclick="goTo(3)">
+    <div class="toc-num" style="background:var(--gold-light);color:#b8860b">3</div>
+    <div class="toc-text">The Clue &mdash; Spacetime gets simpler at tiny scales</div>
+  </div>
+  <div class="toc-item" onclick="goTo(4)">
+    <div class="toc-num" style="background:var(--ghost-red-light);color:var(--ghost-red)">4</div>
+    <div class="toc-text">The Hard Choice &mdash; Ghosts, and why you can't avoid them</div>
+  </div>
+  <div class="toc-item" onclick="goTo(5)">
+    <div class="toc-num" style="background:var(--accent-light);color:var(--accent)">5</div>
+    <div class="toc-text">The Answer &mdash; Quadratic gravity + fakeons</div>
+  </div>
+  <div class="toc-item" onclick="goTo(6)">
+    <div class="toc-num" style="background:var(--teal-light);color:var(--teal)">6</div>
+    <div class="toc-text">The Uniqueness Proof &mdash; 8 roads, 1 destination</div>
+  </div>
+  <div class="toc-item" onclick="goTo(7)">
+    <div class="toc-num" style="background:var(--success-light);color:var(--success)">7</div>
+    <div class="toc-text">What It Predicts &mdash; A number we can measure by 2037</div>
+  </div>
+  <div class="toc-item" onclick="goTo(8)">
+    <div class="toc-num" style="background:#f0f1f5;color:var(--muted)">8</div>
+    <div class="toc-text">What's Still Unknown &mdash; The open frontiers</div>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 1: The Problem                         -->
+<!-- ============================================ -->
+<div class="slide" id="slide-1">
+  <p class="label" style="color:var(--coral)">Part 1</p>
+  <h2>Why Gravity Breaks Quantum Mechanics</h2>
+
+  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">We have two wildly successful theories. They refuse to work together.</p>
+
+  <div class="metaphor">
+    <div class="metaphor-side" style="background:var(--blue-light);">
+      <div class="metaphor-label" style="color:var(--blue)">General Relativity</div>
+      <div class="metaphor-main" style="color:var(--blue)">Gravity = curved spacetime</div>
+      <div class="metaphor-sub" style="color:var(--muted)">Smooth, continuous geometry. Describes planets, black holes, the expansion of the universe. Works perfectly at large scales.</div>
+    </div>
+    <div class="metaphor-side" style="background:var(--accent-light);">
+      <div class="metaphor-label" style="color:var(--accent)">Quantum Mechanics</div>
+      <div class="metaphor-main" style="color:var(--accent)">Forces = particle exchanges</div>
+      <div class="metaphor-sub" style="color:var(--muted)">Discrete, probabilistic. Describes atoms, electrons, photons. Works perfectly at tiny scales. Forces are carried by particles.</div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:20px">What goes wrong when you combine them?</h3>
+
+  <div class="callout callout-coral" style="margin-top:12px">
+    <strong>The infinity problem.</strong> When you try to calculate quantum corrections to gravity &mdash; like "what happens when two gravitons bounce off each other?" &mdash; the math produces infinities. Not manageable infinities like in other quantum theories, but <em>new types of infinity at every level of calculation</em>, each one requiring a new free parameter to cancel it. You end up needing infinitely many parameters. A theory with infinitely many unknowns predicts nothing.
+  </div>
+
+  <div class="callout callout-blue">
+    <strong>Analogy:</strong> Imagine a spreadsheet where every cell depends on other cells, but each formula also introduces a new undefined variable. You can never close the system. You can never get an answer out.
+  </div>
+
+  <div class="divider"></div>
+
+  <h3>Why this matters</h3>
+  <p style="font-size:13px;color:var(--muted);line-height:1.7">
+    This is not an academic curiosity. The centers of black holes, the first moments after the Big Bang, the smallest structure of spacetime &mdash; these are places where <em>both</em> gravity and quantum mechanics matter simultaneously. Without a unified theory, we literally cannot describe what happens there. The technical term for this infinity problem is <strong>"non-renormalizability"</strong> &mdash; the inability to absorb infinities into a finite number of measurable parameters. Every other force in nature (electromagnetism, the strong force, the weak force) has a quantum version that avoids this. Gravity alone resists.
+  </p>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 2: The 5 Rules                         -->
+<!-- ============================================ -->
+<div class="slide" id="slide-2">
+  <p class="label" style="color:var(--blue)">Part 2</p>
+  <h2>The 5 Rules Every Gravity Theory Must Obey</h2>
+
+  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">These are not preferences &mdash; they are constraints that nature has enforced in every experiment we have ever run. Drop any one and alternatives open up. Keep all five and there is only one answer.</p>
+
+  <div class="axiom-card">
+    <div class="axiom-icon" style="background:var(--blue-light);color:var(--blue);">1</div>
+    <div>
+      <div class="axiom-name">Lorentz Invariance</div>
+      <div class="axiom-explain"><strong>The laws of physics are the same for everyone.</strong> No matter how fast you travel or which direction you face, the rules do not change. There is no preferred speed, direction, or frame of reference. Every experiment testing this has confirmed it to extraordinary precision.</div>
+    </div>
+  </div>
+
+  <div class="axiom-card">
+    <div class="axiom-icon" style="background:var(--accent-light);color:var(--accent);">2</div>
+    <div>
+      <div class="axiom-name">Diffeomorphism Invariance</div>
+      <div class="axiom-explain"><strong>You can label spacetime coordinates however you want &mdash; the physics stays the same.</strong> Like how a mountain doesn't change if you use Cartesian vs. polar coordinates on a map. This is the mathematical heart of general relativity: geometry is real, coordinate labels are just human conventions.</div>
+    </div>
+  </div>
+
+  <div class="axiom-card">
+    <div class="axiom-icon" style="background:var(--teal-light);color:var(--teal);">3</div>
+    <div>
+      <div class="axiom-name">Locality</div>
+      <div class="axiom-explain"><strong>Things interact at a point, not across gaps.</strong> To push someone, you have to touch them. Forces are transmitted through local contact, not by instantaneous action at a distance. Information respects a speed limit (the speed of light).</div>
+    </div>
+  </div>
+
+  <div class="axiom-card">
+    <div class="axiom-icon" style="background:var(--gold-light);color:#b8860b;">4</div>
+    <div>
+      <div class="axiom-name">Unitarity</div>
+      <div class="axiom-explain"><strong>Probabilities always add up to 100%.</strong> If something has a 30% chance of happening and a 70% chance of not happening, those numbers must sum to 100%, always, in every situation. This sounds obvious, but many proposed modifications to gravity silently break it &mdash; creating scenarios where something has a 110% chance of happening, or a -5% chance. That is physically meaningless.</div>
+    </div>
+  </div>
+
+  <div class="axiom-card">
+    <div class="axiom-icon" style="background:var(--coral-light);color:var(--coral);">5</div>
+    <div>
+      <div class="axiom-name">Perturbative Renormalizability</div>
+      <div class="axiom-explain"><strong>The theory can handle infinities with a finite number of knobs.</strong> This is the property Einstein's gravity lacks. In renormalizable theories (like the theory of electrons and light), infinities appear in calculations but can always be absorbed into a finite number of measurable quantities &mdash; mass, charge, etc. Once you measure those, everything else is predicted. This is a requirement for the theory to actually be calculable.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 3: The Clue                            -->
+<!-- ============================================ -->
+<div class="slide" id="slide-3">
+  <p class="label" style="color:#b8860b">Part 3</p>
+  <h2>The Clue: Spacetime Gets Simpler at Tiny Scales</h2>
+
+  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">A mysterious pattern keeps showing up across completely different approaches to quantum gravity.</p>
+
+  <div class="callout callout-gold">
+    <strong>The spectral dimension flows from 4 to 2.</strong> We live in 4-dimensional spacetime (3 space + 1 time). But multiple independent research programs &mdash; using completely different mathematical frameworks &mdash; all find that at extremely tiny scales (near the Planck length, ~10<sup>-35</sup> meters), spacetime <em>behaves as if it only has 2 dimensions</em>.
+  </div>
+
+  <h3 style="margin-top:20px">What does "behaves like 2D" mean?</h3>
+  <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:16px">
+    Imagine you release an ant on a surface and track how far it wanders. On a 2D sheet, it covers less area than on a 3D sponge. The "<strong>spectral dimension</strong>" measures this: drop a random walker on your spacetime and see how its wandering distance scales with time. At everyday scales, the answer is 4. At quantum-gravity scales, it shrinks to 2. It is as if spacetime itself thins out, becoming a kind of 2D sheet when you zoom in far enough.
+  </p>
+
+  <h3>7+ programs, same answer</h3>
+  <div style="display:flex;flex-wrap:wrap;gap:6px;margin:12px 0">
+    <span class="tag tag-gold">Causal Dynamical Triangulations</span>
+    <span class="tag tag-gold">Asymptotic Safety</span>
+    <span class="tag tag-gold">String Theory</span>
+    <span class="tag tag-gold">Loop Quantum Gravity</span>
+    <span class="tag tag-gold">Horava-Lifshitz Gravity</span>
+    <span class="tag tag-gold">Causal Sets</span>
+    <span class="tag tag-gold">Noncommutative Geometry</span>
+  </div>
+  <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-top:8px">
+    These programs were built by different people, with different assumptions, using different math. Some use continuous spacetime, some use discrete building blocks. Some keep Lorentz invariance, some don't. Yet they all converge on the same number: <strong>d<sub>s</sub> = 2</strong> in the ultraviolet.
+  </p>
+
+  <div class="callout callout-accent">
+    <strong>Why this matters:</strong> When 7+ independent approaches to a problem all get the same answer using different methods, that answer is probably telling you something real about nature &mdash; not an artifact of any one method. This is the kind of convergence that makes physicists sit up and pay attention.
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 4: The Hard Choice (Ghosts)            -->
+<!-- ============================================ -->
+<div class="slide" id="slide-4">
+  <p class="label" style="color:var(--ghost-red)">Part 4</p>
+  <h2>The Hard Choice: You Can't Avoid Ghosts</h2>
+
+  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">The clue from Part 3 forces a brutal mathematical consequence.</p>
+
+  <div class="callout callout-ghost">
+    <strong>The No-Go Theorem:</strong> Any Lorentz-invariant, ghost-free theory CANNOT produce the spectral dimension flow d<sub>s</sub> = 4 &rarr; 2. This is a rigorous mathematical proof, not an opinion. If you want d<sub>s</sub> = 2 while keeping Lorentz invariance, your theory <em>must</em> contain ghost-like degrees of freedom.
+  </div>
+
+  <h3 style="margin-top:20px">What is a "ghost"?</h3>
+  <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:16px">
+    In quantum field theory, a <strong>ghost</strong> is a particle that carries negative probability. Normal particles contribute positively to the total probability of all outcomes summing to 100%. A ghost contributes <em>negatively</em> &mdash; which means probabilities no longer add up. You might calculate that an event has a -5% chance of happening. That is not physically meaningful. It means reality itself would be inconsistent.
+  </p>
+
+  <h3>Why d<sub>s</sub> = 2 forces ghosts (the intuition)</h3>
+  <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:16px">
+    Getting d<sub>s</sub> = 2 requires the gravitational force to fall off much faster at high energies (technically: the propagator must go as 1/p<sup>4</sup> instead of 1/p<sup>2</sup>). The only way to achieve this while keeping spacetime smooth and local is to add extra terms to Einstein's equation &mdash; terms that inevitably introduce a new massive particle with the wrong "sign." That wrong-sign particle is the ghost.
+  </p>
+
+  <h3>The three escape routes</h3>
+  <div class="ghost-grid">
+    <div class="ghost-option">
+      <div class="ghost-option-title" style="color:var(--ghost-red)">Break Lorentz invariance</div>
+      <div class="ghost-option-desc">Pick a preferred direction in spacetime. This is what Horava-Lifshitz gravity does. But experiments (gamma-ray bursts traveling billions of light-years) have constrained Lorentz violation so tightly that it would need to kick in at energies <em>above</em> the Planck scale &mdash; making it essentially non-viable.</div>
+    </div>
+    <div class="ghost-option">
+      <div class="ghost-option-title" style="color:var(--ghost-red)">Give up on d<sub>s</sub> = 2</div>
+      <div class="ghost-option-desc">Abandon the clue. But then you lose the one constructive constraint that actually narrows the landscape of possible theories. You are back to guessing.</div>
+    </div>
+    <div class="ghost-option chosen" style="grid-column: 1 / -1;">
+      <div class="ghost-option-title" style="color:var(--accent)">Accept the ghost, but tame it</div>
+      <div class="ghost-option-desc">Let the ghost exist in the math &mdash; but find a way to prevent it from ever showing up in the real world. Make it "purely virtual": it influences intermediate calculations (like a scaffolding in construction) but can never be directly observed or produced. <strong>This is the fakeon.</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 5: The Answer — QG+F                   -->
+<!-- ============================================ -->
+<div class="slide" id="slide-5">
+  <p class="label" style="color:var(--accent)">Part 5</p>
+  <h2>The Answer: Quadratic Gravity + Fakeons</h2>
+
+  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">Start with Einstein's equation. Add carefully chosen terms. Apply a new quantization rule. Get the only viable quantum gravity.</p>
+
+  <h3>Step 1: Modify Einstein's equation</h3>
+  <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:12px">
+    Einstein's equation describes gravity using the <strong>curvature</strong> of spacetime (a quantity called R). It is "linear" in curvature &mdash; R appears to the first power. Quadratic gravity adds terms where curvature appears <em>squared</em> &mdash; R<sup>2</sup> and a related quantity called C<sup>2</sup> (the Weyl tensor squared). These extra terms matter only at extreme energies near the Planck scale and are invisible in everyday physics.
+  </p>
+
+  <div class="callout callout-accent">
+    <strong>Analogy:</strong> Think of it like upgrading a simple linear model (y = mx + b) to a quadratic one (y = ax<sup>2</sup> + bx + c). The quadratic terms only matter when x is large &mdash; at small x the behavior is effectively linear. Quadratic gravity adds higher-order curvature terms that only matter when spacetime curvature is extreme.
+  </div>
+
+  <h3 style="margin-top:16px">Why this specific modification?</h3>
+  <div style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:16px">
+    <strong>d<sub>s</sub> = 2 forces 4-derivative terms</strong> (curvature squared). <strong>Diffeomorphism invariance</strong> restricts them to just two possibilities: R<sup>2</sup> and C<sup>2</sup>. (A third candidate, the "Gauss-Bonnet" combination, is trivial in 4 dimensions.) <strong>Renormalizability is automatic</strong> because the new coupling constants are dimensionless &mdash; the infinity problem from Part 1 goes away.
+  </div>
+
+  <div class="divider"></div>
+
+  <h3>Step 2: The fakeon prescription</h3>
+  <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:12px">
+    The C<sup>2</sup> term introduces a massive spin-2 particle with negative probability &mdash; a ghost (from Part 4). The <strong>fakeon prescription</strong> (developed by Anselmi and Piva, 2017-2018) is a specific mathematical rule for how to handle this particle in calculations.
+  </p>
+
+  <div class="callout callout-teal">
+    <strong>What the fakeon does:</strong> It says "this ghost particle can appear as a virtual intermediate step in calculations, but it can never be produced as a real particle." It is purely mathematical scaffolding. Think of it like an imaginary number in engineering: complex numbers appear everywhere in circuit calculations, but you never measure an imaginary voltage. The fakeon is the gravitational analogue &mdash; it shows up in the math, influences the results, but has no physical reality.
+  </div>
+
+  <h3 style="margin-top:16px">What you get</h3>
+  <div class="stats stats-3">
+    <div class="stat">
+      <div class="stat-value" style="color:var(--teal);font-size:22px">Renormalizable</div>
+      <div class="stat-label">Finite # of parameters</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--accent);font-size:22px">Unitary</div>
+      <div class="stat-label">Probabilities add up</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--blue);font-size:22px">1 free knob</div>
+      <div class="stat-label">Beyond standard GR</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 6: The Uniqueness Proof                -->
+<!-- ============================================ -->
+<div class="slide" id="slide-6">
+  <p class="label" style="color:var(--teal)">Part 6</p>
+  <h2>The Uniqueness Proof: 8 Roads, 1 Destination</h2>
+
+  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">This is not just "a good theory." Given the 5 rules from Part 2, it is <em>the only possible theory</em>. Eight completely independent approaches all arrive at the same place.</p>
+
+  <div class="path-item">
+    <div class="path-num">1</div>
+    <div><strong>Spectral dimension.</strong> Start with d<sub>s</sub> = 4 &rarr; 2 as a constructive axiom &rarr; forces the quadratic action &rarr; forces fakeon quantization.</div>
+  </div>
+  <div class="path-item">
+    <div class="path-num">2</div>
+    <div><strong>Entanglement bootstrap.</strong> Start with the principle that the vacuum is maximally entangled + demand self-consistency + renormalizability &rarr; uniquely selects QG+F, including the fakeon prescription.</div>
+  </div>
+  <div class="path-item">
+    <div class="path-num">3</div>
+    <div><strong>Most general renormalizable action.</strong> Write down every possible gravitational action with dimensionless couplings &rarr; only one exists (Stelle, 1977).</div>
+  </div>
+  <div class="path-item">
+    <div class="path-num">4</div>
+    <div><strong>Asymptotic freedom.</strong> Demand gravity gets weaker at high energies (like the strong nuclear force) &rarr; uniquely arrives at QG+F (Fradkin-Tseytlin, 1982).</div>
+  </div>
+  <div class="path-item">
+    <div class="path-num">5</div>
+    <div><strong>Lee-Wick gravity.</strong> Try a different quantization rule for the ghost &rarr; it violates unitarity &rarr; the only viable prescription collapses back to the fakeon.</div>
+  </div>
+  <div class="path-item">
+    <div class="path-num">6</div>
+    <div><strong>Asymptotic safety.</strong> Look for the perturbative sector of the gravitational fixed point &rarr; it is quadratic gravity (Sen-Wetterich-Yamada, 2022).</div>
+  </div>
+  <div class="path-item">
+    <div class="path-num">7</div>
+    <div><strong>Classical scale invariance.</strong> Demand no mass scales appear in the fundamental action &rarr; uniquely selects QG+F (Salvio-Strumia, 2014).</div>
+  </div>
+  <div class="path-item">
+    <div class="path-num">8</div>
+    <div><strong>Weinberg's asymptotic safety program.</strong> Its perturbative realization is QG+F.</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="callout callout-teal">
+    <strong>The "Quantum Lovelock's Theorem":</strong> In classical physics, there is a famous result (Lovelock's theorem) proving that Einstein's equation is the <em>unique</em> classical theory of gravity in 4 dimensions. QG+F is the quantum analogue: it is the unique quantum gravity in 4 dimensions. The space of perturbative quantum gravities has been fully mapped. It contains exactly one theory.
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 7: What It Predicts                    -->
+<!-- ============================================ -->
+<div class="slide" id="slide-7">
+  <p class="label" style="color:var(--success)">Part 7</p>
+  <h2>What It Predicts &mdash; and the 2037 Test</h2>
+
+  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">A theory means nothing without predictions you can check against reality.</p>
+
+  <table class="pred-table">
+    <thead>
+      <tr>
+        <th>Prediction</th>
+        <th>Value</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Higgs boson mass</strong></td>
+        <td>~126 GeV</td>
+        <td><span class="tag tag-success">CONFIRMED 2012</span></td>
+      </tr>
+      <tr>
+        <td><strong>SM vacuum near-criticality</strong></td>
+        <td>Higgs coupling ~0 at Planck scale</td>
+        <td><span class="tag tag-success">CONFIRMED</span></td>
+      </tr>
+      <tr>
+        <td><strong>Scalar spectral index (n<sub>s</sub>)</strong></td>
+        <td>~0.974</td>
+        <td><span class="tag tag-blue">Consistent with data</span></td>
+      </tr>
+      <tr>
+        <td><strong>Tensor-to-scalar ratio (r)</strong></td>
+        <td>0.0004 &ndash; 0.0045</td>
+        <td><span class="tag tag-gold">Untested &mdash; LiteBIRD ~2037</span></td>
+      </tr>
+      <tr>
+        <td><strong>Running of spectral index</strong></td>
+        <td>~-8 &times; 10<sup>-4</sup></td>
+        <td><span class="tag tag-gold">Untested &mdash; future CMB</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="divider"></div>
+
+  <h3>The make-or-break number: r</h3>
+  <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:12px">
+    The <strong>tensor-to-scalar ratio (r)</strong> measures the strength of gravitational waves left over from the Big Bang, imprinted as subtle swirl patterns in the cosmic microwave background (the oldest light in the universe). The Japanese satellite <strong>LiteBIRD</strong>, launching in the early 2030s, will measure r precisely enough to test QG+F.
+  </p>
+
+  <div class="ghost-grid">
+    <div class="ghost-option" style="border-color:var(--success)">
+      <div class="ghost-option-title" style="color:var(--success)">If r &lt; 0.003</div>
+      <div class="ghost-option-desc">QG+F is confirmed. The perturbative theory is correct. The simplest version of the theory wins.</div>
+    </div>
+    <div class="ghost-option" style="border-color:#b8860b">
+      <div class="ghost-option-title" style="color:#b8860b">If r is between 0.003 and 0.005</div>
+      <div class="ghost-option-desc">The six-derivative extension (a natural refinement of QG+F) is favored. Still the same family of theories.</div>
+    </div>
+  </div>
+
+  <div class="callout callout-coral" style="margin-top:4px">
+    <strong>If r > 0.005:</strong> QG+F in its perturbative form is wrong. One of the 5 foundational rules is broken. This would actually be <em>even more exciting</em> &mdash; it would mean one of our deepest assumptions about physics is incorrect, opening entirely new territory.
+  </div>
+
+  <div class="callout callout-accent">
+    <strong>The Higgs mass:</strong> In 2010, Shaposhnikov and Wetterich used asymptotic safety boundary conditions (the non-perturbative cousin of QG+F) to predict the Higgs boson mass at ~126 GeV. Two years later, the LHC measured it at 125.1 GeV. This is the only confirmed particle physics prediction from any quantum gravity framework.
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 8: What's Still Unknown                -->
+<!-- ============================================ -->
+<div class="slide" id="slide-8">
+  <p class="label" style="color:var(--muted)">Part 8</p>
+  <h2>What's Still Unknown</h2>
+
+  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">QG+F answers the question "what is the quantum theory of gravity?" It does not answer everything.</p>
+
+  <div class="card" style="border-left: 4px solid var(--coral);">
+    <div class="card-header">
+      <div class="card-title">The cosmological constant problem</div>
+    </div>
+    <div class="card-desc">
+      The universe is expanding faster and faster, driven by "dark energy." Its measured value is 10<sup>-122</sup> times what naive quantum calculations predict. This is the most famous unsolved problem in physics. QG+F solves the "old" version (why the constant is not infinite) using a unimodular formulation, but cannot explain why it has the specific tiny value we observe. <strong>No continuum theory can.</strong> This is a shared problem across all approaches.
+    </div>
+  </div>
+
+  <div class="card" style="border-left: 4px solid var(--gold);">
+    <div class="card-header">
+      <div class="card-title">Non-perturbative completion</div>
+    </div>
+    <div class="card-desc">
+      QG+F is a perturbative theory &mdash; it works by calculating corrections in a series, each one smaller than the last, like a Taylor expansion. But there may be non-perturbative effects (phenomena that cannot be seen at any order in the series). The strong nuclear force has this: the perturbative theory (asymptotic freedom) is well-understood, but phenomena like quark confinement require the full non-perturbative picture. QG+F likely connects to "asymptotic safety" at the non-perturbative level, but this has not been rigorously proven. It is the gravitational analogue of the gap between perturbative QCD and the full theory of the strong force.
+    </div>
+  </div>
+
+  <div class="card" style="border-left: 4px solid var(--blue);">
+    <div class="card-header">
+      <div class="card-title">Where does the Standard Model come from?</div>
+    </div>
+    <div class="card-desc">
+      QG+F tells you how gravity works at the quantum level. It does not explain <em>why</em> the other forces (electromagnetism, strong, weak) have the specific structure they do &mdash; why there are three generations of quarks and leptons, why the coupling constants have the values they have. The gauge group SU(3) &times; SU(2) &times; U(1) is not derived from QG+F. This is the frontier.
+    </div>
+  </div>
+
+  <div class="card" style="border-left: 4px solid var(--accent);">
+    <div class="card-header">
+      <div class="card-title">The one-prediction problem</div>
+    </div>
+    <div class="card-desc">
+      All non-CMB experimental signatures of QG+F are suppressed by 15+ orders of magnitude below current experimental reach. The tensor-to-scalar ratio r, measured from the cosmic microwave background, is the <em>only</em> realistic near-term test. This is not a flaw of QG+F specifically &mdash; it is the nature of quantum gravity: the effects live at the Planck scale (10<sup>-35</sup> meters), and we probe nature at 10<sup>-18</sup> meters at best.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="callout callout-accent">
+    <strong>The bottom line:</strong> The landscape of perturbative quantum gravity has been fully mapped. It contains exactly one theory. That theory has one confirmed prediction (the Higgs mass), one decisive upcoming test (r, ~2037), and three deep open problems shared by the entire field. Whether r confirms or refutes QG+F, the measurement will reshape theoretical physics.
+  </div>
+</div>
+
+<!-- Navigation -->
+<div class="nav">
+  <button class="nav-btn" id="prevBtn" onclick="prev()">&larr;</button>
+  <div class="nav-counter" id="navCounter">1 / 9</div>
+  <button class="nav-btn" id="nextBtn" onclick="next()">&rarr;</button>
+</div>
+
+<script>
+let current = 0;
+const total = document.querySelectorAll('.slide').length;
+
+// --- Feedback System ---
+const FEEDBACK_KEY = 'qgf-explainer-feedback';
+
+function loadFeedback() {
+  try { return JSON.parse(localStorage.getItem(FEEDBACK_KEY) || '{}'); }
+  catch { return {}; }
+}
+
+function saveFeedbackStore(store) {
+  localStorage.setItem(FEEDBACK_KEY, JSON.stringify(store));
+  fetch('/api/feedback', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(store)
+  }).catch(() => {});
+}
+
+function addFeedback(slideIdx, text) {
+  if (!text.trim()) return;
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  if (!store[key]) store[key] = [];
+  store[key].push({
+    text: text.trim(),
+    timestamp: new Date().toISOString(),
+    slideTitle: getSlideName(slideIdx)
+  });
+  saveFeedbackStore(store);
+  renderFeedbackForSlide(slideIdx);
+}
+
+function deleteFeedback(slideIdx, entryIdx) {
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  if (store[key] && store[key][entryIdx] !== undefined) {
+    store[key].splice(entryIdx, 1);
+    if (store[key].length === 0) delete store[key];
+    saveFeedbackStore(store);
+    renderFeedbackForSlide(slideIdx);
+  }
+}
+
+function getSlideName(idx) {
+  const names = [
+    'Title & TOC',
+    'The Problem',
+    'The 5 Rules',
+    'The Clue',
+    'The Hard Choice',
+    'The Answer: QG+F',
+    'The Uniqueness Proof',
+    'What It Predicts',
+    "What's Still Unknown"
+  ];
+  return names[idx] || 'Slide ' + (idx + 1);
+}
+
+function renderFeedbackForSlide(slideIdx) {
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  const entries = store[key] || [];
+  const listEl = document.getElementById('feedback-list-' + slideIdx);
+  const dotEl = document.getElementById('feedback-dot-' + slideIdx);
+
+  if (dotEl) dotEl.classList.toggle('has-feedback', entries.length > 0);
+
+  if (!listEl) return;
+  if (entries.length === 0) { listEl.innerHTML = ''; return; }
+
+  listEl.innerHTML = entries.map((e, i) => `
+    <div class="feedback-entry">
+      <span class="feedback-entry-time">${new Date(e.timestamp).toLocaleDateString('en-US', {month:'short',day:'numeric'})}</span>
+      <span class="feedback-entry-text">${escapeHtml(e.text)}</span>
+      <button class="feedback-entry-delete" onclick="deleteFeedback(${slideIdx},${i})" title="Delete">&times;</button>
+    </div>
+  `).join('');
+}
+
+function escapeHtml(str) {
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+function submitFeedback(slideIdx) {
+  const ta = document.getElementById('feedback-input-' + slideIdx);
+  const status = document.getElementById('feedback-status-' + slideIdx);
+  if (!ta || !ta.value.trim()) return;
+  addFeedback(slideIdx, ta.value);
+  ta.value = '';
+  if (status) {
+    status.classList.add('show');
+    setTimeout(() => status.classList.remove('show'), 2000);
+  }
+}
+
+function toggleFeedback(slideIdx) {
+  const body = document.getElementById('feedback-body-' + slideIdx);
+  const chev = document.getElementById('feedback-chevron-' + slideIdx);
+  if (body) body.classList.toggle('open');
+  if (chev) chev.classList.toggle('open');
+}
+
+// Inject feedback UI into every slide
+document.querySelectorAll('.slide').forEach((slide, idx) => {
+  const section = document.createElement('div');
+  section.className = 'feedback-section';
+  section.innerHTML = `
+    <button class="feedback-toggle" onclick="toggleFeedback(${idx})">
+      <span class="chevron" id="feedback-chevron-${idx}">&#9654;</span>
+      <span>Leave feedback on this slide</span>
+      <span class="dot" id="feedback-dot-${idx}"></span>
+    </button>
+    <div class="feedback-body" id="feedback-body-${idx}">
+      <div class="feedback-saved-list" id="feedback-list-${idx}"></div>
+      <textarea class="feedback-textarea" id="feedback-input-${idx}" placeholder="Your thoughts on this slide..." onkeydown="if(event.key==='Enter'&&event.metaKey){submitFeedback(${idx});event.preventDefault();}"></textarea>
+      <div class="feedback-actions">
+        <button class="feedback-save" onclick="submitFeedback(${idx})">Save (&#8984;&#9166;)</button>
+        <span class="feedback-status" id="feedback-status-${idx}">Saved!</span>
+      </div>
+    </div>
+  `;
+  slide.appendChild(section);
+  renderFeedbackForSlide(idx);
+});
+
+// --- Load server feedback on startup (merge with localStorage) ---
+(async function() {
+  try {
+    const resp = await fetch('/api/feedback');
+    const serverStore = await resp.json();
+    const localStore = loadFeedback();
+    let merged = false;
+    for (const key of Object.keys(serverStore)) {
+      if (!localStore[key]) { localStore[key] = serverStore[key]; merged = true; }
+      else {
+        const localTimestamps = new Set(localStore[key].map(e => e.timestamp));
+        for (const entry of serverStore[key]) {
+          if (!localTimestamps.has(entry.timestamp)) {
+            localStore[key].push(entry);
+            merged = true;
+          }
+        }
+      }
+    }
+    if (merged) {
+      localStorage.setItem(FEEDBACK_KEY, JSON.stringify(localStore));
+      document.querySelectorAll('.slide').forEach((_, idx) => renderFeedbackForSlide(idx));
+    }
+  } catch {}
+})();
+
+// --- Navigation ---
+function show(n) {
+  document.querySelectorAll('.slide').forEach((s, i) => {
+    s.classList.toggle('active', i === n);
+  });
+  document.getElementById('navCounter').textContent = (n + 1) + ' / ' + total;
+  document.getElementById('prevBtn').disabled = n === 0;
+  document.getElementById('nextBtn').disabled = n === total - 1;
+  current = n;
+}
+
+function next() { if (current < total - 1) show(current + 1); }
+function prev() { if (current > 0) show(current - 1); }
+function goTo(n) { show(n); }
+
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'TEXTAREA') return;
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+});
+</script>
+</body>
+</html>

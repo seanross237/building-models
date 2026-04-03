@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adversarial Logic — Run 001</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --slide-bg: #f8f9fa;
+  --slide-border: #e1e4e8;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #4f46e5;
+  --accent-light: #eef2ff;
+  --green: #059669;
+  --green-light: #ecfdf5;
+  --red: #dc2626;
+  --red-light: #fef2f2;
+  --amber: #d97706;
+  --amber-light: #fffbeb;
+  --blue: #2563eb;
+  --blue-light: #eff6ff;
+  --purple: #7c3aed;
+  --purple-light: #f5f3ff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  display: flex; flex-direction: column; align-items: center;
+  min-height: 100vh; padding: 40px 20px;
+}
+
+/* Nav */
+.nav {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+  padding: 10px 20px; border-radius: 999px; z-index: 100;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+.nav-btn {
+  background: transparent; border: 1px solid rgba(255,255,255,0.2);
+  color: white; width: 36px; height: 36px; border-radius: 50%;
+  cursor: pointer; font-size: 16px; display: flex; align-items: center;
+  justify-content: center; transition: all 0.15s;
+}
+.nav-btn:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.4); }
+.nav-btn:disabled { opacity: 0.3; cursor: default; }
+.nav-counter { color: rgba(255,255,255,0.6); font-size: 13px; min-width: 50px; text-align: center; }
+
+/* Slide */
+.slide {
+  display: none; width: 100%; max-width: 820px;
+  background: var(--slide-bg); border: 1px solid var(--slide-border);
+  border-radius: 16px; padding: 48px 56px 56px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+  animation: fadeIn 0.25s ease;
+}
+.slide.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Typography */
+h1 { font-size: 32px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+h2 { font-size: 24px; font-weight: 700; color: var(--text); margin-bottom: 16px; }
+h3 { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: var(--muted); margin-bottom: 32px; }
+.label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+
+/* Cards */
+.card {
+  border: 1px solid var(--slide-border); border-radius: 10px;
+  padding: 16px 20px; margin-bottom: 12px; background: white;
+}
+.card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.card-num {
+  width: 28px; height: 28px; border-radius: 8px; font-size: 13px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.card-title { font-size: 15px; font-weight: 600; color: var(--text); }
+.card-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+/* Stats */
+.stats { display: grid; gap: 12px; margin: 20px 0; }
+.stats-2 { grid-template-columns: 1fr 1fr; }
+.stats-3 { grid-template-columns: 1fr 1fr 1fr; }
+.stats-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.stat {
+  text-align: center; padding: 16px 12px; border-radius: 10px;
+  border: 1px solid var(--slide-border); background: white;
+}
+.stat-value { font-size: 28px; font-weight: 700; }
+.stat-label { font-size: 11px; color: var(--muted); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* Bars */
+.bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-size: 13px; }
+.bar-label { width: 120px; text-align: right; color: var(--muted); font-weight: 500; flex-shrink: 0; font-size: 12px; }
+.bar-track { flex: 1; height: 24px; background: #f3f4f6; border-radius: 6px; overflow: hidden; position: relative; }
+.bar-fill { height: 100%; border-radius: 6px; transition: width 0.5s; display: flex; align-items: center; padding-left: 8px; }
+.bar-fill span { font-size: 11px; font-weight: 700; color: white; }
+
+/* Tags */
+.tag {
+  display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px;
+  border-radius: 6px; margin-right: 4px; margin-bottom: 4px;
+}
+.tag-green { background: var(--green-light); color: var(--green); }
+.tag-red { background: var(--red-light); color: var(--red); }
+.tag-amber { background: var(--amber-light); color: var(--amber); }
+.tag-blue { background: var(--blue-light); color: var(--blue); }
+.tag-accent { background: var(--accent-light); color: var(--accent); }
+.tag-purple { background: var(--purple-light); color: var(--purple); }
+
+/* Misc */
+.divider { height: 1px; background: var(--slide-border); margin: 24px 0; }
+.finding {
+  display: flex; gap: 12px; margin-bottom: 12px; font-size: 13px; line-height: 1.5;
+}
+.finding-num {
+  width: 22px; height: 22px; border-radius: 50%; background: var(--accent);
+  color: white; font-size: 11px; font-weight: 700; display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0; margin-top: 1px;
+}
+.toc-item {
+  display: flex; align-items: center; gap: 12px; padding: 12px 16px;
+  border: 1px solid var(--slide-border); border-radius: 10px; margin-bottom: 8px;
+  cursor: pointer; transition: all 0.15s; background: white;
+}
+.toc-item:hover { border-color: var(--accent); background: var(--accent-light); }
+.toc-num {
+  width: 32px; height: 32px; border-radius: 8px; font-size: 14px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.toc-text { font-size: 15px; font-weight: 500; color: var(--text); }
+
+.flow-arrow { text-align: center; font-size: 20px; color: var(--muted); margin: 4px 0; }
+.flow-box {
+  border: 1px solid var(--slide-border); border-radius: 10px; padding: 12px 16px;
+  background: white; text-align: center; font-size: 13px; font-weight: 500;
+}
+
+/* Agent pipeline */
+.pipeline { display: flex; align-items: center; gap: 0; margin: 24px 0; }
+.pipeline-node {
+  flex: 1; text-align: center; padding: 16px 8px; border-radius: 12px;
+  border: 2px solid; position: relative;
+}
+.pipeline-node-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+.pipeline-node-desc { font-size: 12px; color: var(--muted); line-height: 1.4; }
+.pipeline-arrow {
+  width: 32px; text-align: center; font-size: 18px; color: var(--muted); flex-shrink: 0;
+}
+
+/* Severity grid */
+.severity-grid { display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; font-size: 13px; margin: 12px 0; }
+.severity-label { font-weight: 700; text-align: right; }
+.severity-dots { display: flex; gap: 4px; flex-wrap: wrap; align-items: center; }
+.severity-dot {
+  width: 20px; height: 20px; border-radius: 6px; font-size: 10px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; color: white;
+}
+
+/* v1 vs v2 comparison */
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+.compare-col { border-radius: 10px; padding: 16px; border: 1px solid var(--slide-border); background: white; }
+.compare-header { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
+
+/* Feedback */
+.feedback-section {
+  margin-top: 24px; padding-top: 16px;
+  border-top: 1px dashed var(--slide-border);
+}
+.feedback-toggle {
+  display: flex; align-items: center; gap: 8px; cursor: pointer;
+  font-size: 12px; font-weight: 600; color: var(--muted);
+  background: none; border: none; padding: 4px 0;
+  transition: color 0.15s;
+}
+.feedback-toggle:hover { color: var(--text); }
+.feedback-toggle .chevron { transition: transform 0.2s; font-size: 10px; }
+.feedback-toggle .chevron.open { transform: rotate(90deg); }
+.feedback-toggle .dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+  display: none;
+}
+.feedback-toggle .dot.has-feedback { display: inline-block; }
+.feedback-body { display: none; margin-top: 10px; }
+.feedback-body.open { display: block; }
+.feedback-textarea {
+  width: 100%; min-height: 60px; padding: 10px 12px;
+  border: 1px solid var(--slide-border); border-radius: 8px;
+  font-family: inherit; font-size: 13px; color: var(--text);
+  background: white; resize: vertical; outline: none;
+  transition: border-color 0.15s;
+}
+.feedback-textarea:focus { border-color: var(--accent); }
+.feedback-actions { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+.feedback-save {
+  padding: 6px 14px; border-radius: 6px; border: none;
+  background: var(--accent); color: white; font-size: 12px;
+  font-weight: 600; cursor: pointer; transition: opacity 0.15s;
+}
+.feedback-save:hover { opacity: 0.85; }
+.feedback-save:disabled { opacity: 0.4; cursor: default; }
+.feedback-status { font-size: 11px; color: var(--green); opacity: 0; transition: opacity 0.3s; }
+.feedback-status.show { opacity: 1; }
+.feedback-saved-list { margin-top: 8px; }
+.feedback-entry {
+  display: flex; gap: 8px; align-items: flex-start; padding: 6px 0;
+  font-size: 12px; color: var(--text); border-bottom: 1px solid #f3f4f6;
+}
+.feedback-entry:last-child { border-bottom: none; }
+.feedback-entry-time { color: var(--muted); font-size: 11px; white-space: nowrap; flex-shrink: 0; }
+.feedback-entry-text { line-height: 1.4; }
+.feedback-entry-delete {
+  background: none; border: none; color: var(--muted); cursor: pointer;
+  font-size: 11px; padding: 0 4px; flex-shrink: 0;
+}
+.feedback-entry-delete:hover { color: var(--red); }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 0: Title + TOC -->
+<div class="slide active" id="slide-0">
+  <h1>Adversarial Logic System</h1>
+  <p class="subtitle">Run 001 &mdash; Can adversarial agents iteratively build a sound theory of consciousness?</p>
+  <div class="divider"></div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <div>
+      <p class="label" style="color:var(--muted)">The System</p>
+      <div class="toc-item" onclick="goTo(1)">
+        <div class="toc-num" style="background:var(--accent-light);color:var(--accent)">1</div>
+        <div class="toc-text">Agent Architecture</div>
+      </div>
+      <div class="toc-item" onclick="goTo(2)">
+        <div class="toc-num" style="background:var(--blue-light);color:var(--blue)">2</div>
+        <div class="toc-text">Information Flow</div>
+      </div>
+    </div>
+    <div>
+      <p class="label" style="color:var(--muted)">The Arguments</p>
+      <div class="toc-item" onclick="goTo(3)">
+        <div class="toc-num" style="background:var(--green-light);color:var(--green)">3</div>
+        <div class="toc-text">Theory v1 &rarr; Attacks</div>
+      </div>
+      <div class="toc-item" onclick="goTo(4)">
+        <div class="toc-num" style="background:var(--amber-light);color:var(--amber)">4</div>
+        <div class="toc-text">The Judge's Ruling</div>
+      </div>
+      <div class="toc-item" onclick="goTo(5)">
+        <div class="toc-num" style="background:var(--purple-light);color:var(--purple)">5</div>
+        <div class="toc-text">Theory v2 &mdash; What Changed</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px">
+    <p class="label" style="color:var(--muted)">Takeaways</p>
+    <div class="toc-item" onclick="goTo(6)">
+      <div class="toc-num" style="background:var(--red-light);color:var(--red)">6</div>
+      <div class="toc-text">System Learnings &mdash; What to Tweak Next</div>
+    </div>
+  </div>
+
+  <div style="margin-top:24px;display:flex;gap:8px;flex-wrap:wrap">
+    <span class="tag tag-accent">With Judge</span>
+    <span class="tag tag-accent">Structured Notation</span>
+    <span class="tag tag-accent">No Attack Taxonomy</span>
+    <span class="tag tag-accent">No Exploration Phase</span>
+    <span class="tag tag-accent">No Seed</span>
+  </div>
+</div>
+
+<!-- SLIDE 1: Agent Architecture -->
+<div class="slide" id="slide-1">
+  <p class="label" style="color:var(--accent)">The System</p>
+  <h2>Agent Architecture</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:24px">Three roles, four phases. Each agent sees only what it needs.</p>
+
+  <div class="pipeline">
+    <div class="pipeline-node" style="border-color:var(--blue);background:var(--blue-light)">
+      <div class="pipeline-node-label" style="color:var(--blue)">Architect</div>
+      <div class="pipeline-node-desc">Proposes theory using structured logical notation</div>
+    </div>
+    <div class="pipeline-arrow">&rarr;</div>
+    <div class="pipeline-node" style="border-color:var(--red);background:var(--red-light)">
+      <div class="pipeline-node-label" style="color:var(--red)">Adversary</div>
+      <div class="pipeline-node-desc">Attacks every premise, derivation, and conclusion</div>
+    </div>
+    <div class="pipeline-arrow">&rarr;</div>
+    <div class="pipeline-node" style="border-color:var(--amber);background:var(--amber-light)">
+      <div class="pipeline-node-label" style="color:var(--amber)">Judge</div>
+      <div class="pipeline-node-desc">Rules on each attack: landed? severity? must fix?</div>
+    </div>
+    <div class="pipeline-arrow">&rarr;</div>
+    <div class="pipeline-node" style="border-color:var(--purple);background:var(--purple-light)">
+      <div class="pipeline-node-label" style="color:var(--purple)">Architect v2</div>
+      <div class="pipeline-node-desc">Revises theory addressing judge's mandatory fixes</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="stats stats-4">
+    <div class="stat">
+      <div class="stat-value" style="color:var(--blue)">1</div>
+      <div class="stat-label">Theory In</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--red)">16</div>
+      <div class="stat-label">Attacks</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--amber)">8</div>
+      <div class="stat-label">Must-Fix Rulings</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--purple)">14</div>
+      <div class="stat-label">Changes in v2</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <h3>Run Parameters</h3>
+  <div style="display:flex;gap:16px;margin-top:12px">
+    <div class="card" style="flex:1;text-align:center;padding:12px">
+      <div style="font-size:12px;font-weight:600;color:var(--text)">Format</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:2px">Structured logical notation</div>
+    </div>
+    <div class="card" style="flex:1;text-align:center;padding:12px">
+      <div style="font-size:12px;font-weight:600;color:var(--text)">Judge</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:2px">Yes &mdash; 3rd party</div>
+    </div>
+    <div class="card" style="flex:1;text-align:center;padding:12px">
+      <div style="font-size:12px;font-weight:600;color:var(--text)">Taxonomy</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:2px">No &mdash; free-form attack</div>
+    </div>
+    <div class="card" style="flex:1;text-align:center;padding:12px">
+      <div style="font-size:12px;font-weight:600;color:var(--text)">Seed</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:2px">None &mdash; open-ended</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 2: Information Flow -->
+<div class="slide" id="slide-2">
+  <p class="label" style="color:var(--blue)">The System</p>
+  <h2>How Information Flowed</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">What each agent received, produced, and passed forward.</p>
+
+  <div class="flow-box" style="border-color:var(--blue);border-width:2px">
+    <span style="font-weight:700;color:var(--blue)">Architect v1</span><br>
+    <span style="font-size:12px;color:var(--muted)">Received: goal only ("logically sound theory of consciousness")</span><br>
+    <span style="font-size:12px;color:var(--text)">Produced: 10 definitions, 10 premises, 8 conclusions, 10 empirical predictions, 5 self-flagged vulnerabilities</span>
+  </div>
+  <div class="flow-arrow">&darr;</div>
+  <div class="flow-box" style="border-color:var(--red);border-width:2px">
+    <span style="font-weight:700;color:var(--red)">Adversary</span><br>
+    <span style="font-size:12px;color:var(--muted)">Received: full theory text (definitions + premises + conclusions)</span><br>
+    <span style="font-size:12px;color:var(--text)">Produced: 16 numbered attacks, each targeting specific premises/derivations by ID</span>
+  </div>
+  <div class="flow-arrow">&darr;</div>
+  <div class="flow-box" style="border-color:var(--amber);border-width:2px">
+    <span style="font-weight:700;color:var(--amber)">Judge</span><br>
+    <span style="font-size:12px;color:var(--muted)">Received: theory summary + all 16 attacks</span><br>
+    <span style="font-size:12px;color:var(--text)">Produced: per-attack verdicts, recalibrated severities, prioritized fix list (8 must / 3 should / 3 ignore)</span>
+  </div>
+  <div class="flow-arrow">&darr;</div>
+  <div class="flow-box" style="border-color:var(--purple);border-width:2px">
+    <span style="font-weight:700;color:var(--purple)">Architect v2</span><br>
+    <span style="font-size:12px;color:var(--muted)">Received: judge's fix list only (not raw attacks)</span><br>
+    <span style="font-size:12px;color:var(--text)">Produced: fully revised theory with change log mapping every edit to a fix item</span>
+  </div>
+
+  <div class="divider"></div>
+  <h3>Key Design Choice</h3>
+  <p style="font-size:13px;color:var(--muted);line-height:1.6">The architect v2 received the <strong>judge's filtered fix list</strong>, not the raw adversary attacks. This prevented overcorrection &mdash; the adversary overstated 6 of 16 attacks, and the judge caught all of them.</p>
+</div>
+
+<!-- SLIDE 3: Theory v1 + Attacks -->
+<div class="slide" id="slide-3">
+  <p class="label" style="color:var(--green)">The Arguments</p>
+  <h2>Theory v1 &rarr; 16 Attacks</h2>
+
+  <div class="compare">
+    <div class="compare-col">
+      <div class="compare-header" style="color:var(--blue)">Architect's Theory: IIS</div>
+      <p style="font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:10px">
+        <strong>Core claim:</strong> Consciousness IS integrated causal structure. Not correlated with it &mdash; identical to it.
+      </p>
+      <p style="font-size:12px;color:var(--text);line-height:1.5;margin-bottom:6px"><strong>10 premises</strong> covering:</p>
+      <div style="display:flex;flex-wrap:wrap;gap:4px">
+        <span class="tag tag-blue">Physical closure</span>
+        <span class="tag tag-blue">Anti-eliminativism</span>
+        <span class="tag tag-blue">Supervenience</span>
+        <span class="tag tag-blue">Structural determination</span>
+        <span class="tag tag-blue">Integration (Phi&gt;0)</span>
+        <span class="tag tag-blue">Qualia = causal structure</span>
+        <span class="tag tag-blue">Grain postulate</span>
+        <span class="tag tag-blue">Self-model amplification</span>
+      </div>
+      <p style="font-size:12px;color:var(--text);line-height:1.5;margin-top:10px"><strong>8 conclusions</strong> including substrate independence, unity = integration, consciousness gradient</p>
+    </div>
+    <div class="compare-col">
+      <div class="compare-header" style="color:var(--red)">Adversary's Verdict</div>
+      <p style="font-size:12px;color:var(--red);font-weight:600;margin-bottom:10px">Not logically sound.</p>
+
+      <div class="severity-grid">
+        <div class="severity-label" style="color:var(--red)">Fatal &times;4</div>
+        <div class="severity-dots">
+          <div class="severity-dot" style="background:var(--red)" title="Identity claim is stipulated">1</div>
+          <div class="severity-dot" style="background:var(--red)" title="Causal structure equivocation">3</div>
+          <div class="severity-dot" style="background:var(--red)" title="C1 is a non sequitur">4</div>
+          <div class="severity-dot" style="background:var(--red)" title="Can't distinguish consciousness from processing">13</div>
+        </div>
+        <div class="severity-label" style="color:var(--amber)">Major &times;7</div>
+        <div class="severity-dots">
+          <div class="severity-dot" style="background:var(--amber)">2</div>
+          <div class="severity-dot" style="background:var(--amber)">5</div>
+          <div class="severity-dot" style="background:var(--amber)">8</div>
+          <div class="severity-dot" style="background:var(--amber)">10</div>
+          <div class="severity-dot" style="background:var(--amber)">11</div>
+          <div class="severity-dot" style="background:var(--amber)">14</div>
+          <div class="severity-dot" style="background:var(--amber)">16</div>
+        </div>
+        <div class="severity-label" style="color:var(--muted)">Moderate &times;5</div>
+        <div class="severity-dots">
+          <div class="severity-dot" style="background:#9ca3af">6</div>
+          <div class="severity-dot" style="background:#9ca3af">7</div>
+          <div class="severity-dot" style="background:#9ca3af">9</div>
+          <div class="severity-dot" style="background:#9ca3af">12</div>
+          <div class="severity-dot" style="background:#9ca3af">15</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <h3>The 4 "Fatal" Attacks (Adversary's Assessment)</h3>
+  <div class="finding">
+    <div class="finding-num" style="background:var(--red)">1</div>
+    <div><strong>Identity is stipulated, not derived.</strong> P8 asserts qualia ARE causal structures, but justifies this with correlation data. Correlation &ne; identity.</div>
+  </div>
+  <div class="finding">
+    <div class="finding-num" style="background:var(--red)">3</div>
+    <div><strong>"Causal structure" means two things.</strong> Used abstractly for substrate independence, but concretely for the identity claim. Can't have both.</div>
+  </div>
+  <div class="finding">
+    <div class="finding-num" style="background:var(--red)">4</div>
+    <div><strong>Flagship conclusion smuggles concepts.</strong> C1 says "intrinsic character, from the inside" but neither phrase appears in any premise.</div>
+  </div>
+  <div class="finding">
+    <div class="finding-num" style="background:var(--red)">13</div>
+    <div><strong>Dilemma: reduction or magic?</strong> If consciousness just IS causal structure, it's eliminated. If it's something extra, physical closure breaks.</div>
+  </div>
+</div>
+
+<!-- SLIDE 4: Judge's Ruling -->
+<div class="slide" id="slide-4">
+  <p class="label" style="color:var(--amber)">The Arguments</p>
+  <h2>The Judge's Ruling</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">The judge downgraded every "Fatal" to "Major" &mdash; the adversary applied standards no physicalist theory could meet.</p>
+
+  <h3>Severity Recalibration</h3>
+  <p style="font-size:13px;color:var(--muted);margin-bottom:12px">Adversary's rating &rarr; Judge's rating. The adversary systematically overstated.</p>
+
+  <div class="bar-row">
+    <div class="bar-label">Attacks 1,3,4,13</div>
+    <div class="bar-track">
+      <div class="bar-fill" style="width:100%;background:var(--red)"><span>Adversary: Fatal</span></div>
+    </div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label" style="font-size:11px;color:var(--amber)">recalibrated &darr;</div>
+    <div class="bar-track">
+      <div class="bar-fill" style="width:75%;background:var(--amber)"><span>Judge: Major (fixable)</span></div>
+    </div>
+  </div>
+
+  <div style="margin-top:8px;margin-bottom:12px;font-size:12px;color:var(--muted)">
+    <strong>Why?</strong> The adversary treated the hard problem of consciousness as a specific flaw of this theory. The judge recognized it's a challenge shared by all physicalist theories &mdash; not grounds for "fatal."
+  </div>
+
+  <div class="divider"></div>
+
+  <h3>The 8 Mandatory Fixes</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px">
+    <div class="card" style="padding:10px 14px">
+      <div style="font-size:12px"><span class="tag tag-red">Fix 1</span> Reclassify P8 as axiom</div>
+    </div>
+    <div class="card" style="padding:10px 14px">
+      <div style="font-size:12px"><span class="tag tag-red">Fix 2</span> Resolve "causal structure" equivocation</div>
+    </div>
+    <div class="card" style="padding:10px 14px">
+      <div style="font-size:12px"><span class="tag tag-red">Fix 3</span> Rebuild C1 derivation</div>
+    </div>
+    <div class="card" style="padding:10px 14px">
+      <div style="font-size:12px"><span class="tag tag-red">Fix 4</span> Resolve C2 vs. exclusion contradiction</div>
+    </div>
+    <div class="card" style="padding:10px 14px">
+      <div style="font-size:12px"><span class="tag tag-amber">Fix 5</span> Justify grain postulate</div>
+    </div>
+    <div class="card" style="padding:10px 14px">
+      <div style="font-size:12px"><span class="tag tag-amber">Fix 6</span> Fix supervenience derivation</div>
+    </div>
+    <div class="card" style="padding:10px 14px">
+      <div style="font-size:12px"><span class="tag tag-amber">Fix 7</span> Develop unique empirical predictions</div>
+    </div>
+    <div class="card" style="padding:10px 14px">
+      <div style="font-size:12px"><span class="tag tag-amber">Fix 8</span> Formalize substrate independence</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <h3>Judge's Best Catch</h3>
+  <p style="font-size:13px;color:var(--muted);line-height:1.5">
+    Attack 11 claimed seizures disprove the Phi-consciousness link (high synchrony = high integration = should mean more consciousness). The judge identified a <strong>factual error by the adversary</strong>: hyper-synchrony actually <em>decreases</em> Phi because it collapses the system's repertoire of distinguishable states. The attack was partially credited but the core claim was wrong.
+  </p>
+</div>
+
+<!-- SLIDE 5: Theory v2 -->
+<div class="slide" id="slide-5">
+  <p class="label" style="color:var(--purple)">The Arguments</p>
+  <h2>Theory v2 &mdash; What Changed</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">The architect addressed all 8 mandatory fixes. The biggest move: adopting ontic structural realism as a foundation.</p>
+
+  <div class="card" style="border-left:3px solid var(--purple)">
+    <div class="card-header">
+      <div class="card-title">The Key Move: Ontic Structural Realism</div>
+    </div>
+    <div class="card-desc" style="margin-top:4px">
+      v1's core problem was using "causal structure" to mean two contradictory things. v2 commits to a specific ontology: <strong>relational structure IS the fundamental reality</strong>, not an abstraction from something deeper. This single commitment resolved Attacks 1, 3, 4, and 16 simultaneously.
+    </div>
+  </div>
+
+  <h3 style="margin-top:20px">All Changes Mapped to Fixes</h3>
+  <div style="font-size:12px;line-height:1.8;color:var(--text)">
+    <div style="display:flex;gap:8px;margin-bottom:4px;align-items:flex-start">
+      <span class="tag tag-red" style="flex-shrink:0;margin-top:2px">Fix 1</span>
+      <span>P8 renamed to <strong>Axiom A1</strong> &mdash; honest that it's a postulate, not derived from evidence</span>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:4px;align-items:flex-start">
+      <span class="tag tag-red" style="flex-shrink:0;margin-top:2px">Fix 2</span>
+      <span>New Section 0 commits to OSR; D5 rewritten with single meaning</span>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:4px;align-items:flex-start">
+      <span class="tag tag-red" style="flex-shrink:0;margin-top:2px">Fix 3</span>
+      <span>C1 derivation rebuilt with <strong>7 explicit bridging steps</strong></span>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:4px;align-items:flex-start">
+      <span class="tag tag-red" style="flex-shrink:0;margin-top:2px">Fix 4</span>
+      <span>New <strong>subsumption principle</strong> (P10b): subsystem consciousness is subsumed, not independent</span>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:4px;align-items:flex-start">
+      <span class="tag tag-amber" style="flex-shrink:0;margin-top:2px">Fix 5</span>
+      <span>Grain postulate justified via causal-powers maximization; continuity condition added (P10c)</span>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:4px;align-items:flex-start">
+      <span class="tag tag-amber" style="flex-shrink:0;margin-top:2px">Fix 6</span>
+      <span>P2 strengthened to include causal relevance &rarr; P3 derivation now valid</span>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:4px;align-items:flex-start">
+      <span class="tag tag-amber" style="flex-shrink:0;margin-top:2px">Fix 7</span>
+      <span>4 new distinctive predictions; existing predictions relabeled as shared with rivals</span>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:4px;align-items:flex-start">
+      <span class="tag tag-amber" style="flex-shrink:0;margin-top:2px">Fix 8</span>
+      <span>D7 deployed with 3 isomorphism conditions; C4 derivation now rigorous</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <h3>Also Fixed (Should-Fix Items)</h3>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
+    <span class="tag tag-accent">P7 qualified for seizure case</span>
+    <span class="tag tag-accent">A/P-consciousness boundary noted</span>
+    <span class="tag tag-accent">P9 downgraded to conjecture</span>
+  </div>
+</div>
+
+<!-- SLIDE 6: System Learnings -->
+<div class="slide" id="slide-6">
+  <p class="label" style="color:var(--red)">Takeaways</p>
+  <h2>System Learnings</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:24px">What this run tells us about the adversarial system itself &mdash; what to tweak for Run 002.</p>
+
+  <div class="card" style="border-left:3px solid var(--green)">
+    <div class="card-header">
+      <div class="card-title" style="color:var(--green)">The Judge Earned Its Keep</div>
+    </div>
+    <div class="card-desc" style="margin-top:4px">
+      The adversary rated 4 attacks "Fatal." The judge downgraded all 4. Without the judge, the architect would have overcorrected &mdash; potentially abandoning viable parts of the theory to address overstated attacks. <strong>The judge prevented a Rhyme-Eval Gen 3 scenario</strong> (regression from overcorrection).
+    </div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--blue)">
+    <div class="card-header">
+      <div class="card-title" style="color:var(--blue)">Structured Notation Forced Precision</div>
+    </div>
+    <div class="card-desc" style="margin-top:4px">
+      The premise/derivation format made flaws mechanically findable. The adversary could point to <strong>exact premise IDs</strong> where logic failed. The C1 non-sequitur (smuggling "intrinsic character" into the conclusion) would be invisible in prose.
+    </div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--amber)">
+    <div class="card-header">
+      <div class="card-title" style="color:var(--amber)">The Adversary Has a Domain Bias</div>
+    </div>
+    <div class="card-desc" style="margin-top:4px">
+      Three of the four "Fatal" attacks were really "this is the hard problem and no one has solved it" &mdash; true but not specific to this theory. The adversary conflated domain-wide open questions with theory-specific flaws. An <strong>attack taxonomy</strong> might fix this by forcing category labels.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h3>Next Runs &mdash; Parameters to Test</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+    <div class="card" style="text-align:center;padding:14px">
+      <div style="font-size:13px;font-weight:600;color:var(--text)">Run 002: No Judge</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px">Pass adversary output directly to architect. Does the theory degrade from overcorrection?</div>
+    </div>
+    <div class="card" style="text-align:center;padding:14px">
+      <div style="font-size:13px;font-weight:600;color:var(--text)">Run 003: Prose Format</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px">Same pipeline but free prose instead of logical notation. Do different flaws surface?</div>
+    </div>
+    <div class="card" style="text-align:center;padding:14px">
+      <div style="font-size:13px;font-weight:600;color:var(--text)">Run 004: Attack Taxonomy</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px">Force adversary to categorize attacks (logical, empirical, conceptual). Does this reduce domain-bias?</div>
+    </div>
+    <div class="card" style="text-align:center;padding:14px">
+      <div style="font-size:13px;font-weight:600;color:var(--text)">Run 005: Exploration Phase</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px">Architect researches before theorizing. Does grounding in literature produce a stronger v1?</div>
+    </div>
+  </div>
+</div>
+
+<!-- Navigation -->
+<div class="nav">
+  <button class="nav-btn" id="prevBtn" onclick="prev()">&larr;</button>
+  <div class="nav-counter" id="navCounter">1 / 7</div>
+  <button class="nav-btn" id="nextBtn" onclick="next()">&rarr;</button>
+</div>
+
+<script>
+let current = 0;
+const total = document.querySelectorAll('.slide').length;
+
+// --- Feedback System ---
+const FEEDBACK_KEY = 'adversarial-logic-run-001-feedback';
+
+function loadFeedback() {
+  try { return JSON.parse(localStorage.getItem(FEEDBACK_KEY) || '{}'); }
+  catch { return {}; }
+}
+
+function saveFeedbackStore(store) {
+  localStorage.setItem(FEEDBACK_KEY, JSON.stringify(store));
+  fetch('/api/feedback', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(store)
+  }).catch(() => {});
+}
+
+function addFeedback(slideIdx, text) {
+  if (!text.trim()) return;
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  if (!store[key]) store[key] = [];
+  store[key].push({
+    text: text.trim(),
+    timestamp: new Date().toISOString(),
+    slideTitle: getSlideName(slideIdx)
+  });
+  saveFeedbackStore(store);
+  renderFeedbackForSlide(slideIdx);
+}
+
+function deleteFeedback(slideIdx, entryIdx) {
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  if (store[key] && store[key][entryIdx] !== undefined) {
+    store[key].splice(entryIdx, 1);
+    if (store[key].length === 0) delete store[key];
+    saveFeedbackStore(store);
+    renderFeedbackForSlide(slideIdx);
+  }
+}
+
+function getSlideName(idx) {
+  const names = ['Title & TOC', 'Agent Architecture', 'Information Flow',
+                 'Theory v1 & Attacks', 'Judge Ruling', 'Theory v2', 'System Learnings'];
+  return names[idx] || 'Slide ' + (idx + 1);
+}
+
+function renderFeedbackForSlide(slideIdx) {
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  const entries = store[key] || [];
+  const listEl = document.getElementById('feedback-list-' + slideIdx);
+  const dotEl = document.getElementById('feedback-dot-' + slideIdx);
+
+  if (dotEl) dotEl.classList.toggle('has-feedback', entries.length > 0);
+
+  if (!listEl) return;
+  if (entries.length === 0) { listEl.innerHTML = ''; return; }
+
+  listEl.innerHTML = entries.map((e, i) => `
+    <div class="feedback-entry">
+      <span class="feedback-entry-time">${new Date(e.timestamp).toLocaleDateString('en-US', {month:'short',day:'numeric'})}</span>
+      <span class="feedback-entry-text">${escapeHtml(e.text)}</span>
+      <button class="feedback-entry-delete" onclick="deleteFeedback(${slideIdx},${i})" title="Delete">&times;</button>
+    </div>
+  `).join('');
+}
+
+function escapeHtml(str) {
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+function submitFeedback(slideIdx) {
+  const ta = document.getElementById('feedback-input-' + slideIdx);
+  const status = document.getElementById('feedback-status-' + slideIdx);
+  if (!ta || !ta.value.trim()) return;
+  addFeedback(slideIdx, ta.value);
+  ta.value = '';
+  if (status) {
+    status.classList.add('show');
+    setTimeout(() => status.classList.remove('show'), 2000);
+  }
+}
+
+function toggleFeedback(slideIdx) {
+  const body = document.getElementById('feedback-body-' + slideIdx);
+  const chev = document.getElementById('feedback-chevron-' + slideIdx);
+  if (body) body.classList.toggle('open');
+  if (chev) chev.classList.toggle('open');
+}
+
+// Inject feedback UI into every slide
+document.querySelectorAll('.slide').forEach((slide, idx) => {
+  const section = document.createElement('div');
+  section.className = 'feedback-section';
+  section.innerHTML = `
+    <button class="feedback-toggle" onclick="toggleFeedback(${idx})">
+      <span class="chevron" id="feedback-chevron-${idx}">&#9654;</span>
+      <span>Leave feedback on this slide</span>
+      <span class="dot" id="feedback-dot-${idx}"></span>
+    </button>
+    <div class="feedback-body" id="feedback-body-${idx}">
+      <div class="feedback-saved-list" id="feedback-list-${idx}"></div>
+      <textarea class="feedback-textarea" id="feedback-input-${idx}" placeholder="Your thoughts on this slide..." onkeydown="if(event.key==='Enter'&&event.metaKey){submitFeedback(${idx});event.preventDefault();}"></textarea>
+      <div class="feedback-actions">
+        <button class="feedback-save" onclick="submitFeedback(${idx})">Save (&#8984;&#9166;)</button>
+        <span class="feedback-status" id="feedback-status-${idx}">Saved!</span>
+      </div>
+    </div>
+  `;
+  slide.appendChild(section);
+  renderFeedbackForSlide(idx);
+});
+
+// --- Load server feedback on startup ---
+(async function() {
+  try {
+    const resp = await fetch('/api/feedback');
+    const serverStore = await resp.json();
+    const localStore = loadFeedback();
+    let merged = false;
+    for (const key of Object.keys(serverStore)) {
+      if (!localStore[key]) { localStore[key] = serverStore[key]; merged = true; }
+      else {
+        const localTimestamps = new Set(localStore[key].map(e => e.timestamp));
+        for (const entry of serverStore[key]) {
+          if (!localTimestamps.has(entry.timestamp)) {
+            localStore[key].push(entry);
+            merged = true;
+          }
+        }
+      }
+    }
+    if (merged) {
+      localStorage.setItem(FEEDBACK_KEY, JSON.stringify(localStore));
+      document.querySelectorAll('.slide').forEach((_, idx) => renderFeedbackForSlide(idx));
+    }
+  } catch {}
+})();
+
+// --- Navigation ---
+function show(n) {
+  document.querySelectorAll('.slide').forEach((s, i) => {
+    s.classList.toggle('active', i === n);
+  });
+  document.getElementById('navCounter').textContent = (n + 1) + ' / ' + total;
+  document.getElementById('prevBtn').disabled = n === 0;
+  document.getElementById('nextBtn').disabled = n === total - 1;
+  current = n;
+}
+
+function next() { if (current < total - 1) show(current + 1); }
+function prev() { if (current > 0) show(current - 1); }
+function goTo(n) { show(n); }
+
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'TEXTAREA') return;
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+});
+</script>
+</body>
+</html>

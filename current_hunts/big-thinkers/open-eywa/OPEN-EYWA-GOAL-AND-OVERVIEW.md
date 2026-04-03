@@ -141,6 +141,8 @@ This lets Open-Eywa stay offline-first while beginning to bridge toward real mod
 
 There is now also a tiny live canary path for cheap real-runtime trials once an API key is present.
 
+If we later want to introduce additional live providers such as Codex CLI or Claude CLI, we can do that through the runtime seam rather than by changing the orchestrator model. That direction is not part of the current chosen implementation shape, but there is exploratory work for it on the `worktree-dual-runtime-provider` branch/worktree.
+
 ## Validation Model
 
 Validation is a first-class part of the architecture.

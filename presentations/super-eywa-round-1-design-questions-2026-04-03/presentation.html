@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌳 Super-Eywa - Round 1 Design Questions</title>
+<style>
+:root {
+  --bg: #060915;
+  --bg-accent: #0d1426;
+  --slide: #11192c;
+  --slide-edge: rgba(255,255,255,0.08);
+  --text: #f5f7fb;
+  --muted: #9fb1cb;
+  --soft: #7a8aa1;
+  --blue: #5ab4ff;
+  --blue-soft: rgba(90,180,255,0.14);
+  --green: #63d9a2;
+  --green-soft: rgba(99,217,162,0.14);
+  --amber: #ffbf69;
+  --amber-soft: rgba(255,191,105,0.14);
+  --pink: #ff8ecf;
+  --pink-soft: rgba(255,142,207,0.14);
+  --red: #ff7e7e;
+  --red-soft: rgba(255,126,126,0.14);
+  --panel: rgba(255,255,255,0.04);
+  --panel-strong: rgba(255,255,255,0.06);
+  --shadow: 0 30px 90px rgba(0,0,0,0.45);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(90,180,255,0.12), transparent 32%),
+    radial-gradient(circle at top right, rgba(255,191,105,0.10), transparent 28%),
+    linear-gradient(180deg, var(--bg) 0%, #04060e 100%);
+  padding: 40px 20px 120px;
+  display: flex;
+  justify-content: center;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.16;
+}
+
+.deck {
+  width: 100%;
+  max-width: 980px;
+}
+
+.slide {
+  display: none;
+  position: relative;
+  width: 100%;
+  min-height: 700px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.02), transparent 28%),
+    var(--slide);
+  border: 1px solid var(--slide-edge);
+  border-radius: 28px;
+  padding: 44px 48px 56px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.slide.active { display: block; }
+
+.slide::after {
+  content: "";
+  position: absolute;
+  inset: auto -80px -110px auto;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(90,180,255,0.18), transparent 68%);
+  pointer-events: none;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.05);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: clamp(34px, 5vw, 60px);
+  line-height: 0.95;
+  margin-top: 22px;
+  max-width: 12ch;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 54ch;
+  margin-top: 18px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 24px;
+  margin-top: 34px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.stack {
+  display: grid;
+  gap: 14px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 22px;
+  padding: 22px;
+}
+
+.panel strong {
+  color: var(--text);
+}
+
+.toc {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.toc-item {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  cursor: pointer;
+  transition: transform 140ms ease, border-color 140ms ease, background 140ms ease;
+}
+
+.toc-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(90,180,255,0.45);
+  background: rgba(90,180,255,0.10);
+}
+
+.toc-num {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.toc-text {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.toc-sub {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.decision-card {
+  min-height: 244px;
+  padding: 20px;
+  border-radius: 22px;
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.decision-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.decision-name {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.decision-tag {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.decision-body {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.decision-foot {
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.meta-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.mini {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.mini-label {
+  color: var(--soft);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.mini-value {
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.bullet-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.bullet {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.bullet-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.bullet-text {
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.why {
+  margin-top: 22px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.03);
+  border: 1px dashed rgba(255,255,255,0.12);
+  overflow: hidden;
+}
+
+.why summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 16px 18px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.why summary::-webkit-details-marker { display: none; }
+
+.why-body {
+  padding: 0 18px 18px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.bridge {
+  margin-top: 24px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: var(--soft);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.bridge-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(90,180,255,0.50), rgba(99,217,162,0.2));
+  border-radius: 999px;
+}
+
+.nav {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(3,6,14,0.85);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 12px 34px rgba(0,0,0,0.35);
+  z-index: 30;
+}
+
+.nav-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.nav-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.nav-count {
+  min-width: 72px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.feedback-section {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px dashed rgba(255,255,255,0.12);
+}
+
+.feedback-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.feedback-toggle .chevron { transition: transform 160ms ease; font-size: 10px; }
+.feedback-toggle .chevron.open { transform: rotate(90deg); }
+.feedback-toggle .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  display: none;
+}
+.feedback-toggle .dot.has-feedback { display: inline-block; }
+
+.feedback-body { display: none; margin-top: 10px; }
+.feedback-body.open { display: block; }
+
+.feedback-saved-list {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.feedback-entry {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 12px;
+}
+
+.feedback-entry:last-child { border-bottom: none; }
+.feedback-entry-time { color: var(--soft); white-space: nowrap; }
+.feedback-entry-text { color: var(--text); line-height: 1.4; flex: 1; }
+.feedback-entry-delete {
+  background: none;
+  border: none;
+  color: var(--soft);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.feedback-textarea {
+  width: 100%;
+  min-height: 74px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  padding: 12px 14px;
+  resize: vertical;
+  font: inherit;
+}
+
+.feedback-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.feedback-save {
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, var(--blue), #7d89ff);
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.feedback-status {
+  font-size: 11px;
+  color: var(--green);
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+.feedback-status.show { opacity: 1; }
+
+.blue { background: var(--blue-soft); color: var(--blue); }
+.green { background: var(--green-soft); color: var(--green); }
+.amber { background: var(--amber-soft); color: var(--amber); }
+.pink { background: var(--pink-soft); color: var(--pink); }
+.red { background: var(--red-soft); color: var(--red); }
+
+@media (max-width: 860px) {
+  .slide { padding: 30px 24px 48px; min-height: auto; }
+  .grid-2, .toc, .grid-3, .meta-row { grid-template-columns: 1fr; }
+  .title { max-width: none; }
+}
+</style>
+</head>
+<body>
+  <div class="deck">
+    <section class="slide active" data-title="What do we need to decide before detailed design?">
+      <div class="eyebrow">🌳 Super-Eywa · Round 1</div>
+      <h1 class="title">What do we need to decide before detailed design?</h1>
+      <p class="subtitle">This deck is the first pass at the high-leverage choices. Each slide asks one architecture question that will shape the target docs.</p>
+
+      <div class="toc">
+        <div class="toc-item" onclick="goTo(1)">
+          <div class="toc-num blue">1</div>
+          <div>
+            <div class="toc-text">What is the punchline?</div>
+            <div class="toc-sub">What this round is for and what it is not for.</div>
+          </div>
+        </div>
+        <div class="toc-item" onclick="goTo(2)">
+          <div class="toc-num amber">2</div>
+          <div>
+            <div class="toc-text">What is the real optimization surface?</div>
+            <div class="toc-sub">Variables, recipes, or a hybrid.</div>
+          </div>
+        </div>
+        <div class="toc-item" onclick="goTo(3)">
+          <div class="toc-num green">3</div>
+          <div>
+            <div class="toc-text">What must every node always expose?</div>
+            <div class="toc-sub">How much contract to freeze at v1.</div>
+          </div>
+        </div>
+        <div class="toc-item" onclick="goTo(4)">
+          <div class="toc-num pink">4</div>
+          <div>
+            <div class="toc-text">What actions may a node take?</div>
+            <div class="toc-sub">The size of Eywa’s action vocabulary.</div>
+          </div>
+        </div>
+        <div class="toc-item" onclick="goTo(5)">
+          <div class="toc-num blue">5</div>
+          <div>
+            <div class="toc-text">Where should specialization live?</div>
+            <div class="toc-sub">Tree defaults, node overrides, or more.</div>
+          </div>
+        </div>
+        <div class="toc-item" onclick="goTo(6)">
+          <div class="toc-num amber">6</div>
+          <div>
+            <div class="toc-text">What data should every run emit?</div>
+            <div class="toc-sub">What Bonsai and later Potter can rely on.</div>
+          </div>
+        </div>
+        <div class="toc-item" onclick="goTo(7)">
+          <div class="toc-num green">7</div>
+          <div>
+            <div class="toc-text">How should tasks be represented before ML?</div>
+            <div class="toc-sub">Tags, normalized text, or embeddings early.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="What is the punchline?">
+      <div class="eyebrow">TL;DR</div>
+      <h2 class="title">What is the punchline?</h2>
+      <div class="bullet-list">
+        <div class="bullet">
+          <div class="bullet-num blue">1</div>
+          <div class="bullet-text">The next target docs should not start from implementation detail. They should start from a few frozen contracts.</div>
+        </div>
+        <div class="bullet">
+          <div class="bullet-num amber">2</div>
+          <div class="bullet-text">This round is mainly about Eywa and Bonsai boundaries, not Potter internals, storage engines, or ML sophistication.</div>
+        </div>
+        <div class="bullet">
+          <div class="bullet-num green">3</div>
+          <div class="bullet-text">If these questions are answered cleanly, the high-medium level design should become much easier to write without hand-waving.</div>
+        </div>
+      </div>
+
+      <div class="meta-row">
+        <div class="mini">
+          <div class="mini-label">Settle Now</div>
+          <div class="mini-value">Contracts and boundaries</div>
+        </div>
+        <div class="mini">
+          <div class="mini-label">Defer</div>
+          <div class="mini-value">Potter internals and ML detail</div>
+        </div>
+        <div class="mini">
+          <div class="mini-label">Use Feedback For</div>
+          <div class="mini-value">Direct answers or strong reactions</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="What is the real optimization surface?">
+      <div class="eyebrow">Decision 1</div>
+      <h2 class="title">What is the real optimization surface?</h2>
+      <p class="subtitle">This decides whether Bonsai is learning named bundles, explicit knobs, or both.</p>
+
+      <div class="grid-3">
+        <div class="decision-card">
+          <div class="decision-head">
+            <div class="decision-name">Explicit Variables</div>
+            <div class="decision-tag amber">Most legible</div>
+          </div>
+          <div class="decision-body">The truth is a resolved variable schema. Every run records the exact knobs that shaped it.</div>
+          <div class="decision-foot">Best for clean learning and comparison. Harder to keep human-friendly.</div>
+        </div>
+        <div class="decision-card">
+          <div class="decision-head">
+            <div class="decision-name">Recipes</div>
+            <div class="decision-tag blue">Most compact</div>
+          </div>
+          <div class="decision-body">The truth is a named recipe or profile. Bonsai chooses one object instead of many knobs.</div>
+          <div class="decision-foot">Best for simplicity. Risks hiding behavior inside bundles.</div>
+        </div>
+        <div class="decision-card">
+          <div class="decision-head">
+            <div class="decision-name">Hybrid</div>
+            <div class="decision-tag green">Most balanced</div>
+          </div>
+          <div class="decision-body">Recipes exist as presets, but the resolved variable bundle is the source of truth and what gets recorded.</div>
+          <div class="decision-foot">Best if you want both operator simplicity and long-term learnability.</div>
+        </div>
+      </div>
+
+      <details class="why">
+        <summary>Why does this matter?</summary>
+        <div class="why-body">This choice affects how Bonsai learns, how runs get compared, how humans inspect the system, and how much hidden behavior can sneak into the machine. If this is fuzzy, the later target docs will be fuzzy too.</div>
+      </details>
+    </section>
+
+    <section class="slide" data-title="What must every node always expose?">
+      <div class="eyebrow">Decision 2</div>
+      <h2 class="title">What must every node always expose?</h2>
+      <p class="subtitle">This is the base contract. Everything later depends on what a node must contain and emit.</p>
+
+      <div class="grid-3">
+        <div class="decision-card">
+          <div class="decision-head">
+            <div class="decision-name">Minimal Folder</div>
+            <div class="decision-tag blue">Leanest</div>
+          </div>
+          <div class="decision-body">Input, resolved vars, output, metrics, children. Nothing more is canonical at first.</div>
+          <div class="decision-foot">Fastest to build. May be too thin for later learning and replay.</div>
+        </div>
+        <div class="decision-card">
+          <div class="decision-head">
+            <div class="decision-name">Spec + Trace</div>
+            <div class="decision-tag green">Best contract</div>
+          </div>
+          <div class="decision-body">Every node has a clear spec plus a canonical trace packet that says what happened.</div>
+          <div class="decision-foot">Strong boundary for Eywa, Bonsai, and later Potter.</div>
+        </div>
+        <div class="decision-card">
+          <div class="decision-head">
+            <div class="decision-name">Rich Artifact Set</div>
+            <div class="decision-tag amber">Most complete</div>
+          </div>
+          <div class="decision-body">Prompt refs, tool logs, lineage, scoring hooks, replay signatures, and more are part of the contract.</div>
+          <div class="decision-foot">Most future-proof. Highest risk of freezing too much too early.</div>
+        </div>
+      </div>
+
+      <div class="bridge">
+        <span>Node sameness depends on this being explicit</span>
+        <div class="bridge-line"></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="What actions may a node take?">
+      <div class="eyebrow">Decision 3</div>
+      <h2 class="title">What actions may a node take?</h2>
+      <p class="subtitle">This defines Eywa’s behavioral surface. A small action vocabulary is easier to reason about, but may feel constraining.</p>
+
+      <div class="grid-3">
+        <div class="decision-card">
+          <div class="decision-head">
+            <div class="decision-name">Tight Core</div>
+            <div class="decision-tag green">Most sturdy</div>
+          </div>
+          <div class="decision-body">Solve, split, delegate, escalate. Everything else is a sub-shape of those actions.</div>
+          <div class="decision-foot">Very clean. Keeps protocol small.</div>
+        </div>
+        <div class="decision-card">
+          <div class="decision-head">
+            <div class="decision-name">Planner Runtime</div>
+            <div class="decision-tag blue">Middle ground</div>
+          </div>
+          <div class="decision-body">Solve directly, plan and solve, plan and delegate, plan and split.</div>
+          <div class="decision-foot">Matches how you naturally talk about the system today.</div>
+        </div>
+        <div class="decision-card">
+          <div class="decision-head">
+            <div class="decision-name">Broad Action Set</div>
+            <div class="decision-tag amber">Most expressive</div>
+          </div>
+          <div class="decision-body">Retrieve, retry, self-review, synthesize, verify, and more all become first-class actions.</div>
+          <div class="decision-foot">May overfit early implementation detail into the core contract.</div>
+        </div>
+      </div>
+
+      <details class="why">
+        <summary>What does this unlock?</summary>
+        <div class="why-body">Once the action vocabulary is frozen, it becomes much easier to define the node lifecycle, the trace packet, and what counts as a comparable run.</div>
+      </details>
+    </section>
+
+    <section class="slide" data-title="Where should specialization live?">
+      <div class="eyebrow">Decision 4</div>
+      <h2 class="title">Where should specialization live?</h2>
+      <p class="subtitle">This is the question of tree defaults, node overrides, and how much freedom a node has to differ from its siblings.</p>
+
+      <div class="grid-3">
+        <div class="decision-card">
+          <div class="decision-head">
+            <div class="decision-name">Tree Defaults Only</div>
+            <div class="decision-tag red">Most uniform</div>
+          </div>
+          <div class="decision-body">One chosen bundle for the whole run. Nodes do not get their own specialization.</div>
+          <div class="decision-foot">Cleanest for comparison. Weakest for hard mixed tasks.</div>
+        </div>
+        <div class="decision-card">
+          <div class="decision-head">
+            <div class="decision-name">Parent-Set Overrides</div>
+            <div class="decision-tag green">Most practical</div>
+          </div>
+          <div class="decision-body">The tree sets defaults, and parents may assign explicit node overrides when a child needs a different shape.</div>
+          <div class="decision-foot">Keeps control inspectable while allowing local adaptation.</div>
+        </div>
+        <div class="decision-card">
+          <div class="decision-head">
+            <div class="decision-name">Dynamic Self-Rewrite</div>
+            <div class="decision-tag amber">Most adaptive</div>
+          </div>
+          <div class="decision-body">Nodes can rewrite or request their own variables mid-flight as they learn more about the task.</div>
+          <div class="decision-foot">Powerful, but much easier to hide behavior and muddle the learning surface.</div>
+        </div>
+      </div>
+
+      <div class="meta-row">
+        <div class="mini">
+          <div class="mini-label">Protects</div>
+          <div class="mini-value">Node independence</div>
+        </div>
+        <div class="mini">
+          <div class="mini-label">Affects</div>
+          <div class="mini-value">How local adaptation works</div>
+        </div>
+        <div class="mini">
+          <div class="mini-label">Risk</div>
+          <div class="mini-value">Hidden behavior outside the schema</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="What data should every run emit?">
+      <div class="eyebrow">Decision 5</div>
+      <h2 class="title">What data should every run emit?</h2>
+      <p class="subtitle">This decides what Bonsai can learn from and what future replay or equivalence checks can depend on.</p>
+
+      <div class="grid-3">
+        <div class="decision-card">
+          <div class="decision-head">
+            <div class="decision-name">Scoreboard Row</div>
+            <div class="decision-tag blue">Smallest</div>
+          </div>
+          <div class="decision-body">Task tags, chosen config, score, cost, time, node count. One clean row per run.</div>
+          <div class="decision-foot">Great for heuristics. Thin for deep debugging or replay.</div>
+        </div>
+        <div class="decision-card">
+          <div class="decision-head">
+            <div class="decision-name">Trace + Score</div>
+            <div class="decision-tag green">Best base</div>
+          </div>
+          <div class="decision-body">A canonical trace packet per node plus a scored run record per completed run.</div>
+          <div class="decision-foot">Good balance between learnability and inspectability.</div>
+        </div>
+        <div class="decision-card">
+          <div class="decision-head">
+            <div class="decision-name">Full Replay Artifact</div>
+            <div class="decision-tag amber">Most ambitious</div>
+          </div>
+          <div class="decision-body">Keep enough raw material that future replay and equivalence checks can reconstruct behavior exactly.</div>
+          <div class="decision-foot">Very powerful. Easy to overbuild before the core loop is clear.</div>
+        </div>
+      </div>
+
+      <details class="why">
+        <summary>Why is this a round-one question?</summary>
+        <div class="why-body">Because if the first runs do not emit the right facts, later learning and later correctness checking will both be weaker. This is one of the few places where over-simplifying early can cost a lot later.</div>
+      </details>
+    </section>
+
+    <section class="slide" data-title="How should tasks be represented before ML?">
+      <div class="eyebrow">Decision 6</div>
+      <h2 class="title">How should tasks be represented before ML?</h2>
+      <p class="subtitle">This is the bridge between a messy real-world task and something Bonsai can actually use for retrieval and comparison.</p>
+
+      <div class="grid-3">
+        <div class="decision-card">
+          <div class="decision-head">
+            <div class="decision-name">Hand Tags Only</div>
+            <div class="decision-tag blue">Simplest</div>
+          </div>
+          <div class="decision-body">Use a small stable taxonomy like domain, task shape, verification mode, ambiguity, and decomposition need.</div>
+          <div class="decision-foot">Very interpretable. May throw away too much signal.</div>
+        </div>
+        <div class="decision-card">
+          <div class="decision-head">
+            <div class="decision-name">Tags + Canonical Form</div>
+            <div class="decision-tag green">Best bridge</div>
+          </div>
+          <div class="decision-body">Keep hand tags, plus an LLM-written normalized task form that strips noise before storage and lookup.</div>
+          <div class="decision-foot">Keeps human semantics while making later ML easier.</div>
+        </div>
+        <div class="decision-card">
+          <div class="decision-head">
+            <div class="decision-name">Embeddings Early</div>
+            <div class="decision-tag amber">Most ambitious</div>
+          </div>
+          <div class="decision-body">Generate embeddings from the raw or normalized task from the start and use them for similarity search.</div>
+          <div class="decision-foot">Powerful later. May be premature before the basic contracts are stable.</div>
+        </div>
+      </div>
+
+      <div class="bridge">
+        <span>After this round, the next deck should move from these choices to detailed schema questions.</span>
+        <div class="bridge-line"></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="nav">
+    <button class="nav-btn" id="prevBtn" onclick="prevSlide()">←</button>
+    <div class="nav-count" id="navCount">1 / 8</div>
+    <button class="nav-btn" id="nextBtn" onclick="nextSlide()">→</button>
+  </div>
+
+<script>
+const slides = Array.from(document.querySelectorAll('.slide'));
+let currentSlide = 0;
+const FEEDBACK_KEY = 'super-eywa-round-1-design-questions-feedback';
+let feedbackStore = {};
+
+function showSlide(idx) {
+  currentSlide = Math.max(0, Math.min(idx, slides.length - 1));
+  slides.forEach((slide, i) => slide.classList.toggle('active', i === currentSlide));
+  document.getElementById('navCount').textContent = `${currentSlide + 1} / ${slides.length}`;
+  document.getElementById('prevBtn').disabled = currentSlide === 0;
+  document.getElementById('nextBtn').disabled = currentSlide === slides.length - 1;
+}
+
+function goTo(idx) { showSlide(idx); }
+function prevSlide() { showSlide(currentSlide - 1); }
+function nextSlide() { showSlide(currentSlide + 1); }
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowRight') nextSlide();
+  if (event.key === 'ArrowLeft') prevSlide();
+});
+
+function loadLocalFeedback() {
+  try {
+    return JSON.parse(localStorage.getItem(FEEDBACK_KEY) || '{}');
+  } catch (error) {
+    return {};
+  }
+}
+
+function saveLocalFeedback() {
+  localStorage.setItem(FEEDBACK_KEY, JSON.stringify(feedbackStore));
+}
+
+async function fetchServerFeedback() {
+  try {
+    const response = await fetch('/api/feedback');
+    if (!response.ok) return {};
+    return await response.json();
+  } catch (error) {
+    return {};
+  }
+}
+
+async function saveServerFeedback() {
+  try {
+    await fetch('/api/feedback', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(feedbackStore)
+    });
+  } catch (error) {
+    // localStorage is still preserved
+  }
+}
+
+function escapeHtml(value) {
+  return value
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+}
+
+function renderFeedback(idx) {
+  const entries = feedbackStore[`slide-${idx}`] || [];
+  const list = document.getElementById(`feedback-list-${idx}`);
+  const dot = document.getElementById(`feedback-dot-${idx}`);
+  if (!list || !dot) return;
+  dot.classList.toggle('has-feedback', entries.length > 0);
+  list.innerHTML = entries.map((entry, entryIdx) => `
+    <div class="feedback-entry">
+      <span class="feedback-entry-time">${new Date(entry.timestamp).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
+      <span class="feedback-entry-text">${escapeHtml(entry.text)}</span>
+      <button class="feedback-entry-delete" onclick="deleteFeedback(${idx}, ${entryIdx})">×</button>
+    </div>
+  `).join('');
+}
+
+async function submitFeedback(idx) {
+  const input = document.getElementById(`feedback-input-${idx}`);
+  const status = document.getElementById(`feedback-status-${idx}`);
+  const text = input.value.trim();
+  if (!text) return;
+  if (!feedbackStore[`slide-${idx}`]) feedbackStore[`slide-${idx}`] = [];
+  feedbackStore[`slide-${idx}`].push({
+    text,
+    timestamp: new Date().toISOString(),
+    slideTitle: slides[idx].dataset.title
+  });
+  input.value = '';
+  saveLocalFeedback();
+  renderFeedback(idx);
+  await saveServerFeedback();
+  status.classList.add('show');
+  setTimeout(() => status.classList.remove('show'), 1000);
+}
+
+async function deleteFeedback(idx, entryIdx) {
+  if (!feedbackStore[`slide-${idx}`]) return;
+  feedbackStore[`slide-${idx}`].splice(entryIdx, 1);
+  if (feedbackStore[`slide-${idx}`].length === 0) delete feedbackStore[`slide-${idx}`];
+  saveLocalFeedback();
+  renderFeedback(idx);
+  await saveServerFeedback();
+}
+
+function toggleFeedback(idx) {
+  const body = document.getElementById(`feedback-body-${idx}`);
+  const chevron = document.getElementById(`feedback-chevron-${idx}`);
+  body.classList.toggle('open');
+  chevron.classList.toggle('open');
+}
+
+function injectFeedbackSections() {
+  slides.forEach((slide, idx) => {
+    const section = document.createElement('div');
+    section.className = 'feedback-section';
+    section.innerHTML = `
+      <button class="feedback-toggle" onclick="toggleFeedback(${idx})">
+        <span class="chevron" id="feedback-chevron-${idx}">▶</span>
+        <span>Leave feedback on this slide</span>
+        <span class="dot" id="feedback-dot-${idx}"></span>
+      </button>
+      <div class="feedback-body" id="feedback-body-${idx}">
+        <div class="feedback-saved-list" id="feedback-list-${idx}"></div>
+        <textarea class="feedback-textarea" id="feedback-input-${idx}" placeholder="Your answer, pushback, or missing piece..." onkeydown="if(event.key==='Enter' && event.metaKey){submitFeedback(${idx});event.preventDefault();}"></textarea>
+        <div class="feedback-actions">
+          <button class="feedback-save" onclick="submitFeedback(${idx})">Save (⌘↵)</button>
+          <span class="feedback-status" id="feedback-status-${idx}">Saved</span>
+        </div>
+      </div>
+    `;
+    slide.appendChild(section);
+  });
+}
+
+async function init() {
+  injectFeedbackSections();
+  const local = loadLocalFeedback();
+  const server = await fetchServerFeedback();
+  feedbackStore = { ...server, ...local };
+  saveLocalFeedback();
+  slides.forEach((_, idx) => renderFeedback(idx));
+  showSlide(0);
+}
+
+init();
+</script>
+</body>
+</html>

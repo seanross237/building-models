@@ -549,11 +549,141 @@ for `kappa = |D_xi xi|` has now been fully derived and analyzed. The result is
 - **Type I self-similar scaling:** `kappa ~ (T-t)^{-1/2}` while `|omega| ~
   (T-t)^{-1}`, so `kappa/|omega| -> 0` (vortex lines straighten relatively).
 
-The most promising remaining sub-approach is a **coupled bootstrap argument**:
+The most promising remaining sub-approach was a **coupled bootstrap argument**:
 large `|omega|` damps kappa (restricted Euler), large kappa damps `|omega|`
-(viscous feedback). Whether the coupled damping beats the supercritical source
-growth is the quantitative question at the honest frontier. Estimated probability
-of success: 10-20%.
+(viscous feedback). This was attempted and produced:
+
+- **Theorem CB (conditional):** If `|D_xi S| <= C |omega|^{1+delta}` on
+  `{|omega| > M}` for any `delta > 1/2`, then the NS solution remains regular.
+  The critical exponent is `delta = 1/2`: the coupled system admits Type I
+  blowup at exactly this threshold. The proof uses the scaling
+  `alpha = 3/(2+2delta)`, which gives `alpha < 1` iff `delta > 1/2`, and then
+  BKM closes.
+- **The bootstrap does NOT close unconditionally.** The source term `|D_xi S|`
+  involves `nabla^2 u` (supercritical). Its natural scaling is
+  `|D_xi S| ~ |omega|^{3/2} / nu^{1/2}`, which is exactly `delta = 1/2` — the
+  borderline case.
+- A **logarithmic improvement** in the `D_xi S` bound would suffice for
+  regularity. The gap is infinitesimal in scaling terms.
+- The problem is now restated geometrically: **does the strain vary slowly
+  enough along vortex lines?** This is testable by DNS (`D_xi S` vs `|omega|`).
+
+This is the current terminal frontier of the vorticity-direction route.
+
+A follow-up Phase 9 (April 2, 2026) pursued three independent approaches to
+close the logarithmic gap:
+
+- **Path 3 (Hasimoto/LIA matched asymptotics):** For a single vortex tube,
+  `|D_xi S| ~ kappa |omega|` (delta = 0, far below threshold). The NLS
+  integrability via the Hasimoto transform bounds kappa for individual filaments.
+  But tube-tube interaction at distance `d ~ r_c` with non-parallel orientations
+  saturates the full CZ estimate `|omega|^{3/2}/nu^{1/2}` (delta = 1/2).
+- **Path 1 (Biot-Savart directional cancellation):** The doubly-projected kernel
+  `xi_k ... xi_l` produces a genuine algebraic cancellation (the xi-xi component
+  of `D_xi S` vanishes identically), but this is rank-1 in a rank-6 tensor —
+  a constant-factor improvement, NOT logarithmic. CZ homogeneity is unchanged.
+- **Moonshot 1 (entropic/spectral angular suppression):** Falsified. Viscous
+  damping is angularly isotropic in Fourier space (`-nu |k|^2` damps all
+  directions equally). No angular selectivity. Reproduces the single-tube bound
+  but provides no gain for tube-tube interactions.
+
+**All three converge on the same finding:** the logarithmic gap in Theorem CB
+arises entirely from **tube-tube interaction at the core scale** (`d ~ r_c`,
+non-parallel orientations). Single-tube dynamics give delta = 0 (trivially safe).
+The problem is now precisely localized to a single geometric scenario.
+
+Three candidate mechanisms were investigated (Phase 10, April 2, 2026):
+1. **Topological constraints:** Helicity and linking bound reconnection events
+   but NOT transient encounters. **Insufficient.**
+2. **Core deformation:** At `d ~ r_c`, cores deform dramatically but this does
+   not change `D_xi S` scaling. Enhanced dissipation acts too slowly.
+   **Insufficient.**
+3. **Time-integration:** Individual interactions ARE self-limiting (each
+   increases `K`, enhancing damping). Sparse interactions are subcritical.
+   **But a geometric cascade (back-to-back at increasing omega) is NOT ruled
+   out.** The time-integrated bootstrap also fails: Gronwall amplification
+   absorbs the transient gain, De Giorgi iteration does not apply (supercritical
+   coefficients), and L^2 enstrophy bounds lose the scaling under localization.
+
+The problem now reduces to: **can a geometric cascade of tube-tube interactions
+at increasing vorticity be excluded?** Five remaining sub-approaches identified:
+(1) show the cascade configuration has zero probability under NS dynamics,
+(2) exploit the antisymmetry of `D_xi S` at closest approach (`D_xi S = 0` at
+`z = 0`), (3) spatially localized coupled bootstrap tracking `K(x)` as a field,
+(4) circulation conservation of non-reconnecting tubes constraining omega growth,
+(5) energy inequality constraining cascade energetics.
+
+Phase 11 (April 2, 2026) pursued the two most promising sub-approaches:
+
+- **Circulation conservation + Biot-Savart self-consistency:** The ratio
+  `|D_xi S| / (omega^{3/2}/nu^{1/2})` equals `C sin(Theta) / Re_Gamma^2`,
+  **independent of inter-tube distance d** (equation 6.2 in the analysis). This
+  is a structural result: the d^{-3} scaling of both quantities under Biot-Savart
+  equilibrium causes exact cancellation. The coefficient `1/Re^2` is small but the
+  exponent is exactly `delta = 1/2` (borderline). Circulation conservation brings
+  the cascade to the threshold but does not cross it. Energy budget does NOT block
+  the cascade (total energy converges). Enstrophy budget also does NOT block it.
+- **Antisymmetry cancellation of D_xi S:** The antisymmetry (`D_xi S` is odd in
+  z about the closest-approach point) is exact for axisymmetric cores. However,
+  the curvature response `eta` is ALSO odd (the tube bends into an S-shape), so
+  the product `eta . (D_xi S) xi` is even and positive-definite. **No
+  cancellation.** The gain is only an O(1) constant factor, not logarithmic.
+
+The problem remains at the exact borderline: `delta = 1/2` with small coefficient,
+needing `delta > 1/2`. The borderline is structural (forced by Biot-Savart d^{-3}
+scaling geometry), not technical.
+
+Phase 12 (April 2, 2026) attempted two qualitatively different approaches:
+
+- **Epsilon regularity for D_xi S:** Does NOT work. The scale-invariant quantity
+  `F(r) = integral |D_xi S|^{5/3}` diverges logarithmically at any Type I
+  singularity — it is not small where it matters. No local energy inequality
+  exists at the `nabla^2 u` level (the `D_xi(nabla^2 p)` source has no definite
+  sign). The CKN derivative-count hierarchy shows epsilon-regularity is
+  fundamentally limited to derivatives 0-1 of `u`; at level 2+ the nonlinear
+  source always exceeds dissipation by one derivative.
+- **RG anomalous dimension of D_xi S:** Inconclusive / obstructed. `D_xi S`
+  depends nonlinearly on `u` through `xi = omega/|omega|`, so it does not have
+  a well-defined anomalous dimension in the standard RG sense (the RG flow mixes
+  an infinite operator tower). The linearized approximation gives gamma = 0
+  trivially. The first nontrivial one-loop integral vanishes by parity.
+  Intermittency phenomenology weakly suggests gamma <= 0 (wrong sign). Nothing
+  rigorous.
+
+**Terminal assessment for the April 2, 2026 pursuit:** Every ODE/pointwise
+approach lands at exactly `delta = 1/2`. The borderline is forced by the
+Biot-Savart `d^{-3}` geometry and is not an artifact of weak estimates. Crossing
+it requires exploiting the full PDE spatial structure (infinite-dimensional,
+nonlocal, parabolic) in a way that no ODE reduction captures. The remaining
+live question is whether the PDE-vs-ODE gap at the borderline can be exploited:
+the ODE blows up for any positive coefficient at `delta = 1/2`, but the PDE has
+spatial diffusion and nonlocal Biot-Savart feedback that the ODE ignores.
+
+Two immediate follow-up checks then sharpened that PDE-vs-ODE question further:
+
+- **Finite-build-up / moving-source parabolic smoothing is closed negatively in
+  the dangerous crossing regime.** A Duhamel / moving-source model for the
+  event-level curvature response `eta = D_xi xi` shows that for the genuinely
+  dangerous `Theta = O(1)` tube-tube encounter, forcing duration, source motion,
+  and diffusion all sit on the same core scale:
+  `U a / nu ~ 1`, `tau ~ a^2 / nu`, and `U tau ~ a`. The event response is
+  therefore still `eta_event ~ |omega|^{1/2} / nu^{1/2}` up to an `O(1)`
+  factor. No logarithmic or power gain appears. Small-angle suppression only
+  occurs in the already-safe near-parallel regime.
+- **The intrinsic monotone interaction-functional idea remains only weak sidecar
+  work.** A critical pairwise angular-interaction functional on `omega` can be
+  written that targets core-scale nonparallel encounters directly, but its
+  `d/dt` immediately picks up sign-indefinite nonlocal transport/stretching
+  commutators at the same critical level. Energy-controlled variants are too
+  weak; critical variants are not controlled by any known coercive quantity.
+
+Durable interpretation:
+
+- the moving-source parabolic loophole does **not** reopen the
+  vorticity-direction route;
+- the monotone-functional idea has produced a sharper intrinsic observable, but
+  not a sixth theorem-facing route. At best it currently supports obstruction
+  work against would-be cascade functionals.
 
 ## What Is Closed
 
@@ -581,6 +711,9 @@ These should currently be treated as closed, or at least as very poor default be
 - strain-vorticity alignment GMT approaches that try to prove regularity from `e_2`-alignment of vorticity alone: the intermediate eigenvalue `s_2` is universally positive in high-vorticity regions (confirmed by restricted Euler, DNS at all Reynolds numbers, pressure Hessian analysis, and all known blowup mechanisms), and the anti-alignment feedback structure means `e_2`-alignment suppresses the vorticity-induced modification of `s_2`, making the `s_2 > 0` obstruction structural rather than technical
 - GMT dimensional-reduction arguments on the "dangerous set" `{|omega| > M, Q > epsilon}` where `Q = omega . S omega / |omega|^2`: superlevel sets of smooth functions have full Hausdorff dimension even for passive vorticity with smooth drift; this is a category error (GMT dimension estimates apply to zero sets and singular sets, not superlevel sets)
 - direct pressure Hessian self-damping arguments through the `Q`-evolution equation: the claimed `-|omega|^2/6` vorticity self-damping term does not exist (`Omega^2 omega = 0`); the isotropic pressure Hessian is anti-damping when `|S|^2 > |omega|^2/2`, which is the case in high-vorticity regions (DNS: `|S|^2/|omega|^2 ~ 2-4`)
+- finite-build-up / moving-source parabolic smoothing of localized `D_xi S`
+  spikes as a way to beat the `delta = 1/2` threshold in the dangerous
+  `Theta = O(1)` core-scale tube-crossing regime
 
 ## What Still Looks Even Slightly Live
 
@@ -611,6 +744,12 @@ Plain status of the five live pursuits after the follow-up checks:
   critical-element ledger extraction lemma appears.
 - `Route 5` should currently be treated as auxiliary evidence feeding the
   leakage and phase routes, not as the lead theorem object.
+
+No sixth monotone / interaction-functional route is currently being promoted.
+The best intrinsic critical pairwise angular observable now looks like weak
+sidecar obstruction work only: it is better than a generic slogan, but its time
+derivative still carries sign-indefinite transport/stretching commutators at
+the same critical level as the underlying cascade geometry.
 
 ### 1. Template-defect family theorem on the frozen near-circuit ledger
 
@@ -879,6 +1018,12 @@ adversarially explored, best one pursued through 5 subproblems) then added:
   - direct pressure Hessian analysis of the enstrophy balance
   - vorticity-direction regularity (proving Lipschitz regularity of
     `omega/|omega|` in high-vorticity regions)
+- Two immediate post-pursuit follow-up checks did **not** create new live
+  routes:
+  - finite-build-up / moving-source PDE smoothing of event-level `eta` is now
+    closed negatively in the dangerous `Theta = O(1)` regime;
+  - the best intrinsic monotone interaction-functional idea remains weak
+    sidecar work only, not a lead theorem path.
 
 That sounds discouraging, but the progress is still real:
 
@@ -935,7 +1080,13 @@ conditional regularity theorem (Theorem C3: alignment + s_2 <= 0 implies
 regularity) survives as a genuine contribution, incomparable with
 Constantin-Fefferman. Three remaining live non-Tao directions were identified:
 combined alignment + direction regularity, direct pressure Hessian analysis,
-and vorticity-direction Lipschitz regularity.
+and vorticity-direction Lipschitz regularity. Immediate post-pursuit follow-up
+checks then closed the moving-source finite-build-up loophole on the
+vorticity-direction side in the dangerous `Theta = O(1)` regime and demoted the
+best intrinsic monotone interaction-functional idea to weak sidecar status:
+the former yields only an `O(1)` constant change to the event kick, and the
+latter currently runs into sign-indefinite critical transport/stretching
+commutators.
 ```
 
 ## High-Signal Source Map
@@ -1017,3 +1168,15 @@ and vorticity-direction Lipschitz regularity.
 - `simulation-machines-attempts/run-2026-04-02-ns-pursuit-plan/direction-3-vorticity-direction.md`
 - `simulation-machines-attempts/run-2026-04-02-ns-pursuit-plan/dhy-burgers-test.md`
 - `simulation-machines-attempts/run-2026-04-02-ns-pursuit-plan/curvature-evolution-analysis.md`
+- `simulation-machines-attempts/run-2026-04-02-ns-pursuit-plan/coupled-bootstrap-attempt.md`
+- `simulation-machines-attempts/run-2026-04-02-ns-pursuit-plan/three-practical-paths.md`
+- `simulation-machines-attempts/run-2026-04-02-ns-pursuit-plan/three-moonshots.md`
+- `simulation-machines-attempts/run-2026-04-02-ns-pursuit-plan/path-3-hasimoto-computation.md`
+- `simulation-machines-attempts/run-2026-04-02-ns-pursuit-plan/path-1-cancellation-computation.md`
+- `simulation-machines-attempts/run-2026-04-02-ns-pursuit-plan/moonshot-1-entropic-computation.md`
+- `simulation-machines-attempts/run-2026-04-02-ns-pursuit-plan/tube-tube-interaction-analysis.md`
+- `simulation-machines-attempts/run-2026-04-02-ns-pursuit-plan/time-integrated-bootstrap.md`
+- `simulation-machines-attempts/run-2026-04-02-ns-pursuit-plan/circulation-cascade-analysis.md`
+- `simulation-machines-attempts/run-2026-04-02-ns-pursuit-plan/antisymmetry-cancellation.md`
+- `simulation-machines-attempts/run-2026-04-02-ns-pursuit-plan/epsilon-regularity-attempt.md`
+- `simulation-machines-attempts/run-2026-04-02-ns-pursuit-plan/rg-anomalous-dimension.md`

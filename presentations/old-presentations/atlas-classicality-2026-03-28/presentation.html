@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atlas — Classicality Budget</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --slide-bg: #f8f9fa;
+  --slide-border: #e1e4e8;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #4f46e5;
+  --accent-light: #eef2ff;
+  --green: #059669;
+  --green-light: #ecfdf5;
+  --red: #dc2626;
+  --red-light: #fef2f2;
+  --amber: #d97706;
+  --amber-light: #fffbeb;
+  --blue: #2563eb;
+  --blue-light: #eff6ff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  display: flex; flex-direction: column; align-items: center;
+  min-height: 100vh; padding: 40px 20px;
+}
+
+/* Nav */
+.nav {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+  padding: 10px 20px; border-radius: 999px; z-index: 100;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+.nav-btn {
+  background: transparent; border: 1px solid rgba(255,255,255,0.2);
+  color: white; width: 36px; height: 36px; border-radius: 50%;
+  cursor: pointer; font-size: 16px; display: flex; align-items: center;
+  justify-content: center; transition: all 0.15s;
+}
+.nav-btn:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.4); }
+.nav-btn:disabled { opacity: 0.3; cursor: default; }
+.nav-counter { color: rgba(255,255,255,0.6); font-size: 13px; min-width: 50px; text-align: center; }
+
+/* Slide */
+.slide {
+  display: none; width: 100%; max-width: 820px;
+  background: var(--slide-bg); border: 1px solid var(--slide-border);
+  border-radius: 16px; padding: 48px 56px 56px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+  animation: fadeIn 0.25s ease;
+}
+.slide.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Typography */
+h1 { font-size: 32px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+h2 { font-size: 24px; font-weight: 700; color: var(--text); margin-bottom: 16px; }
+h3 { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: var(--muted); margin-bottom: 32px; }
+.label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+
+/* Cards */
+.card {
+  border: 1px solid var(--slide-border); border-radius: 10px;
+  padding: 16px 20px; margin-bottom: 12px; background: white;
+}
+.card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.card-num {
+  width: 28px; height: 28px; border-radius: 8px; font-size: 13px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.card-title { font-size: 15px; font-weight: 600; color: var(--text); }
+.card-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+/* Stats */
+.stats { display: grid; gap: 12px; margin: 20px 0; }
+.stats-2 { grid-template-columns: 1fr 1fr; }
+.stats-3 { grid-template-columns: 1fr 1fr 1fr; }
+.stats-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.stat {
+  text-align: center; padding: 16px 12px; border-radius: 10px;
+  border: 1px solid var(--slide-border); background: white;
+}
+.stat-value { font-size: 28px; font-weight: 700; }
+.stat-label { font-size: 11px; color: var(--muted); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* Tags */
+.tag {
+  display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px;
+  border-radius: 6px; margin-right: 4px; margin-bottom: 4px;
+}
+.tag-green { background: var(--green-light); color: var(--green); }
+.tag-red { background: var(--red-light); color: var(--red); }
+.tag-amber { background: var(--amber-light); color: var(--amber); }
+.tag-blue { background: var(--blue-light); color: var(--blue); }
+.tag-accent { background: var(--accent-light); color: var(--accent); }
+
+/* Misc */
+.divider { height: 1px; background: var(--slide-border); margin: 24px 0; }
+.finding {
+  display: flex; gap: 12px; margin-bottom: 12px; font-size: 13px; line-height: 1.5;
+}
+.finding-num {
+  width: 22px; height: 22px; border-radius: 50%; background: var(--accent);
+  color: white; font-size: 11px; font-weight: 700; display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0; margin-top: 1px;
+}
+
+/* Formula */
+.formula-box {
+  background: white; border: 2px solid var(--accent);
+  border-radius: 12px; padding: 20px 24px; text-align: center;
+  margin: 20px 0;
+}
+.formula {
+  font-size: 22px; font-weight: 700; color: var(--accent);
+  font-family: 'Georgia', serif; letter-spacing: 0.5px;
+}
+.formula-caption {
+  font-size: 12px; color: var(--muted); margin-top: 8px;
+}
+
+/* ELI5 */
+.eli5-box {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 1px solid #fcd34d; border-radius: 12px;
+  padding: 24px 28px; font-size: 15px; line-height: 1.7;
+  color: var(--text);
+}
+
+/* Tier badge */
+.tier-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--green-light); color: var(--green);
+  font-size: 12px; font-weight: 700; padding: 4px 12px;
+  border-radius: 999px; border: 1px solid var(--green);
+}
+
+/* Feedback */
+.feedback-section {
+  margin-top: 24px; padding-top: 16px;
+  border-top: 1px dashed var(--slide-border);
+}
+.feedback-toggle {
+  display: flex; align-items: center; gap: 8px; cursor: pointer;
+  font-size: 12px; font-weight: 600; color: var(--muted);
+  background: none; border: none; padding: 4px 0;
+  transition: color 0.15s;
+}
+.feedback-toggle:hover { color: var(--text); }
+.feedback-toggle .chevron { transition: transform 0.2s; font-size: 10px; }
+.feedback-toggle .chevron.open { transform: rotate(90deg); }
+.feedback-toggle .dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+  display: none;
+}
+.feedback-toggle .dot.has-feedback { display: inline-block; }
+.feedback-body { display: none; margin-top: 10px; }
+.feedback-body.open { display: block; }
+.feedback-textarea {
+  width: 100%; min-height: 60px; padding: 10px 12px;
+  border: 1px solid var(--slide-border); border-radius: 8px;
+  font-family: inherit; font-size: 13px; color: var(--text);
+  background: white; resize: vertical; outline: none;
+  transition: border-color 0.15s;
+}
+.feedback-textarea:focus { border-color: var(--accent); }
+.feedback-actions { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+.feedback-save {
+  padding: 6px 14px; border-radius: 6px; border: none;
+  background: var(--accent); color: white; font-size: 12px;
+  font-weight: 600; cursor: pointer; transition: opacity 0.15s;
+}
+.feedback-save:hover { opacity: 0.85; }
+.feedback-save:disabled { opacity: 0.4; cursor: default; }
+.feedback-status { font-size: 11px; color: var(--green); opacity: 0; transition: opacity 0.3s; }
+.feedback-status.show { opacity: 1; }
+.feedback-saved-list { margin-top: 8px; }
+.feedback-entry {
+  display: flex; gap: 8px; align-items: flex-start; padding: 6px 0;
+  font-size: 12px; color: var(--text); border-bottom: 1px solid #f3f4f6;
+}
+.feedback-entry:last-child { border-bottom: none; }
+.feedback-entry-time { color: var(--muted); font-size: 11px; white-space: nowrap; flex-shrink: 0; }
+.feedback-entry-text { line-height: 1.4; }
+.feedback-entry-delete {
+  background: none; border: none; color: var(--muted); cursor: pointer;
+  font-size: 11px; padding: 0 4px; flex-shrink: 0;
+}
+.feedback-entry-delete:hover { color: var(--red); }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 0: Title + What We Investigated -->
+<div class="slide active" id="slide-0">
+  <div style="font-size:48px;margin-bottom:12px">&#127757;</div>
+  <h1>Atlas &mdash; Classicality Budget</h1>
+  <p class="subtitle">Is there a hard limit on how many observers can verify a classical fact?</p>
+
+  <div class="stats stats-3">
+    <div class="stat">
+      <div class="stat-value" style="color:var(--accent)">11</div>
+      <div class="stat-label">Explorations</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--accent)">2</div>
+      <div class="stat-label">Strategies</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--accent)">~5k</div>
+      <div class="stat-label">Lines Generated</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <p class="label" style="color:var(--muted)">Mission Structure</p>
+  <div style="display:flex;gap:12px">
+    <div class="card" style="flex:1;border-left:3px solid var(--blue)">
+      <div style="font-size:11px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px">Strategy 1</div>
+      <div style="font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px">Derive, Compute, Stress-Test</div>
+      <div style="font-size:12px;color:var(--muted)">7 explorations &middot; Reached Tier 4</div>
+    </div>
+    <div class="card" style="flex:1;border-left:3px solid var(--green)">
+      <div style="font-size:11px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px">Strategy 2</div>
+      <div style="font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px">Deepen, Verify, Complete</div>
+      <div style="font-size:12px;color:var(--muted)">4 explorations &middot; Reached Tier 5</div>
+    </div>
+  </div>
+
+  <div style="margin-top:16px;display:flex;gap:6px;flex-wrap:wrap">
+    <span class="tag tag-green">All 5 tiers passed</span>
+    <span class="tag tag-accent">50+ papers reviewed</span>
+    <span class="tag tag-amber">2 serious objections survived</span>
+    <span class="tag tag-blue">15+ systems computed</span>
+  </div>
+</div>
+
+<!-- SLIDE 1: What We Found -->
+<div class="slide" id="slide-1">
+  <p class="label" style="color:var(--green)">Results</p>
+  <h2>What We Found</h2>
+
+  <div class="formula-box">
+    <div class="formula">R<sub>&delta;</sub> &le; (S<sub>max</sub> / S<sub>T</sub> &minus; 1) / (1 &minus; &delta;)</div>
+    <div class="formula-caption">The classicality budget &mdash; max independent observers who can verify a classical fact of entropy S<sub>T</sub> in a region with max entropy S<sub>max</sub></div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--accent)">
+    <div class="card-header">
+      <div class="card-num" style="background:var(--accent-light);color:var(--accent)">1</div>
+      <div class="card-title">QD &harr; HQEC Mapping</div>
+      <span class="tag tag-green" style="margin-left:auto">Novelty 4/5</span>
+    </div>
+    <div class="card-desc">Two physics communities &mdash; quantum Darwinism and holographic quantum error correction &mdash; have been working on the same math for 20+ years with <strong>zero cross-citations</strong>. The classicality budget is the Rosetta Stone.</div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--blue)">
+    <div class="card-header">
+      <div class="card-num" style="background:var(--blue-light);color:var(--blue)">2</div>
+      <div class="card-title">Black Hole Universal Constants</div>
+      <span class="tag tag-blue" style="margin-left:auto">Unpublished</span>
+    </div>
+    <div class="card-desc">Three constants from 1975 physics that nobody computed: S<sub>Hawking</sub> &asymp; 0.003 bits per Schwarzschild sphere, classicality horizon at 7.21 r<sub>s</sub>.</div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--amber)">
+    <div class="card-header">
+      <div class="card-num" style="background:var(--amber-light);color:var(--amber)">3</div>
+      <div class="card-title">Ion Trap Prediction</div>
+      <span class="tag tag-amber" style="margin-left:auto">Testable 2&ndash;5 yr</span>
+    </div>
+    <div class="card-desc">Phase transition at mean phonon number n&#772;<sub>c</sub> &asymp; 0.003. Below it, classicality is <strong>forbidden</strong>. Achievable with current sideband cooling technology.</div>
+  </div>
+</div>
+
+<!-- SLIDE 2: ELI5 -->
+<div class="slide" id="slide-2">
+  <p class="label" style="color:var(--amber)">Plain English</p>
+  <h2>ELI5</h2>
+
+  <div class="eli5-box">
+    <p style="margin-bottom:16px"><strong>Imagine reality is like a newspaper.</strong></p>
+    <p style="margin-bottom:16px">In our everyday world, billions of people can all read the same headline &mdash; that&rsquo;s classicality. But near a black hole, the newspaper is so tiny that only a few people can read it, and right AT the black hole, nobody can.</p>
+    <p style="margin-bottom:16px">We found the <strong>exact formula</strong> for how many &ldquo;readers&rdquo; reality supports in any region of space.</p>
+    <p>We also discovered that two groups of physicists &mdash; one studying how things become &ldquo;real&rdquo; and one studying black holes &mdash; were secretly working on the <strong>same math for 20 years</strong> without knowing it.</p>
+  </div>
+
+  <div class="divider"></div>
+  <p class="label" style="color:var(--muted)">Where the budget bites</p>
+  <div class="stats stats-4">
+    <div class="stat">
+      <div class="stat-value" style="font-size:18px;color:var(--green)">10<sup>40</sup></div>
+      <div class="stat-label">1m Lab</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="font-size:18px;color:var(--amber)">0&ndash;4</div>
+      <div class="stat-label">Ion Trap</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="font-size:18px;color:var(--red)">&asymp; 0</div>
+      <div class="stat-label">BH Horizon</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="font-size:18px;color:var(--red)">&lt; 0</div>
+      <div class="stat-label">Planck Scale</div>
+    </div>
+  </div>
+  <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:4px">R<sub>max</sub> = max independent observers. Everyday reality is unbounded. Near black holes, classicality vanishes.</p>
+</div>
+
+<!-- SLIDE 3: How Meaningful Is This -->
+<div class="slide" id="slide-3">
+  <p class="label" style="color:var(--accent)">Assessment</p>
+  <h2>How Meaningful Is This</h2>
+
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
+    <div class="tier-badge">&#10003; All 5 Validation Tiers Passed</div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--green)">
+    <div class="card-header">
+      <div class="card-title" style="color:var(--green)">Strongest Finding</div>
+    </div>
+    <div class="card-desc"><strong>QD &harr; HQEC mapping.</strong> Novelty 4/5. Zero cross-citations across two major physics communities in 20+ years. The HaPPY code achieves exactly 50% of the budget maximum &mdash; a quantitative prediction, not just relabeling.</div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+    <div class="card" style="text-align:center">
+      <div style="font-size:24px;margin-bottom:6px">&#129514;</div>
+      <div style="font-size:13px;font-weight:600;color:var(--text)">Ion Trap Experiment</div>
+      <div style="font-size:12px;color:var(--muted);margin-top:4px">Testable in 2&ndash;5 years with current cooling tech</div>
+    </div>
+    <div class="card" style="text-align:center">
+      <div style="font-size:24px;margin-bottom:6px">&#11044;</div>
+      <div style="font-size:13px;font-weight:600;color:var(--text)">BH Constants</div>
+      <div style="font-size:12px;color:var(--muted);margin-top:4px">Unpublished &mdash; 5-line calculations from 1975 physics nobody did</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <p class="label" style="color:var(--muted)">Honest Caveats</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap">
+    <span class="tag tag-amber">Formula is mathematically elementary</span>
+    <span class="tag tag-amber">Vacuous for macroscopic systems</span>
+    <span class="tag tag-amber">Tensor product assumption limits regime</span>
+  </div>
+  <p style="font-size:13px;color:var(--muted);margin-top:12px;line-height:1.6">The budget itself is a modest result. Its value is as a <strong>bridge</strong> &mdash; connecting two fields, producing unpublished constants, and generating a testable prediction. The system self-identified where the formula is vacuous and focused on where it bites.</p>
+</div>
+
+<div class="nav">
+  <button class="nav-btn" id="prevBtn" onclick="prev()">&larr;</button>
+  <div class="nav-counter" id="navCounter">1 / 4</div>
+  <button class="nav-btn" id="nextBtn" onclick="next()">&rarr;</button>
+</div>
+
+<script>
+let current = 0;
+const total = document.querySelectorAll('.slide').length;
+
+// --- Feedback System ---
+const FEEDBACK_KEY = 'atlas-classicality-feedback';
+
+function loadFeedback() {
+  try { return JSON.parse(localStorage.getItem(FEEDBACK_KEY) || '{}'); }
+  catch { return {}; }
+}
+
+function saveFeedbackStore(store) {
+  localStorage.setItem(FEEDBACK_KEY, JSON.stringify(store));
+  fetch('/api/feedback', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(store)
+  }).catch(() => {});
+}
+
+function addFeedback(slideIdx, text) {
+  if (!text.trim()) return;
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  if (!store[key]) store[key] = [];
+  store[key].push({
+    text: text.trim(),
+    timestamp: new Date().toISOString(),
+    slideTitle: getSlideName(slideIdx)
+  });
+  saveFeedbackStore(store);
+  renderFeedbackForSlide(slideIdx);
+}
+
+function deleteFeedback(slideIdx, entryIdx) {
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  if (store[key] && store[key][entryIdx] !== undefined) {
+    store[key].splice(entryIdx, 1);
+    if (store[key].length === 0) delete store[key];
+    saveFeedbackStore(store);
+    renderFeedbackForSlide(slideIdx);
+  }
+}
+
+function getSlideName(idx) {
+  const names = ['Title & Mission', 'What We Found', 'ELI5', 'How Meaningful Is This'];
+  return names[idx] || 'Slide ' + (idx + 1);
+}
+
+function renderFeedbackForSlide(slideIdx) {
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  const entries = store[key] || [];
+  const listEl = document.getElementById('feedback-list-' + slideIdx);
+  const dotEl = document.getElementById('feedback-dot-' + slideIdx);
+
+  if (dotEl) dotEl.classList.toggle('has-feedback', entries.length > 0);
+
+  if (!listEl) return;
+  if (entries.length === 0) { listEl.innerHTML = ''; return; }
+
+  listEl.innerHTML = entries.map((e, i) => `
+    <div class="feedback-entry">
+      <span class="feedback-entry-time">${new Date(e.timestamp).toLocaleDateString('en-US', {month:'short',day:'numeric'})}</span>
+      <span class="feedback-entry-text">${escapeHtml(e.text)}</span>
+      <button class="feedback-entry-delete" onclick="deleteFeedback(${slideIdx},${i})" title="Delete">&times;</button>
+    </div>
+  `).join('');
+}
+
+function escapeHtml(str) {
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+function submitFeedback(slideIdx) {
+  const ta = document.getElementById('feedback-input-' + slideIdx);
+  const status = document.getElementById('feedback-status-' + slideIdx);
+  if (!ta || !ta.value.trim()) return;
+  addFeedback(slideIdx, ta.value);
+  ta.value = '';
+  if (status) {
+    status.classList.add('show');
+    setTimeout(() => status.classList.remove('show'), 2000);
+  }
+}
+
+function toggleFeedback(slideIdx) {
+  const body = document.getElementById('feedback-body-' + slideIdx);
+  const chev = document.getElementById('feedback-chevron-' + slideIdx);
+  if (body) body.classList.toggle('open');
+  if (chev) chev.classList.toggle('open');
+}
+
+// Inject feedback UI into every slide
+document.querySelectorAll('.slide').forEach((slide, idx) => {
+  const section = document.createElement('div');
+  section.className = 'feedback-section';
+  section.innerHTML = `
+    <button class="feedback-toggle" onclick="toggleFeedback(${idx})">
+      <span class="chevron" id="feedback-chevron-${idx}">&#9654;</span>
+      <span>Leave feedback on this slide</span>
+      <span class="dot" id="feedback-dot-${idx}"></span>
+    </button>
+    <div class="feedback-body" id="feedback-body-${idx}">
+      <div class="feedback-saved-list" id="feedback-list-${idx}"></div>
+      <textarea class="feedback-textarea" id="feedback-input-${idx}" placeholder="Your thoughts on this slide..." onkeydown="if(event.key==='Enter'&&event.metaKey){submitFeedback(${idx});event.preventDefault();}"></textarea>
+      <div class="feedback-actions">
+        <button class="feedback-save" onclick="submitFeedback(${idx})">Save (&#8984;&#9166;)</button>
+        <span class="feedback-status" id="feedback-status-${idx}">Saved!</span>
+      </div>
+    </div>
+  `;
+  slide.appendChild(section);
+  renderFeedbackForSlide(idx);
+});
+
+// --- Load server feedback on startup (merge with localStorage) ---
+(async function() {
+  try {
+    const resp = await fetch('/api/feedback');
+    const serverStore = await resp.json();
+    const localStore = loadFeedback();
+    let merged = false;
+    for (const key of Object.keys(serverStore)) {
+      if (!localStore[key]) { localStore[key] = serverStore[key]; merged = true; }
+      else {
+        const localTimestamps = new Set(localStore[key].map(e => e.timestamp));
+        for (const entry of serverStore[key]) {
+          if (!localTimestamps.has(entry.timestamp)) {
+            localStore[key].push(entry);
+            merged = true;
+          }
+        }
+      }
+    }
+    if (merged) {
+      localStorage.setItem(FEEDBACK_KEY, JSON.stringify(localStore));
+      document.querySelectorAll('.slide').forEach((_, idx) => renderFeedbackForSlide(idx));
+    }
+  } catch {}
+})();
+
+// --- Navigation ---
+function show(n) {
+  document.querySelectorAll('.slide').forEach((s, i) => {
+    s.classList.toggle('active', i === n);
+  });
+  document.getElementById('navCounter').textContent = (n + 1) + ' / ' + total;
+  document.getElementById('prevBtn').disabled = n === 0;
+  document.getElementById('nextBtn').disabled = n === total - 1;
+  current = n;
+}
+
+function next() { if (current < total - 1) show(current + 1); }
+function prev() { if (current > 0) show(current - 1); }
+function goTo(n) { show(n); }
+
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'TEXTAREA') return;
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+});
+</script>
+</body>
+</html>

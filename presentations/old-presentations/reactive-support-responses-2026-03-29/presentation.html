@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reactive Support — Response Patterns</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --slide-bg: #f8f9fa;
+  --slide-border: #e1e4e8;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #4f46e5;
+  --accent-light: #eef2ff;
+  --green: #059669;
+  --green-light: #ecfdf5;
+  --red: #dc2626;
+  --red-light: #fef2f2;
+  --amber: #d97706;
+  --amber-light: #fffbeb;
+  --blue: #2563eb;
+  --blue-light: #eff6ff;
+  --pink: #db2777;
+  --pink-light: #fdf2f8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  display: flex; flex-direction: column; align-items: center;
+  min-height: 100vh; padding: 40px 20px;
+}
+
+.nav {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+  padding: 10px 20px; border-radius: 999px; z-index: 100;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+.nav-btn {
+  background: transparent; border: 1px solid rgba(255,255,255,0.2);
+  color: white; width: 36px; height: 36px; border-radius: 50%;
+  cursor: pointer; font-size: 16px; display: flex; align-items: center;
+  justify-content: center; transition: all 0.15s;
+}
+.nav-btn:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.4); }
+.nav-btn:disabled { opacity: 0.3; cursor: default; }
+.nav-counter { color: rgba(255,255,255,0.6); font-size: 13px; min-width: 50px; text-align: center; }
+
+.slide {
+  display: none; width: 100%; max-width: 820px;
+  background: var(--slide-bg); border: 1px solid var(--slide-border);
+  border-radius: 16px; padding: 44px 52px 52px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+  animation: fadeIn 0.25s ease;
+}
+.slide.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+h1 { font-size: 30px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+h2 { font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 12px; }
+h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.subtitle { font-size: 15px; color: var(--muted); margin-bottom: 28px; }
+.label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+
+.card {
+  border: 1px solid var(--slide-border); border-radius: 10px;
+  padding: 14px 18px; margin-bottom: 10px; background: white;
+}
+.card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.card-num {
+  min-width: 28px; height: 22px; border-radius: 6px; font-size: 12px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 0 6px;
+}
+.card-title { font-size: 14px; font-weight: 600; color: var(--text); }
+.card-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+.stats { display: grid; gap: 12px; margin: 16px 0; }
+.stats-3 { grid-template-columns: 1fr 1fr 1fr; }
+.stats-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.stat {
+  text-align: center; padding: 14px 10px; border-radius: 10px;
+  border: 1px solid var(--slide-border); background: white;
+}
+.stat-value { font-size: 26px; font-weight: 700; }
+.stat-label { font-size: 10px; color: var(--muted); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.tag {
+  display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px;
+  border-radius: 6px; margin-right: 4px; margin-bottom: 4px;
+}
+.tag-green { background: var(--green-light); color: var(--green); }
+.tag-red { background: var(--red-light); color: var(--red); }
+.tag-amber { background: var(--amber-light); color: var(--amber); }
+.tag-blue { background: var(--blue-light); color: var(--blue); }
+.tag-accent { background: var(--accent-light); color: var(--accent); }
+.tag-pink { background: var(--pink-light); color: var(--pink); }
+
+.divider { height: 1px; background: var(--slide-border); margin: 20px 0; }
+
+.customer-quote {
+  font-size: 13px; color: var(--muted); font-style: italic; line-height: 1.5;
+  padding: 8px 14px; background: #f3f4f6; border-radius: 8px; margin-bottom: 6px;
+}
+.customer-quote::before { content: '"'; }
+.customer-quote::after { content: '"'; }
+
+.response-row {
+  display: flex; align-items: center; gap: 10px; padding: 8px 0;
+  border-bottom: 1px solid #f3f4f6; font-size: 13px;
+}
+.response-row:last-child { border-bottom: none; }
+.response-count {
+  min-width: 28px; height: 22px; border-radius: 6px; font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--accent-light); color: var(--accent);
+}
+.response-text { color: var(--text); font-weight: 500; }
+
+.toc-item {
+  display: flex; align-items: center; gap: 12px; padding: 10px 14px;
+  border: 1px solid var(--slide-border); border-radius: 10px; margin-bottom: 6px;
+  cursor: pointer; transition: all 0.15s; background: white;
+}
+.toc-item:hover { border-color: var(--accent); background: var(--accent-light); }
+.toc-num {
+  width: 28px; height: 28px; border-radius: 8px; font-size: 13px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.toc-text { font-size: 14px; font-weight: 500; color: var(--text); }
+.toc-count { font-size: 12px; color: var(--muted); margin-left: auto; }
+
+.flow-arrow { text-align: center; font-size: 20px; color: var(--muted); margin: 8px 0; }
+.flow-box {
+  border: 2px solid var(--slide-border); border-radius: 10px; padding: 14px 18px;
+  background: white; text-align: center;
+}
+.flow-box-title { font-size: 14px; font-weight: 700; color: var(--text); }
+.flow-box-desc { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+/* Bar chart */
+.bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; font-size: 13px; }
+.bar-label { width: 180px; text-align: right; color: var(--muted); font-weight: 500; flex-shrink: 0; font-size: 12px; }
+.bar-track { flex: 1; height: 22px; background: #f3f4f6; border-radius: 6px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 6px; display: flex; align-items: center; padding-left: 8px; min-width: 24px; }
+.bar-fill span { font-size: 11px; font-weight: 700; color: white; }
+
+/* Feedback */
+.feedback-section { margin-top: 20px; padding-top: 14px; border-top: 1px dashed var(--slide-border); }
+.feedback-toggle {
+  display: flex; align-items: center; gap: 8px; cursor: pointer;
+  font-size: 12px; font-weight: 600; color: var(--muted);
+  background: none; border: none; padding: 4px 0; transition: color 0.15s;
+}
+.feedback-toggle:hover { color: var(--text); }
+.feedback-toggle .chevron { transition: transform 0.2s; font-size: 10px; }
+.feedback-toggle .chevron.open { transform: rotate(90deg); }
+.feedback-toggle .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); display: none; }
+.feedback-toggle .dot.has-feedback { display: inline-block; }
+.feedback-body { display: none; margin-top: 10px; }
+.feedback-body.open { display: block; }
+.feedback-textarea {
+  width: 100%; min-height: 60px; padding: 10px 12px;
+  border: 1px solid var(--slide-border); border-radius: 8px;
+  font-family: inherit; font-size: 13px; color: var(--text);
+  background: white; resize: vertical; outline: none; transition: border-color 0.15s;
+}
+.feedback-textarea:focus { border-color: var(--accent); }
+.feedback-actions { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+.feedback-save {
+  padding: 6px 14px; border-radius: 6px; border: none;
+  background: var(--accent); color: white; font-size: 12px;
+  font-weight: 600; cursor: pointer; transition: opacity 0.15s;
+}
+.feedback-save:hover { opacity: 0.85; }
+.feedback-status { font-size: 11px; color: var(--green); opacity: 0; transition: opacity 0.3s; }
+.feedback-status.show { opacity: 1; }
+.feedback-saved-list { margin-top: 8px; }
+.feedback-entry {
+  display: flex; gap: 8px; align-items: flex-start; padding: 6px 0;
+  font-size: 12px; color: var(--text); border-bottom: 1px solid #f3f4f6;
+}
+.feedback-entry:last-child { border-bottom: none; }
+.feedback-entry-time { color: var(--muted); font-size: 11px; white-space: nowrap; flex-shrink: 0; }
+.feedback-entry-text { line-height: 1.4; }
+.feedback-entry-delete {
+  background: none; border: none; color: var(--muted); cursor: pointer;
+  font-size: 11px; padding: 0 4px; flex-shrink: 0;
+}
+.feedback-entry-delete:hover { color: var(--red); }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 0: Title + Overview -->
+<div class="slide active" id="slide-0">
+  <h1>Reactive Support Responses</h1>
+  <p class="subtitle">295 first-contact emails analyzed &mdash; what customers ask and how Sean responds</p>
+
+  <div class="stats stats-4">
+    <div class="stat"><div class="stat-value" style="color:var(--accent)">295</div><div class="stat-label">First Contacts</div></div>
+    <div class="stat"><div class="stat-value" style="color:var(--green)">243</div><div class="stat-label">With Response</div></div>
+    <div class="stat"><div class="stat-value" style="color:var(--amber)">30</div><div class="stat-label">Concern Types</div></div>
+    <div class="stat"><div class="stat-value" style="color:var(--pink)">52</div><div class="stat-label">No Response</div></div>
+  </div>
+
+  <div class="divider"></div>
+  <p class="label" style="color:var(--muted)">Top Concerns by Volume</p>
+
+  <div class="bar-row"><div class="bar-label">Change lyrics/details</div><div class="bar-track"><div class="bar-fill" style="width:85%;background:var(--accent)"><span>34</span></div></div></div>
+  <div class="bar-row"><div class="bar-label">Thank you / gratitude</div><div class="bar-track"><div class="bar-fill" style="width:68%;background:var(--green)"><span>27</span></div></div></div>
+  <div class="bar-row"><div class="bar-label">Can't find my song</div><div class="bar-track"><div class="bar-fill" style="width:48%;background:var(--blue)"><span>19</span></div></div></div>
+  <div class="bar-row"><div class="bar-label">Download question</div><div class="bar-track"><div class="bar-fill" style="width:43%;background:var(--amber)"><span>17</span></div></div></div>
+  <div class="bar-row"><div class="bar-label">Song won't play</div><div class="bar-track"><div class="bar-fill" style="width:33%;background:var(--red)"><span>13</span></div></div></div>
+  <div class="bar-row"><div class="bar-label">Pricing question</div><div class="bar-track"><div class="bar-fill" style="width:30%;background:var(--pink)"><span>12</span></div></div></div>
+  <div class="bar-row"><div class="bar-label">Payment issues</div><div class="bar-track"><div class="bar-fill" style="width:25%;background:var(--accent)"><span>10</span></div></div></div>
+  <div class="bar-row"><div class="bar-label">Audio garbled</div><div class="bar-track"><div class="bar-fill" style="width:20%;background:var(--amber)"><span>8</span></div></div></div>
+</div>
+
+<!-- SLIDE 1: Change Lyrics or Details -->
+<div class="slide" id="slide-1">
+  <p class="label" style="color:var(--accent)">34 emails &middot; #1 most common</p>
+  <h2>Want to Change Lyrics or Details</h2>
+  <p class="subtitle">The most common ask. Users love their song but want tweaks.</p>
+
+  <p class="label" style="color:var(--muted)">What they say</p>
+  <div class="customer-quote">i want to change one word in the lyrics, grandpa to grandad</div>
+  <div class="customer-quote">i forgot to add something important, can i tweak the lyrics</div>
+  <div class="customer-quote">i love the song but forgot to include her husband, can he be added</div>
+  <div class="customer-quote">i put the wrong detail in the song, can you change the restaurant name</div>
+
+  <div class="divider"></div>
+  <p class="label" style="color:var(--green)">Sean's responses</p>
+  <div class="card" style="border-left:3px solid var(--green)">
+    <div class="response-row"><div class="response-count">6x</div><div class="response-text">Explained how to use the chat edit feature to request changes</div></div>
+    <div class="response-row"><div class="response-count">4x</div><div class="response-text">Added more generations to their account</div></div>
+    <div class="response-row"><div class="response-count">3x</div><div class="response-text">Offered to regenerate with the fix applied</div></div>
+    <div class="response-row"><div class="response-count">2x</div><div class="response-text">Offered free unlock at $0</div></div>
+  </div>
+</div>
+
+<!-- SLIDE 2: Thank You / Gratitude -->
+<div class="slide" id="slide-2">
+  <p class="label" style="color:var(--green)">27 emails &middot; #2 most common</p>
+  <h2>Thank You / Gratitude</h2>
+  <p class="subtitle">Pure appreciation. These are the good ones.</p>
+
+  <p class="label" style="color:var(--muted)">What they say</p>
+  <div class="customer-quote">thank you so much, my husband cried, he'll listen every day driving to work</div>
+  <div class="customer-quote">thank you, i'm fighting cancer and this made me cry</div>
+  <div class="customer-quote">the songs for my late nephew and cat are beyond praise, so comforting</div>
+  <div class="customer-quote">thank you so much, i thought it might be a scam but this is amazing</div>
+
+  <div class="divider"></div>
+  <p class="label" style="color:var(--green)">Sean's responses</p>
+  <div class="card" style="border-left:3px solid var(--green)">
+    <div class="response-row"><div class="response-count">8x</div><div class="response-text">Thanked them warmly for kind words</div></div>
+    <div class="response-row"><div class="response-count">5x</div><div class="response-text">Shared personal empathy about their situation</div></div>
+    <div class="response-row"><div class="response-count">3x</div><div class="response-text">Thanked and said no payment needed/expected</div></div>
+    <div class="response-row"><div class="response-count">2x</div><div class="response-text">Asked for a reaction video</div></div>
+  </div>
+</div>
+
+<!-- SLIDE 3: Can't Find or Access Song -->
+<div class="slide" id="slide-3">
+  <p class="label" style="color:var(--blue)">19 emails &middot; #3 most common</p>
+  <h2>Can't Find or Access My Song</h2>
+  <p class="subtitle">Lost after closing browser, switched devices, or don't know where to look.</p>
+
+  <p class="label" style="color:var(--muted)">What they say</p>
+  <div class="customer-quote">my songs disappeared after i started listening and now it says i have none</div>
+  <div class="customer-quote">i opened serenade from facebook in a new browser and cant find my songs</div>
+  <div class="customer-quote">i accidentally closed the window and lost my song</div>
+  <div class="customer-quote">i created songs from instagram but didn't save them, how can i find them again</div>
+
+  <div class="divider"></div>
+  <p class="label" style="color:var(--green)">Sean's responses</p>
+  <div class="card" style="border-left:3px solid var(--blue)">
+    <div class="response-row"><div class="response-count">10x</div><div class="response-text">Sent magic link to access songs</div></div>
+    <div class="response-row"><div class="response-count">3x</div><div class="response-text">Found songs and confirmed they're safe</div></div>
+    <div class="response-row"><div class="response-count">2x</div><div class="response-text">Offered to find songs by recipient name</div></div>
+    <div class="response-row"><div class="response-count">1x</div><div class="response-text">Found songs under different email</div></div>
+  </div>
+  <p style="font-size:12px;color:var(--green);margin-top:10px;font-weight:600">&#x2192; High automation potential: magic link covers ~80% of cases</p>
+</div>
+
+<!-- SLIDE 4: Download Question -->
+<div class="slide" id="slide-4">
+  <p class="label" style="color:var(--amber)">17 emails &middot; #4 most common</p>
+  <h2>How Do I Download My Song?</h2>
+  <p class="subtitle">Users want the MP3 file on their phone/computer.</p>
+
+  <p class="label" style="color:var(--muted)">What they say</p>
+  <div class="customer-quote">how do i download this song to my iphone to keep</div>
+  <div class="customer-quote">can i get the song as an mp3 file to play without going to the website</div>
+  <div class="customer-quote">how do i save this song and send it to my daughter, im not tech savvy</div>
+
+  <div class="divider"></div>
+  <p class="label" style="color:var(--green)">Sean's responses</p>
+  <div class="card" style="border-left:3px solid var(--amber)">
+    <div class="response-row"><div class="response-count">5x</div><div class="response-text">Attached song file directly to the email</div></div>
+    <div class="response-row"><div class="response-count">4x</div><div class="response-text">Sent magic link + explained download steps</div></div>
+    <div class="response-row"><div class="response-count">3x</div><div class="response-text">Suggested using the "email me this song" feature</div></div>
+    <div class="response-row"><div class="response-count">2x</div><div class="response-text">Offered to hunt down and send songs manually</div></div>
+  </div>
+</div>
+
+<!-- SLIDE 5: Song Won't Play -->
+<div class="slide" id="slide-5">
+  <p class="label" style="color:var(--red)">13 emails &middot; #5 most common</p>
+  <h2>Song Won't Play / No Sound</h2>
+  <p class="subtitle">They press play and nothing happens, or there's silence.</p>
+
+  <p class="label" style="color:var(--muted)">What they say</p>
+  <div class="customer-quote">my song isn't playing when i press the play button</div>
+  <div class="customer-quote">there is no sound when i play my song</div>
+  <div class="customer-quote">my song was sent but it won't play, the record spins but nothing happens</div>
+
+  <div class="divider"></div>
+  <p class="label" style="color:var(--green)">Sean's responses</p>
+  <div class="card" style="border-left:3px solid var(--red)">
+    <div class="response-row"><div class="response-count">4x</div><div class="response-text">Sent magic link + suggested internet connection issue</div></div>
+    <div class="response-row"><div class="response-count">3x</div><div class="response-text">Fixed a playback bug, sent new magic link</div></div>
+    <div class="response-row"><div class="response-count">2x</div><div class="response-text">Shared song link + attached file as backup</div></div>
+    <div class="response-row"><div class="response-count">1x</div><div class="response-text">Verified songs work, confirmed server-side issue resolved</div></div>
+  </div>
+</div>
+
+<!-- SLIDE 6: Pricing Question -->
+<div class="slide" id="slide-6">
+  <p class="label" style="color:var(--pink)">12 emails &middot; #6 most common</p>
+  <h2>How Much Does It Cost?</h2>
+  <p class="subtitle">Users confused by pay-what-you-want, or worried about hidden costs.</p>
+
+  <p class="label" style="color:var(--muted)">What they say</p>
+  <div class="customer-quote">how much does the song cost</div>
+  <div class="customer-quote">it was supposed to be free but it's asking for my credit card</div>
+  <div class="customer-quote">how much is the song and i absolutely love it</div>
+  <div class="customer-quote">what is the normal price and can i pay with paypal instead of credit card</div>
+
+  <div class="divider"></div>
+  <p class="label" style="color:var(--green)">Sean's responses</p>
+  <div class="card" style="border-left:3px solid var(--pink)">
+    <div class="response-row"><div class="response-count">6x</div><div class="response-text">Explained pay-what-you-want including $0</div></div>
+    <div class="response-row"><div class="response-count">3x</div><div class="response-text">Said "just put $0, no money needed"</div></div>
+    <div class="response-row"><div class="response-count">2x</div><div class="response-text">Offered free unlock to bypass payment concerns</div></div>
+  </div>
+  <p style="font-size:12px;color:var(--green);margin-top:10px;font-weight:600">&#x2192; Very automatable: response is nearly identical every time</p>
+</div>
+
+<!-- SLIDE 7: Payment Issues -->
+<div class="slide" id="slide-7">
+  <p class="label" style="color:var(--accent)">22 emails &middot; combined payment concerns</p>
+  <h2>Payment Problems</h2>
+  <p class="subtitle">Paid but can't find song, payment failed, wrong version, alternative methods.</p>
+
+  <p class="label" style="color:var(--muted)">What they say</p>
+  <div class="customer-quote">i paid but can't find or download my song and it wants me to pay again</div>
+  <div class="customer-quote">i paid through paypal but the screen closed before i could download</div>
+  <div class="customer-quote">i don't have credit cards or paypal, how do i pay</div>
+  <div class="customer-quote">can you still make a song if i can't afford to pay</div>
+
+  <div class="divider"></div>
+  <p class="label" style="color:var(--green)">Sean's responses</p>
+  <div class="card" style="border-left:3px solid var(--accent)">
+    <div class="response-row"><div class="response-count">5x</div><div class="response-text">Sent magic link to access paid songs</div></div>
+    <div class="response-row"><div class="response-count">4x</div><div class="response-text">Reassured: "put $0, totally fine"</div></div>
+    <div class="response-row"><div class="response-count">3x</div><div class="response-text">Found song under different email address</div></div>
+    <div class="response-row"><div class="response-count">3x</div><div class="response-text">Offered free unlock to bypass payment issues</div></div>
+    <div class="response-row"><div class="response-count">2x</div><div class="response-text">Confirmed PayPal is available</div></div>
+    <div class="response-row"><div class="response-count">2x</div><div class="response-text">Offered refund + free remakes</div></div>
+  </div>
+</div>
+
+<!-- SLIDE 8: Audio Garbled -->
+<div class="slide" id="slide-8">
+  <p class="label" style="color:var(--amber)">8 emails &middot; consistent response</p>
+  <h2>Audio Garbled / Distorted</h2>
+  <p class="subtitle">Song sounds fine at first but gets scrambled near the end. Known bug.</p>
+
+  <p class="label" style="color:var(--muted)">What they say</p>
+  <div class="customer-quote">the end of my song is all mumbled and unclear</div>
+  <div class="customer-quote">halfway through the song it gets garbled and mixed up please help</div>
+  <div class="customer-quote">the last minute of my song is gibberish you cant understand</div>
+  <div class="customer-quote">i paid $20 but the song has very crackling distorted sound</div>
+
+  <div class="divider"></div>
+  <p class="label" style="color:var(--green)">Sean's responses</p>
+  <div class="card" style="border-left:3px solid var(--amber)">
+    <div class="response-row"><div class="response-count">4x</div><div class="response-text">Explained known audio bug + offered refund</div></div>
+    <div class="response-row"><div class="response-count">2x</div><div class="response-text">Explained audio bug + offered free remakes</div></div>
+    <div class="response-row"><div class="response-count">1x</div><div class="response-text">Acknowledged known bug affecting some songs</div></div>
+  </div>
+  <p style="font-size:12px;color:var(--green);margin-top:10px;font-weight:600">&#x2192; Most consistent response: always acknowledge bug + offer refund/remake</p>
+</div>
+
+<!-- SLIDE 9: Sharing & Sending -->
+<div class="slide" id="slide-9">
+  <p class="label" style="color:var(--blue)">18 emails &middot; combined sharing concerns</p>
+  <h2>Sharing, Sending & Social Media</h2>
+  <p class="subtitle">How to get the song to someone else, or post it online.</p>
+
+  <p class="label" style="color:var(--muted)">What they say</p>
+  <div class="customer-quote">how do i send this song to someone</div>
+  <div class="customer-quote">when i share my song on facebook it just shows a serenade ad not the actual song</div>
+  <div class="customer-quote">how can i put my song on my spotify playlist</div>
+  <div class="customer-quote">how do i share the reaction video of my loved one hearing the song</div>
+
+  <div class="divider"></div>
+  <p class="label" style="color:var(--green)">Sean's responses</p>
+  <div class="card" style="border-left:3px solid var(--blue)">
+    <div class="response-row"><div class="response-count">4x</div><div class="response-text">Explained share link + email download option</div></div>
+    <div class="response-row"><div class="response-count">3x</div><div class="response-text">Confirmed Facebook sharing works (preview is generic but link works)</div></div>
+    <div class="response-row"><div class="response-count">3x</div><div class="response-text">Shared reaction video upload link</div></div>
+    <div class="response-row"><div class="response-count">2x</div><div class="response-text">Explained Spotify isn't available yet</div></div>
+    <div class="response-row"><div class="response-count">2x</div><div class="response-text">Sent song file as attachment for easy forwarding</div></div>
+  </div>
+</div>
+
+<!-- SLIDE 10: Smaller Concerns -->
+<div class="slide" id="slide-10">
+  <p class="label" style="color:var(--muted)">Remaining concerns &middot; lower volume</p>
+  <h2>Other Common Situations</h2>
+
+  <div class="card" style="border-left:3px solid var(--accent)">
+    <div class="card-header"><span class="tag tag-accent">6x</span><div class="card-title">Want different version / wrong singer</div></div>
+    <div class="card-desc">&#x2192; Offered free unlock of alternate version at $0, or explained how to regenerate</div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--amber)">
+    <div class="card-header"><span class="tag tag-amber">6x</span><div class="card-title">Slideshow / photo issues</div></div>
+    <div class="card-desc">&#x2192; Pointed to slideshow button, offered to swap photos, bumped upload limits</div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--green)">
+    <div class="card-header"><span class="tag tag-green">5x</span><div class="card-title">Want song on CD</div></div>
+    <div class="card-desc">&#x2192; Explained MP3 download + how to burn a CD, or attached MP3 directly</div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--red)">
+    <div class="card-header"><span class="tag tag-red">4x</span><div class="card-title">Hit creation limit / account paused</div></div>
+    <div class="card-desc">&#x2192; Added more generations to their account</div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--pink)">
+    <div class="card-header"><span class="tag tag-pink">4x</span><div class="card-title">Login / magic link issues</div></div>
+    <div class="card-desc">&#x2192; Sent fresh magic link, walked through process step by step</div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--blue)">
+    <div class="card-header"><span class="tag tag-blue">3x</span><div class="card-title">Lyrics display / karaoke sync issue</div></div>
+    <div class="card-desc">&#x2192; Acknowledged bug, offered manual fix</div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--muted)">
+    <div class="card-header"><span class="tag" style="background:#f3f4f6;color:var(--muted)">2x</span><div class="card-title">Is this a scam?</div></div>
+    <div class="card-desc">&#x2192; Explained he's an independent solo creator, suggested putting $0</div>
+  </div>
+</div>
+
+<!-- SLIDE 11: Proposed Automation -->
+<div class="slide" id="slide-11">
+  <p class="label" style="color:var(--accent)">Proposal</p>
+  <h2>From Data to Autonomous Responses</h2>
+  <p class="subtitle">Three tiers based on response consistency and risk.</p>
+
+  <div class="card" style="border-left:3px solid var(--green)">
+    <div class="card-header">
+      <div class="card-num" style="background:var(--green-light);color:var(--green)">1</div>
+      <div class="card-title">Auto-Send (no review needed)</div>
+    </div>
+    <div class="card-desc" style="margin-top:4px">Concerns where your response is the same every time. The KB has the approved response. Just send it.</div>
+    <div style="margin-top:8px">
+      <span class="tag tag-green">Pricing question</span>
+      <span class="tag tag-green">Thank you / gratitude</span>
+      <span class="tag tag-green">Audio garbled (refund + remake)</span>
+      <span class="tag tag-green">Can't afford (put $0)</span>
+      <span class="tag tag-green">Is this a scam?</span>
+    </div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--amber)">
+    <div class="card-header">
+      <div class="card-num" style="background:var(--amber-light);color:var(--amber)">2</div>
+      <div class="card-title">Auto-Draft + Quick Approve (Telegram tap)</div>
+    </div>
+    <div class="card-desc" style="margin-top:4px">Concerns with 2-3 response variants depending on situation. System picks the right one, you approve with a tap.</div>
+    <div style="margin-top:8px">
+      <span class="tag tag-amber">Can't find song (magic link, but check email match)</span>
+      <span class="tag tag-amber">Download question (attach vs explain vs link)</span>
+      <span class="tag tag-amber">Song won't play (internet vs bug vs link issue)</span>
+      <span class="tag tag-amber">Payment problems (varies by sub-issue)</span>
+      <span class="tag tag-amber">Sharing questions (varies by platform)</span>
+    </div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--red)">
+    <div class="card-header">
+      <div class="card-num" style="background:var(--red-light);color:var(--red)">3</div>
+      <div class="card-title">Human Required (needs Sean's judgment)</div>
+    </div>
+    <div class="card-desc" style="margin-top:4px">Unique situations, emotional complexity, or actions the system can't take (manual DB edits, refunds, regenerations).</div>
+    <div style="margin-top:8px">
+      <span class="tag tag-red">Change lyrics (needs to interpret what they want)</span>
+      <span class="tag tag-red">Wrong version (needs account lookup + manual swap)</span>
+      <span class="tag tag-red">Slideshow bugs (case-by-case)</span>
+      <span class="tag tag-red">Account paused (needs manual generation add)</span>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 12: Architecture -->
+<div class="slide" id="slide-12">
+  <p class="label" style="color:var(--accent)">Proposal</p>
+  <h2>Robust to Change</h2>
+  <p class="subtitle">How the system stays accurate as the product evolves.</p>
+
+  <div class="flow-box" style="border-color:var(--blue)">
+    <div class="flow-box-title">&#x1f4e7; Customer Email Arrives</div>
+  </div>
+  <div class="flow-arrow">&darr;</div>
+  <div class="flow-box" style="border-color:var(--accent)">
+    <div class="flow-box-title">&#x1f50d; Concern Classifier</div>
+    <div class="flow-box-desc">Maps to one of the 30 concern types using the email text</div>
+  </div>
+  <div class="flow-arrow">&darr;</div>
+  <div class="flow-box" style="border-color:var(--green)">
+    <div class="flow-box-title">&#x1f4da; Knowledge Base Lookup</div>
+    <div class="flow-box-desc">Pulls the approved response template(s) + relevant product facts from the KB</div>
+  </div>
+  <div class="flow-arrow">&darr;</div>
+  <div class="flow-box" style="border-color:var(--amber)">
+    <div class="flow-box-title">&#x2728; Response Drafter</div>
+    <div class="flow-box-desc">Personalizes the approved template with the customer's name, song details, and magic link</div>
+  </div>
+  <div class="flow-arrow">&darr;</div>
+  <div style="display:flex;gap:12px">
+    <div class="flow-box" style="flex:1;border-color:var(--green)">
+      <div class="flow-box-title">&#x2705; Auto-Send</div>
+      <div class="flow-box-desc">Tier 1 concerns</div>
+    </div>
+    <div class="flow-box" style="flex:1;border-color:var(--amber)">
+      <div class="flow-box-title">&#x1f4f1; Telegram Approve</div>
+      <div class="flow-box-desc">Tier 2 concerns</div>
+    </div>
+    <div class="flow-box" style="flex:1;border-color:var(--red)">
+      <div class="flow-box-title">&#x1f6d1; Dashboard</div>
+      <div class="flow-box-desc">Tier 3 concerns</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <h3>How It Stays Current</h3>
+  <div style="display:flex;gap:10px;margin-top:10px">
+    <div class="card" style="flex:1;text-align:center">
+      <div style="font-size:18px;margin-bottom:4px">&#x1f504;</div>
+      <div style="font-size:12px;font-weight:600;color:var(--text)">Post-Send Learning</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:2px">When you edit a draft, the KB auto-updates</div>
+    </div>
+    <div class="card" style="flex:1;text-align:center">
+      <div style="font-size:18px;margin-bottom:4px">&#x1f6a8;</div>
+      <div style="font-size:12px;font-weight:600;color:var(--text)">Unknown Concern Alert</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:2px">New concern types get flagged, not guessed at</div>
+    </div>
+    <div class="card" style="flex:1;text-align:center">
+      <div style="font-size:18px;margin-bottom:4px">&#x1f50d;</div>
+      <div style="font-size:12px;font-weight:600;color:var(--text)">Playwright Refresh</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:2px">Weekly crawl keeps product facts accurate</div>
+    </div>
+    <div class="card" style="flex:1;text-align:center">
+      <div style="font-size:18px;margin-bottom:4px">&#x1f4ca;</div>
+      <div style="font-size:12px;font-weight:600;color:var(--text)">Confidence Tracking</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:2px">Auto-send expands as trust builds per concern</div>
+    </div>
+  </div>
+</div>
+
+<div class="nav">
+  <button class="nav-btn" id="prevBtn" onclick="prev()">&larr;</button>
+  <div class="nav-counter" id="navCounter">1 / 13</div>
+  <button class="nav-btn" id="nextBtn" onclick="next()">&rarr;</button>
+</div>
+
+<script>
+let current = 0;
+const total = document.querySelectorAll('.slide').length;
+
+const FEEDBACK_KEY = 'reactive-support-responses-feedback';
+
+function loadFeedback() {
+  try { return JSON.parse(localStorage.getItem(FEEDBACK_KEY) || '{}'); }
+  catch { return {}; }
+}
+
+function saveFeedbackStore(store) {
+  localStorage.setItem(FEEDBACK_KEY, JSON.stringify(store));
+  fetch('/api/feedback', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(store)
+  }).catch(() => {});
+}
+
+function addFeedback(slideIdx, text) {
+  if (!text.trim()) return;
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  if (!store[key]) store[key] = [];
+  store[key].push({
+    text: text.trim(),
+    timestamp: new Date().toISOString(),
+    slideTitle: getSlideName(slideIdx)
+  });
+  saveFeedbackStore(store);
+  renderFeedbackForSlide(slideIdx);
+}
+
+function deleteFeedback(slideIdx, entryIdx) {
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  if (store[key] && store[key][entryIdx] !== undefined) {
+    store[key].splice(entryIdx, 1);
+    if (store[key].length === 0) delete store[key];
+    saveFeedbackStore(store);
+    renderFeedbackForSlide(slideIdx);
+  }
+}
+
+function getSlideName(idx) {
+  const names = [
+    'Overview', 'Change Lyrics', 'Thank You', 'Can\'t Find Song',
+    'Download Question', 'Song Won\'t Play', 'Pricing', 'Payment Problems',
+    'Audio Garbled', 'Sharing & Sending', 'Other Concerns',
+    'Proposed: Automation Tiers', 'Proposed: Architecture'
+  ];
+  return names[idx] || 'Slide ' + (idx + 1);
+}
+
+function renderFeedbackForSlide(slideIdx) {
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  const entries = store[key] || [];
+  const listEl = document.getElementById('feedback-list-' + slideIdx);
+  const dotEl = document.getElementById('feedback-dot-' + slideIdx);
+
+  if (dotEl) dotEl.classList.toggle('has-feedback', entries.length > 0);
+  if (!listEl) return;
+  if (entries.length === 0) { listEl.innerHTML = ''; return; }
+
+  listEl.innerHTML = entries.map((e, i) => `
+    <div class="feedback-entry">
+      <span class="feedback-entry-time">${new Date(e.timestamp).toLocaleDateString('en-US', {month:'short',day:'numeric'})}</span>
+      <span class="feedback-entry-text">${escapeHtml(e.text)}</span>
+      <button class="feedback-entry-delete" onclick="deleteFeedback(${slideIdx},${i})" title="Delete">&times;</button>
+    </div>
+  `).join('');
+}
+
+function escapeHtml(str) {
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+function submitFeedback(slideIdx) {
+  const ta = document.getElementById('feedback-input-' + slideIdx);
+  const status = document.getElementById('feedback-status-' + slideIdx);
+  if (!ta || !ta.value.trim()) return;
+  addFeedback(slideIdx, ta.value);
+  ta.value = '';
+  if (status) {
+    status.classList.add('show');
+    setTimeout(() => status.classList.remove('show'), 2000);
+  }
+}
+
+function toggleFeedback(slideIdx) {
+  const body = document.getElementById('feedback-body-' + slideIdx);
+  const chev = document.getElementById('feedback-chevron-' + slideIdx);
+  if (body) body.classList.toggle('open');
+  if (chev) chev.classList.toggle('open');
+}
+
+document.querySelectorAll('.slide').forEach((slide, idx) => {
+  const section = document.createElement('div');
+  section.className = 'feedback-section';
+  section.innerHTML = `
+    <button class="feedback-toggle" onclick="toggleFeedback(${idx})">
+      <span class="chevron" id="feedback-chevron-${idx}">&#9654;</span>
+      <span>Leave feedback on this slide</span>
+      <span class="dot" id="feedback-dot-${idx}"></span>
+    </button>
+    <div class="feedback-body" id="feedback-body-${idx}">
+      <div class="feedback-saved-list" id="feedback-list-${idx}"></div>
+      <textarea class="feedback-textarea" id="feedback-input-${idx}" placeholder="Your feedback — what should the approved response be? What's missing?" onkeydown="if(event.key==='Enter'&&event.metaKey){submitFeedback(${idx});event.preventDefault();}"></textarea>
+      <div class="feedback-actions">
+        <button class="feedback-save" onclick="submitFeedback(${idx})">Save (&#8984;&#9166;)</button>
+        <span class="feedback-status" id="feedback-status-${idx}">Saved!</span>
+      </div>
+    </div>
+  `;
+  slide.appendChild(section);
+  renderFeedbackForSlide(idx);
+});
+
+(async function() {
+  try {
+    const resp = await fetch('/api/feedback');
+    const serverStore = await resp.json();
+    const localStore = loadFeedback();
+    let merged = false;
+    for (const key of Object.keys(serverStore)) {
+      if (!localStore[key]) { localStore[key] = serverStore[key]; merged = true; }
+      else {
+        const localTimestamps = new Set(localStore[key].map(e => e.timestamp));
+        for (const entry of serverStore[key]) {
+          if (!localTimestamps.has(entry.timestamp)) {
+            localStore[key].push(entry);
+            merged = true;
+          }
+        }
+      }
+    }
+    if (merged) {
+      localStorage.setItem(FEEDBACK_KEY, JSON.stringify(localStore));
+      document.querySelectorAll('.slide').forEach((_, idx) => renderFeedbackForSlide(idx));
+    }
+  } catch {}
+})();
+
+function show(n) {
+  document.querySelectorAll('.slide').forEach((s, i) => s.classList.toggle('active', i === n));
+  document.getElementById('navCounter').textContent = (n + 1) + ' / ' + total;
+  document.getElementById('prevBtn').disabled = n === 0;
+  document.getElementById('nextBtn').disabled = n === total - 1;
+  current = n;
+}
+
+function next() { if (current < total - 1) show(current + 1); }
+function prev() { if (current > 0) show(current - 1); }
+function goTo(n) { show(n); }
+
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'TEXTAREA') return;
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+});
+</script>
+</body>
+</html>

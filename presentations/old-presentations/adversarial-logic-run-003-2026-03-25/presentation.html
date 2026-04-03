@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adversarial Logic — Run 003 (Time &amp; Consciousness)</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --slide-bg: #f8f9fa;
+  --slide-border: #e1e4e8;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #4f46e5;
+  --accent-light: #eef2ff;
+  --green: #059669;
+  --green-light: #ecfdf5;
+  --red: #dc2626;
+  --red-light: #fef2f2;
+  --amber: #d97706;
+  --amber-light: #fffbeb;
+  --blue: #2563eb;
+  --blue-light: #eff6ff;
+  --purple: #7c3aed;
+  --purple-light: #f5f3ff;
+  --teal: #0d9488;
+  --teal-light: #f0fdfa;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  display: flex; flex-direction: column; align-items: center;
+  min-height: 100vh; padding: 40px 20px;
+}
+
+/* Nav */
+.nav {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+  padding: 10px 20px; border-radius: 999px; z-index: 100;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+.nav-btn {
+  background: transparent; border: 1px solid rgba(255,255,255,0.2);
+  color: white; width: 36px; height: 36px; border-radius: 50%;
+  cursor: pointer; font-size: 16px; display: flex; align-items: center;
+  justify-content: center; transition: all 0.15s;
+}
+.nav-btn:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.4); }
+.nav-btn:disabled { opacity: 0.3; cursor: default; }
+.nav-counter { color: rgba(255,255,255,0.6); font-size: 13px; min-width: 50px; text-align: center; }
+
+/* Slide */
+.slide {
+  display: none; width: 100%; max-width: 820px;
+  background: var(--slide-bg); border: 1px solid var(--slide-border);
+  border-radius: 16px; padding: 48px 56px 56px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+  animation: fadeIn 0.25s ease;
+}
+.slide.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Typography */
+h1 { font-size: 32px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+h2 { font-size: 24px; font-weight: 700; color: var(--text); margin-bottom: 16px; }
+h3 { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: var(--muted); margin-bottom: 32px; }
+.label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+
+/* Cards */
+.card {
+  border: 1px solid var(--slide-border); border-radius: 10px;
+  padding: 16px 20px; margin-bottom: 12px; background: white;
+}
+.card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.card-num {
+  width: 28px; height: 28px; border-radius: 8px; font-size: 13px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.card-title { font-size: 15px; font-weight: 600; color: var(--text); }
+.card-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+/* Stats */
+.stats { display: grid; gap: 12px; margin: 20px 0; }
+.stats-2 { grid-template-columns: 1fr 1fr; }
+.stats-3 { grid-template-columns: 1fr 1fr 1fr; }
+.stats-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.stat {
+  text-align: center; padding: 16px 12px; border-radius: 10px;
+  border: 1px solid var(--slide-border); background: white;
+}
+.stat-value { font-size: 28px; font-weight: 700; }
+.stat-label { font-size: 11px; color: var(--muted); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* Tags */
+.tag {
+  display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px;
+  border-radius: 6px; margin-right: 4px; margin-bottom: 4px;
+}
+.tag-green { background: var(--green-light); color: var(--green); }
+.tag-red { background: var(--red-light); color: var(--red); }
+.tag-amber { background: var(--amber-light); color: var(--amber); }
+.tag-blue { background: var(--blue-light); color: var(--blue); }
+.tag-accent { background: var(--accent-light); color: var(--accent); }
+.tag-purple { background: var(--purple-light); color: var(--purple); }
+.tag-teal { background: var(--teal-light); color: var(--teal); }
+
+/* Misc */
+.divider { height: 1px; background: var(--slide-border); margin: 24px 0; }
+.finding {
+  display: flex; gap: 12px; margin-bottom: 12px; font-size: 13px; line-height: 1.5;
+}
+.finding-num {
+  width: 22px; height: 22px; border-radius: 50%; background: var(--accent);
+  color: white; font-size: 11px; font-weight: 700; display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0; margin-top: 1px;
+}
+.toc-item {
+  display: flex; align-items: center; gap: 12px; padding: 12px 16px;
+  border: 1px solid var(--slide-border); border-radius: 10px; margin-bottom: 8px;
+  cursor: pointer; transition: all 0.15s; background: white;
+}
+.toc-item:hover { border-color: var(--accent); background: var(--accent-light); }
+.toc-num {
+  width: 32px; height: 32px; border-radius: 8px; font-size: 14px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.toc-text { font-size: 15px; font-weight: 500; color: var(--text); }
+
+.flow-arrow { text-align: center; font-size: 20px; color: var(--muted); margin: 4px 0; }
+.flow-box {
+  border: 1px solid var(--slide-border); border-radius: 10px; padding: 12px 16px;
+  background: white; text-align: center; font-size: 13px; font-weight: 500;
+}
+
+/* Agent pipeline */
+.pipeline { display: flex; align-items: center; gap: 0; margin: 24px 0; }
+.pipeline-node {
+  flex: 1; text-align: center; padding: 16px 8px; border-radius: 12px;
+  border: 2px solid; position: relative;
+}
+.pipeline-node-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+.pipeline-node-desc { font-size: 12px; color: var(--muted); line-height: 1.4; }
+.pipeline-arrow {
+  width: 32px; text-align: center; font-size: 18px; color: var(--muted); flex-shrink: 0;
+}
+
+/* Severity grid */
+.severity-grid { display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; font-size: 13px; margin: 12px 0; }
+.severity-label { font-weight: 700; text-align: right; }
+.severity-dots { display: flex; gap: 4px; flex-wrap: wrap; align-items: center; }
+.severity-dot {
+  width: 20px; height: 20px; border-radius: 6px; font-size: 10px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; color: white;
+}
+
+/* Bars */
+.bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-size: 13px; }
+.bar-label { width: 120px; text-align: right; color: var(--muted); font-weight: 500; flex-shrink: 0; font-size: 12px; }
+.bar-track { flex: 1; height: 24px; background: #f3f4f6; border-radius: 6px; overflow: hidden; position: relative; }
+.bar-fill { height: 100%; border-radius: 6px; transition: width 0.5s; display: flex; align-items: center; padding-left: 8px; }
+.bar-fill span { font-size: 11px; font-weight: 700; color: white; }
+
+/* v1 vs v2 comparison */
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+.compare-col { border-radius: 10px; padding: 16px; border: 1px solid var(--slide-border); background: white; }
+.compare-header { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
+
+/* Chain diagram */
+.chain {
+  display: flex; align-items: center; justify-content: center; gap: 0; margin: 20px 0;
+}
+.chain-node {
+  text-align: center; padding: 14px 20px; border-radius: 12px; border: 2px solid;
+  min-width: 140px;
+}
+.chain-node-label { font-size: 13px; font-weight: 700; }
+.chain-node-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.chain-arrow {
+  width: 44px; text-align: center; font-size: 14px; color: var(--muted); flex-shrink: 0;
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+}
+.chain-arrow-label { font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* Feedback */
+.feedback-section {
+  margin-top: 24px; padding-top: 16px;
+  border-top: 1px dashed var(--slide-border);
+}
+.feedback-toggle {
+  display: flex; align-items: center; gap: 8px; cursor: pointer;
+  font-size: 12px; font-weight: 600; color: var(--muted);
+  background: none; border: none; padding: 4px 0;
+  transition: color 0.15s;
+}
+.feedback-toggle:hover { color: var(--text); }
+.feedback-toggle .chevron { transition: transform 0.2s; font-size: 10px; }
+.feedback-toggle .chevron.open { transform: rotate(90deg); }
+.feedback-toggle .dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+  display: none;
+}
+.feedback-toggle .dot.has-feedback { display: inline-block; }
+.feedback-body { display: none; margin-top: 10px; }
+.feedback-body.open { display: block; }
+.feedback-textarea {
+  width: 100%; min-height: 60px; padding: 10px 12px;
+  border: 1px solid var(--slide-border); border-radius: 8px;
+  font-family: inherit; font-size: 13px; color: var(--text);
+  background: white; resize: vertical; outline: none;
+  transition: border-color 0.15s;
+}
+.feedback-textarea:focus { border-color: var(--accent); }
+.feedback-actions { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+.feedback-save {
+  padding: 6px 14px; border-radius: 6px; border: none;
+  background: var(--accent); color: white; font-size: 12px;
+  font-weight: 600; cursor: pointer; transition: opacity 0.15s;
+}
+.feedback-save:hover { opacity: 0.85; }
+.feedback-save:disabled { opacity: 0.4; cursor: default; }
+.feedback-status { font-size: 11px; color: var(--green); opacity: 0; transition: opacity 0.3s; }
+.feedback-status.show { opacity: 1; }
+.feedback-saved-list { margin-top: 8px; }
+.feedback-entry {
+  display: flex; gap: 8px; align-items: flex-start; padding: 6px 0;
+  font-size: 12px; color: var(--text); border-bottom: 1px solid #f3f4f6;
+}
+.feedback-entry:last-child { border-bottom: none; }
+.feedback-entry-time { color: var(--muted); font-size: 11px; white-space: nowrap; flex-shrink: 0; }
+.feedback-entry-text { line-height: 1.4; }
+.feedback-entry-delete {
+  background: none; border: none; color: var(--muted); cursor: pointer;
+  font-size: 11px; padding: 0 4px; flex-shrink: 0;
+}
+.feedback-entry-delete:hover { color: var(--red); }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 0: Title + TOC -->
+<div class="slide active" id="slide-0">
+  <h1>Adversarial Logic &mdash; Run 003</h1>
+  <p class="subtitle">Topic: The Relationship Between Time and Consciousness</p>
+  <div class="divider"></div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <div>
+      <p class="label" style="color:var(--muted)">The System</p>
+      <div class="toc-item" onclick="goTo(1)">
+        <div class="toc-num" style="background:var(--accent-light);color:var(--accent)">1</div>
+        <div class="toc-text">Pipeline &amp; Information Flow</div>
+      </div>
+    </div>
+    <div>
+      <p class="label" style="color:var(--muted)">The Theory</p>
+      <div class="toc-item" onclick="goTo(2)">
+        <div class="toc-num" style="background:var(--blue-light);color:var(--blue)">2</div>
+        <div class="toc-text">Architect v1: The Asymmetric Chain</div>
+      </div>
+      <div class="toc-item" onclick="goTo(3)">
+        <div class="toc-num" style="background:var(--red-light);color:var(--red)">3</div>
+        <div class="toc-text">Adversary + Judge</div>
+      </div>
+      <div class="toc-item" onclick="goTo(4)">
+        <div class="toc-num" style="background:var(--purple-light);color:var(--purple)">4</div>
+        <div class="toc-text">Architect v2: Key Moves</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+    <div>
+      <p class="label" style="color:var(--muted)">The Philosophy</p>
+      <div class="toc-item" onclick="goTo(5)">
+        <div class="toc-num" style="background:var(--teal-light);color:var(--teal)">5</div>
+        <div class="toc-text">What Is the Relationship?</div>
+      </div>
+    </div>
+    <div>
+      <p class="label" style="color:var(--muted)">Takeaways</p>
+      <div class="toc-item" onclick="goTo(6)">
+        <div class="toc-num" style="background:var(--green-light);color:var(--green)">6</div>
+        <div class="toc-text">System Performance</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:24px;display:flex;gap:8px;flex-wrap:wrap">
+    <span class="tag tag-accent">Run 003</span>
+    <span class="tag tag-accent">With Judge</span>
+    <span class="tag tag-accent">Structured Notation</span>
+    <span class="tag tag-accent">New Topic</span>
+  </div>
+</div>
+
+<!-- SLIDE 1: Pipeline & Information Flow -->
+<div class="slide" id="slide-1">
+  <p class="label" style="color:var(--accent)">The System</p>
+  <h2>Pipeline &amp; Information Flow</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:24px">Same 4-agent pipeline as Run 001. New topic: time and consciousness.</p>
+
+  <div class="pipeline">
+    <div class="pipeline-node" style="border-color:var(--blue);background:var(--blue-light)">
+      <div class="pipeline-node-label" style="color:var(--blue)">Architect</div>
+      <div class="pipeline-node-desc">Proposes theory with formal notation</div>
+    </div>
+    <div class="pipeline-arrow">&rarr;</div>
+    <div class="pipeline-node" style="border-color:var(--red);background:var(--red-light)">
+      <div class="pipeline-node-label" style="color:var(--red)">Adversary</div>
+      <div class="pipeline-node-desc">Attacks every premise and derivation</div>
+    </div>
+    <div class="pipeline-arrow">&rarr;</div>
+    <div class="pipeline-node" style="border-color:var(--amber);background:var(--amber-light)">
+      <div class="pipeline-node-label" style="color:var(--amber)">Judge</div>
+      <div class="pipeline-node-desc">Rules on each attack, prioritizes fixes</div>
+    </div>
+    <div class="pipeline-arrow">&rarr;</div>
+    <div class="pipeline-node" style="border-color:var(--purple);background:var(--purple-light)">
+      <div class="pipeline-node-label" style="color:var(--purple)">Architect v2</div>
+      <div class="pipeline-node-desc">Revises theory per judge's rulings</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="stats stats-4">
+    <div class="stat">
+      <div class="stat-value" style="color:var(--blue)">11</div>
+      <div class="stat-label">Premises</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--red)">14</div>
+      <div class="stat-label">Attacks</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--amber)">5</div>
+      <div class="stat-label">Must-Fix</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" style="color:var(--purple)">10/10</div>
+      <div class="stat-label">Fixes Applied</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h3>What Each Agent Received</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px;font-size:12px">
+    <div class="card" style="padding:10px 14px;border-left:3px solid var(--blue)">
+      <strong style="color:var(--blue)">Architect</strong><br>
+      <span style="color:var(--muted)">In:</span> Topic only<br>
+      <span style="color:var(--muted)">Out:</span> 6 definitions, 11 premises, 7 derivations, 7 predictions
+    </div>
+    <div class="card" style="padding:10px 14px;border-left:3px solid var(--red)">
+      <strong style="color:var(--red)">Adversary</strong><br>
+      <span style="color:var(--muted)">In:</span> Full theory text<br>
+      <span style="color:var(--muted)">Out:</span> 14 attacks (2 Fatal, 9 Major, 3 Minor)
+    </div>
+    <div class="card" style="padding:10px 14px;border-left:3px solid var(--amber)">
+      <strong style="color:var(--amber)">Judge</strong><br>
+      <span style="color:var(--muted)">In:</span> Theory + all 14 attacks<br>
+      <span style="color:var(--muted)">Out:</span> Per-attack verdicts, prioritized fix list
+    </div>
+    <div class="card" style="padding:10px 14px;border-left:3px solid var(--purple)">
+      <strong style="color:var(--purple)">Architect v2</strong><br>
+      <span style="color:var(--muted)">In:</span> Judge's fix list<br>
+      <span style="color:var(--muted)">Out:</span> Fully revised theory with change log
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 2: Architect v1 — The Theory -->
+<div class="slide" id="slide-2">
+  <p class="label" style="color:var(--blue)">The Theory</p>
+  <h2>Temporal Constitution Theory (v1)</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">The core insight: "time" is two things, and consciousness sits between them.</p>
+
+  <!-- The chain diagram -->
+  <div class="chain">
+    <div class="chain-node" style="border-color:var(--blue);background:var(--blue-light)">
+      <div class="chain-node-label" style="color:var(--blue)">T<sub>phys</sub></div>
+      <div class="chain-node-sub">Physical Time</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">Block universe, no passage,<br>no privileged "now"</div>
+    </div>
+    <div class="chain-arrow">
+      <span>&rarr;</span>
+      <span class="chain-arrow-label">constitutes</span>
+    </div>
+    <div class="chain-node" style="border-color:var(--accent);background:var(--accent-light)">
+      <div class="chain-node-label" style="color:var(--accent)">C</div>
+      <div class="chain-node-sub">Consciousness</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">Requires temporal structure<br>to exist</div>
+    </div>
+    <div class="chain-arrow">
+      <span>&rarr;</span>
+      <span class="chain-arrow-label">constitutes</span>
+    </div>
+    <div class="chain-node" style="border-color:var(--teal);background:var(--teal-light)">
+      <div class="chain-node-label" style="color:var(--teal)">T<sub>phen</sub></div>
+      <div class="chain-node-sub">Phenomenal Time</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">Felt passage, now-ness,<br>duration, arrow</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;font-size:12px;color:var(--muted);margin-bottom:8px">Each arrow is one-directional dependence. Physical time can exist without consciousness; phenomenal time cannot.</div>
+
+  <div class="divider"></div>
+
+  <h3>Three Moves That Define the Theory</h3>
+  <div class="finding">
+    <div class="finding-num" style="background:var(--blue)">1</div>
+    <div><strong>Split "time" into two.</strong> Physical time (the block universe's timelike dimension) and phenomenal time (the felt quality of temporal experience) have different properties and different existence conditions.</div>
+  </div>
+  <div class="finding">
+    <div class="finding-num" style="background:var(--accent)">2</div>
+    <div><strong>Asymmetric constitution, not identity.</strong> Time and consciousness are not the same thing, not independent things, and not symmetrically dependent. They are linked by a one-way chain.</div>
+  </div>
+  <div class="finding">
+    <div class="finding-num" style="background:var(--teal)">3</div>
+    <div><strong>Ground phenomenal features in physical mechanisms.</strong> Felt passage comes from memory asymmetry, felt duration from integration windows, felt arrow from the entropy gradient.</div>
+  </div>
+</div>
+
+<!-- SLIDE 3: Adversary + Judge -->
+<div class="slide" id="slide-3">
+  <p class="label" style="color:var(--red)">Adversary + Judge</p>
+  <h2>14 Attacks, 2 Rated Fatal</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:16px">The adversary found real structural problems. The judge downgraded both "Fatal" attacks to Major.</p>
+
+  <div class="severity-grid">
+    <div class="severity-label" style="color:var(--red)">Fatal &times;2</div>
+    <div class="severity-dots">
+      <div class="severity-dot" style="background:var(--red)" title="Block universe vs process language">4</div>
+      <div class="severity-dot" style="background:var(--red)" title="Definitional circularity">10</div>
+    </div>
+    <div class="severity-label" style="color:var(--amber)">Major &times;9</div>
+    <div class="severity-dots">
+      <div class="severity-dot" style="background:var(--amber)">1</div>
+      <div class="severity-dot" style="background:var(--amber)">2</div>
+      <div class="severity-dot" style="background:var(--amber)">3</div>
+      <div class="severity-dot" style="background:var(--amber)">5</div>
+      <div class="severity-dot" style="background:var(--amber)">6</div>
+      <div class="severity-dot" style="background:var(--amber)">7</div>
+      <div class="severity-dot" style="background:var(--amber)">12</div>
+      <div class="severity-dot" style="background:var(--amber)">13</div>
+      <div class="severity-dot" style="background:var(--amber)">14</div>
+    </div>
+    <div class="severity-label" style="color:var(--muted)">Minor &times;3</div>
+    <div class="severity-dots">
+      <div class="severity-dot" style="background:#9ca3af">8</div>
+      <div class="severity-dot" style="background:#9ca3af">9</div>
+      <div class="severity-dot" style="background:#9ca3af">11</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h3>The Two "Fatal" Attacks</h3>
+  <div class="compare">
+    <div class="compare-col" style="border-left:3px solid var(--red)">
+      <div class="compare-header" style="color:var(--red)">Attack 4: Block Universe vs. Process Language</div>
+      <p style="font-size:12px;color:var(--muted);line-height:1.5">
+        The theory accepts the block universe (no passage, no becoming) but describes consciousness using process language ("requires duration," "integration across states"). Internal inconsistency.
+      </p>
+      <div style="margin-top:8px">
+        <span class="tag tag-amber">Judge: Major (fixable)</span>
+      </div>
+    </div>
+    <div class="compare-col" style="border-left:3px solid var(--red)">
+      <div class="compare-header" style="color:var(--red)">Attack 10: Definitional Circularity</div>
+      <p style="font-size:12px;color:var(--muted);line-height:1.5">
+        The definition of consciousness embeds temporal extension, making "consciousness requires duration" trivially true by definition rather than a substantive claim.
+      </p>
+      <div style="margin-top:8px">
+        <span class="tag tag-amber">Judge: Major (fixable)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h3>Judge's Fix List</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
+    <div class="card" style="padding:10px 14px">
+      <div style="font-size:12px"><span class="tag tag-red">Must</span> Block-universe language fix</div>
+    </div>
+    <div class="card" style="padding:10px 14px">
+      <div style="font-size:12px"><span class="tag tag-red">Must</span> Strip D3, separate definition from claims</div>
+    </div>
+    <div class="card" style="padding:10px 14px">
+      <div style="font-size:12px"><span class="tag tag-red">Must</span> Formalize constitution relation</div>
+    </div>
+    <div class="card" style="padding:10px 14px">
+      <div style="font-size:12px"><span class="tag tag-red">Must</span> Revise P9a for temporal illusions</div>
+    </div>
+    <div class="card" style="padding:10px 14px">
+      <div style="font-size:12px"><span class="tag tag-red">Must</span> Address meditation / timelessness</div>
+    </div>
+    <div class="card" style="padding:10px 14px">
+      <div style="font-size:12px"><span class="tag tag-amber">Should</span> Acknowledge physicalism as assumption</div>
+    </div>
+    <div class="card" style="padding:10px 14px">
+      <div style="font-size:12px"><span class="tag tag-amber">Should</span> Acknowledge panpsychism</div>
+    </div>
+    <div class="card" style="padding:10px 14px">
+      <div style="font-size:12px"><span class="tag tag-amber">Should</span> Entropy arrow gaps + hard problem</div>
+    </div>
+  </div>
+  <div style="font-size:11px;color:var(--muted);margin-top:8px;text-align:center">+ 2 more should-fix items. Judge rated adversary <strong>B+</strong> (thorough but occasionally overstated).</div>
+</div>
+
+<!-- SLIDE 4: Theory v2 — What Changed -->
+<div class="slide" id="slide-4">
+  <p class="label" style="color:var(--purple)">Theory v2</p>
+  <h2>What Changed</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">The architect addressed all 10 must-fix and should-fix items. Three structural moves defined the revision.</p>
+
+  <div class="card" style="border-left:3px solid var(--purple)">
+    <div class="card-header">
+      <div class="card-title" style="color:var(--purple)">Move 1: TEP Language for Block Compatibility</div>
+    </div>
+    <div class="card-desc" style="margin-top:4px">
+      Added "Temporally Extended Pattern" (TEP) &mdash; a four-dimensional structure in the block with specific information-integration properties across its temporal parts. All process language replaced with TEP language. Consciousness corresponds to certain TEPs, not to dynamic processes.
+    </div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--blue)">
+    <div class="card-header">
+      <div class="card-title" style="color:var(--blue)">Move 2: Stripped Definition, Honest Premises</div>
+    </div>
+    <div class="card-desc" style="margin-top:4px">
+      Consciousness definition reduced to the Nagelian minimum ("something it is like to be"). Temporal extension and integration moved to premises P4/P5 &mdash; now substantive, falsifiable claims rather than definitional consequences.
+    </div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--teal)">
+    <div class="card-header">
+      <div class="card-title" style="color:var(--teal)">Move 3: Temporal Structure &ne; Temporal Phenomenology</div>
+    </div>
+    <div class="card-desc" style="margin-top:4px">
+      New premise P12: consciousness requires temporal <em>structure</em> (must be a TEP) but does not always produce temporal <em>phenomenology</em> (the felt sense of time). Meditation evidence forced this distinction. This actually strengthened the asymmetry &mdash; C can exist without rich T<sub>phen</sub>, but T<sub>phen</sub> cannot exist without C.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h3>Full Change Map</h3>
+  <div style="font-size:12px;line-height:1.8;color:var(--text)">
+    <div style="display:flex;gap:8px;margin-bottom:4px;align-items:flex-start">
+      <span class="tag tag-red" style="flex-shrink:0;margin-top:2px">Fix 1</span>
+      <span>D7 (TEP) added; P4, P5, all derivations reformulated in block-compatible language</span>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:4px;align-items:flex-start">
+      <span class="tag tag-red" style="flex-shrink:0;margin-top:2px">Fix 2</span>
+      <span>D3 stripped to Nagelian minimum; substantive conditions moved to premises</span>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:4px;align-items:flex-start">
+      <span class="tag tag-red" style="flex-shrink:0;margin-top:2px">Fix 3</span>
+      <span>D4 split into definition + Asymmetry Principle (AP1)</span>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:4px;align-items:flex-start">
+      <span class="tag tag-red" style="flex-shrink:0;margin-top:2px">Fix 4</span>
+      <span>P9a weakened to "generally mirrors"; temporal illusions reframed as TCT predictions</span>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:4px;align-items:flex-start">
+      <span class="tag tag-red" style="flex-shrink:0;margin-top:2px">Fix 5</span>
+      <span>P12 added (structure vs. phenomenology separable); C6 revised; EP8 added (novel prediction)</span>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:4px;align-items:flex-start">
+      <span class="tag tag-amber" style="flex-shrink:0;margin-top:2px">Fix 6-10</span>
+      <span>Physicalism + panpsychism labeled as framework assumptions; hard problem acknowledged; EP5 reclassified; functionalist objections addressed</span>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5: The Philosophy — What IS the relationship? -->
+<div class="slide" id="slide-5">
+  <p class="label" style="color:var(--teal)">The Philosophy</p>
+  <h2>What Is the Relationship?</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:20px">The most interesting content from TCT &mdash; what the theory actually claims about time and consciousness.</p>
+
+  <div class="card" style="border-left:3px solid var(--accent)">
+    <div class="card-header">
+      <div class="card-title">Consciousness sits between two times</div>
+    </div>
+    <div class="card-desc" style="margin-top:4px">
+      The asymmetric chain T<sub>phys</sub> &rarr; C &rarr; T<sub>phen</sub> places consciousness as the mediating layer. It is constituted by physical temporal structure (it must be a temporally extended pattern) and it constitutes the felt experience of time (passage, now-ness, duration).
+    </div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--blue)">
+    <div class="card-header">
+      <div class="card-title">The T<sub>phys</sub> / T<sub>phen</sub> distinction dissolves most paradoxes</div>
+    </div>
+    <div class="card-desc" style="margin-top:4px">
+      "Does time require an observer?" "Is time real?" "Do we create time?" &mdash; these all dissolve once "time" stops meaning one thing. Physical time and phenomenal time have different properties, different existence conditions, and different relationships to consciousness.
+    </div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--teal)">
+    <div class="card-header">
+      <div class="card-title">The "flow" of time is real but phenomenal</div>
+    </div>
+    <div class="card-desc" style="margin-top:4px">
+      The direction of felt flow is explained by the entropy gradient and memory asymmetry. Its structure (why time feels like it has a direction, a width, distortions) is accounted for. But <em>why there is felt passage at all</em> remains the hard problem applied to time &mdash; TCT is honest about this gap.
+    </div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--purple)">
+    <div class="card-header">
+      <div class="card-title">Temporal structure and temporal phenomenology come apart</div>
+    </div>
+    <div class="card-desc" style="margin-top:4px">
+      Meditation forced a key refinement: consciousness requires temporal structure (it must unfold over time) but does not always produce temporal phenomenology (the felt sense of time can be attenuated). You can be conscious without feeling time pass.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <div class="stat" style="border-color:var(--blue)">
+      <div style="font-size:13px;font-weight:700;color:var(--blue)">Framework-dependent</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px">The chain direction depends on your metaphysics. Under idealism, it reverses entirely. Under panpsychism, it may collapse.</div>
+    </div>
+    <div class="stat" style="border-color:var(--amber)">
+      <div style="font-size:13px;font-weight:700;color:var(--amber)">Hard problem remains</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px">TCT explains the <em>structure</em> of temporal experience but not <em>why there is felt temporal experience at all</em>. This is the deepest unsolved issue.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6: System Performance -->
+<div class="slide" id="slide-6">
+  <p class="label" style="color:var(--green)">Takeaways</p>
+  <h2>System Performance</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:24px">What this run tells us about the adversarial pipeline itself.</p>
+
+  <div class="card" style="border-left:3px solid var(--green)">
+    <div class="card-header">
+      <div class="card-title" style="color:var(--green)">Judge continues to earn its place</div>
+    </div>
+    <div class="card-desc" style="margin-top:4px">
+      Both "Fatal" attacks were downgraded to Major &mdash; each had a clear resolution path. The adversary rated <strong>B+</strong>: thorough and systematic, but occasionally overstated severity. Same pattern as Run 001. The judge prevented overcorrection again.
+    </div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--blue)">
+    <div class="card-header">
+      <div class="card-title" style="color:var(--blue)">The adversary caught a genuine structural flaw</div>
+    </div>
+    <div class="card-desc" style="margin-top:4px">
+      The block-universe / process-language tension was a real internal inconsistency in v1. The fix (TEP language) required introducing a new definition and reformulating the entire theory. This is the kind of deep structural catch the system is designed to find.
+    </div>
+  </div>
+
+  <div class="card" style="border-left:3px solid var(--amber)">
+    <div class="card-header">
+      <div class="card-title" style="color:var(--amber)">Meditation forced a non-obvious refinement</div>
+    </div>
+    <div class="card-desc" style="margin-top:4px">
+      The adversary's "meditation / timelessness" attack led to the structure-vs-phenomenology separation (P12), which <em>strengthened</em> the theory's asymmetry argument rather than weakening it. The adversarial pressure produced a better theory, not just a patched one.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h3>Run 001 vs. Run 003 Comparison</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+    <div class="stat">
+      <div style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px">Run 001</div>
+      <div style="font-size:13px;color:var(--text);margin-top:4px">16 attacks, 4 Fatal (all downgraded)<br>8 must-fix, 14 total changes</div>
+    </div>
+    <div class="stat">
+      <div style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px">Run 003</div>
+      <div style="font-size:13px;color:var(--text);margin-top:4px">14 attacks, 2 Fatal (both downgraded)<br>5 must-fix, 10 total changes</div>
+    </div>
+  </div>
+  <div style="font-size:12px;color:var(--muted);margin-top:12px;text-align:center">
+    Pattern holds: adversary overstates Fatal-level severity; judge reliably recalibrates. The theory survived with revision &mdash; judge assessed viability at <strong>70-75%</strong> post-v2.
+  </div>
+</div>
+
+<!-- Navigation -->
+<div class="nav">
+  <button class="nav-btn" id="prevBtn" onclick="prev()">&larr;</button>
+  <div class="nav-counter" id="navCounter">1 / 7</div>
+  <button class="nav-btn" id="nextBtn" onclick="next()">&rarr;</button>
+</div>
+
+<script>
+let current = 0;
+const total = document.querySelectorAll('.slide').length;
+
+// --- Feedback System ---
+const FEEDBACK_KEY = 'adversarial-logic-run-003-feedback';
+
+function loadFeedback() {
+  try { return JSON.parse(localStorage.getItem(FEEDBACK_KEY) || '{}'); }
+  catch { return {}; }
+}
+
+function saveFeedbackStore(store) {
+  localStorage.setItem(FEEDBACK_KEY, JSON.stringify(store));
+  fetch('/api/feedback', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(store)
+  }).catch(() => {});
+}
+
+function addFeedback(slideIdx, text) {
+  if (!text.trim()) return;
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  if (!store[key]) store[key] = [];
+  store[key].push({
+    text: text.trim(),
+    timestamp: new Date().toISOString(),
+    slideTitle: getSlideName(slideIdx)
+  });
+  saveFeedbackStore(store);
+  renderFeedbackForSlide(slideIdx);
+}
+
+function deleteFeedback(slideIdx, entryIdx) {
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  if (store[key] && store[key][entryIdx] !== undefined) {
+    store[key].splice(entryIdx, 1);
+    if (store[key].length === 0) delete store[key];
+    saveFeedbackStore(store);
+    renderFeedbackForSlide(slideIdx);
+  }
+}
+
+function getSlideName(idx) {
+  const names = ['Title & TOC', 'Pipeline & Information Flow', 'Temporal Constitution Theory (v1)',
+                 'Adversary + Judge', 'Theory v2: What Changed', 'What Is the Relationship?', 'System Performance'];
+  return names[idx] || 'Slide ' + (idx + 1);
+}
+
+function renderFeedbackForSlide(slideIdx) {
+  const store = loadFeedback();
+  const key = 'slide-' + slideIdx;
+  const entries = store[key] || [];
+  const listEl = document.getElementById('feedback-list-' + slideIdx);
+  const dotEl = document.getElementById('feedback-dot-' + slideIdx);
+
+  if (dotEl) dotEl.classList.toggle('has-feedback', entries.length > 0);
+
+  if (!listEl) return;
+  if (entries.length === 0) { listEl.innerHTML = ''; return; }
+
+  listEl.innerHTML = entries.map((e, i) => `
+    <div class="feedback-entry">
+      <span class="feedback-entry-time">${new Date(e.timestamp).toLocaleDateString('en-US', {month:'short',day:'numeric'})}</span>
+      <span class="feedback-entry-text">${escapeHtml(e.text)}</span>
+      <button class="feedback-entry-delete" onclick="deleteFeedback(${slideIdx},${i})" title="Delete">&times;</button>
+    </div>
+  `).join('');
+}
+
+function escapeHtml(str) {
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+function submitFeedback(slideIdx) {
+  const ta = document.getElementById('feedback-input-' + slideIdx);
+  const status = document.getElementById('feedback-status-' + slideIdx);
+  if (!ta || !ta.value.trim()) return;
+  addFeedback(slideIdx, ta.value);
+  ta.value = '';
+  if (status) {
+    status.classList.add('show');
+    setTimeout(() => status.classList.remove('show'), 2000);
+  }
+}
+
+function toggleFeedback(slideIdx) {
+  const body = document.getElementById('feedback-body-' + slideIdx);
+  const chev = document.getElementById('feedback-chevron-' + slideIdx);
+  if (body) body.classList.toggle('open');
+  if (chev) chev.classList.toggle('open');
+}
+
+// Inject feedback UI into every slide
+document.querySelectorAll('.slide').forEach((slide, idx) => {
+  const section = document.createElement('div');
+  section.className = 'feedback-section';
+  section.innerHTML = `
+    <button class="feedback-toggle" onclick="toggleFeedback(${idx})">
+      <span class="chevron" id="feedback-chevron-${idx}">&#9654;</span>
+      <span>Leave feedback on this slide</span>
+      <span class="dot" id="feedback-dot-${idx}"></span>
+    </button>
+    <div class="feedback-body" id="feedback-body-${idx}">
+      <div class="feedback-saved-list" id="feedback-list-${idx}"></div>
+      <textarea class="feedback-textarea" id="feedback-input-${idx}" placeholder="Your thoughts on this slide..." onkeydown="if(event.key==='Enter'&&event.metaKey){submitFeedback(${idx});event.preventDefault();}"></textarea>
+      <div class="feedback-actions">
+        <button class="feedback-save" onclick="submitFeedback(${idx})">Save (&#8984;&#9166;)</button>
+        <span class="feedback-status" id="feedback-status-${idx}">Saved!</span>
+      </div>
+    </div>
+  `;
+  slide.appendChild(section);
+  renderFeedbackForSlide(idx);
+});
+
+// --- Load server feedback on startup ---
+(async function() {
+  try {
+    const resp = await fetch('/api/feedback');
+    const serverStore = await resp.json();
+    const localStore = loadFeedback();
+    let merged = false;
+    for (const key of Object.keys(serverStore)) {
+      if (!localStore[key]) { localStore[key] = serverStore[key]; merged = true; }
+      else {
+        const localTimestamps = new Set(localStore[key].map(e => e.timestamp));
+        for (const entry of serverStore[key]) {
+          if (!localTimestamps.has(entry.timestamp)) {
+            localStore[key].push(entry);
+            merged = true;
+          }
+        }
+      }
+    }
+    if (merged) {
+      localStorage.setItem(FEEDBACK_KEY, JSON.stringify(localStore));
+      document.querySelectorAll('.slide').forEach((_, idx) => renderFeedbackForSlide(idx));
+    }
+  } catch {}
+})();
+
+// --- Navigation ---
+function show(n) {
+  document.querySelectorAll('.slide').forEach((s, i) => {
+    s.classList.toggle('active', i === n);
+  });
+  document.getElementById('navCounter').textContent = (n + 1) + ' / ' + total;
+  document.getElementById('prevBtn').disabled = n === 0;
+  document.getElementById('nextBtn').disabled = n === total - 1;
+  current = n;
+}
+
+function next() { if (current < total - 1) show(current + 1); }
+function prev() { if (current > 0) show(current - 1); }
+function goTo(n) { show(n); }
+
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'TEXTAREA') return;
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+});
+</script>
+</body>
+</html>

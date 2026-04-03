@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌳 Open Eywa Factory Proposal</title>
+<style>
+:root {
+  --bg: #0b1115;
+  --card: #f4efe4;
+  --card-2: #fbf8f1;
+  --ink: #17212b;
+  --muted: #637082;
+  --line: #d7d1c6;
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+  --accent: #2f6f5e;
+  --accent-soft: #e7f2ed;
+  --steel: #496784;
+  --steel-soft: #e8f0f8;
+  --amber: #b56b1c;
+  --amber-soft: #fff0d9;
+  --brick: #a04d3f;
+  --brick-soft: #f8e6e3;
+  --olive: #6a7b31;
+  --olive-soft: #edf2d9;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  background:
+    radial-gradient(circle at top, rgba(100, 128, 160, 0.18), transparent 40%),
+    radial-gradient(circle at 85% 18%, rgba(178, 108, 28, 0.12), transparent 24%),
+    linear-gradient(180deg, #17212d 0%, #0b1115 68%);
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--ink);
+  padding: 28px 18px 84px;
+  display: flex;
+  justify-content: center;
+}
+
+.slide {
+  display: none;
+  width: min(1080px, calc(100vw - 36px));
+  min-height: calc(100vh - 112px);
+  background: linear-gradient(180deg, var(--card-2), var(--card));
+  border: 1px solid rgba(255, 255, 255, 0.52);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  padding: 34px 34px 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(23, 33, 43, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 33, 43, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(180deg, rgba(0,0,0,0.22), transparent 84%);
+  pointer-events: none;
+}
+
+.slide.active { display: block; }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+h1, h2, h3, p, ul, ol, div { position: relative; z-index: 1; }
+h1, h2 {
+  margin: 10px 0 0;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+h1 { font-size: clamp(42px, 5vw, 72px); max-width: 10ch; }
+h2 { font-size: clamp(30px, 3.6vw, 52px); max-width: 14ch; }
+.lede {
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 58ch;
+  margin: 14px 0 0;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.tower {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  margin-top: 8px;
+}
+
+.tower-card,
+.toc-card,
+.stage,
+.crate,
+.signal,
+.open-item {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(21, 29, 36, 0.08);
+}
+
+.tower-card {
+  padding: 16px 18px;
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+}
+.tower-name {
+  display: block;
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.tower-note {
+  display: block;
+  margin-top: 5px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.tower-eywa { border-left: 5px solid var(--steel); }
+.tower-bonsai { border-left: 5px solid var(--accent); }
+.tower-potter { border-left: 5px solid var(--amber); }
+
+.toc-grid,
+.signal-grid,
+.crate-grid,
+.open-grid {
+  display: grid;
+  gap: 12px;
+}
+.toc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 24px; }
+.signal-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 22px; }
+.crate-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 18px; }
+.open-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 20px; }
+
+.toc-card {
+  padding: 16px 16px 15px;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.toc-card:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+  background: #f8fbf9;
+}
+.toc-kicker,
+.card-kicker,
+.signal-kicker,
+.crate-kicker,
+.open-kicker {
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+.toc-title {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.toc-desc,
+.card-copy,
+.signal-copy,
+.crate-copy,
+.open-copy {
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.rails {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  margin-top: 24px;
+}
+.stage {
+  flex: 1;
+  padding: 18px 16px 16px;
+}
+.stage h3 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--ink);
+}
+.stage .small {
+  margin-top: 8px;
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.rail-arrow {
+  display: flex;
+  align-items: center;
+  color: var(--muted);
+  font-size: 24px;
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+.chip.steel { background: var(--steel-soft); color: var(--steel); }
+.chip.green { background: var(--accent-soft); color: var(--accent); }
+.chip.amber { background: var(--amber-soft); color: var(--amber); }
+.chip.olive { background: var(--olive-soft); color: var(--olive); }
+.chip.brick { background: var(--brick-soft); color: var(--brick); }
+
+.contract-strip {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.contract-box {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 14px 16px;
+}
+.contract-label {
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+.contract-value {
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.contract-note {
+  margin-top: 6px;
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.mute-line {
+  margin-top: 12px;
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.nav {
+  position: fixed;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(8, 12, 16, 0.88);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 10px 16px;
+  border-radius: 999px;
+  color: white;
+  box-shadow: 0 12px 34px rgba(0,0,0,0.35);
+}
+.nav button {
+  appearance: none;
+  border: 0;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+}
+.nav button:disabled { opacity: 0.35; cursor: default; }
+.nav-counter {
+  min-width: 60px;
+  text-align: center;
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: rgba(255,255,255,0.76);
+}
+
+/* Feedback */
+.feedback-section {
+  margin-top: 22px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(103, 111, 122, 0.35);
+}
+.feedback-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+.feedback-toggle:hover { color: var(--ink); }
+.feedback-toggle .chevron {
+  font-size: 10px;
+  transition: transform 0.2s ease;
+}
+.feedback-toggle .chevron.open { transform: rotate(90deg); }
+.feedback-toggle .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: none;
+}
+.feedback-toggle .dot.has-feedback { display: inline-block; }
+.feedback-body { display: none; margin-top: 10px; }
+.feedback-body.open { display: block; }
+.feedback-textarea {
+  width: 100%;
+  min-height: 72px;
+  resize: vertical;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.9);
+  color: var(--ink);
+  padding: 10px 12px;
+  font: inherit;
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  outline: none;
+}
+.feedback-textarea:focus { border-color: var(--accent); }
+.feedback-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+.feedback-save {
+  border: 0;
+  border-radius: 10px;
+  background: var(--accent);
+  color: white;
+  padding: 8px 14px;
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.feedback-save:hover { opacity: 0.92; }
+.feedback-saved-list { margin-top: 6px; }
+.feedback-entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(103, 111, 122, 0.14);
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+}
+.feedback-entry:last-child { border-bottom: 0; }
+.feedback-entry-time {
+  flex-shrink: 0;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.feedback-entry-text { color: var(--ink); line-height: 1.45; flex: 1; }
+.feedback-entry-delete {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+}
+.feedback-entry-delete:hover { color: var(--brick); }
+
+@media (max-width: 860px) {
+  body { padding: 12px 10px 84px; }
+  .slide {
+    width: calc(100vw - 20px);
+    min-height: calc(100vh - 100px);
+    padding: 24px 20px 22px;
+    border-radius: 22px;
+  }
+  .hero,
+  .toc-grid,
+  .signal-grid,
+  .crate-grid,
+  .open-grid,
+  .contract-strip {
+    grid-template-columns: 1fr;
+  }
+  .rails { flex-direction: column; }
+  .rail-arrow { justify-content: center; transform: rotate(90deg); }
+  .nav { bottom: 12px; }
+}
+</style>
+</head>
+<body>
+
+<div class="slide active">
+  <div class="hero">
+    <div>
+      <div class="eyebrow">🌳 Open Eywa factory proposal</div>
+      <h1>What system are we building?</h1>
+      <p class="lede">One chassis for execution, one loop for learning, and one gate that lets refactors through only when behavior stays identical.</p>
+    </div>
+    <div class="tower">
+      <div class="tower-card tower-eywa">
+        <span class="tower-name">Eywa</span>
+        <span class="tower-note">Runs tasks as identical node DNA with changing instructions and variables.</span>
+      </div>
+      <div class="tower-card tower-bonsai">
+        <span class="tower-name">Bonsai</span>
+        <span class="tower-note">Chooses the best variables from history and benchmarks.</span>
+      </div>
+      <div class="tower-card tower-potter">
+        <span class="tower-name">Potter</span>
+        <span class="tower-note">Refactors the code only after dry-run equivalence passes.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="toc-grid" aria-label="Table of contents">
+    <div class="toc-card" onclick="goTo(1)">
+      <div class="toc-kicker">1. TL;DR</div>
+      <div class="toc-title">What is the short answer?</div>
+      <div class="toc-desc">One line on the machine, the optimizer, and the refactor gate.</div>
+    </div>
+    <div class="toc-card" onclick="goTo(2)">
+      <div class="toc-kicker">2. Eywa</div>
+      <div class="toc-title">What is Eywa?</div>
+      <div class="toc-desc">A root node that can split, plan, delegate, or solve.</div>
+    </div>
+    <div class="toc-card" onclick="goTo(3)">
+      <div class="toc-kicker">3. Bonsai</div>
+      <div class="toc-title">How does Bonsai choose variables?</div>
+      <div class="toc-desc">A learning loop built from run history, task tags, and benchmark cases.</div>
+    </div>
+    <div class="toc-card" onclick="goTo(4)">
+      <div class="toc-kicker">4. Potter</div>
+      <div class="toc-title">How does Potter refactor safely?</div>
+      <div class="toc-desc">Worktrees, dry runs, and a strict equivalence gate.</div>
+    </div>
+  </div>
+
+  <div class="feedback-section"></div>
+</div>
+
+<div class="slide">
+  <div class="eyebrow">1. TL;DR</div>
+  <h2>What is the short answer?</h2>
+  <div class="signal-grid">
+    <div class="signal">
+      <div class="signal-kicker">Eywa</div>
+      <div class="signal-copy">Run the task as a tree of identical nodes.</div>
+    </div>
+    <div class="signal">
+      <div class="signal-kicker">Bonsai</div>
+      <div class="signal-copy">Learn which variables fit which tasks.</div>
+    </div>
+    <div class="signal">
+      <div class="signal-kicker">Potter</div>
+      <div class="signal-copy">Change code only when dry runs stay the same.</div>
+    </div>
+  </div>
+  <div class="rails">
+    <div class="stage">
+      <h3>Task intake</h3>
+      <div class="small">Normalize the task and attach a small task fingerprint.</div>
+    </div>
+    <div class="rail-arrow">→</div>
+    <div class="stage">
+      <h3>Run and learn</h3>
+      <div class="small">Collect run records, scores, and variable choices.</div>
+    </div>
+    <div class="rail-arrow">→</div>
+    <div class="stage">
+      <h3>Refactor safely</h3>
+      <div class="small">Accept code changes only through the dry-run gate.</div>
+    </div>
+  </div>
+  <div class="feedback-section"></div>
+</div>
+
+<div class="slide">
+  <div class="eyebrow">2. Eywa</div>
+  <h2>What is Eywa?</h2>
+  <div class="rails">
+    <div class="stage">
+      <h3>Task hopper</h3>
+      <div class="small">One task enters. The root node decides the first move.</div>
+    </div>
+    <div class="rail-arrow">→</div>
+    <div class="stage">
+      <h3>Same chassis</h3>
+      <div class="small">Every node shares the same DNA. Only instructions and variables change.</div>
+    </div>
+    <div class="rail-arrow">→</div>
+    <div class="stage">
+      <h3>Assembly choices</h3>
+      <div class="small">Solve, plan, delegate, or split into child nodes.</div>
+    </div>
+    <div class="rail-arrow">→</div>
+    <div class="stage">
+      <h3>Run bin</h3>
+      <div class="small">Every node writes a full record back to the factory floor.</div>
+    </div>
+  </div>
+  <div class="contract-strip">
+    <div class="contract-box">
+      <div class="contract-label">Stable part</div>
+      <div class="contract-value">Node DNA</div>
+      <div class="contract-note">Prompt chassis, tool policy, logging, and child creation rules.</div>
+    </div>
+    <div class="contract-box">
+      <div class="contract-label">Variable part</div>
+      <div class="contract-value">Instructions</div>
+      <div class="contract-note">Goal framing and extra context supplied to the node.</div>
+    </div>
+    <div class="contract-box">
+      <div class="contract-label">Variable part</div>
+      <div class="contract-value">Parameters</div>
+      <div class="contract-note">The knobs Bonsai learns to tune over time.</div>
+    </div>
+  </div>
+  <div class="feedback-section"></div>
+</div>
+
+<div class="slide">
+  <div class="eyebrow">3. Bonsai</div>
+  <h2>How does Bonsai choose variables?</h2>
+  <div class="rails">
+    <div class="stage">
+      <h3>Run history</h3>
+      <div class="small">Scores, time, token use, cost, fanout, and task tags.</div>
+    </div>
+    <div class="rail-arrow">→</div>
+    <div class="stage">
+      <h3>Match similar jobs</h3>
+      <div class="small">Use the task fingerprint to find past runs that look alike.</div>
+    </div>
+    <div class="rail-arrow">→</div>
+    <div class="stage">
+      <h3>Pick variables</h3>
+      <div class="small">Choose the next variable set from averages, heuristics, or learned selection.</div>
+    </div>
+    <div class="rail-arrow">→</div>
+    <div class="stage">
+      <h3>Retest</h3>
+      <div class="small">Run again and compare the score against the benchmark yard.</div>
+    </div>
+  </div>
+  <div class="chips" aria-label="Task tags">
+    <span class="chip steel">domain</span>
+    <span class="chip green">task_shape</span>
+    <span class="chip amber">verification_mode</span>
+    <span class="chip olive">ambiguity_level</span>
+    <span class="chip brick">decomposition_need</span>
+  </div>
+  <div class="mute-line">The optimizer only works if every run is labeled well enough to find the right lookalike later.</div>
+  <div class="feedback-section"></div>
+</div>
+
+<div class="slide">
+  <div class="eyebrow">4. Potter</div>
+  <h2>How does Potter refactor safely?</h2>
+  <div class="rails">
+    <div class="stage">
+      <h3>Branch worktree</h3>
+      <div class="small">Copy the code into a separate sandbox before changing anything.</div>
+    </div>
+    <div class="rail-arrow">→</div>
+    <div class="stage">
+      <h3>Rewrite the gears</h3>
+      <div class="small">Make the code simpler, smaller, and more modular.</div>
+    </div>
+    <div class="rail-arrow">→</div>
+    <div class="stage">
+      <h3>Dry run</h3>
+      <div class="small">No model call should change the observable tree or artifact outputs.</div>
+    </div>
+    <div class="rail-arrow">→</div>
+    <div class="stage">
+      <h3>Equivalence gate</h3>
+      <div class="small">If the dry-run result changes, reject the refactor.</div>
+    </div>
+  </div>
+  <div class="contract-strip">
+    <div class="contract-box">
+      <div class="contract-label">Allowed change</div>
+      <div class="contract-value">Structure</div>
+      <div class="contract-note">Improve the code path without changing system behavior.</div>
+    </div>
+    <div class="contract-box">
+      <div class="contract-label">Forbidden change</div>
+      <div class="contract-value">Outputs</div>
+      <div class="contract-note">Dry-run and benchmark-visible behavior must stay identical.</div>
+    </div>
+    <div class="contract-box">
+      <div class="contract-label">Side score</div>
+      <div class="contract-value">Quality</div>
+      <div class="contract-note">Clarity, flexibility, and robustness are judged after equivalence.</div>
+    </div>
+  </div>
+  <div class="feedback-section"></div>
+</div>
+
+<div class="slide">
+  <div class="eyebrow">5. Contracts</div>
+  <h2>What data must every run record?</h2>
+  <div class="crate-grid">
+    <div class="crate">
+      <div class="crate-kicker">TaskSpec</div>
+      <div class="toc-title" style="margin-top:8px;font-size:20px">Task in one place</div>
+      <div class="crate-copy">Raw task, normalized task, tags, constraints, and provenance.</div>
+    </div>
+    <div class="crate">
+      <div class="crate-kicker">NodeSpec</div>
+      <div class="toc-title" style="margin-top:8px;font-size:20px">Node in one shape</div>
+      <div class="crate-copy">Parent link, depth, instructions, variables, and handoff mode.</div>
+    </div>
+    <div class="crate">
+      <div class="crate-kicker">RunRecord</div>
+      <div class="toc-title" style="margin-top:8px;font-size:20px">Run in one log</div>
+      <div class="crate-copy">Prompt ref, model, tools, output, score, time, tokens, and cost.</div>
+    </div>
+    <div class="crate">
+      <div class="crate-kicker">BenchmarkCase</div>
+      <div class="toc-title" style="margin-top:8px;font-size:20px">Case in one yard</div>
+      <div class="crate-copy">Gold output, scoring rule, validation mode, and stability flag.</div>
+    </div>
+  </div>
+  <div class="contract-strip">
+    <div class="contract-box" style="grid-column:1 / -1">
+      <div class="contract-label">DryRunCase</div>
+      <div class="contract-value">Equivalence proof</div>
+      <div class="contract-note">Expected control flow, artifact hash, and score. This is what keeps Potter honest.</div>
+    </div>
+  </div>
+  <div class="feedback-section"></div>
+</div>
+
+<div class="slide">
+  <div class="eyebrow">6. Open questions</div>
+  <h2>What still needs a decision?</h2>
+  <div class="open-grid">
+    <div class="open-item">
+      <div class="open-kicker">Tag set</div>
+      <div class="toc-title" style="margin-top:8px;font-size:18px">Which five tags are canonical?</div>
+      <div class="open-copy">The system needs a stable task fingerprint before learning can work well.</div>
+    </div>
+    <div class="open-item">
+      <div class="open-kicker">Equivalence</div>
+      <div class="toc-title" style="margin-top:8px;font-size:18px">What counts as the same?</div>
+      <div class="open-copy">Dry-run proof may need structural checks, artifact hashes, or both.</div>
+    </div>
+    <div class="open-item">
+      <div class="open-kicker">Promotion</div>
+      <div class="toc-title" style="margin-top:8px;font-size:18px">When does a run become a benchmark?</div>
+      <div class="open-copy">The benchmark yard should stay clean, stable, and easy to score.</div>
+    </div>
+  </div>
+  <div class="mute-line">If these three decisions are tight, the rest of the factory can stay simple.</div>
+  <div class="feedback-section"></div>
+</div>
+
+<div class="nav">
+  <button id="prevBtn" onclick="prev()" aria-label="Previous slide">←</button>
+  <div class="nav-counter" id="navCounter">1 / 7</div>
+  <button id="nextBtn" onclick="next()" aria-label="Next slide">→</button>
+</div>
+
+<script>
+const slides = Array.from(document.querySelectorAll('.slide'));
+const FEEDBACK_KEY = 'proposal-02-factory-feedback';
+const FEEDBACK_API = '/api/feedback';
+let current = 0;
+
+function slideTitle(idx) {
+  const title = slides[idx].querySelector('h1, h2');
+  return title ? title.textContent.trim() : `Slide ${idx + 1}`;
+}
+
+function loadStore() {
+  try {
+    return JSON.parse(localStorage.getItem(FEEDBACK_KEY) || '{}');
+  } catch {
+    return {};
+  }
+}
+
+function persistStore(store) {
+  localStorage.setItem(FEEDBACK_KEY, JSON.stringify(store));
+  fetch(FEEDBACK_API, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(store)
+  }).catch(() => {});
+}
+
+function escapeHtml(value) {
+  const node = document.createElement('div');
+  node.textContent = value;
+  return node.innerHTML;
+}
+
+function renderFeedback(idx) {
+  const store = loadStore();
+  const key = `slide-${idx}`;
+  const entries = store[key] || [];
+  const list = document.getElementById(`feedback-list-${idx}`);
+  const dot = document.getElementById(`feedback-dot-${idx}`);
+  if (dot) dot.classList.toggle('has-feedback', entries.length > 0);
+  if (!list) return;
+
+  if (entries.length === 0) {
+    list.innerHTML = '';
+    return;
+  }
+
+  list.innerHTML = entries.map((entry, entryIdx) => `
+    <div class="feedback-entry">
+      <span class="feedback-entry-time">${new Date(entry.timestamp).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
+      <span class="feedback-entry-text">${escapeHtml(entry.text)}</span>
+      <button class="feedback-entry-delete" onclick="deleteFeedback(${idx}, ${entryIdx})" aria-label="Delete feedback">×</button>
+    </div>
+  `).join('');
+}
+
+function saveFeedback(idx) {
+  const input = document.getElementById(`feedback-input-${idx}`);
+  const text = input ? input.value.trim() : '';
+  if (!text) return;
+
+  const store = loadStore();
+  const key = `slide-${idx}`;
+  if (!store[key]) store[key] = [];
+  store[key].push({
+    text,
+    timestamp: new Date().toISOString(),
+    slideTitle: slideTitle(idx)
+  });
+  persistStore(store);
+  if (input) input.value = '';
+  renderFeedback(idx);
+}
+
+function deleteFeedback(idx, entryIdx) {
+  const store = loadStore();
+  const key = `slide-${idx}`;
+  if (!store[key] || store[key][entryIdx] === undefined) return;
+  store[key].splice(entryIdx, 1);
+  if (store[key].length === 0) delete store[key];
+  persistStore(store);
+  renderFeedback(idx);
+}
+
+function toggleFeedback(idx) {
+  const body = document.getElementById(`feedback-body-${idx}`);
+  const chevron = document.getElementById(`feedback-chevron-${idx}`);
+  if (body) body.classList.toggle('open');
+  if (chevron) chevron.classList.toggle('open');
+}
+
+function injectFeedback() {
+  slides.forEach((slide, idx) => {
+    const section = slide.querySelector('.feedback-section');
+    if (!section) return;
+    section.innerHTML = `
+      <button class="feedback-toggle" onclick="toggleFeedback(${idx})">
+        <span class="chevron" id="feedback-chevron-${idx}">▶</span>
+        <span>Leave feedback on this slide</span>
+        <span class="dot" id="feedback-dot-${idx}"></span>
+      </button>
+      <div class="feedback-body" id="feedback-body-${idx}">
+        <div class="feedback-saved-list" id="feedback-list-${idx}"></div>
+        <textarea
+          class="feedback-textarea"
+          id="feedback-input-${idx}"
+          placeholder="Leave a note on this slide"
+          onkeydown="if ((event.metaKey || event.ctrlKey) && event.key === 'Enter') { saveFeedback(${idx}); event.preventDefault(); }"
+        ></textarea>
+        <div class="feedback-actions">
+          <button class="feedback-save" onclick="saveFeedback(${idx})">Save</button>
+        </div>
+      </div>
+    `;
+    renderFeedback(idx);
+  });
+}
+
+async function mergeServerFeedback() {
+  try {
+    const response = await fetch(FEEDBACK_API);
+    if (!response.ok) return;
+    const serverStore = await response.json();
+    if (!serverStore || typeof serverStore !== 'object') return;
+
+    const localStore = loadStore();
+    let changed = false;
+    for (const key of Object.keys(serverStore)) {
+      if (!localStore[key]) {
+        localStore[key] = serverStore[key];
+        changed = true;
+        continue;
+      }
+      const seen = new Set(localStore[key].map((entry) => entry.timestamp));
+      for (const entry of serverStore[key]) {
+        if (!seen.has(entry.timestamp)) {
+          localStore[key].push(entry);
+          changed = true;
+        }
+      }
+    }
+    if (changed) {
+      localStorage.setItem(FEEDBACK_KEY, JSON.stringify(localStore));
+      slides.forEach((_, idx) => renderFeedback(idx));
+    }
+  } catch {
+    // no server or offline
+  }
+}
+
+function show(idx) {
+  slides.forEach((slide, slideIdx) => {
+    slide.classList.toggle('active', slideIdx === idx);
+  });
+  current = idx;
+  document.getElementById('navCounter').textContent = `${idx + 1} / ${slides.length}`;
+  document.getElementById('prevBtn').disabled = idx === 0;
+  document.getElementById('nextBtn').disabled = idx === slides.length - 1;
+}
+
+function next() {
+  if (current < slides.length - 1) show(current + 1);
+}
+
+function prev() {
+  if (current > 0) show(current - 1);
+}
+
+function goTo(idx) {
+  show(idx);
+}
+
+document.addEventListener('keydown', (event) => {
+  if (event.target && event.target.tagName === 'TEXTAREA') return;
+  if (event.key === 'ArrowRight' || event.key === ' ') {
+    event.preventDefault();
+    next();
+  }
+  if (event.key === 'ArrowLeft') {
+    event.preventDefault();
+    prev();
+  }
+});
+
+injectFeedback();
+mergeServerFeedback();
+show(0);
+</script>
+</body>
+</html>

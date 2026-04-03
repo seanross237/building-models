@@ -1,5 +1,8 @@
 # Agent Triggers
 
+Default to responding in 4 sentences or less unless the situation really calls for more.
+Important: Always be building toward a target-state doc. If what you're building doesn't have a target-state doc guiding it, ask Sean (the user) about this before proceeding.
+
 For Open-Eywa architectural values, trust boundary, and change discipline, follow:
 
 `/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/open-eywa/BUILDING-PRINCIPLES.md`
