@@ -31,3 +31,10 @@ Full item files belong in `items/`.
   source: https://www.youtube.com/watch?v=4w_BB3jeiNs
   summary file: `items/youtube--4w_BB3jeiNs.md`
   presentation candidate: `false`
+
+## 2026-04-04 — youtube score 6
+
+- **Lewes: The Small Town with a HUGE History - 1 Hour Train Ride from London!**
+  source: https://www.youtube.com/watch?v=0byMJ5qyvuA
+  summary file: `items/youtube--0byMJ5qyvuA.md`
+  presentation candidate: `false`
