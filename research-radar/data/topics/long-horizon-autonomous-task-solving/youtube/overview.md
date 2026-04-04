@@ -45,3 +45,33 @@ Full item files belong in `items/`.
 - **[Recorded Live] France's Station F and the UK's Advanced Research and Invention Agency** — Where Innovation Happens with Tim Rowe (46:08, 24 views)
   https://www.youtube.com/watch?v=K6ePoaI9g4U
   item: `items/K6ePoaI9g4U.md`
+
+## 2026-04-04 — 9 new videos
+
+- **🔮 Ancient China Deep Sleep | The Master of Six Stratagems: Chen Ping’s Silent War** — Sleepless Orient (2:23:16, 3 views)
+  https://www.youtube.com/watch?v=Acr8lr5UENw
+  item: `items/Acr8lr5UENw.md`
+- **Session 29: Robot 03 Just Confirmed What Everyone's Afraid Of!** — Mind Blast Mechanics (9:08, 1 views)
+  https://www.youtube.com/watch?v=Gfn0xTT_7gI
+  item: `items/Gfn0xTT_7gI.md`
+- **The Secrets of Renaissance Paintings (3 Hours) — Night at the Museum | For Focus & Deep Work** — The Quiet Curator | GloAetas (3:11:24, 15 views)
+  https://www.youtube.com/watch?v=AXqs8z6dc98
+  item: `items/AXqs8z6dc98.md`
+- **Prelude to April, Explosion on August 19? Psychics Point to Taiwan Waters: War Clouds...** — HIBY新聞 (1:57:45, 3.1K views)
+  https://www.youtube.com/watch?v=8Uom9Z7sPlY
+  item: `items/8Uom9Z7sPlY.md`
+- **AI & Coding: Interview with Vahrun K. Mohran of Google DeepMind** — MIT Schwarzman College of Computing (44:58, 16 views)
+  https://www.youtube.com/watch?v=NvHz_esnSJc
+  item: `items/NvHz_esnSJc.md`
+- **🔥Boy Accidentally Unlocks a Spiritual Farm Space, Where All Plants He Grows Mature at 100x Speed!** — Bella's Comic Chronicles (27:03:05, 1.4K views)
+  https://www.youtube.com/watch?v=4VJ0KC_FASc
+  item: `items/4VJ0KC_FASc.md`
+- **AI Agents, Firm Transformation & the Future of Accounting | The RightNOW Podcast** — Rightworks (39:31, 6 views)
+  https://www.youtube.com/watch?v=Bm1mojVB_NQ
+  item: `items/Bm1mojVB_NQ.md`
+- **Dune's Greatest Tragedy: Duncan Idaho's Untold Suffering | Sleep Story** — MARS (45:31, 528 views)
+  https://www.youtube.com/watch?v=tICIwtPWUl4
+  item: `items/tICIwtPWUl4.md`
+- **512,000 Lines Leaked: Did Anthropic Just Break the Internet?** — The Pairing Mode (39:30, 8 views)
+  https://www.youtube.com/watch?v=X4PW8ufihJk
+  item: `items/X4PW8ufihJk.md`

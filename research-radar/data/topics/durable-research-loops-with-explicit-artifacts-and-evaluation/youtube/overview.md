@@ -18,3 +18,9 @@ Full item files belong in `items/`.
 - **Beyond the Page: Virginia Woolf on Money, Space & Intellectual Freedom for Women** — AI Eternal Chapters (49:28, new)
   https://www.youtube.com/watch?v=HeiSkfwSqko
   item: `items/HeiSkfwSqko.md`
+
+## 2026-04-04 — 1 new videos
+
+- **🔥Boy Accidentally Unlocks a Spiritual Farm Space, Where All Plants He Grows Mature at 100x Speed!** — Bella's Comic Chronicles (27:03:05, 1.4K views)
+  https://www.youtube.com/watch?v=4VJ0KC_FASc
+  item: `items/4VJ0KC_FASc.md`

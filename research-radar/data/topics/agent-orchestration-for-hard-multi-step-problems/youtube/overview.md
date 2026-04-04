@@ -27,3 +27,18 @@ Full item files belong in `items/`.
 - **Disadvantaged Communities Advisory Group Meeting; January 19, 2024** — CalEnergyCommission (2:38:10, 49 views)
   https://www.youtube.com/watch?v=3e29EuHLUiw
   item: `items/3e29EuHLUiw.md`
+
+## 2026-04-04 — 4 new videos
+
+- **The State of Open Source AI | NVIDIA GTC** — NVIDIA Developer (36:11, 733 views)
+  https://www.youtube.com/watch?v=NM6T0tV5na4
+  item: `items/NM6T0tV5na4.md`
+- **Past the Pilot E2- Workstreams** — Vertesia (32:25, 8 views)
+  https://www.youtube.com/watch?v=Dps3ZVkNbGI
+  item: `items/Dps3ZVkNbGI.md`
+- **From Distributed Systems to AI Infrastructure - LLMs and RAG - How System Design Changed Forever** — Think Software (7:12, 81 views)
+  https://www.youtube.com/watch?v=9YFNOzBVu3U
+  item: `items/9YFNOzBVu3U.md`
+- **AI in Education: Panel Discussion: How Does AI Affect How We Learn?** — MIT Schwarzman College of Computing (1:13:22, 8 views)
+  https://www.youtube.com/watch?v=WvuCgpRU7EA
+  item: `items/WvuCgpRU7EA.md`

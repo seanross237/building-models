@@ -96,3 +96,96 @@ Full item files belong in `items/`.
 - **Stop Using AI Like Everyone Else — Use This Top 1% Framework** — KodeNerds - AI, Mobile & Web Development Services (4:35, new)
   https://www.youtube.com/watch?v=kV_rHiaF8fM
   item: `items/kV_rHiaF8fM.md`
+
+## 2026-04-04 — 30 new videos
+
+- **Dear Anycubic: Do Better. *An Open Letter from DougDoesStuff*** — Doug Does Stuff! (7:01, 518 views)
+  https://www.youtube.com/watch?v=R2dHNEuJ97k
+  item: `items/R2dHNEuJ97k.md`
+- **Mastering CSV Data Integration in Playwright | Data Driven Framework** — MasterQAAutomation (4:43, 11 views)
+  https://www.youtube.com/watch?v=obMEqsaI_Ek
+  item: `items/obMEqsaI_Ek.md`
+- **Inside Iran's Dongfeng-41 ICBM Plant: Smart Lines Building Cheap 15,000km Doom (Full Process)** — ForgeLine Authority (25:24, 44.0K views)
+  https://www.youtube.com/watch?v=oXYIqrnGcB0
+  item: `items/oXYIqrnGcB0.md`
+- **The State of Open Source AI | NVIDIA GTC** — NVIDIA Developer (36:11, 733 views)
+  https://www.youtube.com/watch?v=NM6T0tV5na4
+  item: `items/NM6T0tV5na4.md`
+- **The materials that make fusion possible** — Helion (15:16, 8.5K views)
+  https://www.youtube.com/watch?v=jgHB0NLfj4c
+  item: `items/jgHB0NLfj4c.md`
+- **Gemma 4 Multimodal Local AI - Can it Recreate My App? 🧐** — xCreate (21:31, 4.5K views)
+  https://www.youtube.com/watch?v=S0oxWHGtg2w
+  item: `items/S0oxWHGtg2w.md`
+- **Building Our Dream Camper Van From Scratch [EP1]** — Out With A Finn (45:35, 1.6K views)
+  https://www.youtube.com/watch?v=E_7IenfzuVo
+  item: `items/E_7IenfzuVo.md`
+- **Something That Shouldn't Exist Just BROKE Iran's Strikes In Hormuz** — The Geo Network (18:29, 149.7K views)
+  https://www.youtube.com/watch?v=CKkWTZ3CV8I
+  item: `items/CKkWTZ3CV8I.md`
+- **The AI Takeover of Healthcare & Finance: The Structural Convergence of 2026** — Ledger ShiftAI and Martin Waring (4:02, 7 views)
+  https://www.youtube.com/watch?v=YyO7sUHqNeY
+  item: `items/YyO7sUHqNeY.md`
+- **Cursor 3: I Made 3 AIs Compete... One Survived!** — Creator Magic (15:28, 5.8K views)
+  https://www.youtube.com/watch?v=qjV2IW5Fre8
+  item: `items/qjV2IW5Fre8.md`
+- **Building a Digital Economy: Uzbekistan's Growth Strategy** — Huawei (6:38, 96.9K views)
+  https://www.youtube.com/watch?v=r1_0W4SbLSs
+  item: `items/r1_0W4SbLSs.md`
+- **How to USE Claude Code for FREE with Ollama ( Local AI FULL Tutorial)** — Ksk Royal (14:06, 4.3K views)
+  https://www.youtube.com/watch?v=-V8fWL3oXTQ
+  item: `items/-V8fWL3oXTQ.md`
+- **I Tested NVIDIA's Self Driving Car... Is Tesla In Trouble?** — Ticker Symbol: YOU (59:34, 18.9K views)
+  https://www.youtube.com/watch?v=MSmSA8uTn8Y
+  item: `items/MSmSA8uTn8Y.md`
+- **Qwen3.5 Omni Is INSANE – Multimodal Vibe Coding & Voice Chat!** — Bijan Bowen (33:11, 10.7K views)
+  https://www.youtube.com/watch?v=5oTuuT0PGUk
+  item: `items/5oTuuT0PGUk.md`
+- **Anthropic Accidentally Made Themselves Open Source And It's A Disaster** — Tom Bilyeu Clips and Tom Bilyeu (6:59, 5.8K views)
+  https://www.youtube.com/watch?v=KQJpwvUKY8M
+  item: `items/KQJpwvUKY8M.md`
+- **AI Transforms DevSecOps: The Skills Every Engineer Needs Now** — INFOSEC TRAIN (17:57, 51 views)
+  https://www.youtube.com/watch?v=7Wc7tPEzuPQ
+  item: `items/7Wc7tPEzuPQ.md`
+- **Exploring U-576: Inside the Final Seconds of a Doomed U-Boat** — Classified Wreckage (19:02, 1.1K views)
+  https://www.youtube.com/watch?v=TnwrJyBFDE8
+  item: `items/TnwrJyBFDE8.md`
+- **Stop Copy-Pasting Prompts: I Built 5 Claude Skills That Run Automatically** — Vivek Mishra (2:20:03, 2.5K views)
+  https://www.youtube.com/watch?v=TJWeXsRRpRA
+  item: `items/TJWeXsRRpRA.md`
+- **Hollywood Is Upset About Quilty. But Is Any of This Actually New?** — Joey /// VP Land (39:31, 185 views)
+  https://www.youtube.com/watch?v=50hSnV62nYk
+  item: `items/50hSnV62nYk.md`
+- **How to Stop Writing "AI Slop" | Agentic Engineering for Developers** — Zainul Zain (Jai) (15:16, 20 views)
+  https://www.youtube.com/watch?v=erQc3jXJljQ
+  item: `items/erQc3jXJljQ.md`
+- **This Plugin Replaced My Entire Coding Workflow (Superpowers)** — GritAI Studio (19:00, 1.4K views)
+  https://www.youtube.com/watch?v=yEzzBxhkUw4
+  item: `items/yEzzBxhkUw4.md`
+- **Gerhardt Konig Cross Examination (Part 6)** — Brittany Simon (3:39:11, 457 views)
+  https://www.youtube.com/watch?v=oeMRiaVDCQo
+  item: `items/oeMRiaVDCQo.md`
+- **AI-Driven Code Generation for Dynamics 365 Finance & Operations (X++)** — Synoptek (2:17, 3 views)
+  https://www.youtube.com/watch?v=nWlPLhuPSI4
+  item: `items/nWlPLhuPSI4.md`
+- **AIM Presents MLDS 2026 – India’s Data & AI Builders Under One Roof** — AIM Network and AIM Originals (1:14, 472 views)
+  https://www.youtube.com/watch?v=SnY18WaOUQc
+  item: `items/SnY18WaOUQc.md`
+- **[ENG SUB]✨A Dystopian World, A Hidden AI Secret, And The Man Who Was Never Just A Machine#drama** — Twilight Drama Dreams💫 (2:47:04, 651 views)
+  https://www.youtube.com/watch?v=zq5kMwpOAU4
+  item: `items/zq5kMwpOAU4.md`
+- **💊 $60 Billion AI Drug Discovery — Why ZERO FDA Approvals? #podcast   #viral #viralvideo #trending** — Dr Amaravadhi H (23:26, 4 views)
+  https://www.youtube.com/watch?v=Zp450CjpDaQ
+  item: `items/Zp450CjpDaQ.md`
+- **WiDS Cambridge 2026 Keynote** — MIT Institute for Data, Systems, and Society (29:37, 10 views)
+  https://www.youtube.com/watch?v=DdASg7AY7UU
+  item: `items/DdASg7AY7UU.md`
+- **[Let's Singulate!] Welcome to the Singularity Party! (Filming & Editing: Hiroaki Maki)** — 宇宙スタジオ (2:46, 382 views)
+  https://www.youtube.com/watch?v=YLJcWSVtl1A
+  item: `items/YLJcWSVtl1A.md`
+- **Episode 19: You Can’t Trust What You See Anymore (AI Deepfakes Are Here)** — Anthony and Greg (31:50, 2 views)
+  https://www.youtube.com/watch?v=T8GS9x1siro
+  item: `items/T8GS9x1siro.md`
+- **他是被判定銷毀的殘次品，她是唯一肯帶走他的天才工程師，機器人嚴禁不能越界，但見到她的第一眼，只想和她永遠在一起，他不懂人類的愛情，卻學會了在她哭的時候，笨拙地擦掉她的眼淚#杨鹏丞#邓灵枢** — 追劇鴨 (2:47:33, 42.8K views)
+  https://www.youtube.com/watch?v=_xYcwYsB1d4
+  item: `items/_xYcwYsB1d4.md`

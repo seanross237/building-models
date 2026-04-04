@@ -96,3 +96,96 @@ Full item files belong in `items/`.
 - **How Many Algorand ($ALGO) Do You Need to Retire a MILLIONAIRE?** — AirdropsDotCom (10:48, 174 views)
   https://www.youtube.com/watch?v=GtYsvg_isaE
   item: `items/GtYsvg_isaE.md`
+
+## 2026-04-04 — 30 new videos
+
+- **Germany | Can you solve this? | Math Olympiad** — Master D Maths TV (8:45, 312 views)
+  https://www.youtube.com/watch?v=YW8RHOMKPFs
+  item: `items/YW8RHOMKPFs.md`
+- **Germany | Math Olympiad question  | can you solve this system of equations without this trick! | x=?** — Mathematics & Statistics Guru (12:52, 139 views)
+  https://www.youtube.com/watch?v=zPh3JAkjIGc
+  item: `items/zPh3JAkjIGc.md`
+- **A Nice Algebra Problem | Math Olympiad x=?** — SALogic (10:13, 844 views)
+  https://www.youtube.com/watch?v=9BjazMLzdVU
+  item: `items/9BjazMLzdVU.md`
+- **Can You Solve This in 60 Seconds? | Math Olympiad** — Master D Maths TV (6:13, 134 views)
+  https://www.youtube.com/watch?v=eKDRNmxVjuA
+  item: `items/eKDRNmxVjuA.md`
+- **Can You Solve This in 60 Seconds? | Math Olympiad** — Master T Maths Class (8:34, 1.4K views)
+  https://www.youtube.com/watch?v=v8WZDQa60Xo
+  item: `items/v8WZDQa60Xo.md`
+- **Ukraine | Can You Solve This? | Olympiad Math** — HkLogics (4:32, 17 views)
+  https://www.youtube.com/watch?v=8UzNY6wF5cQ
+  item: `items/8UzNY6wF5cQ.md`
+- **Ants vs. Hormones: Solving the World's Hardest Factory Logic 🐜💉** — AI Researcher (8:25, new)
+  https://www.youtube.com/watch?v=-QrfmTyT_x8
+  item: `items/-QrfmTyT_x8.md`
+- **Solving a 'Harvard' University Entrance Question | Math Olympiad** — HkLogics (7:21, 25 views)
+  https://www.youtube.com/watch?v=WKM3GqdxaU8
+  item: `items/WKM3GqdxaU8.md`
+- **A  awesome algebra mathematics problem | Olympiad Question | rational problem | x=?** — Mathematics & Statistics Guru (12:53, 305 views)
+  https://www.youtube.com/watch?v=nThueVNjrr8
+  item: `items/nThueVNjrr8.md`
+- **Claude Code Just Cracked Kalshi** — Moon Dev (10:59, 1.6K views)
+  https://www.youtube.com/watch?v=Q8Pf1Ppe1-8
+  item: `items/Q8Pf1Ppe1-8.md`
+- **Can You Solve This Math Olympiad Problem in 60 Seconds?** — Rashi Goel - A Certified Math Tutor (3:38, 4 views)
+  https://www.youtube.com/watch?v=7NdKBnymqZg
+  item: `items/7NdKBnymqZg.md`
+- **EP193 | Impak Perang Iran kepada Malaysia, Nex G & Mr. R, Isu BYD, Pemandu Mabuk** — Keluar Sekejap (1:22:53, 28.2K views)
+  https://www.youtube.com/watch?v=9lXwnA1ffvo
+  item: `items/9lXwnA1ffvo.md`
+- **You’re Not a Developer. You’re a Factory Worker.** — The Serious CTO (5:23, 3.2K views)
+  https://www.youtube.com/watch?v=hA4ushsIHrg
+  item: `items/hA4ushsIHrg.md`
+- **Claude Skills Masterclass: From Zero to Full Automation Pipeline** — Vivek Mishra (2:20:03, 2.5K views)
+  https://www.youtube.com/watch?v=TJWeXsRRpRA
+  item: `items/TJWeXsRRpRA.md`
+- **AI in Education: Panel Discussion: How Does AI Affect How We Learn?** — MIT Schwarzman College of Computing (1:13:22, 8 views)
+  https://www.youtube.com/watch?v=WvuCgpRU7EA
+  item: `items/WvuCgpRU7EA.md`
+- **I’ve conquered polymarket trading bots** — Moon Dev (49, 342 views)
+  https://www.youtube.com/watch?v=nFMWuwDkreU
+  item: `items/nFMWuwDkreU.md`
+- **AI & Coding: Panel Discussion** — MIT Schwarzman College of Computing (45:23, 11 views)
+  https://www.youtube.com/watch?v=WELNCTCXeTE
+  item: `items/WELNCTCXeTE.md`
+- **Is This GTA Online's Most Poorly Designed Update? - 100% Career Progress #7** — DarkViperAU (1:30:45, 27.0K views)
+  https://www.youtube.com/watch?v=15MALZ_OZ9c
+  item: `items/15MALZ_OZ9c.md`
+- **Marius Hobbhahn - Science of Scheming [Alignment Workshop]** — FAR․AI (10:05, 98 views)
+  https://www.youtube.com/watch?v=mqaig6ARtCo
+  item: `items/mqaig6ARtCo.md`
+- **Are you actually intermediate level in Japanese? (N3 Japanese 1500 Words in 15 Minutes)** — Lingofeye (15:44, 513 views)
+  https://www.youtube.com/watch?v=OjN5gWDCNZw
+  item: `items/OjN5gWDCNZw.md`
+- **冷酷毒舌のCEO上司が私を密かに好き。逃げると追いかけ、壁際に追い詰めてキスする。** — 恋愛短編ドラマ (3:06:20, 17.2K views)
+  https://www.youtube.com/watch?v=Mw2U9l7uUkM
+  item: `items/Mw2U9l7uUkM.md`
+- **AI & Coding: Automation from the Programmer’s Apprentice to Modern Coding Agents** — MIT Schwarzman College of Computing (36:38, 22 views)
+  https://www.youtube.com/watch?v=lHqqCKahHSg
+  item: `items/lHqqCKahHSg.md`
+- **AI & Coding: AI Coding and Learning** — MIT Schwarzman College of Computing (34:00, 32 views)
+  https://www.youtube.com/watch?v=aZ-uPbglsno
+  item: `items/aZ-uPbglsno.md`
+- **AI and the Energy Sector: Preparing Mechanical Engineers for the Future with Dr. Arindam Banerjee** — ASME American Society of Mechanical Engineers (20:28, 36 views)
+  https://www.youtube.com/watch?v=l3oWJBEUQvc
+  item: `items/l3oWJBEUQvc.md`
+- **Past the Pilot E1 - New Ways of Working** — Vertesia (26:01, 6 views)
+  https://www.youtube.com/watch?v=EV6diiQXYEU
+  item: `items/EV6diiQXYEU.md`
+- **Susan Athey - Causal Inference and Decompositions using AI Models** — UC Berkeley EECS (1:08:00, 120 views)
+  https://www.youtube.com/watch?v=djGa1-EiNs0
+  item: `items/djGa1-EiNs0.md`
+- **This NotebookLM Technique Guarantees You Dominate Your Next Interview** — Dr. HR (11:21, 2 views)
+  https://www.youtube.com/watch?v=gVa6L5f-Emk
+  item: `items/gVa6L5f-Emk.md`
+- **LCM vs HCF Full Trick 😱 | Sainik & RMS Maths in 1 Shot 💯 #SainikSchool #RMS #MathsTricks #mathshorts** — Sainik School Coaching - Defence Chanakya Academy (54:20, 65 views)
+  https://www.youtube.com/watch?v=ViCNP2hxMk4
+  item: `items/ViCNP2hxMk4.md`
+- **Eclampsia: How a pregnancy complication may have quietly ended the Neanderthals** — Heliox (44:29, 1 views)
+  https://www.youtube.com/watch?v=eeFEak4jtO8
+  item: `items/eeFEak4jtO8.md`
+- **穿越大荒年窮到跪舔寡婦求生，卻意外覺醒震驚系統！別人餓得啃樹皮，他帶著嫂子們大魚大肉吃到爽，寡婦當晚跪求他留下別走！#drama #短劇 #逆襲 #多語種** — 橙果劇場No1Drama (2:05:45, 8.0K views)
+  https://www.youtube.com/watch?v=Ek8RiaPmzqM
+  item: `items/Ek8RiaPmzqM.md`

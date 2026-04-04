@@ -96,3 +96,96 @@ Full item files belong in `items/`.
 - **[Multi SUB] （全集）学渣被系统逼着创业，不完成任务就要命！开蛋糕店赚钱，从学渣逆袭成百亿大佬，还成立基金会助大学生创业，现在身价数亿，身边美女如云#最火短剧推荐 #短剧全集 #精彩大陆短剧** — 逆天剧场 (2:13:56, 2.3K views)
   https://www.youtube.com/watch?v=pgWB9V3SpVY
   item: `items/pgWB9V3SpVY.md`
+
+## 2026-04-04 — 30 new videos
+
+- **[ISO/PAS 8800 #5] Classification of Root Causes of AI Errors** — AutoSysEng TV: System Architecture & Safety (8:50, new)
+  https://www.youtube.com/watch?v=lA5xdHFZ3Zs
+  item: `items/lA5xdHFZ3Zs.md`
+- **Lack of DevOps Implementation caused Anthropic Code Leak | Human mistake or AI?** — Abhishek.Veeramalla (12:14, 6.1K views)
+  https://www.youtube.com/watch?v=rJEsh9A_wFQ
+  item: `items/rJEsh9A_wFQ.md`
+- **Can Aging Be Treated Like a Disease? | Longevity News Roundup — Week 14, 2026** — Longevity.Technology (26:13, 91 views)
+  https://www.youtube.com/watch?v=L2Elg3n2rA0
+  item: `items/L2Elg3n2rA0.md`
+- **Axios Hack… Can You Trust It? (And Why We Still Want Things That Make No Sense)** — Dave's Attic (42:59, 2.5K views)
+  https://www.youtube.com/watch?v=6uy4MqEbIP0
+  item: `items/6uy4MqEbIP0.md`
+- **Reality Check: AI Can’t Do What You Think It Can** — Dave Linthicum Is Not AI (19:23, 3.5K views)
+  https://www.youtube.com/watch?v=Q1g94US5SbM
+  item: `items/Q1g94US5SbM.md`
+- **AI in Education: Navigating Teaching and Assessing Student Learning in the GenAI Era** — MIT Schwarzman College of Computing (1:00:06, 20 views)
+  https://www.youtube.com/watch?v=514jG3jEnRA
+  item: `items/514jG3jEnRA.md`
+- **How to Actually Evaluate Your RAG System (Before It Lies to You)** — Simplify AI with MM (9:07, 10 views)
+  https://www.youtube.com/watch?v=NcKdVDV_G4o
+  item: `items/NcKdVDV_G4o.md`
+- **AI in Education: Use of AI in MIT Language Programs** — MIT Schwarzman College of Computing (39:53, 25 views)
+  https://www.youtube.com/watch?v=NFse2DF4xd0
+  item: `items/NFse2DF4xd0.md`
+- **Qwen AI Just Showed Why The US Can't Ignore China Anymore** — Limitless Podcast (32:11, 9.3K views)
+  https://www.youtube.com/watch?v=W1Mws_qxCRU
+  item: `items/W1Mws_qxCRU.md`
+- **The materials that make fusion possible** — Helion (15:16, 8.5K views)
+  https://www.youtube.com/watch?v=jgHB0NLfj4c
+  item: `items/jgHB0NLfj4c.md`
+- **Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills** — Praveen Govindaraj (3:56, 4 views)
+  https://www.youtube.com/watch?v=lUeFeOXDZj0
+  item: `items/lUeFeOXDZj0.md`
+- **ICS CERT Expertise Center: Evgeny Goncharov on protecting the systems that run our world** — Kaspersky (34:16, 63 views)
+  https://www.youtube.com/watch?v=xb3wBHeUhIQ
+  item: `items/xb3wBHeUhIQ.md`
+- **Conan Proves Civilization Is a Failure… And You’re Part of It** — Savage Scrolls (12:05, 796 views)
+  https://www.youtube.com/watch?v=_qHTWa-pR4Y
+  item: `items/_qHTWa-pR4Y.md`
+- **DevOps Q&A: AI in Open Source, Crossplane vs Terraform, and Argo CD Agent** — DevOps & AI Toolkit (1:13:25, 540 views)
+  https://www.youtube.com/watch?v=EA93bbIt5Ro
+  item: `items/EA93bbIt5Ro.md`
+- **Something Is DEEPLY Broken Inside India** — Fall of Nations (21:13, 21.5K views)
+  https://www.youtube.com/watch?v=pB06HIfAC5Y
+  item: `items/pB06HIfAC5Y.md`
+- **Stop Building Naive RAG: The 4 Levels of AI Architecture | Rynaut - The Agentic Architect** — Rynaut - The Agentic Architect (6:51, 2 views)
+  https://www.youtube.com/watch?v=7ySSxfNLTGg
+  item: `items/7ySSxfNLTGg.md`
+- **Law and Mental Health: Artificial Intelligence (AI) in Forensic Psychology: Ethical Considerations** — UNM Dept of Psychiatry and Behavioral Sciences (1:07:32, 18 views)
+  https://www.youtube.com/watch?v=BmrYHi4oZUA
+  item: `items/BmrYHi4oZUA.md`
+- **The NAR Scandal That Changed Everything** — Ricky Carruth (20:12, 578 views)
+  https://www.youtube.com/watch?v=dKplYMjmmvU
+  item: `items/dKplYMjmmvU.md`
+- **Transforming MedTech & SaaS with AI: Attila Danku on Regulated Industries 2026 #podcast** — AI InterConnect (34:37, 34 views)
+  https://www.youtube.com/watch?v=A2SZnLtYkcg
+  item: `items/A2SZnLtYkcg.md`
+- **My Boss Loves Me? 💼 | Learn Italian with Simple Story (A1–A2) | Italiano Tales** — italiano tales (30:11, 650 views)
+  https://www.youtube.com/watch?v=N6BDHK54kNM
+  item: `items/N6BDHK54kNM.md`
+- **How This VP Scaled HubSpot from $200M to $1.5B** — Marcus Chan (42:06, 41 views)
+  https://www.youtube.com/watch?v=aYtLR2Ca-5c
+  item: `items/aYtLR2Ca-5c.md`
+- **Scaling Up Success | From $1M to $20M: Javier Lozano Jr. on Repeatable Processes and AI** — Cynergists (21:23, 3 views)
+  https://www.youtube.com/watch?v=MbgTKBCbZEY
+  item: `items/MbgTKBCbZEY.md`
+- **💊 $60 Billion AI Drug Discovery — Why ZERO FDA Approvals? #podcast   #viral #viralvideo #trending** — Dr Amaravadhi H (23:26, 4 views)
+  https://www.youtube.com/watch?v=Zp450CjpDaQ
+  item: `items/Zp450CjpDaQ.md`
+- **AI Needs Power, the Grid Needs AI: Winning the Energy Race** — eCornell (1:01:59, 15 views)
+  https://www.youtube.com/watch?v=3pjVNrh5AyY
+  item: `items/3pjVNrh5AyY.md`
+- **Rethinking Wellbeing at Work: Using AI to Build a Culture of Practice and Behavior Change at Work** — NYU SPS Human Capital Management (52:26, 14 views)
+  https://www.youtube.com/watch?v=K-7HoNvkTEk
+  item: `items/K-7HoNvkTEk.md`
+- **Learn Snowflake with ONE Project** — Tech With Tim (44:47, 6.6K views)
+  https://www.youtube.com/watch?v=7QisFjITGlI
+  item: `items/7QisFjITGlI.md`
+- **【完結】一朝穿成豪門陪襯炮灰妻，她根本演不了深情人設，只想盡快離婚瀟灑離場，誰料一場車禍後，首富老公竟獲得讀心術，她的每個小心思都被聽得一清二楚，他卻越聽越上頭，反手開啟瘋狂開工模式，婚姻徹底失控！** — 劇熱門 (2:33:16, 17.9K views)
+  https://www.youtube.com/watch?v=KXZSjcNQtMw
+  item: `items/KXZSjcNQtMw.md`
+- **Designing Low-Friction Cognitive Health Tools Based on Voice and Sound with Kara Uchtman of Vibes AI** — Slide UX (51:21, new)
+  https://www.youtube.com/watch?v=9l9QF72k8Gg
+  item: `items/9l9QF72k8Gg.md`
+- **WiDS Cambridge 2026 Keynote** — MIT Institute for Data, Systems, and Society (29:37, 10 views)
+  https://www.youtube.com/watch?v=DdASg7AY7UU
+  item: `items/DdASg7AY7UU.md`
+- **Graph RAG vs Traditional RAG: A Beginner's Guide to Smarter AI Retrieval** — Chris Seferlis (12:15, 15 views)
+  https://www.youtube.com/watch?v=L98f8hW9E18
+  item: `items/L98f8hW9E18.md`

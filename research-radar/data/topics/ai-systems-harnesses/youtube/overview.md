@@ -96,3 +96,96 @@ Full item files belong in `items/`.
 - **Is Artificial Intelligence Dangerous or Helpful | English Pronounce Pro** — English Pronounce Pro (43:35, 1 views)
   https://www.youtube.com/watch?v=yyahqGcG-2U
   item: `items/yyahqGcG-2U.md`
+
+## 2026-04-04 — 30 new videos
+
+- **Scientists Used Quantum AI to Decode Da Vinci's Most Mysterious Invention** — Luminox (20:49, 2.7K views)
+  https://www.youtube.com/watch?v=kqt2Gfj0OBE
+  item: `items/kqt2Gfj0OBE.md`
+- **💰 How Claude Makes $2.5 Billion: The 12-Step Formula EXPOSED** — AUTOHOTKEY Gurus (5:08, 18 views)
+  https://www.youtube.com/watch?v=0haxFMTnaHg
+  item: `items/0haxFMTnaHg.md`
+- **Reality Check: AI Can’t Do What You Think It Can** — Dave Linthicum Is Not AI (19:23, 3.5K views)
+  https://www.youtube.com/watch?v=Q1g94US5SbM
+  item: `items/Q1g94US5SbM.md`
+- **Every AI Safety Warning Was Ignored** — Roman Yampolskiy (1:08:33, 4.0K views)
+  https://www.youtube.com/watch?v=gXukI-yAcso
+  item: `items/gXukI-yAcso.md`
+- **You're Building 20% of an Agent. Anthropic Just Showed You the Other 80%.** — AI News & Strategy Daily | Nate B Jones (26:53, 66.1K views)
+  https://www.youtube.com/watch?v=FtCdYhspm7w
+  item: `items/FtCdYhspm7w.md`
+- **I Made an AI Anti-Cheat Better Than VAC** — HaiX (14:53, 59.4K views)
+  https://www.youtube.com/watch?v=dBHssDRL2f8
+  item: `items/dBHssDRL2f8.md`
+- **What We’re Getting Wrong About AI, According To Former Tech Executives** — Business Insider and 2 more (36:40, 10.3K views)
+  https://www.youtube.com/watch?v=6_aKBUfY2Yc
+  item: `items/6_aKBUfY2Yc.md`
+- **The $2.5 Billion Blunder: Inside the March 2026 Claude Code Leak & The Future of Agentic AI** — KYC AI LABS (6:57, 4 views)
+  https://www.youtube.com/watch?v=vKM2SVwwWMM
+  item: `items/vKM2SVwwWMM.md`
+- **They're Putting AI Cameras In School Buses** — Taylor Lorenz (31:52, 13.8K views)
+  https://www.youtube.com/watch?v=KoAvL1MoTIA
+  item: `items/KoAvL1MoTIA.md`
+- **🟢 Let's Vibe Code a Quickbooks/Xero Clone with AI | Beginner Series Ep #4 (Cursor, Nextjs, Clerk)** — Sonny Sangha (3:50:18, 13.4K views)
+  https://www.youtube.com/watch?v=jDTuQTR8gU0
+  item: `items/jDTuQTR8gU0.md`
+- **Claude Code 泄露的，不只是源码，而是顶级 Agent 的整套产品骨架** — 灵姐说AI  |  Ling Talk AI (14:42, 2.5K views)
+  https://www.youtube.com/watch?v=qcUAU2uOLKY
+  item: `items/qcUAU2uOLKY.md`
+- **AI & Coding: Automation from the Programmer’s Apprentice to Modern Coding Agents** — MIT Schwarzman College of Computing (36:38, 22 views)
+  https://www.youtube.com/watch?v=lHqqCKahHSg
+  item: `items/lHqqCKahHSg.md`
+- **Surreal AI Film • A Very Unusual Town | The Old Town Games (4K)** — Walter AI Art (4:45, 7.0K views)
+  https://www.youtube.com/watch?v=C1Kae6FSDSs
+  item: `items/C1Kae6FSDSs.md`
+- **Everything Claude Code: 134K⭐ AI Agent System You NEED [2026]** — Repo_AI_Review (6:20, 5 views)
+  https://www.youtube.com/watch?v=-E0iThpymdY
+  item: `items/-E0iThpymdY.md`
+- **What's Inside an AI Agent? Harness engineering with Pi-mono | AI Engineer Foundation Europe** — AI Engineer Foundation Europe (28:16, 1 views)
+  https://www.youtube.com/watch?v=9ls8kPvbNW4
+  item: `items/9ls8kPvbNW4.md`
+- **Israeli AI First Used in Gaza Now Deployed in Iran, Lebanon | GRAVITAS HIGHLIGHTS** — WION (8:32, 8.8K views)
+  https://www.youtube.com/watch?v=Po-JR4QiwbU
+  item: `items/Po-JR4QiwbU.md`
+- **WWDC26 - iOS 27, MacOS 27, Siri + AI & Gemini | What To Expect?🔥🔥🔥** — Technical Guruji (6:13, 19.9K views)
+  https://www.youtube.com/watch?v=uXkjXH_bBwM
+  item: `items/uXkjXH_bBwM.md`
+- **010: Anthropic cut me off and the road to universal basic income** — Brian Lee (11:17, 43 views)
+  https://www.youtube.com/watch?v=wvdwbp0QLbs
+  item: `items/wvdwbp0QLbs.md`
+- **價值25億美金的失誤！揭密2026年Anthropic Claude原始碼外洩事件與 Agentic AI 未來賽局  【KYC AI Labs】** — KYC AI LABS (8:34, 4 views)
+  https://www.youtube.com/watch?v=n0i-kVD7Bis
+  item: `items/n0i-kVD7Bis.md`
+- **Graduate Certificate in AI Applications | Northeastern Online** — Northeastern Online (1:01, 1 views)
+  https://www.youtube.com/watch?v=__8VI74_cF0
+  item: `items/__8VI74_cF0.md`
+- **Why AI is Lying to Us (And Amazon's New One Plan)** — Useful AI Hacks (9:38, 19 views)
+  https://www.youtube.com/watch?v=Ob3H-1moxsY
+  item: `items/Ob3H-1moxsY.md`
+- **Rethinking Wellbeing at Work: Using AI to Build a Culture of Practice and Behavior Change at Work** — NYU SPS Human Capital Management (52:26, 14 views)
+  https://www.youtube.com/watch?v=K-7HoNvkTEk
+  item: `items/K-7HoNvkTEk.md`
+- **New Open Audio Models 🤗 | Recap with Jeff** — Hugging Face (4:40, 2.1K views)
+  https://www.youtube.com/watch?v=StS2hXgmwrQ
+  item: `items/StS2hXgmwrQ.md`
+- **'I felt my arm burning': Recalled phone charger fire | CTV News Ottawa at Six for April 2, 2026** — CTV News (45:28, 2.6K views)
+  https://www.youtube.com/watch?v=rPM6RANUubk
+  item: `items/rPM6RANUubk.md`
+- **I was COO at Citibank. This booked changed how I see my career.** — Ani Filipova: Your Career Transformation Guide (15:32, 66 views)
+  https://www.youtube.com/watch?v=f1u_wVqyF2Q
+  item: `items/f1u_wVqyF2Q.md`
+- **The Best Pack of 2026? Rab Syclon XP** — Taunton Leisure (12:35, 1.4K views)
+  https://www.youtube.com/watch?v=jmWYSvGkuik
+  item: `items/jmWYSvGkuik.md`
+- **The Wokkah Podcast Ep. 13 | From Broke to Breakthrough: The Mindset Shift That Changes Everything** — Wokkah (59:56, 4 views)
+  https://www.youtube.com/watch?v=HFBQ24MPa20
+  item: `items/HFBQ24MPa20.md`
+- **The H-1B Trap No One Talks About | He Wasn’t Allowed to Start a Company** — Let's Talk U.S. Immigration (9:55, 23 views)
+  https://www.youtube.com/watch?v=S9ULjNDih-Y
+  item: `items/S9ULjNDih-Y.md`
+- **Humans Had ONE Higher Law: "Don’t Touch the Children" — They Broke It… | HFY Sci-Fi Stories** — Human Odyssey / HFY SciFi (1:07:58, 20 views)
+  https://www.youtube.com/watch?v=_Cv0YBBc0Sc
+  item: `items/_Cv0YBBc0Sc.md`
+- **Faster Than Light? Engineering Reality from Quantum Shadows to Deep Space | Artificially Informed** — Artificially Informed (1:14:01, 4 views)
+  https://www.youtube.com/watch?v=ika1uQMKDn8
+  item: `items/ika1uQMKDn8.md`

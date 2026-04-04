@@ -93,3 +93,69 @@ Full item files belong in `items/`.
 - **6人被告5人無罪！蔡正元三中案入獄真相：是罪有應得，還是政治祭品？** — 阿然紀實錄 (32:06, 3 views)
   https://www.youtube.com/watch?v=2YkTqOxaEeM
   item: `items/2YkTqOxaEeM.md`
+
+## 2026-04-04 — 21 new videos
+
+- **Claude Code — Run 5 AI Agents in Parallel** — AI Terminal (9:08, 27 views)
+  https://www.youtube.com/watch?v=QlLPcOIMC-g
+  item: `items/QlLPcOIMC-g.md`
+- **How Autonomous AI Actually Works: From Raw LLM to Multi-Agent Systems** — Learn Artificial Intelligence (5:51, 5 views)
+  https://www.youtube.com/watch?v=qe2yxryZnuQ
+  item: `items/qe2yxryZnuQ.md`
+- **Past the Pilot E2- Workstreams** — Vertesia (32:25, 8 views)
+  https://www.youtube.com/watch?v=Dps3ZVkNbGI
+  item: `items/Dps3ZVkNbGI.md`
+- **🟢 Let's Vibe Code a Quickbooks/Xero Clone with AI | Beginner Series Ep #4 (Cursor, Nextjs, Clerk)** — Sonny Sangha (3:50:18, 13.4K views)
+  https://www.youtube.com/watch?v=jDTuQTR8gU0
+  item: `items/jDTuQTR8gU0.md`
+- **Master Agentic AI Design Patterns | What Every AI Engineer Must Know** — GenAIElite (1:20:44, 2 views)
+  https://www.youtube.com/watch?v=LvHFdtzJPFE
+  item: `items/LvHFdtzJPFE.md`
+- **The Bot Pod Episode 1: Trading Agents in Condor** — Hummingbot (2:23:10, 106 views)
+  https://www.youtube.com/watch?v=O93R_ddB-8o
+  item: `items/O93R_ddB-8o.md`
+- **AI & Coding: Interview with Vahrun K. Mohran of Google DeepMind** — MIT Schwarzman College of Computing (44:58, 16 views)
+  https://www.youtube.com/watch?v=NvHz_esnSJc
+  item: `items/NvHz_esnSJc.md`
+- **Trust No One – Especially the Agents  Building Zero Trust Through Machine Identity Track 2** — OWASP Foundation (51:29, 23 views)
+  https://www.youtube.com/watch?v=JM_Y_uSR6Lk
+  item: `items/JM_Y_uSR6Lk.md`
+- **Like the Blue Rooster I'm Different as a Realtor** — Brett's Realty “Key Realty” Group (39, 43 views)
+  https://www.youtube.com/watch?v=d8lOGguXzzw
+  item: `items/d8lOGguXzzw.md`
+- **An In-Depth Guide To Finding your main AGENT ( Valorant Low Elo Guide )** — J3RRY Sync (10:12, new)
+  https://www.youtube.com/watch?v=epKQO4tEZT4
+  item: `items/epKQO4tEZT4.md`
+- **The source code for Claude Code has just leaked... 5 things you absolutely must do 🔥** — MechaPizzAI (9:34, 403 views)
+  https://www.youtube.com/watch?v=lPeZznykXq4
+  item: `items/lPeZznykXq4.md`
+- **[Weekly IT Technology News] Axios supply chain attack contaminates library with 100 million downl...** — テックニュース@ATI (8:17, 105 views)
+  https://www.youtube.com/watch?v=rs8Zt45m3gs
+  item: `items/rs8Zt45m3gs.md`
+- **Day 34: ACE with Every Agent Challenge 😈 (21/29)** — Kaspar Gaming (4:13:52, 70 views)
+  https://www.youtube.com/watch?v=kuOv0oDyN-I
+  item: `items/kuOv0oDyN-I.md`
+- **Your First Actual Digital Employee | Strategy Mosaic x Perplexity Computer** — Tom Zockoll (57, 4 views)
+  https://www.youtube.com/watch?v=VE07eJbD89w
+  item: `items/VE07eJbD89w.md`
+- **Hinterkaifeck: Flour Footprints and a Farmhouse Without Motive** — The Apex Mind (15:07, 3 views)
+  https://www.youtube.com/watch?v=ArqDL2Gpa3c
+  item: `items/ArqDL2Gpa3c.md`
+- **Leo Tolstoy's 23 Short Stories   Complete Audiobook  Russian Literature Classics** — AI Eternal Chapters (9:41:20, 181 views)
+  https://www.youtube.com/watch?v=YA-kEs4ZleY
+  item: `items/YA-kEs4ZleY.md`
+- **【MULTI SUB】一口气看爽韩漫《成为反派的靠山》** — 韩漫潮映馆 (2:21:54, 12.4K views)
+  https://www.youtube.com/watch?v=cfYRKGlGPPU
+  item: `items/cfYRKGlGPPU.md`
+- **LangGraph's 3-Layer Agent Stack Explained** — My Weird Prompts (32:06, new)
+  https://www.youtube.com/watch?v=7-XwuBEEO_4
+  item: `items/7-XwuBEEO_4.md`
+- **Tokagent: Verifiable AI Agents for On-Chain DeFi** — Tokamak AI Layer (5:32, 11 views)
+  https://www.youtube.com/watch?v=m2QUxk7uvL4
+  item: `items/m2QUxk7uvL4.md`
+- **A Multi Agent System for Test Case Generation to Maximize Coverage in C++ Projects** — Demo (14:33, 2 views)
+  https://www.youtube.com/watch?v=DQ869oTp1xQ
+  item: `items/DQ869oTp1xQ.md`
+- **The End of Chatbots: Why DeerFlow AI is the First Real SuperAgent** — AI Tools Quest (3:58, 5 views)
+  https://www.youtube.com/watch?v=BM83Xy8lMyY
+  item: `items/BM83Xy8lMyY.md`

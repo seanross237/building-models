@@ -15,3 +15,27 @@ Full item files belong in `items/`.
 - **【Multi Sub】God-Tier Scammer: The Whole Server Begging Me to Stop EP 1-118 #anime #animation #玄幻** — Quartic element Anime (10:02:13, 410 views)
   https://www.youtube.com/watch?v=F7QkkVEQN0k
   item: `items/F7QkkVEQN0k.md`
+
+## 2026-04-04 — 7 new videos
+
+- **I Can Rewind Time by 12 Hours Infinitely, and Copy My Enemy’s Abilities Every Time I Die!** — Revel Manga Chronicles (37:17:17, 587 views)
+  https://www.youtube.com/watch?v=puyUEXZc-Zc
+  item: `items/puyUEXZc-Zc.md`
+- **【Multi Sub】 🎉 我在末世開超市當救世主 I opened a supermarket and became a savior in the apocalypse EP1-108 #男频** — Qixiang-Animation (8:58:56, 88 views)
+  https://www.youtube.com/watch?v=tZ4cjmM5yXM
+  item: `items/tZ4cjmM5yXM.md`
+- **Selling Jobs to Be Done with Colin Duff** — JTBD Toolkit (1:00:27, 8 views)
+  https://www.youtube.com/watch?v=gUhWaeLOamA
+  item: `items/gUhWaeLOamA.md`
+- **Advances in Artificial Intelligence applied to Cardiac MRI: Highlights from Circ: Cardiovascular Img** — Circulation, an American Heart Association Journal (1:06:16, 5 views)
+  https://www.youtube.com/watch?v=IaijLVPHmsI
+  item: `items/IaijLVPHmsI.md`
+- **Prelude to April, Explosion on August 19? Psychics Point to Taiwan Waters: War Clouds...** — HIBY新聞 (1:57:45, 3.1K views)
+  https://www.youtube.com/watch?v=8Uom9Z7sPlY
+  item: `items/8Uom9Z7sPlY.md`
+- **【ENG SUB】開局轉職奸商，暴富後我無敵了 Merchant of Deceit: I'm Limitless After Getting Rich EP 1~119#熱血 #anime  #爽文** — Bikini-Anime 动漫社 (10:07:22, 60 views)
+  https://www.youtube.com/watch?v=Hd59xLnTsvA
+  item: `items/Hd59xLnTsvA.md`
+- **🔥【爽漫】【Eng Sub】《神級奸商：全服求我別薅了/God-Tier Scammer》EP1-119 | 林風重生玩虛擬遊戲成奸商，一路暴賺改命，卻發現現實隱藏著遊戲真相。#玄幻 #热血 #动漫** — 八虎动漫剧场 (10:07:22, 42 views)
+  https://www.youtube.com/watch?v=vC-J3x1NGis
+  item: `items/vC-J3x1NGis.md`

@@ -96,3 +96,96 @@ Full item files belong in `items/`.
 - **I created a live AI landing page: Google Stitch + Gentle AI Stack + Deployment | Complete Tutorial** — Gentleman Programming (27:26, 9.2K views)
   https://www.youtube.com/watch?v=wm9OlVMQnbs
   item: `items/wm9OlVMQnbs.md`
+
+## 2026-04-04 — 30 new videos
+
+- **Five Dominos. One AI Loop. Your Listings Never Stop Testing.** — Seller Labs (5:52, 9 views)
+  https://www.youtube.com/watch?v=M6dzBZPHA_k
+  item: `items/M6dzBZPHA_k.md`
+- **Zia Agents Can Now Be Deployed as Digital Employees - CRM Zen Show Episode 400** — Zenatta Consulting (1:07:31, 215 views)
+  https://www.youtube.com/watch?v=yYdyaHhEU90
+  item: `items/yYdyaHhEU90.md`
+- **Claude Code LEAK: Was Anthropic im Source Code versteckt hat** — IchBinFabian (13:16, 2.9K views)
+  https://www.youtube.com/watch?v=Wa98kS_m6fw
+  item: `items/Wa98kS_m6fw.md`
+- **⚡️ Military Coup Attempt || Armed Seizure of the Country's Leader** — Время Прядко (17:38, 369.7K views)
+  https://www.youtube.com/watch?v=w9eM_FVX1cE
+  item: `items/w9eM_FVX1cE.md`
+- **War Thunder's AMRAAM Problem (UPDATED)** — Bobthepilot (21:08, 6.2K views)
+  https://www.youtube.com/watch?v=cNiHNXBP1eg
+  item: `items/cNiHNXBP1eg.md`
+- **DIY HydroElectric. Building A Custom Dynamometer For Testing Turbines.** — FarmCraft101 (1:25:59, 116.3K views)
+  https://www.youtube.com/watch?v=O02XeCgUYaQ
+  item: `items/O02XeCgUYaQ.md`
+- **Claude Code Just Cracked Kalshi** — Moon Dev (10:59, 1.6K views)
+  https://www.youtube.com/watch?v=Q8Pf1Ppe1-8
+  item: `items/Q8Pf1Ppe1-8.md`
+- **How FAANG Companies Deploy LLMs in Production — KServe + Triton Full Setup** — I'am Rajinikanth Vadla (2:10:43, 38 views)
+  https://www.youtube.com/watch?v=Q6N3fSPeBzg
+  item: `items/Q6N3fSPeBzg.md`
+- **$4.3M Cold Email Split Testing Strategy (Full Breakdown)** — Taylor Haren (13:52, 161 views)
+  https://www.youtube.com/watch?v=6ek7XrGkSOg
+  item: `items/6ek7XrGkSOg.md`
+- **Stop Copy-Pasting Prompts: I Built 5 Claude Skills That Run Automatically** — Vivek Mishra (2:20:03, 2.5K views)
+  https://www.youtube.com/watch?v=TJWeXsRRpRA
+  item: `items/TJWeXsRRpRA.md`
+- **Bitcoin is doing something EXTREMELY dangerous right now... (Easter weekend!)** — Crypto Wall Street (26:48, 9.0K views)
+  https://www.youtube.com/watch?v=0_Uk2p79vLc
+  item: `items/0_Uk2p79vLc.md`
+- **Susan Athey - Causal Inference and Decompositions using AI Models** — UC Berkeley EECS (1:08:00, 120 views)
+  https://www.youtube.com/watch?v=djGa1-EiNs0
+  item: `items/djGa1-EiNs0.md`
+- **Week11.2: LLM Evaluation** — Learn with Dr. Fakhreldeen (8:10, new)
+  https://www.youtube.com/watch?v=gj9cBA6unkA
+  item: `items/gj9cBA6unkA.md`
+- **NOW ILLEGAL? Few remain legal… (Gray Man Tactics)** — Der Kommissar (15:48, 39 views)
+  https://www.youtube.com/watch?v=-UK_F-LvU7U
+  item: `items/-UK_F-LvU7U.md`
+- **Nobler Elektro-SUV? Der Mercedes GLC 400 4MATIC im Fahrbericht** — ADAC (28:51, 12.8K views)
+  https://www.youtube.com/watch?v=lzFgZS-9s5s
+  item: `items/lzFgZS-9s5s.md`
+- **How Claude Code Saves Tokens on MCP Tools: tool_search & Deferred Loading** — AI带路党Pro (7:08, 2 views)
+  https://www.youtube.com/watch?v=WZKZw9oqg20
+  item: `items/WZKZw9oqg20.md`
+- **SUPERMOD for SQUAD has new FACTIONS, HELICOPTERS and SPECIAL FORCES!** — Slay3Kilo (12:19, 10.9K views)
+  https://www.youtube.com/watch?v=Bra8uBbf4Do
+  item: `items/Bra8uBbf4Do.md`
+- **Health, Safety, and Environment Training (HSE 1, 2, 3) Class 3** — Seal-Sea Concept (2:24:25, 198 views)
+  https://www.youtube.com/watch?v=_16uGyknMhk
+  item: `items/_16uGyknMhk.md`
+- **Gemma 4 Breakdown: Local AI That Competes with Giants** — Kris Torrington (2:57, 5 views)
+  https://www.youtube.com/watch?v=hLmALEPA4eQ
+  item: `items/hLmALEPA4eQ.md`
+- **WiDS Cambridge 2026 LightningTalks** — MIT Institute for Data, Systems, and Society (17:45, 34 views)
+  https://www.youtube.com/watch?v=NExPDSBTgCw
+  item: `items/NExPDSBTgCw.md`
+- **Discussing FIFA Agent Exam 2026: International Transfer of Players** — Ball Business (1:21:36, 181 views)
+  https://www.youtube.com/watch?v=RnrwYlLtS7w
+  item: `items/RnrwYlLtS7w.md`
+- **Jesse Sheldon: The 14-Year-Old Nonprofit Founder Turned Realtor | Ep. 12** — Real Estate Marketing Podcast | Buyers on Demand (1:01:50, new)
+  https://www.youtube.com/watch?v=iq3b4LBLjsQ
+  item: `items/iq3b4LBLjsQ.md`
+- **UnDaoDu is LIVE ! Why large language models refused to turn other large language models off? live!** — UnDaoDu (2:24:42, 138 views)
+  https://www.youtube.com/watch?v=WTEkvubX-6M
+  item: `items/WTEkvubX-6M.md`
+- **一小时长聊：AI正在摧毁科技互联网行业，让程序员大批量失业？为什么程序员危机感空前强烈？为什么中国大学计算机专业教育质量太差？大学还有存在的意义吗？** — 立党 lidang (1:33:13, 4.3K views)
+  https://www.youtube.com/watch?v=34wpQakf0h8
+  item: `items/34wpQakf0h8.md`
+- **Already on DUI Probation — Driver Blows 0.17% BAC | CHP Bodycam** — Golden State DUI (30:30, 3.4K views)
+  https://www.youtube.com/watch?v=qunfReCrnmo
+  item: `items/qunfReCrnmo.md`
+- **UnDaoDu is LIVE ! Why large language models refused to turn other large language models off?** — UnDaoDu (25, 5 views)
+  https://www.youtube.com/watch?v=YVRCFr219ns
+  item: `items/YVRCFr219ns.md`
+- **Lewes: The Small Town with a HUGE History - 1 Hour Train Ride from London!** — MemorySeekers (40:20, 3.9K views)
+  https://www.youtube.com/watch?v=0byMJ5qyvuA
+  item: `items/0byMJ5qyvuA.md`
+- **I Added 4 SECRET Bosses to My Game... (and it was a mistake)** — Realest Billy (18:48, 24.1K views)
+  https://www.youtube.com/watch?v=yH6JTwSSSEE
+  item: `items/yH6JTwSSSEE.md`
+- **300 CALM FACTS THAT ARE EASY TO FALL ASLEEP TO** — КНИГИ, ИСТОРИИ, ФАКТЫ (1:33:20, 6.4K views)
+  https://www.youtube.com/watch?v=U816L34lkcA
+  item: `items/U816L34lkcA.md`
+- **POV: You're the Last Judge in a Country Where the Law Has Been Bought** — Karamat Janjua (10:15, 4 views)
+  https://www.youtube.com/watch?v=SUxfKNHjl5k
+  item: `items/SUxfKNHjl5k.md`

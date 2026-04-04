@@ -96,3 +96,96 @@ Full item files belong in `items/`.
 - **Showcase of QStory's Back Office WFM Platform** — QStory (34:21, 7 views)
   https://www.youtube.com/watch?v=ZSG6zOiIxYA
   item: `items/ZSG6zOiIxYA.md`
+
+## 2026-04-04 — 30 new videos
+
+- **Hyperagents: Autonomous Metacognitive Self-Improving AI Systems** — Vinh Nguyen (5:21, 6 views)
+  https://www.youtube.com/watch?v=RS43P3xPLG4
+  item: `items/RS43P3xPLG4.md`
+- **Self Improving AI Ads Manager Workflow** — Upside - AI Intelligence Layer for GTM (5:09, 50 views)
+  https://www.youtube.com/watch?v=AHfP1YCcIBs
+  item: `items/AHfP1YCcIBs.md`
+- **[Podcast] Hyperagents: Autonomous Metacognitive Self-Improving AI Systems** — Vinh Nguyen (26:49, 9 views)
+  https://www.youtube.com/watch?v=47_Pz_z9MrY
+  item: `items/47_Pz_z9MrY.md`
+- **Marc Andreessen introspects on Death of the Browser, Pi + OpenClaw, and Why "This Time Is Different"** — Latent Space and a16z (1:16:20, 13.8K views)
+  https://www.youtube.com/watch?v=knx2wrILP1M
+  item: `items/knx2wrILP1M.md`
+- **AI Agents in 18 Minutes (What 95% Don't Understand)** — Benjamín Cordero (18:36, 3.7K views)
+  https://www.youtube.com/watch?v=7HlfFHLoYK8
+  item: `items/7HlfFHLoYK8.md`
+- **Cursor 3: I Made 3 AIs Compete... One Survived!** — Creator Magic (15:28, 5.8K views)
+  https://www.youtube.com/watch?v=qjV2IW5Fre8
+  item: `items/qjV2IW5Fre8.md`
+- **NEW Claude Kairos: INSANE AI Leak! 🤯** — Julian Goldie SEO (7:31, 1.9K views)
+  https://www.youtube.com/watch?v=ree1q95iZuo
+  item: `items/ree1q95iZuo.md`
+- **🟢 Let's Vibe Code a Quickbooks/Xero Clone with AI | Beginner Series Ep #4 (Cursor, Nextjs, Clerk)** — Sonny Sangha (3:50:18, 13.4K views)
+  https://www.youtube.com/watch?v=jDTuQTR8gU0
+  item: `items/jDTuQTR8gU0.md`
+- **Live Coding - Building a Code Agent Cleaner with Copilot SDK & VS Code** — James Montemagno (1:51:37, 827 views)
+  https://www.youtube.com/watch?v=VU-xYg23Mxs
+  item: `items/VU-xYg23Mxs.md`
+- **Stop Copy-Pasting Prompts: I Built 5 Claude Skills That Run Automatically** — Vivek Mishra (2:20:03, 2.5K views)
+  https://www.youtube.com/watch?v=TJWeXsRRpRA
+  item: `items/TJWeXsRRpRA.md`
+- **I Open Sourced My Agentic Dynamics 365 ERP Project** — Scott Gaines (9:40, 294 views)
+  https://www.youtube.com/watch?v=9J_5hjk_oxY
+  item: `items/9J_5hjk_oxY.md`
+- **How to Fix Your Agent's Amnesia: Lessons from Building a Self-learning Agent** — MLOps.community (8:04, 582 views)
+  https://www.youtube.com/watch?v=tKRel4kEpSI
+  item: `items/tKRel4kEpSI.md`
+- **Fabric Data Agents Explained: Building Secure, Data‑Grounded AI in Microsoft Fabric** — Microsoft Fabric (21:34, 631 views)
+  https://www.youtube.com/watch?v=kOrU8zdga00
+  item: `items/kOrU8zdga00.md`
+- **Master Agentic AI Design Patterns | What Every AI Engineer Must Know** — GenAIElite (1:20:44, 2 views)
+  https://www.youtube.com/watch?v=LvHFdtzJPFE
+  item: `items/LvHFdtzJPFE.md`
+- **Day 48: AutoGen — Collaborative Problem Solving** — Systemdrllp5 (2:21, 1 views)
+  https://www.youtube.com/watch?v=W2yLL9rGwAc
+  item: `items/W2yLL9rGwAc.md`
+- **I Replaced OpenClaw With My Own AI Agent, Here’s My Full Newsroom Workflow** — Gen AI Spotlight (30:33, 78 views)
+  https://www.youtube.com/watch?v=-wQPhXfLM7M
+  item: `items/-wQPhXfLM7M.md`
+- **Analysts Gone Wild | Analyzing Enterprise Software Stories | Episode 54** — ElevatIQ (57:56, 4 views)
+  https://www.youtube.com/watch?v=ksS15kccXPc
+  item: `items/ksS15kccXPc.md`
+- **Past the Pilot E1 - New Ways of Working** — Vertesia (26:01, 6 views)
+  https://www.youtube.com/watch?v=EV6diiQXYEU
+  item: `items/EV6diiQXYEU.md`
+- **EP94** — Institute for Luxury Home Marketing (45:06, 15 views)
+  https://www.youtube.com/watch?v=-Ur1ytUrw-s
+  item: `items/-Ur1ytUrw-s.md`
+- **IRS is Targeting Senior Homeowners on April 15th — Here's What They're Looking For** — Markus Graves (18:18, 7.7K views)
+  https://www.youtube.com/watch?v=aSTjQAs_t30
+  item: `items/aSTjQAs_t30.md`
+- **【纯剧情FULL】孙俪吴慷仁联手查真相🔍闺蜜竟然不是自杀？😱假男友、假身份……层层反转💣| 特辑 |危险关系 The Dark Romance| 爱奇艺华语剧场** — 爱奇艺华语剧场 - Get the iQIYI APP (3:27:50, 3.8K views)
+  https://www.youtube.com/watch?v=x7NNzeNGqqU
+  item: `items/x7NNzeNGqqU.md`
+- **n8n Tutorial 2026: Automate Everything + Build AI Workflows Easily** — Naveen Tech Hub (7:49, 6 views)
+  https://www.youtube.com/watch?v=Yttw1xV05W4
+  item: `items/Yttw1xV05W4.md`
+- **Don’t Ignore These Rules… They Change Everything** — One Book Away (1:12:05, 5 views)
+  https://www.youtube.com/watch?v=ft_pUTGc45U
+  item: `items/ft_pUTGc45U.md`
+- **Health, Safety, and Environment Training (HSE 1, 2, 3) Class 3** — Seal-Sea Concept (2:24:25, 198 views)
+  https://www.youtube.com/watch?v=_16uGyknMhk
+  item: `items/_16uGyknMhk.md`
+- **Qwen3.6-Plus VS. Claude Opus 4.5: 3D Scenes, Codebase Analysis, Processing Handwritten Notes** — Onchain AI Garage (16:19, 4.2K views)
+  https://www.youtube.com/watch?v=LQnoFIKJP3Q
+  item: `items/LQnoFIKJP3Q.md`
+- **Susan Athey - Causal Inference and Decompositions using AI Models** — UC Berkeley EECS (1:08:00, 120 views)
+  https://www.youtube.com/watch?v=djGa1-EiNs0
+  item: `items/djGa1-EiNs0.md`
+- **The Brownstone Show - Episode 16 - Aaron Kheriaty** — Brownstone Institute (56:07, 360 views)
+  https://www.youtube.com/watch?v=93FJi_3Ty-4
+  item: `items/93FJi_3Ty-4.md`
+- **Bruce Friedrich on the Future of Meat: Plant-Based, Cultivated, and the Race to Feed the World** — Our Hen House (57:47, 57 views)
+  https://www.youtube.com/watch?v=W1Ixg9M7mnc
+  item: `items/W1Ixg9M7mnc.md`
+- **LET'S REBUILD THE BOAT AND LAUNCH SOME ROCKETS! - The Last Caretaker EP41** — ProRogueBear (3:05:22, 558 views)
+  https://www.youtube.com/watch?v=07rIhwr86_w
+  item: `items/07rIhwr86_w.md`
+- **Rethinking Wellbeing at Work: Using AI to Build a Culture of Practice and Behavior Change at Work** — NYU SPS Human Capital Management (52:26, 14 views)
+  https://www.youtube.com/watch?v=K-7HoNvkTEk
+  item: `items/K-7HoNvkTEk.md`

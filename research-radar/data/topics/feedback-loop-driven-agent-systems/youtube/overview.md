@@ -96,3 +96,96 @@ Full item files belong in `items/`.
 - **‘Quite Dark And Sinister’ | BBC Kept Scott Mills On Air | ‘Dictator’ Starmer Suspends MP** — The Jeremy Kyle Breakfast Show (43:30, 3.5K views)
   https://www.youtube.com/watch?v=sdd8JUv50c0
   item: `items/sdd8JUv50c0.md`
+
+## 2026-04-04 — 30 new videos
+
+- **The State of Open Source AI | NVIDIA GTC** — NVIDIA Developer (36:11, 733 views)
+  https://www.youtube.com/watch?v=NM6T0tV5na4
+  item: `items/NM6T0tV5na4.md`
+- **AI Is About to Get Dangerous (No One Is Ready) w/ Doug Shannon** — The NDS Show (1:03:46, 21 views)
+  https://www.youtube.com/watch?v=57g8K9Q8nrI
+  item: `items/57g8K9Q8nrI.md`
+- **Building Better Go Systems with Logs, Context, and Profiling | Big Tent S3E8** — Grafana (1:02:46, 83 views)
+  https://www.youtube.com/watch?v=1Vvm3B8rrWs
+  item: `items/1Vvm3B8rrWs.md`
+- **WiDS Cambridge 2026 Keynote** — MIT Institute for Data, Systems, and Society (29:37, 10 views)
+  https://www.youtube.com/watch?v=DdASg7AY7UU
+  item: `items/DdASg7AY7UU.md`
+- **Pam Bondi OUT: Watch KEY MOMENTS from her tenure at the DOJ** — MS NOW (59:33, 31.3K views)
+  https://www.youtube.com/watch?v=UK-Cx2uEEfE
+  item: `items/UK-Cx2uEEfE.md`
+- **Sisu Review: The Secret to Scaling Your Real Estate Business** — Sisu (33, 12.4K views)
+  https://www.youtube.com/watch?v=SpinHz18sxQ
+  item: `items/SpinHz18sxQ.md`
+- **Why Your Agents Aren't Calling (And How to Fix It With Data)** — Sisu (57, new)
+  https://www.youtube.com/watch?v=zuFsRYN1nIk
+  item: `items/zuFsRYN1nIk.md`
+- **Learn Snowflake with ONE Project** — Tech With Tim (44:47, 6.6K views)
+  https://www.youtube.com/watch?v=7QisFjITGlI
+  item: `items/7QisFjITGlI.md`
+- **Build OpenClaw-RL + VoiceAgents using Claude Code | LLM context engineering series | Lecture 10** — Vizuara (1:11:54, 987 views)
+  https://www.youtube.com/watch?v=YTOfVIL-xVc
+  item: `items/YTOfVIL-xVc.md`
+- **AI & Coding: Interview with Vahrun K. Mohran of Google DeepMind** — MIT Schwarzman College of Computing (44:58, 16 views)
+  https://www.youtube.com/watch?v=NvHz_esnSJc
+  item: `items/NvHz_esnSJc.md`
+- **How Hard Can It Be to Replace a Narrowboat Radiator? (Famous Last Words)** — Nick's Wanderings (19:14, 418 views)
+  https://www.youtube.com/watch?v=C9XJ2yB_OO4
+  item: `items/C9XJ2yB_OO4.md`
+- **FBI & ICE RAID Married Nigerian Prosecutors in Chicago — 6.81 Tons, $3.4B Money Laundering Exposed** — Robert Paul (14:35, 3.0K views)
+  https://www.youtube.com/watch?v=UKNEIkLkOHQ
+  item: `items/UKNEIkLkOHQ.md`
+- **How One Man Passed 200 Classified Documents to Moscow While Rising Through MI6 Ranks** — INSIDE THE HEIST (25:25, 3.4K views)
+  https://www.youtube.com/watch?v=8tFN1WRHQAk
+  item: `items/8tFN1WRHQAk.md`
+- **AI Strategy for the Department of War: The Memo That Puts LLMs in Charge of the Kill Chain** — Thinking On Paper (21:43, 3 views)
+  https://www.youtube.com/watch?v=quHjn_bE-Ac
+  item: `items/quHjn_bE-Ac.md`
+- **Episode 19: You Can’t Trust What You See Anymore (AI Deepfakes Are Here)** — Anthony and Greg (31:50, 2 views)
+  https://www.youtube.com/watch?v=T8GS9x1siro
+  item: `items/T8GS9x1siro.md`
+- **AI & Coding: Modular & Legible Software for AI (& Human) Coders** — MIT Schwarzman College of Computing (51:45, 10 views)
+  https://www.youtube.com/watch?v=hJq8pt54ab8
+  item: `items/hJq8pt54ab8.md`
+- **STRC Hit $5 Billion — And The Companies Buying It Aren't Who You'd Expect** — Bitcoin Treasuries and Treasury Orange (1:03:49, 1.1K views)
+  https://www.youtube.com/watch?v=1Hfey9tMiF8
+  item: `items/1Hfey9tMiF8.md`
+- **401K Crypto Trap: Why Wall Street Wins, Not You** — Coin Bureau (14:53, 5.2K views)
+  https://www.youtube.com/watch?v=urECWgDza4A
+  item: `items/urECWgDza4A.md`
+- **AI in Education: Experiences With AI in the Software Engineering Capstone** — MIT Schwarzman College of Computing (35:50, 7 views)
+  https://www.youtube.com/watch?v=YLXVMpCIvC0
+  item: `items/YLXVMpCIvC0.md`
+- **When Your Self-Worth Disappears Around Other People** — Two Mind Method (36:48, 974 views)
+  https://www.youtube.com/watch?v=pSQCiKeDtOY
+  item: `items/pSQCiKeDtOY.md`
+- **AI in Education: Panel Discussion: How Does AI Affect How We Learn?** — MIT Schwarzman College of Computing (1:13:22, 8 views)
+  https://www.youtube.com/watch?v=WvuCgpRU7EA
+  item: `items/WvuCgpRU7EA.md`
+- **Ep 748: Plugins, Microsoft’s AI Comeback and New AI Video. 7 New AI Features You Should be Tracking** — Everyday AI (30:03, 74 views)
+  https://www.youtube.com/watch?v=RfxDgKj3Ksc
+  item: `items/RfxDgKj3Ksc.md`
+- **A 10-Year-Old Black Billionaire’s Son Was Falsely Accused—Moments Later, the Airline CEO Froze** — Silent Wealth (2:23:15, 3 views)
+  https://www.youtube.com/watch?v=sUbK-RAU9Wk
+  item: `items/sUbK-RAU9Wk.md`
+- **The Complete Guide to Claude Code: Rules, MCP, Skills, Agents, Plugins | JKC Tutorials** — JKC Tutorials (6:01, 69 views)
+  https://www.youtube.com/watch?v=vUD8T2bS2us
+  item: `items/vUD8T2bS2us.md`
+- **How to Hit Your Monthly Real Estate Goals with This Formula** — Sisu (49, new)
+  https://www.youtube.com/watch?v=KzoHQlmywGU
+  item: `items/KzoHQlmywGU.md`
+- **2026 Koch Institute Image Awards** — KochInstituteMIT (1:03:43, 12 views)
+  https://www.youtube.com/watch?v=WDSRWr796nA
+  item: `items/WDSRWr796nA.md`
+- **Pioneers In Politics: Felix Sabates | Unspun** — WTVIPBSCLT (27:36, 15 views)
+  https://www.youtube.com/watch?v=xS10VouhGt0
+  item: `items/xS10VouhGt0.md`
+- **The kind girl visits the farm - Han does this simple thing that touches everyone's hearts** — Han's life (1:12:09, 9.3K views)
+  https://www.youtube.com/watch?v=sf6q4zWdi3c
+  item: `items/sf6q4zWdi3c.md`
+- **FBI & DEA Raid Miami Cartel — Haitian-Born Prosecutor & $11B Methamphetamine Empire Exposed** — Edward Wayne (14:10, 89 views)
+  https://www.youtube.com/watch?v=8RMOy_jwdJc
+  item: `items/8RMOy_jwdJc.md`
+- **If A Producer Receives 500 Scripts A Year, How Many Will They Read? Shaked Berenson [FULL INTERVIEW]** — Film Courage (1:32:38, 396 views)
+  https://www.youtube.com/watch?v=DV-jlp5GOu0
+  item: `items/DV-jlp5GOu0.md`

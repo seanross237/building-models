@@ -1,0 +1,26 @@
+# How to Fix Your Agent's Amnesia: Lessons from Building a Self-learning Agent
+
+- Topic: `self-improving agent systems`
+- Priority: `super_relevant`
+- Source context: `eywa`
+- Type: `youtube`
+- Video ID: `tKRel4kEpSI`
+- Channel: `MLOps.community`
+- Duration: `8:04`
+- Views: `582 views`
+- Upload date: `NA`
+- URL: https://www.youtube.com/watch?v=tKRel4kEpSI
+- Collected at UTC: `2026-04-04T07:00:05Z`
+- Transcript status: `pending`
+
+## Summary
+
+Not analyzed yet.
+
+## Transcript
+
+Transcript not collected yet.
+
+## Notes
+
+- Freshly collected by Research Radar.

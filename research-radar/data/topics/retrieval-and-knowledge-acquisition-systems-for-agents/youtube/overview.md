@@ -45,3 +45,51 @@ Full item files belong in `items/`.
 - **💥【新番上线】重生反杀极品亲戚，夺产开馆逆袭，被京城大佬宠上天！《航母都有了，你管这叫垃圾回收站》全集Multi SUB #热血 #漫剧 #动漫魔女** — 动漫魔女 (3:22:16, 424 views)
   https://www.youtube.com/watch?v=eCNR8QkwXHc
   item: `items/eCNR8QkwXHc.md`
+
+## 2026-04-04 — 15 new videos
+
+- **Arrogant Billionaires Thought He Was A Broke Kid, Until He Bought Their Company** — LazyManhwa (9:38:32, 5 views)
+  https://www.youtube.com/watch?v=xtlWHKZMohA
+  item: `items/xtlWHKZMohA.md`
+- **🔥【MULTI SUB】《我，钓鱼佬：上来的鱼超值钱》【短剧合集】#甜宠 #短剧 #都市 #热血 #短剧全集 #重生 #逆袭 #古装 #战斗 #大陆剧 #热门 #热门短剧推荐 #奈奈剧场** — 糖分超标社 (2:03:12, 62 views)
+  https://www.youtube.com/watch?v=-613GAzOTdA
+  item: `items/-613GAzOTdA.md`
+- **🔥【爽漫】【Eng Sub】《末世氪金王：我的詭異無限升級》末世降臨，開局獲得億萬詭幣，逆轉規則，統禦各路詭異強者稱霸世界！第50-176集 #热血 #玄幻 #都市 #动画 #2025** — 八虎动漫剧场 (10:13:00, 986 views)
+  https://www.youtube.com/watch?v=iIgHcI3imX0
+  item: `items/iIgHcI3imX0.md`
+- **🔥【爽漫】【Eng Sub】《神級奸商：全服求我別薅了/God-Tier Scammer》EP1-119 | 林風重生玩虛擬遊戲成奸商，一路暴賺改命，卻發現現實隱藏著遊戲真相。#玄幻 #热血 #动漫** — 八虎动漫剧场 (10:07:22, 42 views)
+  https://www.youtube.com/watch?v=vC-J3x1NGis
+  item: `items/vC-J3x1NGis.md`
+- **A 10-Year-Old Black Billionaire’s Son Was Falsely Accused—Moments Later, the Airline CEO Froze** — Silent Wealth (2:23:15, 3 views)
+  https://www.youtube.com/watch?v=sUbK-RAU9Wk
+  item: `items/sUbK-RAU9Wk.md`
+- **他是被判定銷毀的殘次品，她是唯一肯帶走他的天才工程師，機器人嚴禁不能越界，但見到她的第一眼，只想和她永遠在一起，他不懂人類的愛情，卻學會了在她哭的時候，笨拙地擦掉她的眼淚#杨鹏丞#邓灵枢** — 追劇鴨 (2:47:33, 42.8K views)
+  https://www.youtube.com/watch?v=_xYcwYsB1d4
+  item: `items/_xYcwYsB1d4.md`
+- **Endures 99 Insults From Lover, On 100th Poor Boy Becomes Billionaire Making Everyone Regret** — Gado-Gado Clips (1:28:59, 10.3K views)
+  https://www.youtube.com/watch?v=P1aM4Hher5Y
+  item: `items/P1aM4Hher5Y.md`
+- **💥Eng Sub【我，釣魚佬：上來的魚超值錢】普通青年葉青失業後綁定釣魚系統，憑系統能力在釣魚圈崛起，實現人生逆襲。#短劇完整版#短劇推薦#短劇全集#drama#小言推文#男頻#逆襲#郭謹睿#馬奕驍** — 小言推文 (2:03:15, 770 views)
+  https://www.youtube.com/watch?v=LQ6-SNYInnc
+  item: `items/LQ6-SNYInnc.md`
+- **💥ENG SUB💥【诡异降临：我用万亿冥币买下世界】Bought the World with Ghost Money 第50-176集 #玄幻 #都市 #anime** — 超有钱动漫 Anime Club (10:13:00, 758 views)
+  https://www.youtube.com/watch?v=DOP8NG1qqrA
+  item: `items/DOP8NG1qqrA.md`
+- **🔥【爽漫】【Eng Sub】《開局萬億神豪，系統逼我養女神》意外覺醒神豪系統、獲得天量資金，為了花掉只能用於女生的財富，被迫踏上一條荒誕卻爽感十足的逆襲之路。第1-193集 #都市 #逆袭 #系统** — 八虎动漫剧场 (7:08:10, 338 views)
+  https://www.youtube.com/watch?v=G8x-ge6XuNs
+  item: `items/G8x-ge6XuNs.md`
+- **[Multi Sub] New doctor intern in pediatrics, secretly married to colleague, joins ER rescue!** — 华语影视剧场-Best Chinese Drama (1:19:40, 269 views)
+  https://www.youtube.com/watch?v=2Y1gmmqsVzM
+  item: `items/2Y1gmmqsVzM.md`
+- **【Multi Sub】Icebound Apocalypse: I Build a Perfect Territory EP 1-67#热血 #anime #animation** — Quartic element Anime (5:30:54, 530 views)
+  https://www.youtube.com/watch?v=TCLICRzbY1I
+  item: `items/TCLICRzbY1I.md`
+- **💥ENG SUB💥【玄医出世：从都市开始封神】Mystic Healer: From Urban to Godhood #玄幻 #逆袭 #都市 #修仙 #anime** — 超有钱动漫 Anime Club (10:34:51, 581 views)
+  https://www.youtube.com/watch?v=ht1FrmWumK0
+  item: `items/ht1FrmWumK0.md`
+- **Crew Assumes Black Woman Is in Economy — She Owns the Entire Airline!** — Racism Uncovered (1:43:31, new)
+  https://www.youtube.com/watch?v=zrFHH_GqTjc
+  item: `items/zrFHH_GqTjc.md`
+- **【Multi Sub】 🎉 我在末世開超市當救世主 I opened a supermarket and became a savior in the apocalypse EP1-108 #男频** — Qixiang-Animation (8:58:56, 88 views)
+  https://www.youtube.com/watch?v=tZ4cjmM5yXM
+  item: `items/tZ4cjmM5yXM.md`

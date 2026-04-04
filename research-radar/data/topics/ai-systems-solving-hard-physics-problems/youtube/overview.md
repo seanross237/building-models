@@ -96,3 +96,96 @@ Full item files belong in `items/`.
 - **UCL Connect: Meet the Academics (Neuralink and Neuropixels)** — UCL Advancement (1:15:10, 70 views)
   https://www.youtube.com/watch?v=IxVqef3EsvM
   item: `items/IxVqef3EsvM.md`
+
+## 2026-04-04 — 30 new videos
+
+- **Three Charge Problem | Find Final Kinetic Energies | Ultimate Physics Challenge** — MediQube (7:12, 90 views)
+  https://www.youtube.com/watch?v=x7wlf4j0F1k
+  item: `items/x7wlf4j0F1k.md`
+- **Germany | Math Olympiad question  | can you solve this system of equations without this trick! | x=?** — Mathematics & Statistics Guru (12:52, 139 views)
+  https://www.youtube.com/watch?v=zPh3JAkjIGc
+  item: `items/zPh3JAkjIGc.md`
+- **"How to Reset Your Nervous System in 6 Hours (Life Changing)" | Osho** — The Art of Being (6:09:11, 359 views)
+  https://www.youtube.com/watch?v=dW8mlRwO2Hc
+  item: `items/dW8mlRwO2Hc.md`
+- **“你的身份不是由過去決定的，而是由你現在的選擇決定的，每一個當下的正向選擇，都在塑造未來的自己”納瓦爾 Naval** — 納瓦爾思想 (23:37, 4.2K views)
+  https://www.youtube.com/watch?v=TPMEjznqvD8
+  item: `items/TPMEjznqvD8.md`
+- **The Problem-Solving Method They Don’t Want You to Learn I Feynman Explained** — Legends of History (28:49, 5 views)
+  https://www.youtube.com/watch?v=kItel0x3Z0w
+  item: `items/kItel0x3Z0w.md`
+- **Tarih Kitapları Değişti Mi? | Tartarya: Haritalardan Silinen Dev İmparatorluk** — Gerçeği Bul (26:28, 83.7K views)
+  https://www.youtube.com/watch?v=nHposEEs4lY
+  item: `items/nHposEEs4lY.md`
+- **The materials that make fusion possible** — Helion (15:16, 8.5K views)
+  https://www.youtube.com/watch?v=jgHB0NLfj4c
+  item: `items/jgHB0NLfj4c.md`
+- **Ukraine | Can You Solve This? | Olympiad Math** — HkLogics (4:32, 17 views)
+  https://www.youtube.com/watch?v=8UzNY6wF5cQ
+  item: `items/8UzNY6wF5cQ.md`
+- **Solving a 'Harvard' University Entrance Question | Math Olympiad** — HkLogics (7:21, 25 views)
+  https://www.youtube.com/watch?v=WKM3GqdxaU8
+  item: `items/WKM3GqdxaU8.md`
+- **A  awesome algebra mathematics problem | Olympiad Question | rational problem | x=?** — Mathematics & Statistics Guru (12:53, 305 views)
+  https://www.youtube.com/watch?v=nThueVNjrr8
+  item: `items/nThueVNjrr8.md`
+- **10 Recent Discoveries That PROVE Consciousness Is Everything** — UnseenTruths (32:19, 21 views)
+  https://www.youtube.com/watch?v=JOm6S-kq1PE
+  item: `items/JOm6S-kq1PE.md`
+- **The Problem-Solving Method Schools Don’t Teach Anymore** — Feynman Skills (19:55, 2 views)
+  https://www.youtube.com/watch?v=ydZ80VOX2oM
+  item: `items/ydZ80VOX2oM.md`
+- **AI in Education: Panel Discussion: How Does AI Affect How We Learn?** — MIT Schwarzman College of Computing (1:13:22, 8 views)
+  https://www.youtube.com/watch?v=WvuCgpRU7EA
+  item: `items/WvuCgpRU7EA.md`
+- **IT'S NOT DEPRESSION, IT'S "LOW BATTERY": Harvard's Science for Resetting Your Brain** — Jose M Castillejo (1:07:08, 973 views)
+  https://www.youtube.com/watch?v=9pCQaPV-Ffo
+  item: `items/9pCQaPV-Ffo.md`
+- **IIT JAM Physics 2026 Paper Solution Alternative Method | Smart Tricks & Concepts #IITJAM2026** — SOURAV SIR'S CLASSES (4:14, 1 views)
+  https://www.youtube.com/watch?v=mthTxDoAzPU
+  item: `items/mthTxDoAzPU.md`
+- **IIT JAM Physics 2026 Paper Solution & Difficulty Analysis | Concept Breakdown #IITJAM2026 #Physics** — SOURAV SIR'S CLASSES (4:38, 16 views)
+  https://www.youtube.com/watch?v=0Ciyeyf2U0w
+  item: `items/0Ciyeyf2U0w.md`
+- **Jessica Bavaresco - Can the quantum switch be deterministically simulated?** — WithOut SpaceTime / QISS (57:51, 42 views)
+  https://www.youtube.com/watch?v=f8IKSwA5Qns
+  item: `items/f8IKSwA5Qns.md`
+- **IIT JAM Physics 2026 Paper Solution | Smart Problem Approach & Tricks #IITJAM #Physics #ExamStrategy** — SOURAV SIR'S CLASSES (9:19, 1 views)
+  https://www.youtube.com/watch?v=JUf5CsGJQcI
+  item: `items/JUf5CsGJQcI.md`
+- **倪海廈：4月5號清明節必看！3生肖穿黃色，5種人穿黑色，保你2026馬年翻天覆地#倪海廈 #黃帝內經 #養生 #國學 #易經 #清明 #開運 #招財 #補財庫 #中醫 #風水 #2026運勢 #農曆** — 漢唐健康 (1:25:44, 5.5K views)
+  https://www.youtube.com/watch?v=gt4pmv3bsgQ
+  item: `items/gt4pmv3bsgQ.md`
+- **Faster Than Light? Engineering Reality from Quantum Shadows to Deep Space | Artificially Informed** — Artificially Informed (1:14:01, 4 views)
+  https://www.youtube.com/watch?v=ika1uQMKDn8
+  item: `items/ika1uQMKDn8.md`
+- **AI & Coding: Modular & Legible Software for AI (& Human) Coders** — MIT Schwarzman College of Computing (51:45, 10 views)
+  https://www.youtube.com/watch?v=hJq8pt54ab8
+  item: `items/hJq8pt54ab8.md`
+- **AI and the Energy Sector: Preparing Mechanical Engineers for the Future with Dr. Arindam Banerjee** — ASME American Society of Mechanical Engineers (20:28, 36 views)
+  https://www.youtube.com/watch?v=l3oWJBEUQvc
+  item: `items/l3oWJBEUQvc.md`
+- **AI in Education: Navigating Teaching and Assessing Student Learning in the GenAI Era** — MIT Schwarzman College of Computing (1:00:06, 20 views)
+  https://www.youtube.com/watch?v=514jG3jEnRA
+  item: `items/514jG3jEnRA.md`
+- **The Man Who Mastered Hacking Craps Betting Legally  | hacker vs fbi** — |CodeCrime (28:15, 57 views)
+  https://www.youtube.com/watch?v=unzsMQT2t4I
+  item: `items/unzsMQT2t4I.md`
+- **The Billion-Year Void: Earth's Erased History** — OceanMyth AI (17:02, new)
+  https://www.youtube.com/watch?v=QPU-SrcwniM
+  item: `items/QPU-SrcwniM.md`
+- **Your Database Is Lying to You Right Now — Ch. 2 | System Design for Backend Engineers** — Learning Podcasts (17:33, 33 views)
+  https://www.youtube.com/watch?v=xQFbWnCoDbk
+  item: `items/xQFbWnCoDbk.md`
+- **WiDS Cambridge 2026 Panel 2:  Extreme Weather and Pollution: Impact and Equity** — MIT Institute for Data, Systems, and Society (53:10, 8 views)
+  https://www.youtube.com/watch?v=kllgbrAozIw
+  item: `items/kllgbrAozIw.md`
+- **Hinterkaifeck: Flour Footprints and a Farmhouse Without Motive** — The Apex Mind (15:07, 3 views)
+  https://www.youtube.com/watch?v=ArqDL2Gpa3c
+  item: `items/ArqDL2Gpa3c.md`
+- **Why Bees Won’t Cap Your Honey? The Hidden Ripening Problem.** — Eterna Studio Beekeeping Channel (13:25, 219 views)
+  https://www.youtube.com/watch?v=wXm4dEdqtlI
+  item: `items/wXm4dEdqtlI.md`
+- **💞I had a crush on CEO for years, never expected that he fall in love with me too, got married#cdrama** — Sweety Theater (2:37:59, 6.2K views)
+  https://www.youtube.com/watch?v=nCrxOsa2iDw
+  item: `items/nCrxOsa2iDw.md`

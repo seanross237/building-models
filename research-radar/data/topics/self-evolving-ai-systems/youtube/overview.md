@@ -114,3 +114,96 @@ Full item files belong in `items/`.
 - **Why AI Should Be Grown, Not Trained** — Eye on AI (58:59, 147 views)
   https://www.youtube.com/watch?v=uqH-P-qsdEc
   item: `items/uqH-P-qsdEc.md`
+
+## 2026-04-04 — 30 new videos
+
+- **AlphaGo & Beyond: How AI Learned to Reason** — AI Researcher (7:31, new)
+  https://www.youtube.com/watch?v=Ils6JufO2P4
+  item: `items/Ils6JufO2P4.md`
+- **The State of Open Source AI | NVIDIA GTC** — NVIDIA Developer (36:11, 733 views)
+  https://www.youtube.com/watch?v=NM6T0tV5na4
+  item: `items/NM6T0tV5na4.md`
+- **Galactic Alliance Update: Galactic codex : Securing Earth’s Ascension & The A.I. Correction Protocol** — THE REAL ISMAEL PEREZ (NA, new)
+  https://www.youtube.com/watch?v=FKFgur6d7zo
+  item: `items/FKFgur6d7zo.md`
+- **Ngoding Dibantu AI : AI Itu Bisa Salah… Tapi Gimana Belajar Sendiri?! | Self-Evolving AI** — robby imam prakoso (NA, new)
+  https://www.youtube.com/watch?v=FO_tDOSpME4
+  item: `items/FO_tDOSpME4.md`
+- **The Pleiadeans of Light: Inside the D'Akoorhuians Guardian Civilization** — Astral Legends TV (14:03, 244 views)
+  https://www.youtube.com/watch?v=uV4qcy4ueXI
+  item: `items/uV4qcy4ueXI.md`
+- **“你的身份不是由過去決定的，而是由你現在的選擇決定的，每一個當下的正向選擇，都在塑造未來的自己”納瓦爾 Naval** — 納瓦爾思想 (23:37, 4.1K views)
+  https://www.youtube.com/watch?v=TPMEjznqvD8
+  item: `items/TPMEjznqvD8.md`
+- **"How to Reset Your Nervous System in 6 Hours (Life Changing)" | Osho** — The Art of Being (6:09:11, 359 views)
+  https://www.youtube.com/watch?v=dW8mlRwO2Hc
+  item: `items/dW8mlRwO2Hc.md`
+- **How AI can Learn How to Invent Cures on Demand** — KEN WASSERMAN (20:31, 7 views)
+  https://www.youtube.com/watch?v=oxT7bBXph7M
+  item: `items/oxT7bBXph7M.md`
+- **Book summary of "If Anyone Builds It, Everyone Dies" by Eliezer Yudkowski and Nate Soares** — Mickey Mellen (5:33, 1 views)
+  https://www.youtube.com/watch?v=gV8q2SRpkt0
+  item: `items/gV8q2SRpkt0.md`
+- **Smarter Insurance Journey with AI** — JourneyTrack (49:54, 1 views)
+  https://www.youtube.com/watch?v=w8SQ8BeJnjo
+  item: `items/w8SQ8BeJnjo.md`
+- **Push Notifications to Pull Systems: How AI Will Help You Reclaim Control Over Web Content | Yutori** — Startup Project — AI Startups w/ PMF (52:41, 221 views)
+  https://www.youtube.com/watch?v=rZXUawHDGzE
+  item: `items/rZXUawHDGzE.md`
+- **Italy OUT of the 2026 World Cup: The REAL medical cause they're hiding from you** — Simone Avsim | Calcio & Mindset (6:30, 1.3K views)
+  https://www.youtube.com/watch?v=cHo7RfQo0Ls
+  item: `items/cHo7RfQo0Ls.md`
+- **乡村女孩4年开80家精品咖啡连锁店 ► 她做对了什么？- HWC Coffee 首席执行官 Zenda Ng** — 后起之秀 Rising Podcast (55:47, 3.5K views)
+  https://www.youtube.com/watch?v=SH5zyaR8r8U
+  item: `items/SH5zyaR8r8U.md`
+- **進入心流的關鍵心理：別讓表現綁架自我認同 with Dr. Michael Gervais｜Sherry's Notes 雪力的心理學筆記** — Sherry's Notes 雪力的心理學筆記 (45:01, 3.3K views)
+  https://www.youtube.com/watch?v=CmVbgxXVFcM
+  item: `items/CmVbgxXVFcM.md`
+- **What Unexpected Event is About To Change Your Life... 🤗🙏🏼✨✨✨Pick A Card Timeless Tarot** — Moon Magic Weekly Tarot (57:56, 6.5K views)
+  https://www.youtube.com/watch?v=EheTif3XprU
+  item: `items/EheTif3XprU.md`
+- **Trump, Iran, and the Rise of a Luciferian System | Sacha Stone** — FAR OUT WITH FAUST (1:20:55, 150 views)
+  https://www.youtube.com/watch?v=z1Xen43PYjI
+  item: `items/z1Xen43PYjI.md`
+- **The AI Cybersecurity Handbook by Caroline Wong | Detailed Book Summary** — The Strategy Sync (44:22, 1 views)
+  https://www.youtube.com/watch?v=SjBFAuyOWbg
+  item: `items/SjBFAuyOWbg.md`
+- **Markets Machines and Warfare How Global Systems Are Rewriting Stability | Artificially Informed** — Artificially Informed (1:06:03, 11 views)
+  https://www.youtube.com/watch?v=DBux72yTzoU
+  item: `items/DBux72yTzoU.md`
+- **24/7 Crypto & Forex Live Trading 🤖AI Trading Bots Running 24/7 – No Filters #Livetrading** — Tradebuttons (7:21, 3 views)
+  https://www.youtube.com/watch?v=7Bl-ZfGuVws
+  item: `items/7Bl-ZfGuVws.md`
+- **CARTA: Computer-assisted Brains with Joseph Paradiso** — University of California Television (UCTV) (21:42, 312 views)
+  https://www.youtube.com/watch?v=h1JjPOsepcA
+  item: `items/h1JjPOsepcA.md`
+- **AI, Omnichannel, and the Future of Supply Chain** — MIT Center for Transportation & Logistics (47:09, 147 views)
+  https://www.youtube.com/watch?v=QxH9cexfz6Q
+  item: `items/QxH9cexfz6Q.md`
+- **Healthcare Interoperability Explained: The cost of not getting it right.** — Sidharth Ramesh (11:12, 85 views)
+  https://www.youtube.com/watch?v=4Ym7Dpgo8k4
+  item: `items/4Ym7Dpgo8k4.md`
+- **Hinterkaifeck: Flour Footprints and a Farmhouse Without Motive** — The Apex Mind (15:07, 3 views)
+  https://www.youtube.com/watch?v=ArqDL2Gpa3c
+  item: `items/ArqDL2Gpa3c.md`
+- **Lewes: The Small Town with a HUGE History - 1 Hour Train Ride from London!** — MemorySeekers (40:20, 3.9K views)
+  https://www.youtube.com/watch?v=0byMJ5qyvuA
+  item: `items/0byMJ5qyvuA.md`
+- **Panel 2 | Digital technology: preservation across the generations | SCOLMA 2025 Conference** — SCOLMA (1:08:58, 13 views)
+  https://www.youtube.com/watch?v=l8bbE1byzMs
+  item: `items/l8bbE1byzMs.md`
+- **‘AMAZING REPORT': Jobs data SHOCKS the market** — Fox Business (33:08, 78.8K views)
+  https://www.youtube.com/watch?v=rp_Umz8rKJY
+  item: `items/rp_Umz8rKJY.md`
+- **Rethinking Wellbeing at Work: Using AI to Build a Culture of Practice and Behavior Change at Work** — NYU SPS Human Capital Management (52:26, 14 views)
+  https://www.youtube.com/watch?v=K-7HoNvkTEk
+  item: `items/K-7HoNvkTEk.md`
+- **Quantum Entanglement, The Fall of Natural Language, and Linguistic Rebellion in Mania** — Bipolar Game Changer (1:20:56, new)
+  https://www.youtube.com/watch?v=pmKC1Dey3k4
+  item: `items/pmKC1Dey3k4.md`
+- **Designing Low-Friction Cognitive Health Tools Based on Voice and Sound with Kara Uchtman of Vibes AI** — Slide UX (51:21, new)
+  https://www.youtube.com/watch?v=9l9QF72k8Gg
+  item: `items/9l9QF72k8Gg.md`
+- **🔥 24/7 Crypto Live Trading 🤖 I Built a AI Trading Bot That trades Bitcoin & Meme #Livetrading** — Tradebuttons (NA, new)
+  https://www.youtube.com/watch?v=FKTPEHPrdgQ
+  item: `items/FKTPEHPrdgQ.md`

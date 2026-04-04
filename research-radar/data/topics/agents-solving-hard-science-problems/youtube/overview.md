@@ -96,3 +96,96 @@ Full item files belong in `items/`.
 - **He had his twin CEO brother pose as him to marry me, so I played along—but he went mad with regret!** — Nana Drama (2:27:23, 2.3K views)
   https://www.youtube.com/watch?v=D4WgFrwbep0
   item: `items/D4WgFrwbep0.md`
+
+## 2026-04-04 — 30 new videos
+
+- **Supercharging AI Shopping Assistant with the Large Intent Model** — nostosolutions (1:38, 1 views)
+  https://www.youtube.com/watch?v=5lXpzN_iTgc
+  item: `items/5lXpzN_iTgc.md`
+- **AI & Coding: Lessons from the Trenches on Building Usable Coding Agents** — MIT Schwarzman College of Computing (44:51, 26 views)
+  https://www.youtube.com/watch?v=c_oQPlOg78c
+  item: `items/c_oQPlOg78c.md`
+- **Past the Pilot E1 - New Ways of Working** — Vertesia (26:01, 6 views)
+  https://www.youtube.com/watch?v=EV6diiQXYEU
+  item: `items/EV6diiQXYEU.md`
+- **The Thinking Method of Richard Feynman They Never Teach You in School** — FEYNMAN REVEALED (19:23, 2 views)
+  https://www.youtube.com/watch?v=TBGyHqvwFZQ
+  item: `items/TBGyHqvwFZQ.md`
+- **AI & Coding: Interview with Vahrun K. Mohran of Google DeepMind** — MIT Schwarzman College of Computing (44:58, 16 views)
+  https://www.youtube.com/watch?v=NvHz_esnSJc
+  item: `items/NvHz_esnSJc.md`
+- **AI & Coding: Automation from the Programmer’s Apprentice to Modern Coding Agents** — MIT Schwarzman College of Computing (36:38, 22 views)
+  https://www.youtube.com/watch?v=lHqqCKahHSg
+  item: `items/lHqqCKahHSg.md`
+- **AI in Education: Panel Discussion: How Does AI Affect How We Learn?** — MIT Schwarzman College of Computing (1:13:22, 8 views)
+  https://www.youtube.com/watch?v=WvuCgpRU7EA
+  item: `items/WvuCgpRU7EA.md`
+- **How to Stop Writing "AI Slop" | Agentic Engineering for Developers** — Zainul Zain (Jai) (15:16, 20 views)
+  https://www.youtube.com/watch?v=erQc3jXJljQ
+  item: `items/erQc3jXJljQ.md`
+- **I Built a Tool That Runs Claude Code with ANY AI Model — GPT, Codex, Gemini, DeepSeek, Free Models** — Anton Abyzov: AI Power (16:46, 4.7K views)
+  https://www.youtube.com/watch?v=k0RI_M6lIsg
+  item: `items/k0RI_M6lIsg.md`
+- **AI in Education: Experiences With AI in the Software Engineering Capstone** — MIT Schwarzman College of Computing (35:50, 7 views)
+  https://www.youtube.com/watch?v=YLXVMpCIvC0
+  item: `items/YLXVMpCIvC0.md`
+- **AI in Education: Navigating Teaching and Assessing Student Learning in the GenAI Era** — MIT Schwarzman College of Computing (1:00:06, 20 views)
+  https://www.youtube.com/watch?v=514jG3jEnRA
+  item: `items/514jG3jEnRA.md`
+- **Research Inspired Cognitive Frequency Integration™ Sleep Protocol for Mental Clarity.** — The Quantum Psychologist (35:36, 15 views)
+  https://www.youtube.com/watch?v=KF7oxhtTT1M
+  item: `items/KF7oxhtTT1M.md`
+- **35  From Stardust To Sentience Astrobiology & Life in the Cosmos – with Adam Frank** — Lifeworlds (1:04:42, 25 views)
+  https://www.youtube.com/watch?v=LKfOzqj7bSg
+  item: `items/LKfOzqj7bSg.md`
+- **Bruce Friedrich on the Future of Meat: Plant-Based, Cultivated, and the Race to Feed the World** — Our Hen House (57:47, 57 views)
+  https://www.youtube.com/watch?v=W1Ixg9M7mnc
+  item: `items/W1Ixg9M7mnc.md`
+- **#1236 Paul Thagard - Dreams, Jokes, and Songs: How Brains Build Consciousness** — The Dissenter (1:19:17, 70 views)
+  https://www.youtube.com/watch?v=CgUTyMaAAz0
+  item: `items/CgUTyMaAAz0.md`
+- **The bizarre phenomena that medicine struggles to explain | David Linden: Full Interview** — Big Think (1:07:41, 34.6K views)
+  https://www.youtube.com/watch?v=Hu1PyOP_NGA
+  item: `items/Hu1PyOP_NGA.md`
+- **Lethal Comet: The Secret Mission to Save Earth’s Magnetic Field** — imineo (1:27:54, 4.1K views)
+  https://www.youtube.com/watch?v=oF_x2BlgHLc
+  item: `items/oF_x2BlgHLc.md`
+- **Claude Code Just Cracked Kalshi** — Moon Dev (10:59, 1.6K views)
+  https://www.youtube.com/watch?v=Q8Pf1Ppe1-8
+  item: `items/Q8Pf1Ppe1-8.md`
+- **How  The First Moon Colony Is Closer Than You Think** — Boring Science (2:35:39, 2.3K views)
+  https://www.youtube.com/watch?v=FNqB-2i3XZs
+  item: `items/FNqB-2i3XZs.md`
+- **David R. Liu: Mutation-Specific, Mutation-Agnostic, and Disease-Agnostic Therapeutic Genome Editing** — NCATS NIH (1:07:11, 43 views)
+  https://www.youtube.com/watch?v=7Uzt7C0sJnE
+  item: `items/7Uzt7C0sJnE.md`
+- **I Can Rewind Time by 12 Hours Infinitely, and Copy My Enemy’s Abilities Every Time I Die!** — Revel Manga Chronicles (37:17:17, 587 views)
+  https://www.youtube.com/watch?v=puyUEXZc-Zc
+  item: `items/puyUEXZc-Zc.md`
+- **Securing global connectivity with lasers | Dr. Mohammad Danesh, Transcelestial** — Unsensible (36:50, 27 views)
+  https://www.youtube.com/watch?v=y70Kh52kDrQ
+  item: `items/y70Kh52kDrQ.md`
+- **AGI4OPT (Optimization-Focused AGI) using Agent Skill** — サプライ・チェイン最適化チャンネル（MIKIO KUBO) (26:39, 126 views)
+  https://www.youtube.com/watch?v=9cS7dglu028
+  item: `items/9cS7dglu028.md`
+- **2026 Koch Institute Image Awards** — KochInstituteMIT (1:03:43, 12 views)
+  https://www.youtube.com/watch?v=WDSRWr796nA
+  item: `items/WDSRWr796nA.md`
+- **Facing the Fantasy, Finding the Way Forward: A New Book from Doris and Rick Bowman** — Alliance Against Seclusion and Restraint (1:21:36, 11 views)
+  https://www.youtube.com/watch?v=orIYTQdj0yo
+  item: `items/orIYTQdj0yo.md`
+- **WiDS Cambridge 2026 LightningTalks** — MIT Institute for Data, Systems, and Society (17:45, 34 views)
+  https://www.youtube.com/watch?v=NExPDSBTgCw
+  item: `items/NExPDSBTgCw.md`
+- **April 1, 2026 Tree Board Meeting** — City of Lake Forest Park (1:55:42, 16 views)
+  https://www.youtube.com/watch?v=CBSV0kypKqU
+  item: `items/CBSV0kypKqU.md`
+- **If A Producer Receives 500 Scripts A Year, How Many Will They Read? Shaked Berenson [FULL INTERVIEW]** — Film Courage (1:32:38, 396 views)
+  https://www.youtube.com/watch?v=DV-jlp5GOu0
+  item: `items/DV-jlp5GOu0.md`
+- **Crisis in the Middle East - The US-Israeli War on the Islamic Republic** — Princeton SPIA (1:00:47, 53 views)
+  https://www.youtube.com/watch?v=jm5S0-PTBTM
+  item: `items/jm5S0-PTBTM.md`
+- **The Love Problems We Face: Dr. Loren Weiner on Returning to Spirit** — And Now Love Podcast (1:02:54, 342 views)
+  https://www.youtube.com/watch?v=FO0yjmC58PQ
+  item: `items/FO0yjmC58PQ.md`

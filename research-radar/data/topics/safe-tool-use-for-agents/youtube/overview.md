@@ -96,3 +96,96 @@ Full item files belong in `items/`.
 - **Webinar: AI in Software Development: Benefits, Risks, and Cybersecurity Considerations 📱** — Blue Goat Cyber (44:47, 21 views)
   https://www.youtube.com/watch?v=KO2topU9R90
   item: `items/KO2topU9R90.md`
+
+## 2026-04-04 — 30 new videos
+
+- **This Tool makes Coding Agent more Powerful** — Ras Mic (9:35, 3.8K views)
+  https://www.youtube.com/watch?v=KYOg81dfac8
+  item: `items/KYOg81dfac8.md`
+- **SonarQube Agentic Analysis: The Safety Net for AI Coding Agents** — Sonar (2:54, 30 views)
+  https://www.youtube.com/watch?v=UC2jQsSAPuE
+  item: `items/UC2jQsSAPuE.md`
+- **I Broke Down Anthropic's $2.5 Billion Leak. Your Agent Is Missing 12 Critical Pieces.** — AI News & Strategy Daily | Nate B Jones (26:53, 66.1K views)
+  https://www.youtube.com/watch?v=FtCdYhspm7w
+  item: `items/FtCdYhspm7w.md`
+- **37,000 Lines of Slop** — Syntax and Scott Tolinski (9:19, 19.7K views)
+  https://www.youtube.com/watch?v=1r9n-HsBQsE
+  item: `items/1r9n-HsBQsE.md`
+- **NEW Claude Code Updates are INSANE!** — Julian Goldie SEO (8:17, 99 views)
+  https://www.youtube.com/watch?v=RII2Kz6mgag
+  item: `items/RII2Kz6mgag.md`
+- **Whitepaper Companion Podcast - Agent Quality** — Kaggle (16:26, 45.3K views)
+  https://www.youtube.com/watch?v=LFQRy-Ci-lk
+  item: `items/LFQRy-Ci-lk.md`
+- **Every Small Business Needs This AI Tool (You Can Sell It)** — Chris Koerner on The Koerner Office Podcast (15:28, 10.1K views)
+  https://www.youtube.com/watch?v=g4-3AxelI_Y
+  item: `items/g4-3AxelI_Y.md`
+- **AI News: Anthropic Leak is Bigger Than You Think** — Matt Wolfe (31:05, 44.1K views)
+  https://www.youtube.com/watch?v=BZ1hs2ZcnJc
+  item: `items/BZ1hs2ZcnJc.md`
+- **Why Juries Are Turning Against Meta and YouTube** — Hard Fork (1:06:53, 3.0K views)
+  https://www.youtube.com/watch?v=rQ5cAzc0LKI
+  item: `items/rQ5cAzc0LKI.md`
+- **New Media Energy** — People vs Algorithms (1:17:59, 4 views)
+  https://www.youtube.com/watch?v=-2Tplr1jzmw
+  item: `items/-2Tplr1jzmw.md`
+- **How Autonomous AI Actually Works: From Raw LLM to Multi-Agent Systems** — Learn Artificial Intelligence (5:51, 5 views)
+  https://www.youtube.com/watch?v=qe2yxryZnuQ
+  item: `items/qe2yxryZnuQ.md`
+- **DataTalks: 𝐀𝐠𝐞𝐧𝐭 𝐄𝐯𝐚𝐥𝐮𝐚𝐭𝐢𝐨𝐧 — 𝐌𝐞𝐚𝐬𝐮𝐫𝐢𝐧𝐠 𝐀𝐝𝐚𝐩𝐭𝐚𝐛𝐢𝐥𝐢𝐭𝐲 𝐚𝐧𝐝 𝐄𝐯𝐚𝐥𝐮𝐚𝐭𝐢𝐧𝐠 𝐌𝐮𝐥𝐭𝐢-𝐀𝐠𝐞𝐧𝐭 𝐒𝐲𝐬𝐭𝐞𝐦𝐬** — DataHack (1:32:06, 8 views)
+  https://www.youtube.com/watch?v=sUdxTobIXFI
+  item: `items/sUdxTobIXFI.md`
+- **OpenClaw 4.2 Just Changed AI Agents Forever** — AI News Today | Julian Goldie Podcast (9:04, 4.5K views)
+  https://www.youtube.com/watch?v=Ysj_jYLidug
+  item: `items/Ysj_jYLidug.md`
+- **Give agents your apps** — The Next New Thing (26:27, 453 views)
+  https://www.youtube.com/watch?v=IVocHEaFpqU
+  item: `items/IVocHEaFpqU.md`
+- **The Hidden Problem With AI Agents (No One Talks About This)** — NotebookLM Explained (6:35, 1 views)
+  https://www.youtube.com/watch?v=W3XiolbSQYQ
+  item: `items/W3XiolbSQYQ.md`
+- **AI Security Risks Every Business Needs to Know Before Using AI Tools | Webinar** — Fairdinkum Consulting (45:51, 1 views)
+  https://www.youtube.com/watch?v=g0btoBMsmaI
+  item: `items/g0btoBMsmaI.md`
+- **Deep Dive OpenClaw Browser Automation – Why This Setup Actually Works** — W Agentic Lab (17:57, 6 views)
+  https://www.youtube.com/watch?v=JQ5IM8Q-xA8
+  item: `items/JQ5IM8Q-xA8.md`
+- **The BroxtenDigital Show - Episode 8: Ben Levin** — Broxten Davis (53:42, 6 views)
+  https://www.youtube.com/watch?v=2PRbwqbBqiQ
+  item: `items/2PRbwqbBqiQ.md`
+- **The Longevity State: Where Aging Isn't Allowed** — Dylan Curious (30:10, 3.7K views)
+  https://www.youtube.com/watch?v=46e_HOLP8Sw
+  item: `items/46e_HOLP8Sw.md`
+- **The Only Claude Cowork Tutorial Finance Professionals Need in 2026** — Pranay Sanghvi - AI x Finance (22:20, 633 views)
+  https://www.youtube.com/watch?v=tkHAIJtB7Qg
+  item: `items/tkHAIJtB7Qg.md`
+- **Why AI Content is Getting Deranked in 2026 (And How to Stay Safe)** — SEOZilla (2:00, 55 views)
+  https://www.youtube.com/watch?v=M45e12dUzwk
+  item: `items/M45e12dUzwk.md`
+- **Echo CLI mode - A Persistent Memory Layer for AI Agents** — Victoria Cheng (39, 1 views)
+  https://www.youtube.com/watch?v=R9kg8Toc9no
+  item: `items/R9kg8Toc9no.md`
+- **6- Tools in Agents Day in Telugu** — learn_with_me (6:43, 3 views)
+  https://www.youtube.com/watch?v=9M1WWe394TM
+  item: `items/9M1WWe394TM.md`
+- **BUZZwords | Ep. 4 | Agentic** — The Bee (1:44:01, new)
+  https://www.youtube.com/watch?v=rtpQt_MCHtw
+  item: `items/rtpQt_MCHtw.md`
+- **250,000 AI Workers Walking Into Chaos #ai #podcast** — NHI Mgmt Group (1:01, 204 views)
+  https://www.youtube.com/watch?v=tc0u4roibqc
+  item: `items/tc0u4roibqc.md`
+- **Driving Intentional Systems Change with and for the ECE Workforce** — National Early Care and Education Workforce Center (1:29:57, 1 views)
+  https://www.youtube.com/watch?v=6VFzvUINv30
+  item: `items/6VFzvUINv30.md`
+- **Health, Safety, and Environment Training (HSE 1, 2, 3) Class 3** — Seal-Sea Concept (2:24:25, 198 views)
+  https://www.youtube.com/watch?v=_16uGyknMhk
+  item: `items/_16uGyknMhk.md`
+- **Did Claude Code Just Leak Its Secret Sauce?** — The AI Argument (33:45, 30 views)
+  https://www.youtube.com/watch?v=ikZ98AVQWQU
+  item: `items/ikZ98AVQWQU.md`
+- **AI Agents, Firm Transformation & the Future of Accounting | The RightNOW Podcast** — Rightworks (39:31, 6 views)
+  https://www.youtube.com/watch?v=Bm1mojVB_NQ
+  item: `items/Bm1mojVB_NQ.md`
+- **"Social Media Is a Chainsaw" Not A Tool To Wield Lightly Platforms Need Accountability, Parents Too** — The AI XR Podcast (55, 2 views)
+  https://www.youtube.com/watch?v=2Zu5M9iUFC4
+  item: `items/2Zu5M9iUFC4.md`

@@ -63,3 +63,57 @@ Full item files belong in `items/`.
 - **You said 'don't stop' in my bed, now I have future memories and the heiress kneels for me!** — X Hero Drama (2:16:58, 6 views)
   https://www.youtube.com/watch?v=YPM97fEaPFY
   item: `items/YPM97fEaPFY.md`
+
+## 2026-04-04 — 17 new videos
+
+- **Your AI Agent Can't Self-Correct — Here's the Architecture That Can** — The Bearded AI Guy (10:41, 6 views)
+  https://www.youtube.com/watch?v=HCRrRlvBk8g
+  item: `items/HCRrRlvBk8g.md`
+- **ENG SUB 🔥【全網首發】《结婚前一天，冰河期来了》重生退婚联手最强律师，打造末日基地虐渣逆袭！#热血#末世#漫剧#末世生存#赛博剧场** — 赛博剧场 (52:31, 507 views)
+  https://www.youtube.com/watch?v=vaQACsDDXtQ
+  item: `items/vaQACsDDXtQ.md`
+- **Healing or Illusion? An Investigation into the Bruno Gröning Case** — Bruno Gröning Freundeskreis (50:14, 27.3K views)
+  https://www.youtube.com/watch?v=lgwsZHVZxtI
+  item: `items/lgwsZHVZxtI.md`
+- **《Awakening Dual Abilities, I Build an Oasis in the Apocalypse》#PopularManga #NovelAdaptation** — 曼波動漫 (2:03:04, 301 views)
+  https://www.youtube.com/watch?v=MVBRDFYZdZg
+  item: `items/MVBRDFYZdZg.md`
+- **Will AI take my job? 🤖 The difference between being replaced and using AI** — 마이너스(Miners) A Korean Life & Travel Podcast (39:02, 10 views)
+  https://www.youtube.com/watch?v=jeiHnbw8nv4
+  item: `items/jeiHnbw8nv4.md`
+- **Cinematic Sci-Fi Audiobook | Entangled Egos| Parallel Universe Thriller** — The Brainy Dreams Studio (7:09:56, 1 views)
+  https://www.youtube.com/watch?v=QdwOiboB4vU
+  item: `items/QdwOiboB4vU.md`
+- **🔮 Ancient China Deep Sleep | The Master of Six Stratagems: Chen Ping’s Silent War** — Sleepless Orient (2:23:16, 3 views)
+  https://www.youtube.com/watch?v=Acr8lr5UENw
+  item: `items/Acr8lr5UENw.md`
+- **Secret crush. 5 yrs later at his firm—he protects her and asks: “Li Yuan, marry me?”** — 小露追劇 Top Drama (1:53:16, 28.8K views)
+  https://www.youtube.com/watch?v=VWfgOcqb33I
+  item: `items/VWfgOcqb33I.md`
+- **A 10-Year-Old Black Billionaire’s Son Was Falsely Accused—Moments Later, the Airline CEO Froze** — Silent Wealth (2:23:15, 3 views)
+  https://www.youtube.com/watch?v=sUbK-RAU9Wk
+  item: `items/sUbK-RAU9Wk.md`
+- **Hallie Jackson NOW - April 3 | NBC News NOW** — NBC News (1:40:52, 8.3K views)
+  https://www.youtube.com/watch?v=RaXTAri42VI
+  item: `items/RaXTAri42VI.md`
+- **AI and Justice Consortium and the Future of Public Safety Initiative: AI and Incarceration** — John Jay College (58:18, 5 views)
+  https://www.youtube.com/watch?v=5WsHy6IOqUY
+  item: `items/5WsHy6IOqUY.md`
+- **AITA for letting my FIL punish my MIL after she caused my pregnancy loss?** — Gummy Bear Tales (1:38:20, 360 views)
+  https://www.youtube.com/watch?v=P2UvRoI8zbo
+  item: `items/P2UvRoI8zbo.md`
+- **AI in Education: Navigating Teaching and Assessing Student Learning in the GenAI Era** — MIT Schwarzman College of Computing (1:00:06, 20 views)
+  https://www.youtube.com/watch?v=514jG3jEnRA
+  item: `items/514jG3jEnRA.md`
+- **Leo Tolstoy's 23 Short Stories   Complete Audiobook  Russian Literature Classics** — AI Eternal Chapters (9:41:20, 181 views)
+  https://www.youtube.com/watch?v=YA-kEs4ZleY
+  item: `items/YA-kEs4ZleY.md`
+- **I Can Rewind Time by 12 Hours Infinitely, and Copy My Enemy’s Abilities Every Time I Die!** — Revel Manga Chronicles (37:17:17, 587 views)
+  https://www.youtube.com/watch?v=puyUEXZc-Zc
+  item: `items/puyUEXZc-Zc.md`
+- **Purva Bhadrapada Mind: Subconscious Patterns, Sensory Wiring & Inner Fire** — Vedic Astrology (57:12, 7 views)
+  https://www.youtube.com/watch?v=mmIMi8GzREU
+  item: `items/mmIMi8GzREU.md`
+- **Too Precise to Be Human? How to Last Long with Love Robots?** — Wooden Slate (20:11, 217 views)
+  https://www.youtube.com/watch?v=NDQQHUeM0iQ
+  item: `items/NDQQHUeM0iQ.md`

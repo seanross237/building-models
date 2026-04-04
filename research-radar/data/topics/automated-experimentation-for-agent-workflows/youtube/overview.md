@@ -96,3 +96,96 @@ Full item files belong in `items/`.
 - **Business Online Playbook S01 EP03 Jordache Johnson** — Fast And Light Digital Agency (34:52, 1 views)
   https://www.youtube.com/watch?v=f_mRViksWZo
   item: `items/f_mRViksWZo.md`
+
+## 2026-04-04 — 30 new videos
+
+- **Accounting Agents for Reconciliation | AI Matching Workflow on GCP (Concept)** — MizuFlow (7:53, 20 views)
+  https://www.youtube.com/watch?v=QyD3kcqghHk
+  item: `items/QyD3kcqghHk.md`
+- **AI Agents vs Chatbots vs Workflows — What Actually Wins? (No Hype, Just Truth)** — The JavaScript Dojo (3:53, 2 views)
+  https://www.youtube.com/watch?v=q5v_DrQuwv0
+  item: `items/q5v_DrQuwv0.md`
+- **Deep Dive OpenClaw Browser Automation – Why This Setup Actually Works** — W Agentic Lab (17:57, 6 views)
+  https://www.youtube.com/watch?v=JQ5IM8Q-xA8
+  item: `items/JQ5IM8Q-xA8.md`
+- **How Autonomous AI Actually Works: From Raw LLM to Multi-Agent Systems** — Learn Artificial Intelligence (5:51, 5 views)
+  https://www.youtube.com/watch?v=qe2yxryZnuQ
+  item: `items/qe2yxryZnuQ.md`
+- **I Replaced OpenClaw With My Own AI Agent, Here’s My Full Newsroom Workflow** — Gen AI Spotlight (30:33, 78 views)
+  https://www.youtube.com/watch?v=-wQPhXfLM7M
+  item: `items/-wQPhXfLM7M.md`
+- **What Are AI Agents? A Simple Explanation for Business Owners** — Cam Trew (9:14, 28 views)
+  https://www.youtube.com/watch?v=yuwnEJrbZTQ
+  item: `items/yuwnEJrbZTQ.md`
+- **Agentic AI for Credit financial analyst | Earnings Summary Automation Workflow  Demo | Simplai** — SimplAI (8:01, 21 views)
+  https://www.youtube.com/watch?v=PMQc2ly2B2Y
+  item: `items/PMQc2ly2B2Y.md`
+- **How to Master the Superpowers Plugin in Claude Code** — GritAI Studio (19:00, 1.4K views)
+  https://www.youtube.com/watch?v=yEzzBxhkUw4
+  item: `items/yEzzBxhkUw4.md`
+- **OpenClaw 4.2 Just Changed AI Agents Forever** — AI News Today | Julian Goldie Podcast (9:04, 4.5K views)
+  https://www.youtube.com/watch?v=Ysj_jYLidug
+  item: `items/Ysj_jYLidug.md`
+- **n8n Tutorial 2026: Automate Everything + Build AI Workflows Easily** — Naveen Tech Hub (7:49, 6 views)
+  https://www.youtube.com/watch?v=Yttw1xV05W4
+  item: `items/Yttw1xV05W4.md`
+- **One Prompt to Fix Your OpenClaw-Multi-Agent Setup** — WU-KI (7:19, 7 views)
+  https://www.youtube.com/watch?v=Fe4A6mWIGsg
+  item: `items/Fe4A6mWIGsg.md`
+- **Past the Pilot E2- Workstreams** — Vertesia (32:25, 8 views)
+  https://www.youtube.com/watch?v=Dps3ZVkNbGI
+  item: `items/Dps3ZVkNbGI.md`
+- **Gemini Enterprise: Creating Agent with Agent Designer | 66degrees** — 66degrees (7:56, 7 views)
+  https://www.youtube.com/watch?v=6JI3AvFFkok
+  item: `items/6JI3AvFFkok.md`
+- **NEW Claude Kairos: INSANE AI Leak! 🤯** — Julian Goldie SEO (7:31, 1.9K views)
+  https://www.youtube.com/watch?v=ree1q95iZuo
+  item: `items/ree1q95iZuo.md`
+- **Build a React Dashboard in Minutes with Google Antigravity & n8n (Prompt Included)** — David Vasquez (26:41, 6 views)
+  https://www.youtube.com/watch?v=TLdZygYXO_Q
+  item: `items/TLdZygYXO_Q.md`
+- **Qwen AI Just Showed Why The US Can't Ignore China Anymore** — Limitless Podcast (32:11, 9.3K views)
+  https://www.youtube.com/watch?v=W1Mws_qxCRU
+  item: `items/W1Mws_qxCRU.md`
+- **HubSpot Updates: Journey Automation, Scoring, Campaign Assets** — Sidekick Strategies HubSpot Tutorials & Strategies (40:26, 1 views)
+  https://www.youtube.com/watch?v=C2glvLei4CU
+  item: `items/C2glvLei4CU.md`
+- **Master Claude AI: The Blueprint for Rules, MCP Tools, Agents, Plugins** — JKC Tutorials (6:01, 69 views)
+  https://www.youtube.com/watch?v=vUD8T2bS2us
+  item: `items/vUD8T2bS2us.md`
+- **AI Is About to Get Dangerous (No One Is Ready) w/ Doug Shannon** — The NDS Show (1:03:46, 21 views)
+  https://www.youtube.com/watch?v=57g8K9Q8nrI
+  item: `items/57g8K9Q8nrI.md`
+- **How to Connect WhatsApp with ElevenLabs AI Voice Agent** — Ritesh Hegde - Your AI Partner (15:44, 39 views)
+  https://www.youtube.com/watch?v=CEguoPSGoOo
+  item: `items/CEguoPSGoOo.md`
+- **Ep 56: Balancing Innovation and Responsibility in AI’s Evolving Landscape** — Aaron Shechet (6:09, 2 views)
+  https://www.youtube.com/watch?v=pf4grLBkm3U
+  item: `items/pf4grLBkm3U.md`
+- **AI Agents, Firm Transformation & the Future of Accounting | The RightNOW Podcast** — Rightworks (39:31, 4 views)
+  https://www.youtube.com/watch?v=Bm1mojVB_NQ
+  item: `items/Bm1mojVB_NQ.md`
+- **Stop Copy-Pasting Prompts: I Built 5 Claude Skills That Run Automatically** — Vivek Mishra (2:20:03, 2.5K views)
+  https://www.youtube.com/watch?v=TJWeXsRRpRA
+  item: `items/TJWeXsRRpRA.md`
+- **Google Gemma 4: Lightweight Open model for on-device AI | Next in AI | Astha La Vista** — Next in AI: Astha La Vista (6:43, 15 views)
+  https://www.youtube.com/watch?v=nF0umt3q3ZA
+  item: `items/nF0umt3q3ZA.md`
+- **💰 How Claude Makes $2.5 Billion: The 12-Step Formula EXPOSED** — AUTOHOTKEY Gurus (5:08, 18 views)
+  https://www.youtube.com/watch?v=0haxFMTnaHg
+  item: `items/0haxFMTnaHg.md`
+- **Gemma 4 от Google Здесь!** — ИИшенка | AI Automation (11:00, 2.7K views)
+  https://www.youtube.com/watch?v=-9-7CSDKxrE
+  item: `items/-9-7CSDKxrE.md`
+- **AI & Coding: Interview with Vahrun K. Mohran of Google DeepMind** — MIT Schwarzman College of Computing (44:58, 16 views)
+  https://www.youtube.com/watch?v=NvHz_esnSJc
+  item: `items/NvHz_esnSJc.md`
+- **#172 The Kubernetes moment for AI Agents** — Raghu Banda (55:07, 2 views)
+  https://www.youtube.com/watch?v=Fnjz7Vma7n4
+  item: `items/Fnjz7Vma7n4.md`
+- **$7,000,000 LinkedIn Strategy for a $10M/year SaaS Founder** — Michel Lieben 🧠 (1:13:06, 194 views)
+  https://www.youtube.com/watch?v=9T_E_I9WHUg
+  item: `items/9T_E_I9WHUg.md`
+- **Every Engineer Is a Manager Now 🤖 — with Chris Lattner** — Refactoring (58:59, 391 views)
+  https://www.youtube.com/watch?v=PLQs_hHTzSk
+  item: `items/PLQs_hHTzSk.md`

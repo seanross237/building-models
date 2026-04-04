@@ -1,0 +1,26 @@
+# I Made an AI Anti-Cheat Better Than VAC
+
+- Topic: `AI systems harnesses`
+- Priority: `super_relevant`
+- Source context: `eywa`
+- Type: `youtube`
+- Video ID: `dBHssDRL2f8`
+- Channel: `HaiX`
+- Duration: `14:53`
+- Views: `59.4K views`
+- Upload date: `NA`
+- URL: https://www.youtube.com/watch?v=dBHssDRL2f8
+- Collected at UTC: `2026-04-04T07:00:06Z`
+- Transcript status: `pending`
+
+## Summary
+
+Not analyzed yet.
+
+## Transcript
+
+Transcript not collected yet.
+
+## Notes
+
+- Freshly collected by Research Radar.

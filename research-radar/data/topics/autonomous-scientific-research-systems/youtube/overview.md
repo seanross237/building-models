@@ -96,3 +96,96 @@ Full item files belong in `items/`.
 - **Polish underwater drones in a swarm – PG, AGH and PGZ join forces | PODCAST Polska Armia** — Your gaming info (6:42, 1.5K views)
   https://www.youtube.com/watch?v=wYuCQ-pIk-w
   item: `items/wYuCQ-pIk-w.md`
+
+## 2026-04-04 — 30 new videos
+
+- **What We’re Getting Wrong About AI, According To Former Tech Executives** — Business Insider and 2 more (36:40, 10.3K views)
+  https://www.youtube.com/watch?v=6_aKBUfY2Yc
+  item: `items/6_aKBUfY2Yc.md`
+- **Spring 2026 GRASP SFI - Ji Woong (Brian) Kim, Stanford University** — GRASP Lab (1:02:09, 52 views)
+  https://www.youtube.com/watch?v=m6CfOWFPqME
+  item: `items/m6CfOWFPqME.md`
+- **AI in Education: Use of AI in MIT Language Programs** — MIT Schwarzman College of Computing (39:53, 25 views)
+  https://www.youtube.com/watch?v=NFse2DF4xd0
+  item: `items/NFse2DF4xd0.md`
+- **Apple’s AI Pivot & The Era of Autonomous Agents** — The Neural Pulse (6:17, new)
+  https://www.youtube.com/watch?v=dIhO0E7PBrg
+  item: `items/dIhO0E7PBrg.md`
+- **The End of Manual Regression Testing? Introducing Autonomous Testing for Dynamics 365 | WEBINAR** — Executive Automats is now Xplus (45:24, 11 views)
+  https://www.youtube.com/watch?v=FqRBvvyum40
+  item: `items/FqRBvvyum40.md`
+- **AI & Coding: Interview with Vahrun K. Mohran of Google DeepMind** — MIT Schwarzman College of Computing (44:58, 16 views)
+  https://www.youtube.com/watch?v=NvHz_esnSJc
+  item: `items/NvHz_esnSJc.md`
+- **Past the Pilot E1 - New Ways of Working** — Vertesia (26:01, 6 views)
+  https://www.youtube.com/watch?v=EV6diiQXYEU
+  item: `items/EV6diiQXYEU.md`
+- **The Autonomous Lab: Navigating technology, talent & transformation** — Biosero (23:07, 5 views)
+  https://www.youtube.com/watch?v=iqK92Yg0xz4
+  item: `items/iqK92Yg0xz4.md`
+- **Personal Autonomy in the Age of Technology** — Ema Roloff (12:30, 10 views)
+  https://www.youtube.com/watch?v=LanghzG-VHY
+  item: `items/LanghzG-VHY.md`
+- **The Intelligence Loop: How AI is Automating Scientific Discovery** — Wisdom Hill (8:25, 6 views)
+  https://www.youtube.com/watch?v=R3UIglMXA_I
+  item: `items/R3UIglMXA_I.md`
+- **AI in Education: Navigating Teaching and Assessing Student Learning in the GenAI Era** — MIT Schwarzman College of Computing (1:00:06, 20 views)
+  https://www.youtube.com/watch?v=514jG3jEnRA
+  item: `items/514jG3jEnRA.md`
+- **Grok: The Agentic Evolution** — Dereck Tafuma (53, 1 views)
+  https://www.youtube.com/watch?v=9uD6c0Y_QRI
+  item: `items/9uD6c0Y_QRI.md`
+- **Best Practices for Supervising 24/7 Autonomous AI Employees | SimplaBots News Special Report** — SimplaBots News (4:21, 144 views)
+  https://www.youtube.com/watch?v=3-WMcGQVN70
+  item: `items/3-WMcGQVN70.md`
+- **How NOVA (Subnet 68) is disrupting drug discovery via AI** — Supercycle Podcast (15:43, 94 views)
+  https://www.youtube.com/watch?v=py7DgwA1Tf4
+  item: `items/py7DgwA1Tf4.md`
+- **April 3rd 2026 - Daily AI News : The Architectures of Autonomy** — Daily AI News 4 Everyone (7:43, 2 views)
+  https://www.youtube.com/watch?v=qKdKHpmb3ss
+  item: `items/qKdKHpmb3ss.md`
+- **ByteRover: Agent-Native Hierarchical LLM Memory** — AI Research Roundup (4:32, 6 views)
+  https://www.youtube.com/watch?v=Z9ZNuJzJK1Y
+  item: `items/Z9ZNuJzJK1Y.md`
+- **SECURING NEXT GENERATION EMBODIED AI ROBOTIC VEHICLES** — TraCR (47:26, 1 views)
+  https://www.youtube.com/watch?v=3TTSkARH0U0
+  item: `items/3TTSkARH0U0.md`
+- **Why Your RAG Pipeline is Failing (And How to Fix It with Agents) | Rynaut - The Agentic Architect** — Rynaut — Architecting Automation (6:51, 2 views)
+  https://www.youtube.com/watch?v=7ySSxfNLTGg
+  item: `items/7ySSxfNLTGg.md`
+- **How  The First Moon Colony Is Closer Than You Think** — Boring Science (2:35:39, 2.3K views)
+  https://www.youtube.com/watch?v=FNqB-2i3XZs
+  item: `items/FNqB-2i3XZs.md`
+- **Markets Machines and Warfare How Global Systems Are Rewriting Stability | Artificially Informed** — Artificially Informed (1:06:03, 11 views)
+  https://www.youtube.com/watch?v=DBux72yTzoU
+  item: `items/DBux72yTzoU.md`
+- **Vibe Coding With Cursor 3** — BridgeMind (19:23, 10.6K views)
+  https://www.youtube.com/watch?v=FwW0KUCYHwE
+  item: `items/FwW0KUCYHwE.md`
+- **Psychology of People Who Don't Care About AI** — The Quiet Healing (9:24, 2 views)
+  https://www.youtube.com/watch?v=c9QakuytWc0
+  item: `items/c9QakuytWc0.md`
+- **How This $100 mRNA Drug Kicked Off A New Era of Medicine** — Core Memory (9:09, 971 views)
+  https://www.youtube.com/watch?v=pN-ykHjP9Gg
+  item: `items/pN-ykHjP9Gg.md`
+- **Build AI Agents That Actually Work: The Complete Framework** — Lukas Margerie (17:52, 106 views)
+  https://www.youtube.com/watch?v=aoE1uNN7ukU
+  item: `items/aoE1uNN7ukU.md`
+- **China’s New Strategy: Energy, War & Global Power Shift Explained** — Foresight Research (50:35, 43 views)
+  https://www.youtube.com/watch?v=ef7uwIsOthY
+  item: `items/ef7uwIsOthY.md`
+- **AI Agents vs Chatbots vs Workflows — What Actually Wins? (No Hype, Just Truth)** — The JavaScript Dojo (3:53, 2 views)
+  https://www.youtube.com/watch?v=q5v_DrQuwv0
+  item: `items/q5v_DrQuwv0.md`
+- **Electroatom Project Phases: From Engineering Validation to Global Deployment** — ELECTROATOM ⚡ - free energy (3:01, 23 views)
+  https://www.youtube.com/watch?v=v8B1ArbWHjU
+  item: `items/v8B1ArbWHjU.md`
+- **進入心流的關鍵心理：別讓表現綁架自我認同 with Dr. Michael Gervais｜Sherry's Notes 雪力的心理學筆記** — Sherry's Notes 雪力的心理學筆記 (45:01, 3.3K views)
+  https://www.youtube.com/watch?v=CmVbgxXVFcM
+  item: `items/CmVbgxXVFcM.md`
+- **How Ancient Civilizations Used Sound in Their Constructions** — Misterios de Civilizaciones (21:13, 128 views)
+  https://www.youtube.com/watch?v=ftbsgnyRXbE
+  item: `items/ftbsgnyRXbE.md`
+- **Trump, Iran, and the Rise of a Luciferian System | Sacha Stone** — FAR OUT WITH FAUST (1:20:55, 150 views)
+  https://www.youtube.com/watch?v=z1Xen43PYjI
+  item: `items/z1Xen43PYjI.md`
