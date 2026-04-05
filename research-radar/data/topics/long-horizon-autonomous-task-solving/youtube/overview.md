@@ -75,3 +75,27 @@ Full item files belong in `items/`.
 - **512,000 Lines Leaked: Did Anthropic Just Break the Internet?** — The Pairing Mode (39:30, 8 views)
   https://www.youtube.com/watch?v=X4PW8ufihJk
   item: `items/X4PW8ufihJk.md`
+
+## 2026-04-05 — 7 new videos
+
+- **Ex-Meta AI Chief Yann LeCun | The Biggest Risk of AI & The Second Wave Coming** — Ahamed Fofana (11:05, 11 views)
+  https://www.youtube.com/watch?v=qqY_Eod8pNo
+  item: `items/qqY_Eod8pNo.md`
+- **Ocean Survival: His System Draws Weapons Daily and Evolves a Broken Raft into a Super Battleship!** — Panda Fantasy Chronicles (30:34:03, 773 views)
+  https://www.youtube.com/watch?v=ZjTqbijB1PM
+  item: `items/ZjTqbijB1PM.md`
+- **Night Watches: Avoid These Fatal Mistakes** — Ikigaï Voyages (56:00, 326 views)
+  https://www.youtube.com/watch?v=qRFott1rDWQ
+  item: `items/qRFott1rDWQ.md`
+- **ENG SUB 🔥【全網首發】《别人等死，我合成求生》全球沦为死海，我靠合成栏秒变生存王者！当别人为水厮杀，我已合成药剂徒手碾压掠夺者。#热血#末世#漫剧#末世生存#赛博剧场** — 赛博剧场 (1:00:11, 1.4K views)
+  https://www.youtube.com/watch?v=r5Dlk3CPKt4
+  item: `items/r5Dlk3CPKt4.md`
+- **Sierra 2026: Enterprise AI Agents That Actually Work Like Real Employees** — QUASA (6:02, 11 views)
+  https://www.youtube.com/watch?v=pT-qKYvAFCU
+  item: `items/pT-qKYvAFCU.md`
+- **Reborn 1 month before the apocalypse, I awakened an infinite space and hoarded 10,000 tons of meat!** — ถนอม แก้วธรรม (11:55:01, 6 views)
+  https://www.youtube.com/watch?v=VER9RtodV-E
+  item: `items/VER9RtodV-E.md`
+- **【穿越X異能覺醒】F級漁船開局，幽靈船Bug收場——來打我啊？** — AI漫劇工坊 (2:10:48, 43 views)
+  https://www.youtube.com/watch?v=gp2b04tWlA0
+  item: `items/gp2b04tWlA0.md`

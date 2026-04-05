@@ -42,3 +42,18 @@ Full item files belong in `items/`.
 - **AI in Education: Panel Discussion: How Does AI Affect How We Learn?** — MIT Schwarzman College of Computing (1:13:22, 8 views)
   https://www.youtube.com/watch?v=WvuCgpRU7EA
   item: `items/WvuCgpRU7EA.md`
+
+## 2026-04-05 — 4 new videos
+
+- **Microsoft Agent Framework Explained — Build AI Agents in C#** — CodeWithVijay (24:36, 16 views)
+  https://www.youtube.com/watch?v=tNFT9Tk8UDc
+  item: `items/tNFT9Tk8UDc.md`
+- **MiroFish DÉTRUIT Claude en prédiction (preuves)** — Meydeey | Automatisation IA (45:07, 1.9K views)
+  https://www.youtube.com/watch?v=Y8biCoPYmTo
+  item: `items/Y8biCoPYmTo.md`
+- **they blocked OpenClaw. now what.** — Ray Fernando (2:16:43, 5.1K views)
+  https://www.youtube.com/watch?v=sWDhIGIiK5w
+  item: `items/sWDhIGIiK5w.md`
+- **ctx Replaces Your IDE With AI Agents That Code Autonomously** — Deployed-AI (5:45, 1 views)
+  https://www.youtube.com/watch?v=7Ad-ZqGsb-Q
+  item: `items/7Ad-ZqGsb-Q.md`

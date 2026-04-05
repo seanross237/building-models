@@ -189,3 +189,87 @@ Full item files belong in `items/`.
 - **【MULTI SUB】一口气看爽韩漫《成为反派的靠山》** — 韩漫潮映馆 (2:21:54, 12.4K views)
   https://www.youtube.com/watch?v=cfYRKGlGPPU
   item: `items/cfYRKGlGPPU.md`
+
+## 2026-04-05 — 27 new videos
+
+- **Betrayed By His Crush After Saving Her, He Joins A Secret School To Become God.** — Inosuke Recap (21:14:00, 1.2K views)
+  https://www.youtube.com/watch?v=arUNSks6Jpo
+  item: `items/arUNSks6Jpo.md`
+- **I am trying to BREAK this 50-Year-Old Math Problem (Lonely Runner conjecture k=13 Simulation) Ep. 1** — uselessmaths (1:08, 5 views)
+  https://www.youtube.com/watch?v=tHtJKtUCzWw
+  item: `items/tHtJKtUCzWw.md`
+- **they blocked OpenClaw. now what.** — Ray Fernando (2:16:43, 5.1K views)
+  https://www.youtube.com/watch?v=sWDhIGIiK5w
+  item: `items/sWDhIGIiK5w.md`
+- **Will God Save America? | Bible Prophecy, America & the Future | LIVE Conference Day 2** — Heritage & Hope Ministries (9:01:11, 5.4K views)
+  https://www.youtube.com/watch?v=hc4jv0bCfUA
+  item: `items/hc4jv0bCfUA.md`
+- **💎From $400/mo to Tycoon! Her “X-ray eyes” find treasures: pearls, jade, secrets...** — LunaDrama (1:56:08, 3.7K views)
+  https://www.youtube.com/watch?v=wIMR9JqE68s
+  item: `items/wIMR9JqE68s.md`
+- **An accident split them; he hated her 5 yrs.Reunited,jealous,he chased her,married fast,won her back!** — 小露追劇 Top Drama (1:58:49, 125.2K views)
+  https://www.youtube.com/watch?v=xgzjZeC-l6k
+  item: `items/xgzjZeC-l6k.md`
+- **Ex-Meta AI Chief Yann LeCun | The Biggest Risk of AI & The Second Wave Coming** — Ahamed Fofana (11:05, 11 views)
+  https://www.youtube.com/watch?v=qqY_Eod8pNo
+  item: `items/qqY_Eod8pNo.md`
+- **The Explosion That Killed A City** — Mentour Pilot (45:24, 128.7K views)
+  https://www.youtube.com/watch?v=1BU5hqbU1z4
+  item: `items/1BU5hqbU1z4.md`
+- **【完結】她受夠了老公與白月光的曖昧糾纏，果斷提出離婚，誰料卻被前男友冷嘲熱諷，以為她三年來一直在等他，可他不知道，如今的她要錢有錢，要顏有顏，早已看清一切，只想盡快離婚，遠離這些虛偽的人！** — 劇熱門 (1:25:10, 587 views)
+  https://www.youtube.com/watch?v=4_3OJnUmox4
+  item: `items/4_3OJnUmox4.md`
+- **Sundown Towns That STILL Exist — The 2026 Updated List** — Black Journals (23:24, 1.9K views)
+  https://www.youtube.com/watch?v=pBGgDHTovO0
+  item: `items/pBGgDHTovO0.md`
+- **How Data Teams Can Do 10x MORE** — DataCamp (38, 600 views)
+  https://www.youtube.com/watch?v=IOvLxnfV8Nk
+  item: `items/IOvLxnfV8Nk.md`
+- **A Spy With a Nuclear Missile Targeting Iran!** — Afnan Cottage (46:39, 15.2K views)
+  https://www.youtube.com/watch?v=gsyTmXLOkS4
+  item: `items/gsyTmXLOkS4.md`
+- **“Rot There, Old Man!” My Daughter-in-Law Dumped Me In A Nursing Home — Until She Found Out The TRUTH** — Revenge Room (1:31:07, 5.6K views)
+  https://www.youtube.com/watch?v=0Xg5fHqJdgs
+  item: `items/0Xg5fHqJdgs.md`
+- **✨ I Am Living Proof | True Stories of Miracles, Healing & God’s Power | BMG Documentary** — EncourageTV (1:24:28, 2.5K views)
+  https://www.youtube.com/watch?v=glz3tMMzXjQ
+  item: `items/glz3tMMzXjQ.md`
+- **Agent Build an Autonomous AI Music Agent with Gemini 3 Flash & Python | Antigravity Tutorial** — Arman Ayva (5:01, 4 views)
+  https://www.youtube.com/watch?v=77fQ88yut3U
+  item: `items/77fQ88yut3U.md`
+- **10 Ways I Use AI in My Real Estate Business** — Joe McCall (16:03, 146 views)
+  https://www.youtube.com/watch?v=A-5-uxPzPpU
+  item: `items/A-5-uxPzPpU.md`
+- **Deep Dive Into the COLLAPSE of ISLAM** — Fall of Nations (2:53:55, 777 views)
+  https://www.youtube.com/watch?v=aiBMdiSd0r8
+  item: `items/aiBMdiSd0r8.md`
+- **[ENG Sub] TVB ពេទ្យថ្នាំបុរាណចិត្តធម៌ {12/20} Heroes in White | រឿងភាគហុងកុងនិយាយខ្មែរ | 2025** — TVB Cambodia Drama (42:58, 10.4K views)
+  https://www.youtube.com/watch?v=LgCw_2u2eoQ
+  item: `items/LgCw_2u2eoQ.md`
+- **Pyre [Part 5]** — RudicornVOD (3:08:13, 7 views)
+  https://www.youtube.com/watch?v=V239Kzy9u-s
+  item: `items/V239Kzy9u-s.md`
+- **Waking Up From A Coma To Find My Life Stolen, So I Decided To Raise The Demon King** — Hajime Recap (1:32:22, 217 views)
+  https://www.youtube.com/watch?v=lZBktwhTHZk
+  item: `items/lZBktwhTHZk.md`
+- **These 5 Skills Will Land You the Job** — Dr. HR (9:53, 16 views)
+  https://www.youtube.com/watch?v=rd2c4dE5cQc
+  item: `items/rd2c4dE5cQc.md`
+- **Galactus: Eater-of-Worlds and Fantastic Four Foe | Marvel Recap** — Marvel Entertainment (1:01:17, 11.6K views)
+  https://www.youtube.com/watch?v=qFfTr75E0iU
+  item: `items/qFfTr75E0iU.md`
+- **To Live Through Death (2024) Movie Explained | English Subtitle Added** — Hello! Bangla (35:47, 157 views)
+  https://www.youtube.com/watch?v=Fsfwg2duRfY
+  item: `items/Fsfwg2duRfY.md`
+- **🔥🔥The cold prince ignored all suitors, clung to me in love, and begged me to give him a title.** — 古短剧场 Ancient Short Drama (2:21:29, 19.8K views)
+  https://www.youtube.com/watch?v=7xw9EBW83FE
+  item: `items/7xw9EBW83FE.md`
+- **Chased, Trapped… Then MURDERED on Camera | Ahmaud Arbery** — The True Crime Nurse (43:57, 1.3K views)
+  https://www.youtube.com/watch?v=SE6szu3RE9w
+  item: `items/SE6szu3RE9w.md`
+- **大四女學生意外吻上冷面霸總,眾人都以為她會被扔出去,沒想到霸總心動淪陷,從此對她言聽計從,娶回家寵上天!#總裁 #灰姑娘 #甜劇 #甜寵 #一口氣 #全集 #冰山總裁的萌妻** — 星河剧场BurstSweetDrama (1:55:20, 425 views)
+  https://www.youtube.com/watch?v=hsRyzxpr-rs
+  item: `items/hsRyzxpr-rs.md`
+- **【Fullspisode】Delivery girl breaks mom's jade pendant — gains power to hear objects' secrets!** — Supernova Drama (1:57:19, 1.8K views)
+  https://www.youtube.com/watch?v=b5Q-QRroDH8
+  item: `items/b5Q-QRroDH8.md`

@@ -72,3 +72,15 @@ Full item files belong in `items/`.
 - **Investigate the Origin of the Signal - Tom Clancy’s The Division® 2 #23** — General Nix (1:07:20, 2 views)
   https://www.youtube.com/watch?v=ETxWy8P74Rw
   item: `items/ETxWy8P74Rw.md`
+
+## 2026-04-05 — 3 new videos
+
+- **Mapping the 2026 AI Dev Stack For Business** — AI Lens Podcast (6:34, 1 views)
+  https://www.youtube.com/watch?v=ESnTFxLrk1M
+  item: `items/ESnTFxLrk1M.md`
+- **Agentic Security: Protecting Your AI from Hijacking & Injection (Q161–Q170)** — Preyasi Telugu Vlogs (5:06, 3 views)
+  https://www.youtube.com/watch?v=OO5YnDbnOYM
+  item: `items/OO5YnDbnOYM.md`
+- **Claude Code + Codex = God Mode** — Alejandro Manzanera (16:42, 931 views)
+  https://www.youtube.com/watch?v=hoXZNaokgzA
+  item: `items/hoXZNaokgzA.md`

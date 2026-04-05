@@ -69,3 +69,66 @@ Full item files belong in `items/`.
 - **🎮 VALORANT GRIND [ ROAD TO 10K SUBSCRIBERS ] | EMJAY 27** — EMJAY 27 (1:23:26, 23 views)
   https://www.youtube.com/watch?v=iCyOoE3yz48
   item: `items/iCyOoE3yz48.md`
+
+## 2026-04-05 — 20 new videos
+
+- **Self Improving Agents in 5 Minutes** — Developers Digest (5:08, 906 views)
+  https://www.youtube.com/watch?v=RoaPvj9Ovug
+  item: `items/RoaPvj9Ovug.md`
+- **AI answers we blindly trust & Cursor 3 and agent workflows - AI News (Apr 4, 2026)** — The Automated Daily (10:35, 4 views)
+  https://www.youtube.com/watch?v=OQIIIipQX5c
+  item: `items/OQIIIipQX5c.md`
+- **they blocked OpenClaw. now what.** — Ray Fernando (2:16:43, 5.1K views)
+  https://www.youtube.com/watch?v=sWDhIGIiK5w
+  item: `items/sWDhIGIiK5w.md`
+- **Fix Your LLM Latency: What Actually Works in Production** — VectorLab (50:25, 27 views)
+  https://www.youtube.com/watch?v=areBIKwnHMk
+  item: `items/areBIKwnHMk.md`
+- **Trending Open-Source Github Projects : Claude Code, VibeVoice, bitsandbytes & Coolify CLI #245** — ManuAGI - AutoGPT Tutorials (13:40, 1.4K views)
+  https://www.youtube.com/watch?v=HywmktKaKd4
+  item: `items/HywmktKaKd4.md`
+- **New Claude Code Updates Are So Cool** — John Kim (20:00, 6.1K views)
+  https://www.youtube.com/watch?v=QbURYdE6ZvU
+  item: `items/QbURYdE6ZvU.md`
+- **The New Era of AI Is Already Here: How We Got Here** — ShortByShot (29:16, 2 views)
+  https://www.youtube.com/watch?v=StoE7BB3lVg
+  item: `items/StoE7BB3lVg.md`
+- **Agentic AI & Multi-Agent Orchestration in Utrecht: 2026 Guide** — Aetherlink (9:05, 2 views)
+  https://www.youtube.com/watch?v=mFCsyW9rarI
+  item: `items/mFCsyW9rarI.md`
+- **Manus AI explained simply in 13 minutes (setup & use cases)** — No Code MBA (13:49, 314 views)
+  https://www.youtube.com/watch?v=a7OZwy7kOxM
+  item: `items/a7OZwy7kOxM.md`
+- **AI Voice Agents & Multimodal Chatbots: Enterprise Cost Optimization 2…** — Aetherlink (19:20, 4 views)
+  https://www.youtube.com/watch?v=0UaiRthskhc
+  item: `items/0UaiRthskhc.md`
+- **n8n Workflow Engineering** — Naveen Tech Hub (2:04, 11 views)
+  https://www.youtube.com/watch?v=Hx2oFBlAlDA
+  item: `items/Hx2oFBlAlDA.md`
+- **Self-distillation boosts code LLMs & Coding agents: harness beats model - Hacker News (Apr 4, 2026)** — The Automated Daily (7:30, 3 views)
+  https://www.youtube.com/watch?v=z9D99RvO1Hk
+  item: `items/z9D99RvO1Hk.md`
+- **GSDC Certified Learning: Autonomous AI Agents Transforming Enterprise Operations** — Global Skill Development Council (1:20:32, 30 views)
+  https://www.youtube.com/watch?v=bwAaLxgEjbY
+  item: `items/bwAaLxgEjbY.md`
+- **Mastering Enterprise LLM Agent Systems: Architecture & Best Practices** — Mustafa Assaf (5:38, 26 views)
+  https://www.youtube.com/watch?v=7SjEZcWUDY0
+  item: `items/7SjEZcWUDY0.md`
+- **AI Agents Are Replacing ChatGPT | The $1 Trillion Shift Has Begun** — STRATOVEST AI (14:44, 2 views)
+  https://www.youtube.com/watch?v=TYmba89ulkc
+  item: `items/TYmba89ulkc.md`
+- **ChatGPT vs Claude NEW Visual AI! Canva Magic Layers, Meta Moltbook Deal & Future of AI Agents** — Mind Overviews.. (3:58, 2 views)
+  https://www.youtube.com/watch?v=H3usBELWB-A
+  item: `items/H3usBELWB-A.md`
+- **Mastering AI Agents: ReAct vs. Plan-and-Execute Frameworks Explained** — Mustafa Assaf (6:40, 19 views)
+  https://www.youtube.com/watch?v=rQc6ZtQxyTs
+  item: `items/rQc6ZtQxyTs.md`
+- **The Day the AI Dream Died Why Sora Was Shut Down and Who’s Next** — Alex talks about finance (24:41, 11 views)
+  https://www.youtube.com/watch?v=uJ-HVzSYW1M
+  item: `items/uJ-HVzSYW1M.md`
+- **🎮 VALORANT GRIND [ ROAD TO 10K SUBSCRIBERS ] | EMJAY 27** — EMJAY 27 (2:15:31, 28 views)
+  https://www.youtube.com/watch?v=AP-c65xV2RQ
+  item: `items/AP-c65xV2RQ.md`
+- **UMKM WAJIB NONTON‼️ AI Bisa Bikin Bisnis Naik… atau Malah Surut?! TIBA Podcast Eps. 1** — Ardian Daffa and Bintang Anugrah Surya Semesta (1:21:04, 70 views)
+  https://www.youtube.com/watch?v=2F4K5Ho3iM8
+  item: `items/2F4K5Ho3iM8.md`

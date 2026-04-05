@@ -1,0 +1,26 @@
+# The Billionaire Made His Pregnant Wife A Prisoner — She Made Him A Criminal
+
+- Topic: `model routing and role specialization in multi-agent systems`
+- Priority: `relevant`
+- Source context: `eywa`
+- Type: `youtube`
+- Video ID: `daMwUv_oZac`
+- Channel: `Charlotte Reed Tells`
+- Duration: `1:12:07`
+- Views: `6 views`
+- Upload date: `NA`
+- URL: https://www.youtube.com/watch?v=daMwUv_oZac
+- Collected at UTC: `2026-04-05T03:18:10Z`
+- Transcript status: `pending`
+
+## Summary
+
+Not analyzed yet.
+
+## Transcript
+
+Transcript not collected yet.
+
+## Notes
+
+- Freshly collected by Research Radar.

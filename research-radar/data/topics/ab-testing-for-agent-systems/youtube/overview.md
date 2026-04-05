@@ -189,3 +189,81 @@ Full item files belong in `items/`.
 - **POV: You're the Last Judge in a Country Where the Law Has Been Bought** — Karamat Janjua (10:15, 4 views)
   https://www.youtube.com/watch?v=SUxfKNHjl5k
   item: `items/SUxfKNHjl5k.md`
+
+## 2026-04-05 — 25 new videos
+
+- **Self Improving Agents in 5 Minutes** — Developers Digest (5:08, 906 views)
+  https://www.youtube.com/watch?v=RoaPvj9Ovug
+  item: `items/RoaPvj9Ovug.md`
+- **CLAUDE COWORK FULL COURSE (Beginner to Pro)** — Ben AI (2:28:52, 2.3K views)
+  https://www.youtube.com/watch?v=2HyBA-wkWsA
+  item: `items/2HyBA-wkWsA.md`
+- **they blocked OpenClaw. now what.** — Ray Fernando (2:16:43, 5.1K views)
+  https://www.youtube.com/watch?v=sWDhIGIiK5w
+  item: `items/sWDhIGIiK5w.md`
+- **OpenAI's $122B Round, Claude's Desktop Takeover & NEAR Hits Robinhood** — NEAR Protocol (2:17, 111 views)
+  https://www.youtube.com/watch?v=gSd72OEIIvs
+  item: `items/gSd72OEIIvs.md`
+- **Will God Save America? | Bible Prophecy, America & the Future | LIVE Conference Day 2** — Heritage & Hope Ministries (9:01:11, 5.4K views)
+  https://www.youtube.com/watch?v=hc4jv0bCfUA
+  item: `items/hc4jv0bCfUA.md`
+- **EPS Reading Test Pass Karna Ab Asaan | Real Strategy 2026** — Afsan Haidar (15:00, new)
+  https://www.youtube.com/watch?v=cCHa8Xg2NXE
+  item: `items/cCHa8Xg2NXE.md`
+- **ICSE/ISC 2026 BIG BREAKING NEWS: CISCE 2026 Latest Changes News & No Fail Rules 2026? 😱 ICSE 2026! 🔥** — Tuition ICSE Online (5:17, 380 views)
+  https://www.youtube.com/watch?v=dFOb4SapKjM
+  item: `items/dFOb4SapKjM.md`
+- **Building a Memory-First Agent Harness with Oracle AI Database** — Oracle Developers (46:14, 115 views)
+  https://www.youtube.com/watch?v=lmkxvIZUmJo
+  item: `items/lmkxvIZUmJo.md`
+- **The cinematography of PROJECT HAIL MARY with Greig Fraser** — Patrick Tomasso and patrick 2masso (1:02:34, 4.4K views)
+  https://www.youtube.com/watch?v=1KVkZDgV218
+  item: `items/1KVkZDgV218.md`
+- **Humanity's IQ Dropped 1000x, Only Mine Stayed Normal!1+1=2 Makes Me a GOD?!- Manhwa Recap** — Silas Recap (1:10:54, 38.3K views)
+  https://www.youtube.com/watch?v=sgk2Pq4mbyg
+  item: `items/sgk2Pq4mbyg.md`
+- **2026 Tesla Cybertruck Review | The  Most Underrated EV** — Ryan Shaw (26:44, 21.4K views)
+  https://www.youtube.com/watch?v=MIhfSCqgyuE
+  item: `items/MIhfSCqgyuE.md`
+- **DCA Data Science Bi-Weekly Check-In** — Data Community Africa (NA, new)
+  https://www.youtube.com/watch?v=Uf3TeS6lz9Q
+  item: `items/Uf3TeS6lz9Q.md`
+- **AI Broke McDonald’s… While Saving Billions at IBM** — Exploring ChatGPT (36:19, 78 views)
+  https://www.youtube.com/watch?v=nmKQIub3Mik
+  item: `items/nmKQIub3Mik.md`
+- **🌿 Mindful Moments #UnDaoDu #Meditation #Peace** — UnDaoDu (50, 137 views)
+  https://www.youtube.com/watch?v=_4wIW4hqsvk
+  item: `items/_4wIW4hqsvk.md`
+- **Gemma 4 Is INCREDIBLE! Google's Open Model IS POWERFUL! (Fully Tested)** — WorldofAI (13:07, 14.4K views)
+  https://www.youtube.com/watch?v=KW5SFt3rgKo
+  item: `items/KW5SFt3rgKo.md`
+- **Kernom Ridge... This Pedal Can Print Any Overdrive!** — Gsus4 (22:28, 15 views)
+  https://www.youtube.com/watch?v=C0joI-HR3W8
+  item: `items/C0joI-HR3W8.md`
+- **Why do fascists love AI?** — Caelan Conrad (37:34, 31.9K views)
+  https://www.youtube.com/watch?v=QF2PYUPkvlo
+  item: `items/QF2PYUPkvlo.md`
+- **The End of Prompting Anthropic’s ‘Kairos’ Leak & OpenAI’s $122B Super App** — AI Central (6:14, 23 views)
+  https://www.youtube.com/watch?v=j5ocOjVeIvE
+  item: `items/j5ocOjVeIvE.md`
+- **Betrayed By His Crush After Saving Her, He Joins A Secret School To Become God.** — Inosuke Recap (21:14:00, 1.2K views)
+  https://www.youtube.com/watch?v=arUNSks6Jpo
+  item: `items/arUNSks6Jpo.md`
+- **Former FBI Agent: The Arrest in the Nancy Guthrie Case Could Be Very Soon** — Note Book VE (45:20, 36 views)
+  https://www.youtube.com/watch?v=mVZGV0zO1g4
+  item: `items/mVZGV0zO1g4.md`
+- **Building an Autonomous AI Sales Agent to Close High Ticket Leads While You Sleep** — Digital Asean (9:26, 2 views)
+  https://www.youtube.com/watch?v=DgC-m1aeuEg
+  item: `items/DgC-m1aeuEg.md`
+- **【Multi Sub】An Unemployed Guy Got a Fishing System… and Started Solving Major Crimes** — StardustTV - Movies & Dramas (1:57:38, 8.2K views)
+  https://www.youtube.com/watch?v=p4lqppJoh3M
+  item: `items/p4lqppJoh3M.md`
+- **Is Star Wars Galactic Battlegrounds Still Canon?** — SardonicSays (1:23:50, 553 views)
+  https://www.youtube.com/watch?v=ez2Xd189_fc
+  item: `items/ez2Xd189_fc.md`
+- **“Rot There, Old Man!” My Daughter-in-Law Dumped Me In A Nursing Home — Until She Found Out The TRUTH** — Revenge Room (1:31:07, 5.6K views)
+  https://www.youtube.com/watch?v=0Xg5fHqJdgs
+  item: `items/0Xg5fHqJdgs.md`
+- **Freedom Friday EP. 46 - Helldivers 2 with KimchiRednecks** — KimchiRednecks (2:46:59, 5 views)
+  https://www.youtube.com/watch?v=FtgEzdCGd78
+  item: `items/FtgEzdCGd78.md`

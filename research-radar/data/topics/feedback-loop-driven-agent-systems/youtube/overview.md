@@ -189,3 +189,96 @@ Full item files belong in `items/`.
 - **If A Producer Receives 500 Scripts A Year, How Many Will They Read? Shaked Berenson [FULL INTERVIEW]** — Film Courage (1:32:38, 396 views)
   https://www.youtube.com/watch?v=DV-jlp5GOu0
   item: `items/DV-jlp5GOu0.md`
+
+## 2026-04-05 — 30 new videos
+
+- **they blocked OpenClaw. now what.** — Ray Fernando (2:16:43, 5.1K views)
+  https://www.youtube.com/watch?v=sWDhIGIiK5w
+  item: `items/sWDhIGIiK5w.md`
+- **The NextGen Agile: Moving the wheels in the era of AI Agents** — Strategies for Professional Growth (SPG) (20:26, 35 views)
+  https://www.youtube.com/watch?v=cWmPPdnbXH8
+  item: `items/cWmPPdnbXH8.md`
+- **Will God Save America? | Bible Prophecy, America & the Future | LIVE Conference Day 2** — Heritage & Hope Ministries (9:01:11, 5.4K views)
+  https://www.youtube.com/watch?v=hc4jv0bCfUA
+  item: `items/hc4jv0bCfUA.md`
+- **How "Regular" People Are Getting Ahead with AI in 2026** — Laurie Wang (19:50, 940 views)
+  https://www.youtube.com/watch?v=5dTUIcdSg_4
+  item: `items/5dTUIcdSg_4.md`
+- **Why do Fascists Love AI SLOP** — Caelan Conrad (37:34, 31.9K views)
+  https://www.youtube.com/watch?v=QF2PYUPkvlo
+  item: `items/QF2PYUPkvlo.md`
+- **Market Stalling? Here's What Actually Caused It** — Ken McElroy Podcast (47:29, 1.7K views)
+  https://www.youtube.com/watch?v=CYGe0tlxGyk
+  item: `items/CYGe0tlxGyk.md`
+- **10 Year Old Slum Boy Becomes Top Hacker Takes Down CEO Company And Helps Father Become Billionaire** — CineDrama (1:19:14, 6.0K views)
+  https://www.youtube.com/watch?v=AHAfq248PW8
+  item: `items/AHAfq248PW8.md`
+- **Ep. 717, Adventures on Tablas Island and Preparations for Our Final Philippine Stop.** — Camperado i 3 nomadi (26:34, 11.4K views)
+  https://www.youtube.com/watch?v=ubDFntbFHvY
+  item: `items/ubDFntbFHvY.md`
+- **Humanity's IQ Dropped 1000x, Only Mine Stayed Normal!1+1=2 Makes Me a GOD?!- Manhwa Recap** — Silas Recap (1:10:54, 38.3K views)
+  https://www.youtube.com/watch?v=sgk2Pq4mbyg
+  item: `items/sgk2Pq4mbyg.md`
+- **Thank You Balen for Hearing Our Voice — But Not Done Yet** — Khoj Samachar (3:28, 19.6K views)
+  https://www.youtube.com/watch?v=KY8zADjpi0o
+  item: `items/KY8zADjpi0o.md`
+- **Eliminating Technical Debt: AI-Driven Security Audits in .NET** — The Curious Dev (4:22, 4 views)
+  https://www.youtube.com/watch?v=eAIm_BAh6Kk
+  item: `items/eAIm_BAh6Kk.md`
+- **Iran won! Trump conceded defeat!** — 寰宇新聞 頻道 (1:00:20, 219.0K views)
+  https://www.youtube.com/watch?v=HjTcMKtif-Y
+  item: `items/HjTcMKtif-Y.md`
+- **Bloomberg This Weekend | US Airman Missing in Iran, March Jobs Report, Easter Candy Sales Down** — Bloomberg Podcasts (2:25:24, 568 views)
+  https://www.youtube.com/watch?v=_pPK1W9POnU
+  item: `items/_pPK1W9POnU.md`
+- **🥾Ground Operation in Iran STARTED EARLIER! Trump Moves Against Zelensky. Durov’s Telegram Resistance** — Александр ШЕЛЕСТ (1:30:06, 93.4K views)
+  https://www.youtube.com/watch?v=IsEoVWDRNo4
+  item: `items/IsEoVWDRNo4.md`
+- **$26k Cheaper!? 2026 All-New Toyota Camroad RV Full Tour[SUB]** — クピ男の車中生活 (39:08, 90.5K views)
+  https://www.youtube.com/watch?v=6sF917tgN2I
+  item: `items/6sF917tgN2I.md`
+- **I Charged a 6-Figure Project Before Writing a Single Line of Code (Claude Code Full Walkthrough)** — Matt Robles | AI Automations (44:05, 9 views)
+  https://www.youtube.com/watch?v=I3gjAYFUEJs
+  item: `items/I3gjAYFUEJs.md`
+- **NEW Omoda 5 2026 | 1.5 T-GDi Hybrid 143 HP | POV Test Drive #2739 | Joe Black** — Joe Black (15:51, 4.7K views)
+  https://www.youtube.com/watch?v=lq-29aNICRg
+  item: `items/lq-29aNICRg.md`
+- **racism, let's not do that** — Paa & Friends (26:32, 22 views)
+  https://www.youtube.com/watch?v=v3kZMJ6K4es
+  item: `items/v3kZMJ6K4es.md`
+- **香港人口老化卻賺不到錢？連醫療界也出現大規模結業潮！中環、灣仔、尖沙咀診所爆退租潮！揭開診所倒閉潮北上以外的4大致命原因！** — Wally Magazine (13:52, 503 views)
+  https://www.youtube.com/watch?v=8sU1YhRQxr4
+  item: `items/8sU1YhRQxr4.md`
+- **₹50 Lakh for 10%? Can SnapGO Turn Idea Into Business? | The Founder Show** — NeuSource Startup Minds (22:11, 9.5K views)
+  https://www.youtube.com/watch?v=SzqDgHwQXMc
+  item: `items/SzqDgHwQXMc.md`
+- **Is Star Wars Galactic Battlegrounds Still Canon?** — SardonicSays (1:23:50, 553 views)
+  https://www.youtube.com/watch?v=ez2Xd189_fc
+  item: `items/ez2Xd189_fc.md`
+- **在泰国经历的这件事，自己命悬一线，立刻把妻女安排回国！** — 老罗漂流记【马来西亚生活】 (50:45, 3.1K views)
+  https://www.youtube.com/watch?v=2Ea_tM_j83k
+  item: `items/2Ea_tM_j83k.md`
+- **Ex-Meta AI Chief Yann LeCun | The Biggest Risk of AI & The Second Wave Coming** — Ahamed Fofana (11:05, 11 views)
+  https://www.youtube.com/watch?v=qqY_Eod8pNo
+  item: `items/qqY_Eod8pNo.md`
+- **Agentic AI for Enterprise: EU AI Act Compliance in Utrecht 2026** — Aetherlink (8:30, 1 views)
+  https://www.youtube.com/watch?v=URbkGsj-bdo
+  item: `items/URbkGsj-bdo.md`
+- **9 NLP Context-free Embeddings & Transformers Part 1 - NYU Lecture Spring 2026** — Pantelis Monogioudis (2:11:25, 3 views)
+  https://www.youtube.com/watch?v=17n0QXPjMpA
+  item: `items/17n0QXPjMpA.md`
+- **💥【新番上线】《末日：开局强吻sss女帝，我无敌了》末日尸潮肆虐，拾荒少年江寒获反派系统，强吻女帝，镇尸皇，踏天骄，要做随心魔神！#anime #斗破动漫 #逆袭 #战斗** — Labubububu Animation (2:01:32, 851 views)
+  https://www.youtube.com/watch?v=VsDqqz7zi3M
+  item: `items/VsDqqz7zi3M.md`
+- **“Rot There, Old Man!” My Daughter-in-Law Dumped Me In A Nursing Home — Until She Found Out The TRUTH** — Revenge Room (1:31:07, 5.6K views)
+  https://www.youtube.com/watch?v=0Xg5fHqJdgs
+  item: `items/0Xg5fHqJdgs.md`
+- **Agentic Email: Marketing in the Age of AI Gatekeepers | TradingMaster AI** — TradingMaster AI (8:11, 2 views)
+  https://www.youtube.com/watch?v=EZmL3HaKOZE
+  item: `items/EZmL3HaKOZE.md`
+- **Electric car for seniors? My father (65) tests my Tesla Model Y Performance** — Smart2Drive (59:34, 4.9K views)
+  https://www.youtube.com/watch?v=Wxd1dZvlDWI
+  item: `items/Wxd1dZvlDWI.md`
+- **CLASS 2— AGRICULTURE GRANT WRITING AND PROPOSAL DEVELOPMENT** — GROWTH FOR SUSTAINABLE AGRICULTURE INITIATIVE (2:08:16, 104 views)
+  https://www.youtube.com/watch?v=8aS61os4cpY
+  item: `items/8aS61os4cpY.md`

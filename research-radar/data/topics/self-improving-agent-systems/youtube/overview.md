@@ -189,3 +189,87 @@ Full item files belong in `items/`.
 - **Rethinking Wellbeing at Work: Using AI to Build a Culture of Practice and Behavior Change at Work** — NYU SPS Human Capital Management (52:26, 14 views)
   https://www.youtube.com/watch?v=K-7HoNvkTEk
   item: `items/K-7HoNvkTEk.md`
+
+## 2026-04-05 — 27 new videos
+
+- **Self Improving Agents in 5 Minutes** — Developers Digest (5:08, 906 views)
+  https://www.youtube.com/watch?v=RoaPvj9Ovug
+  item: `items/RoaPvj9Ovug.md`
+- **they blocked OpenClaw. now what.** — Ray Fernando (2:16:43, 5.1K views)
+  https://www.youtube.com/watch?v=sWDhIGIiK5w
+  item: `items/sWDhIGIiK5w.md`
+- **📱 they blocked OpenClaw. now what.** — Ray Fernando (2:16:42, 1.2K views)
+  https://www.youtube.com/watch?v=wcBMCcE9yD0
+  item: `items/wcBMCcE9yD0.md`
+- **I Built a Self-Improving AI Writing Agent (Score Went 72 → 92 in One Loop)** — AIpreneur-J (18:09, 22 views)
+  https://www.youtube.com/watch?v=cMJhc-HksTw
+  item: `items/cMJhc-HksTw.md`
+- **Management is for Weak Models: Why "Strong" AI Needs Total Freedom** — The Hidden Layer: Decoding Artificial Intelligence (6:52, 2 views)
+  https://www.youtube.com/watch?v=bBK6Hx_AFsY
+  item: `items/bBK6Hx_AFsY.md`
+- **Self-Evolving Multi-Agent Swarms: 74 AI Agents on a Mac Mini** — LocalKinAI (7:04, 4 views)
+  https://www.youtube.com/watch?v=I5ZffU0N1WM
+  item: `items/I5ZffU0N1WM.md`
+- **The New Era of AI Is Already Here: How We Got Here** — ShortByShot (29:16, 2 views)
+  https://www.youtube.com/watch?v=StoE7BB3lVg
+  item: `items/StoE7BB3lVg.md`
+- **Paperclip Is Insane - Full Tutorial** — Tech With Tim (38:40, 16.3K views)
+  https://www.youtube.com/watch?v=RHZLJhp-JMM
+  item: `items/RHZLJhp-JMM.md`
+- **Agentic AI in Investing: How the Self-Driving Portfolio Works** — Maria Andreina Varela Varela (6:15, 3 views)
+  https://www.youtube.com/watch?v=uxpV1ImRdN4
+  item: `items/uxpV1ImRdN4.md`
+- **Will God Save America? | Bible Prophecy, America & the Future | LIVE Conference Day 2** — Heritage & Hope Ministries (9:01:11, 5.4K views)
+  https://www.youtube.com/watch?v=hc4jv0bCfUA
+  item: `items/hc4jv0bCfUA.md`
+- **Agent Build an Autonomous AI Music Agent with Gemini 3 Flash & Python | Antigravity Tutorial** — Arman Ayva (5:01, 4 views)
+  https://www.youtube.com/watch?v=77fQ88yut3U
+  item: `items/77fQ88yut3U.md`
+- **Agentic AI for Enterprise: EU AI Act Compliance in Utrecht 2026** — Aetherlink (8:30, 1 views)
+  https://www.youtube.com/watch?v=URbkGsj-bdo
+  item: `items/URbkGsj-bdo.md`
+- **Daily AI Brief — Part 073 (2026-04-04)** — Everstone AI (15:49, new)
+  https://www.youtube.com/watch?v=AP1O4zVs-8M
+  item: `items/AP1O4zVs-8M.md`
+- **OpenClaw's new update is MASSIVE (4.2)** — Code With Robby🤖 (2:18, 3 views)
+  https://www.youtube.com/watch?v=Wvaj_Aq3RHg
+  item: `items/Wvaj_Aq3RHg.md`
+- **I have spent over 1000 hours on my AI business** — Julia Jakubowska (11:29, 896 views)
+  https://www.youtube.com/watch?v=4xjrtU9GRtY
+  item: `items/4xjrtU9GRtY.md`
+- **【完結爽劇】重生1992賣涼粉救女兒！他從路邊攤逆襲成慈善企業家，全網淚推💔🍜** — Petal Drama (1:22:15, 355 views)
+  https://www.youtube.com/watch?v=f7LPgLKbSHM
+  item: `items/f7LPgLKbSHM.md`
+- **在泰国经历的这件事，自己命悬一线，立刻把妻女安排回国！** — 老罗漂流记【马来西亚生活】 (50:45, 3.1K views)
+  https://www.youtube.com/watch?v=2Ea_tM_j83k
+  item: `items/2Ea_tM_j83k.md`
+- **Iran has gained complete control of the Strait of Hormuz!** — 寰宇新聞 頻道 (53:54, 17.0K views)
+  https://www.youtube.com/watch?v=RgYafZoAYxg
+  item: `items/RgYafZoAYxg.md`
+- **[ENG Sub] TVB ពេទ្យថ្នាំបុរាណចិត្តធម៌ {12/20} Heroes in White | រឿងភាគហុងកុងនិយាយខ្មែរ | 2025** — TVB Cambodia Drama (42:58, 10.4K views)
+  https://www.youtube.com/watch?v=LgCw_2u2eoQ
+  item: `items/LgCw_2u2eoQ.md`
+- **BOUNCER DENIES Entry To OVERWEIGHT Woman | Dhar Mann Bonus!** — Dhar Mann Bonus (8:01, 108.8K views)
+  https://www.youtube.com/watch?v=g7NaXaxvsdo
+  item: `items/g7NaXaxvsdo.md`
+- **Betrayed By His Crush After Saving Her, He Joins A Secret School To Become God.** — Inosuke Recap (21:14:00, 1.2K views)
+  https://www.youtube.com/watch?v=arUNSks6Jpo
+  item: `items/arUNSks6Jpo.md`
+- **Live coding and Q/A with the Angular Team - MCP Servers| April 2026** — Angular (1:33:41, 1.3K views)
+  https://www.youtube.com/watch?v=VigynyjJJnM
+  item: `items/VigynyjJJnM.md`
+- **廢柴小夥穿越古代飢荒年，激活好感度繫統！一句話就有美女獻身當老婆，俘獲全村美女頓頓吃肉，帶領全村緻富走上人生巔峰！#逆襲  #穿越  #短劇** — PROF DRAMA (1:39:36, 423 views)
+  https://www.youtube.com/watch?v=1hWJy_cyRPs
+  item: `items/1hWJy_cyRPs.md`
+- **Adding a .NET MAUI interface to NoteBookmark** — Behind my Cloud (2:57:12, 13 views)
+  https://www.youtube.com/watch?v=OTpnBStO11k
+  item: `items/OTpnBStO11k.md`
+- **[Multi SUB] （全集）他沒想到自己剛穿越成舔狗反派炮灰，勢力女就讓他給她和她的白月光初戀送計生用品？ ！#逆袭  #MiniDrama #精彩大陆短剧** — 劇翻天 Drama Go (1:35:36, 607 views)
+  https://www.youtube.com/watch?v=o0toDGV0tA0
+  item: `items/o0toDGV0tA0.md`
+- **DEATH GUARD CHARACTER COMPENDIUM | Warhammer 40k Lore** — The Remembrancer (3:01:50, 2.5K views)
+  https://www.youtube.com/watch?v=Tm-s-obzscc
+  item: `items/Tm-s-obzscc.md`
+- **Bloomberg This Weekend | US Airman Missing in Iran, March Jobs Report, Easter Candy Sales Down** — Bloomberg Podcasts (2:25:24, 568 views)
+  https://www.youtube.com/watch?v=_pPK1W9POnU
+  item: `items/_pPK1W9POnU.md`

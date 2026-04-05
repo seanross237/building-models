@@ -189,3 +189,96 @@ Full item files belong in `items/`.
 - **Graph RAG vs Traditional RAG: A Beginner's Guide to Smarter AI Retrieval** — Chris Seferlis (12:15, 15 views)
   https://www.youtube.com/watch?v=L98f8hW9E18
   item: `items/L98f8hW9E18.md`
+
+## 2026-04-05 — 30 new videos
+
+- **AI Has Been Lying to Us Since 1956** — Book Remedy (10:55, 2 views)
+  https://www.youtube.com/watch?v=Hxeu9cc0MtA
+  item: `items/Hxeu9cc0MtA.md`
+- **From Hype to Impact: What It Takes to Make Machine Learning and AI Work for Social Impact** — Coleridge (1:00:36, 3 views)
+  https://www.youtube.com/watch?v=ZcTJyfn5FgQ
+  item: `items/ZcTJyfn5FgQ.md`
+- **Hybrid Search Failures Quiz | Test Your GenAI Retrieval Skills in 3 Minutes** — AdvSkill Learning (3:00, 2 views)
+  https://www.youtube.com/watch?v=MCDuLuufCoo
+  item: `items/MCDuLuufCoo.md`
+- **What Is a Model in AI? Models Explained** — LetsCodeAndAchieve (5:31, 59 views)
+  https://www.youtube.com/watch?v=z_O9kyy583Y
+  item: `items/z_O9kyy583Y.md`
+- **LLMs Are Starting To Doubt Reality: Epistemic Regression Explained** — Elodine (12:05, 654 views)
+  https://www.youtube.com/watch?v=YLInatCbiG4
+  item: `items/YLInatCbiG4.md`
+- **The Real Reason China Rose So Fast (Episode 6)** — The US-China Narrative (14:01, 455 views)
+  https://www.youtube.com/watch?v=koQq8isvKCo
+  item: `items/koQq8isvKCo.md`
+- **What is AI? Machine Learning vs Deep Learning vs Generative AI** — AWS Solutions Hub (23:40, 6 views)
+  https://www.youtube.com/watch?v=Nmg1AWUlE90
+  item: `items/Nmg1AWUlE90.md`
+- **The New Era of AI Is Already Here: How We Got Here** — ShortByShot (29:16, 2 views)
+  https://www.youtube.com/watch?v=StoE7BB3lVg
+  item: `items/StoE7BB3lVg.md`
+- **New A.I. Private School With No Teachers To Open In Chicago For $40K ! Black Millionaires Podcast** — Black Millionaires (9:19, 172 views)
+  https://www.youtube.com/watch?v=uY2BSRfGW9s
+  item: `items/uY2BSRfGW9s.md`
+- **Why do fascists love AI slop?** — Caelan Conrad (37:34, 31.9K views)
+  https://www.youtube.com/watch?v=QF2PYUPkvlo
+  item: `items/QF2PYUPkvlo.md`
+- **AGI Won't Come From One Model — Here's What Will Actually Work** — The Bearded AI Guy (9:35, 4 views)
+  https://www.youtube.com/watch?v=2Zhfxx03nv8
+  item: `items/2Zhfxx03nv8.md`
+- **The End of Token Gestures, Transforming Malaysia’s Political Mentality** — Unique Yellow Pages (6:10, 1 views)
+  https://www.youtube.com/watch?v=63AylCRLhg8
+  item: `items/63AylCRLhg8.md`
+- **THEY TRIED TO COME UP AGAINST A PROTECTED CHOSEN DIVINE BEING… AND FAILED!** — Crossroads meets the Ocean Rose (1:02:06, 3.8K views)
+  https://www.youtube.com/watch?v=m5LKEPPZuiQ
+  item: `items/m5LKEPPZuiQ.md`
+- **Agentic AI & Multi-Agent Orchestration in Utrecht: 2026 Guide** — Aetherlink (9:05, 2 views)
+  https://www.youtube.com/watch?v=mFCsyW9rarI
+  item: `items/mFCsyW9rarI.md`
+- **Integrity-first AI: From automation to accountability** — SECURE CYBER CONNECT Community (1:00:03, 58 views)
+  https://www.youtube.com/watch?v=09o4bAnoeSE
+  item: `items/09o4bAnoeSE.md`
+- **Top 10 Best AI Voice Generators 2026 | Best AI Voice Generators You Should Try In 2026 | Simplilearn** — Simplilearn (9:39, 429 views)
+  https://www.youtube.com/watch?v=RD_Mtdoj4Ao
+  item: `items/RD_Mtdoj4Ao.md`
+- **[Fresh Faces #570] Nicole Kondo (CEO of EdFusion Co., Ltd.)** — Fresh Faces 〜アタラシイヒト〜BS朝日 (3:01, 31 views)
+  https://www.youtube.com/watch?v=kxPeHP-yX7Y
+  item: `items/kxPeHP-yX7Y.md`
+- **“Productive Failure” (PF) pedagogy and its AI application** — My Good School (48:09, 8 views)
+  https://www.youtube.com/watch?v=71iLRJ3Cxlk
+  item: `items/71iLRJ3Cxlk.md`
+- **The Grok Deepfake Scandal — How AI Generated 4.4 Million Fake Images in 9 Days** — Gios - Your AI Guide (16:11, 4 views)
+  https://www.youtube.com/watch?v=AMfOdQfa4Ak
+  item: `items/AMfOdQfa4Ak.md`
+- **Will God Save America? | Bible Prophecy, America & the Future | LIVE Conference Day 2** — Heritage & Hope Ministries (9:01:11, 5.4K views)
+  https://www.youtube.com/watch?v=hc4jv0bCfUA
+  item: `items/hc4jv0bCfUA.md`
+- **Warren Buffett: The 5 Quiet Costs of Looking Successful (Most People Never Notice)** — Legend Investor Mindset (35:38, 2.2K views)
+  https://www.youtube.com/watch?v=Jc4TAarEV5M
+  item: `items/Jc4TAarEV5M.md`
+- **EP 18: How AI Influencers Make Money in 2026 (7 Proven Strategies)** — AI Creator World Podcast Eng (25:50, 1 views)
+  https://www.youtube.com/watch?v=GqiMERPX5CA
+  item: `items/GqiMERPX5CA.md`
+- **“Rot There, Old Man!” My Daughter-in-Law Dumped Me In A Nursing Home — Until She Found Out The TRUTH** — Revenge Room (1:31:07, 5.6K views)
+  https://www.youtube.com/watch?v=0Xg5fHqJdgs
+  item: `items/0Xg5fHqJdgs.md`
+- **Stop 95% of LLM Hallucinations: Advanced Prompt Engineering** — The Code Architect (7:55, 6 views)
+  https://www.youtube.com/watch?v=ginnt2R3vDc
+  item: `items/ginnt2R3vDc.md`
+- **NIMS UNIVERSITY | B.Tech. AI & ML | Infrastructure, 16+ Industry Grade 4.0 Labs, Placements and more** — NIMS University (1:07, 38 views)
+  https://www.youtube.com/watch?v=y3y4T-xdFBA
+  item: `items/y3y4T-xdFBA.md`
+- **The Psychology of People Who Say "I'm Fine" (Why Your Brain Shuts Down)** — Wired Behavior (10:10, 14 views)
+  https://www.youtube.com/watch?v=kICRhNXMMb4
+  item: `items/kICRhNXMMb4.md`
+- **The Complete Claude Code Business System (from $0 to $30K/month)** — AI Chris Lee (13:50, 917 views)
+  https://www.youtube.com/watch?v=Dsi0DVuBAT8
+  item: `items/Dsi0DVuBAT8.md`
+- **Revolutionizing Construction with Robotics and AI: Edgar Munoz's Vision** — Wisdom Partners (29:07, new)
+  https://www.youtube.com/watch?v=9Ea-5NR3qX8
+  item: `items/9Ea-5NR3qX8.md`
+- **Blue Tuesday Forum 03/31/26** — Blue Tuesday Forum (1:30:08, new)
+  https://www.youtube.com/watch?v=WryyI9K4aFE
+  item: `items/WryyI9K4aFE.md`
+- **Archaeologists Open Mayan Queen's Tomb** — FACTS HUB (34:23, 37.4K views)
+  https://www.youtube.com/watch?v=L31mj2h-zOY
+  item: `items/L31mj2h-zOY.md`

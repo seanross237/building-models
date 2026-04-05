@@ -69,3 +69,42 @@ Full item files belong in `items/`.
 - **💥【New】【Multi Sub】Power Surge: No More Sidekick Role EP1-76 #anime #animation** — Joyland-Animation (6:00:29, 108 views)
   https://www.youtube.com/watch?v=R8-b3fNQ2ws
   item: `items/R8-b3fNQ2ws.md`
+
+## 2026-04-05 — 12 new videos
+
+- **【短劇 全集】😱💔现代大学生重生大庆朝，智斗大庆朝皇帝，步步揭阴谋，最终起兵反抗，改写天下命运！😱💕女頻爽劇 💕最新短劇💕熱門短劇💕愛情** — 好劇星球 (2:49:19, 2 views)
+  https://www.youtube.com/watch?v=SHn77cdYUKA
+  item: `items/SHn77cdYUKA.md`
+- **Will God Save America? | Bible Prophecy, America & the Future | LIVE Conference Day 2** — Heritage & Hope Ministries (9:01:11, 5.4K views)
+  https://www.youtube.com/watch?v=hc4jv0bCfUA
+  item: `items/hc4jv0bCfUA.md`
+- **🔥Tulip = Elf Queen, Mermaid = Ruler of the Deep Sea, He Can Raise All Pets into Goddesses** — Blue Whale Comics Review (20:32:35, 983 views)
+  https://www.youtube.com/watch?v=rWmTa6LUT9c
+  item: `items/rWmTa6LUT9c.md`
+- **【Full】冷宮貴人絕望自盡，意外穿越現代研習宮鬥秘訣，回到冷宮開掛逆襲一代女帝#全集短劇 #古裝 #影視** — 姜姜爱看剧 (2:10:15, 184 views)
+  https://www.youtube.com/watch?v=BSS7dzCAzEE
+  item: `items/BSS7dzCAzEE.md`
+- **They Sent 200 Warships. We Sent A Single Scout. | HFY Sci-Fi Story** — Best of HFY (1:04:30, new)
+  https://www.youtube.com/watch?v=xqVRtEfUzgo
+  item: `items/xqVRtEfUzgo.md`
+- **穿回80年代成懶媳婦！用醫術征服冷面上司，手撕綠茶爽翻天！💉💥** — Drama-好看短劇 (2:41:24, 175 views)
+  https://www.youtube.com/watch?v=KZ61c7Z3nqw
+  item: `items/KZ61c7Z3nqw.md`
+- **Hospital Boss Fired My Wife After her Affair And Financial Fraud. And Then... | REVENGE STORY** — Father's Perfect Revenge (2:03:17, new)
+  https://www.youtube.com/watch?v=shAGooVLD8c
+  item: `items/shAGooVLD8c.md`
+- **🧠🦉| 01 - CONSCIOUSNESS A BIOLOGICAL MEMORY** — BEING AND MEMORY: The Nature of Consciousness (35:42, 5 views)
+  https://www.youtube.com/watch?v=yTntGt8sFaE
+  item: `items/yTntGt8sFaE.md`
+- **Older Than the Pyramids: The 12,000-Year-Old Secret** — Schlafende Geschichte (1:07:16, 66 views)
+  https://www.youtube.com/watch?v=jMeo6NkM1J8
+  item: `items/jMeo6NkM1J8.md`
+- **【Multi Sub】🔥  隱世小店，五年後全修仙界曝光Hidden Shop: Revealed to All Cultivators After Five Years #男频 #搞笑#anime** — Qixiang-Animation (9:50:54, 2.1K views)
+  https://www.youtube.com/watch?v=D8-bWPalqqo
+  item: `items/D8-bWPalqqo.md`
+- **💥女總裁集團股市暴跌即將破產，路過的跑腿小夥只是說了兩句話，就幫她化解危機怒賺千億，眾人瞬間傻眼，美女總裁直接帶他回家逆天改命！[Multi SUB] #drama #逆袭 #爽剧|MTDJ** — 爽劇不打烊 (2:07:35, 2.1K views)
+  https://www.youtube.com/watch?v=AtBE3pHwtqo
+  item: `items/AtBE3pHwtqo.md`
+- **I pretended to be his mate to survive the night — he didn’t pretend back.** — Luna’s Secret Library (1:15:10, 59 views)
+  https://www.youtube.com/watch?v=kRLgYJlTMoM
+  item: `items/kRLgYJlTMoM.md`

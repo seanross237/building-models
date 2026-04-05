@@ -189,3 +189,96 @@ Full item files belong in `items/`.
 - **💞I had a crush on CEO for years, never expected that he fall in love with me too, got married#cdrama** — Sweety Theater (2:37:59, 6.2K views)
   https://www.youtube.com/watch?v=nCrxOsa2iDw
   item: `items/nCrxOsa2iDw.md`
+
+## 2026-04-05 — 30 new videos
+
+- **Surprise Breakthrough Solves Shipping's BIGGEST Problem** — Two Bit da Vinci (12:27, 20.4K views)
+  https://www.youtube.com/watch?v=9R6ln7pr5QU
+  item: `items/9R6ln7pr5QU.md`
+- **Interstellar Banking - The Galactic Financial System** — Isaac Arthur (30:28, 7.8K views)
+  https://www.youtube.com/watch?v=BGTI5e6k-go
+  item: `items/BGTI5e6k-go.md`
+- **10 Recent Discoveries That PROVE Consciousness Is Everything** — Hidden Archive (34:01, 2 views)
+  https://www.youtube.com/watch?v=Hnx-6K0_3t8
+  item: `items/Hnx-6K0_3t8.md`
+- **From Anthropic's Blog - Can AI Actually Do Theoretical Physics? The G2 Experiment** — AI Frontier Research (7:55, new)
+  https://www.youtube.com/watch?v=2qA_8MEg62s
+  item: `items/2qA_8MEg62s.md`
+- **倪海廈：4月6號庚戌日必看！4生肖穿紅色，3種人穿白色，保你2026馬年翻天覆地#倪海廈 #黃帝內經 #養生 #國學 #易經 #清明節 #開運 #招財 #補財庫 #中醫 #風水 #2026運勢 #農曆** — 漢唐健康 (1:14:26, 3.3K views)
+  https://www.youtube.com/watch?v=IMyGEdJNDXE
+  item: `items/IMyGEdJNDXE.md`
+- **A Nice Algebra Problem | Math Olympiad x=?** — SALogic (12:32, 573 views)
+  https://www.youtube.com/watch?v=zhlUp3uweow
+  item: `items/zhlUp3uweow.md`
+- **The Riemann Hypothesis: Mathematical Foundations and AI Frontiers** — Skyward Reflection (9:02, 5 views)
+  https://www.youtube.com/watch?v=WnNFVtDe9is
+  item: `items/WnNFVtDe9is.md`
+- **"Hardest Math Olympiad question | Math tricks for competitive Exams | Math Olympiad problem | x=?** — Mathematics & Statistics Guru (11:34, 221 views)
+  https://www.youtube.com/watch?v=8iqKp2WdBh4
+  item: `items/8iqKp2WdBh4.md`
+- **Solve for x in this nice exponential equation |Math Olympiad Mathematics** — HkLogics (6:18, 14 views)
+  https://www.youtube.com/watch?v=1k7jBpSm-iA
+  item: `items/1k7jBpSm-iA.md`
+- **This Will SHOCK You — ISLAM Is COLLAPSING** — Fall of Nations (2:53:55, 777 views)
+  https://www.youtube.com/watch?v=aiBMdiSd0r8
+  item: `items/aiBMdiSd0r8.md`
+- **Solving a 'Harvard' University Entrance Question | Olympiad Mathematics** — HkLogics (6:34, 12 views)
+  https://www.youtube.com/watch?v=NNNv3amuHZE
+  item: `items/NNNv3amuHZE.md`
+- **Solving a 'Harvard' University Entrance Question | Olympiad Mathematics** — HkLogics (9:27, 12 views)
+  https://www.youtube.com/watch?v=1q-Z07WGEPw
+  item: `items/1q-Z07WGEPw.md`
+- **The Law Demanded Age Checks. FreeDOS & MX Linux Did THIS Instead...** — Gosh-Its-Arch (3:37, 2.8K views)
+  https://www.youtube.com/watch?v=FYVBNyNbe00
+  item: `items/FYVBNyNbe00.md`
+- **Bloomberg This Weekend | US Airman Missing in Iran, March Jobs Report, Easter Candy Sales Down** — Bloomberg Podcasts (2:25:24, 570 views)
+  https://www.youtube.com/watch?v=_pPK1W9POnU
+  item: `items/_pPK1W9POnU.md`
+- **POLITY | Fortune Question of the Day | Day 40** — Fortune IAS Academy (1:58, 400 views)
+  https://www.youtube.com/watch?v=hfvU9mD6Ur0
+  item: `items/hfvU9mD6Ur0.md`
+- **The 1.2 FTE problem** — Daniel Cham MD (7:57, 1 views)
+  https://www.youtube.com/watch?v=AKFAQZ8dPOA
+  item: `items/AKFAQZ8dPOA.md`
+- **Is Consciousness Possible Without a Brain? | Plants, Bacteria, and Brainless Intelligence 🧬🌱** — Zaman Yolcusunun Usu (12:02, 63 views)
+  https://www.youtube.com/watch?v=Tvnv9YpRPLs
+  item: `items/Tvnv9YpRPLs.md`
+- **Rotational Motion | NEET 2026 Physics Live | COMBI 5.0 | Anoop Sir** — DOPA NEET Coaching (NA, new)
+  https://www.youtube.com/watch?v=sQtOSg6eypo
+  item: `items/sQtOSg6eypo.md`
+- **badspaceking continues shooting fascists to clean up the town (2026-04-03)** — BadSpaceKing (7:12:22, new)
+  https://www.youtube.com/watch?v=rWX0io0oh20
+  item: `items/rWX0io0oh20.md`
+- **Solving a "Pathfinder" Classic: Small Oscillations & Restoring Torque** — Nikunj Madhav (9:47, 54 views)
+  https://www.youtube.com/watch?v=yaGrOa0bGB4
+  item: `items/yaGrOa0bGB4.md`
+- **穿越女尊世界，被逼娶五個老婆？我反手掏出加特林，突突了女帝和北蠻公主！今晚七個一起洞房，腰子有點痛！ #爽文  #男頻後宮 #系統逆襲** — 短剧社 (2:21:53, 72 views)
+  https://www.youtube.com/watch?v=UXvoZKzon4U
+  item: `items/UXvoZKzon4U.md`
+- **🔥【强推】【Eng Sub】《無限輪迴：不想第一的我太強了！》重生只想當廢物結果卻擁有全屬性超能力，系統逼我當第一，我偏要當鹹魚！第1-106集 #熱血 #系統 #玄幻 #anime** — 八虎动漫剧场 (8:16:47, 570 views)
+  https://www.youtube.com/watch?v=WdcmdyrRFOI
+  item: `items/WdcmdyrRFOI.md`
+- **MULTISUB📢新番上线《我的景区通万界》第1~80集丨叶辰获得万界景区系统，可通万界，带着领导和游客参观三国世界，带着专家参观明朝历史，开启传奇人生！#漫剧 #破晓动漫社** — 破晓动漫社 Dawn Anime Club (2:47:19, 3.5K views)
+  https://www.youtube.com/watch?v=2-ATltrIu6k
+  item: `items/2-ATltrIu6k.md`
+- **外賣老爸被兒子嫌丟臉，殊不知他是掌控萬億資本的華爾街傳奇！看兒子創業屢次受辱被欺負，他終於沒忍住，動用整個資本帝國，碾壓所有敢欺負他兒子的財團！#短剧 #老爹求你别送了** — 爽劇大放送  Satisfying drama (1:51:11, 52 views)
+  https://www.youtube.com/watch?v=i-2qDaz6FRo
+  item: `items/i-2qDaz6FRo.md`
+- **Infinite Rebirth | Best Comedy Action Movie | Free Full Movie 4K** — 高分观影社 (1:00:49, 977 views)
+  https://www.youtube.com/watch?v=w8B0kTMrM9M
+  item: `items/w8B0kTMrM9M.md`
+- **Miyeon Galledy on the case! | First Playthrough** — Miya Galactic (9:22:05, 9 views)
+  https://www.youtube.com/watch?v=jFslVrKBTSc
+  item: `items/jFslVrKBTSc.md`
+- **From Inherited Assumptions to Atomic Reality | Career Reconstruction** — Dr. HR (9:00, 4 views)
+  https://www.youtube.com/watch?v=HuOx903sgM8
+  item: `items/HuOx903sgM8.md`
+- **A3 Talks - I'm So Hungry #16** — Acen Action Life (31:16, 3 views)
+  https://www.youtube.com/watch?v=W5Bp9bboCjg
+  item: `items/W5Bp9bboCjg.md`
+- **(18+) SPENT 5 HOURS ON ART!! 🎨🎨 And then we try THE LEGEND OF KHILMORI!!** — TauTassieTiger (7:26:31, 59 views)
+  https://www.youtube.com/watch?v=wWLRGxYvBmA
+  item: `items/wWLRGxYvBmA.md`
+- **學霸為奪第一隱藏校霸男友！誰知他是學術世家之子，競賽直接碾壓學神！ 🔥#校園逆襲 #雙學霸** — 一刻故事會Novel Story (29:58, 6 views)
+  https://www.youtube.com/watch?v=ebwSYyBOBPY
+  item: `items/ebwSYyBOBPY.md`

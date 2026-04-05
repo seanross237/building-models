@@ -189,3 +189,93 @@ Full item files belong in `items/`.
 - **"Social Media Is a Chainsaw" Not A Tool To Wield Lightly Platforms Need Accountability, Parents Too** — The AI XR Podcast (55, 2 views)
   https://www.youtube.com/watch?v=2Zu5M9iUFC4
   item: `items/2Zu5M9iUFC4.md`
+
+## 2026-04-05 — 29 new videos
+
+- **Wall Street Just Bet $285 Billion on AI Agents. The Best One Barely Works.** — AI News & Strategy Daily | Nate B Jones (22:30, 26.0K views)
+  https://www.youtube.com/watch?v=D-Ww1wLIp60
+  item: `items/D-Ww1wLIp60.md`
+- **4 Simple Ways to Hack Your Own AI Agent 🚩** — Tiny Tech Talks by Amit (1:22, 80 views)
+  https://www.youtube.com/watch?v=vkpJtUB8ZDw
+  item: `items/vkpJtUB8ZDw.md`
+- **Hermes 0.7: New Update Changes AI Agents Forever!** — AI News Today | Julian Goldie Podcast (8:46, 4.1K views)
+  https://www.youtube.com/watch?v=NxrnAUfrGtw
+  item: `items/NxrnAUfrGtw.md`
+- **they blocked OpenClaw. now what.** — Ray Fernando (2:16:43, 5.1K views)
+  https://www.youtube.com/watch?v=sWDhIGIiK5w
+  item: `items/sWDhIGIiK5w.md`
+- **Abacus CoWork: This AI Agent Finishes Your Work (Not Just Assists)** — Julia McCoy (17:30, 4.6K views)
+  https://www.youtube.com/watch?v=3wfGasnTcSg
+  item: `items/3wfGasnTcSg.md`
+- **Are Home AI Assistants Making Life Easier… or Listening More Than You Realize?** — JPMorand Success Coach (3:28, 1 views)
+  https://www.youtube.com/watch?v=B6NOpNR4B1k
+  item: `items/B6NOpNR4B1k.md`
+- **Fmr. IRS Agent REVEALS "I haven't PAID income taxes in 28 years" it's UNCONSTITUTIONAL | Redacted** — Redacted (45:52, 34.3K views)
+  https://www.youtube.com/watch?v=BuvHmkfBn54
+  item: `items/BuvHmkfBn54.md`
+- **NVIDIA Just Solved the Biggest Problem With AI Agents** — Solopreneur (52, 350 views)
+  https://www.youtube.com/watch?v=kgQSV4sBB9M
+  item: `items/kgQSV4sBB9M.md`
+- **What AI Can Remember Can Be Dangerous** — Cyber AI Insights (2:05, 10 views)
+  https://www.youtube.com/watch?v=HTJmYtelg5w
+  item: `items/HTJmYtelg5w.md`
+- **The AI Control Plane Is Here (But Is It Safe?)** — My Weird Prompts (24:55, 1 views)
+  https://www.youtube.com/watch?v=K_4C6f5suC8
+  item: `items/K_4C6f5suC8.md`
+- **Did Anthropic Just Ban Openclaw? (Claude AI Ban)** — Mark Savant (16:02, 1.4K views)
+  https://www.youtube.com/watch?v=Jv_y82qLzJw
+  item: `items/Jv_y82qLzJw.md`
+- **The AI Tools Real Estate Investors Need Right Now** — Joe McCall (16:03, 146 views)
+  https://www.youtube.com/watch?v=A-5-uxPzPpU
+  item: `items/A-5-uxPzPpU.md`
+- **The New Era of AI Is Already Here: How We Got Here** — ShortByShot (29:16, 2 views)
+  https://www.youtube.com/watch?v=StoE7BB3lVg
+  item: `items/StoE7BB3lVg.md`
+- **#SafetyShoes manufacturers are looking for agents &distributors#SAFETOE #workboot #PPE #Shorts #OEM** — SAFETOE Safety Shoes (25, 1.6K views)
+  https://www.youtube.com/watch?v=MQg0Av3lnbs
+  item: `items/MQg0Av3lnbs.md`
+- **ClawKeeper: Secure Your AI Agents in 2026** — Saral Research Paper (5:44, new)
+  https://www.youtube.com/watch?v=AhHPM93YK3M
+  item: `items/AhHPM93YK3M.md`
+- **Sierra 2026: Enterprise AI Agents That Actually Work Like Real Employees** — QUASA (6:02, 11 views)
+  https://www.youtube.com/watch?v=pT-qKYvAFCU
+  item: `items/pT-qKYvAFCU.md`
+- **Claude Code Auto Mode: Stop Mashing Enter** — Liam Explains AI (10:05, 14 views)
+  https://www.youtube.com/watch?v=gptiDIVjUOA
+  item: `items/gptiDIVjUOA.md`
+- **2026 Phim Chưa Chiếu | Macau 1942–1945: Cuộc Chiến Ngầm Chống Nhật💥Từ Vực Thẳm🧱** — Phim Lồng Tiếng Hay (2:04:19, 7.8K views)
+  https://www.youtube.com/watch?v=DK4qd-AndTQ
+  item: `items/DK4qd-AndTQ.md`
+- **Microsoft Agent Framework Explained — Build AI Agents in C#** — CodeWithVijay (24:36, 16 views)
+  https://www.youtube.com/watch?v=tNFT9Tk8UDc
+  item: `items/tNFT9Tk8UDc.md`
+- **Betrayed By His Crush After Saving Her, He Joins A Secret School To Become God.** — Inosuke Recap (21:14:00, 1.2K views)
+  https://www.youtube.com/watch?v=arUNSks6Jpo
+  item: `items/arUNSks6Jpo.md`
+- **AI Agents Mastery Program tutorials || Demo - 11 || by Mr. DURGA Sir On 04-04-2026 @7PM (IST)** — Durga Software Solutions (1:29:52, 464 views)
+  https://www.youtube.com/watch?v=9dG_64M0o9A
+  item: `items/9dG_64M0o9A.md`
+- **The Night Federal Agents Took a Child at Gunpoint** — Guns & Gadgets 2nd Amendment News (10:27, 9.7K views)
+  https://www.youtube.com/watch?v=-uI3BthA0ZU
+  item: `items/-uI3BthA0ZU.md`
+- **🔥Tulip = Elf Queen, Mermaid = Ruler of the Deep Sea, He Can Raise All Pets into Goddesses** — Blue Whale Comics Review (20:32:35, 983 views)
+  https://www.youtube.com/watch?v=rWmTa6LUT9c
+  item: `items/rWmTa6LUT9c.md`
+- **Interstellar Banking - The Galactic Financial System** — Isaac Arthur (30:28, 7.8K views)
+  https://www.youtube.com/watch?v=BGTI5e6k-go
+  item: `items/BGTI5e6k-go.md`
+- **Will God Save America? | Bible Prophecy, America & the Future | LIVE Conference Day 2** — Heritage & Hope Ministries (9:01:11, 5.4K views)
+  https://www.youtube.com/watch?v=hc4jv0bCfUA
+  item: `items/hc4jv0bCfUA.md`
+- **We're making up AI as we go | Saturdata with Joey Yudelson** — Saturdata Podcast (47:00, 5 views)
+  https://www.youtube.com/watch?v=K2Z2mG_bFTA
+  item: `items/K2Z2mG_bFTA.md`
+- **0-Click SEO: Auto-Write and Publish 1 Article/Day from your Mac (Shortcuts + PCC)** — Nate Estate (12:28, new)
+  https://www.youtube.com/watch?v=2UC2bTGQTYg
+  item: `items/2UC2bTGQTYg.md`
+- **Why do fascists love AI slop?** — Caelan Conrad (37:34, 31.9K views)
+  https://www.youtube.com/watch?v=QF2PYUPkvlo
+  item: `items/QF2PYUPkvlo.md`
+- **Ex-Meta AI Chief Yann LeCun | The Biggest Risk of AI & The Second Wave Coming** — Ahamed Fofana (11:05, 11 views)
+  https://www.youtube.com/watch?v=qqY_Eod8pNo
+  item: `items/qqY_Eod8pNo.md`

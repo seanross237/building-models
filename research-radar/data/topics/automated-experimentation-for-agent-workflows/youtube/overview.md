@@ -189,3 +189,96 @@ Full item files belong in `items/`.
 - **Every Engineer Is a Manager Now 🤖 — with Chris Lattner** — Refactoring (58:59, 391 views)
   https://www.youtube.com/watch?v=PLQs_hHTzSk
   item: `items/PLQs_hHTzSk.md`
+
+## 2026-04-05 — 30 new videos
+
+- **Wall Street Just Bet $285 Billion on AI Agents. The Best One Barely Works.** — AI News & Strategy Daily | Nate B Jones (22:30, 26.0K views)
+  https://www.youtube.com/watch?v=D-Ww1wLIp60
+  item: `items/D-Ww1wLIp60.md`
+- **Abacus CoWork: This AI Agent Finishes Your Work (Not Just Assists)** — Julia McCoy (17:30, 4.6K views)
+  https://www.youtube.com/watch?v=3wfGasnTcSg
+  item: `items/3wfGasnTcSg.md`
+- **Crafting an AI-Driven Workflow System - System Crafters Live!** — System Crafters (1:52:03, 1.0K views)
+  https://www.youtube.com/watch?v=SrRweChigB0
+  item: `items/SrRweChigB0.md`
+- **Trending Open-Source Github Projects : Claude Code, VibeVoice, bitsandbytes & Coolify CLI #245** — ManuAGI - AutoGPT Tutorials (13:40, 1.4K views)
+  https://www.youtube.com/watch?v=HywmktKaKd4
+  item: `items/HywmktKaKd4.md`
+- **Build Apps by Talking to AI (No Coding Needed)** — Aivora Labs (3:50, 1 views)
+  https://www.youtube.com/watch?v=NmTvH4pngFo
+  item: `items/NmTvH4pngFo.md`
+- **This Ai Build Ai Agents & Workflows (TinyCommand Review)** — Saas Guru (13:33, 22 views)
+  https://www.youtube.com/watch?v=LU5MR6fuByQ
+  item: `items/LU5MR6fuByQ.md`
+- **Easily Invoke AI Agents Inside GoHighLevel Workflows** — Andrew George (4:57, 55 views)
+  https://www.youtube.com/watch?v=t4vL8065xrk
+  item: `items/t4vL8065xrk.md`
+- **Xbot77.com Demo: How to Create a Collection and AI Agent Workflow Process** — Lee Thurburn (15:29, 4 views)
+  https://www.youtube.com/watch?v=lhV88rmwd3k
+  item: `items/lhV88rmwd3k.md`
+- **Gemma 4: The Architect's Guide to Production-Ready On-Device Agents** — Rynaut — Architecting Automation (9:17, 1 views)
+  https://www.youtube.com/watch?v=zry2LA2vJpc
+  item: `items/zry2LA2vJpc.md`
+- **AI answers we blindly trust & Cursor 3 and agent workflows - AI News (Apr 4, 2026)** — The Automated Daily (10:35, 4 views)
+  https://www.youtube.com/watch?v=OQIIIipQX5c
+  item: `items/OQIIIipQX5c.md`
+- **n8n Workflow Engineering** — Naveen Tech Hub (2:04, 11 views)
+  https://www.youtube.com/watch?v=Hx2oFBlAlDA
+  item: `items/Hx2oFBlAlDA.md`
+- **How "Regular" People Are Getting Ahead with AI in 2026** — Laurie Wang (19:50, 940 views)
+  https://www.youtube.com/watch?v=5dTUIcdSg_4
+  item: `items/5dTUIcdSg_4.md`
+- **they blocked OpenClaw. now what.** — Ray Fernando (2:16:43, 5.1K views)
+  https://www.youtube.com/watch?v=sWDhIGIiK5w
+  item: `items/sWDhIGIiK5w.md`
+- **The Testing Reality Episode 8: The Agentic Era: Why Testing Will Never Be the Same Again?** — Pcloudy (4:31, 3 views)
+  https://www.youtube.com/watch?v=Pr5UfYM5zhY
+  item: `items/Pr5UfYM5zhY.md`
+- **Stop Using Chatbots. I Built an Autonomous AI Sales Team (CrewAI Tutorial)** — Digital Asean (9:26, 2 views)
+  https://www.youtube.com/watch?v=DgC-m1aeuEg
+  item: `items/DgC-m1aeuEg.md`
+- **Pivoting to Marketing Engineering (Cursor 3, Gemma 4, Codex)** — Rafal Reyzer (11:32, 10 views)
+  https://www.youtube.com/watch?v=KsPEgacWe-k
+  item: `items/KsPEgacWe-k.md`
+- **Claude Code Auto-Caption System (STOP PAYING FOR OPUS PRO)** — Yash | AI Automation (31:25, 5 views)
+  https://www.youtube.com/watch?v=8YA-eC9n5L4
+  item: `items/8YA-eC9n5L4.md`
+- **The New Era of AI Is Already Here: How We Got Here** — ShortByShot (29:16, 2 views)
+  https://www.youtube.com/watch?v=StoE7BB3lVg
+  item: `items/StoE7BB3lVg.md`
+- **AI Broke McDonald’s… While Saving Billions at IBM** — Exploring ChatGPT (36:19, 78 views)
+  https://www.youtube.com/watch?v=nmKQIub3Mik
+  item: `items/nmKQIub3Mik.md`
+- **Stop Switching Between AI Tools, This One Platform Does Everything —Wery AI Review** — AI BORDER (5:27, 2.0K views)
+  https://www.youtube.com/watch?v=AyPBgPXZBXs
+  item: `items/AyPBgPXZBXs.md`
+- **How to Adopt AI in Your Library — A Complete 2026 Blueprint** — AI for Librarians (14:50, 1 views)
+  https://www.youtube.com/watch?v=Y7yxV4X5R_4
+  item: `items/Y7yxV4X5R_4.md`
+- **LIVE CALL: How I Turned a Consultation Into a Long Term Client Using AI** — Joaqui (1:11:12, 69 views)
+  https://www.youtube.com/watch?v=u0nooso9uVI
+  item: `items/u0nooso9uVI.md`
+- **Still piecing together your own RAG system? Onyx integrates Agentic RAG to build an enterprise-g...** — DevCovery (5:56, new)
+  https://www.youtube.com/watch?v=trBp5exDRw0
+  item: `items/trBp5exDRw0.md`
+- **Manus AI explained simply in 13 minutes (setup & use cases)** — No Code MBA (13:49, 314 views)
+  https://www.youtube.com/watch?v=a7OZwy7kOxM
+  item: `items/a7OZwy7kOxM.md`
+- **Live Trading Agent Workflow using Claude AI** — ChilledBeer (1:24:56, 5 views)
+  https://www.youtube.com/watch?v=XCBdfFrlNHI
+  item: `items/XCBdfFrlNHI.md`
+- **Wag Tracker Dog Walker Version** — Cognito Coding (2:56, new)
+  https://www.youtube.com/watch?v=b8F5Y0cV8U8
+  item: `items/b8F5Y0cV8U8.md`
+- **Self-distillation boosts code LLMs & Coding agents: harness beats model - Hacker News (Apr 4, 2026)** — The Automated Daily (7:30, 3 views)
+  https://www.youtube.com/watch?v=z9D99RvO1Hk
+  item: `items/z9D99RvO1Hk.md`
+- **I Left Corporate to Go All In on AI. Here's My Update.** — Getting AI To Work by Brennan McDonald (9:47, 11 views)
+  https://www.youtube.com/watch?v=qg3fJYRM1jQ
+  item: `items/qg3fJYRM1jQ.md`
+- **EP 27 -The CRM is Doomed. (And your Sales Team knows it.)** — Highperformr (23:38, 14 views)
+  https://www.youtube.com/watch?v=f5dzC0d69Uo
+  item: `items/f5dzC0d69Uo.md`
+- **10 FREE AI Tools That Only 1% Know** — DigitalOnMe By Abhishek (7:46, 6 views)
+  https://www.youtube.com/watch?v=RAut3bKZlqM
+  item: `items/RAut3bKZlqM.md`

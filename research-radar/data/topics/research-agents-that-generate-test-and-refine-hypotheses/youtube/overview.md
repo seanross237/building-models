@@ -39,3 +39,21 @@ Full item files belong in `items/`.
 - **🔥【爽漫】【Eng Sub】《神級奸商：全服求我別薅了/God-Tier Scammer》EP1-119 | 林風重生玩虛擬遊戲成奸商，一路暴賺改命，卻發現現實隱藏著遊戲真相。#玄幻 #热血 #动漫** — 八虎动漫剧场 (10:07:22, 42 views)
   https://www.youtube.com/watch?v=vC-J3x1NGis
   item: `items/vC-J3x1NGis.md`
+
+## 2026-04-05 — 5 new videos
+
+- **Betrayed By His Crush After Saving Her, He Joins A Secret School To Become God.** — Inosuke Recap (21:14:00, 1.2K views)
+  https://www.youtube.com/watch?v=arUNSks6Jpo
+  item: `items/arUNSks6Jpo.md`
+- **💥【New】【Multi sub】Gold for Spicy Strips EP 1-108 #anime #animation** — Joyland-Animation (8:58:49, 1.5K views)
+  https://www.youtube.com/watch?v=LtlIPzBjnhw
+  item: `items/LtlIPzBjnhw.md`
+- **Ocean Survival: His System Draws Weapons Daily and Evolves a Broken Raft into a Super Battleship!** — Panda Fantasy Chronicles (30:34:03, 773 views)
+  https://www.youtube.com/watch?v=ZjTqbijB1PM
+  item: `items/ZjTqbijB1PM.md`
+- **Le sette picche doppiate di Augusto De Angelis | Audiolibro Completo | Romanzo poliziesco** — Beneinst - Onde Letterarie e Audiolibri (6:57:00, 152 views)
+  https://www.youtube.com/watch?v=XjjKeuR2yS4
+  item: `items/XjjKeuR2yS4.md`
+- **💥ENG SUB💥【觉醒职业商人，我改写全服物价】Awakened Merchant: The One Who Sets All Prices 第1-119集 #热血 #穿越 #动漫** — 超有钱动漫 Anime Club (10:07:22, 1.0K views)
+  https://www.youtube.com/watch?v=Xjru2lQLejA
+  item: `items/Xjru2lQLejA.md`

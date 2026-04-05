@@ -207,3 +207,84 @@ Full item files belong in `items/`.
 - **🔥 24/7 Crypto Live Trading 🤖 I Built a AI Trading Bot That trades Bitcoin & Meme #Livetrading** — Tradebuttons (NA, new)
   https://www.youtube.com/watch?v=FKTPEHPrdgQ
   item: `items/FKTPEHPrdgQ.md`
+
+## 2026-04-05 — 26 new videos
+
+- **Separation of AI models (brain) and harnesses (body): 'self-evolving AI' and harness systems** — 지투지 - 지식에서 지혜로 (22:38, 29 views)
+  https://www.youtube.com/watch?v=VRXn2eknGKw
+  item: `items/VRXn2eknGKw.md`
+- **Self-Evolving Multi-Agent Swarms: 74 AI Agents on a Mac Mini** — LocalKinAI (7:04, 4 views)
+  https://www.youtube.com/watch?v=I5ZffU0N1WM
+  item: `items/I5ZffU0N1WM.md`
+- **The 5 Levels of AI Autonomy: How Close Are We to AGI?** — AI Buzz (3:18, 5 views)
+  https://www.youtube.com/watch?v=J-wVfP6Q7ds
+  item: `items/J-wVfP6Q7ds.md`
+- **The Hidden Evolution of the Global Oracle** — Stone & Silicon (5:51, 8 views)
+  https://www.youtube.com/watch?v=NGAjMGOmPp0
+  item: `items/NGAjMGOmPp0.md`
+- **AI Predicts: The Next Pandemic** — How to Survive Show (19:08, 2.7K views)
+  https://www.youtube.com/watch?v=0-Jd7FwpWv8
+  item: `items/0-Jd7FwpWv8.md`
+- **Why Learning Is a System Responsibility — Deming Explained (AI Era)** — Curiosity Kosha (4:46, new)
+  https://www.youtube.com/watch?v=3gE8_fC4ipU
+  item: `items/3gE8_fC4ipU.md`
+- **I Built a Rainforest Ecosystem. 180 Days Later THIS Happened!** — HabitatForge (12:30, 9.6K views)
+  https://www.youtube.com/watch?v=doCSI17INRE
+  item: `items/doCSI17INRE.md`
+- **7 Hành Vi Âm Thầm Tạo Nên Khí Chất Khiến Người Khác Phải Nể Trọng | Carl Jung** — LẮNG NGHE TÂM (52:48, 621 views)
+  https://www.youtube.com/watch?v=8JCsH9Nf4UQ
+  item: `items/8JCsH9Nf4UQ.md`
+- **Gemma 4 4b and Pharmaceutical Superintelligence** — KEN WASSERMAN (20:54, 2 views)
+  https://www.youtube.com/watch?v=J0FfLyVfqzU
+  item: `items/J0FfLyVfqzU.md`
+- **Why So Many People Feel ‘OFF’ Right Now… (It’s NOT Anxiety) | Jody Reid** — Next Level Soul Podcast (1:04:25, 26.1K views)
+  https://www.youtube.com/watch?v=fvV4-y-JTEM
+  item: `items/fvV4-y-JTEM.md`
+- **Daily AI Brief — Part 073 (2026-04-04)** — Everstone AI (15:49, new)
+  https://www.youtube.com/watch?v=AP1O4zVs-8M
+  item: `items/AP1O4zVs-8M.md`
+- **Revolutionizing Construction with Robotics and AI: Edgar Munoz's Vision** — Wisdom Partners (29:07, new)
+  https://www.youtube.com/watch?v=9Ea-5NR3qX8
+  item: `items/9Ea-5NR3qX8.md`
+- **AUTHENTICITY HAS A PRICE 🔥 FREE YOURSELF FROM JUDGMENT AND ACTIVATE YOUR DISCERNMENT** — Il Mago Bianco (18:28, 650 views)
+  https://www.youtube.com/watch?v=iPnWkYB95UQ
+  item: `items/iPnWkYB95UQ.md`
+- **CAPRICORN ♑ SOMETHING IS REVEALING ITSELF NOW 💥 AND CHANGING YOUR PATH** — Il Mago Bianco (16:30, 1.1K views)
+  https://www.youtube.com/watch?v=ew5Zsi-O9Hc
+  item: `items/ew5Zsi-O9Hc.md`
+- **Cognitive Evolution and Orientation Scaffolds (M004)** — Mr. Om Ananda (7:16, 3 views)
+  https://www.youtube.com/watch?v=qqa49XLPSyY
+  item: `items/qqa49XLPSyY.md`
+- **184 - The 2 Person $1.8B Company That Just Broke Everything!** — Health:Further (1:01:15, 2 views)
+  https://www.youtube.com/watch?v=ejscG8Z85Oo
+  item: `items/ejscG8Z85Oo.md`
+- **The "Depression" Lie: Why Feeling Dead Inside Is Actually Saving You** — Shadow Therapy (11:31, 5 views)
+  https://www.youtube.com/watch?v=2XeRtNLT0FM
+  item: `items/2XeRtNLT0FM.md`
+- **30,000 Jobs Gone: The Truth Behind Oracle Layoffs & AI** — Manish Goswami (6:43, 6 views)
+  https://www.youtube.com/watch?v=40WiK8gxsic
+  item: `items/40WiK8gxsic.md`
+- **Decode Papers with AI - How to Evaluate LLMs Properly (Google Paper)** — Laks AI Channel (20:14, 3 views)
+  https://www.youtube.com/watch?v=egqU3SdD9YY
+  item: `items/egqU3SdD9YY.md`
+- **How Robinson Crusoe *Invented* the Modern Capitalist** — AI Eternal Chapters (39:43, 1 views)
+  https://www.youtube.com/watch?v=q9C77QwU4PM
+  item: `items/q9C77QwU4PM.md`
+- **Betrayed By His Crush After Saving Her, He Joins A Secret School To Become God.** — Inosuke Recap (21:14:00, 1.2K views)
+  https://www.youtube.com/watch?v=arUNSks6Jpo
+  item: `items/arUNSks6Jpo.md`
+- **The Terror of Building** — True Horror Narration (1:12:01, 2 views)
+  https://www.youtube.com/watch?v=bn9ivgUdlGQ
+  item: `items/bn9ivgUdlGQ.md`
+- **The Plant-Inspired Technologies To Form A Livable, Renewable Society and Protect The Environment !!!** — VeganWorld TechBook (1:25:26, 6 views)
+  https://www.youtube.com/watch?v=oVE-zuFQ-BU
+  item: `items/oVE-zuFQ-BU.md`
+- **Dialogues of Discovery: Dr. Shreya Santra | Specially-appointed Lecturer, Tohoku University, Japan** — STEMonsters Education (52:20, new)
+  https://www.youtube.com/watch?v=d8ZPM-FJOMM
+  item: `items/d8ZPM-FJOMM.md`
+- **I Don’t Train Like This Anymore** — Victor Cazal (5:18, 15 views)
+  https://www.youtube.com/watch?v=t92BKnB9tKw
+  item: `items/t92BKnB9tKw.md`
+- **How David Cunningham Changed the Sound of Post-Punk”** — Monumental Movement (18:01, 15 views)
+  https://www.youtube.com/watch?v=u9N-YJt2Vg4
+  item: `items/u9N-YJt2Vg4.md`

@@ -27,3 +27,18 @@ Full item files belong in `items/`.
 - **Advances in Artificial Intelligence applied to Cardiac MRI: Highlights from Circ: Cardiovascular Img** — Circulation, an American Heart Association Journal (1:06:16, 6 views)
   https://www.youtube.com/watch?v=IaijLVPHmsI
   item: `items/IaijLVPHmsI.md`
+
+## 2026-04-05 — 4 new videos
+
+- **Betrayed By His Crush After Saving Her, He Joins A Secret School To Become God.** — Inosuke Recap (21:14:00, 1.2K views)
+  https://www.youtube.com/watch?v=arUNSks6Jpo
+  item: `items/arUNSks6Jpo.md`
+- **8 NLP RNN/LSTM - NYU Lecture Spring 2026** — Pantelis Monogioudis (2:19:55, 4 views)
+  https://www.youtube.com/watch?v=LNjafWCK3w4
+  item: `items/LNjafWCK3w4.md`
+- **【FULL】《無敵學霸系統》嫌我学渣是垃圾？当我把学科+病娇合成新世界系统，同学都跪了！ #漫畫#男頻#熱門漫畫** — 破界漫工廠 (2:33:31, 43 views)
+  https://www.youtube.com/watch?v=JN55o38eOo4
+  item: `items/JN55o38eOo4.md`
+- **UMKM WAJIB NONTON‼️ AI Bisa Bikin Bisnis Naik… atau Malah Surut?! TIBA Podcast Eps. 1** — Ardian Daffa and Bintang Anugrah Surya Semesta (1:21:04, 70 views)
+  https://www.youtube.com/watch?v=2F4K5Ho3iM8
+  item: `items/2F4K5Ho3iM8.md`

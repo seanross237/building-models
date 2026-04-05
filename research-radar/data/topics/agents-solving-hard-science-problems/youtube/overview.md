@@ -189,3 +189,96 @@ Full item files belong in `items/`.
 - **The Love Problems We Face: Dr. Loren Weiner on Returning to Spirit** — And Now Love Podcast (1:02:54, 342 views)
   https://www.youtube.com/watch?v=FO0yjmC58PQ
   item: `items/FO0yjmC58PQ.md`
+
+## 2026-04-05 — 30 new videos
+
+- **Japanese| Hardest Algebra Olympiad Math Problem From Japan| Can you solve this?** — Shorif Sir (8:07, 566 views)
+  https://www.youtube.com/watch?v=qquliplo768
+  item: `items/qquliplo768.md`
+- **Betrayed By His Crush After Saving Her, He Joins A Secret School To Become God.** — Inosuke Recap (21:14:00, 1.2K views)
+  https://www.youtube.com/watch?v=arUNSks6Jpo
+  item: `items/arUNSks6Jpo.md`
+- **From Anthropic's Blog - Can AI Actually Do Theoretical Physics? The G2 Experiment** — AI Frontier Research (7:55, new)
+  https://www.youtube.com/watch?v=2qA_8MEg62s
+  item: `items/2qA_8MEg62s.md`
+- **💥【New】【Multi sub】Gold for Spicy Strips EP 1-108 #anime #animation** — Joyland-Animation (8:58:49, 1.5K views)
+  https://www.youtube.com/watch?v=LtlIPzBjnhw
+  item: `items/LtlIPzBjnhw.md`
+- **💥【New】【Multi sub】Perfect Territory EP1-68 #anime #animation** — Joyland-Animation (5:36:26, 9 views)
+  https://www.youtube.com/watch?v=WIEYN9ZonzQ
+  item: `items/WIEYN9ZonzQ.md`
+- **🔥Tulip = Elf Queen, Mermaid = Ruler of the Deep Sea, He Can Raise All Pets into Goddesses** — Blue Whale Comics Review (20:32:35, 983 views)
+  https://www.youtube.com/watch?v=rWmTa6LUT9c
+  item: `items/rWmTa6LUT9c.md`
+- **NASA Holds News Conference After Artemis II Launch** — C-SPAN (1:03:00, 13.1K views)
+  https://www.youtube.com/watch?v=rC_KrtDlgy4
+  item: `items/rC_KrtDlgy4.md`
+- **💥【New】【Multi Sub】Reborn Against My Will EP1-52 #anime #animation** — Joyland-Animation (3:42:37, 743 views)
+  https://www.youtube.com/watch?v=ZpyoArEN4NI
+  item: `items/ZpyoArEN4NI.md`
+- **My AI Sales Agent Makes Money While I Sleep. Here is the Blueprint** — Digital Asean (9:26, 2 views)
+  https://www.youtube.com/watch?v=DgC-m1aeuEg
+  item: `items/DgC-m1aeuEg.md`
+- **Is Consciousness Collapsing Reality Right Now?** — Infinite Now (35:55, 505 views)
+  https://www.youtube.com/watch?v=zdZYalqhks0
+  item: `items/zdZYalqhks0.md`
+- **NASA mission managers provide status update on Artemis II** — WCNC (1:02:14, 1.9K views)
+  https://www.youtube.com/watch?v=1CuCGjFyI6c
+  item: `items/1CuCGjFyI6c.md`
+- **We're making up AI as we go | Saturdata with Joey Yudelson** — Saturdata Podcast (47:00, 5 views)
+  https://www.youtube.com/watch?v=K2Z2mG_bFTA
+  item: `items/K2Z2mG_bFTA.md`
+- **8 Signs the Nancy Guthrie Case Is About to Break Wide Open** — Note Book VE (45:20, 36 views)
+  https://www.youtube.com/watch?v=mVZGV0zO1g4
+  item: `items/mVZGV0zO1g4.md`
+- **Live coding and Q/A with the Angular Team - MCP Servers| April 2026** — Angular (1:33:41, 1.3K views)
+  https://www.youtube.com/watch?v=VigynyjJJnM
+  item: `items/VigynyjJJnM.md`
+- **184 - The 2 Person $1.8B Company That Just Broke Everything!** — Health:Further (1:01:15, 2 views)
+  https://www.youtube.com/watch?v=ejscG8Z85Oo
+  item: `items/ejscG8Z85Oo.md`
+- **Interstellar Banking - The Galactic Financial System** — Isaac Arthur (30:28, 7.8K views)
+  https://www.youtube.com/watch?v=BGTI5e6k-go
+  item: `items/BGTI5e6k-go.md`
+- **They Threw Away This $1 Fix: Restore Any Dead Battery to Full 12V (Banned Chemistry)** — Dr. Mike Survival (17:37, 4 views)
+  https://www.youtube.com/watch?v=0jQCySO-iCY
+  item: `items/0jQCySO-iCY.md`
+- **Anne of Green Gables by L. M. Montgomery | Coming-of-Age, Friendship & Life in Avonlea 🌸📖🎧✨** — Golden Fiction Tales (11:53:40, 76 views)
+  https://www.youtube.com/watch?v=Klz4jWC51z8
+  item: `items/Klz4jWC51z8.md`
+- **The Experiment America Ran on Its Own Soldiers | Atomic Veterans and the Nuclear Test Cover-Up** — Cold War Files (38:18, new)
+  https://www.youtube.com/watch?v=krd3cznBuX4
+  item: `items/krd3cznBuX4.md`
+- **Polymarket and Claude Code Is Eating Tennis Alive** — Moon Dev (10:43, 511 views)
+  https://www.youtube.com/watch?v=JCSqy04kgcU
+  item: `items/JCSqy04kgcU.md`
+- **Entangled EGOs | Full  Audio booK | One Family Caught Between Worlds | Multiverse Mystery Unfolds** — The Brainy Dreams Studio (7:09:56, 24 views)
+  https://www.youtube.com/watch?v=QdwOiboB4vU
+  item: `items/QdwOiboB4vU.md`
+- **【Fullspisode】Girl transmigrates to 1970s—hungry and cold. Then she unlocks a cosmic shopping system!** — Supernova Drama (1:43:39, 1.3K views)
+  https://www.youtube.com/watch?v=JnI5OJNGCzM
+  item: `items/JnI5OJNGCzM.md`
+- **I Have Recreated The Mission Impossible Hallway Illusion from Ghost Protocol** — Opus Liews (13:49, 4 views)
+  https://www.youtube.com/watch?v=-43pySRRqq0
+  item: `items/-43pySRRqq0.md`
+- **6th Annual National Conference: Keynote Address** — Coleridge (1:00:36, 3 views)
+  https://www.youtube.com/watch?v=ZcTJyfn5FgQ
+  item: `items/ZcTJyfn5FgQ.md`
+- **10 Coincidences That PROVE We're Being Watched** — UnseenTruths (34:38, 8 views)
+  https://www.youtube.com/watch?v=OUwdstWQfdk
+  item: `items/OUwdstWQfdk.md`
+- **Blue Tuesday Forum 03/31/26** — Blue Tuesday Forum (1:30:08, new)
+  https://www.youtube.com/watch?v=WryyI9K4aFE
+  item: `items/WryyI9K4aFE.md`
+- **Why You Keep Trying to Save People (And Why It Drains You)** — Julie Vander Meulen (41:55, new)
+  https://www.youtube.com/watch?v=ONjrVtXRhms
+  item: `items/ONjrVtXRhms.md`
+- **Wasteland Ecology: The Commonwealth: Water - Don't Drink Sea Water!** — Emi the Cat Lady (40:01, 4 views)
+  https://www.youtube.com/watch?v=uCBG_LghTgQ
+  item: `items/uCBG_LghTgQ.md`
+- **Why PROJECT HAIL MARY looks different** — Patrick Tomasso and patrick 2masso (1:02:34, 4.4K views)
+  https://www.youtube.com/watch?v=1KVkZDgV218
+  item: `items/1KVkZDgV218.md`
+- **10 Impossible Military Experiments That Were Erased From History** — Hidden Why (31:55, 5 views)
+  https://www.youtube.com/watch?v=x6h-_f8pGw8
+  item: `items/x6h-_f8pGw8.md`

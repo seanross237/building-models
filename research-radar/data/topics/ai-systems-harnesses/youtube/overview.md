@@ -189,3 +189,93 @@ Full item files belong in `items/`.
 - **Faster Than Light? Engineering Reality from Quantum Shadows to Deep Space | Artificially Informed** — Artificially Informed (1:14:01, 4 views)
   https://www.youtube.com/watch?v=ika1uQMKDn8
   item: `items/ika1uQMKDn8.md`
+
+## 2026-04-05 — 29 new videos
+
+- **Separation of AI models (brain) and harnesses (body): 'self-evolving AI' and harness systems** — 지투지 - 지식에서 지혜로 (22:38, 29 views)
+  https://www.youtube.com/watch?v=VRXn2eknGKw
+  item: `items/VRXn2eknGKw.md`
+- **The Agent Harness** — Vinh Nguyen (6:34, 4 views)
+  https://www.youtube.com/watch?v=-Y8CKl9DTdU
+  item: `items/-Y8CKl9DTdU.md`
+- **[Podcast] The Agent Harness** — Vinh Nguyen (42:02, 1 views)
+  https://www.youtube.com/watch?v=_efJ8baMSDw
+  item: `items/_efJ8baMSDw.md`
+- **Steering the Stallion: Mastering Control Over Powerful AI** — Kaizen Apps (2:07, 2 views)
+  https://www.youtube.com/watch?v=AqBTBJv1qYI
+  item: `items/AqBTBJv1qYI.md`
+- **Self Improving Agents in 5 Minutes** — Developers Digest (5:08, 906 views)
+  https://www.youtube.com/watch?v=RoaPvj9Ovug
+  item: `items/RoaPvj9Ovug.md`
+- **they blocked OpenClaw. now what.** — Ray Fernando (2:16:43, 5.1K views)
+  https://www.youtube.com/watch?v=sWDhIGIiK5w
+  item: `items/sWDhIGIiK5w.md`
+- **[Video Special] The Architecture of Modern Coding Agents: Scaffolding Around the Mind** — Vinh Nguyen (5:14, 3 views)
+  https://www.youtube.com/watch?v=oxklpLnZzIU
+  item: `items/oxklpLnZzIU.md`
+- **Vibe Coding: Claude vs. Codex for AI Architecture** — Brand Tech Authority (7:10, new)
+  https://www.youtube.com/watch?v=c8X4VqOE2bk
+  item: `items/c8X4VqOE2bk.md`
+- **📱 they blocked OpenClaw. now what.** — Ray Fernando (2:16:42, 1.2K views)
+  https://www.youtube.com/watch?v=wcBMCcE9yD0
+  item: `items/wcBMCcE9yD0.md`
+- **Building a Memory-First Agent Harness with Oracle AI Database** — Oracle Developers (46:14, 134 views)
+  https://www.youtube.com/watch?v=lmkxvIZUmJo
+  item: `items/lmkxvIZUmJo.md`
+- **Surprise Breakthrough Solves Shipping's BIGGEST Problem** — Two Bit da Vinci (12:27, 20.4K views)
+  https://www.youtube.com/watch?v=9R6ln7pr5QU
+  item: `items/9R6ln7pr5QU.md`
+- **Warren Buffett: The 5 Quiet Costs of Looking Successful (Most People Never Notice)** — Legend Investor Mindset (35:38, 2.2K views)
+  https://www.youtube.com/watch?v=Jc4TAarEV5M
+  item: `items/Jc4TAarEV5M.md`
+- **OpenAI's $122B Round, Claude's Desktop Takeover & NEAR Hits Robinhood** — NEAR Protocol (2:17, 121 views)
+  https://www.youtube.com/watch?v=gSd72OEIIvs
+  item: `items/gSd72OEIIvs.md`
+- **Night Watches: Avoid These Fatal Mistakes** — Ikigaï Voyages (56:00, 326 views)
+  https://www.youtube.com/watch?v=qRFott1rDWQ
+  item: `items/qRFott1rDWQ.md`
+- **Coding While Pushing a Stroller: Meta Developer's 24/7 Automation** — 커리어해커 알렉스 (22:23, 140 views)
+  https://www.youtube.com/watch?v=QzRcYt1Gy_Y
+  item: `items/QzRcYt1Gy_Y.md`
+- **How to Install Claude - Easy Guide 2026** — TechGuidePro (1:16, new)
+  https://www.youtube.com/watch?v=JUVHy3n5XnU
+  item: `items/JUVHy3n5XnU.md`
+- **Live coding and Q/A with the Angular Team - MCP Servers| April 2026** — Angular (1:33:41, 1.3K views)
+  https://www.youtube.com/watch?v=VigynyjJJnM
+  item: `items/VigynyjJJnM.md`
+- **184 - The 2 Person $1.8B Company That Just Broke Everything!** — Health:Further (1:01:15, 2 views)
+  https://www.youtube.com/watch?v=ejscG8Z85Oo
+  item: `items/ejscG8Z85Oo.md`
+- **Rewire Your Brain Power: Strengthen Your Prefrontal Cortex | Control Your Brain!- Dr. Sweta Adatia** — Dr Sweta Adatia (9:13, 2.2K views)
+  https://www.youtube.com/watch?v=VYf4p9_-MrI
+  item: `items/VYf4p9_-MrI.md`
+- **Solar is Changing FAST… Here’s What We Found at Intersolar 2026** — Option One Solar (14:24, 2 views)
+  https://www.youtube.com/watch?v=Wo0o9RSIuqM
+  item: `items/Wo0o9RSIuqM.md`
+- **Amikin Village Update 1.9 - Everything you need to know - Update 1.9 Key Highlight #introvertgamer** — Introvert Gamer (1:05:44, 98 views)
+  https://www.youtube.com/watch?v=Lts2gKky4bA
+  item: `items/Lts2gKky4bA.md`
+- **the forgotten my little pony stage show** — aidan elizabeth (1:37:26, 419 views)
+  https://www.youtube.com/watch?v=xZcW75yQGaw
+  item: `items/xZcW75yQGaw.md`
+- **Inside the Mind of an AI Agent - Harness, Loop, and Model APIs** — CreativeDirectorOfCode (9:14, 8 views)
+  https://www.youtube.com/watch?v=MLJk05h2oV8
+  item: `items/MLJk05h2oV8.md`
+- **The Plant-Inspired Technologies To Form A Livable, Renewable Society and Protect The Environment !!!** — VeganWorld TechBook (1:25:26, 6 views)
+  https://www.youtube.com/watch?v=oVE-zuFQ-BU
+  item: `items/oVE-zuFQ-BU.md`
+- **Living Mummy | HORROR | Full Movie in English** — Boxoffice | HORROR | Full Movies (1:22:58, 6.2K views)
+  https://www.youtube.com/watch?v=aLfX716BkWg
+  item: `items/aLfX716BkWg.md`
+- **The Wacky Worm is ALMOST Unfair (11X More Bass)** — Wendell Fishing and 2 more (11:24, 4.5K views)
+  https://www.youtube.com/watch?v=Tv0CezMdfhU
+  item: `items/Tv0CezMdfhU.md`
+- **Fall Asleep to the Entire Story of  Persephone | The Most Famous Love Story** — Stardust Tales (1:58:59, 5 views)
+  https://www.youtube.com/watch?v=5WCMmCW-pTo
+  item: `items/5WCMmCW-pTo.md`
+- **The CHEAPEST way to make an old car look NEW (Civic Light Upgrade)** — Car Creations (10:35, 172 views)
+  https://www.youtube.com/watch?v=D8uvokgHyYM
+  item: `items/D8uvokgHyYM.md`
+- **Human “living key” awakens 18 masters’ memories—betrayed by mentor, he rises to challenge the god** — Sigma Rise Novels (10:09, new)
+  https://www.youtube.com/watch?v=HzS9jgingo4
+  item: `items/HzS9jgingo4.md`

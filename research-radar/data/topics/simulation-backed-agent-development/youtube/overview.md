@@ -144,3 +144,48 @@ Full item files belong in `items/`.
 - **【Multi Sub】 🎉 我在末世開超市當救世主 I opened a supermarket and became a savior in the apocalypse EP1-108 #男频** — Qixiang-Animation (8:58:56, 88 views)
   https://www.youtube.com/watch?v=tZ4cjmM5yXM
   item: `items/tZ4cjmM5yXM.md`
+
+## 2026-04-05 — 14 new videos
+
+- **NASA mission managers provide status update on Artemis II** — WCNC (1:02:14, 1.9K views)
+  https://www.youtube.com/watch?v=1CuCGjFyI6c
+  item: `items/1CuCGjFyI6c.md`
+- **NASA’s Artemis II Daily News Conference (April 4, 2026)** — NASA (1:09:45, 256.7K views)
+  https://www.youtube.com/watch?v=O-KDKBCPrwA
+  item: `items/O-KDKBCPrwA.md`
+- **Will God Save America? | Bible Prophecy, America & the Future | LIVE Conference Day 2** — Heritage & Hope Ministries (9:01:11, 5.4K views)
+  https://www.youtube.com/watch?v=hc4jv0bCfUA
+  item: `items/hc4jv0bCfUA.md`
+- **He's Not Allergic to Her! Now He's Hiring a Fake Robot Girlfriend to Find Her.** — Lỡ Yêu (2:26:04, 69 views)
+  https://www.youtube.com/watch?v=I-ML113Qq4k
+  item: `items/I-ML113Qq4k.md`
+- **💥【New】【Multi sub】Gold for Spicy Strips EP 1-108 #anime #animation** — Joyland-Animation (8:58:49, 1.5K views)
+  https://www.youtube.com/watch?v=LtlIPzBjnhw
+  item: `items/LtlIPzBjnhw.md`
+- **💥ENG SUB💥【SSS级法神：我的技能无限连爆】SSS-Class Arcane God: My Skills Explode Infinitely 第1-105集 #玄幻 #热血 #动漫** — 超有钱动漫 Anime Club (2:10:15, 35 views)
+  https://www.youtube.com/watch?v=julyA4nmVDE
+  item: `items/julyA4nmVDE.md`
+- **(18+) SPENT 5 HOURS ON ART!! 🎨🎨 And then we try THE LEGEND OF KHILMORI!!** — TauTassieTiger (7:26:31, 59 views)
+  https://www.youtube.com/watch?v=wWLRGxYvBmA
+  item: `items/wWLRGxYvBmA.md`
+- **Cheating wife regrows! 😱 Saving my crippled husband & child from a scumbag.#drama [NZDJ]** — 月月追劇 (2:30:44, 246 views)
+  https://www.youtube.com/watch?v=hhlbu4ZUcKI
+  item: `items/hhlbu4ZUcKI.md`
+- **Ocean Survival: His System Draws Weapons Daily and Evolves a Broken Raft into a Super Battleship!** — Panda Fantasy Chronicles (30:34:03, 773 views)
+  https://www.youtube.com/watch?v=ZjTqbijB1PM
+  item: `items/ZjTqbijB1PM.md`
+- **After unlocking Strongest Manor System he turns 100K acres system granted into a paradise estate！** — Mania Comics Legends (11:59:58, 546 views)
+  https://www.youtube.com/watch?v=uTusdSR_ysc
+  item: `items/uTusdSR_ysc.md`
+- **Reborn 1 month before the apocalypse, I awakened an infinite space and hoarded 10,000 tons of meat!** — ถนอม แก้วธรรม (11:55:01, 6 views)
+  https://www.youtube.com/watch?v=VER9RtodV-E
+  item: `items/VER9RtodV-E.md`
+- **【Multi Sub】《開寶箱的手感，讓我狂賺百億》父母罵我廢物的第三年，我靠遊戲直覺殺穿金融圈#漫劇 #動態漫 #AI漫劇 #動漫 #動畫** — 神馬動漫 (3:21:57, 6.3K views)
+  https://www.youtube.com/watch?v=v7zhu8hIk2w
+  item: `items/v7zhu8hIk2w.md`
+- **💥【新番上线】游戏宅觉醒开宝箱直觉，横扫股市，从无业游民逆袭成华尔街胆寒的投资传奇！《从游戏宅到投资之神，我狂赚五十亿》全集Multi SUB #热血 #漫剧 #动漫魔女** — 动漫魔女 (3:21:57, 128 views)
+  https://www.youtube.com/watch?v=mAHq-ly97gc
+  item: `items/mAHq-ly97gc.md`
+- **未婚夫和小三婚前發床照挑釁，灰姑娘不吵不鬧婚禮上直接現場直播，霸氣戳穿姦夫淫婦真面目瀟灑退婚，渣男一夜破產跪求她原諒！ 全集 #情感 #爽文 #大女主 #总裁 #爱情 #打脸 #260101wt** — 劇好看 (1:36:26, 7.9K views)
+  https://www.youtube.com/watch?v=2uvBE0oA-KM
+  item: `items/2uvBE0oA-KM.md`

@@ -189,3 +189,93 @@ Full item files belong in `items/`.
 - **🔥【爽漫】【Eng Sub】《開局萬億神豪，系統逼我養女神》意外覺醒神豪系統、獲得天量資金，為了花掉只能用於女生的財富，被迫踏上一條荒誕卻爽感十足的逆襲之路。第1-193集 #都市 #逆袭 #系统** — 八虎动漫剧场 (7:08:10, 338 views)
   https://www.youtube.com/watch?v=G8x-ge6XuNs
   item: `items/G8x-ge6XuNs.md`
+
+## 2026-04-05 — 29 new videos
+
+- **Microsoft Agent Framework Explained — Build AI Agents in C#** — CodeWithVijay (24:36, 16 views)
+  https://www.youtube.com/watch?v=tNFT9Tk8UDc
+  item: `items/tNFT9Tk8UDc.md`
+- **The Billionaire Made His Pregnant Wife A Prisoner — She Made Him A Criminal** — Charlotte Reed Tells (1:12:07, 6 views)
+  https://www.youtube.com/watch?v=daMwUv_oZac
+  item: `items/daMwUv_oZac.md`
+- **【Multi Sub】An Unemployed Guy Got a Fishing System… and Started Solving Major Crimes** — StardustTV - Movies & Dramas (1:57:38, 8.2K views)
+  https://www.youtube.com/watch?v=p4lqppJoh3M
+  item: `items/p4lqppJoh3M.md`
+- **💥【New】【Multi sub】Gold for Spicy Strips EP 1-108 #anime #animation** — Joyland-Animation (8:58:49, 1.5K views)
+  https://www.youtube.com/watch?v=LtlIPzBjnhw
+  item: `items/LtlIPzBjnhw.md`
+- **Adding a .NET MAUI interface to NoteBookmark** — Behind my Cloud (2:57:12, 13 views)
+  https://www.youtube.com/watch?v=OTpnBStO11k
+  item: `items/OTpnBStO11k.md`
+- **💥【New】【Multi Sub】Reborn Against My Will EP1-52 #anime #animation** — Joyland-Animation (3:42:37, 743 views)
+  https://www.youtube.com/watch?v=ZpyoArEN4NI
+  item: `items/ZpyoArEN4NI.md`
+- **나는 구원 받았다고 믿었다 지옥에 있었다 두개의 세상을 본 남자** — 솔리데오 어메이징 그레이스 (1:44:15, 29 views)
+  https://www.youtube.com/watch?v=pzNkHOxbPb8
+  item: `items/pzNkHOxbPb8.md`
+- **【穿越×系統】EP1~80 | 穿越廢土末世，激活跨界琯理員系統，雇傭喪屍給我打工！《末世資本家：我的員工不是人》#動態漫#末世資本家：我的員工不是人** — 次元漫绘馆 (3:27:49, 844 views)
+  https://www.youtube.com/watch?v=VdBXKA_8OCE
+  item: `items/VdBXKA_8OCE.md`
+- **🔥Tulip = Elf Queen, Mermaid = Ruler of the Deep Sea, He Can Raise All Pets into Goddesses** — Blue Whale Comics Review (20:32:35, 983 views)
+  https://www.youtube.com/watch?v=rWmTa6LUT9c
+  item: `items/rWmTa6LUT9c.md`
+- **她為丈夫熬了十年苦日子，誰知他竟把情人塞進玩偶夜夜帶回家，心死那晚她終於亮出首富身份讓他淨身出戶！#反轉 #短劇 #親情** — 卷卷劇場 (1:26:07, 286 views)
+  https://www.youtube.com/watch?v=VoiZxqSgzHU
+  item: `items/VoiZxqSgzHU.md`
+- **THE UNION - Book 1 = Kaël | Chapter 5 | Dystopian Audiobook** — The Union Project (18:14, 2 views)
+  https://www.youtube.com/watch?v=TFy6hRaWSus
+  item: `items/TFy6hRaWSus.md`
+- **DAY 4 OF 10 DAYS REVIVAL** — The Heralds Ministries (1:40:26, 11 views)
+  https://www.youtube.com/watch?v=bgoKSVI4Cs0
+  item: `items/bgoKSVI4Cs0.md`
+- **(18+) SPENT 5 HOURS ON ART!! 🎨🎨 And then we try THE LEGEND OF KHILMORI!!** — TauTassieTiger (7:26:31, 59 views)
+  https://www.youtube.com/watch?v=wWLRGxYvBmA
+  item: `items/wWLRGxYvBmA.md`
+- **[Multi SUB] 被騙出國當淘金奴工，吃不飽睡不好還被壓榨！絕境中竟在河裡撿到萬能空間戒指！** — 好劇快 (1:59:13, 25 views)
+  https://www.youtube.com/watch?v=iqX1RoJJ71Y
+  item: `items/iqX1RoJJ71Y.md`
+- **Cinderella is drawn into a wealthy family reunion scheme.** — 蜜糖短剧 (1:34:38, 346 views)
+  https://www.youtube.com/watch?v=RiEqGFJwtkk
+  item: `items/RiEqGFJwtkk.md`
+- **💥ENG SUB💥【亿万神豪系统：舔狗也能逆袭】Billionaire System: Even a Simp Can Make a Comeback 第1-193集 #逆袭 #都市 #动漫** — 超有钱动漫 Anime Club (7:08:10, 443 views)
+  https://www.youtube.com/watch?v=SQ2Ij-HHGLc
+  item: `items/SQ2Ij-HHGLc.md`
+- **💥ENG SUB💥【觉醒职业商人，我改写全服物价】Awakened Merchant: The One Who Sets All Prices 第1-119集 #热血 #穿越 #动漫** — 超有钱动漫 Anime Club (10:07:22, 1.0K views)
+  https://www.youtube.com/watch?v=Xjru2lQLejA
+  item: `items/Xjru2lQLejA.md`
+- **Ocean Survival: His System Draws Weapons Daily and Evolves a Broken Raft into a Super Battleship!** — Panda Fantasy Chronicles (30:34:03, 773 views)
+  https://www.youtube.com/watch?v=ZjTqbijB1PM
+  item: `items/ZjTqbijB1PM.md`
+- **Reborn 1 month before the apocalypse, I awakened an infinite space and hoarded 10,000 tons of meat!** — ถนอม แก้วธรรม (11:55:01, 6 views)
+  https://www.youtube.com/watch?v=VER9RtodV-E
+  item: `items/VER9RtodV-E.md`
+- **The Legend of Zelda: Ocarina of Time Crowd Control 2026** — SakuraVODs (6:39:56, 2 views)
+  https://www.youtube.com/watch?v=NgqZfoUJxco
+  item: `items/NgqZfoUJxco.md`
+- **Buried Light — The Secret Brotherhood That Rivaled Christianity** — The Heretic's Library (35:28, new)
+  https://www.youtube.com/watch?v=YVBWRUkkYFc
+  item: `items/YVBWRUkkYFc.md`
+- **The Sweet, Innocent "Puppy" vs.The Ruthless,Obsessive "Yandere"—Wait, Is That a Puppy? That’s a Wolf** — 追剧酱来啦💖Here Comes Drama-chan (1:37:04, 252 views)
+  https://www.youtube.com/watch?v=8iwbFWgxTyo
+  item: `items/8iwbFWgxTyo.md`
+- **【Multi Sub】 🎉 我在末世開超市當救世主 I opened a supermarket and became a savior in the apocalypse EP1-108 #男频** — Qixiang-Animation (8:58:56, 775 views)
+  https://www.youtube.com/watch?v=tZ4cjmM5yXM
+  item: `items/tZ4cjmM5yXM.md`
+- **【Multi Sub】🔔 上班摸魚，下班降魔 Slack off at work, subdue demons after work.第2季 #修仙 #热血 #anime #男频** — Qixiang-Animation (10:21:25, 45 views)
+  https://www.youtube.com/watch?v=Jyaz-4r-sQY
+  item: `items/Jyaz-4r-sQY.md`
+- **【Multi Sub】🔥  隱世小店，五年後全修仙界曝光Hidden Shop: Revealed to All Cultivators After Five Years #男频 #搞笑#anime** — Qixiang-Animation (9:50:54, 2.1K views)
+  https://www.youtube.com/watch?v=D8-bWPalqqo
+  item: `items/D8-bWPalqqo.md`
+- **[Multi Sub]《上岸第一剑，先斩前公司》受尽前公司不公对待被抢功甩锅，女主逆袭上岸底气拉满，当场清算旧账虐渣，帅气霸总一路宠溺守护超解气！！#现代 #完整版 #最火短剧推荐 #短剧全集** — 追剧少女念念 (1:34:45, 303 views)
+  https://www.youtube.com/watch?v=s9yPdc5aseo
+  item: `items/s9yPdc5aseo.md`
+- **💥【新番上线】绝境觉醒影帝系统，以演技破局，将死亡副本玩成专属片场！《规则怪谈：开局激活演员系统》全集Multi SUB #热血 #漫剧 #动漫魔女** — 动漫魔女 (1:59:06, 111 views)
+  https://www.youtube.com/watch?v=uI5LzAFtZ4k
+  item: `items/uI5LzAFtZ4k.md`
+- **💥【新番上线】极寒末世囤百亿物资建安全屋，以绝对防御逆袭，成冰原孤岛之王！《冰河末世，我囤积了百亿物资2》全集Multi SUB #热血 #漫剧 #动漫魔女** — 动漫魔女 (2:06:28, 374 views)
+  https://www.youtube.com/watch?v=xgK-8xB32SI
+  item: `items/xgK-8xB32SI.md`
+- **💥【新番上线】女友暗藏惊天身份，体内封印超神芯片，一朝觉醒，逆袭护夫爽翻！《剃腋毛后，我继承了三千亿》全集Multi SUB #热血 #漫剧 #动漫魔女** — 动漫魔女 (1:15:45, 279 views)
+  https://www.youtube.com/watch?v=M9ZYsWkXz38
+  item: `items/M9ZYsWkXz38.md`

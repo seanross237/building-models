@@ -189,3 +189,96 @@ Full item files belong in `items/`.
 - **Trump, Iran, and the Rise of a Luciferian System | Sacha Stone** — FAR OUT WITH FAUST (1:20:55, 150 views)
   https://www.youtube.com/watch?v=z1Xen43PYjI
   item: `items/z1Xen43PYjI.md`
+
+## 2026-04-05 — 30 new videos
+
+- **Scientists Simulated a Fly's Brain - And It Predicted Behavior Without Any Training** — Qubic (9:19, 301 views)
+  https://www.youtube.com/watch?v=PoujgJKyYKk
+  item: `items/PoujgJKyYKk.md`
+- **Scientists Just Connected a Time Crystal to Reality… And It Changes Everything #quantumphysics** — Nova Lab Discovery (8:46, 19 views)
+  https://www.youtube.com/watch?v=ZN1hzgk--yo
+  item: `items/ZN1hzgk--yo.md`
+- **Waymo Needs Another OEM and Q4 Might Be Too Late** — The Road to Autonomy (46:58, 415 views)
+  https://www.youtube.com/watch?v=I0ThGPtaHac
+  item: `items/I0ThGPtaHac.md`
+- **AI in Action: Leadership, Systems, and Imagination | DisrupTV Episode 433** — Constellation Research (1:01:57, 59 views)
+  https://www.youtube.com/watch?v=11sT_Vv_d5A
+  item: `items/11sT_Vv_d5A.md`
+- **【杰森视角】末日飞机升空，最大规模跨洋空运兵力启动！美军要干嘛？马兴瑞落马透露中共权力真相！伊朗打下美军机，逼川普下狠手？伊朗抄朝鲜作业，没人敢动，只有川普直接掀桌！习近平亲手提拔的人为何一个个倒下？** — 杰森視角官方頻道 - The Jason Angle Official (31:54, 3.3K views)
+  https://www.youtube.com/watch?v=xwclcUSW5b0
+  item: `items/xwclcUSW5b0.md`
+- **Interstellar Banking - The Galactic Financial System** — Isaac Arthur (30:28, 7.8K views)
+  https://www.youtube.com/watch?v=BGTI5e6k-go
+  item: `items/BGTI5e6k-go.md`
+- **The New Era of AI Is Already Here: How We Got Here** — ShortByShot (29:16, 2 views)
+  https://www.youtube.com/watch?v=StoE7BB3lVg
+  item: `items/StoE7BB3lVg.md`
+- **Story2Proposal: A Scaffold for Structured Scientific Paper Writing** — Praveen Govindaraj (4:28, 1 views)
+  https://www.youtube.com/watch?v=GzJ3mG0TvcE
+  item: `items/GzJ3mG0TvcE.md`
+- **How 3D Printed Cities Will Keep Humans Alive on Mars** — Cosmo Cat (19:29, 76 views)
+  https://www.youtube.com/watch?v=zYx5u1FUkAU
+  item: `items/zYx5u1FUkAU.md`
+- **RCADT - INDUSTRY 6.0 Brain Engineering** — HYPOTHALAMUS Ai (48:15, 2 views)
+  https://www.youtube.com/watch?v=U7BhfFrZhOU
+  item: `items/U7BhfFrZhOU.md`
+- **Aircraft Carriers That Uses No Pilots | InnoVision Tech** — InnoVision Tech (2:50, new)
+  https://www.youtube.com/watch?v=4AEwy21fgxM
+  item: `items/4AEwy21fgxM.md`
+- **ClawKeeper: Secure Your AI Agents in 2026** — Saral Research Paper (5:44, new)
+  https://www.youtube.com/watch?v=AhHPM93YK3M
+  item: `items/AhHPM93YK3M.md`
+- **How AI Triggered World War 3 - With a 63-Second Fake Video** — Vivid Futures (1:15:16, 21 views)
+  https://www.youtube.com/watch?v=FXhvtYvi_6Q
+  item: `items/FXhvtYvi_6Q.md`
+- **2 Hours Of How Islam ENDS** — Fall of Nations (2:53:55, 777 views)
+  https://www.youtube.com/watch?v=aiBMdiSd0r8
+  item: `items/aiBMdiSd0r8.md`
+- **JUST IN: A New U.S. Weapon System Is Raising Big Questions in Moscow and Beijing** — Liam Perspective (24:35, 2 views)
+  https://www.youtube.com/watch?v=l-pZr-iJocE
+  item: `items/l-pZr-iJocE.md`
+- **184 - The 2 Person $1.8B Company That Just Broke Everything!** — Health:Further (1:01:15, 2 views)
+  https://www.youtube.com/watch?v=ejscG8Z85Oo
+  item: `items/ejscG8Z85Oo.md`
+- **Buscar la libertad en la universidad es como buscarla en un corral de gallinas: un Estado en quiebra** — Jesús G. Maestro (48:50, 4.5K views)
+  https://www.youtube.com/watch?v=f-UHPVAG3no
+  item: `items/f-UHPVAG3no.md`
+- **Night Watches: Avoid These Fatal Mistakes** — Ikigaï Voyages (56:00, 326 views)
+  https://www.youtube.com/watch?v=qRFott1rDWQ
+  item: `items/qRFott1rDWQ.md`
+- **Doing Scientific Research in a Cultivation World, My Empress Wife Calls Me an Evil Cultivator** — DramaManga (2:23:33, 16 views)
+  https://www.youtube.com/watch?v=CdLhBufugm0
+  item: `items/CdLhBufugm0.md`
+- **Why I Would Never Send My Child to a Montessori School | A Pediatrician’s Perspective** — KidsByScience (15:24, 5 views)
+  https://www.youtube.com/watch?v=lgTEVRI0NWA
+  item: `items/lgTEVRI0NWA.md`
+- **Robinson Crusoe & The Birth of Homo Economicus** — AI Eternal Chapters (39:43, 1 views)
+  https://www.youtube.com/watch?v=q9C77QwU4PM
+  item: `items/q9C77QwU4PM.md`
+- **ईरान जंग के बीच भारत ने निकाला नया शिवास्त्र, 44 सेकंड में कर डालेगा जंग खत्म, लैब से निकला योद्धा !** — Indilinks News (10:35, 6.1K views)
+  https://www.youtube.com/watch?v=V7sJxbZLdys
+  item: `items/V7sJxbZLdys.md`
+- **How Small, Scheduled Meals Can Solve Your Cat's Begging Behavior** — Cat Care Academy and Dog Care Academy (9:26, 61 views)
+  https://www.youtube.com/watch?v=JCxCLELhX1Y
+  item: `items/JCxCLELhX1Y.md`
+- **A once-in-9000-years event! The universe restarts on July 22, 2026: Will time stand still for all...** — HIBY新聞 (2:17:08, 1.1K views)
+  https://www.youtube.com/watch?v=O5koJJY2L7U
+  item: `items/O5koJJY2L7U.md`
+- **The Unmovable Object  A Stance Built to Resis 🐍🦈I Part 016 I #viralvideo #dinosaur #facts #short** — Arkanova Docs (27, 915 views)
+  https://www.youtube.com/watch?v=-TUrypbF09Q
+  item: `items/-TUrypbF09Q.md`
+- **Ghosting Women Medical Patients: Parallels in Gothic Literature and Contemporary Healthcare** — Code Tea Studios (26:35, 22 views)
+  https://www.youtube.com/watch?v=gjJdiTLzS-Y
+  item: `items/gjJdiTLzS-Y.md`
+- **🔥Tulip = Elf Queen, Mermaid = Ruler of the Deep Sea, He Can Raise All Pets into Goddesses** — Blue Whale Comics Review (20:32:35, 983 views)
+  https://www.youtube.com/watch?v=rWmTa6LUT9c
+  item: `items/rWmTa6LUT9c.md`
+- **【穿越×系統】EP1~80 | 穿越廢土末世，激活跨界琯理員系統，雇傭喪屍給我打工！《末世資本家：我的員工不是人》#動態漫#末世資本家：我的員工不是人** — 次元漫绘馆 (3:27:49, 843 views)
+  https://www.youtube.com/watch?v=VdBXKA_8OCE
+  item: `items/VdBXKA_8OCE.md`
+- **Divers Discovered Underwater Stonehenge!** — ПАНКЕЙК (29:12, 649 views)
+  https://www.youtube.com/watch?v=c3w_rLP6LBU
+  item: `items/c3w_rLP6LBU.md`
+- **生日當天，老婆卻挽著情人的手臂熱吻嬌氣？還讓孩子叫情夫爸爸！多年真心付出都餵了狗，他心碎帶著孩子離開，沒想到下秒竟被首富美女總裁倒追示愛！一路逆襲成千億老總，前妻跪著求複合#我不再屬於你了** — 青木剧场NO1HOTBlooded (1:33:35, 10.0K views)
+  https://www.youtube.com/watch?v=bqyliVdDjHE
+  item: `items/bqyliVdDjHE.md`

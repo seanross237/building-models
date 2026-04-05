@@ -189,3 +189,96 @@ Full item files belong in `items/`.
 - **他是被判定銷毀的殘次品，她是唯一肯帶走他的天才工程師，機器人嚴禁不能越界，但見到她的第一眼，只想和她永遠在一起，他不懂人類的愛情，卻學會了在她哭的時候，笨拙地擦掉她的眼淚#杨鹏丞#邓灵枢** — 追劇鴨 (2:47:33, 42.8K views)
   https://www.youtube.com/watch?v=_xYcwYsB1d4
   item: `items/_xYcwYsB1d4.md`
+
+## 2026-04-05 — 30 new videos
+
+- **Why Most AI Projects Fail (And How to Move From AI Experiments to Real Business Impact)** — AI Smart Ventures (10, 32 views)
+  https://www.youtube.com/watch?v=DRIwyCns-GM
+  item: `items/DRIwyCns-GM.md`
+- **Top 10 Best AI Voice Generators 2026 | Best AI Voice Generators You Should Try In 2026 | Simplilearn** — Simplilearn (9:39, 429 views)
+  https://www.youtube.com/watch?v=RD_Mtdoj4Ao
+  item: `items/RD_Mtdoj4Ao.md`
+- **Subscription trap democracy? How 'AI slop' systematically manipulates us** — Prof. Dr. Christian Rieck (20:25, 135.9K views)
+  https://www.youtube.com/watch?v=rPSZn3XIrts
+  item: `items/rPSZn3XIrts.md`
+- **Warped Universe Wants To Be Everything - Here's The Problem** — ProRogueBear (29:34, 45 views)
+  https://www.youtube.com/watch?v=1zt7RqR-x2E
+  item: `items/1zt7RqR-x2E.md`
+- **What NASA Just Revealed From Artemis II** — Marcus House (25:30, 257.8K views)
+  https://www.youtube.com/watch?v=fYm7-eWFy60
+  item: `items/fYm7-eWFy60.md`
+- **How to Adopt AI in Your Library — A Complete 2026 Blueprint** — AI for Librarians (14:50, 1 views)
+  https://www.youtube.com/watch?v=Y7yxV4X5R_4
+  item: `items/Y7yxV4X5R_4.md`
+- **How Software Engineering is changing with AI? ft. Erran Berger, VP Product Engineering @ LinkedIn** — Aishwarya Srinivasan (29:28, 3.5K views)
+  https://www.youtube.com/watch?v=W8MQE4895EE
+  item: `items/W8MQE4895EE.md`
+- **【Multi Sub】An Unemployed Guy Got a Fishing System… and Started Solving Major Crimes** — StardustTV - Movies & Dramas (1:57:38, 8.2K views)
+  https://www.youtube.com/watch?v=p4lqppJoh3M
+  item: `items/p4lqppJoh3M.md`
+- **AI Broke McDonald’s… While Saving Billions at IBM** — Exploring ChatGPT (36:19, 78 views)
+  https://www.youtube.com/watch?v=nmKQIub3Mik
+  item: `items/nmKQIub3Mik.md`
+- **Why do Fascists Love AI SLOP** — Caelan Conrad (37:34, 31.9K views)
+  https://www.youtube.com/watch?v=QF2PYUPkvlo
+  item: `items/QF2PYUPkvlo.md`
+- **Will God Save America? | Bible Prophecy, America & the Future | LIVE Conference Day 2** — Heritage & Hope Ministries (9:01:11, 5.4K views)
+  https://www.youtube.com/watch?v=hc4jv0bCfUA
+  item: `items/hc4jv0bCfUA.md`
+- **[When will NPB introduce it?] The pros and cons of robot umpires (ABS). Will incorrect calls disa...** — 野球いっかん！ (13:19, 31.7K views)
+  https://www.youtube.com/watch?v=IMBcwy6iWUs
+  item: `items/IMBcwy6iWUs.md`
+- **How "Regular" People Are Getting Ahead with AI in 2026** — Laurie Wang (19:50, 940 views)
+  https://www.youtube.com/watch?v=5dTUIcdSg_4
+  item: `items/5dTUIcdSg_4.md`
+- **they blocked OpenClaw. now what.** — Ray Fernando (2:16:43, 5.1K views)
+  https://www.youtube.com/watch?v=sWDhIGIiK5w
+  item: `items/sWDhIGIiK5w.md`
+- **The NextGen Agile: Moving the wheels in the era of AI Agents** — Strategies for Professional Growth (SPG) (20:26, 35 views)
+  https://www.youtube.com/watch?v=cWmPPdnbXH8
+  item: `items/cWmPPdnbXH8.md`
+- **The Testing Reality Episode 8: The Agentic Era: Why Testing Will Never Be the Same Again?** — Pcloudy (4:31, 7 views)
+  https://www.youtube.com/watch?v=Pr5UfYM5zhY
+  item: `items/Pr5UfYM5zhY.md`
+- **How Far Can I Upgrade This $1 Trash PC?!** — GameRig (9:03, 33.2K views)
+  https://www.youtube.com/watch?v=-keeh2a-biA
+  item: `items/-keeh2a-biA.md`
+- **How To Catch a Mouse with a Mouse** — Rulof is How To Make (14:03, 365 views)
+  https://www.youtube.com/watch?v=841Br6WAx7U
+  item: `items/841Br6WAx7U.md`
+- **TEN 576 | Subaru Getaway, Toyota BZ Soars & Tesla Promotes FSD For Drivers With Vision Loss** — Transport Evolved (33:16, 4.6K views)
+  https://www.youtube.com/watch?v=VA6mFV0Qsts
+  item: `items/VA6mFV0Qsts.md`
+- **Radar-Hunting Drone Spotted - $700M AWACS Problem - Iran Hits 2,000** — Dark Tech (16:30, 7.7K views)
+  https://www.youtube.com/watch?v=7EryRAdEuLk
+  item: `items/7EryRAdEuLk.md`
+- **Lab Results REVEAL The TRUTH About Oil Additives!** — The Motor Oil Geek (22:51, 45.3K views)
+  https://www.youtube.com/watch?v=_-bR-fTJPGo
+  item: `items/_-bR-fTJPGo.md`
+- **These 4 ETFs Could Make You Rich IN 2026** — Jerry Romine Stocks (9:14, 11.2K views)
+  https://www.youtube.com/watch?v=6kSD9wBdw94
+  item: `items/6kSD9wBdw94.md`
+- **How To - BMAD vs. My Old Code: Dropping an AI Dev Framework into a Real Brownfield Repo** — Tim Dickey (48:40, 61 views)
+  https://www.youtube.com/watch?v=lIZB2ssTYeI
+  item: `items/lIZB2ssTYeI.md`
+- **MULTISUB📢新番上线《乞丐杀神重返天下》第1~61集丨杀神韩远生回归九州，从清缴缅国电诈集团、血洗金三角毒枭开始，一路横推京都傲慢豪门！#漫剧 #破晓动漫社** — 破晓动漫社 Dawn Anime Club (1:54:14, 14.9K views)
+  https://www.youtube.com/watch?v=S6xtFlTjOeg
+  item: `items/S6xtFlTjOeg.md`
+- **重生帶系統開局王炸！小夥荒古聖體加身橫推諸敵，18歲那天打臉全場，更有逆天機緣！ #短劇 #爽文** — 戲精短劇 (2:01:37, 6.3K views)
+  https://www.youtube.com/watch?v=UQHzJb94eFQ
+  item: `items/UQHzJb94eFQ.md`
+- **AI in Focus: Live coding on ReadySetGo** — thoughtbot (1:32:11, 114 views)
+  https://www.youtube.com/watch?v=860zYWZkvDY
+  item: `items/860zYWZkvDY.md`
+- **AI-Driven Product Development:  Some issue need deepdive!** — Gürkan Fikret Günak - AI & Mobile | Team Lead (19:30, 11 views)
+  https://www.youtube.com/watch?v=ilzrib2hGBw
+  item: `items/ilzrib2hGBw.md`
+- **China Train Evolution (1830–2050) | From Steam Engines to 1000 km/h Future Trains** — Power Compare (9:26, 7 views)
+  https://www.youtube.com/watch?v=Vy7T-IRe-Gw
+  item: `items/Vy7T-IRe-Gw.md`
+- **Quaquaval: Why This Most Beautiful Species Hides the Ultimate Predator | Real Life Pokémon - NatGeo** — Pokémon Wildlife Documentary (9:07, 8.0K views)
+  https://www.youtube.com/watch?v=GwkbiNvxWfs
+  item: `items/GwkbiNvxWfs.md`
+- **MLOps Masterclass: Engineering the Intelligence Loop** — TradingMaster AI (7:45, new)
+  https://www.youtube.com/watch?v=wuCEXf-CyFU
+  item: `items/wuCEXf-CyFU.md`

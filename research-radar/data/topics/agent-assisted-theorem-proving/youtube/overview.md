@@ -18,3 +18,9 @@ Full item files belong in `items/`.
 - **OVERSEER/DRAFTSMAN GRII & III |🔥FREE LIVE CLASS🔥| ചോദ്യങ്ങളുടെ PATTERN മനസിലാക്കി RANK ഉറപ്പിക്കാം ❗** — Earnest Academy Tech Exams-PSC,RRB,SSC (1:00:41, 125 views)
   https://www.youtube.com/watch?v=QGjXLWQ7t00
   item: `items/QGjXLWQ7t00.md`
+
+## 2026-04-05 — 1 new videos
+
+- **Humanity's IQ Dropped 1000x, Only Mine Stayed Normal!1+1=2 Makes Me a GOD?!- Manhwa Recap** — Silas Recap (1:10:54, 38.3K views)
+  https://www.youtube.com/watch?v=sgk2Pq4mbyg
+  item: `items/sgk2Pq4mbyg.md`

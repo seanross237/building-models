@@ -189,3 +189,96 @@ Full item files belong in `items/`.
 - **冷酷毒舌のCEO上司が私を密かに好き。逃げると追いかけ、壁際に追い詰めてキスする。** — 恋愛短編ドラマ (3:06:20, 17.2K views)
   https://www.youtube.com/watch?v=Mw2U9l7uUkM
   item: `items/Mw2U9l7uUkM.md`
+
+## 2026-04-05 — 30 new videos
+
+- **Attempting to win at the Nürburgring of kart tracks…** — Cameron Das Racing (15:49, 14.8K views)
+  https://www.youtube.com/watch?v=NpiWzxTRQGQ
+  item: `items/NpiWzxTRQGQ.md`
+- **NASA Holds News Conference After Artemis II Launch** — C-SPAN (1:03:00, 13.1K views)
+  https://www.youtube.com/watch?v=rC_KrtDlgy4
+  item: `items/rC_KrtDlgy4.md`
+- **A1 EVO AcoustiX - Audyssey Mic Calibration File & Levels Update** — HD MOVIE SOURCE (53:43, 767 views)
+  https://www.youtube.com/watch?v=fGE0miZHhn4
+  item: `items/fGE0miZHhn4.md`
+- **Video 18. Continuous Improvement in IMS** — Transform AcademyHub-01 (2:02, new)
+  https://www.youtube.com/watch?v=Qa75djRvHmM
+  item: `items/Qa75djRvHmM.md`
+- **🔴URGENT LIONS! Lions Draft: Protection or Impact? Lions Draft Dilemma DETROIT LIONS NEWS TODAY 2026** — GO LIONS! NEWS TODAY TALK PODCAST (DETROIT) FANS (13:06, 185 views)
+  https://www.youtube.com/watch?v=yAlr9uZI5x4
+  item: `items/yAlr9uZI5x4.md`
+- **NASA’s Artemis II Daily News Conference (April 4, 2026)** — NASA (1:09:45, 255.8K views)
+  https://www.youtube.com/watch?v=O-KDKBCPrwA
+  item: `items/O-KDKBCPrwA.md`
+- **Is AI Killing Your Job Search?** — Employee Lawyer (6:32, 5 views)
+  https://www.youtube.com/watch?v=t_IWFgx-6As
+  item: `items/t_IWFgx-6As.md`
+- **MONEY PSYCHOLOGY IN BUSINESS** — Money Insight (6:52, 2 views)
+  https://www.youtube.com/watch?v=xX5FpROjNZM
+  item: `items/xX5FpROjNZM.md`
+- **EEL Battery V6-Pro DIY Kit - Upgrade. Actually pretty good!** — Off-Grid Garage (26:54, 4.4K views)
+  https://www.youtube.com/watch?v=u3iPEaupMQg
+  item: `items/u3iPEaupMQg.md`
+- **Call of Duty: Black Ops 6|Reload & inspect animations** — LEFF_M8A3 (59:03, 40 views)
+  https://www.youtube.com/watch?v=qQVaHk2BC1E
+  item: `items/qQVaHk2BC1E.md`
+- **CIS-27B Unit 7 Lecture: Denial of Service Attacks in Pentesting and Security practices.** — Kasey Nguyen (1:47:00, 4 views)
+  https://www.youtube.com/watch?v=7jA32rp14Rg
+  item: `items/7jA32rp14Rg.md`
+- **Agentic AI in Investing: How the Self-Driving Portfolio Works** — Maria Andreina Varela Varela (6:15, 3 views)
+  https://www.youtube.com/watch?v=uxpV1ImRdN4
+  item: `items/uxpV1ImRdN4.md`
+- **Bloomberg This Weekend | US Airman Missing in Iran, March Jobs Report, Easter Candy Sales Down** — Bloomberg Podcasts (2:25:24, 568 views)
+  https://www.youtube.com/watch?v=_pPK1W9POnU
+  item: `items/_pPK1W9POnU.md`
+- **Indonesia Secures $33 Billion in Investments!** — KateGypsy (11:57, 3.0K views)
+  https://www.youtube.com/watch?v=3htPApMAqGA
+  item: `items/3htPApMAqGA.md`
+- **How to Adopt AI in Your Library — A Complete 2026 Blueprint** — AI for Librarians (14:50, 1 views)
+  https://www.youtube.com/watch?v=Y7yxV4X5R_4
+  item: `items/Y7yxV4X5R_4.md`
+- **Buscar la libertad en la universidad es como buscarla en un corral de gallinas: un Estado en quiebra** — Jesús G. Maestro (48:50, 4.5K views)
+  https://www.youtube.com/watch?v=f-UHPVAG3no
+  item: `items/f-UHPVAG3no.md`
+- **Genius Move? From Cosy Cabin to Open Party Boat | Aiata Wayfinder 38 Suntop Test Drive & Review** — YachtBuyer (23:12, 8.5K views)
+  https://www.youtube.com/watch?v=g2lcgyM-Xyg
+  item: `items/g2lcgyM-Xyg.md`
+- **Kill Your Negative Thinking — 7 Buddhist Truths That Free Your Mind | Buddhism** — The Silent Path (1:21:17, 4 views)
+  https://www.youtube.com/watch?v=ZMv7FUKVieM
+  item: `items/ZMv7FUKVieM.md`
+- **💥【新番上线】《饥荒年代，我的手机通未来》六零饥荒年，林志远穿越被叔婶逼迫，携未来手机，送物资护家人，一路逆袭翻盘！#anime #斗破动漫 #逆袭 #動漫** — Labubububu Animation (2:51:16, 1.2K views)
+  https://www.youtube.com/watch?v=XGSpFwwDNPY
+  item: `items/XGSpFwwDNPY.md`
+- **An #introduction #Probability #methods  in #Engineering, #Science, #Technology, etc. #Lecture-4** — Spark of Electrical and Electronics Engineering (18:44, 1 views)
+  https://www.youtube.com/watch?v=6seZDK7j4wg
+  item: `items/6seZDK7j4wg.md`
+- **NASA mission managers provide status update on Artemis II** — WCNC (1:02:14, 1.9K views)
+  https://www.youtube.com/watch?v=1CuCGjFyI6c
+  item: `items/1CuCGjFyI6c.md`
+- **Fortify Your PC. Windows Security Hardening for the Average Yogi Bear** — The Cyber Sentinel (7:47, new)
+  https://www.youtube.com/watch?v=UkLLVgSelq8
+  item: `items/UkLLVgSelq8.md`
+- **Ghosting Women Medical Patients: Parallels in Gothic Literature and Contemporary Healthcare** — Code Tea Studios (26:35, 22 views)
+  https://www.youtube.com/watch?v=gjJdiTLzS-Y
+  item: `items/gjJdiTLzS-Y.md`
+- **Budget and Finance Advisory Committee - 4/3/26** — LACityClerk (2:10:04, 132 views)
+  https://www.youtube.com/watch?v=aGm7j2rKxFY
+  item: `items/aGm7j2rKxFY.md`
+- **German Woman POW's 'Disgusting' Sausage Trick Saved 200 Lbs a Week** — Untold Captive Stories (43:11, 43 views)
+  https://www.youtube.com/watch?v=xDJ1yX4I4Uw
+  item: `items/xDJ1yX4I4Uw.md`
+- **Daily AI Brief — Part 073 (2026-04-04)** — Everstone AI (15:49, new)
+  https://www.youtube.com/watch?v=AP1O4zVs-8M
+  item: `items/AP1O4zVs-8M.md`
+- **Garmin Reactor 40 Corepack With GHC50 Control No Drive - B0CPSN7SX7** — Best Hunting Gear (2:10, 3 views)
+  https://www.youtube.com/watch?v=EfF_NuB8Ox0
+  item: `items/EfF_NuB8Ox0.md`
+- **Warren Buffett: The Hidden Cost Of Following A Crowd Into Debt** — Warren Buffett Mindset (18:18, 5 views)
+  https://www.youtube.com/watch?v=7yXpYKgLL_M
+  item: `items/7yXpYKgLL_M.md`
+- **Why You Ignore Red Flags In Relationships Even When You See Them Clearly #redflags #selfauthority** — FromSiriusWithLove (21:24, 5 views)
+  https://www.youtube.com/watch?v=tAoPG0sWUjU
+  item: `items/tAoPG0sWUjU.md`
+- **All-New 2027 Subaru Getaway — Is This the Best SUV You Can Buy Now?** — Driven Verdict (8:52, 5 views)
+  https://www.youtube.com/watch?v=vkE6hXAyVh0
+  item: `items/vkE6hXAyVh0.md`

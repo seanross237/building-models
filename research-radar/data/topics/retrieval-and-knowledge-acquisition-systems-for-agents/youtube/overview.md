@@ -93,3 +93,51 @@ Full item files belong in `items/`.
 - **【Multi Sub】 🎉 我在末世開超市當救世主 I opened a supermarket and became a savior in the apocalypse EP1-108 #男频** — Qixiang-Animation (8:58:56, 88 views)
   https://www.youtube.com/watch?v=tZ4cjmM5yXM
   item: `items/tZ4cjmM5yXM.md`
+
+## 2026-04-05 — 15 new videos
+
+- **I helped him get RICH, but he cheated with his SECRETARY! I left—Now he regrets it!** — Tears of Promise (2:08:32, 84 views)
+  https://www.youtube.com/watch?v=jH8OGT76DJQ
+  item: `items/jH8OGT76DJQ.md`
+- **窮小夥手機驚現【預知軟件】，尋得天價翡翠，逆襲登人生巔峰！** — 暮色劇場 (2:03:04, 16 views)
+  https://www.youtube.com/watch?v=A32B_bedVMg
+  item: `items/A32B_bedVMg.md`
+- **Is Star Wars Galactic Battlegrounds Still Canon?** — SardonicSays (1:23:50, 553 views)
+  https://www.youtube.com/watch?v=ez2Xd189_fc
+  item: `items/ez2Xd189_fc.md`
+- **Truth in the Black Market** — Contraband Confessions (1:21:15, 3 views)
+  https://www.youtube.com/watch?v=bVyvEWgBJg8
+  item: `items/bVyvEWgBJg8.md`
+- **【穿越×系統】EP1~80 | 穿越廢土末世，激活跨界琯理員系統，雇傭喪屍給我打工！《末世資本家：我的員工不是人》#動態漫#末世資本家：我的員工不是人** — 次元漫绘馆 (3:27:49, 844 views)
+  https://www.youtube.com/watch?v=VdBXKA_8OCE
+  item: `items/VdBXKA_8OCE.md`
+- **💥【New】【Multi sub】Perfect Territory EP1-68 #anime #animation** — Joyland-Animation (5:36:26, 9 views)
+  https://www.youtube.com/watch?v=WIEYN9ZonzQ
+  item: `items/WIEYN9ZonzQ.md`
+- **💥ENG SUB💥【SSS级法神：我的技能无限连爆】SSS-Class Arcane God: My Skills Explode Infinitely 第1-105集 #玄幻 #热血 #动漫** — 超有钱动漫 Anime Club (2:10:15, 35 views)
+  https://www.youtube.com/watch?v=julyA4nmVDE
+  item: `items/julyA4nmVDE.md`
+- **💥【New】【Multi sub】Gold for Spicy Strips EP 1-108 #anime #animation** — Joyland-Animation (8:58:49, 1.5K views)
+  https://www.youtube.com/watch?v=LtlIPzBjnhw
+  item: `items/LtlIPzBjnhw.md`
+- **💥ENG SUB💥【亿万神豪系统：舔狗也能逆袭】Billionaire System: Even a Simp Can Make a Comeback 第1-193集 #逆袭 #都市 #动漫** — 超有钱动漫 Anime Club (7:08:10, 443 views)
+  https://www.youtube.com/watch?v=SQ2Ij-HHGLc
+  item: `items/SQ2Ij-HHGLc.md`
+- **Ocean Survival: His System Draws Weapons Daily and Evolves a Broken Raft into a Super Battleship!** — Panda Fantasy Chronicles (30:34:03, 773 views)
+  https://www.youtube.com/watch?v=ZjTqbijB1PM
+  item: `items/ZjTqbijB1PM.md`
+- **After unlocking Strongest Manor System he turns 100K acres system granted into a paradise estate！** — Mania Comics Legends (11:59:58, 546 views)
+  https://www.youtube.com/watch?v=uTusdSR_ysc
+  item: `items/uTusdSR_ysc.md`
+- **Reborn 1 month before the apocalypse, I awakened an infinite space and hoarded 10,000 tons of meat!** — ถนอม แก้วธรรม (11:55:01, 6 views)
+  https://www.youtube.com/watch?v=VER9RtodV-E
+  item: `items/VER9RtodV-E.md`
+- **Young Gunsmith Scoffed at the Old Rusty Rifle — Until the Woman Whispered, “That Serial Will Shock Y** — Warrior Depth Stories (1:12:33, 3 views)
+  https://www.youtube.com/watch?v=6i1pNr3NT9M
+  item: `items/6i1pNr3NT9M.md`
+- **💥ENG SUB💥【觉醒职业商人，我改写全服物价】Awakened Merchant: The One Who Sets All Prices 第1-119集 #热血 #穿越 #动漫** — 超有钱动漫 Anime Club (10:07:22, 1.0K views)
+  https://www.youtube.com/watch?v=Xjru2lQLejA
+  item: `items/Xjru2lQLejA.md`
+- **窮小子為娶富家女決裂家族，她假死三年試我真心。殊不知身分驚世，亮權勢之日，便是她淚崩悔悟之時！ #短劇全集 #精彩短劇推薦 #短劇 #minidrama    YHDJ** — 逆拳劇場 Rising Fist (2:36:46, new)
+  https://www.youtube.com/watch?v=TI4LLnlNxz8
+  item: `items/TI4LLnlNxz8.md`

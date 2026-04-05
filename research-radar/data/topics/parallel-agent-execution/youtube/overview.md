@@ -159,3 +159,69 @@ Full item files belong in `items/`.
 - **The End of Chatbots: Why DeerFlow AI is the First Real SuperAgent** — AI Tools Quest (3:58, 5 views)
   https://www.youtube.com/watch?v=BM83Xy8lMyY
   item: `items/BM83Xy8lMyY.md`
+
+## 2026-04-05 — 21 new videos
+
+- **This AI Design Tool Remembers Your Brand (and Deploys Sub-Agents?!)** — Hause Collective (29:03, 23 views)
+  https://www.youtube.com/watch?v=CmSQRTOlL2M
+  item: `items/CmSQRTOlL2M.md`
+- **Top 4 Multi-Agent AI Frameworks for 2026** — Learn Fast (3:56, 4 views)
+  https://www.youtube.com/watch?v=x60uJQ_4ojE
+  item: `items/x60uJQ_4ojE.md`
+- **Human Agent Interaction Is Becoming a Bottleneck** — Vivek Haldar (8:41, 47 views)
+  https://www.youtube.com/watch?v=0nlJzL2BT-s
+  item: `items/0nlJzL2BT-s.md`
+- **they blocked OpenClaw. now what.** — Ray Fernando (2:16:43, 5.1K views)
+  https://www.youtube.com/watch?v=sWDhIGIiK5w
+  item: `items/sWDhIGIiK5w.md`
+- **Agentic AI in Investing: How the Self-Driving Portfolio Works** — Maria Andreina Varela Varela (6:15, 3 views)
+  https://www.youtube.com/watch?v=uxpV1ImRdN4
+  item: `items/uxpV1ImRdN4.md`
+- **CORAL: Multi-agent evolution for LLM discovery** — AI Research Roundup (3:24, 18 views)
+  https://www.youtube.com/watch?v=1fI6_9lllF4
+  item: `items/1fI6_9lllF4.md`
+- **Building Autonomous AI Agents  The Architecture of Autonomy** — Software Engineer Mind Maps (6:47, new)
+  https://www.youtube.com/watch?v=g8r0XaqbdQc
+  item: `items/g8r0XaqbdQc.md`
+- **CodeForge — AI Coding Agent Workflow Plugin | Setup in 5 Minutes (Claude Code, Cursor, Codex)** — Modern Web Seo (5:30, 3 views)
+  https://www.youtube.com/watch?v=ZUWTvAnd91Q
+  item: `items/ZUWTvAnd91Q.md`
+- **AGENTIC RAG | Episode 5—Deep dive LangGraph  | Graphs, State, Persistence, Interrupts & Subgraphs** — Building Saas (21:37, 4 views)
+  https://www.youtube.com/watch?v=JF_25oRYBZs
+  item: `items/JF_25oRYBZs.md`
+- **88% of AI Agents Failed Security Last Year — Here’s the Missing Layer (OntoGuard Explained)** — The Civic Stack (7:12, 6 views)
+  https://www.youtube.com/watch?v=1KKKHRBjBFQ
+  item: `items/1KKKHRBjBFQ.md`
+- **Nancy Guthrie: 62 DAYS - The Kidnapper's Motive Revealed? This is why he kidnapped Nancy...?** — The Crime Vault (37:00, 406 views)
+  https://www.youtube.com/watch?v=uUj0y5I7Crc
+  item: `items/uUj0y5I7Crc.md`
+- **22 ~ Day-3 Kickoff (Integrations + Plan + Recap) | Build AI Agent with n8n | Full Course** — Learn And Grow Community (8:19, 9 views)
+  https://www.youtube.com/watch?v=GT89SPcoYd4
+  item: `items/GT89SPcoYd4.md`
+- **Microsoft Agent Framework Explained — Build AI Agents in C#** — CodeWithVijay (24:36, 16 views)
+  https://www.youtube.com/watch?v=tNFT9Tk8UDc
+  item: `items/tNFT9Tk8UDc.md`
+- **8 Signs the Nancy Guthrie Case Is About to Break Wide Open** — Note Book VE (45:20, 36 views)
+  https://www.youtube.com/watch?v=mVZGV0zO1g4
+  item: `items/mVZGV0zO1g4.md`
+- **Day 35: ACE with Every Agent Challenge 😈 (22/29)** — Kaspar Gaming (3:22:34, 39 views)
+  https://www.youtube.com/watch?v=i0z8QO7sju0
+  item: `items/i0z8QO7sju0.md`
+- **Why This Mountain Man Took Brutal Revenge on an Entire Tribe** — Frontier America (3:25:07, 53 views)
+  https://www.youtube.com/watch?v=J4ewDLq5jYI
+  item: `items/J4ewDLq5jYI.md`
+- **Axionauth Agent Demo** — Martiano (53, 4 views)
+  https://www.youtube.com/watch?v=Hfa5ba1yw1I
+  item: `items/Hfa5ba1yw1I.md`
+- **Mastering Enterprise LLM Agent Systems: Architecture & Best Practices** — Mustafa Assaf (5:38, 26 views)
+  https://www.youtube.com/watch?v=7SjEZcWUDY0
+  item: `items/7SjEZcWUDY0.md`
+- **This is the Claude skill that the creator of Claude Code uses every day.** — Tech Bridge (12:39, 529 views)
+  https://www.youtube.com/watch?v=kaY545tYgdQ
+  item: `items/kaY545tYgdQ.md`
+- **L4-AIOS Demo: Neuro-Symbolic Routing & Minimal Code Intrusion | 纯手搓手机底层 AI 调度** — kairos-long (6:54, 8 views)
+  https://www.youtube.com/watch?v=lRv17YYFhrw
+  item: `items/lRv17YYFhrw.md`
+- **【Multi Sub】🔔 上班摸魚，下班降魔 Slack off at work, subdue demons after work.第2季 #修仙 #热血 #anime #男频** — Qixiang-Animation (10:21:25, 45 views)
+  https://www.youtube.com/watch?v=Jyaz-4r-sQY
+  item: `items/Jyaz-4r-sQY.md`

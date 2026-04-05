@@ -117,3 +117,45 @@ Full item files belong in `items/`.
 - **Too Precise to Be Human? How to Last Long with Love Robots?** — Wooden Slate (20:11, 217 views)
   https://www.youtube.com/watch?v=NDQQHUeM0iQ
   item: `items/NDQQHUeM0iQ.md`
+
+## 2026-04-05 — 13 new videos
+
+- **badspaceking continues shooting fascists to clean up the town (2026-04-03)** — BadSpaceKing (7:12:22, new)
+  https://www.youtube.com/watch?v=rWX0io0oh20
+  item: `items/rWX0io0oh20.md`
+- **【完整版】《黎明之劍》| 飛機失事！我竟成為衛星，見證文明誕生與滅亡！#漫剧 #anime#動態漫** — 漫帧剧场Frame Theatre (3:51:15, 2 views)
+  https://www.youtube.com/watch?v=V__tVoyVFVk
+  item: `items/V__tVoyVFVk.md`
+- **Gemma 4 4b and Pharmaceutical Superintelligence** — KEN WASSERMAN (20:54, 2 views)
+  https://www.youtube.com/watch?v=J0FfLyVfqzU
+  item: `items/J0FfLyVfqzU.md`
+- **The Plant-Inspired Technologies To Form A Livable, Renewable Society and Protect The Environment !!!** — VeganWorld TechBook (1:25:26, 6 views)
+  https://www.youtube.com/watch?v=oVE-zuFQ-BU
+  item: `items/oVE-zuFQ-BU.md`
+- **Betrayed By His Crush After Saving Her, He Joins A Secret School To Become God.** — Inosuke Recap (21:14:00, 1.2K views)
+  https://www.youtube.com/watch?v=arUNSks6Jpo
+  item: `items/arUNSks6Jpo.md`
+- **永樂初立，風雲再起🔥！朱棣執掌天下，長生之人李青遊走權謀深處，太子與漢王暗流湧動，韃靼虎視北境⚔️。見證王朝更叠，暗控錦衣衛、助推下西洋😏，他不為王，卻執棋天下！👑《我在大明那些年2:永樂篇上》#推荐** — 王者短劇堂 King’s Drama Hub (3:18:17, 6.2K views)
+  https://www.youtube.com/watch?v=GEM0FJKNPYY
+  item: `items/GEM0FJKNPYY.md`
+- **Why This Mountain Man Took Brutal Revenge on an Entire Tribe** — Frontier America (3:25:07, 53 views)
+  https://www.youtube.com/watch?v=J4ewDLq5jYI
+  item: `items/J4ewDLq5jYI.md`
+- **Ocean Survival: His System Draws Weapons Daily and Evolves a Broken Raft into a Super Battleship!** — Panda Fantasy Chronicles (30:34:03, 773 views)
+  https://www.youtube.com/watch?v=ZjTqbijB1PM
+  item: `items/ZjTqbijB1PM.md`
+- **After unlocking Strongest Manor System he turns 100K acres system granted into a paradise estate！** — Mania Comics Legends (11:59:58, 546 views)
+  https://www.youtube.com/watch?v=uTusdSR_ysc
+  item: `items/uTusdSR_ysc.md`
+- **Everything you know about AI is wrong: it's just chickens all the way down.** — Frauddy Scotty (35:30, 10 views)
+  https://www.youtube.com/watch?v=PUlhinNALIY
+  item: `items/PUlhinNALIY.md`
+- **Reborn 1 month before the apocalypse, I awakened an infinite space and hoarded 10,000 tons of meat!** — ถนอม แก้วธรรม (11:55:01, 6 views)
+  https://www.youtube.com/watch?v=VER9RtodV-E
+  item: `items/VER9RtodV-E.md`
+- **You're Not Lazy – You Just Need a Life Admin Day (Here's How)** — Mel Robbins Story (1:06:22, 1 views)
+  https://www.youtube.com/watch?v=2f5YFUc6PXY
+  item: `items/2f5YFUc6PXY.md`
+- **EP02 回向的科学真相 | 脑科学揭秘功德转移 | 意向性切换机制** — 宏观阿尔法 (22:46, 3.4K views)
+  https://www.youtube.com/watch?v=NiWvg89VFBA
+  item: `items/NiWvg89VFBA.md`

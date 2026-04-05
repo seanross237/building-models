@@ -54,3 +54,24 @@ Full item files belong in `items/`.
 - **A delivery boy was turned into a laughing stock after his fiancée openly broke off the engageme** — 闪看小剧社 (2:40:31, 359 views)
   https://www.youtube.com/watch?v=zYCtFiwlvuM
   item: `items/zYCtFiwlvuM.md`
+
+## 2026-04-05 — 6 new videos
+
+- **they blocked OpenClaw. now what.** — Ray Fernando (2:16:43, 5.1K views)
+  https://www.youtube.com/watch?v=sWDhIGIiK5w
+  item: `items/sWDhIGIiK5w.md`
+- **Paperclip Is Insane - Full Tutorial** — Tech With Tim (38:40, 16.3K views)
+  https://www.youtube.com/watch?v=RHZLJhp-JMM
+  item: `items/RHZLJhp-JMM.md`
+- **MiroFish DÉTRUIT Claude en prédiction (preuves)** — Meydeey | Automatisation IA (45:07, 1.9K views)
+  https://www.youtube.com/watch?v=Y8biCoPYmTo
+  item: `items/Y8biCoPYmTo.md`
+- **💥【New】【Multi sub】Gold for Spicy Strips EP 1-108 #anime #animation** — Joyland-Animation (8:58:49, 1.5K views)
+  https://www.youtube.com/watch?v=LtlIPzBjnhw
+  item: `items/LtlIPzBjnhw.md`
+- **They Forced Me to the Untouchable Prince for an Heir—But He Broke Every Rule to Make Me His Queen** — 心動劇時刻Daily (3:08:19, 6.7K views)
+  https://www.youtube.com/watch?v=MC20rkyvD9Q
+  item: `items/MC20rkyvD9Q.md`
+- **穿回80年代成懶媳婦！用醫術征服冷面上司，手撕綠茶爽翻天！💉💥** — Drama-好看短劇 (2:41:24, 175 views)
+  https://www.youtube.com/watch?v=KZ61c7Z3nqw
+  item: `items/KZ61c7Z3nqw.md`

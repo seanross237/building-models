@@ -189,3 +189,87 @@ Full item files belong in `items/`.
 - **穿越大荒年窮到跪舔寡婦求生，卻意外覺醒震驚系統！別人餓得啃樹皮，他帶著嫂子們大魚大肉吃到爽，寡婦當晚跪求他留下別走！#drama #短劇 #逆襲 #多語種** — 橙果劇場No1Drama (2:05:45, 8.0K views)
   https://www.youtube.com/watch?v=Ek8RiaPmzqM
   item: `items/Ek8RiaPmzqM.md`
+
+## 2026-04-05 — 27 new videos
+
+- **A Functional Equation | Homemade Maybe?** — SyberMath (14:10, 1.8K views)
+  https://www.youtube.com/watch?v=BI1I1zjyxow
+  item: `items/BI1I1zjyxow.md`
+- **"Hardest Math Olympiad question | Math tricks for competitive Exams | Math Olympiad problem | x=?** — Mathematics & Statistics Guru (11:34, 221 views)
+  https://www.youtube.com/watch?v=8iqKp2WdBh4
+  item: `items/8iqKp2WdBh4.md`
+- **Humanity's IQ Dropped 1000x, Only Mine Stayed Normal!1+1=2 Makes Me a GOD?!- Manhwa Recap** — Silas Recap (1:10:54, 38.3K views)
+  https://www.youtube.com/watch?v=sgk2Pq4mbyg
+  item: `items/sgk2Pq4mbyg.md`
+- **A Nice Algebra Problem | Math Olympiad x=?** — SALogic (12:32, 579 views)
+  https://www.youtube.com/watch?v=zhlUp3uweow
+  item: `items/zhlUp3uweow.md`
+- **Solve for x in this nice exponential equation |Math Olympiad Mathematics** — HkLogics (6:18, 14 views)
+  https://www.youtube.com/watch?v=1k7jBpSm-iA
+  item: `items/1k7jBpSm-iA.md`
+- **Solving a 'Harvard' University Entrance Question | Olympiad Mathematics** — HkLogics (6:34, 12 views)
+  https://www.youtube.com/watch?v=NNNv3amuHZE
+  item: `items/NNNv3amuHZE.md`
+- **Solving a 'Harvard' University Entrance Question | Olympiad Mathematics** — HkLogics (9:27, 12 views)
+  https://www.youtube.com/watch?v=1q-Z07WGEPw
+  item: `items/1q-Z07WGEPw.md`
+- **Mercury Transit in Pisces 2026 | Predictions for All 12 Signs | Vedic Astrology** — DharaAstro (1:22:21, 1.7K views)
+  https://www.youtube.com/watch?v=SL-kV1L3yho
+  item: `items/SL-kV1L3yho.md`
+- **The Riemann Hypothesis: Mathematical Foundations and AI Frontiers** — Skyward Reflection (9:02, 5 views)
+  https://www.youtube.com/watch?v=WnNFVtDe9is
+  item: `items/WnNFVtDe9is.md`
+- **Google's Quantum Warning: $100 Billion At Risk?** — Coin Bureau Podcast (18:56, 1.7K views)
+  https://www.youtube.com/watch?v=MvOwQPZH2-U
+  item: `items/MvOwQPZH2-U.md`
+- **Surprise Breakthrough Solves Shipping's BIGGEST Problem** — Two Bit da Vinci (12:27, 20.4K views)
+  https://www.youtube.com/watch?v=9R6ln7pr5QU
+  item: `items/9R6ln7pr5QU.md`
+- **When it comes to traders, there are two types of people** — Moon Dev (1:00, 5 views)
+  https://www.youtube.com/watch?v=R80xgSqQa_w
+  item: `items/R80xgSqQa_w.md`
+- **As a trader this is my worst habit** — Moon Dev (1:00, 100 views)
+  https://www.youtube.com/watch?v=RDzzzW7FAcQ
+  item: `items/RDzzzW7FAcQ.md`
+- **they blocked OpenClaw. now what.** — Ray Fernando (2:16:43, 5.1K views)
+  https://www.youtube.com/watch?v=sWDhIGIiK5w
+  item: `items/sWDhIGIiK5w.md`
+- **【喜剧之王单口季】張踩玲大膽開麥！當場吐槽氣氛組多餘，喊話節目组直接上純享版太解氣** — 嘴强奇葩局 (1:06:55, 28 views)
+  https://www.youtube.com/watch?v=rfdaiqq_XK0
+  item: `items/rfdaiqq_XK0.md`
+- **被家裡人逼婚99次，她一怒之下閃婚頂頭上司，殊不知白天冷漠無情，晚上竟是熱情小奶狗#drama #甜宠 #爽文** — 砰砰心动社 (2:37:02, new)
+  https://www.youtube.com/watch?v=y0HfUWTUZIU
+  item: `items/y0HfUWTUZIU.md`
+- **Trading bots running in the cloud 24/7** — Moon Dev (30, 881 views)
+  https://www.youtube.com/watch?v=xMYWrjnkfzM
+  item: `items/xMYWrjnkfzM.md`
+- **There are unlimited things to trade on polymarket** — Moon Dev (50, 288 views)
+  https://www.youtube.com/watch?v=3gKsAisfqoQ
+  item: `items/3gKsAisfqoQ.md`
+- **Deep Dive Into the COLLAPSE of ISLAM** — Fall of Nations (2:53:55, 777 views)
+  https://www.youtube.com/watch?v=aiBMdiSd0r8
+  item: `items/aiBMdiSd0r8.md`
+- **Polymarket and Claude Code Is Eating Tennis Alive** — Moon Dev (10:43, 511 views)
+  https://www.youtube.com/watch?v=JCSqy04kgcU
+  item: `items/JCSqy04kgcU.md`
+- **The hidden secret behind the survival of Gaza's men until today.. A message to the world 👁️** — سعيد محمد من غزة | Saeed from Gaza (28:44, 612 views)
+  https://www.youtube.com/watch?v=JbPW8Xfughs
+  item: `items/JbPW8Xfughs.md`
+- **We're making up AI as we go | Saturdata with Joey Yudelson** — Saturdata Podcast (47:00, 5 views)
+  https://www.youtube.com/watch?v=K2Z2mG_bFTA
+  item: `items/K2Z2mG_bFTA.md`
+- **Live coding and Q/A with the Angular Team - MCP Servers| April 2026** — Angular (1:33:41, 1.3K views)
+  https://www.youtube.com/watch?v=VigynyjJJnM
+  item: `items/VigynyjJJnM.md`
+- **Why I Quit My High-Paying Tech Job at 30 (feat. @f.i.r.e.学习笔记)** — The Growth Journal (1:05:50, 1.1K views)
+  https://www.youtube.com/watch?v=-ZPPonOj3Xw
+  item: `items/-ZPPonOj3Xw.md`
+- **Bloomberg This Weekend | US Airman Missing in Iran, March Jobs Report, Easter Candy Sales Down** — Bloomberg Podcasts (2:25:24, 570 views)
+  https://www.youtube.com/watch?v=_pPK1W9POnU
+  item: `items/_pPK1W9POnU.md`
+- **Money is useless! Zhan Qingyun crushes rivals! Why football team still bad?** — 笑翻天综艺社 (1:00:20, 75 views)
+  https://www.youtube.com/watch?v=dyU3BaOBQiE
+  item: `items/dyU3BaOBQiE.md`
+- **Quantum Kills Bitcoin | Message To The NAT Community | NAT.FUN Playbook | TBR #309** — The Block Runner (1:03:39, 324 views)
+  https://www.youtube.com/watch?v=AzpNKlEOnkM
+  item: `items/AzpNKlEOnkM.md`

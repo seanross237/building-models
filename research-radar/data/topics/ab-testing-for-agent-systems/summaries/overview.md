@@ -73,3 +73,73 @@ Full item files belong in `items/`.
   source: https://www.youtube.com/watch?v=Bra8uBbf4Do
   summary file: `items/youtube--Bra8uBbf4Do.md`
   presentation candidate: `false`
+
+## 2026-04-05 — youtube score 1
+
+- **“Rot There, Old Man!” My Daughter-in-Law Dumped Me In A Nursing Home — Until She Found Out The TRUTH**
+  source: https://www.youtube.com/watch?v=0Xg5fHqJdgs
+  summary file: `items/youtube--0Xg5fHqJdgs.md`
+  presentation candidate: `false`
+
+## 2026-04-05 — youtube score 1
+
+- **The cinematography of PROJECT HAIL MARY with Greig Fraser**
+  source: https://www.youtube.com/watch?v=1KVkZDgV218
+  summary file: `items/youtube--1KVkZDgV218.md`
+  presentation candidate: `false`
+
+## 2026-04-05 — youtube score 2
+
+- **CLAUDE COWORK FULL COURSE (Beginner to Pro)**
+  source: https://www.youtube.com/watch?v=2HyBA-wkWsA
+  summary file: `items/youtube--2HyBA-wkWsA.md`
+  presentation candidate: `false`
+
+## 2026-04-05 — youtube score 1
+
+- **Kernom Ridge... This Pedal Can Print Any Overdrive!**
+  source: https://www.youtube.com/watch?v=C0joI-HR3W8
+  summary file: `items/youtube--C0joI-HR3W8.md`
+  presentation candidate: `false`
+
+## 2026-04-05 — youtube score 1
+
+- **Agentic AI Login for Frontline Workers: What It Is & How It Works | BlueFletch CEO Rick Makerson**
+  source: https://www.youtube.com/watch?v=CiAIueMMCr8
+  summary file: `items/youtube--CiAIueMMCr8.md`
+  presentation candidate: `false`
+
+## 2026-04-05 — youtube score 1
+
+- **My Dad Cheated for 8 Years**
+  source: https://www.youtube.com/watch?v=DQJq5Y-tIxw
+  summary file: `items/youtube--DQJq5Y-tIxw.md`
+  presentation candidate: `false`
+
+## 2026-04-05 — youtube score 1
+
+- **Building an Autonomous AI Sales Agent to Close High Ticket Leads While You Sleep**
+  source: https://www.youtube.com/watch?v=DgC-m1aeuEg
+  summary file: `items/youtube--DgC-m1aeuEg.md`
+  presentation candidate: `false`
+
+## 2026-04-05 — youtube score 1
+
+- **I Was So Wrong!**
+  source: https://www.youtube.com/watch?v=EdF5J4s9sXk
+  summary file: `items/youtube--EdF5J4s9sXk.md`
+  presentation candidate: `false`
+
+## 2026-04-05 — youtube score 1
+
+- **Freedom Friday EP. 46 - Helldivers 2 with KimchiRednecks**
+  source: https://www.youtube.com/watch?v=FtgEzdCGd78
+  summary file: `items/youtube--FtgEzdCGd78.md`
+  presentation candidate: `false`
+
+## 2026-04-05 — youtube score 1
+
+- **If This Happens, 90% of People Are Screwed | No BS With Birchy | EP 233**
+  source: https://www.youtube.com/watch?v=J1YbyhD6Z9Q
+  summary file: `items/youtube--J1YbyhD6Z9Q.md`
+  presentation candidate: `false`
