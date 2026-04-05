@@ -1,0 +1,3 @@
+Wrote the critique to [chain-01.md](/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-001/attacks/chain-01.md).
+
+It attacks each step concretely, calls out the chain’s main structural weaknesses, and is fair about the one genuinely strong feature: it targets the actual residual far-field obstruction. The main thrust is that the chain is under-specified, overlaps heavily with prior `vasseur-pressure` future-work notes, applies the Tao filter too late, and lacks a quantitative success condition tied to improving the bad coefficient `C_far`, not just rephrasing `O(E_0)` in different harmonic norms.

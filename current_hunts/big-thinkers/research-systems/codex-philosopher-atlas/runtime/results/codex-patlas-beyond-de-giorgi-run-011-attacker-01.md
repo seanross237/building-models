@@ -1,3 +1,0 @@
-Wrote the critique to [chain-01.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-011/attacks/chain-01.md).
-
-The attack is step-by-step and structural. The main conclusion is that Chain 01 is good portfolio hygiene but too soft as an attackability test because it ranks candidates before forcing any theorem-facing artifact. I also called out the key biases: under-specified Tao comparator, shortlist anchoring from prior mission context, kill conditions that mostly test articulation quality, and false precision from collapsing distinct criteria into one score.

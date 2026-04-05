@@ -1,0 +1,3 @@
+Wrote the attack memo to [chain-01.md](/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-philosopher-atlas/missions/exact-ns-no-near-closed-tao-circuit/planning-runs/run-002/attacks/chain-01.md).
+
+The critique covers every step and the whole-chain structure. The main attack is that the branch jumps past the actual Step-6 handoff, tries to synthesize a joint frontier before the object-local ledgers are closed, and relies on an unstable frozen sheet, especially around the leakage-side record.

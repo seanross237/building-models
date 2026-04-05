@@ -1,0 +1,3 @@
+Wrote the decision memo to [final-decider.md](/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-003/final-decider.md) and the canonical winner to [winning-chain.md](/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-003/winning-chain.md).
+
+The selected winner is Chain 01. I kept its fixed-protocol obstruction-audit structure, then merged in two useful upgrades from the losing chains: earlier prior-art and operational calibration from Chain 02, and explicit solution-class/theorem-compatibility discipline from Chain 03.

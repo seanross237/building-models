@@ -1,0 +1,22 @@
+# Receptionist Search Log
+
+- Task: `beyond-de-giorgi` / `step-005`
+- Search roots: `library/factual`, `library/meta`, `missions/beyond-de-giorgi`, `missions/navier-stokes`
+- Main sources read:
+  - `/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/MISSION.md`
+  - `/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/CHAIN.md`
+  - `/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-003/planner.md`
+  - `/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-003/final-decider.md`
+  - `/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-003/selected/chain-01.md`
+  - `/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-003/refined/chain-01.md`
+  - `/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-003/attacks/chain-01.md`
+  - `/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-003/judgments/chain-01.md`
+  - `/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/steps/step-001/RESULTS.md`
+  - `/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/steps/step-004/RESULTS.md`
+  - `/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-philosopher-atlas/missions/navier-stokes/library-inbox/ckn-1982-proof-architecture.md`
+  - `/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-philosopher-atlas/missions/navier-stokes/library-inbox/vasseur-2007-proof-architecture.md`
+  - `/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-philosopher-atlas/library/factual/far-field-pressure-obstruction/INDEX.md`
+  - `/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-philosopher-atlas/library/factual/geometry-route-screening/INDEX.md`
+  - `/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-philosopher-atlas/library/meta/obstruction-screening/INDEX.md`
+  - `/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-philosopher-atlas/library/meta/exploration-goal-design/INDEX.md`
+- Main conclusion from the search: the exact-reformulation audit is best grounded in the De Giorgi / local-energy localization stack, not the already-killed pressure-tail cleanup branch or the killed neutral-Eulerian geometry branch.

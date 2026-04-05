@@ -1,0 +1,168 @@
+"""
+Final critical test: Do Frobenius moments distinguish Sha=1 from Sha=4
+at FIXED rank=0, FIXED torsion structure?
+
+This is the purest test of whether analytic data can detect Sha.
+"""
+
+import json
+from collections import Counter
+
+# Collect rank-0 curves with and without Sha, matching conductors
+db = CremonaDatabase()
+
+sha1_curves = []  # Sha=1, rank=0
+sha4_curves = []  # Sha=4, rank=0
+
+for N in range(1, 5001):
+    try:
+        curves = db.allcurves(N)
+    except:
+        continue
+    for label_suffix, data_raw in curves.items():
+        label = f"{N}{label_suffix}"
+        try:
+            ainvs = data_raw[0] if isinstance(data_raw, (list, tuple)) else data_raw
+            E = EllipticCurve(ainvs)
+            rank = E.rank()
+            if rank != 0:
+                continue
+
+            sha = round(float(E.sha().an()))
+            tors = [int(x) for x in E.torsion_subgroup().invariants()]
+            tors2 = sum(1 for t in tors if t % 2 == 0)
+
+            # Compute moments from 50 primes
+            primes_list = list(primes(300))[:50]
+            good_ap = []
+            for p in primes_list:
+                if N % int(p) != 0:
+                    good_ap.append((int(p), int(E.ap(p))))
+
+            if len(good_ap) < 30:
+                continue
+
+            M1 = sum(a/float(p) for p, a in good_ap)
+            M2 = sum(a**2/float(p)**2 for p, a in good_ap)
+            sym2 = sum((a**2 - float(p))/float(p)**2 for p, a in good_ap)
+            murm = sum(a * float(p)**(-0.84) for p, a in good_ap)
+            var_norm = 0
+            mean_norm = sum(a/(2*float(p)**0.5) for p, a in good_ap) / len(good_ap)
+            var_norm = sum((a/(2*float(p)**0.5) - mean_norm)**2 for p, a in good_ap) / len(good_ap)
+
+            # Running coupling
+            log_L = 0.0
+            for p, a in good_ap:
+                ef = 1.0 - float(a)/float(p) + 1.0/float(p)
+                if ef > 0:
+                    log_L -= log(ef)
+                else:
+                    log_L -= log(abs(ef))
+            gL = float(log_L / log(float(good_ap[-1][0])))
+
+            entry = {
+                'label': label,
+                'N': int(N),
+                'sha': sha,
+                'tors_struct': str(tors),
+                'tors2_rk': tors2,
+                'sel2': int(E.selmer_rank()),
+                'M1': round(float(M1), 6),
+                'M2': round(float(M2), 6),
+                'sym2': round(float(sym2), 6),
+                'murm': round(float(murm), 6),
+                'var_norm': round(float(var_norm), 6),
+                'gL': round(float(gL), 6),
+            }
+
+            if sha == 1:
+                sha1_curves.append(entry)
+            elif sha == 4:
+                sha4_curves.append(entry)
+
+        except Exception as e:
+            pass
+
+    if N % 1000 == 0:
+        print(f"N<={N}: {len(sha1_curves)} Sha=1, {len(sha4_curves)} Sha=4")
+
+print(f"\nTotal: {len(sha1_curves)} Sha=1, {len(sha4_curves)} Sha=4")
+
+# Now compare, controlling for torsion
+print("\n" + "=" * 70)
+print("Comparison: Sha=1 vs Sha=4 at rank=0")
+print("=" * 70)
+
+for tors_str in sorted(set(e['tors_struct'] for e in sha4_curves)):
+    s1 = [e for e in sha1_curves if e['tors_struct'] == tors_str]
+    s4 = [e for e in sha4_curves if e['tors_struct'] == tors_str]
+    if not s4 or not s1:
+        continue
+
+    print(f"\nTorsion structure: {tors_str}")
+    print(f"  n(Sha=1) = {len(s1)}, n(Sha=4) = {len(s4)}")
+
+    for feat in ['M1', 'M2', 'sym2', 'murm', 'var_norm', 'gL']:
+        v1 = [e[feat] for e in s1]
+        v4 = [e[feat] for e in s4]
+        mean1 = sum(v1) / len(v1)
+        mean4 = sum(v4) / len(v4)
+        std1 = (sum((x - mean1)**2 for x in v1) / len(v1))**0.5
+        std4 = (sum((x - mean4)**2 for x in v4) / max(1, len(v4)-1))**0.5
+        pooled_std = ((std1**2 + std4**2) / 2)**0.5 if std4 > 0 else std1
+        d = (mean1 - mean4) / pooled_std if pooled_std > 0 else float('inf')
+        print(f"  {feat:10s}: Sha=1 {mean1:+.4f}+/-{std1:.4f}  Sha=4 {mean4:+.4f}+/-{std4:.4f}  d={d:+.3f}")
+
+# The key question: within the SAME sel2 rank and torsion,
+# do moments differ between Sha=1 and Sha=4?
+print("\n" + "=" * 70)
+print("Within SAME (sel2, torsion): Sha=1 vs Sha=4")
+print("=" * 70)
+
+all_curves = sha1_curves + sha4_curves
+for sel2_val in sorted(set(e['sel2'] for e in sha4_curves)):
+    for tors_str in sorted(set(e['tors_struct'] for e in sha4_curves)):
+        s1 = [e for e in sha1_curves if e['sel2'] == sel2_val and e['tors_struct'] == tors_str]
+        s4 = [e for e in sha4_curves if e['sel2'] == sel2_val and e['tors_struct'] == tors_str]
+        if not s4 or len(s1) < 3:
+            continue
+
+        print(f"\nsel2={sel2_val}, torsion={tors_str}")
+        print(f"  n(Sha=1) = {len(s1)}, n(Sha=4) = {len(s4)}")
+
+        # In this stratum, sha2_dim differs:
+        # Sha=1 curves have sha2_dim = 0
+        # Sha=4 curves have sha2_dim = 2
+        # Both have same rank (=0) and same torsion
+        # So sel2 = 0 + tors2_rk + sha2_dim
+        # Sha=1: sel2 = tors2_rk
+        # Sha=4: sel2 = tors2_rk + 2
+
+        # Wait -- if sel2 and torsion are the same, then sha2_dim must be the same!
+        # The only way to have different Sha with same sel2 and torsion is...
+        # if the Sha is NOT 2-primary (e.g., Sha=9 has sha2_dim=0)
+        # But Sha=4 IS 2-primary, so sha2_dim=2 for Sha=4 curves
+
+        # So these strata should have DIFFERENT sel2 values
+        # Let me check
+
+        for e in s4[:3]:
+            print(f"  Sha=4 example: {e['label']}, sel2={e['sel2']}, tors={e['tors_struct']}, M1={e['M1']}")
+        for e in s1[:3]:
+            print(f"  Sha=1 example: {e['label']}, sel2={e['sel2']}, tors={e['tors_struct']}, M1={e['M1']}")
+
+        for feat in ['M1', 'murm', 'gL', 'sym2']:
+            v1 = [e[feat] for e in s1]
+            v4 = [e[feat] for e in s4]
+            mean1 = sum(v1) / len(v1)
+            mean4 = sum(v4) / len(v4)
+            std1 = (sum((x - mean1)**2 for x in v1) / len(v1))**0.5
+            print(f"  {feat:10s}: Sha=1 {mean1:+.4f}  Sha=4 {mean4:+.4f}  (diff/std={abs(mean4-mean1)/max(std1,0.001):.2f})")
+
+# Also check: Do Sha=4 curves form a detectable cluster in moment space?
+print("\n" + "=" * 70)
+print("Sha=4 curves: detailed listing")
+print("=" * 70)
+for e in sorted(sha4_curves, key=lambda x: x['N']):
+    print(f"  {e['label']:10s} N={e['N']:5d} sel2={e['sel2']} tors={e['tors_struct']:10s} "
+          f"M1={e['M1']:+.4f} murm={e['murm']:+.3f} gL={e['gL']:+.4f} sym2={e['sym2']:+.4f}")

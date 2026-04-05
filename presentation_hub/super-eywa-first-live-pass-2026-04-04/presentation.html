@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌳 Super-Eywa v1 — First Live Pass</title>
+<style>
+:root {
+  --bg: #050810;
+  --panel: rgba(10, 16, 28, 0.92);
+  --panel-2: rgba(14, 22, 38, 0.92);
+  --line: rgba(159, 178, 214, 0.18);
+  --text: #edf3ff;
+  --muted: #9aa7c2;
+  --soft: #6a768f;
+  --green: #81f2c0;
+  --blue: #8ed4ff;
+  --amber: #f3c86b;
+  --red: #ff8a80;
+  --shadow: 0 22px 70px rgba(0, 0, 0, 0.45);
+  --radius: 22px;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  background:
+    radial-gradient(circle at top left, rgba(129, 242, 192, 0.10), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(142, 212, 255, 0.08), transparent 28%),
+    linear-gradient(180deg, #04070d 0%, #070d16 100%);
+  color: var(--text);
+  font-family: "Avenir Next", "Trebuchet MS", sans-serif;
+  padding: 28px 18px 84px;
+}
+
+.deck {
+  width: min(1180px, calc(100vw - 24px));
+  margin: 0 auto;
+}
+
+.slide {
+  display: none;
+  position: relative;
+  min-height: min(760px, calc(100vh - 132px));
+  padding: 34px 36px 30px;
+  margin: 0 auto;
+  border-radius: 28px;
+  border: 1px solid rgba(159, 178, 214, 0.14);
+  background:
+    linear-gradient(180deg, rgba(10, 15, 28, 0.82), rgba(7, 11, 20, 0.92)),
+    url("assets/bg-panel.svg");
+  background-size: cover, cover;
+  background-position: center, center;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.slide.active { display: block; }
+.slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, rgba(129, 242, 192, 0.08), transparent 30%),
+    radial-gradient(circle at 92% 10%, rgba(142, 212, 255, 0.12), transparent 20%);
+}
+
+.hero {
+  background:
+    linear-gradient(180deg, rgba(8, 13, 24, 0.74), rgba(5, 8, 16, 0.96)),
+    url("assets/bg-title.svg");
+  background-size: cover, cover;
+  background-position: center, center;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.kicker {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+h1, h2 {
+  margin: 0;
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(40px, 6vw, 68px); line-height: 0.95; }
+h2 { font-size: clamp(30px, 3.4vw, 46px); line-height: 1.02; max-width: 14ch; }
+
+.lede {
+  max-width: 58ch;
+  color: #d8e4ff;
+  font-size: 17px;
+  line-height: 1.55;
+  margin: 18px 0 0;
+}
+
+.eyebrow-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-size: 12px;
+}
+
+.pill.green { background: rgba(129, 242, 192, 0.10); color: var(--green); }
+.pill.blue { background: rgba(142, 212, 255, 0.10); color: var(--blue); }
+.pill.amber { background: rgba(243, 200, 107, 0.10); color: var(--amber); }
+.pill.red { background: rgba(255, 138, 128, 0.10); color: var(--red); }
+
+.panel {
+  background: rgba(9, 14, 24, 0.70);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px 16px 14px;
+  backdrop-filter: blur(14px);
+}
+
+.panel h3 {
+  margin: 0 0 10px;
+  font-size: 13px;
+  color: #f0f4ff;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.toc-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.toc-item {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 12px;
+  padding: 12px 12px 11px;
+  border-radius: 16px;
+  border: 1px solid rgba(159, 178, 214, 0.12);
+  background: rgba(255,255,255,0.03);
+  cursor: pointer;
+  transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease;
+}
+
+.toc-item:hover { transform: translateY(-1px); border-color: rgba(129, 242, 192, 0.42); background: rgba(129, 242, 192, 0.07); }
+.toc-num {
+  width: 36px; height: 36px; border-radius: 12px;
+  display: grid; place-items: center;
+  font-size: 13px; font-weight: 700;
+  color: var(--bg);
+}
+.toc-title { font-size: 15px; font-weight: 650; }
+.toc-note { font-size: 12px; color: var(--muted); margin-top: 3px; line-height: 1.35; }
+
+.grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+
+.card {
+  background: rgba(12, 18, 31, 0.84);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px 16px 15px;
+}
+.card.soft { background: rgba(255,255,255,0.025); }
+.card-title { font-size: 14px; font-weight: 700; margin: 0 0 8px; }
+.card-sub { font-size: 12px; color: var(--muted); line-height: 1.45; margin: 0; }
+.card-tagrow { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+
+.metric-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.metric {
+  padding: 14px 12px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.025);
+}
+.metric strong { display: block; font-size: 26px; line-height: 1; margin-bottom: 6px; }
+.metric strong.green { color: var(--green); }
+.metric strong.blue { color: var(--blue); }
+.metric strong.amber { color: var(--amber); }
+.metric strong.red { color: var(--red); }
+.metric span { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+
+.section {
+  margin-top: 18px;
+}
+
+.flow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 14px;
+}
+.flow-step {
+  position: relative;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.03);
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 12px;
+  align-items: center;
+}
+.flow-step::after {
+  content: "↓";
+  position: absolute;
+  left: 22px;
+  bottom: -16px;
+  color: rgba(154, 167, 194, 0.7);
+  font-size: 18px;
+}
+.flow-step:last-child::after { display: none; }
+.step-num {
+  width: 34px; height: 34px;
+  border-radius: 11px;
+  display: grid; place-items: center;
+  background: rgba(129, 242, 192, 0.14);
+  color: var(--green);
+  font-size: 12px; font-weight: 800;
+}
+.step-title { font-size: 15px; font-weight: 700; margin-bottom: 3px; }
+.step-note { font-size: 12px; color: var(--muted); line-height: 1.45; }
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 16px;
+}
+
+.tree {
+  font-family: "SFMono-Regular", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #dbe7ff;
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+.tree-shell {
+  min-height: 100%;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015)),
+    rgba(8, 13, 23, 0.84);
+}
+
+.tree .muted { color: var(--muted); }
+.tree .green { color: var(--green); }
+.tree .blue { color: var(--blue); }
+.tree .amber { color: var(--amber); }
+.tree .red { color: var(--red); }
+
+.stack {
+  display: grid;
+  gap: 12px;
+}
+
+.result-row {
+  display: grid;
+  grid-template-columns: 1.35fr 0.8fr 0.8fr 0.55fr 1fr;
+  gap: 10px;
+  align-items: stretch;
+  padding: 12px 12px 11px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.03);
+}
+.result-row.head {
+  background: rgba(255,255,255,0.04);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 10px;
+  color: var(--muted);
+}
+.result-cell {
+  font-size: 13px;
+  line-height: 1.4;
+}
+.result-cell small { display: block; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px; }
+.result-cell strong { display: block; font-size: 14px; }
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.chip.green { background: rgba(129, 242, 192, 0.12); color: var(--green); }
+.chip.blue { background: rgba(142, 212, 255, 0.12); color: var(--blue); }
+.chip.amber { background: rgba(243, 200, 107, 0.12); color: var(--amber); }
+.chip.red { background: rgba(255, 138, 128, 0.12); color: var(--red); }
+
+.mini-list {
+  display: grid;
+  gap: 10px;
+}
+.mini-item {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 10px;
+  align-items: start;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.mini-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  margin-top: 5px;
+  background: var(--blue);
+  box-shadow: 0 0 0 4px rgba(142, 212, 255, 0.10);
+}
+.mini-dot.green { background: var(--green); box-shadow: 0 0 0 4px rgba(129, 242, 192, 0.10); }
+.mini-dot.amber { background: var(--amber); box-shadow: 0 0 0 4px rgba(243, 200, 107, 0.10); }
+.mini-dot.red { background: var(--red); box-shadow: 0 0 0 4px rgba(255, 138, 128, 0.10); }
+
+details {
+  margin-top: 12px;
+  border-top: 1px dashed rgba(159, 178, 214, 0.18);
+  padding-top: 10px;
+}
+summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 12px;
+}
+details p, details li { color: var(--muted); font-size: 12px; line-height: 1.5; }
+
+.nav {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(159, 178, 214, 0.14);
+  background: rgba(6, 9, 16, 0.82);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+.nav-btn {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(159, 178, 214, 0.18);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.nav-btn:hover { transform: translateY(-1px); border-color: rgba(129, 242, 192, 0.36); }
+.nav-btn:disabled { opacity: 0.35; cursor: default; transform: none; }
+.nav-counter { color: var(--muted); min-width: 58px; text-align: center; font-size: 12px; }
+
+.feedback-section {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(159, 178, 214, 0.18);
+  position: relative;
+  z-index: 1;
+}
+.feedback-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  padding: 4px 0;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 650;
+}
+.feedback-toggle:hover { color: var(--text); }
+.feedback-chevron { transition: transform 0.18s ease; display: inline-block; }
+.feedback-chevron.open { transform: rotate(90deg); }
+.feedback-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--green);
+  display: none;
+}
+.feedback-dot.has-feedback { display: inline-block; }
+.feedback-body { display: none; margin-top: 10px; }
+.feedback-body.open { display: block; }
+.feedback-textarea {
+  width: 100%;
+  min-height: 66px;
+  resize: vertical;
+  border-radius: 14px;
+  border: 1px solid rgba(159, 178, 214, 0.16);
+  background: rgba(4, 8, 14, 0.82);
+  color: var(--text);
+  padding: 11px 12px;
+  font: inherit;
+  outline: none;
+}
+.feedback-textarea:focus { border-color: rgba(129, 242, 192, 0.45); }
+.feedback-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+.feedback-save {
+  border: 0;
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: rgba(129, 242, 192, 0.16);
+  color: var(--green);
+  font-weight: 750;
+  cursor: pointer;
+}
+.feedback-save:disabled { opacity: 0.35; cursor: default; }
+.feedback-status { font-size: 11px; color: var(--green); opacity: 0; transition: opacity 0.2s ease; }
+.feedback-status.show { opacity: 1; }
+.feedback-list { margin-top: 8px; }
+.feedback-entry {
+  display: grid;
+  grid-template-columns: 62px 1fr 22px;
+  gap: 8px;
+  align-items: start;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(159, 178, 214, 0.10);
+}
+.feedback-entry:last-child { border-bottom: 0; }
+.feedback-entry-time { color: var(--muted); font-size: 11px; }
+.feedback-entry-text { font-size: 12px; line-height: 1.45; }
+.feedback-entry-delete {
+  background: none;
+  border: 0;
+  color: var(--soft);
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+}
+.feedback-entry-delete:hover { color: var(--red); }
+
+@media (max-width: 980px) {
+  .hero-grid, .two-col, .grid-3, .grid-2, .metric-row { grid-template-columns: 1fr; }
+  .result-row { grid-template-columns: 1fr; }
+  h2 { max-width: none; }
+  .slide { padding: 22px 18px 24px; border-radius: 22px; }
+  .slide::before { border-radius: 22px; }
+}
+</style>
+</head>
+<body>
+<div class="deck">
+  <section class="slide active hero">
+    <div class="hero-grid">
+      <div>
+        <div class="kicker">Super-Eywa v1 briefing</div>
+        <h2 style="max-width: 12ch; margin-bottom: 16px;">What is in this briefing?</h2>
+        <h1>🌳 Super-Eywa v1</h1>
+        <p class="lede">The first runnable and live-tested pass: what was built, how it works, how data is stored, and what the first baseline-vs-main batch actually proved.</p>
+        <div class="eyebrow-row">
+          <span class="pill green">live OpenRouter path</span>
+          <span class="pill blue">deterministic fallback</span>
+          <span class="pill amber">file-first run history</span>
+          <span class="pill red">delegation still uneven</span>
+        </div>
+        <div class="section panel" style="margin-top:22px; max-width: 520px;">
+          <h3>What changed in this pass?</h3>
+          <div class="mini-list">
+            <div class="mini-item"><span class="mini-dot green"></span><div>Runtime, validators, storage, and grading are now real enough to run end to end.</div></div>
+            <div class="mini-item"><span class="mini-dot blue"></span><div>The same seam supports deterministic local work and live provider calls.</div></div>
+            <div class="mini-item"><span class="mini-dot amber"></span><div>Live batch evidence exists, but delegation helps structure more than accuracy so far.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>What is in this briefing?</h3>
+        <div class="toc-grid">
+          <div class="toc-item" onclick="goTo(1)">
+            <div class="toc-num" style="background:#8bdaaa;">1</div>
+            <div>
+              <div class="toc-title">What is the short version?</div>
+              <div class="toc-note">The punchline: runnable, recorded, live-tested, but still not reliably better when it delegates.</div>
+            </div>
+          </div>
+          <div class="toc-item" onclick="goTo(2)">
+            <div class="toc-num" style="background:#7dd3fc;">2</div>
+            <div>
+              <div class="toc-title">What was built?</div>
+              <div class="toc-note">Runtime, data system, grading layer, and the live provider seam.</div>
+            </div>
+          </div>
+          <div class="toc-item" onclick="goTo(3)">
+            <div class="toc-num" style="background:#f3c86b;">3</div>
+            <div>
+              <div class="toc-title">How does a run proceed?</div>
+              <div class="toc-note">Task in, node execution, helper branching, replay capture, summary out.</div>
+            </div>
+          </div>
+          <div class="toc-item" onclick="goTo(4)">
+            <div class="toc-num" style="background:#ff8a80;">4</div>
+            <div>
+              <div class="toc-title">Where does data land?</div>
+              <div class="toc-note">Run history, replay artifacts, and grading records on disk.</div>
+            </div>
+          </div>
+          <div class="toc-item" onclick="goTo(5)">
+            <div class="toc-num" style="background:#81f2c0;">5</div>
+            <div>
+              <div class="toc-title">What did the live batch show?</div>
+              <div class="toc-note">Five questions, baseline vs main, and only one clear delegated win.</div>
+            </div>
+          </div>
+          <div class="toc-item" onclick="goTo(6)">
+            <div class="toc-num" style="background:#d4a7ff;">6</div>
+            <div>
+              <div class="toc-title">What judgment calls were made?</div>
+              <div class="toc-note">Why the first build chose the shape it did.</div>
+            </div>
+          </div>
+          <div class="toc-item" onclick="goTo(7)">
+            <div class="toc-num" style="background:#b5c7ff;">7</div>
+            <div>
+              <div class="toc-title">What remains open?</div>
+              <div class="toc-note">Open questions plus the pragmatic next recommendations.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feedback-section"></div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">TL;DR</div>
+    <h2>What is the short version?</h2>
+    <div class="metric-row section">
+      <div class="metric"><strong class="green">1</strong><span>v1 is runnable and recorded file-first</span></div>
+      <div class="metric"><strong class="blue">2</strong><span>baseline used `max_depth=0`; main used `max_depth=3`</span></div>
+      <div class="metric"><strong class="amber">3</strong><span>live OpenRouter `gpt-4.1-mini` ran both modes</span></div>
+      <div class="metric"><strong class="red">4</strong><span>delegation works structurally before it improves answers</span></div>
+    </div>
+    <div class="two-col section">
+      <div class="card">
+        <div class="card-title">What matters most</div>
+        <p class="card-sub">This first pass proved the bones: live execution, storage, grading, and replay are all real. The system is not fake scaffolding anymore.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">What still limits it</div>
+        <p class="card-sub">The question bank is only partly runnable, and the main mode’s branching adds trace depth faster than it adds accuracy on the hard cases.</p>
+      </div>
+    </div>
+    <div class="card section" style="border-left:3px solid rgba(129,242,192,0.75);">
+      <div class="card-title">Story arc</div>
+      <p class="card-sub">Build the runtime, wire live provider execution, store every run cleanly, then compare baseline and main on a small explicit batch. The result: one clean single-node win, one clean delegated win, and two delegated failures that are still informative.</p>
+    </div>
+    <div class="feedback-section"></div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">System shape</div>
+    <h2>What was built?</h2>
+    <div class="grid-3 section">
+      <div class="card">
+        <div class="card-title"><span class="chip green">runtime</span> Eywa system</div>
+        <p class="card-sub">A small Python stdlib runtime with deterministic local execution and a live OpenRouter path behind the same seam.</p>
+        <div class="card-tagrow">
+          <span class="chip blue">`run_v1.py`</span>
+          <span class="chip green">contracts</span>
+          <span class="chip amber">tests</span>
+        </div>
+        <details>
+          <summary>File view</summary>
+          <p><span class="muted">eywa-system/runtime/</span> holds the runtime package, entry point, validators, client, storage, prompting, story, and tests.</p>
+        </details>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="chip blue">data</span> Data system</div>
+        <p class="card-sub">File-first canonical truth under `data-system/run-history/`, plus a correctness suite and preserved derived views.</p>
+        <div class="card-tagrow">
+          <span class="chip blue">run history</span>
+          <span class="chip amber">validator</span>
+          <span class="chip green">derived views</span>
+        </div>
+        <details>
+          <summary>File view</summary>
+          <p><span class="muted">data-system/</span> contains run history, grading, derived views, and a stored-run validator.</p>
+        </details>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="chip amber">grading</span> Grading layer</div>
+        <p class="card-sub">A thin runner composes runnable prompts from summary-style question files and grades a small explicit subset first.</p>
+        <div class="card-tagrow">
+          <span class="chip amber">subset graders</span>
+          <span class="chip blue">batch runner</span>
+          <span class="chip red">partial bank</span>
+        </div>
+        <details>
+          <summary>File view</summary>
+          <p><span class="muted">data-system/grading/</span> includes `run_test_question_v1.py`, `run_live_batch_v1.py`, test questions, simple graders, and live batch records.</p>
+        </details>
+      </div>
+    </div>
+
+    <div class="two-col section">
+      <div class="card">
+        <div class="card-title">How the same seam behaves</div>
+        <div class="mini-list">
+          <div class="mini-item"><span class="mini-dot green"></span><div>Deterministic local execution keeps v1 runnable without secrets or network variance.</div></div>
+          <div class="mini-item"><span class="mini-dot blue"></span><div>Live OpenRouter execution sits behind the same contracts and storage path.</div></div>
+          <div class="mini-item"><span class="mini-dot amber"></span><div>The runtime writes replay payloads so runs can be reviewed later, not just re-run.</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">What is new here?</div>
+        <p class="card-sub">This is the first point where the build is not just target docs and scaffold. It has a real runtime, real runs, real grading records, and a real first live batch summary.</p>
+      </div>
+    </div>
+    <div class="feedback-section"></div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">Execution path</div>
+    <h2>How does a run proceed?</h2>
+    <div class="two-col section">
+      <div>
+        <div class="flow">
+          <div class="flow-step">
+            <div class="step-num">1</div>
+            <div>
+              <div class="step-title">Task enters `run_v1.py`</div>
+              <div class="step-note">The runtime reads the task text plus run-level settings like provider, model, and depth cap.</div>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">2</div>
+            <div>
+              <div class="step-title">Run packet and defaults are set</div>
+              <div class="step-note">The run packet becomes the canonical input, with a predictable local path still available.</div>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">3</div>
+            <div>
+              <div class="step-title">Root node starts the work</div>
+              <div class="step-note">The root node receives a prompt snapshot and begins local solving or synthesis.</div>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">4</div>
+            <div>
+              <div class="step-title">Heuristic branching may recruit helpers</div>
+              <div class="step-note">Baseline stays at `max_depth=0`. Main mode can branch up to depth 3.</div>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">5</div>
+            <div>
+              <div class="step-title">Each node writes replay and records</div>
+              <div class="step-note">Node packet, node record, events, edges, prompt snapshot, raw model payload, and tool transcript are all captured.</div>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">6</div>
+            <div>
+              <div class="step-title">Run summary and derived views are emitted</div>
+              <div class="step-note">A calm end-state lands in `run_summary.json`, `derived/timeline.json`, and `derived/timeline.md`.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="card">
+          <div class="card-title">Where does branching actually matter?</div>
+          <p class="card-sub">On the live batch, single-node runs stayed clean on the easy exact-answer case, while delegated runs only sometimes improved anything. Structural delegation is real; quality improvement is still inconsistent.</p>
+        </div>
+        <div class="card" style="border-left:3px solid rgba(142,212,255,0.7);">
+          <div class="card-title">What is the control surface?</div>
+          <div class="card-tagrow">
+            <span class="chip blue">`max_depth=0` baseline</span>
+            <span class="chip green">`max_depth=3` main</span>
+            <span class="chip amber">same model</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="feedback-section"></div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">Storage map</div>
+    <h2>Where does data land?</h2>
+    <div class="two-col section">
+      <div class="stack">
+        <div class="tree-shell">
+<pre class="tree">Repo root
+<span class="muted">super-eywa/</span>
+  AGENTS.md
+  CLAUDE.md
+  high-level-north-star.md
+  detailed-target-state.md
+  current-state.md
+  eywa-system/
+  data-system/
+  sticky-notes/
+  mission-runs/
+  archive/
+  the-do-queue/</pre>
+        </div>
+        <div class="tree-shell">
+<pre class="tree">Eywa runtime
+<span class="muted">eywa-system/runtime/</span>
+  README.md
+  run_v1.py
+  eywa_runtime/
+    contracts.py
+    defaults.py
+    engine.py
+    executor.py
+    storage.py
+    story.py
+    validation.py
+  tests/
+    test_runtime.py
+    test_validation.py</pre>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="tree-shell">
+<pre class="tree">Grading area
+<span class="muted">data-system/grading/</span>
+  run_test_question_v1.py
+  run_live_batch_v1.py
+  test-questions/
+  question-types/
+  grading_methods/
+  tests/
+  runs/
+    live-batch-v1-summary.json
+    architecture-derived-B4-...
+    architecture-derived-B5-...
+    architecture-derived-B6-...
+    architecture-derived-B10-...
+    architecture-derived-B11-...</pre>
+        </div>
+        <div class="tree-shell">
+<pre class="tree">Sample stored run
+<span class="muted">data-system/run-history/architecture-derived-B11-.../</span>
+  run_packet.json
+  run_summary.json
+  events/
+    run-events.jsonl
+  derived/
+    simple-run-row.json
+    timeline.json
+    timeline.md
+  nodes/
+    node_root/
+      node_packet.json
+      node_record.json
+      events.jsonl
+      edges.json
+    node_root_helper_01/
+      ...
+    node_root_helper_02/
+      ...
+    node_root_helper_02_helper_01/
+      ...
+  replay/
+    node_root/
+      raw-model.json
+      prompt-snapshot.json
+      tool-transcript.jsonl
+    node_root_helper_01/
+      ...
+    node_root_helper_02/
+      ...</pre>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="card">
+          <div class="card-title">Where are replay artifacts?</div>
+          <p class="card-sub">Under `replay/node_*`, one folder per node, with prompt snapshots, raw model payloads, and tool transcripts.</p>
+        </div>
+        <div class="card">
+          <div class="card-title">Where does the grading-bank runner live?</div>
+          <p class="card-sub">The thin runner is `data-system/grading/run_test_question_v1.py`; the batch pass is `data-system/grading/run_live_batch_v1.py`.</p>
+        </div>
+        <div class="card">
+          <div class="card-title">How did the data end up there?</div>
+          <div class="mini-list">
+            <div class="mini-item"><span class="mini-dot green"></span><div>The runtime writes the run directory directly as canonical truth.</div></div>
+            <div class="mini-item"><span class="mini-dot blue"></span><div>The grader writes per-question JSON records under `data-system/grading/runs/`.</div></div>
+            <div class="mini-item"><span class="mini-dot amber"></span><div>The live batch summary links the two worlds together in one view.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="feedback-section"></div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">Live batch</div>
+    <h2>What did the live batch show?</h2>
+    <div class="metric-row section">
+      <div class="metric"><strong class="blue">5</strong><span>baseline runs</span></div>
+      <div class="metric"><strong class="green">5</strong><span>main runs</span></div>
+      <div class="metric"><strong class="amber">3</strong><span>max depth in main</span></div>
+      <div class="metric"><strong class="red">1</strong><span>clean delegated success</span></div>
+    </div>
+
+    <div class="stack section">
+      <div class="result-row head">
+        <div>Question</div>
+        <div>Baseline</div>
+        <div>Main</div>
+        <div>Nodes</div>
+        <div>Read</div>
+      </div>
+      <div class="result-row">
+        <div class="result-cell"><strong>B4</strong><small>Hensel lifting</small></div>
+        <div class="result-cell"><span class="chip red">incorrect</span></div>
+        <div class="result-cell"><span class="chip red">incorrect</span></div>
+        <div class="result-cell"><strong>1 → 3</strong></div>
+        <div class="result-cell">Delegation worked structurally, but answer quality stayed wrong.</div>
+      </div>
+      <div class="result-row">
+        <div class="result-cell"><strong>B5</strong><small>Random chords</small></div>
+        <div class="result-cell"><span class="chip red">incorrect</span></div>
+        <div class="result-cell"><span class="chip red">incorrect</span></div>
+        <div class="result-cell"><strong>1 → 1</strong></div>
+        <div class="result-cell">No branching triggered, so the answer stayed the same.</div>
+      </div>
+      <div class="result-row">
+        <div class="result-cell"><strong>B6</strong><small>Binary minimization</small></div>
+        <div class="result-cell"><span class="chip green">correct</span></div>
+        <div class="result-cell"><span class="chip green">correct</span></div>
+        <div class="result-cell"><strong>1 → 1</strong></div>
+        <div class="result-cell">Best clean single-node success.</div>
+      </div>
+      <div class="result-row">
+        <div class="result-cell"><strong>B10</strong><small>Mean-field occupancy</small></div>
+        <div class="result-cell"><span class="chip red">incorrect</span></div>
+        <div class="result-cell"><span class="chip red">incorrect</span></div>
+        <div class="result-cell"><strong>1 → 4</strong></div>
+        <div class="result-cell">Delegation increased trace depth more than accuracy.</div>
+      </div>
+      <div class="result-row">
+        <div class="result-cell"><strong>B11</strong><small>Board-game chaining</small></div>
+        <div class="result-cell"><span class="chip green">correct</span></div>
+        <div class="result-cell"><span class="chip green">correct</span></div>
+        <div class="result-cell"><strong>1 → 5</strong></div>
+        <div class="result-cell">Clean delegated success, even though the question is underspecified.</div>
+      </div>
+    </div>
+    <div class="card section" style="border-left:3px solid rgba(129,242,192,0.75);">
+      <div class="card-title">Bottom line</div>
+      <p class="card-sub">The live provider seam is real. The system now proves it can execute and store live runs. The next challenge is to make delegation improve outcomes, not just branch the tree.</p>
+    </div>
+    <div class="feedback-section"></div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">Implementation choices</div>
+    <h2>What judgment calls were made?</h2>
+    <div class="grid-2 section">
+      <div class="card">
+        <div class="card-title">Why start with a deterministic executor?</div>
+        <p class="card-sub">It made v1 runnable and testable immediately while preserving the live provider seam for later.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">Why choose file-first storage?</div>
+        <p class="card-sub">Canonical truth under `data-system/run-history/` stays simple, reconstructable, and aligned with the target docs.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">Why keep multi-step root history calm?</div>
+        <p class="card-sub">Replay can show the authored steps, while the canonical node record stays readable and gets a `final_action_type`.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">Why hard-cap depth at 3?</div>
+        <p class="card-sub">That was the requested stop against runaway branching, and it belongs in code rather than convention.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">Why begin correctness with stored-run validation?</div>
+        <p class="card-sub">The first honest step was to prove the written run matches the contracts and layout before pretending dry-run machinery exists.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">Why use a small explicit grading subset first?</div>
+        <p class="card-sub">The bank is only partly runnable, so a narrow honest grader was the fastest path to a real baseline-vs-main batch.</p>
+      </div>
+    </div>
+    <div class="feedback-section"></div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">Open questions and next moves</div>
+    <h2>What remains open?</h2>
+    <div class="two-col section">
+      <div class="card">
+        <div class="card-title">Open questions</div>
+        <div class="mini-list">
+          <div class="mini-item"><span class="mini-dot red"></span><div>Should delegation be driven by prompting, explicit variables, model judgment, or a mix?</div></div>
+          <div class="mini-item"><span class="mini-dot blue"></span><div>Should the grading-bank files become richer runnable packets instead of summary markdown cases?</div></div>
+          <div class="mini-item"><span class="mini-dot amber"></span><div>Should multi-step node histories stay hidden in replay or become more formal in core records?</div></div>
+          <div class="mini-item"><span class="mini-dot green"></span><div>How far should correctness grow beyond stored-run layout validation?</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Pragmatic recommendations</div>
+        <div class="mini-list">
+          <div class="mini-item"><span class="mini-dot green"></span><div>Make runnable question packets richer and decomposition decisions more explicit.</div></div>
+          <div class="mini-item"><span class="mini-dot blue"></span><div>Add stronger verification for exact-answer questions and separate synthesis prompts from local-solve prompts.</div></div>
+          <div class="mini-item"><span class="mini-dot amber"></span><div>Prefer exact-answer numeric/string cases and keep the same cheap reliable model for short integration loops.</div></div>
+          <div class="mini-item"><span class="mini-dot red"></span><div>Add question-level metadata for `recommended_baseline_mode`, `recommended_main_mode`, and `recommended_grader`.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card section" style="border-left:3px solid rgba(142,212,255,0.75);">
+      <div class="card-title">What Sean should leave with</div>
+      <p class="card-sub">The system is no longer aspirational. It is a live, stored, reviewable first pass with a real batch result. The main gap is not execution, it is making delegation reliably earn its extra complexity.</p>
+    </div>
+    <div class="feedback-section"></div>
+  </section>
+</div>
+
+<div class="nav">
+  <button class="nav-btn" id="prevBtn" onclick="prev()" aria-label="Previous slide">←</button>
+  <div class="nav-counter" id="navCounter">1 / 8</div>
+  <button class="nav-btn" id="nextBtn" onclick="next()" aria-label="Next slide">→</button>
+</div>
+
+<script>
+const PRESENTATION_KEY = 'super-eywa-first-live-pass-2026-04-04-feedback';
+const slides = Array.from(document.querySelectorAll('.slide'));
+let current = 0;
+
+function escapeHtml(str) {
+  const el = document.createElement('div');
+  el.textContent = str;
+  return el.innerHTML;
+}
+
+function loadStore() {
+  try { return JSON.parse(localStorage.getItem(PRESENTATION_KEY) || '{}'); }
+  catch { return {}; }
+}
+
+function persistStore(store) {
+  localStorage.setItem(PRESENTATION_KEY, JSON.stringify(store));
+  fetch('/api/feedback', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(store)
+  }).catch(() => {});
+}
+
+function slideTitle(idx) {
+  const node = slides[idx] && slides[idx].querySelector('h1, h2');
+  return node ? node.textContent.trim() : `Slide ${idx + 1}`;
+}
+
+function getEntries(store, idx) {
+  return store[`slide-${idx}`] || [];
+}
+
+function renderFeedback(idx) {
+  const store = loadStore();
+  const entries = getEntries(store, idx);
+  const list = document.getElementById(`feedback-list-${idx}`);
+  const dot = document.getElementById(`feedback-dot-${idx}`);
+  if (dot) dot.classList.toggle('has-feedback', entries.length > 0);
+  if (!list) return;
+  list.innerHTML = entries.map((entry, i) => `
+    <div class="feedback-entry">
+      <div class="feedback-entry-time">${new Date(entry.timestamp).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</div>
+      <div class="feedback-entry-text">${escapeHtml(entry.text)}</div>
+      <button class="feedback-entry-delete" title="Delete" onclick="deleteFeedback(${idx}, ${i})">×</button>
+    </div>
+  `).join('');
+}
+
+function addFeedback(idx, text) {
+  const cleaned = text.trim();
+  if (!cleaned) return;
+  const store = loadStore();
+  const key = `slide-${idx}`;
+  if (!store[key]) store[key] = [];
+  store[key].push({ text: cleaned, timestamp: new Date().toISOString(), slideTitle: slideTitle(idx) });
+  persistStore(store);
+  renderFeedback(idx);
+}
+
+function deleteFeedback(idx, entryIdx) {
+  const store = loadStore();
+  const key = `slide-${idx}`;
+  if (!store[key] || store[key][entryIdx] === undefined) return;
+  store[key].splice(entryIdx, 1);
+  if (!store[key].length) delete store[key];
+  persistStore(store);
+  renderFeedback(idx);
+}
+
+function submitFeedback(idx) {
+  const ta = document.getElementById(`feedback-input-${idx}`);
+  const status = document.getElementById(`feedback-status-${idx}`);
+  if (!ta || !ta.value.trim()) return;
+  addFeedback(idx, ta.value);
+  ta.value = '';
+  if (status) {
+    status.classList.add('show');
+    setTimeout(() => status.classList.remove('show'), 1700);
+  }
+}
+
+function toggleFeedback(idx) {
+  const body = document.getElementById(`feedback-body-${idx}`);
+  const chevron = document.getElementById(`feedback-chevron-${idx}`);
+  if (body) body.classList.toggle('open');
+  if (chevron) chevron.classList.toggle('open');
+}
+
+function injectFeedback() {
+  slides.forEach((slide, idx) => {
+    const section = slide.querySelector('.feedback-section');
+    if (!section) return;
+    section.innerHTML = `
+      <button class="feedback-toggle" onclick="toggleFeedback(${idx})">
+        <span class="feedback-chevron" id="feedback-chevron-${idx}">▶</span>
+        <span>Leave feedback on this slide</span>
+        <span class="feedback-dot" id="feedback-dot-${idx}"></span>
+      </button>
+      <div class="feedback-body" id="feedback-body-${idx}">
+        <div class="feedback-list" id="feedback-list-${idx}"></div>
+        <textarea
+          class="feedback-textarea"
+          id="feedback-input-${idx}"
+          placeholder="Your notes on this slide"
+          onkeydown="if (event.key === 'Enter' && event.metaKey) { submitFeedback(${idx}); event.preventDefault(); }"
+        ></textarea>
+        <div class="feedback-actions">
+          <button class="feedback-save" onclick="submitFeedback(${idx})">Save (⌘↵)</button>
+          <span class="feedback-status" id="feedback-status-${idx}">Saved</span>
+        </div>
+      </div>
+    `;
+    renderFeedback(idx);
+  });
+}
+
+async function mergeServerFeedback() {
+  try {
+    const response = await fetch('/api/feedback');
+    if (!response.ok) return;
+    const serverStore = await response.json();
+    const localStore = loadStore();
+    let changed = false;
+    for (const key of Object.keys(serverStore || {})) {
+      const localEntries = localStore[key] || [];
+      const seen = new Set(localEntries.map(entry => entry.timestamp + '::' + entry.text));
+      for (const entry of serverStore[key] || []) {
+        const fingerprint = entry.timestamp + '::' + entry.text;
+        if (!seen.has(fingerprint)) {
+          localEntries.push(entry);
+          seen.add(fingerprint);
+          changed = true;
+        }
+      }
+      if (localEntries.length) localStore[key] = localEntries;
+    }
+    if (changed) localStorage.setItem(PRESENTATION_KEY, JSON.stringify(localStore));
+  } catch {}
+  slides.forEach((_, idx) => renderFeedback(idx));
+}
+
+function show(idx) {
+  slides.forEach((slide, i) => slide.classList.toggle('active', i === idx));
+  document.getElementById('navCounter').textContent = `${idx + 1} / ${slides.length}`;
+  document.getElementById('prevBtn').disabled = idx === 0;
+  document.getElementById('nextBtn').disabled = idx === slides.length - 1;
+  current = idx;
+}
+
+function next() { if (current < slides.length - 1) show(current + 1); }
+function prev() { if (current > 0) show(current - 1); }
+function goTo(idx) { show(idx); }
+
+document.addEventListener('keydown', event => {
+  if (event.target && event.target.tagName === 'TEXTAREA') return;
+  if (event.key === 'ArrowRight' || event.key === ' ') { event.preventDefault(); next(); }
+  if (event.key === 'ArrowLeft') { event.preventDefault(); prev(); }
+});
+
+injectFeedback();
+mergeServerFeedback();
+show(0);
+</script>
+</body>
+</html>

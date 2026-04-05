@@ -1,5 +1,0 @@
-Wrote the exploration deliverables at [REPORT.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/steps/step-005/explorations/exploration-001/REPORT.md) and [REPORT-SUMMARY.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/steps/step-005/explorations/exploration-001/REPORT-SUMMARY.md).
-
-The report’s conclusion is narrow and source-based: choose `local-energy flux/localization`, and freeze the single audit target as the localized cutoff-flux bundle
-`I_flux[φ;u,p] = ∬ (|u|^2 + 2p) u · ∇φ`.
-`De Giorgi truncation` is rejected as already exhausted by the recorded pressure/`beta = 4/3` negatives, and `vorticity stretching localization` is rejected as mismatched to the rewrite shortlist and already killed on the fixed geometry package.

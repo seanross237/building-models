@@ -1,0 +1,21 @@
+Curator handoff for mission `exact-ns-phase-locking-firewall`, strategy `strategy-001`, exploration `exploration-001`.
+
+Please curate the supplied factual report and meta note into the local libraries.
+
+Inbox report:
+/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-phase-locking-firewall/library-inbox/exploration-001-phase-0-intrinsic-triad-phase-gate-report.md
+
+Meta note:
+/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-phase-locking-firewall/meta-inbox/meta-exploration-001.md
+
+Factual library root:
+/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-atlas/execution/agents/library/factual
+
+Meta library root:
+/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-atlas/execution/agents/library/meta
+
+Curator log path:
+/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-atlas/execution/agents/library/curator-log.md
+
+Receipt file path:
+/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-atlas/execution/instances/exact-ns-phase-locking-firewall/meta-inbox/meta-exploration-001-curation-receipt.md

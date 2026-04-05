@@ -1,0 +1,10 @@
+# Super-Eywa
+
+## Rules
+
+- When talking to Sean, avoid paragraphs when possible and prefer formatted text with line breaks.
+- When making a presentation for Super-Eywa, first look at `/Users/seanross/kingdom_of_god/home-base/presentation_hub/` and read `/Users/seanross/kingdom_of_god/home-base/presentation_hub/guide_presentations.md`.
+- These folders exist: `sticky-notes/future-expansions/`, `sticky-notes/open-questions/`, and `sticky-notes/remember-for-later/`.
+- Miscellaneous docs (scratch work, design proposals, brainstorms, etc.) go in `sticky-notes/daily-journals/YYYY-MM-DD/`. Create today's date folder if it doesn't exist.
+- For autonomous build work, keep implementation notes, judgment calls, open questions, and handoff notes in `sticky-notes/daily-journals/YYYY-MM-DD/`.
+- Do not use `sticky-notes/open-questions/`, `sticky-notes/remember-for-later/`, or `the-do-queue/` for autonomous build notes unless Sean explicitly asks.

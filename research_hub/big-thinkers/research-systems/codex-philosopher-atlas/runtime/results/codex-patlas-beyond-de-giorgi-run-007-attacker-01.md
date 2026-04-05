@@ -1,0 +1,3 @@
+Wrote the attack memo to [chain-01.md](/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-007/attacks/chain-01.md).
+
+It critiques each step concretely and then attacks the whole chain on its main structural liabilities: an under-operationalized Tao filter, incommensurable candidate families, overgeneralized prior negatives, soft kill conditions, and bias toward producing a polished memo instead of a hard theorem-relevance test. Verified the file exists at the required sentinel path.

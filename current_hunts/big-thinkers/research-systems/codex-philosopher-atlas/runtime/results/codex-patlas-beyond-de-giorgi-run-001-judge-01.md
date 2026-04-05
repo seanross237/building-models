@@ -1,5 +1,0 @@
-Wrote the required outputs to [chain-01 judgment](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-001/judgments/chain-01.md) and [chain-01 refined](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-001/refined/chain-01.md).
-
-The judgment marks the major critiques as valid, partially valid, or invalid where appropriate, and the refined chain tightens the plan around an early Tao gate, an explicit shell-source falsification test, a short candidate list, and a quantitative success condition tied to shrinking the bad coefficient. The probability assessment is `0.78`, with most of that weight on a strong negative obstruction memo rather than a positive attack path.
-
-I verified both files after writing them.

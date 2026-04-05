@@ -1,0 +1,3 @@
+Wrote the required outputs to [chain-01.md](/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-011/judgments/chain-01.md) and [chain-01.md](/Users/seanross/kingdom_of_god/home-base/research_hub/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-011/refined/chain-01.md).
+
+The judgment marks each major critique as valid, partially valid, or invalid-equivalent via explicit verdicts, and the refined chain incorporates the accepted changes: separate ledgers instead of one score, typed candidate cards, richer Tao-status categories, and a mandatory hard-artifact gate before any ranking. Both files include a probability assessment.

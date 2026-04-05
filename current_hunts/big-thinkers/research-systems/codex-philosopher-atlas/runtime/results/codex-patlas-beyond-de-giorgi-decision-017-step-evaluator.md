@@ -1,5 +1,0 @@
-Wrote the bootstrap controller outputs and validated the JSON.
-
-Decision: `proceed`. The new active chain is treated as provisionally active and advances only into Chain Step 1, the setup/calibration gate. The controller artifacts are [decision-017.json](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/controller/decisions/decision-017.json), [decision-017.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/controller/decisions/decision-017.md), and the next step goal at [step-011/GOAL.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/steps/step-011/GOAL.md).
-
-The `GOAL.md` keeps the strategizer strictly on Chain Step 1: freeze the scope lock, write the exact energy/helicity ledger, operationalize the Tao screen with one pass and one fail case, screen prior-art collapse, and kill the branch early if setup or calibration fails. `jq` validation passed on the JSON.

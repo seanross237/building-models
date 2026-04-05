@@ -1,3 +1,0 @@
-Wrote the attack note to [chain-03.md](/Users/seanross/kingdom_of_god/home-base/current_hunts/big-thinkers/research-systems/codex-philosopher-atlas/missions/beyond-de-giorgi/planning-runs/run-001/attacks/chain-03.md).
-
-It critiques all four steps concretely, then isolates the whole-chain structural problems: the Beltrami/coherence/tube-persistence conflation, the nonlocal strain gap, weak kill-condition calibration, late Tao filtering, and redundancy risk with known Constantin-Fefferman-style criteria. Verified the file exists at the required sentinel path.
