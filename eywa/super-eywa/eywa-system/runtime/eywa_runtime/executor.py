@@ -3,20 +3,23 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import json
 import re
-from typing import Any, Dict, List
+from typing import Any, Dict, Iterable, List
 
-from .contracts import validate_node_output
+from .authored_response import AuthoredResponseError, parse_authored_response_text, validate_authored_response
 from .openrouter_client import OpenRouterChatClient, OpenRouterClientConfig, OpenRouterClientError
+from .prompting import build_turn_prompt
 from .secrets import load_openrouter_api_key
 
 
 @dataclass
 class ExecutionStep:
-    """One authored output step from an executor."""
+    """One authored response turn from an executor."""
 
-    output: Dict[str, object]
+    authored_response: Dict[str, Any]
     note: str
+    prompt_snapshot: str
     provider_payload: Dict[str, Any] | None = None
     usage: Dict[str, Any] | None = None
 
@@ -26,13 +29,139 @@ class DeterministicLocalExecutor:
 
     provider_name = "deterministic-local-v1"
 
-    def should_decompose(self, instructions: str, depth: int, max_depth: int) -> bool:
-        if depth >= max_depth:
-            return False
-        separators = [" and ", ";", "\n- ", "\n1.", " Then ", " then "]
-        return any(separator in instructions for separator in separators)
+    def author_node_response(
+        self,
+        *,
+        node_packet: Dict[str, Any],
+        depth: int,
+        turn_index: int,
+        allowed_decisions: Iterable[str],
+        child_summaries: List[Dict[str, str]] | None = None,
+        synthesis_brief: str | None = None,
+    ) -> ExecutionStep:
+        prompt_bundle = build_turn_prompt(
+            node_packet,
+            allowed_decisions=allowed_decisions,
+            turn_index=turn_index,
+            depth=depth,
+            child_results=child_summaries,
+            synthesis_brief=synthesis_brief,
+        )
+        max_helpers = int(
+            node_packet["variable_resolution"]["resolved_variables"]
+            .get("budget_policy", {})
+            .get("max_helpers_per_node", 3)
+        )
+        authored_response = self._build_deterministic_response(
+            instructions=str(node_packet["input"]["instructions"]),
+            child_summaries=child_summaries,
+            allowed_decisions=allowed_decisions,
+            max_helpers=max_helpers,
+        )
+        validated = validate_authored_response(
+            authored_response,
+            allowed_decisions=allowed_decisions,
+            max_helpers=max_helpers,
+        )
+        note = self._note_for_decision(validated["orchestration_decision"], bool(child_summaries))
+        rendered_response = json.dumps(validated, indent=2)
+        return ExecutionStep(
+            authored_response=validated,
+            note=note,
+            prompt_snapshot=prompt_bundle["snapshot_text"],
+            provider_payload={
+                "provider": self.provider_name,
+                "request": {
+                    "system_prompt": prompt_bundle["system_prompt"],
+                    "user_prompt": prompt_bundle["user_prompt"],
+                },
+                "response": {
+                    "content": rendered_response,
+                },
+                "parsed_response": validated,
+            },
+            usage=self._zero_usage(),
+        )
 
-    def split_instructions(self, instructions: str, max_helpers: int) -> List[str]:
+    def _build_deterministic_response(
+        self,
+        *,
+        instructions: str,
+        child_summaries: List[Dict[str, str]] | None,
+        allowed_decisions: Iterable[str],
+        max_helpers: int,
+    ) -> Dict[str, Any]:
+        allowed = set(allowed_decisions)
+        lowered = instructions.lower()
+
+        if "report_problem" in allowed and ("impossible" in lowered or "unachievable" in lowered):
+            return {
+                "schema_name": "eywa_node_response",
+                "schema_version": "v1",
+                "orchestration_decision": "report_problem",
+                "decision_notes": "The instructions explicitly describe an impossible or unachievable case.",
+                "response": f"Deterministic runtime marked this task as a problem case: {instructions}",
+            }
+
+        if child_summaries:
+            return {
+                "schema_name": "eywa_node_response",
+                "schema_version": "v1",
+                "orchestration_decision": "execute_locally",
+                "decision_notes": "Child results are available, so the parent can synthesize locally.",
+                "response": self._synthesized_local_response(instructions, child_summaries),
+                "result_type": "summary",
+            }
+
+        if "delegate" in allowed:
+            subtasks = self._split_instructions(instructions, max_helpers)
+            if subtasks:
+                return {
+                    "schema_name": "eywa_node_response",
+                    "schema_version": "v1",
+                    "orchestration_decision": "delegate",
+                    "decision_notes": "The instructions separate cleanly into helper-sized subtasks.",
+                    "helpers": [
+                        {
+                            "label": f"helper_{index + 1:02d}",
+                            "instructions": subtask,
+                            "variable_overrides": {},
+                        }
+                        for index, subtask in enumerate(subtasks)
+                    ],
+                    "synthesis_brief": "Combine the helper results into one concise final response.",
+                }
+
+        return {
+            "schema_name": "eywa_node_response",
+            "schema_version": "v1",
+            "orchestration_decision": "execute_locally",
+            "decision_notes": "The task is narrow enough to complete in one local step.",
+            "response": self._local_response(instructions),
+            "result_type": "summary",
+        }
+
+    def _local_response(self, instructions: str) -> str:
+        if "FINAL_ANSWER:" in instructions:
+            return (
+                "FINAL_ANSWER: deterministic-placeholder\n"
+                "JUSTIFICATION: This is a deterministic local scaffold result."
+            )
+        return (
+            f"Completed local deterministic work for: {instructions}\n"
+            "This is a v1 scaffold result produced without a live model provider."
+        )
+
+    def _synthesized_local_response(self, instructions: str, child_summaries: List[Dict[str, str]]) -> str:
+        lines = [
+            f"Completed synthesized work for: {instructions}",
+            "Combined child results:",
+        ]
+        for item in child_summaries:
+            lines.append(f"- {item['node_id']}: {item['summary']}")
+        return "\n".join(lines)
+
+    def _split_instructions(self, instructions: str, max_helpers: int) -> List[str]:
         splitter_patterns = [
             r"\sand\s",
             r";",
@@ -46,146 +175,14 @@ class DeterministicLocalExecutor:
                 return pieces[:max_helpers]
         return []
 
-    def recruit_help(
-        self,
-        *,
-        run_id: str,
-        node_id: str,
-        helper_node_ids: List[str],
-        subtasks: List[str],
-    ) -> ExecutionStep:
-        packets = []
-        for helper_node_id, subtask in zip(helper_node_ids, subtasks):
-            packets.append(
-                {
-                    "message_type": "helper_assignment",
-                    "target": {
-                        "target_type": "new_helper",
-                        "target_ref": helper_node_id,
-                    },
-                    "message": subtask,
-                    "attachment_refs": [],
-                }
-            )
-        payload = {
-            "contract_name": "node_output",
-            "contract_version": "v1",
-            "run_id": run_id,
-            "node_id": node_id,
-            "action_type": "recruit_help",
-            "results": [
-                {
-                    "result_type": "plan",
-                    "content": f"Split work into {len(subtasks)} helper tasks.",
-                    "attachment_refs": [],
-                }
-            ],
-            "outgoing_packets": packets,
-        }
-        validate_node_output(payload)
-        return ExecutionStep(
-            output=payload,
-            note="deterministic split into helper tasks",
-            provider_payload={"provider": self.provider_name},
-            usage=self._zero_usage(),
-        )
-
-    def report_problem(self, *, run_id: str, node_id: str, creation_parent_node_id: str | None, message: str) -> ExecutionStep:
-        packets = []
-        if creation_parent_node_id is not None:
-            packets.append(
-                {
-                    "message_type": "problem_report",
-                    "target": {
-                        "target_type": "creating_parent",
-                        "target_ref": creation_parent_node_id,
-                    },
-                    "message": message,
-                    "attachment_refs": [],
-                }
-            )
-        payload = {
-            "contract_name": "node_output",
-            "contract_version": "v1",
-            "run_id": run_id,
-            "node_id": node_id,
-            "action_type": "report_problem",
-            "results": [
-                {
-                    "result_type": "failure_explanation",
-                    "content": message,
-                    "attachment_refs": [],
-                }
-            ],
-            "outgoing_packets": packets,
-        }
-        validate_node_output(payload)
-        return ExecutionStep(
-            output=payload,
-            note="reported problem deterministically",
-            provider_payload={"provider": self.provider_name},
-            usage=self._zero_usage(),
-        )
-
-    def report_success(
-        self,
-        *,
-        run_id: str,
-        node_id: str,
-        creation_parent_node_id: str | None,
-        instructions: str,
-        child_summaries: List[Dict[str, str]] | None = None,
-    ) -> ExecutionStep:
-        if child_summaries:
-            content_lines = [
-                f"Completed synthesized work for: {instructions}",
-                "Combined child results:",
-            ]
-            for item in child_summaries:
-                content_lines.append(f"- {item['node_id']}: {item['summary']}")
-            content = "\n".join(content_lines)
-        else:
-            content = (
-                f"Completed local deterministic work for: {instructions}\n"
-                "This is a v1 scaffold result produced without a live model provider."
-            )
-
-        packets = []
-        if creation_parent_node_id is not None:
-            packets.append(
-                {
-                    "message_type": "success_report",
-                    "target": {
-                        "target_type": "creating_parent",
-                        "target_ref": creation_parent_node_id,
-                    },
-                    "message": content,
-                    "attachment_refs": [],
-                }
-            )
-        payload = {
-            "contract_name": "node_output",
-            "contract_version": "v1",
-            "run_id": run_id,
-            "node_id": node_id,
-            "action_type": "report_success",
-            "results": [
-                {
-                    "result_type": "summary",
-                    "content": content,
-                    "attachment_refs": [],
-                }
-            ],
-            "outgoing_packets": packets,
-        }
-        validate_node_output(payload)
-        note = "reported success after synthesizing helper results" if child_summaries else "reported local success deterministically"
-        return ExecutionStep(
-            output=payload,
-            note=note,
-            provider_payload={"provider": self.provider_name},
-            usage=self._zero_usage(),
-        )
+    def _note_for_decision(self, decision: str, has_child_summaries: bool) -> str:
+        if decision == "delegate":
+            return "authored delegate decision deterministically"
+        if decision == "report_problem":
+            return "authored problem report deterministically"
+        if has_child_summaries:
+            return "authored local execution after reviewing child results deterministically"
+        return "authored local execution deterministically"
 
     def _zero_usage(self) -> Dict[str, Any]:
         return {
@@ -200,7 +197,7 @@ class DeterministicLocalExecutor:
 
 
 class OpenRouterLiveExecutor(DeterministicLocalExecutor):
-    """Live OpenRouter-backed executor for local work and synthesis."""
+    """Live OpenRouter-backed executor for authored orchestration decisions."""
 
     provider_name = "openrouter"
 
@@ -219,118 +216,160 @@ class OpenRouterLiveExecutor(DeterministicLocalExecutor):
         )
         self.model = model
 
-    def report_problem(self, *, run_id: str, node_id: str, creation_parent_node_id: str | None, message: str) -> ExecutionStep:
-        generated = self._generate_text(
-            system_prompt="You are one Super-Eywa node. Explain the problem briefly and clearly. Return only the explanation text.",
-            user_prompt=message,
-        )
-        packets = []
-        if creation_parent_node_id is not None:
-            packets.append(
-                {
-                    "message_type": "problem_report",
-                    "target": {
-                        "target_type": "creating_parent",
-                        "target_ref": creation_parent_node_id,
-                    },
-                    "message": generated["content"],
-                    "attachment_refs": [],
-                }
-            )
-        payload = {
-            "contract_name": "node_output",
-            "contract_version": "v1",
-            "run_id": run_id,
-            "node_id": node_id,
-            "action_type": "report_problem",
-            "results": [
-                {
-                    "result_type": "failure_explanation",
-                    "content": generated["content"],
-                    "attachment_refs": [],
-                }
-            ],
-            "outgoing_packets": packets,
-        }
-        validate_node_output(payload)
-        return ExecutionStep(
-            output=payload,
-            note="reported problem via live OpenRouter model",
-            provider_payload=generated["provider_payload"],
-            usage=generated["usage"],
-        )
-
-    def report_success(
+    def author_node_response(
         self,
         *,
-        run_id: str,
-        node_id: str,
-        creation_parent_node_id: str | None,
-        instructions: str,
+        node_packet: Dict[str, Any],
+        depth: int,
+        turn_index: int,
+        allowed_decisions: Iterable[str],
         child_summaries: List[Dict[str, str]] | None = None,
+        synthesis_brief: str | None = None,
     ) -> ExecutionStep:
-        if child_summaries:
-            child_lines = "\n".join(f"- {item['node_id']}: {item['summary']}" for item in child_summaries)
-            user_prompt = (
-                f"Top-level assignment:\n{instructions}\n\n"
-                f"Child results:\n{child_lines}\n\n"
-                "Synthesize these into one concise, useful result."
+        prompt_bundle = build_turn_prompt(
+            node_packet,
+            allowed_decisions=allowed_decisions,
+            turn_index=turn_index,
+            depth=depth,
+            child_results=child_summaries,
+            synthesis_brief=synthesis_brief,
+        )
+        max_helpers = int(
+            node_packet["variable_resolution"]["resolved_variables"]
+            .get("budget_policy", {})
+            .get("max_helpers_per_node", 3)
+        )
+        recovery_policy = str(
+            node_packet["variable_resolution"]["resolved_variables"].get("recovery_policy", "report_problem")
+        )
+
+        attempts: List[Dict[str, Any]] = []
+        generated = self._generate_text(
+            system_prompt=prompt_bundle["system_prompt"],
+            user_prompt=prompt_bundle["user_prompt"],
+        )
+        attempts.append(
+            self._attempt_record(
+                phase="initial_generation",
+                generated=generated,
+                parse_error=None,
+                parsed_response=None,
             )
-            system_prompt = (
-                "You are one Super-Eywa node synthesizing child node outputs. "
-                "Return only the synthesized result text."
+        )
+        combined_usage = dict(generated["usage"])
+
+        authored_response, parse_error = self._try_parse_response(
+            generated["content"],
+            allowed_decisions=allowed_decisions,
+            max_helpers=max_helpers,
+        )
+
+        if authored_response is None and recovery_policy == "report_problem":
+            repaired = self._repair_response(
+                raw_text=generated["content"],
+                allowed_decisions=allowed_decisions,
             )
+            attempts.append(
+                self._attempt_record(
+                    phase="json_repair",
+                    generated=repaired,
+                    parse_error=None,
+                    parsed_response=None,
+                )
+            )
+            combined_usage = self._accumulate_usage(combined_usage, repaired["usage"])
+            authored_response, parse_error = self._try_parse_response(
+                repaired["content"],
+                allowed_decisions=allowed_decisions,
+                max_helpers=max_helpers,
+            )
+            attempts[-1]["parse_error"] = parse_error
+            attempts[-1]["parsed_response"] = authored_response
         else:
-            user_prompt = (
-                f"Node assignment:\n{instructions}\n\n"
-                "Produce a concise, useful result for this node. Return only the result text."
-            )
-            system_prompt = (
-                "You are one Super-Eywa node doing local work. "
-                "Return only the work result text."
+            attempts[-1]["parse_error"] = parse_error
+            attempts[-1]["parsed_response"] = authored_response
+
+        if authored_response is None:
+            authored_response = self._runtime_problem_response(
+                parse_error=parse_error or "runtime could not parse a valid authored response",
+                raw_text=generated["content"],
             )
 
-        generated = self._generate_text(system_prompt=system_prompt, user_prompt=user_prompt)
-        packets = []
-        if creation_parent_node_id is not None:
-            packets.append(
-                {
-                    "message_type": "success_report",
-                    "target": {
-                        "target_type": "creating_parent",
-                        "target_ref": creation_parent_node_id,
-                    },
-                    "message": generated["content"],
-                    "attachment_refs": [],
-                }
-            )
-        payload = {
-            "contract_name": "node_output",
-            "contract_version": "v1",
-            "run_id": run_id,
-            "node_id": node_id,
-            "action_type": "report_success",
-            "results": [
-                {
-                    "result_type": "summary",
-                    "content": generated["content"],
-                    "attachment_refs": [],
-                }
-            ],
-            "outgoing_packets": packets,
-        }
-        validate_node_output(payload)
-        note = (
-            "reported success after live-model synthesis of helper results"
-            if child_summaries
-            else "reported local success via live OpenRouter model"
-        )
+        note = self._note_for_decision(authored_response["orchestration_decision"], bool(child_summaries))
         return ExecutionStep(
-            output=payload,
+            authored_response=authored_response,
             note=note,
-            provider_payload=generated["provider_payload"],
-            usage=generated["usage"],
+            prompt_snapshot=prompt_bundle["snapshot_text"],
+            provider_payload={
+                "provider": self.provider_name,
+                "attempts": attempts,
+                "final_authored_response": authored_response,
+            },
+            usage=combined_usage,
         )
+
+    def _repair_response(self, *, raw_text: str, allowed_decisions: Iterable[str]) -> Dict[str, Any]:
+        allowed_display = ", ".join(str(item) for item in allowed_decisions)
+        repair_prompt = (
+            "Rewrite the following content as valid JSON only for the eywa_node_response v1 schema. "
+            f"Allowed orchestration_decision values for this turn: {allowed_display}. "
+            "Do not add commentary or markdown fences."
+        )
+        return self._generate_text(
+            system_prompt=(
+                "You repair invalid Super-Eywa node responses into strict JSON. "
+                "Return only valid JSON."
+            ),
+            user_prompt=f"{repair_prompt}\n\nOriginal content:\n{raw_text}",
+        )
+
+    def _runtime_problem_response(self, *, parse_error: str, raw_text: str) -> Dict[str, Any]:
+        excerpt = raw_text.strip()
+        if len(excerpt) > 500:
+            excerpt = excerpt[:500] + "..."
+        return {
+            "schema_name": "eywa_node_response",
+            "schema_version": "v1",
+            "orchestration_decision": "report_problem",
+            "decision_notes": "Runtime converted an invalid authored response into a problem report.",
+            "response": f"Invalid node-authored response: {parse_error}. Raw response excerpt: {excerpt}",
+        }
+
+    def _try_parse_response(
+        self,
+        raw_text: str,
+        *,
+        allowed_decisions: Iterable[str],
+        max_helpers: int,
+    ) -> tuple[Dict[str, Any] | None, str | None]:
+        try:
+            payload = parse_authored_response_text(raw_text)
+            normalized = validate_authored_response(
+                payload,
+                allowed_decisions=allowed_decisions,
+                max_helpers=max_helpers,
+            )
+        except AuthoredResponseError as exc:
+            return None, str(exc)
+        return normalized, None
+
+    def _attempt_record(
+        self,
+        *,
+        phase: str,
+        generated: Dict[str, Any],
+        parse_error: str | None,
+        parsed_response: Dict[str, Any] | None,
+    ) -> Dict[str, Any]:
+        provider_payload = dict(generated["provider_payload"] or {})
+        return {
+            "phase": phase,
+            "request": provider_payload.get("request"),
+            "response": provider_payload.get("response"),
+            "raw_content": generated["content"],
+            "parse_error": parse_error,
+            "parsed_response": parsed_response,
+        }
 
     def _generate_text(self, *, system_prompt: str, user_prompt: str) -> Dict[str, Any]:
         request_body = {
@@ -340,19 +379,19 @@ class OpenRouterLiveExecutor(DeterministicLocalExecutor):
                 {"role": "user", "content": user_prompt},
             ],
             "stream": False,
-            "max_tokens": 600,
+            "max_tokens": 800,
             "temperature": 0.2,
         }
         response = self.client.create_chat_completion(
             model=self.model,
             messages=request_body["messages"],
-            max_tokens=600,
+            max_tokens=800,
             temperature=0.2,
         )
         response_id = response.get("id")
         usage = self._usage_from_response(response, response_id=response_id)
         if isinstance(response_id, str) and response_id.strip():
-            usage = self._merge_usage(usage, self._usage_from_generation_stats(response_id))
+            usage = self._merge_usage_with_generation_stats(usage, self._usage_from_generation_stats(response_id))
         choice = response["choices"][0]
         message = dict(choice.get("message") or {})
         content = self._normalize_content(message.get("content"))
@@ -433,7 +472,27 @@ class OpenRouterLiveExecutor(DeterministicLocalExecutor):
             },
         }
 
-    def _merge_usage(self, current: Dict[str, Any], update: Dict[str, Any]) -> Dict[str, Any]:
+    def _accumulate_usage(self, current: Dict[str, Any], update: Dict[str, Any]) -> Dict[str, Any]:
+        if not update:
+            return current
+        provider_details = dict(current.get("provider_details") or {})
+        current_responses = list(provider_details.get("responses") or [])
+        current_responses.extend((update.get("provider_details") or {}).get("responses", []))
+        provider_details["responses"] = current_responses
+        return {
+            "prompt_tokens": int(current.get("prompt_tokens", 0) or 0) + int(update.get("prompt_tokens", 0) or 0),
+            "completion_tokens": int(current.get("completion_tokens", 0) or 0)
+            + int(update.get("completion_tokens", 0) or 0),
+            "reasoning_tokens": int(current.get("reasoning_tokens", 0) or 0)
+            + int(update.get("reasoning_tokens", 0) or 0),
+            "cached_prompt_tokens": int(current.get("cached_prompt_tokens", 0) or 0)
+            + int(update.get("cached_prompt_tokens", 0) or 0),
+            "total_tokens": int(current.get("total_tokens", 0) or 0) + int(update.get("total_tokens", 0) or 0),
+            "cost_usd": float(current.get("cost_usd", 0.0) or 0.0) + float(update.get("cost_usd", 0.0) or 0.0),
+            "provider_details": provider_details,
+        }
+
+    def _merge_usage_with_generation_stats(self, current: Dict[str, Any], update: Dict[str, Any]) -> Dict[str, Any]:
         if not update:
             return current
         provider_details = dict(current.get("provider_details") or {})

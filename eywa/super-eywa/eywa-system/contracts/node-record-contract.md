@@ -18,6 +18,7 @@ It is the clean, readable core record that later analysis should start from.
 - `final_action_type`
 - `input`
 - `variables`
+- `orchestration`
 - `prompt`
 - `results`
 - `logging`
@@ -61,6 +62,14 @@ This should preserve the same input object that appeared in the `node_packet`.
 
 This should preserve the node's fully resolved variables.
 
+In the current runtime this includes fields such as:
+
+- `injected_prompt_profile`
+- `additional_instruction_prompt_profiles`
+- `json_response_policy`
+- `orchestration_policy`
+- `budget_policy`
+
 ### `prompt`
 
 This should preserve the actual prepared prompt packet the node was given.
@@ -69,6 +78,24 @@ Required fields:
 
 - `rendered_prompt_text`
 - `prompt_artifact_refs`
+
+### `orchestration`
+
+This preserves the decision summary for the node across its authored turns.
+
+Required fields:
+
+- `turn_count`
+- `initial_decision`
+- `final_decision`
+- `decision_notes`
+- `helper_count`
+
+Allowed decision values for v1:
+
+- `execute_locally`
+- `delegate`
+- `report_problem`
 
 ### `results`
 
@@ -115,11 +142,23 @@ That replay material stays separate so the core node record remains readable.
   },
   "variables": {
     "model": "gpt-5.4",
-    "injected_prompt_profile": "default-builder",
+    "injected_prompt_profile": "agent_orchestration_basic_instruction_prompt",
+    "additional_instruction_prompt_profiles": [
+      "double_check_reasoning_prompt"
+    ],
     "context_policy": "minimal",
     "workflow_structure": "sequential_parent_review",
     "verification_policy": "light",
+    "json_response_policy": "strict_required",
+    "orchestration_policy": "agent_decides",
     "routing_policy": "return_to_creator"
+  },
+  "orchestration": {
+    "turn_count": 2,
+    "initial_decision": "delegate",
+    "final_decision": "execute_locally",
+    "decision_notes": "Child results were sufficient to finish locally.",
+    "helper_count": 2
   },
   "prompt": {
     "rendered_prompt_text": "You are working on feature X...",
@@ -150,5 +189,5 @@ That replay material stays separate so the core node record remains readable.
 ## Notes
 
 - the node record is the main readable truth
-- replay stays linked but separate
+- replay stays linked but separate and should preserve raw authored JSON turns
 - this shape should be easy for both humans and derived tables to consume

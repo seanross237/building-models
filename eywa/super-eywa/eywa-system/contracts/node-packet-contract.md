@@ -80,10 +80,18 @@ Required fields:
     "node_level_overrides": {},
     "resolved_variables": {
       "model": "gpt-5.4",
-      "injected_prompt_profile": "default-builder",
+      "injected_prompt_profile": "agent_orchestration_basic_instruction_prompt",
+      "additional_instruction_prompt_profiles": [],
       "context_policy": "minimal",
       "workflow_structure": "sequential_parent_review",
       "verification_policy": "light",
+      "json_response_policy": "strict_required",
+      "orchestration_policy": "agent_decides",
+      "budget_policy": {
+        "max_depth": 3,
+        "max_helpers_per_node": 3,
+        "max_turns_per_node": 4
+      },
       "routing_policy": "return_to_creator"
     }
   },
@@ -98,4 +106,5 @@ Required fields:
 
 - `creation_parent_node_id` is about origin, not output destination
 - routing behavior belongs in resolved variables, not in a separate hard-coded field
+- the node packet preserves variable-selected prompt behavior, but not the rendered turn prompt itself
 - this packet should be enough to understand the node in isolation

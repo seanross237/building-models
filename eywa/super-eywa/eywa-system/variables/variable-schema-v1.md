@@ -17,10 +17,13 @@ The default run-level variables currently live in:
 - `model`
 - `runtime_provider`
 - `injected_prompt_profile`
+- `additional_instruction_prompt_profiles`
 - `context_policy`
 - `workflow_structure`
 - `verification_policy`
 - `tool_policy`
+- `json_response_policy`
+- `orchestration_policy`
 - `budget_policy`
 - `routing_policy`
 - `recovery_policy`
@@ -31,4 +34,7 @@ The default run-level variables currently live in:
 - the runtime currently uses only a subset of these fields in behavior
 - `runtime_provider` currently supports `deterministic` and `openrouter`
 - `budget_policy.max_depth` is hard-capped to `3` in runtime code to prevent runaway recursion
+- `budget_policy.max_turns_per_node` limits how many authored decision turns one node may take before runtime stops it
+- `injected_prompt_profile` now defaults to `agent_orchestration_basic_instruction_prompt`
+- node-authored responses are now expected to be JSON with an always-present `orchestration_decision`
 - preserving the full resolved variable set still matters even before each field is deeply used

@@ -50,4 +50,8 @@ python3 -m unittest discover -s data-system/grading/tests -p 'test_*.py'
   - deterministic local execution
   - live OpenRouter execution
 - depth is hard-capped to `3` in runtime code
+- node-authored responses are now JSON-only and must include `orchestration_decision`
+- agents now decide orchestration intent; runtime validates that intent and realizes legal packets, edges, and records
+- the default prompt profile is `agent_orchestration_basic_instruction_prompt`
+- additional instruction prompt profiles can be layered through run variables
 - live provider request/response payloads are written into replay

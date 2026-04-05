@@ -8,6 +8,8 @@ from typing import Dict, List
 
 from .contracts import (
     ContractError,
+    validate_node_authored_response,
+    validate_node_output,
     validate_node_packet,
     validate_node_record,
     validate_run_packet,
@@ -72,6 +74,40 @@ def validate_run_directory(run_dir: Path) -> Dict[str, object]:
         ]:
             if not replay_path.exists():
                 raise RunValidationError(f"missing replay artifact: {replay_path}")
+
+        raw_model = json.loads((replay_dir / "raw-model.json").read_text(encoding="utf-8"))
+        if not isinstance(raw_model.get("steps"), list) or not raw_model["steps"]:
+            raise RunValidationError(f"raw-model.json missing non-empty steps list for node {node_dir.name}")
+        for step in raw_model["steps"]:
+            if not isinstance(step, dict):
+                raise RunValidationError(f"raw-model.json step must be an object for node {node_dir.name}")
+            authored_response = step.get("authored_response")
+            output = step.get("output")
+            if not isinstance(authored_response, dict):
+                raise RunValidationError(
+                    f"raw-model.json step missing authored_response object for node {node_dir.name}"
+                )
+            if not isinstance(output, dict):
+                raise RunValidationError(f"raw-model.json step missing output object for node {node_dir.name}")
+            try:
+                validate_node_authored_response(authored_response)
+                validate_node_output(output)
+            except ContractError as exc:
+                raise RunValidationError(str(exc)) from exc
+
+        prompt_snapshot = json.loads((replay_dir / "prompt-snapshot.json").read_text(encoding="utf-8"))
+        for key in ["initial_prompt", "final_prompt", "turns"]:
+            if key not in prompt_snapshot:
+                raise RunValidationError(f"prompt-snapshot.json missing key {key} for node {node_dir.name}")
+        if not isinstance(prompt_snapshot["turns"], list) or not prompt_snapshot["turns"]:
+            raise RunValidationError(f"prompt-snapshot.json turns must be a non-empty list for node {node_dir.name}")
+        for turn in prompt_snapshot["turns"]:
+            if not isinstance(turn, dict):
+                raise RunValidationError(f"prompt snapshot turn must be an object for node {node_dir.name}")
+            if "turn_index" not in turn or "snapshot_text" not in turn:
+                raise RunValidationError(
+                    f"prompt snapshot turn missing turn_index or snapshot_text for node {node_dir.name}"
+                )
 
         node_count += 1
 

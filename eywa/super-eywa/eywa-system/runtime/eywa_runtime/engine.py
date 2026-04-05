@@ -9,6 +9,7 @@ from time import perf_counter
 from typing import Any, Dict, List, Optional
 
 from .contracts import (
+    validate_node_output,
     validate_node_packet,
     validate_node_record,
     validate_run_packet,
@@ -16,7 +17,6 @@ from .contracts import (
 from .defaults import DEFAULT_RUN_LEVEL_VARIABLES
 from .executor import ExecutionStep, build_executor
 from .ids import make_helper_node_id, make_root_node_id, make_run_id, utc_now_iso
-from .prompting import render_prompt_text
 from .storage import relative_ref, write_json, write_jsonl
 from .story import build_timeline, timeline_markdown
 
@@ -35,6 +35,7 @@ class EywaEngine:
     """A minimal file-first engine aligned to the v1 contracts."""
 
     HARD_MAX_DEPTH = 3
+    HARD_MAX_TURNS_PER_NODE = 6
 
     def __init__(self, run_history_root: Path) -> None:
         self.run_history_root = run_history_root
@@ -63,8 +64,6 @@ class EywaEngine:
         merged_run_variables["budget_policy"] = self._resolved_budget_policy(
             merged_run_variables.get("budget_policy") or {}
         )
-        executor = build_executor(merged_run_variables)
-
         run_packet = {
             "contract_name": "run_packet",
             "contract_version": "v1",
@@ -96,7 +95,6 @@ class EywaEngine:
             run_dir=run_dir,
             nodes_dir=nodes_dir,
             replay_dir=replay_dir,
-            executor=executor,
             node_id=root_node_id,
             creation_parent_node_id=None,
             created_by_action_type=None,
@@ -108,7 +106,6 @@ class EywaEngine:
 
         write_jsonl(events_dir / "run-events.jsonl", self.events)
 
-        timeline = build_timeline(self.events)
         total_tokens = 0
         total_cost = 0.0
         total_wall_time = 0
@@ -166,7 +163,6 @@ class EywaEngine:
         run_dir: Path,
         nodes_dir: Path,
         replay_dir: Path,
-        executor: Any,
         node_id: str,
         creation_parent_node_id: Optional[str],
         created_by_action_type: Optional[str],
@@ -180,6 +176,7 @@ class EywaEngine:
         resolved_variables["budget_policy"] = self._resolved_budget_policy(
             resolved_variables.get("budget_policy") or {}
         )
+        executor = build_executor(resolved_variables)
         node_packet = {
             "contract_name": "node_packet",
             "contract_version": "v1",
@@ -210,37 +207,87 @@ class EywaEngine:
         node_edges: List[Dict[str, Any]] = []
         replay_steps: List[Dict[str, Any]] = []
         child_summaries: List[Dict[str, str]] = []
+        prompt_turns: List[str] = []
 
-        prompt_text = render_prompt_text(node_packet)
         node_events.append({"event_type": "node_started", "node_id": node_id, "message": f"Node started: {instructions}"})
         self._event(run_id, node_id, "node_started", f"Node started: {instructions}")
 
         budget_policy = resolved_variables.get("budget_policy", {})
         max_depth = int(budget_policy.get("max_depth", 1))
         max_helpers = int(budget_policy.get("max_helpers_per_node", 3))
-        subtasks = executor.split_instructions(instructions, max_helpers)
+        max_turns = int(budget_policy.get("max_turns_per_node", 4))
+        workflow_structure = str(resolved_variables.get("workflow_structure", "sequential_parent_review"))
         node_started_at = perf_counter()
 
         total_child_count = 0
-        if depth < max_depth and subtasks:
-            helper_node_ids = [make_helper_node_id(node_id, index + 1) for index in range(len(subtasks))]
-            recruit_step = executor.recruit_help(
+        helper_counter = 0
+        turn_index = 0
+        final_output: Dict[str, Any] | None = None
+        final_turn: ExecutionStep | None = None
+        final_prompt_text = ""
+        initial_turn: ExecutionStep | None = None
+        synthesis_brief = ""
+
+        while turn_index < max_turns:
+            turn_index += 1
+            allowed_decisions = self._allowed_decisions(
+                depth=depth,
+                max_depth=max_depth,
+                max_helpers=max_helpers,
+                turn_index=turn_index,
+                max_turns=max_turns,
+                workflow_structure=workflow_structure,
+                child_review=bool(child_summaries),
+            )
+            turn = executor.author_node_response(
+                node_packet=node_packet,
+                depth=depth,
+                turn_index=turn_index,
+                allowed_decisions=allowed_decisions,
+                child_summaries=child_summaries or None,
+                synthesis_brief=synthesis_brief or None,
+            )
+            if initial_turn is None:
+                initial_turn = turn
+            prompt_turns.append(turn.prompt_snapshot)
+            final_prompt_text = turn.prompt_snapshot
+
+            helper_specs = list(turn.authored_response.get("helpers", []))
+            helper_node_ids: List[str] | None = None
+            if turn.authored_response["orchestration_decision"] == "delegate":
+                helper_node_ids = [
+                    make_helper_node_id(node_id, helper_counter + index + 1)
+                    for index in range(len(helper_specs))
+                ]
+
+            output = self._materialize_node_output(
                 run_id=run_id,
                 node_id=node_id,
+                creation_parent_node_id=creation_parent_node_id,
+                authored_response=turn.authored_response,
                 helper_node_ids=helper_node_ids,
-                subtasks=subtasks,
             )
-            replay_steps.append(self._replay_step(1, recruit_step))
+            replay_steps.append(self._replay_step(turn_index, turn, output))
+
+            if turn.authored_response["orchestration_decision"] != "delegate":
+                final_output = output
+                final_turn = turn
+                break
+
             node_events.append(
                 {
                     "event_type": "node_recruited_help",
                     "node_id": node_id,
-                    "message": f"Node recruited {len(subtasks)} helper(s)",
+                    "message": f"Node recruited {len(helper_specs)} helper(s)",
                 }
             )
-            self._event(run_id, node_id, "node_recruited_help", f"Node recruited {len(subtasks)} helper(s)")
+            self._event(run_id, node_id, "node_recruited_help", f"Node recruited {len(helper_specs)} helper(s)")
 
-            for helper_node_id, subtask in zip(helper_node_ids, subtasks):
+            synthesis_brief = str(turn.authored_response.get("synthesis_brief", ""))
+            helper_counter += len(helper_specs)
+
+            new_child_summaries: List[Dict[str, str]] = []
+            for helper_node_id, helper_spec in zip(helper_node_ids or [], helper_specs):
                 node_edges.append(
                     {"edge_type": "created_by", "from_node_id": node_id, "to_node_id": helper_node_id}
                 )
@@ -255,50 +302,47 @@ class EywaEngine:
                     run_dir=run_dir,
                     nodes_dir=nodes_dir,
                     replay_dir=replay_dir,
-                    executor=executor,
                     node_id=helper_node_id,
                     creation_parent_node_id=node_id,
                     created_by_action_type="recruit_help",
-                    instructions=subtask,
+                    instructions=str(helper_spec["instructions"]),
                     run_level_variables=run_level_variables,
-                    node_level_overrides={},
+                    node_level_overrides=dict(helper_spec.get("variable_overrides") or {}),
                     depth=depth + 1,
                 )
                 total_child_count += child_count
                 child_record = json.loads((nodes_dir / helper_node_id / "node_record.json").read_text(encoding="utf-8"))
-                child_summary = child_record["results"][0]["content"]
-                child_summaries.append({"node_id": helper_node_id, "summary": child_summary})
-            final_prompt_text = render_prompt_text(node_packet, child_summaries)
-            final_step = executor.report_success(
+                child_summary = child_record["results"][0]["content"] if child_record["results"] else ""
+                new_child_summaries.append({"node_id": helper_node_id, "summary": child_summary})
+            child_summaries.extend(new_child_summaries)
+
+        if final_output is None:
+            fallback_turn = ExecutionStep(
+                authored_response={
+                    "schema_name": "eywa_node_response",
+                    "schema_version": "v1",
+                    "orchestration_decision": "report_problem",
+                    "decision_notes": "Runtime stopped the node after it exhausted max_turns_per_node.",
+                    "response": f"Node exhausted max_turns_per_node={max_turns} without reaching a terminal decision.",
+                },
+                note="runtime stopped node after max turns were exhausted",
+                prompt_snapshot=final_prompt_text,
+                provider_payload={
+                    "provider": getattr(executor, "provider_name", "unknown"),
+                    "runtime_generated": True,
+                },
+                usage=getattr(executor, "_zero_usage", lambda: {"provider_details": {"responses": []}})(),
+            )
+            prompt_turns.append(fallback_turn.prompt_snapshot)
+            final_turn = fallback_turn
+            final_output = self._materialize_node_output(
                 run_id=run_id,
                 node_id=node_id,
                 creation_parent_node_id=creation_parent_node_id,
-                instructions=instructions,
-                child_summaries=child_summaries,
+                authored_response=fallback_turn.authored_response,
+                helper_node_ids=None,
             )
-            replay_steps.append(self._replay_step(2, final_step))
-            final_output = final_step.output
-        elif "impossible" in instructions.lower() or "unachievable" in instructions.lower():
-            final_prompt_text = prompt_text
-            final_step = executor.report_problem(
-                run_id=run_id,
-                node_id=node_id,
-                creation_parent_node_id=creation_parent_node_id,
-                message=f"Runtime marked this task as a problem case: {instructions}",
-            )
-            replay_steps.append(self._replay_step(1, final_step))
-            final_output = final_step.output
-        else:
-            final_prompt_text = prompt_text
-            final_step = executor.report_success(
-                run_id=run_id,
-                node_id=node_id,
-                creation_parent_node_id=creation_parent_node_id,
-                instructions=instructions,
-                child_summaries=None,
-            )
-            replay_steps.append(self._replay_step(1, final_step))
-            final_output = final_step.output
+            replay_steps.append(self._replay_step(turn_index + 1, fallback_turn, final_output))
 
         node_events.append(
             {
@@ -317,25 +361,38 @@ class EywaEngine:
             replay_node_dir / "raw-model.json",
             {
                 "provider": getattr(executor, "provider_name", "unknown"),
-                "note": "Per-step provider payloads and usage are recorded here.",
+                "note": "Per-turn provider payloads, authored JSON, and compiled outputs are recorded here.",
                 "steps": replay_steps,
             },
         )
+        turn_dicts = [
+            {
+                "turn_index": index + 1,
+                "snapshot_text": prompt_snapshot,
+            }
+            for index, prompt_snapshot in enumerate(prompt_turns)
+        ]
         write_json(
             replay_node_dir / "prompt-snapshot.json",
             {
-                "initial_prompt": prompt_text,
-                "final_prompt": final_prompt_text,
+                "initial_prompt": prompt_turns[0] if prompt_turns else "",
+                "final_prompt": prompt_turns[-1] if prompt_turns else "",
+                "turns": turn_dicts,
             },
         )
         write_jsonl(replay_node_dir / "tool-transcript.jsonl", [])
 
         usage = self._aggregate_usage(replay_steps)
+        prompt_text = "\n\n".join(prompt_turns)
         wall_time_ms = int((perf_counter() - node_started_at) * 1000)
+        final_result_text = final_output["results"][0]["content"] if final_output["results"] else ""
         metrics = {
             "input_tokens": int(usage.get("prompt_tokens", 0) or self._rough_token_count(prompt_text)),
-            "output_tokens": int(usage.get("completion_tokens", 0) or self._rough_token_count(final_output["results"][0]["content"])),
-            "total_tokens": int(usage.get("total_tokens", 0) or (self._rough_token_count(prompt_text) + self._rough_token_count(final_output["results"][0]["content"]))),
+            "output_tokens": int(usage.get("completion_tokens", 0) or self._rough_token_count(final_result_text)),
+            "total_tokens": int(
+                usage.get("total_tokens", 0)
+                or (self._rough_token_count(prompt_text) + self._rough_token_count(final_result_text))
+            ),
             "cost_usd": round(float(usage.get("cost_usd", 0.0) or 0.0), 8),
             "wall_time_ms": wall_time_ms,
             "provider_details": usage.get("provider_details", {}),
@@ -350,8 +407,14 @@ class EywaEngine:
             "state": "completed",
             "input": node_packet["input"],
             "variables": resolved_variables,
+            "orchestration": self._build_orchestration_summary(
+                initial_turn=initial_turn or final_turn,
+                final_turn=final_turn,
+                turn_count=len(prompt_turns),
+                helper_count=helper_counter,
+            ),
             "prompt": {
-                "rendered_prompt_text": final_prompt_text,
+                "rendered_prompt_text": prompt_turns[-1] if prompt_turns else "",
                 "prompt_artifact_refs": [],
             },
             "results": final_output["results"],
@@ -366,6 +429,158 @@ class EywaEngine:
         validate_node_record(node_record)
         write_json(node_dir / "node_record.json", node_record)
         return 1 + total_child_count
+
+    def _materialize_node_output(
+        self,
+        *,
+        run_id: str,
+        node_id: str,
+        creation_parent_node_id: Optional[str],
+        authored_response: Dict[str, Any],
+        helper_node_ids: List[str] | None,
+    ) -> Dict[str, Any]:
+        decision = authored_response["orchestration_decision"]
+
+        if decision == "delegate":
+            helper_specs = list(authored_response.get("helpers", []))
+            if helper_node_ids is None:
+                raise ValueError("helper_node_ids must be provided for delegate outputs")
+            packets = []
+            plan_lines = []
+            if authored_response.get("decision_notes"):
+                plan_lines.append(str(authored_response["decision_notes"]))
+            for helper_node_id, helper_spec in zip(helper_node_ids, helper_specs):
+                packets.append(
+                    {
+                        "message_type": "helper_assignment",
+                        "target": {
+                            "target_type": "new_helper",
+                            "target_ref": helper_node_id,
+                        },
+                        "message": helper_spec["instructions"],
+                        "attachment_refs": [],
+                    }
+                )
+                plan_lines.append(f"{helper_node_id} ({helper_spec['label']}): {helper_spec['instructions']}")
+            payload = {
+                "contract_name": "node_output",
+                "contract_version": "v1",
+                "run_id": run_id,
+                "node_id": node_id,
+                "action_type": "recruit_help",
+                "results": [
+                    {
+                        "result_type": "plan",
+                        "content": "\n".join(plan_lines) if plan_lines else f"Delegated to {len(helper_specs)} helper(s).",
+                        "attachment_refs": [],
+                    }
+                ],
+                "outgoing_packets": packets,
+            }
+            validate_node_output(payload)
+            return payload
+
+        if decision == "report_problem":
+            message = authored_response["response"]
+            packets = []
+            if creation_parent_node_id is not None:
+                packets.append(
+                    {
+                        "message_type": "problem_report",
+                        "target": {
+                            "target_type": "creating_parent",
+                            "target_ref": creation_parent_node_id,
+                        },
+                        "message": message,
+                        "attachment_refs": [],
+                    }
+                )
+            payload = {
+                "contract_name": "node_output",
+                "contract_version": "v1",
+                "run_id": run_id,
+                "node_id": node_id,
+                "action_type": "report_problem",
+                "results": [
+                    {
+                        "result_type": "failure_explanation",
+                        "content": message,
+                        "attachment_refs": [],
+                    }
+                ],
+                "outgoing_packets": packets,
+            }
+            validate_node_output(payload)
+            return payload
+
+        response = authored_response["response"]
+        packets = []
+        if creation_parent_node_id is not None:
+            packets.append(
+                {
+                    "message_type": "success_report",
+                    "target": {
+                        "target_type": "creating_parent",
+                        "target_ref": creation_parent_node_id,
+                    },
+                    "message": response,
+                    "attachment_refs": [],
+                }
+            )
+        payload = {
+            "contract_name": "node_output",
+            "contract_version": "v1",
+            "run_id": run_id,
+            "node_id": node_id,
+            "action_type": "report_success",
+            "results": [
+                {
+                    "result_type": str(authored_response.get("result_type") or "summary"),
+                    "content": response,
+                    "attachment_refs": [],
+                }
+            ],
+            "outgoing_packets": packets,
+        }
+        validate_node_output(payload)
+        return payload
+
+    def _allowed_decisions(
+        self,
+        *,
+        depth: int,
+        max_depth: int,
+        max_helpers: int,
+        turn_index: int,
+        max_turns: int,
+        workflow_structure: str,
+        child_review: bool,
+    ) -> List[str]:
+        allowed = ["execute_locally", "report_problem"]
+        can_delegate = depth < max_depth and max_helpers > 0 and turn_index < max_turns
+        if workflow_structure == "single_delegation_then_synthesize" and child_review:
+            can_delegate = False
+        if can_delegate:
+            allowed.insert(1, "delegate")
+        return allowed
+
+    def _build_orchestration_summary(
+        self,
+        *,
+        initial_turn: ExecutionStep | None,
+        final_turn: ExecutionStep | None,
+        turn_count: int,
+        helper_count: int,
+    ) -> Dict[str, Any]:
+        initial_response = initial_turn.authored_response if initial_turn else {}
+        final_response = final_turn.authored_response if final_turn else {}
+        return {
+            "turn_count": turn_count,
+            "initial_decision": initial_response.get("orchestration_decision"),
+            "final_decision": final_response.get("orchestration_decision"),
+            "decision_notes": str(final_response.get("decision_notes", "")),
+            "helper_count": helper_count,
+        }
 
     def _event(self, run_id: str, node_id: str, event_type: str, message: str) -> None:
         self.events.append(
@@ -392,16 +607,25 @@ class EywaEngine:
                 DEFAULT_RUN_LEVEL_VARIABLES["budget_policy"]["max_helpers_per_node"],
             )
         )
+        requested_turns = int(
+            resolved.get(
+                "max_turns_per_node",
+                DEFAULT_RUN_LEVEL_VARIABLES["budget_policy"].get("max_turns_per_node", 4),
+            )
+        )
+        resolved["max_turns_per_node"] = min(requested_turns, self.HARD_MAX_TURNS_PER_NODE)
         return resolved
 
     @staticmethod
-    def _replay_step(step_index: int, step: ExecutionStep) -> Dict[str, Any]:
+    def _replay_step(step_index: int, turn: ExecutionStep, output: Dict[str, Any]) -> Dict[str, Any]:
         return {
             "step": step_index,
-            "note": step.note,
-            "output": step.output,
-            "provider_payload": step.provider_payload,
-            "usage": step.usage,
+            "note": turn.note,
+            "prompt_snapshot": turn.prompt_snapshot,
+            "authored_response": turn.authored_response,
+            "output": output,
+            "provider_payload": turn.provider_payload,
+            "usage": turn.usage,
         }
 
     @staticmethod

@@ -6,6 +6,7 @@ Current contracts:
 
 - `run-packet-contract.md`
 - `node-packet-contract.md`
+- `node-authored-response-contract.md`
 - `node-output-contract.md`
 - `node-record-contract.md`
 
@@ -15,5 +16,6 @@ They define:
 
 - what a run starts with
 - what a node starts with
-- what a node is allowed to emit
+- what a node is allowed to author
+- what runtime compiles from that authored output
 - what must be recorded

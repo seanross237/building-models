@@ -115,6 +115,7 @@ def validate_node_record(payload: Dict[str, Any]) -> None:
             "final_action_type",
             "input",
             "variables",
+            "orchestration",
             "prompt",
             "results",
             "logging",
@@ -134,3 +135,93 @@ def validate_node_record(payload: Dict[str, Any]) -> None:
         "report_problem",
     }:
         raise ContractError(f"invalid final_action_type: {payload['final_action_type']}")
+
+    orchestration = payload["orchestration"]
+    _require_keys(
+        orchestration,
+        [
+            "turn_count",
+            "initial_decision",
+            "final_decision",
+            "decision_notes",
+            "helper_count",
+        ],
+        "node_record.orchestration",
+    )
+    allowed_decisions = {"execute_locally", "delegate", "report_problem"}
+    if orchestration["initial_decision"] not in allowed_decisions:
+        raise ContractError(f"invalid initial_decision: {orchestration['initial_decision']}")
+    if orchestration["final_decision"] not in allowed_decisions:
+        raise ContractError(f"invalid final_decision: {orchestration['final_decision']}")
+
+
+def validate_node_authored_response(
+    payload: Dict[str, Any],
+    *,
+    allowed_decisions: Iterable[str] | None = None,
+) -> None:
+    _require_keys(
+        payload,
+        [
+            "schema_name",
+            "schema_version",
+            "orchestration_decision",
+        ],
+        "node_authored_response",
+    )
+    if payload["schema_name"] != "eywa_node_response":
+        raise ContractError("node_authored_response schema_name must be 'eywa_node_response'")
+    if payload["schema_version"] != "v1":
+        raise ContractError("node_authored_response schema_version must be 'v1'")
+
+    decision = payload["orchestration_decision"]
+    valid_decisions = {
+        "execute_locally",
+        "delegate",
+        "report_problem",
+    }
+    if decision not in valid_decisions:
+        raise ContractError(f"invalid orchestration_decision: {decision}")
+
+    if allowed_decisions is not None and decision not in set(allowed_decisions):
+        raise ContractError(f"orchestration_decision not allowed this turn: {decision}")
+
+    decision_notes = payload.get("decision_notes")
+    if decision_notes is not None and not isinstance(decision_notes, str):
+        raise ContractError("decision_notes must be a string when present")
+
+    if decision == "execute_locally":
+        response = payload.get("response")
+        if not isinstance(response, str) or not response.strip():
+            raise ContractError("execute_locally response must be a non-empty string")
+        result_type = payload.get("result_type")
+        if result_type is not None and not isinstance(result_type, str):
+            raise ContractError("execute_locally result_type must be a string when present")
+        return
+
+    if decision == "report_problem":
+        response = payload.get("response")
+        if not isinstance(response, str) or not response.strip():
+            raise ContractError("report_problem response must be a non-empty string")
+        return
+
+    helpers = payload.get("helpers")
+    if not isinstance(helpers, list) or not helpers:
+        raise ContractError("delegate helpers must be a non-empty list")
+
+    synthesis_brief = payload.get("synthesis_brief")
+    if synthesis_brief is not None and not isinstance(synthesis_brief, str):
+        raise ContractError("delegate synthesis_brief must be a string when present")
+
+    for helper in helpers:
+        if not isinstance(helper, dict):
+            raise ContractError("delegate helper entries must be objects")
+        instructions = helper.get("instructions")
+        if not isinstance(instructions, str) or not instructions.strip():
+            raise ContractError("delegate helper instructions must be a non-empty string")
+        label = helper.get("label")
+        if label is not None and not isinstance(label, str):
+            raise ContractError("delegate helper label must be a string when present")
+        variable_overrides = helper.get("variable_overrides")
+        if variable_overrides is not None and not isinstance(variable_overrides, dict):
+            raise ContractError("delegate helper variable_overrides must be an object when present")

@@ -2,9 +2,13 @@
 
 ## Purpose
 
-The `node_output` is the structured authored output of a node execution.
+The `node_output` is the structured runtime-compiled output of a node execution.
 
-It is what the node produces before the system records derived facts like metrics, edges, and event logs.
+It is derived from the node-authored JSON response after runtime validation.
+
+The node does not author `node_output` directly.
+
+The runtime authors this object after it decides that the node-authored JSON was legal for the current turn.
 
 ## Required Fields
 
@@ -30,7 +34,7 @@ For v1, the allowed `action_type` values are:
 
 ## Results
 
-The `results` field is a list of authored work-result objects.
+The `results` field is a list of compiled work-result objects.
 
 Each result object should preserve:
 
@@ -119,5 +123,6 @@ Allowed `target_type` values for v1:
 
 ## Notes
 
-- this is authored node output, not full node record
+- this is runtime-compiled output, not raw node-authored JSON
+- the raw node-authored JSON belongs in replay and should match `node-authored-response-contract.md`
 - metrics, events, and edges are derived by the system from execution and output handling
