@@ -72,6 +72,10 @@ run_step analyze-items bash "$ROOT/pipelines/analyze-items.sh" "${analyze_args[@
 
 run_step build-presentations bash "$ROOT/pipelines/build-presentations.sh"
 
+# --- Daily aggregation and analysis ---
+run_step aggregate-daily bash "$ROOT/pipelines/aggregate-daily.sh"
+run_step analyze-daily bash "$ROOT/pipelines/analyze-daily.sh"
+
 echo "[research-radar] finished nightly radar run at $(date -u '+%Y-%m-%dT%H:%M:%SZ') failures=$failures successes=$successes"
 if [ "$successes" -eq 0 ]; then
   exit 1
