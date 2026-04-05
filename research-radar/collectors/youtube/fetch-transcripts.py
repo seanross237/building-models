@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 import re
 import subprocess
 import tempfile
@@ -9,6 +10,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+
+# Cookie support for yt-dlp (helps avoid rate-limiting / bot detection).
+# Override with env var YT_COOKIES_PATH; default is ~/yt-cookies.txt.
+_COOKIES_PATH_DEFAULT = os.path.expanduser("~/yt-cookies.txt")
+COOKIES_PATH: str | None = os.environ.get("YT_COOKIES_PATH", _COOKIES_PATH_DEFAULT)
 ITEM_GLOB = "data/topics/*/youtube/items/*.md"
 SECTION_PATTERN = re.compile(r"(^## (?P<section>.+?)\n\n)(?P<body>.*?)(?=^## |\Z)", re.MULTILINE | re.DOTALL)
 URL_PATTERN = re.compile(r"^- URL: (?P<url>.+)$", re.MULTILINE)
@@ -110,7 +116,20 @@ def summarize_error(message: str) -> str:
     return lines[-1]
 
 
+def _resolve_cookies_path() -> str | None:
+    """Return the cookies file path if it exists, or None (with a warning)."""
+    if not COOKIES_PATH:
+        return None
+    expanded = os.path.expanduser(COOKIES_PATH)
+    if os.path.isfile(expanded):
+        return expanded
+    print(f"[collect-transcripts] WARNING: cookies file not found at {expanded} — continuing without cookies")
+    return None
+
+
 def fetch_transcript_result(url: str) -> tuple[str, str | None, str]:
+    cookies_file = _resolve_cookies_path()
+
     with tempfile.TemporaryDirectory(prefix="research-radar-transcript-") as tmp:
         temp_dir = Path(tmp)
         command = [
@@ -127,6 +146,8 @@ def fetch_transcript_result(url: str) -> tuple[str, str | None, str]:
             str(temp_dir / "%(id)s.%(ext)s"),
             "--no-update",
         ]
+        if cookies_file:
+            command.extend(["--cookies", cookies_file])
         result = subprocess.run(command, capture_output=True, text=True, check=False)
         if result.returncode != 0:
             stderr = result.stderr.strip() or result.stdout.strip()

@@ -3,8 +3,12 @@ from __future__ import annotations
 
 import argparse
 import html
+import os
 import re
+import shutil
+import subprocess
 import sys
+import tempfile
 import time
 import urllib.parse
 import urllib.request
@@ -16,7 +20,19 @@ from urllib.error import HTTPError, URLError
 ROOT = Path(__file__).resolve().parents[2]
 TOPICS_FILE = ROOT / "config/topics-we-care-about.yaml"
 THRESHOLDS_FILE = ROOT / "config/thresholds.yaml"
+TARGETED_TERMS_FILE = ROOT / "config/targeted-arxiv-terms.yaml"
 ARXIV_API = "http://export.arxiv.org/api/query"
+
+# Mapping from targeted-term research areas to topic directory slugs.
+TARGETED_AREA_TO_TOPIC: dict[str, str] = {
+    "navier_stokes": "millennium-prize-navier-stokes",
+    "yang_mills": "millennium-prize-yang-mills",
+    "riemann_hypothesis": "millennium-prize-riemann-hypothesis",
+    "bsd_conjecture": "millennium-prize-bsd-conjecture",
+    "hodge_conjecture": "millennium-prize-hodge-conjecture",
+    "p_vs_np": "millennium-prize-p-vs-np",
+    "quantum_gravity": "quantum-physics-breakthroughs",
+}
 ATOM_NS = {
     "atom": "http://www.w3.org/2005/Atom",
     "arxiv": "http://arxiv.org/schemas/atom",
@@ -248,6 +264,125 @@ def parse_arxiv_datetime(value: str) -> datetime | None:
         return None
 
 
+def download_full_text(paper_id: str, pdf_url: str) -> tuple[str, str]:
+    """Attempt to download the PDF and extract text via pdftotext.
+
+    Returns (full_text_status, full_text_content).
+    full_text_status is 'ready' on success, 'abstract-only' on any failure.
+    """
+    if not pdf_url:
+        # Construct from paper ID if missing.
+        pdf_url = f"https://arxiv.org/pdf/{paper_id}.pdf"
+
+    # Check pdftotext availability first to avoid a pointless download.
+    if not shutil.which("pdftotext"):
+        print(f"[collect-papers] pdftotext not found on PATH — falling back to abstract for {paper_id}")
+        return "abstract-only", ""
+
+    try:
+        import requests  # noqa: F811 — available on the box per task spec
+    except ImportError:
+        # Fall back to urllib if requests is somehow missing.
+        return _download_full_text_urllib(paper_id, pdf_url)
+
+    try:
+        response = requests.get(pdf_url, timeout=30, headers={"User-Agent": "research-radar/0.1"})
+        response.raise_for_status()
+    except Exception as exc:
+        print(f"[collect-papers] PDF download failed for {paper_id}: {exc}")
+        return "abstract-only", ""
+
+    return _extract_text_from_pdf_bytes(paper_id, response.content)
+
+
+def _download_full_text_urllib(paper_id: str, pdf_url: str) -> tuple[str, str]:
+    """Fallback downloader using only stdlib."""
+    req = urllib.request.Request(pdf_url, headers={"User-Agent": "research-radar/0.1"})
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            pdf_bytes = resp.read()
+    except Exception as exc:
+        print(f"[collect-papers] PDF download (urllib) failed for {paper_id}: {exc}")
+        return "abstract-only", ""
+    return _extract_text_from_pdf_bytes(paper_id, pdf_bytes)
+
+
+def _extract_text_from_pdf_bytes(paper_id: str, pdf_bytes: bytes) -> tuple[str, str]:
+    """Write PDF bytes to a temp file, run pdftotext, return extracted text."""
+    with tempfile.TemporaryDirectory(prefix="research-radar-pdf-") as tmp:
+        pdf_path = os.path.join(tmp, "paper.pdf")
+        txt_path = os.path.join(tmp, "paper.txt")
+        with open(pdf_path, "wb") as fh:
+            fh.write(pdf_bytes)
+
+        result = subprocess.run(
+            ["pdftotext", "-layout", pdf_path, txt_path],
+            capture_output=True, text=True, check=False,
+        )
+        if result.returncode != 0:
+            print(f"[collect-papers] pdftotext failed for {paper_id}: {result.stderr.strip()}")
+            return "abstract-only", ""
+
+        try:
+            text = Path(txt_path).read_text(encoding="utf-8", errors="replace").strip()
+        except Exception as exc:
+            print(f"[collect-papers] could not read pdftotext output for {paper_id}: {exc}")
+            return "abstract-only", ""
+
+        if not text:
+            print(f"[collect-papers] pdftotext produced empty output for {paper_id}")
+            return "abstract-only", ""
+
+        return "ready", text
+
+
+def load_targeted_terms() -> list[dict[str, object]]:
+    """Load targeted arXiv search terms from config/targeted-arxiv-terms.yaml.
+
+    Expected YAML structure (parsed with a lightweight line parser):
+        areas:
+          - area: navier_stokes
+            terms:
+              - "Navier-Stokes existence and smoothness"
+              - "Navier-Stokes regularity"
+          - area: yang_mills
+            terms:
+              - "Yang-Mills mass gap"
+
+    Returns a list of dicts with keys: area (str), terms (list[str]).
+    Returns an empty list if the file does not exist.
+    """
+    if not TARGETED_TERMS_FILE.exists():
+        return []
+
+    areas: list[dict[str, object]] = []
+    current: dict[str, object] | None = None
+    in_terms = False
+
+    for raw_line in TARGETED_TERMS_FILE.read_text(encoding="utf-8").splitlines():
+        line = raw_line.rstrip()
+
+        if line.startswith("  - area:"):
+            if current:
+                areas.append(current)
+            area_name = line.split(":", 1)[1].strip().strip('"').strip("'")
+            current = {"area": area_name, "terms": []}
+            in_terms = False
+        elif current is not None and line.strip() == "terms:":
+            in_terms = True
+        elif current is not None and in_terms and line.strip().startswith("- "):
+            term = line.strip().lstrip("- ").strip().strip('"').strip("'")
+            if term:
+                current.setdefault("terms", []).append(term)
+        elif line and not line.startswith(" ") and not line.startswith("#"):
+            in_terms = False
+
+    if current:
+        areas.append(current)
+
+    return areas
+
+
 def parse_entry(entry: ET.Element) -> dict[str, object]:
     entry_id = collapse_whitespace(entry.findtext("atom:id", default="", namespaces=ATOM_NS))
     title = html.unescape(collapse_whitespace(entry.findtext("atom:title", default="", namespaces=ATOM_NS)))
@@ -352,7 +487,15 @@ def metadata_line(label: str, value: str) -> str:
     return f"- {label}: {value}\n"
 
 
-def item_body(topic: dict[str, object], paper: dict[str, object], queries: list[str]) -> str:
+def item_body(
+    topic: dict[str, object],
+    paper: dict[str, object],
+    queries: list[str],
+    *,
+    full_text_status: str = "abstract-only",
+    full_text_content: str = "",
+    targeted_area: str | None = None,
+) -> str:
     topic_name = str(topic["name"])
     priority = str(topic["priority"])
     source_context = ", ".join(topic.get("source_context", [])) or "unknown"
@@ -360,6 +503,9 @@ def item_body(topic: dict[str, object], paper: dict[str, object], queries: list[
     authors = ", ".join(paper["authors"]) if paper["authors"] else "Unknown"
     categories = ", ".join(paper["categories"]) if paper["categories"] else "unknown"
     collected_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    full_text_section = full_text_content if full_text_content else "Full paper text not extracted yet. Use the paper URL or PDF link above."
+
     lines = [
         f"# {paper['title']}\n\n",
         f"- Topic: `{topic_name}`\n",
@@ -381,17 +527,21 @@ def item_body(topic: dict[str, object], paper: dict[str, object], queries: list[
         metadata_line("PDF", str(paper["pdf_url"])),
         f"- Search queries: {search_queries}\n",
         f"- Collected at UTC: `{collected_at}`\n",
-        "- Full text status: `abstract-only`\n",
+        f"- Full text status: `{full_text_status}`\n",
+    ]
+    if targeted_area:
+        lines.append(f"- Targeted research area: `{targeted_area}`\n")
+    lines.extend([
         "- Analysis status: `pending`\n\n",
         "## Abstract\n\n",
         f"{paper['summary']}\n\n",
         "## Summary\n\n",
         "Not analyzed yet.\n\n",
         "## Full Text\n\n",
-        "Full paper text not extracted yet. Use the paper URL or PDF link above.\n\n",
+        f"{full_text_section}\n\n",
         "## Notes\n\n",
         "- Freshly collected from arXiv by Research Radar.\n",
-    ]
+    ])
     return "".join(line for line in lines if line)
 
 
@@ -440,8 +590,17 @@ def run_topic(topic: dict[str, object], max_results: int, lookback_hours: int, d
         if paper_id in seen or paper_id in seen_this_run:
             continue
         seen_this_run.add(paper_id)
+
+        # Attempt full-text extraction from the PDF.
+        full_text_status, full_text_content = download_full_text(
+            paper_id, str(paper.get("pdf_url", ""))
+        )
+
         item_path = paths["items"] / f"{paper['item_id']}.md"
-        item_path.write_text(item_body(topic, paper, queries), encoding="utf-8")
+        item_path.write_text(
+            item_body(topic, paper, queries, full_text_status=full_text_status, full_text_content=full_text_content),
+            encoding="utf-8",
+        )
         new_papers.append(paper)
 
     if new_papers:
@@ -452,6 +611,75 @@ def run_topic(topic: dict[str, object], max_results: int, lookback_hours: int, d
 
     print(
         f"[collect-papers] topic={slug} queries={len(queries)} candidates={len(papers)} recent_papers={len(recent_papers)} new_papers={len(new_papers)}"
+    )
+    return len(new_papers)
+
+
+def run_targeted_area(
+    area: str, terms: list[str], max_results: int, lookback_hours: int, dry_run: bool
+) -> int:
+    """Run arXiv searches for a single targeted research area and write items to the mapped topic dir."""
+    topic_slug = TARGETED_AREA_TO_TOPIC.get(area)
+    if not topic_slug:
+        print(f"[collect-papers] WARNING: no topic mapping for targeted area '{area}' — skipping")
+        return 0
+
+    paths = topic_paths(topic_slug)
+    paths["items"].mkdir(parents=True, exist_ok=True)
+    ensure_overview_header(paths["overview"], f"Targeted: {area}")
+    seen = read_seen_ids(paths["seen"])
+
+    # Build a synthetic topic dict for item_body.
+    synthetic_topic: dict[str, object] = {
+        "slug": topic_slug,
+        "name": area.replace("_", " ").title(),
+        "priority": "high",
+        "source_context": ["targeted-arxiv-terms"],
+    }
+
+    if dry_run:
+        print(f"[collect-papers] dry-run targeted area: {area} -> {topic_slug}")
+        print(f"[collect-papers] targeted terms: {' | '.join(terms)}")
+        return 0
+
+    papers = fetch_entries(terms, max_results=max_results)
+    recent_papers = filter_recent(papers, lookback_hours=lookback_hours)
+    new_papers: list[dict[str, object]] = []
+    seen_this_run: set[str] = set()
+
+    for paper in recent_papers:
+        paper_id = str(paper["id"])
+        if paper_id in seen or paper_id in seen_this_run:
+            continue
+        seen_this_run.add(paper_id)
+
+        full_text_status, full_text_content = download_full_text(
+            paper_id, str(paper.get("pdf_url", ""))
+        )
+
+        item_path = paths["items"] / f"{paper['item_id']}.md"
+        item_path.write_text(
+            item_body(
+                synthetic_topic,
+                paper,
+                terms,
+                full_text_status=full_text_status,
+                full_text_content=full_text_content,
+                targeted_area=area,
+            ),
+            encoding="utf-8",
+        )
+        new_papers.append(paper)
+
+    if new_papers:
+        with paths["seen"].open("a", encoding="utf-8") as handle:
+            for paper in new_papers:
+                handle.write(str(paper["id"]) + "\n")
+        append_overview(paths["overview"], new_papers)
+
+    print(
+        f"[collect-papers] targeted area={area} topic={topic_slug} terms={len(terms)} "
+        f"candidates={len(papers)} recent={len(recent_papers)} new={len(new_papers)}"
     )
     return len(new_papers)
 
@@ -487,10 +715,40 @@ def main() -> int:
             failures += 1
             print(f"[collect-papers] topic={topic['slug']} failed: {exc}", file=sys.stderr)
 
+    # --- Targeted search terms (in addition to topic-based searches) ---
+    targeted_areas = load_targeted_terms()
+    targeted_total = 0
+    targeted_failures = 0
+    targeted_soft_failures = 0
+
+    if targeted_areas:
+        print(f"[collect-papers] running {len(targeted_areas)} targeted research area(s)")
+        for area_entry in targeted_areas:
+            area = str(area_entry.get("area", ""))
+            terms = [str(t) for t in area_entry.get("terms", []) if str(t).strip()]
+            if not area or not terms:
+                continue
+            try:
+                targeted_total += run_targeted_area(
+                    area, terms, max_results=max_results, lookback_hours=args.lookback_hours, dry_run=args.dry_run
+                )
+            except (ArxivRateLimitError, ArxivTransientError) as exc:
+                targeted_soft_failures += 1
+                print(f"[collect-papers] targeted area={area} transient-skip: {exc}", file=sys.stderr)
+            except Exception as exc:
+                targeted_failures += 1
+                print(f"[collect-papers] targeted area={area} failed: {exc}", file=sys.stderr)
+
+    all_failures = failures + targeted_failures
     print(
         f"[collect-papers] completed topics={len(topics)} total_new_papers={total} failures={failures} transient_skips={soft_failures}"
     )
-    return 1 if failures else 0
+    if targeted_areas:
+        print(
+            f"[collect-papers] targeted areas={len(targeted_areas)} targeted_new_papers={targeted_total} "
+            f"targeted_failures={targeted_failures} targeted_transient_skips={targeted_soft_failures}"
+        )
+    return 1 if all_failures else 0
 
 
 if __name__ == "__main__":
