@@ -11,10 +11,10 @@ Each profile should be:
 
 The runtime currently expects:
 
-- one base orchestration prompt profile through `injected_prompt_profile`
+- a prompt family and selected prompt text to define the main orchestration prompt
 - zero or more extra prompt profiles through `additional_instruction_prompt_profiles`
 
 Current implementation note:
 
 - the runtime loads the actual profile text from `eywa-system/runtime/eywa_runtime/prompting.py`
-- the markdown files in this folder are the readable mirrored definitions and should stay aligned with that source
+- the markdown files in this folder are the readable mirrored definitions for the supplemental profile layer and should stay aligned with that source

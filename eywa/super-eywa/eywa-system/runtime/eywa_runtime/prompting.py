@@ -1,4 +1,4 @@
-"""Prompt assembly for the JSON orchestration runtime."""
+"""Prompt assembly for prompt-family-based JSON orchestration."""
 
 from __future__ import annotations
 
@@ -6,21 +6,19 @@ import json
 from typing import Any, Dict, Iterable, List
 
 
-PROTOCOL_HEADER = """You are one Super-Eywa node.
-Return only valid JSON.
-Do not use markdown fences.
-Your JSON must use schema_name "eywa_node_response" and schema_version "v1".
-Your JSON must always include orchestration_decision.
-Only choose orchestration decisions that are explicitly allowed for this turn."""
-
-
 PROMPT_PROFILES: Dict[str, str] = {
     "agent_orchestration_basic_instruction_prompt": (
-        "Decide how this node should proceed. "
+        "Decide how this node should proceed on this turn. "
         "You may execute locally, delegate to helper nodes, or report a problem. "
-        "If you execute locally, put the actual node result text in response. "
-        "If you delegate, create a helpers array where each helper has focused instructions and optional variable_overrides. "
-        "If you report a problem, explain the blockage clearly in response."
+        "Prefer direct execution when the task is narrow and self-contained. "
+        "Prefer delegation when the task separates into genuinely useful subproblems. "
+        "If child results are already present, use them seriously when deciding whether you can now finish the task."
+    ),
+    "single_child_transmute_prompt": (
+        "Treat this turn as a transmutation step. "
+        "Your job is to reframe the assignment into one sharper formulation that gives a single child node a better chance of success. "
+        "Do not decompose into multiple parts. "
+        "Delegate to exactly one helper with the best transformed version of the task you can produce."
     ),
     "double_check_reasoning_prompt": (
         "Before finalizing a decision, briefly sanity-check your reasoning. "
@@ -33,6 +31,14 @@ PROMPT_PROFILES: Dict[str, str] = {
         "Delegate only when you can give genuinely useful helper instructions. "
         "Avoid shallow delegation that merely restates the original task."
     ),
+}
+
+PROMPT_FAMILIES = {
+    "none",
+    "execute",
+    "transmute",
+    "delegate",
+    "agent_chooses",
 }
 
 
@@ -48,103 +54,78 @@ def build_turn_prompt(
     input_payload = node_packet["input"]
     variable_resolution = node_packet["variable_resolution"]
     resolved_variables = variable_resolution["resolved_variables"]
-    budget_policy = resolved_variables.get("budget_policy", {})
-
-    base_profile_name = str(
-        resolved_variables.get("injected_prompt_profile", "agent_orchestration_basic_instruction_prompt")
+    allowed = [str(decision) for decision in allowed_decisions]
+    child_review = bool(child_results)
+    prompt_family = _resolved_prompt_family(resolved_variables, child_review=child_review)
+    base_header_prompt = _resolved_base_header_prompt(resolved_variables, child_review=child_review)
+    selected_prompt_text = _resolved_selected_prompt_text(
+        resolved_variables,
+        prompt_family=prompt_family,
+        allowed_decisions=allowed,
+        child_review=child_review,
     )
+    if not selected_prompt_text:
+        selected_prompt_text = _default_selected_prompt_text(
+            prompt_family=prompt_family,
+            allowed_decisions=allowed,
+            child_review=child_review,
+        )
+
     additional_profile_names = _normalize_profile_names(
         resolved_variables.get("additional_instruction_prompt_profiles", [])
     )
-    profile_blocks = [build_profile_block(base_profile_name)]
-    profile_blocks.extend(build_profile_block(name) for name in additional_profile_names)
-
-    allowed = [str(decision) for decision in allowed_decisions]
-    runtime_facts = [
-        f"- node_id: {node_packet['node_id']}",
-        f"- run_id: {node_packet['run_id']}",
-        f"- current_depth: {depth}",
-        f"- turn_index_for_this_node: {turn_index}",
-        f"- max_depth: {budget_policy.get('max_depth')}",
-        f"- max_helpers_per_node: {budget_policy.get('max_helpers_per_node')}",
-        f"- max_turns_per_node: {budget_policy.get('max_turns_per_node')}",
-        f"- routing_policy: {resolved_variables.get('routing_policy')}",
-        f"- recovery_policy: {resolved_variables.get('recovery_policy')}",
-        f"- workflow_structure: {resolved_variables.get('workflow_structure')}",
-        f"- verification_policy: {resolved_variables.get('verification_policy')}",
-        f"- allowed_decisions_this_turn: {', '.join(allowed)}",
+    additional_profile_texts = [
+        build_profile_block(name)["text"]
+        for name in additional_profile_names
     ]
 
-    user_sections = [
-        "Runtime facts:",
-        "\n".join(runtime_facts),
-        "",
-        "Node assignment:",
-        str(input_payload["instructions"]),
-    ]
+    user_sections: List[str] = []
+    if selected_prompt_text:
+        user_sections.append(selected_prompt_text)
 
-    context_refs = input_payload.get("provided_context_refs", [])
-    if context_refs:
-        user_sections.extend(
-            [
-                "",
-                "Provided context refs:",
-                json.dumps(context_refs, indent=2),
-            ]
-        )
+    for profile_text in additional_profile_texts:
+        if profile_text.strip():
+            user_sections.append(profile_text)
 
     if synthesis_brief:
-        user_sections.extend(
-            [
-                "",
-                "Synthesis brief from the earlier delegation decision:",
-                synthesis_brief,
-            ]
+        user_sections.append(
+            "Synthesis brief from the earlier child-creation step:\n"
+            f"{synthesis_brief}"
         )
 
     if child_results:
-        rendered_child_results = []
-        for item in child_results:
-            rendered_child_results.append(
-                {
-                    "node_id": item["node_id"],
-                    "summary": item["summary"],
-                }
-            )
-        user_sections.extend(
-            [
-                "",
-                "Child results available to this node:",
-                json.dumps(rendered_child_results, indent=2),
-            ]
-        )
-
-    user_sections.extend(
-        [
-            "",
-            "Required JSON shape guidance:",
-            json.dumps(_response_shape_guidance(), indent=2),
+        rendered_child_results = [
+            {
+                "node_id": item["node_id"],
+                "summary": item["summary"],
+            }
+            for item in child_results
         ]
-    )
-    user_prompt = "\n".join(user_sections).strip()
-
-    system_sections = [PROTOCOL_HEADER, ""]
-    for block in profile_blocks:
-        system_sections.extend(
-            [
-                f"Prompt profile: {block['name']}",
-                block["text"],
-                "",
-            ]
+        user_sections.append(
+            "Child results already returned to you:\n"
+            f"{json.dumps(rendered_child_results, indent=2)}"
         )
-    system_prompt = "\n".join(system_sections).strip()
+
+    context_refs = input_payload.get("provided_context_refs", [])
+    if context_refs:
+        user_sections.append(
+            "Provided context refs:\n"
+            f"{json.dumps(context_refs, indent=2)}"
+        )
+
+    user_sections.append(f"Question:\n{str(input_payload['instructions'])}")
+    user_prompt = "\n\n".join(section for section in user_sections if section.strip()).strip()
+    system_prompt = base_header_prompt
 
     snapshot_lines = [
         "Super-Eywa v1 runtime prompt snapshot.",
         f"Turn index: {turn_index}",
         f"Node depth: {depth}",
         f"Allowed decisions: {allowed}",
-        f"Injected prompt profile: {base_profile_name}",
+        f"Prompt family: {prompt_family}",
+        f"Base header prompt: {base_header_prompt!r}",
+        "Selected prompt text:",
+        selected_prompt_text or "(blank)",
         f"Additional instruction prompt profiles: {additional_profile_names}",
         "System prompt:",
         system_prompt,
@@ -157,7 +138,8 @@ def build_turn_prompt(
         "system_prompt": system_prompt,
         "user_prompt": user_prompt,
         "snapshot_text": "\n".join(snapshot_lines).strip(),
-        "base_profile_name": base_profile_name,
+        "prompt_family": prompt_family,
+        "selected_prompt_text": selected_prompt_text,
         "additional_profile_names": additional_profile_names,
         "allowed_decisions": allowed,
     }
@@ -179,27 +161,158 @@ def _normalize_profile_names(value: object) -> List[str]:
     return []
 
 
-def _response_shape_guidance() -> Dict[str, Any]:
+def _normalize_prompt_family(value: object) -> str:
+    family = str(value or "agent_chooses").strip()
+    if family not in PROMPT_FAMILIES:
+        return "agent_chooses"
+    return family
+
+
+def _resolved_prompt_family(resolved_variables: Dict[str, Any], *, child_review: bool) -> str:
+    if child_review:
+        review_prompt_family = str(resolved_variables.get("review_prompt_family", "") or "").strip()
+        if review_prompt_family:
+            return _normalize_prompt_family(review_prompt_family)
+    return _normalize_prompt_family(resolved_variables.get("prompt_family", "agent_chooses"))
+
+
+def _resolved_base_header_prompt(resolved_variables: Dict[str, Any], *, child_review: bool) -> str:
+    if child_review:
+        review_header = str(resolved_variables.get("review_base_header_prompt", "") or "").strip()
+        if review_header:
+            return review_header
+    return str(resolved_variables.get("base_header_prompt", "") or "").strip()
+
+
+def _resolved_selected_prompt_text(
+    resolved_variables: Dict[str, Any],
+    *,
+    prompt_family: str,
+    allowed_decisions: List[str],
+    child_review: bool,
+) -> str:
+    if child_review:
+        review_prompt_text = str(resolved_variables.get("review_selected_prompt_text", "") or "").strip()
+        if review_prompt_text:
+            return review_prompt_text
+
+        if prompt_family in {"transmute", "delegate"} and allowed_decisions == ["execute_locally"]:
+            return ""
+
+    return str(resolved_variables.get("selected_prompt_text", "") or "").strip()
+
+
+def _default_selected_prompt_text(
+    *,
+    prompt_family: str,
+    allowed_decisions: List[str],
+    child_review: bool,
+) -> str:
+    if prompt_family == "none":
+        return ""
+
+    if prompt_family == "execute":
+        return (
+            "You are going to solve the following question yourself. "
+            "Return exactly one JSON object in this format:\n"
+            f"{json.dumps(_execute_example(), indent=2)}"
+        )
+
+    if prompt_family == "transmute":
+        if child_review:
+            return (
+                "A child result has already come back to you. "
+                "Use that returned work to produce the final response yourself. "
+                "Return exactly one JSON object in this format:\n"
+                f"{json.dumps(_execute_example(), indent=2)}"
+            )
+        return (
+            "You are going to transmute the following question for another agent to solve. "
+            "Try to make it clearer, sharper, more executable, or more formal. "
+            "Return exactly one JSON object in this format:\n"
+            f"{json.dumps(_transmute_example(), indent=2)}"
+        )
+
+    if prompt_family == "delegate":
+        if child_review:
+            return (
+                "Child results have already come back to you. "
+                "Use them to produce the final response yourself. "
+                "Return exactly one JSON object in this format:\n"
+                f"{json.dumps(_execute_example(), indent=2)}"
+            )
+        return (
+            "You are going to decompose the following question into useful subproblems for other agents. "
+            "Return exactly one JSON object in this format:\n"
+            f"{json.dumps(_delegate_example(), indent=2)}"
+        )
+
+    choice_examples = _agent_choice_examples(allowed_decisions)
+    return (
+        "Choose how to proceed on this turn. "
+        f"Valid orchestration decisions for this turn are: {', '.join(allowed_decisions)}. "
+        "Return exactly one JSON object matching one of these formats:\n"
+        f"{json.dumps(choice_examples, indent=2)}"
+    )
+
+
+def _execute_example() -> Dict[str, Any]:
     return {
         "schema_name": "eywa_node_response",
         "schema_version": "v1",
-        "orchestration_decision": "execute_locally | delegate | report_problem",
+        "orchestration_decision": "execute_locally",
         "decision_notes": "optional string",
-        "execute_locally_shape": {
-            "response": "string",
-            "result_type": "optional string",
-        },
-        "delegate_shape": {
-            "helpers": [
-                {
-                    "label": "string",
-                    "instructions": "string",
-                    "variable_overrides": {},
-                }
-            ],
-            "synthesis_brief": "optional string",
-        },
-        "report_problem_shape": {
-            "response": "string",
-        },
+        "response": "string",
+        "result_type": "optional string",
     }
+
+
+def _transmute_example() -> Dict[str, Any]:
+    return {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "transmute",
+        "decision_notes": "optional string",
+        "message_for_next_agent": "string",
+    }
+
+
+def _delegate_example() -> Dict[str, Any]:
+    return {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "delegate",
+        "decision_notes": "optional string",
+        "helpers": [
+            {
+                "label": "string",
+                "instructions": "string",
+                "variable_overrides": {},
+            }
+        ],
+        "synthesis_brief": "optional string",
+    }
+
+
+def _report_problem_example() -> Dict[str, Any]:
+    return {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "report_problem",
+        "decision_notes": "optional string",
+        "response": "string",
+    }
+
+
+def _agent_choice_examples(allowed_decisions: Iterable[str]) -> Dict[str, Any]:
+    examples: Dict[str, Any] = {}
+    for decision in allowed_decisions:
+        if decision == "execute_locally":
+            examples["execute_locally_example"] = _execute_example()
+        elif decision == "transmute":
+            examples["transmute_example"] = _transmute_example()
+        elif decision == "delegate":
+            examples["delegate_example"] = _delegate_example()
+        elif decision == "report_problem":
+            examples["report_problem_example"] = _report_problem_example()
+    return examples

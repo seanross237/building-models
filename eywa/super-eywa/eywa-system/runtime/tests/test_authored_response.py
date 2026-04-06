@@ -10,7 +10,7 @@ RUNTIME_DIR = THIS_DIR.parent
 if str(RUNTIME_DIR) not in sys.path:
     sys.path.insert(0, str(RUNTIME_DIR))
 
-from eywa_runtime.authored_response import (
+from eywa_runtime.authored_response import (  # noqa: E402
     AuthoredResponseError,
     parse_authored_response_text,
     validate_authored_response,
@@ -96,6 +96,26 @@ class AuthoredResponseTests(unittest.TestCase):
                 allowed_decisions=["execute_locally", "report_problem"],
                 max_helpers=3,
             )
+
+    def test_execute_locally_response_object_is_coerced_to_final_answer_string(self) -> None:
+        normalized = validate_authored_response(
+            {
+                "schema_name": "eywa_node_response",
+                "schema_version": "v1",
+                "orchestration_decision": "execute_locally",
+                "decision_notes": "short",
+                "response": {
+                    "final_answer": "3",
+                    "justification": "Verified by modular reasoning.",
+                },
+                "result_type": "answer",
+            },
+            allowed_decisions=["execute_locally"],
+            max_helpers=0,
+        )
+
+        self.assertEqual(normalized["response"], "FINAL_ANSWER: 3\nJUSTIFICATION: Verified by modular reasoning.")
+        self.assertEqual(normalized["result_type"], "answer")
 
 
 if __name__ == "__main__":

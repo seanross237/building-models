@@ -16,6 +16,17 @@ The default run-level variables currently live in:
 
 - `model`
 - `runtime_provider`
+- `prompt_family`
+- `selected_prompt_text`
+- `base_header_prompt`
+- `review_prompt_family`
+- `review_selected_prompt_text`
+- `review_base_header_prompt`
+- `child_prompt_family`
+- `child_selected_prompt_text`
+- `child_base_header_prompt`
+- `terminal_result_destination`
+- `child_terminal_result_destination`
 - `injected_prompt_profile`
 - `additional_instruction_prompt_profiles`
 - `context_policy`
@@ -35,6 +46,13 @@ The default run-level variables currently live in:
 - `runtime_provider` currently supports `deterministic` and `openrouter`
 - `budget_policy.max_depth` is hard-capped to `3` in runtime code to prevent runaway recursion
 - `budget_policy.max_turns_per_node` limits how many authored decision turns one node may take before runtime stops it
-- `injected_prompt_profile` now defaults to `agent_orchestration_basic_instruction_prompt`
+- `prompt_family` now controls the main orchestration-prompt family for a node
+- `selected_prompt_text` is the actual prompt text injected before the question when explicitly set
+- `base_header_prompt` is an optional fixed header injected before the selected prompt and currently defaults to blank
+- `review_*` variables let a node switch prompt behavior on a later child-review turn without changing the first-turn prompt
+- `child_prompt_family` and related child prompt variables let parent-created nodes inherit a different prompt setup
+- `terminal_result_destination` controls whether a node's terminal answer goes to its creator or to the run's canonical `final_output` artifact
+- `child_terminal_result_destination` lets parent-created nodes inherit a different terminal destination
+- `injected_prompt_profile` is now legacy support for older prompt-profile experiments
 - node-authored responses are now expected to be JSON with an always-present `orchestration_decision`
 - preserving the full resolved variable set still matters even before each field is deeply used

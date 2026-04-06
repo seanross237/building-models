@@ -1,49 +1,59 @@
-# Riemann Hypothesis — Unconventional Attack Strategies
+# Riemann Hypothesis — Research Investigation
 
-## Background
+## Status: Exhaustive exploration complete. Geometric core identified.
 
-The Riemann Hypothesis (RH) is a Clay Millennium Prize Problem worth $1M. It states that all nontrivial zeros of the Riemann zeta function lie on the critical line Re(s) = 1/2. If true, it implies the primes are distributed as regularly as they possibly can be.
+**Investigation dates:** 2026-04-04 to 2026-04-06
+**Agents run:** ~32 across 9 waves
+**Start:** Hossenfelder video on Hartnoll-Yang "Conformal Primon Gas at the End of Time"
+**End:** Precise 5-problem research agenda for an arithmetic Hodge index theorem on the scaling-site square
 
-Recent work by Sean Hartnoll and Ming Yang ("The Conformal Primon Gas at the End of Time", arXiv 2502.02661, Feb 2025) found that gravitational dynamics near black hole singularities naturally produce a "primon gas" — a system whose partition function is related to the Riemann zeta function. This reopened interest in physics-based approaches to RH.
+## Key Documents
 
-This directory documents 10 cross-disciplinary attack strategies and tracks experimental attempts on the most promising ones.
+- **`SYNTHESIS.md`** — Complete synthesis of all findings, key theorems, novel discoveries, corrections, closed doors, and the research agenda. **Read this first.**
+- **`approaches/all-strategies.md`** — The original 10 cross-disciplinary strategies
+- **`experiments/`** — 25 experiment directories, each with `findings.md` + Python scripts
 
-## The 10 Strategies
+## The One-Paragraph Summary
 
-See `approaches/` for full documentation of each strategy.
+We exhaustively explored analytic, probabilistic, thermodynamic, information-theoretic, and dynamical approaches to RH. Every one hit the same wall: bridging probabilistic concentration (Euler product, σ > 1/2) to deterministic zero-location (functional equation, across σ = 1/2). The Euler product and functional equation live in complementary half-planes and never overlap. We traced this wall to its geometric core: the proof requires constructing an **arithmetic Hodge index theorem on Spec(Z) × Spec(Z) over F₁** — the analog of what Weil used to prove RH for curves over finite fields. Connes has the closest approach (Weil positivity proved at archimedean place + any finite set of primes). The gap: extending to all places, which requires a global intersection pairing whose positivity survives the infinite limit.
 
-### Novelty Tier List
+## Approach Status
 
-| Rank | Strategy | Direction | Novel? | Feasible for us? |
-|------|----------|-----------|--------|-------------------|
-| 1 | 5A — Spectral Breeder | Evolved CA | Yes — completely unoccupied | Very high (Python + GPU) |
-| 2 | 4A — Billiard Table Inversion | Quantum Reservoir | Yes — tools exist, nobody tried | High (FEM + optimization) |
-| 3 | 2A — Entropy Ceiling | Primon Gas Thermo | Yes — microcanonical gap | High (math + numerics) |
-| 4 | 3B — Knot Surgery / Li Coefficients | Arithmetic Topology | Yes — three fields unassembled | Medium (SnapPy + math) |
-| 5 | 1A — Cut-and-Project Guillotine | Quasicrystal | Partially — basic tests undone | Medium (numerics + theory) |
-| 6 | 2B — Holographic Primon Censorship | Primon Gas Thermo | Yes — specific framing novel | Low (deep QG expertise) |
-| 7 | 3A — Chern-Simons Zeta Machine | Arithmetic Topology | Partially — U(1) extension open | Low (specialist math) |
-| 8 | 1B — Bragg or Bust | Quasicrystal | Partially novel | Medium (specialist math) |
-| 9 | 4B — Chaotic Echo Spectroscopy | Quantum Reservoir | Partially novel | No (needs lab) |
-| 10 | 5B — Arithmetic Terrarium | Evolved CA | Somewhat novel | High (compute only) |
+| Framework | Status | Key finding |
+|-----------|--------|-------------|
+| PF / Kernel | **CLOSED** | PF_∞ impossible for functions with zeros (Schoenberg) |
+| Functional equation | **INSUFFICIENT** | Davenport-Heilbronn counterexample |
+| Thermodynamic | **REFORMULATION** | Ensemble equivalence = RH |
+| Information-theoretic | **CAN'T SEE ZEROS** | Locality-globality mismatch |
+| Probabilistic / martingale | **CIRCULAR** | Cancellation IS RH |
+| Almost-periodic | **GROWTH RATES WRONG** | Doubly-exp vs singly-exp |
+| Algebraic geometry | **WHERE THE PROOF LIVES** | Arithmetic Hodge index theorem on S^(2) |
+| Additive evidence (independent weights) | **CLOSED** | Decoupling lemma — bounded envelope can't dominate logarithmic singularities of -log\|ζ\| |
+| Mollifier methods (coupled additive) | **THE FRONTIER** | Guth-Maynard etc. — coupling exploits ζ's analytic structure |
 
-## Experiments
+## The 5-Problem Research Agenda
 
-See `experiments/` for computational attempts on the top 3 strategies.
+If these are solved, RH follows:
 
-- `experiments/5A-spectral-breeder/` — Evolving CAs to match GUE statistics
-- `experiments/4A-billiard-inversion/` — Shape-optimizing billiard domains to match zeta zeros
-- `experiments/2A-entropy-ceiling/` — Microcanonical entropy analysis of the primon gas (run 2026-04-04: canonical concavity proved, ensemble equivalence gap identified, Fisher information variational principle proposed)
+1. **Chow/Picard theory on S^(2)** — category of correspondences on scaling-site square
+2. **Excess-intersection formula** — Δ · Ψ^λ with orbital fixed loci
+3. **Green kernels** — extract Connes' operators as Green functions on S^(2)
+4. **Semilocal compatibility** — finite truncations match Connes' positive forms
+5. **Hodge index theorem** — primitive negativity on S^(2)
+
+## Experiment Index
+
+See `SYNTHESIS.md` for the full experiment index with wave numbers and key findings for each of the 25 experiments.
 
 ## Key References
 
-- Hartnoll & Yang, "The Conformal Primon Gas at the End of Time" (arXiv 2502.02661)
-- Julia (1990), "Statistical mechanics and the partition function of number theory"
-- Montgomery (1973), pair correlation conjecture
-- Odlyzko (1987), numerical verification of Montgomery's conjecture
-- Dyson (2009), quasicrystal conjecture for zeta zeros
-- Kim (2015-2016), arithmetic Chern-Simons theory
-- Baake & Grimm, "Aperiodic Order" (Cambridge, 2013)
-- Shaughnessy (arXiv 2410.03673), quasicrystal scattering approach
-- Remmen (2021), amplitudes and the Riemann zeta function (PRL)
-- LeClair & Mussardo (JHEP 2024), Riemann zeros as quantized energies
+- Connes, *Trace formula in NCG and zeros of ζ* (Selecta Math., 1999)
+- Connes-Consani, *Weil positivity, archimedean place* (Selecta Math., 2021)
+- Connes-Consani-Moscovici, *Zeta zeros and prolate wave operators* (2024)
+- Connes-Consani, *Geometry of the scaling site* (Selecta Math., 2017)
+- Connes-Consani, *Riemann-Roch for Spec Z* (Bull. Sci. Math., 2023)
+- Griffin-Ono-Rolen-Zagier, *Jensen polynomials for ζ* (PNAS, 2019)
+- arXiv 2602.20313, *PF₅ failure of de Bruijn-Newman kernel* (Feb 2026)
+- Hartnoll-Yang, *Conformal Primon Gas at the End of Time* (arXiv 2502.02661)
+- Guth-Maynard, *New large value estimates* (2024)
+- Rodgers-Tao, *de Bruijn-Newman constant is non-negative* (2020)

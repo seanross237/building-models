@@ -24,7 +24,7 @@ DEFAULT_QUESTION_FILES = [
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Run the default live grading batch for Super-Eywa v1.")
     parser.add_argument("--runtime-provider", default="openrouter", choices=["deterministic", "openrouter"])
-    parser.add_argument("--model", default="openai/gpt-4.1-mini")
+    parser.add_argument("--model", default="google/gemma-4-26b-a4b-it")
     parser.add_argument("--run-history-root", default=str(THIS_DIR.parents[1] / "data-system" / "run-history"))
     parser.add_argument("--grading-runs-root", default=str(THIS_DIR / "runs"))
     return parser

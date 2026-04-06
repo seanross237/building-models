@@ -1,8 +1,19 @@
 """Default variable values for the deterministic v1 runtime."""
 
 DEFAULT_RUN_LEVEL_VARIABLES = {
-    "runtime_provider": "deterministic",
-    "model": "deterministic-local-v1",
+    "runtime_provider": "openrouter",
+    "model": "google/gemma-4-26b-a4b-it",
+    "prompt_family": "agent_chooses",
+    "selected_prompt_text": "",
+    "base_header_prompt": "",
+    "review_prompt_family": "",
+    "review_selected_prompt_text": "",
+    "review_base_header_prompt": "",
+    "child_prompt_family": "agent_chooses",
+    "child_selected_prompt_text": "",
+    "child_base_header_prompt": "",
+    "terminal_result_destination": "auto",
+    "child_terminal_result_destination": "",
     "injected_prompt_profile": "agent_orchestration_basic_instruction_prompt",
     "additional_instruction_prompt_profiles": [],
     "context_policy": "minimal",

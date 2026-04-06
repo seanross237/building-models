@@ -60,6 +60,21 @@ class SimpleGradeV1Tests(unittest.TestCase):
     def test_extract_final_answer_falls_back_to_first_line(self) -> None:
         self.assertEqual(extract_final_answer("unknown\nbecause missing rules"), "unknown")
 
+    def test_hensel_grader_uses_m_value_when_answer_includes_p_and_m(self) -> None:
+        question_case = parse_question_file(
+            Path("data-system/grading/test-questions/architecture-derived-B4-hensel-lifting-verification.md")
+        )
+        result = grade_result(question_case, "FINAL_ANSWER: p=13, m=110\nJUSTIFICATION: short")
+        self.assertTrue(result["correct"])
+        self.assertEqual(result["normalized_answer"], 110.0)
+
+    def test_b2_sign_sensitive_grading_requires_correct_signed_value(self) -> None:
+        question_case = parse_question_file(
+            Path("data-system/grading/test-questions/architecture-derived-B2-sign-sensitive-derivation-exciton-rydberg-energy.md")
+        )
+        result = grade_result(question_case, "FINAL_ANSWER: -0.08 eV\nJUSTIFICATION: short")
+        self.assertTrue(result["correct"])
+
 
 if __name__ == "__main__":
     unittest.main()

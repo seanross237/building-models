@@ -52,11 +52,15 @@ class DeterministicLocalExecutor:
             .get("budget_policy", {})
             .get("max_helpers_per_node", 3)
         )
+        prompt_family = str(
+            node_packet["variable_resolution"]["resolved_variables"].get("prompt_family", "agent_chooses")
+        )
         authored_response = self._build_deterministic_response(
             instructions=str(node_packet["input"]["instructions"]),
             child_summaries=child_summaries,
             allowed_decisions=allowed_decisions,
             max_helpers=max_helpers,
+            prompt_family=prompt_family,
         )
         validated = validate_authored_response(
             authored_response,
@@ -90,6 +94,7 @@ class DeterministicLocalExecutor:
         child_summaries: List[Dict[str, str]] | None,
         allowed_decisions: Iterable[str],
         max_helpers: int,
+        prompt_family: str,
     ) -> Dict[str, Any]:
         allowed = set(allowed_decisions)
         lowered = instructions.lower()
@@ -103,7 +108,7 @@ class DeterministicLocalExecutor:
                 "response": f"Deterministic runtime marked this task as a problem case: {instructions}",
             }
 
-        if child_summaries:
+        if child_summaries and "execute_locally" in allowed:
             return {
                 "schema_name": "eywa_node_response",
                 "schema_version": "v1",
@@ -112,6 +117,36 @@ class DeterministicLocalExecutor:
                 "response": self._synthesized_local_response(instructions, child_summaries),
                 "result_type": "summary",
             }
+
+        if prompt_family == "transmute" and "transmute" in allowed:
+            return {
+                "schema_name": "eywa_node_response",
+                "schema_version": "v1",
+                "orchestration_decision": "transmute",
+                "decision_notes": "The task is being reframed for a single downstream node.",
+                "message_for_next_agent": self._transmuted_instruction(instructions),
+            }
+
+        if prompt_family == "delegate" and "delegate" in allowed:
+            subtasks = self._split_instructions(instructions, max_helpers)
+            if not subtasks:
+                subtasks = [instructions]
+            if subtasks:
+                return {
+                    "schema_name": "eywa_node_response",
+                    "schema_version": "v1",
+                    "orchestration_decision": "delegate",
+                    "decision_notes": "The instructions separate cleanly into helper-sized subtasks.",
+                    "helpers": [
+                        {
+                            "label": f"helper_{index + 1:02d}",
+                            "instructions": subtask,
+                            "variable_overrides": {},
+                        }
+                        for index, subtask in enumerate(subtasks)
+                    ],
+                    "synthesis_brief": "Combine the helper results into one concise final response.",
+                }
 
         if "delegate" in allowed:
             subtasks = self._split_instructions(instructions, max_helpers)
@@ -132,13 +167,31 @@ class DeterministicLocalExecutor:
                     "synthesis_brief": "Combine the helper results into one concise final response.",
                 }
 
+        if "execute_locally" in allowed:
+            return {
+                "schema_name": "eywa_node_response",
+                "schema_version": "v1",
+                "orchestration_decision": "execute_locally",
+                "decision_notes": "The task is narrow enough to complete in one local step.",
+                "response": self._local_response(instructions),
+                "result_type": "summary",
+            }
+
+        if "transmute" in allowed:
+            return {
+                "schema_name": "eywa_node_response",
+                "schema_version": "v1",
+                "orchestration_decision": "transmute",
+                "decision_notes": "The task is being reframed for a single downstream node.",
+                "message_for_next_agent": self._transmuted_instruction(instructions),
+            }
+
         return {
             "schema_name": "eywa_node_response",
             "schema_version": "v1",
-            "orchestration_decision": "execute_locally",
-            "decision_notes": "The task is narrow enough to complete in one local step.",
-            "response": self._local_response(instructions),
-            "result_type": "summary",
+            "orchestration_decision": "report_problem",
+            "decision_notes": "The deterministic runtime could not satisfy the constrained family decision.",
+            "response": f"No valid deterministic action was available for: {instructions}",
         }
 
     def _local_response(self, instructions: str) -> str:
@@ -161,6 +214,12 @@ class DeterministicLocalExecutor:
             lines.append(f"- {item['node_id']}: {item['summary']}")
         return "\n".join(lines)
 
+    def _transmuted_instruction(self, instructions: str) -> str:
+        return (
+            "Solve the following reformulated version of the task as clearly and directly as possible:\n"
+            f"{instructions}"
+        )
+
     def _split_instructions(self, instructions: str, max_helpers: int) -> List[str]:
         splitter_patterns = [
             r"\sand\s",
@@ -176,6 +235,8 @@ class DeterministicLocalExecutor:
         return []
 
     def _note_for_decision(self, decision: str, has_child_summaries: bool) -> str:
+        if decision == "transmute":
+            return "authored transmute decision deterministically"
         if decision == "delegate":
             return "authored delegate decision deterministically"
         if decision == "report_problem":
@@ -234,20 +295,43 @@ class OpenRouterLiveExecutor(DeterministicLocalExecutor):
             child_results=child_summaries,
             synthesis_brief=synthesis_brief,
         )
+        resolved_variables = node_packet["variable_resolution"]["resolved_variables"]
         max_helpers = int(
-            node_packet["variable_resolution"]["resolved_variables"]
-            .get("budget_policy", {})
-            .get("max_helpers_per_node", 3)
+            resolved_variables.get("budget_policy", {}).get("max_helpers_per_node", 3)
         )
-        recovery_policy = str(
-            node_packet["variable_resolution"]["resolved_variables"].get("recovery_policy", "report_problem")
-        )
+        recovery_policy = str(resolved_variables.get("recovery_policy", "report_problem"))
+        max_tokens = self._resolved_max_tokens(resolved_variables)
+        temperature = self._resolved_temperature(resolved_variables)
 
         attempts: List[Dict[str, Any]] = []
-        generated = self._generate_text(
-            system_prompt=prompt_bundle["system_prompt"],
-            user_prompt=prompt_bundle["user_prompt"],
-        )
+        try:
+            generated = self._generate_text(
+                system_prompt=prompt_bundle["system_prompt"],
+                user_prompt=prompt_bundle["user_prompt"],
+                max_tokens=max_tokens,
+                temperature=temperature,
+            )
+        except OpenRouterClientError as exc:
+            if recovery_policy != "report_problem":
+                raise
+            attempts.append(self._error_attempt_record(phase="initial_generation", error=str(exc)))
+            authored_response = self._runtime_problem_response(
+                parse_error=f"live provider request failed: {exc}",
+                raw_text="",
+            )
+            note = self._note_for_decision(authored_response["orchestration_decision"], bool(child_summaries))
+            return ExecutionStep(
+                authored_response=authored_response,
+                note=note,
+                prompt_snapshot=prompt_bundle["snapshot_text"],
+                provider_payload={
+                    "provider": self.provider_name,
+                    "attempts": attempts,
+                    "final_authored_response": authored_response,
+                },
+                usage=self._zero_usage(),
+            )
+
         attempts.append(
             self._attempt_record(
                 phase="initial_generation",
@@ -265,26 +349,33 @@ class OpenRouterLiveExecutor(DeterministicLocalExecutor):
         )
 
         if authored_response is None and recovery_policy == "report_problem":
-            repaired = self._repair_response(
-                raw_text=generated["content"],
-                allowed_decisions=allowed_decisions,
-            )
-            attempts.append(
-                self._attempt_record(
-                    phase="json_repair",
-                    generated=repaired,
-                    parse_error=None,
-                    parsed_response=None,
+            try:
+                repaired = self._repair_response(
+                    raw_text=generated["content"],
+                    allowed_decisions=allowed_decisions,
+                    max_tokens=max_tokens,
+                    temperature=temperature,
                 )
-            )
-            combined_usage = self._accumulate_usage(combined_usage, repaired["usage"])
-            authored_response, parse_error = self._try_parse_response(
-                repaired["content"],
-                allowed_decisions=allowed_decisions,
-                max_helpers=max_helpers,
-            )
-            attempts[-1]["parse_error"] = parse_error
-            attempts[-1]["parsed_response"] = authored_response
+            except OpenRouterClientError as exc:
+                attempts.append(self._error_attempt_record(phase="json_repair", error=str(exc)))
+                parse_error = f"{parse_error or 'invalid authored response'}; json repair failed: {exc}"
+            else:
+                attempts.append(
+                    self._attempt_record(
+                        phase="json_repair",
+                        generated=repaired,
+                        parse_error=None,
+                        parsed_response=None,
+                    )
+                )
+                combined_usage = self._accumulate_usage(combined_usage, repaired["usage"])
+                authored_response, parse_error = self._try_parse_response(
+                    repaired["content"],
+                    allowed_decisions=allowed_decisions,
+                    max_helpers=max_helpers,
+                )
+                attempts[-1]["parse_error"] = parse_error
+                attempts[-1]["parsed_response"] = authored_response
         else:
             attempts[-1]["parse_error"] = parse_error
             attempts[-1]["parsed_response"] = authored_response
@@ -308,12 +399,21 @@ class OpenRouterLiveExecutor(DeterministicLocalExecutor):
             usage=combined_usage,
         )
 
-    def _repair_response(self, *, raw_text: str, allowed_decisions: Iterable[str]) -> Dict[str, Any]:
+    def _repair_response(
+        self,
+        *,
+        raw_text: str,
+        allowed_decisions: Iterable[str],
+        max_tokens: int,
+        temperature: float,
+    ) -> Dict[str, Any]:
         allowed_display = ", ".join(str(item) for item in allowed_decisions)
         repair_prompt = (
             "Rewrite the following content as valid JSON only for the eywa_node_response v1 schema. "
             f"Allowed orchestration_decision values for this turn: {allowed_display}. "
-            "Do not add commentary or markdown fences."
+            "Use the exact top-level fields required by eywa_node_response v1. "
+            "Do not wrap the object under another key. "
+            "Use plain text strings only. Do not use markdown, code fences, or backslashes."
         )
         return self._generate_text(
             system_prompt=(
@@ -321,6 +421,8 @@ class OpenRouterLiveExecutor(DeterministicLocalExecutor):
                 "Return only valid JSON."
             ),
             user_prompt=f"{repair_prompt}\n\nOriginal content:\n{raw_text}",
+            max_tokens=max_tokens,
+            temperature=temperature,
         )
 
     def _runtime_problem_response(self, *, parse_error: str, raw_text: str) -> Dict[str, Any]:
@@ -371,7 +473,24 @@ class OpenRouterLiveExecutor(DeterministicLocalExecutor):
             "parsed_response": parsed_response,
         }
 
-    def _generate_text(self, *, system_prompt: str, user_prompt: str) -> Dict[str, Any]:
+    def _error_attempt_record(self, *, phase: str, error: str) -> Dict[str, Any]:
+        return {
+            "phase": phase,
+            "request": None,
+            "response": None,
+            "raw_content": "",
+            "parse_error": error,
+            "parsed_response": None,
+        }
+
+    def _generate_text(
+        self,
+        *,
+        system_prompt: str,
+        user_prompt: str,
+        max_tokens: int,
+        temperature: float,
+    ) -> Dict[str, Any]:
         request_body = {
             "model": self.model,
             "messages": [
@@ -379,14 +498,14 @@ class OpenRouterLiveExecutor(DeterministicLocalExecutor):
                 {"role": "user", "content": user_prompt},
             ],
             "stream": False,
-            "max_tokens": 800,
-            "temperature": 0.2,
+            "max_tokens": max_tokens,
+            "temperature": temperature,
         }
         response = self.client.create_chat_completion(
             model=self.model,
             messages=request_body["messages"],
-            max_tokens=800,
-            temperature=0.2,
+            max_tokens=max_tokens,
+            temperature=temperature,
         )
         response_id = response.get("id")
         usage = self._usage_from_response(response, response_id=response_id)
@@ -518,10 +637,28 @@ class OpenRouterLiveExecutor(DeterministicLocalExecutor):
             return 0
         return secondary_value
 
+    def _resolved_max_tokens(self, resolved_variables: Dict[str, Any]) -> int:
+        return self._bounded_int(resolved_variables.get("provider_max_tokens"), default=800, minimum=64, maximum=4000)
+
+    def _resolved_temperature(self, resolved_variables: Dict[str, Any]) -> float:
+        value = resolved_variables.get("provider_temperature")
+        try:
+            parsed = float(value)
+        except (TypeError, ValueError):
+            return 0.2
+        return min(2.0, max(0.0, parsed))
+
+    def _bounded_int(self, value: Any, *, default: int, minimum: int, maximum: int) -> int:
+        try:
+            parsed = int(value)
+        except (TypeError, ValueError):
+            return default
+        return min(maximum, max(minimum, parsed))
+
 
 def build_executor(run_level_variables: Dict[str, Any]) -> DeterministicLocalExecutor:
-    runtime_provider = str(run_level_variables.get("runtime_provider", "deterministic")).strip().lower()
-    model = str(run_level_variables.get("model", "deterministic-local-v1")).strip()
+    runtime_provider = str(run_level_variables.get("runtime_provider", "openrouter")).strip().lower()
+    model = str(run_level_variables.get("model", "google/gemma-4-26b-a4b-it")).strip()
 
     if runtime_provider == "deterministic":
         return DeterministicLocalExecutor()

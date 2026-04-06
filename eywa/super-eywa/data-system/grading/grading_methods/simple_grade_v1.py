@@ -89,11 +89,13 @@ def grade_result(question_case: QuestionCase, result_text: str) -> Dict[str, Any
     extracted_answer = extract_final_answer(result_text)
 
     if question_id == "architecture-derived-B4-hensel-lifting-verification":
-        return _grade_exact_numeric(question_case, extracted_answer, 110)
+        return _grade_hensel_lifting(question_case, extracted_answer, 110)
     if question_id == "architecture-derived-B5-combinatorial-probability-random-chords":
         return _grade_exact_numeric(question_case, extracted_answer, 204)
     if question_id == "architecture-derived-B6-binary-representation-minimization":
         return _grade_exact_numeric(question_case, extracted_answer, 3)
+    if question_id == "architecture-derived-B2-sign-sensitive-derivation-exciton-rydberg-energy":
+        return _grade_numeric_tolerance(question_case, extracted_answer, -0.08, 0.005)
     if question_id == "architecture-derived-B10-mean-field-lattice-gas-occupancy":
         return _grade_numeric_tolerance(question_case, extracted_answer, 0.424, 0.01)
     if question_id == "architecture-derived-B11-board-game-rule-chaining":
@@ -120,6 +122,20 @@ def extract_final_answer(result_text: str) -> str:
 
 def _grade_exact_numeric(question_case: QuestionCase, extracted_answer: str, expected_value: int) -> Dict[str, Any]:
     number = _extract_number(extracted_answer)
+    correct = number is not None and abs(number - expected_value) < 1e-9
+    return {
+        "grading_status": "graded",
+        "correct": correct,
+        "score": 1.0 if correct else 0.0,
+        "expected": expected_value,
+        "extracted_answer": extracted_answer,
+        "normalized_answer": number,
+        "grading_notes": question_case.sections.get("grading", ""),
+    }
+
+
+def _grade_hensel_lifting(question_case: QuestionCase, extracted_answer: str, expected_value: int) -> Dict[str, Any]:
+    number = _extract_hensel_target_number(extracted_answer)
     correct = number is not None and abs(number - expected_value) < 1e-9
     return {
         "grading_status": "graded",
@@ -172,6 +188,24 @@ def _extract_number(text: str) -> float | None:
         return None
     try:
         return float(match.group(0))
+    except ValueError:
+        return None
+
+
+def _extract_hensel_target_number(text: str) -> float | None:
+    normalized = text.replace(",", "")
+    m_match = re.search(r"\bm\s*=\s*(-?\d+(?:\.\d+)?)", normalized, flags=re.IGNORECASE)
+    if m_match:
+        try:
+            return float(m_match.group(1))
+        except ValueError:
+            return None
+
+    numbers = re.findall(r"-?\d+(?:\.\d+)?", normalized)
+    if not numbers:
+        return None
+    try:
+        return float(numbers[-1])
     except ValueError:
         return None
 

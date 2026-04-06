@@ -81,8 +81,12 @@ class OpenRouterChatClient:
         except HTTPError as exc:
             error_body = exc.read().decode("utf-8", errors="replace")
             raise OpenRouterClientError(f"OpenRouter HTTP {exc.code}: {error_body}") from exc
+        except TimeoutError as exc:
+            raise OpenRouterClientError("OpenRouter request timed out.") from exc
         except URLError as exc:
             raise OpenRouterClientError(f"OpenRouter request failed: {exc.reason}") from exc
+        except OSError as exc:
+            raise OpenRouterClientError(f"OpenRouter request failed: {exc}") from exc
 
         try:
             return json.loads(payload)

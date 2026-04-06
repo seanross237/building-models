@@ -35,6 +35,34 @@ def validate_run_packet(payload: Dict[str, Any]) -> None:
         raise ContractError("run_packet contract_name must be 'run_packet'")
 
 
+def validate_final_output(payload: Dict[str, Any]) -> None:
+    _require_keys(
+        payload,
+        [
+            "contract_name",
+            "contract_version",
+            "run_id",
+            "created_at_utc",
+            "source_node_id",
+            "source_node_record_ref",
+            "action_type",
+            "terminal_result_destination",
+            "result",
+        ],
+        "final_output",
+    )
+    if payload["contract_name"] != "final_output":
+        raise ContractError("final_output contract_name must be 'final_output'")
+    if payload["terminal_result_destination"] != "final_output":
+        raise ContractError("final_output terminal_result_destination must be 'final_output'")
+    if payload["action_type"] not in {"report_success", "report_problem"}:
+        raise ContractError(f"invalid final_output action_type: {payload['action_type']}")
+    result = payload["result"]
+    if not isinstance(result, dict):
+        raise ContractError("final_output result must be an object")
+    _require_keys(result, ["result_type", "content", "attachment_refs"], "final_output.result")
+
+
 def validate_node_packet(payload: Dict[str, Any]) -> None:
     _require_keys(
         payload,
@@ -93,6 +121,7 @@ def validate_node_output(payload: Dict[str, Any]) -> None:
         "creating_parent",
         "existing_node",
         "new_helper",
+        "final_output",
     }
     for packet in payload["outgoing_packets"]:
         _require_keys(packet, ["message_type", "target", "message", "attachment_refs"], "outgoing_packet")
@@ -148,11 +177,19 @@ def validate_node_record(payload: Dict[str, Any]) -> None:
         ],
         "node_record.orchestration",
     )
-    allowed_decisions = {"execute_locally", "delegate", "report_problem"}
+    allowed_decisions = {"execute_locally", "transmute", "delegate", "report_problem"}
     if orchestration["initial_decision"] not in allowed_decisions:
         raise ContractError(f"invalid initial_decision: {orchestration['initial_decision']}")
     if orchestration["final_decision"] not in allowed_decisions:
         raise ContractError(f"invalid final_decision: {orchestration['final_decision']}")
+    terminal_result_destination = orchestration.get("terminal_result_destination")
+    if terminal_result_destination is not None and terminal_result_destination not in {"creator", "final_output"}:
+        raise ContractError(
+            f"invalid terminal_result_destination: {terminal_result_destination}"
+        )
+    awaited_child_results = orchestration.get("awaited_child_results")
+    if awaited_child_results is not None and not isinstance(awaited_child_results, bool):
+        raise ContractError("awaited_child_results must be a boolean when present")
 
 
 def validate_node_authored_response(
@@ -177,6 +214,7 @@ def validate_node_authored_response(
     decision = payload["orchestration_decision"]
     valid_decisions = {
         "execute_locally",
+        "transmute",
         "delegate",
         "report_problem",
     }
@@ -203,6 +241,15 @@ def validate_node_authored_response(
         response = payload.get("response")
         if not isinstance(response, str) or not response.strip():
             raise ContractError("report_problem response must be a non-empty string")
+        return
+
+    if decision == "transmute":
+        message = payload.get("message_for_next_agent")
+        if not isinstance(message, str) or not message.strip():
+            raise ContractError("transmute message_for_next_agent must be a non-empty string")
+        next_node_overrides = payload.get("next_node_overrides")
+        if next_node_overrides is not None and not isinstance(next_node_overrides, dict):
+            raise ContractError("transmute next_node_overrides must be an object when present")
         return
 
     helpers = payload.get("helpers")

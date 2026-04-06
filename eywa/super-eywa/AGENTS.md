@@ -16,6 +16,8 @@ These folders exist:
 - `sticky-notes/open-questions/`
 - `sticky-notes/remember-for-later/`
 
+When making plan docs, put them in `convenience-docs/lil-plans/`.
+
 Miscellaneous docs (scratch work, design proposals, brainstorms, etc.) go in `sticky-notes/daily-journals/YYYY-MM-DD/`. Create today's date folder if it doesn't exist.
 
 For autonomous build work, keep implementation notes, judgment calls, open questions, and handoff notes in `sticky-notes/daily-journals/YYYY-MM-DD/`.

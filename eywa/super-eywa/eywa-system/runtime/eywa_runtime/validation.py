@@ -8,6 +8,7 @@ from typing import Dict, List
 
 from .contracts import (
     ContractError,
+    validate_final_output,
     validate_node_authored_response,
     validate_node_output,
     validate_node_packet,
@@ -27,6 +28,7 @@ def validate_run_directory(run_dir: Path) -> Dict[str, object]:
     required_paths = [
         run_dir / "run_packet.json",
         run_dir / "run_summary.json",
+        run_dir / "final-output.json",
         run_dir / "events" / "run-events.jsonl",
         run_dir / "derived" / "timeline.json",
         run_dir / "derived" / "timeline.md",
@@ -40,6 +42,11 @@ def validate_run_directory(run_dir: Path) -> Dict[str, object]:
 
     run_packet = json.loads((run_dir / "run_packet.json").read_text(encoding="utf-8"))
     validate_run_packet(run_packet)
+    final_output = json.loads((run_dir / "final-output.json").read_text(encoding="utf-8"))
+    try:
+        validate_final_output(final_output)
+    except ContractError as exc:
+        raise RunValidationError(str(exc)) from exc
 
     node_dirs = sorted(path for path in (run_dir / "nodes").iterdir() if path.is_dir())
     if not node_dirs:
@@ -116,6 +123,13 @@ def validate_run_directory(run_dir: Path) -> Dict[str, object]:
         raise RunValidationError(
             f"run_summary node_count {run_summary['node_count']} does not match actual node count {node_count}"
         )
+    final_result_refs = run_summary.get("final_result_refs") or []
+    if not isinstance(final_result_refs, list) or not final_result_refs:
+        raise RunValidationError("run_summary final_result_refs must be a non-empty list")
+    for ref in final_result_refs:
+        resolved = run_dir / str(ref)
+        if not resolved.exists():
+            raise RunValidationError(f"run_summary final_result_ref does not exist: {ref}")
 
     return {
         "run_id": run_summary["run_id"],

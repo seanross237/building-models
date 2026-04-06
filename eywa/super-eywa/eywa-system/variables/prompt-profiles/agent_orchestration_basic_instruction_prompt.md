@@ -15,5 +15,3 @@ When deciding:
 - if child results are already present, use them seriously when deciding whether you can now finish the task
 
 Your job is not to mutate the graph directly.
-
-Your job is to author a clean orchestration judgment in the required JSON schema.

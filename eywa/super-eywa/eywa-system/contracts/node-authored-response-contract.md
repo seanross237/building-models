@@ -22,6 +22,7 @@ The runtime validates this object before it creates helper nodes, packets, edges
 ## Allowed `orchestration_decision` Values
 
 - `execute_locally`
+- `transmute`
 - `delegate`
 - `report_problem`
 
@@ -94,6 +95,29 @@ Example:
     }
   ],
   "synthesis_brief": "Combine the helper outputs into one final answer."
+}
+```
+
+## `transmute` Shape
+
+Required extra fields:
+
+- `message_for_next_agent`
+  - the single transformed task to send downward to the next node
+
+Optional extra fields:
+
+- `next_node_overrides`
+
+Example:
+
+```json
+{
+  "schema_name": "eywa_node_response",
+  "schema_version": "v1",
+  "orchestration_decision": "transmute",
+  "decision_notes": "The task should be reframed before execution.",
+  "message_for_next_agent": "Solve this sharper, formalized version of the task."
 }
 ```
 
