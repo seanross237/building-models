@@ -12,8 +12,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 
 # Cookie support for yt-dlp (helps avoid rate-limiting / bot detection).
-# Override with env var YT_COOKIES_PATH; default is ~/yt-cookies.txt.
-_COOKIES_PATH_DEFAULT = os.path.expanduser("~/yt-cookies.txt")
+# Override with env var YT_COOKIES_PATH; default is in research-radar dir.
+_COOKIES_PATH_DEFAULT = os.path.expanduser("~/home-base/research_hub/research-radar/yt-cookies.txt")
 COOKIES_PATH: str | None = os.environ.get("YT_COOKIES_PATH", _COOKIES_PATH_DEFAULT)
 ITEM_GLOB = "data/topics/*/youtube/items/*.md"
 SECTION_PATTERN = re.compile(r"(^## (?P<section>.+?)\n\n)(?P<body>.*?)(?=^## |\Z)", re.MULTILINE | re.DOTALL)
