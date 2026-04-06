@@ -144,3 +144,63 @@ Full item files belong in `items/`.
 - **【Multi Sub】 🎉 我在末世開超市當救世主 I opened a supermarket and became a savior in the apocalypse EP1-108 #男频** — Qixiang-Animation (8:58:56, 88 views)
   https://www.youtube.com/watch?v=tZ4cjmM5yXM
   item: `items/tZ4cjmM5yXM.md`
+
+## 2026-04-05 — 19 new videos
+
+- **NASA mission managers provide status update on Artemis II** — WCNC (1:02:14, 2.9K views)
+  https://www.youtube.com/watch?v=1CuCGjFyI6c
+  item: `items/1CuCGjFyI6c.md`
+- **NASA’s Artemis II Daily News Conference (April 4, 2026)** — NASA (1:09:45, 420.7K views)
+  https://www.youtube.com/watch?v=O-KDKBCPrwA
+  item: `items/O-KDKBCPrwA.md`
+- **Valuing Constellation Software's Spinoffs: Finding the Next 10-Bagger** — The Investor's Podcast Network (1:20:36, 1.4K views)
+  https://www.youtube.com/watch?v=sjCGdGh8tLs
+  item: `items/sjCGdGh8tLs.md`
+- **The AI Orchestrator Trap Most Developers Fall Into | #NEWIT** — GilliLab Logic Salt (43:10, new)
+  https://www.youtube.com/watch?v=T2Q691zpyG8
+  item: `items/T2Q691zpyG8.md`
+- **After Inheriting a Kingdom, I Unlock a Family System—The More Heirs I Have, the Stronger I Become!** — Revel Manga Chronicles (28:16:03, 724 views)
+  https://www.youtube.com/watch?v=JCTkkFSaP2Q
+  item: `items/JCTkkFSaP2Q.md`
+- **Will God Save America? | Bible Prophecy, America & the Future | LIVE Conference Day 2** — Heritage & Hope Ministries (9:01:11, 6.5K views)
+  https://www.youtube.com/watch?v=hc4jv0bCfUA
+  item: `items/hc4jv0bCfUA.md`
+- **💥【New】【Multi Sub】Maxed Out: One Skill Per Second EP1-105#anime #animation** — Joyland-Animation (2:10:14, 2.8K views)
+  https://www.youtube.com/watch?v=KWnO0C4pouc
+  item: `items/KWnO0C4pouc.md`
+- **Li Keqiang's Daughter Became US Citizen, Vows Never to Return? His Wife Exposes His Final Words** — China Insider (38:22, 896 views)
+  https://www.youtube.com/watch?v=DL1S58ouWMY
+  item: `items/DL1S58ouWMY.md`
+- **Fantastic Inventions 2026: Diving into the Future!** — THE RSG (37:19, 15 views)
+  https://www.youtube.com/watch?v=tdwKUv62HL0
+  item: `items/tdwKUv62HL0.md`
+- **相識十年，他們卻為了心機女打她毀了她的機長榮譽！她失望離開，追尋太空夢，竟航空大佬跪地求婚，渣男後悔痛苦求原諒，可惜太遲了！#短剧 #逆袭 #爽剧 #豪门 #shortdramas** — 云梦短剧 (1:43:08, 885 views)
+  https://www.youtube.com/watch?v=ZDo4r9WJlbs
+  item: `items/ZDo4r9WJlbs.md`
+- **Reborn 1 month before the apocalypse, I awakened an infinite space and hoarded 10,000 tons of meat!** — ถนอม แก้วธรรม (11:55:01, 55 views)
+  https://www.youtube.com/watch?v=VER9RtodV-E
+  item: `items/VER9RtodV-E.md`
+- **【FULL】EP01-77💥月薪三千的焊工，竟在修车铺手搓出星际母舰？用破烂造机甲，一掌掰弯顶级炮管 | 合集 | MULTI SUB** — Amazing Anime Man (1:49:23, 2.7K views)
+  https://www.youtube.com/watch?v=05uuyjGYSRI
+  item: `items/05uuyjGYSRI.md`
+- **💥ENG SUB💥【SSS级法神：我的技能无限连爆】SSS-Class Arcane God: My Skills Explode Infinitely 第1-105集 #玄幻 #热血 #动漫** — 超有钱动漫 Anime Club (2:10:15, 4.6K views)
+  https://www.youtube.com/watch?v=julyA4nmVDE
+  item: `items/julyA4nmVDE.md`
+- **Wait, Everyone is DEAD?! I Fused Sadako & Freddy to Conquer Hell! 💀💥#SystemManga #ManhuaRecap** — 小雨动漫社 (2:21:03, 2.5K views)
+  https://www.youtube.com/watch?v=nDNu98xhaNw
+  item: `items/nDNu98xhaNw.md`
+- **💥ENG SUB💥【御兽神王：我统御十凶妖兽】Supreme Beast Master: Dominating Ten Fierce Beasts 第1-141集 #战斗 #都市 #玄幻 #热血** — 超有钱动漫 Anime Club (8:53:52, 354 views)
+  https://www.youtube.com/watch?v=MO8h6TRoU94
+  item: `items/MO8h6TRoU94.md`
+- **THIS GAME IS 'WHAT HIDES BENEATH THE PARK?' - UNDERJOY** — Struthy and GrimwardStudio (1:15:09, 20 views)
+  https://www.youtube.com/watch?v=DBsXAlYd9wQ
+  item: `items/DBsXAlYd9wQ.md`
+- **💥【新番上线】游戏宅觉醒开宝箱直觉，横扫股市，从无业游民逆袭成华尔街胆寒的投资传奇！《从游戏宅到投资之神，我狂赚五十亿》全集Multi SUB #热血 #漫剧 #动漫魔女** — 动漫魔女 (3:21:57, 296 views)
+  https://www.youtube.com/watch?v=mAHq-ly97gc
+  item: `items/mAHq-ly97gc.md`
+- **🔥【爽漫】【Eng Sub】《火球升禁咒，我點成了全能法神》每秒一個技能點，秦炎從一顆小火球開始無限升階禁咒，一路屠神證道，降維打擊守護藍星！第1-105集 #热血 #动漫 #玄幻 #anime** — 八虎动漫剧场 (2:10:15, 201 views)
+  https://www.youtube.com/watch?v=Ls5gksehJjQ
+  item: `items/Ls5gksehJjQ.md`
+- **🔥【强推】【Eng Sub】《全民領主：開局統禦太古兇獸》林寒覺醒禦獸系統，十位兇獸娘助陣，一路逆襲成全球最強！第1-141集 #热血 #逆袭 #anime** — 八虎动漫剧场 (8:53:52, 663 views)
+  https://www.youtube.com/watch?v=EAAojyj06Jk
+  item: `items/EAAojyj06Jk.md`

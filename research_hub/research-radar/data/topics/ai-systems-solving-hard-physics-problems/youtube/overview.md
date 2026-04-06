@@ -189,3 +189,96 @@ Full item files belong in `items/`.
 - **💞I had a crush on CEO for years, never expected that he fall in love with me too, got married#cdrama** — Sweety Theater (2:37:59, 6.2K views)
   https://www.youtube.com/watch?v=nCrxOsa2iDw
   item: `items/nCrxOsa2iDw.md`
+
+## 2026-04-05 — 30 new videos
+
+- **A $30 AI Just Outperformed a $100K PhD — Here's What Happens Next** — TrendBrief (4:40, 5 views)
+  https://www.youtube.com/watch?v=HWx13xKXeH4
+  item: `items/HWx13xKXeH4.md`
+- **Biggest Breakthroughs in Biology 2025** — Quanta Magazine (15:56, 6.9K views)
+  https://www.youtube.com/watch?v=mf5envOypNU
+  item: `items/mf5envOypNU.md`
+- **An Outstanding Algebraic equation | 99% Failed to crack this!  | Can you solve this? | x=?** — Mathematics & Statistics Guru (12:32, 40 views)
+  https://www.youtube.com/watch?v=6tRxIxZcSX8
+  item: `items/6tRxIxZcSX8.md`
+- **We Built a Quantum System That Never Fails | yQuantum 2026 | Meridian | Karthik Barma** — The Confused CEO (5:55, 23 views)
+  https://www.youtube.com/watch?v=E1c4lzrEhF0
+  item: `items/E1c4lzrEhF0.md`
+- **What Every Medical Influencer Is Getting Wrong | Dr. Glaucomflecken (Will Flanary)** — Doctor Mike (2:13:42, 29.9K views)
+  https://www.youtube.com/watch?v=49T38wuqF1M
+  item: `items/49T38wuqF1M.md`
+- **Solving a 'Harvard' University Entrance Question | Olympiad Mathematics** — HkLogics (6:34, 30 views)
+  https://www.youtube.com/watch?v=NNNv3amuHZE
+  item: `items/NNNv3amuHZE.md`
+- **Quantum Generative Models Explained | Future of Quantum AI & Machine Learning** — Professor Rahul Jain (2:21, 6 views)
+  https://www.youtube.com/watch?v=vj5lamLzds8
+  item: `items/vj5lamLzds8.md`
+- **Solving a 'Harvard' University Entrance Question | Olympiad Mathematics** — HkLogics (3:21, 5 views)
+  https://www.youtube.com/watch?v=6Hnz_SffsrQ
+  item: `items/6Hnz_SffsrQ.md`
+- **A Nice Algebra Problem | Math Olympiad | Can you solve this? | x=?** — Mathematics & Statistics Guru (10:44, 123 views)
+  https://www.youtube.com/watch?v=QFAMZj8UpmQ
+  item: `items/QFAMZj8UpmQ.md`
+- **Oxford Physicist: THE ARCTURIAN SHIFT HAS BEGUN! Prepare for a 1-in-400,000 Year Event!** — Wisdom From North (1:20:17, 16.9K views)
+  https://www.youtube.com/watch?v=xcw3RHGBSDs
+  item: `items/xcw3RHGBSDs.md`
+- **A Nice Algebra Problem | Math Olympiad | Find abc=?** — SALogic (10:03, 717 views)
+  https://www.youtube.com/watch?v=ABbD1Z08Z5Q
+  item: `items/ABbD1Z08Z5Q.md`
+- **At Home, He Lives Peacefully, But In Hell, He Must Survive Against The Strongest Enemies** — Recap Manga (11:46:10, 755 views)
+  https://www.youtube.com/watch?v=iBzr9ocZNuc
+  item: `items/iBzr9ocZNuc.md`
+- **10 Recent Discoveries That PROVE Consciousness Is Everything** — Hidden Archive (34:01, 15 views)
+  https://www.youtube.com/watch?v=Hnx-6K0_3t8
+  item: `items/Hnx-6K0_3t8.md`
+- **This Will SHOCK You — ISLAM Is COLLAPSING** — Fall of Nations (2:53:55, 4.1K views)
+  https://www.youtube.com/watch?v=aiBMdiSd0r8
+  item: `items/aiBMdiSd0r8.md`
+- **AI, Algorithms, and Reality: A Conversation with Bissey** — Insane Films (10:31, 13 views)
+  https://www.youtube.com/watch?v=aY6PmEpSsHY
+  item: `items/aY6PmEpSsHY.md`
+- **Multi-Agent AI System for Compliance & Risk | Local-First AI Architecture Demo** — Architecting AI Systems (6:27, 2 views)
+  https://www.youtube.com/watch?v=VsvesPgrnL8
+  item: `items/VsvesPgrnL8.md`
+- **Lesson 3: Opening the Black Box — Understanding Modern AI Algorithms** — Dr. 許軒 Hsuan Hsu (30:45, 1 views)
+  https://www.youtube.com/watch?v=uzcSqoUZVUs
+  item: `items/uzcSqoUZVUs.md`
+- **The Private Bank: The Wealthy Family's Secret to Double-Dipping Capital: Warren Buffett** — Wealth Mindset Blueprint (34:49, 1 views)
+  https://www.youtube.com/watch?v=ZjdDBQcZmKU
+  item: `items/ZjdDBQcZmKU.md`
+- **Bloomberg This Weekend | Daring Rescue Mission, OPEC Meeting on Energy Crisis, TMZ Goes to DC** — Bloomberg Podcasts (2:28:56, 409 views)
+  https://www.youtube.com/watch?v=xixBRWfcct0
+  item: `items/xixBRWfcct0.md`
+- **【Fullspisode】She was broke — then a jade pendant gave her x-ray vision!** — Supernova Drama (2:20:23, 1.7K views)
+  https://www.youtube.com/watch?v=ePt4N0y7fCU
+  item: `items/ePt4N0y7fCU.md`
+- **BMS 101** — The OICNM (1:48:50, 5 views)
+  https://www.youtube.com/watch?v=j7ekjnSo4Q8
+  item: `items/j7ekjnSo4Q8.md`
+- **Explosive New WMO Climate Report** — Climate Emergency Forum (35:05, 1.6K views)
+  https://www.youtube.com/watch?v=DR0vv5upZiU
+  item: `items/DR0vv5upZiU.md`
+- **This DSA TRICK🔥 helped me crack Amazon Microsoft Salesforce Oracle Adobe Samsung Inmobi Meesho 🚀** — Shaurya Pratap Singh (11:44, 487 views)
+  https://www.youtube.com/watch?v=sEQObDojBxo
+  item: `items/sEQObDojBxo.md`
+- **I reached HP 9,999,999+ because my basic attacks increase my HP!#manga #manhwa** — Sk Manhwa Recap (11:55:15, 15 views)
+  https://www.youtube.com/watch?v=eZ2N278ALng
+  item: `items/eZ2N278ALng.md`
+- **The 1.2 FTE problem** — Daniel Cham MD (7:57, 2 views)
+  https://www.youtube.com/watch?v=AKFAQZ8dPOA
+  item: `items/AKFAQZ8dPOA.md`
+- **SINGURUL ROMÂN CARE A VĂZUT PĂMÂNTUL DE SUS! - DUMITRU PRUNARIU #IGDLCC** — George Buhnici (2:35:36, 4.1K views)
+  https://www.youtube.com/watch?v=rqWezooCpxE
+  item: `items/rqWezooCpxE.md`
+- **倪海廈：4月7號辛亥日必看！4生肖穿綠色，3種人穿黃色，保你2026馬年翻天覆地#倪海廈 #黃帝內經 #養生 #國學 #易經 #清明 #開運 #招財 #補財庫 #中醫 #風水 #2026運勢 #農曆** — 漢唐健康 (1:24:35, 2.7K views)
+  https://www.youtube.com/watch?v=7Pyo9Sq7H6Y
+  item: `items/7Pyo9Sq7H6Y.md`
+- **Episode 22 Advanced Ultrasonic Testing: Manufacturing Optimization with David Burks** — Webisoft (32:11, 20 views)
+  https://www.youtube.com/watch?v=ISzN28ZMC4I
+  item: `items/ISzN28ZMC4I.md`
+- **She Tempted the Mafia King for Tuition—His First Time Falling, Completely Obsessed!** — RevengeBride Drama (1:08:30, 251 views)
+  https://www.youtube.com/watch?v=YI5QDIGNthA
+  item: `items/YI5QDIGNthA.md`
+- **То, Что Нашли под Вавилоном? Теперь НАВСЕГДА Переписывает Историю Человечества** — Портал Секретов (23:28, new)
+  https://www.youtube.com/watch?v=_4zYQ3oWhrs
+  item: `items/_4zYQ3oWhrs.md`

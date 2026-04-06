@@ -27,3 +27,12 @@ Full item files belong in `items/`.
 - **Advances in Artificial Intelligence applied to Cardiac MRI: Highlights from Circ: Cardiovascular Img** — Circulation, an American Heart Association Journal (1:06:16, 6 views)
   https://www.youtube.com/watch?v=IaijLVPHmsI
   item: `items/IaijLVPHmsI.md`
+
+## 2026-04-05 — 2 new videos
+
+- **MIT AI alumni club Shipping at the Speed of Thought Michael Bryzek** — Maria Kellis (1:11:32, 3 views)
+  https://www.youtube.com/watch?v=DduKznHrh4M
+  item: `items/DduKznHrh4M.md`
+- **🔥【最新合集】《全民诡异：开局掌握零元购》EP1~175：马屁精撞上真大佬！| Multi SUB #热血 #玄幻 #逆袭 #战斗 #动漫魔女** — 动漫魔女 (14:03:11, 1.3K views)
+  https://www.youtube.com/watch?v=bWitiFuT3Jc
+  item: `items/bWitiFuT3Jc.md`

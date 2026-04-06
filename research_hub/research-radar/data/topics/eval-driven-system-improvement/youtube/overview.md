@@ -189,3 +189,96 @@ Full item files belong in `items/`.
 - **冷酷毒舌のCEO上司が私を密かに好き。逃げると追いかけ、壁際に追い詰めてキスする。** — 恋愛短編ドラマ (3:06:20, 17.2K views)
   https://www.youtube.com/watch?v=Mw2U9l7uUkM
   item: `items/Mw2U9l7uUkM.md`
+
+## 2026-04-05 — 30 new videos
+
+- **NASA Holds News Conference After Artemis II Launch** — C-SPAN (1:03:00, 14.2K views)
+  https://www.youtube.com/watch?v=rC_KrtDlgy4
+  item: `items/rC_KrtDlgy4.md`
+- **This hard drive thing is getting bad.** — Omar Gonzalez Photography (11:47, 11.4K views)
+  https://www.youtube.com/watch?v=CgeXcarHjiE
+  item: `items/CgeXcarHjiE.md`
+- **Stuttgart 21: Train simulated – tunnel undergoes vibration test** — Bahnprojekt Stuttgart–Ulm (4:27, 15.0K views)
+  https://www.youtube.com/watch?v=NNyKa_Rz2wQ
+  item: `items/NNyKa_Rz2wQ.md`
+- **Self Improving Agents in 5 Minutes** — Developers Digest (5:08, 3.6K views)
+  https://www.youtube.com/watch?v=RoaPvj9Ovug
+  item: `items/RoaPvj9Ovug.md`
+- **University Students' Objections to the Contemporary Understanding of Islamic Jurisprudence** — Veysel Yağmur Saka (2:23:14, 26 views)
+  https://www.youtube.com/watch?v=PUEmkTrzO6o
+  item: `items/PUEmkTrzO6o.md`
+- **I Tried to Finish My Backyard in One Weekend (3 Awesome Upgrades)** — Mateo Stabio (20:05, 9.4K views)
+  https://www.youtube.com/watch?v=X1fZcPpd8Ko
+  item: `items/X1fZcPpd8Ko.md`
+- **At Home, He Lives Peacefully, But In Hell, He Must Survive Against The Strongest Enemies** — Recap Manga (11:46:10, 755 views)
+  https://www.youtube.com/watch?v=iBzr9ocZNuc
+  item: `items/iBzr9ocZNuc.md`
+- **Sweden Unleashed LOKI on Russian Drones… Total DESTRUCTION** — The Military Show (21:12, 14.8K views)
+  https://www.youtube.com/watch?v=voQYTa05Qms
+  item: `items/voQYTa05Qms.md`
+- **Fix Micro-Stutter & Frame-Time Issues In Games (Advanced Guide P2)** — The Software Guy (8:54, 1.5K views)
+  https://www.youtube.com/watch?v=pLxdRmbrA4o
+  item: `items/pLxdRmbrA4o.md`
+- **NASA’s Artemis II Daily News Conference (April 4, 2026)** — NASA (1:09:45, 420.7K views)
+  https://www.youtube.com/watch?v=O-KDKBCPrwA
+  item: `items/O-KDKBCPrwA.md`
+- **Video 18. Continuous Improvement in IMS** — Transform AcademyHub-01 (2:02, new)
+  https://www.youtube.com/watch?v=Qa75djRvHmM
+  item: `items/Qa75djRvHmM.md`
+- **What’s Wrong With Generation Z — and Why It’s Driving Everyone Crazy** — Elina Fedorova (17:05, 4.0K views)
+  https://www.youtube.com/watch?v=wXR0EWQDAOw
+  item: `items/wXR0EWQDAOw.md`
+- **Bloomberg This Weekend | Daring Rescue Mission, OPEC Meeting on Energy Crisis, TMZ Goes to DC** — Bloomberg Podcasts (2:28:56, 409 views)
+  https://www.youtube.com/watch?v=xixBRWfcct0
+  item: `items/xixBRWfcct0.md`
+- **Machine Learning Engineer Full Course 2026 | Machine Learning Tutorial For Beginners | Simplilearn** — Simplilearn (23:26:36, 1.2K views)
+  https://www.youtube.com/watch?v=53mqteI5TS0
+  item: `items/53mqteI5TS0.md`
+- **🔴URGENT LIONS! Lions Draft: Protection or Impact? Lions Draft Dilemma DETROIT LIONS NEWS TODAY 2026** — GO LIONS! NEWS TODAY TALK PODCAST (DETROIT) FANS (13:06, 391 views)
+  https://www.youtube.com/watch?v=yAlr9uZI5x4
+  item: `items/yAlr9uZI5x4.md`
+- **SINGURUL ROMÂN CARE A VĂZUT PĂMÂNTUL DE SUS! - DUMITRU PRUNARIU #IGDLCC** — George Buhnici (2:35:36, 4.1K views)
+  https://www.youtube.com/watch?v=rqWezooCpxE
+  item: `items/rqWezooCpxE.md`
+- **Broadcast Interrupted: Hytale Temple Reconstruction & System Test (First Signal Since Upgrade)** — StandardDamage (NA, 11 views)
+  https://www.youtube.com/watch?v=eMl4ukSFzdw
+  item: `items/eMl4ukSFzdw.md`
+- **Persona-Driven LLMs for Hinglish? (EACL 2026)** — Women in AI Research WiAIR (14:23, 1 views)
+  https://www.youtube.com/watch?v=8wWj1z2dBI8
+  item: `items/8wWj1z2dBI8.md`
+- **🙋‍♂️ Worker participation in OSHA: key to preventing accidents** — HUASCARAN ASESORES ® (21, 1 views)
+  https://www.youtube.com/watch?v=tHNp8x3Bpb0
+  item: `items/tHNp8x3Bpb0.md`
+- **AI in Research: Reliability, Ethics, and Disclosure** — nglreference (51:02, 5 views)
+  https://www.youtube.com/watch?v=ip42tGHhDQo
+  item: `items/ip42tGHhDQo.md`
+- **Trading LIVE with One of the World's BEST Scalpers (Perfect Sniper Entries)** — Chart Fanatics and Andrea Cimi (5:41:15, 10.3K views)
+  https://www.youtube.com/watch?v=TvoQr6ObjnU
+  item: `items/TvoQr6ObjnU.md`
+- **The Day Dr. Glaucomflecken Died** — Doctor Mike (2:13:42, 29.9K views)
+  https://www.youtube.com/watch?v=49T38wuqF1M
+  item: `items/49T38wuqF1M.md`
+- **Solution to Case Study Nov 2025 Diet** — Apex Professional Associates (1:17:11, 414 views)
+  https://www.youtube.com/watch?v=8QWNqvhCYeQ
+  item: `items/8QWNqvhCYeQ.md`
+- **Plan to expose our worst domestic violence offenders before they do the unthinkable | Kiss & Kill** — 7 News Spotlight (1:32:28, 2.4K views)
+  https://www.youtube.com/watch?v=fuvC3CvARwY
+  item: `items/fuvC3CvARwY.md`
+- **What Nissan Isn't Telling You About The 2026 Rogue Rock Creek** — Brian Makse (16:28, 561 views)
+  https://www.youtube.com/watch?v=ZeV8olh0Lmk
+  item: `items/ZeV8olh0Lmk.md`
+- **Practical Luxury That Works at Sea - Riviera 50 SMY Test Drive** — BoatLife (29:36, 965 views)
+  https://www.youtube.com/watch?v=bOE_SBXopnI
+  item: `items/bOE_SBXopnI.md`
+- **After Inheriting a Kingdom, I Unlock a Family System—The More Heirs I Have, the Stronger I Become!** — Revel Manga Chronicles (28:16:03, 723 views)
+  https://www.youtube.com/watch?v=JCTkkFSaP2Q
+  item: `items/JCTkkFSaP2Q.md`
+- **EEL Battery V6-Pro DIY Kit - Upgrade. Actually pretty good!** — Off-Grid Garage (26:54, 7.7K views)
+  https://www.youtube.com/watch?v=u3iPEaupMQg
+  item: `items/u3iPEaupMQg.md`
+- **The Stoic Brain: How Emotional Regulation Unlocks Performance** — HumanDecoder (7:04, new)
+  https://www.youtube.com/watch?v=iFbLZ0dJLDM
+  item: `items/iFbLZ0dJLDM.md`
+- **Referral Driven Growth with Brandon Barnum** — AFT Construction (55:01, 1 views)
+  https://www.youtube.com/watch?v=ZrtQJKLagHc
+  item: `items/ZrtQJKLagHc.md`

@@ -39,3 +39,15 @@ Full item files belong in `items/`.
 - **🔥【爽漫】【Eng Sub】《神級奸商：全服求我別薅了/God-Tier Scammer》EP1-119 | 林風重生玩虛擬遊戲成奸商，一路暴賺改命，卻發現現實隱藏著遊戲真相。#玄幻 #热血 #动漫** — 八虎动漫剧场 (10:07:22, 42 views)
   https://www.youtube.com/watch?v=vC-J3x1NGis
   item: `items/vC-J3x1NGis.md`
+
+## 2026-04-05 — 3 new videos
+
+- **Incredible Inventions 2026: The Future Is Here!** — THE RSG (37:19, 15 views)
+  https://www.youtube.com/watch?v=tdwKUv62HL0
+  item: `items/tdwKUv62HL0.md`
+- **MIT AI alumni club Shipping at the Speed of Thought Michael Bryzek** — Maria Kellis (1:11:32, 3 views)
+  https://www.youtube.com/watch?v=DduKznHrh4M
+  item: `items/DduKznHrh4M.md`
+- **🔥【最新合集】《全民诡异：开局掌握零元购》EP1~175：马屁精撞上真大佬！| Multi SUB #热血 #玄幻 #逆袭 #战斗 #动漫魔女** — 动漫魔女 (14:03:11, 1.3K views)
+  https://www.youtube.com/watch?v=bWitiFuT3Jc
+  item: `items/bWitiFuT3Jc.md`

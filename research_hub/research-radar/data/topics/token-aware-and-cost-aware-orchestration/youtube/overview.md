@@ -54,3 +54,36 @@ Full item files belong in `items/`.
 - **A delivery boy was turned into a laughing stock after his fiancée openly broke off the engageme** — 闪看小剧社 (2:40:31, 359 views)
   https://www.youtube.com/watch?v=zYCtFiwlvuM
   item: `items/zYCtFiwlvuM.md`
+
+## 2026-04-05 — 10 new videos
+
+- **they blocked OpenClaw. now what.** — Ray Fernando (2:16:43, 8.1K views)
+  https://www.youtube.com/watch?v=sWDhIGIiK5w
+  item: `items/sWDhIGIiK5w.md`
+- **I died in the lake, but my ghost returned to see my cruel husband finally break down.#ceo** — Autumn Vibe Drama (1:31:30, 2 views)
+  https://www.youtube.com/watch?v=R05FWmpufos
+  item: `items/R05FWmpufos.md`
+- **Cô gái bị mẹ kế đuổi khỏi nhà, nhờ “thể chất may mắn” chữa khỏi bệnh cho CEO, được cả nhà thương!🍀** — Ghiền KI (2:30:45, 194.5K views)
+  https://www.youtube.com/watch?v=ygZ36TRxZ9k
+  item: `items/ygZ36TRxZ9k.md`
+- **《鳳王歸位：秘密換子16年》EP1~62 | 小三媮換鳳凰蛋寵假女，十六年後真相讓渣夫崩潰！#動態漫#鳳王歸位：秘密換子16年** — 爽漫剧场 Dynamic (2:03:47, 10 views)
+  https://www.youtube.com/watch?v=2rkQZSG913M
+  item: `items/2rkQZSG913M.md`
+- **Multi sub（完结新番）💥💥💥最强穿越者高阳：不做圣母，只做毒士！当现代智谋撞上绝色女帝，这大乾江山我要定了《明谋》#次元动漫  #破界 #動漫** — 破界动漫局 Anime Club (2:36:26, 4.1K views)
+  https://www.youtube.com/watch?v=58omHAwkQJ4
+  item: `items/58omHAwkQJ4.md`
+- **【Multi Sub】Parallel World Battle Royale S2 EP 1-100 #animation #anime #donghua** — Quartic element Anime (9:05:12, 525 views)
+  https://www.youtube.com/watch?v=Urf-lXNJj8A
+  item: `items/Urf-lXNJj8A.md`
+- **🌟【新番上线|ENG SUB】《我捡了个魔女当老婆》废柴大师兄被装龙珠，魔女上门竟爆惊天秘闻，全宗偷听后彻底失控！ 一口气看完 #漫剧 #热血 #玄幻 #战斗 #苍穹动漫** — Dragon Animation Club (2:25:41, 3.7K views)
+  https://www.youtube.com/watch?v=jZC_zC85Xtc
+  item: `items/jZC_zC85Xtc.md`
+- **MIT AI alumni club Shipping at the Speed of Thought Michael Bryzek** — Maria Kellis (1:11:32, 3 views)
+  https://www.youtube.com/watch?v=DduKznHrh4M
+  item: `items/DduKznHrh4M.md`
+- **【Full Episodes】 A Metaphysics Master Transmigrates into the True Heiress; Scumbag Dad's Mistress Mee** — Drama Dinah (1:51:32, 897 views)
+  https://www.youtube.com/watch?v=xom_9Bsg9G4
+  item: `items/xom_9Bsg9G4.md`
+- **[ENG DUB]He married the dynasty’s most dangerous woman and chose to save her world#minidrama** — MaxBro TV (3:01:26, 21.6K views)
+  https://www.youtube.com/watch?v=ebpKW_o2ujo
+  item: `items/ebpKW_o2ujo.md`

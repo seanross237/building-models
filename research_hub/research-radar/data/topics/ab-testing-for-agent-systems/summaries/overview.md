@@ -73,3 +73,73 @@ Full item files belong in `items/`.
   source: https://www.youtube.com/watch?v=Bra8uBbf4Do
   summary file: `items/youtube--Bra8uBbf4Do.md`
   presentation candidate: `false`
+
+## 2026-04-05 — youtube score 1
+
+- **Why Americans Are Obsessed With These Convenience Stores**
+  source: https://www.youtube.com/watch?v=0-67W8kzx5o
+  summary file: `items/youtube--0-67W8kzx5o.md`
+  presentation candidate: `false`
+
+## 2026-04-05 — youtube score 1
+
+- **what is this game**
+  source: https://www.youtube.com/watch?v=00dCeSCS_Es
+  summary file: `items/youtube--00dCeSCS_Es.md`
+  presentation candidate: `false`
+
+## 2026-04-05 — youtube score 1
+
+- **I saw his betrayal, divorced and became the richest CEO, my ex regrets**
+  source: https://www.youtube.com/watch?v=4iJgF1JaUnI
+  summary file: `items/youtube--4iJgF1JaUnI.md`
+  presentation candidate: `false`
+
+## 2026-04-05 — youtube score 1
+
+- **Cold Blooded Killers | THRILLER | Full Movie in English**
+  source: https://www.youtube.com/watch?v=6RZlorp56HA
+  summary file: `items/youtube--6RZlorp56HA.md`
+  presentation candidate: `false`
+
+## 2026-04-05 — youtube score 1
+
+- **Agentic AI Login for Frontline Workers: What It Is & How It Works | BlueFletch CEO Rick Makerson**
+  source: https://www.youtube.com/watch?v=CiAIueMMCr8
+  summary file: `items/youtube--CiAIueMMCr8.md`
+  presentation candidate: `false`
+
+## 2026-04-05 — youtube score 2
+
+- **🔒 Secure AI Browsing: FireCrawl vs OpenClaw vs Claude (Full Guide)**
+  source: https://www.youtube.com/watch?v=D6YMVQyc6Ec
+  summary file: `items/youtube--D6YMVQyc6Ec.md`
+  presentation candidate: `false`
+
+## 2026-04-05 — youtube score 1
+
+- **My Dad Cheated for 8 Years**
+  source: https://www.youtube.com/watch?v=DQJq5Y-tIxw
+  summary file: `items/youtube--DQJq5Y-tIxw.md`
+  presentation candidate: `false`
+
+## 2026-04-05 — youtube score 1
+
+- **I Was So Wrong!**
+  source: https://www.youtube.com/watch?v=EdF5J4s9sXk
+  summary file: `items/youtube--EdF5J4s9sXk.md`
+  presentation candidate: `false`
+
+## 2026-04-05 — youtube score 2
+
+- **Artificial Intelligence and Legal Liability in Radiology: Randomized Experimental Study-Podcast**
+  source: https://www.youtube.com/watch?v=F3EppywMrrw
+  summary file: `items/youtube--F3EppywMrrw.md`
+  presentation candidate: `false`
+
+## 2026-04-05 — youtube score 1
+
+- **Revenge: He Cheated With His Sister Years Ago; Now The Rich Heiress Returns To Make Him Pay Dearly**
+  source: https://www.youtube.com/watch?v=FneJtuPAiCs
+  summary file: `items/youtube--FneJtuPAiCs.md`
+  presentation candidate: `false`

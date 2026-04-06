@@ -189,3 +189,96 @@ Full item files belong in `items/`.
 - **The Love Problems We Face: Dr. Loren Weiner on Returning to Spirit** — And Now Love Podcast (1:02:54, 342 views)
   https://www.youtube.com/watch?v=FO0yjmC58PQ
   item: `items/FO0yjmC58PQ.md`
+
+## 2026-04-05 — 30 new videos
+
+- **The Day Dr. Glaucomflecken Died** — Doctor Mike (2:13:42, 29.9K views)
+  https://www.youtube.com/watch?v=49T38wuqF1M
+  item: `items/49T38wuqF1M.md`
+- **Why Dune's Face Dancers Are Sci-Fi's Most Terrifying Threat | Sleep Story** — MARS (33:12, 48 views)
+  https://www.youtube.com/watch?v=Iaq5C3ZmJJA
+  item: `items/Iaq5C3ZmJJA.md`
+- **A Computer Scientist Wrote the Instructions to Break All Encryption. The Clock is Ticking.** — Divide and Quantum (17:04, 2 views)
+  https://www.youtube.com/watch?v=bXrwDjUSsOU
+  item: `items/bXrwDjUSsOU.md`
+- **They Threw Away This $1 Fix: Restore Any Dead Battery to Full 12V (Banned Chemistry)** — Dr. Mike Survival (17:37, 12 views)
+  https://www.youtube.com/watch?v=0jQCySO-iCY
+  item: `items/0jQCySO-iCY.md`
+- **8 Signs the Nancy Guthrie Case Is About to Break Wide Open** — Note Book VE (45:20, 93 views)
+  https://www.youtube.com/watch?v=mVZGV0zO1g4
+  item: `items/mVZGV0zO1g4.md`
+- **Bloomberg This Weekend | Daring Rescue Mission, OPEC Meeting on Energy Crisis, TMZ Goes to DC** — Bloomberg Podcasts (2:28:56, 409 views)
+  https://www.youtube.com/watch?v=xixBRWfcct0
+  item: `items/xixBRWfcct0.md`
+- **184 - The 2 Person $1.8B Company That Just Broke Everything!** — Health:Further (1:01:15, 8 views)
+  https://www.youtube.com/watch?v=ejscG8Z85Oo
+  item: `items/ejscG8Z85Oo.md`
+- **Nancy Guthrie: Google Uncovers New Evidence That Makes Him Tremble! The FBI Is Now Investigating…** — The Crime Vault (27:39, 89 views)
+  https://www.youtube.com/watch?v=ZGH3hTMamBY
+  item: `items/ZGH3hTMamBY.md`
+- **You need to start writing personal essays** — Dan Koe (26:11, 342 views)
+  https://www.youtube.com/watch?v=3rNqNvwNcrM
+  item: `items/3rNqNvwNcrM.md`
+- **ATARAXIA THE LOST BLUEPRINT  |  for Absolute Emotional Invulnerability  | Full Audiobook** — The Sovereign Path (3:09:37, 4 views)
+  https://www.youtube.com/watch?v=4JTIRQ-74hw
+  item: `items/4JTIRQ-74hw.md`
+- **A New-York Meet Cute | ROMANCE | Full Movie in English 💎** — Boxoffice | ROMANCE | Full Movies (1:57:32, 1.1K views)
+  https://www.youtube.com/watch?v=L36FqJ53Kz4
+  item: `items/L36FqJ53Kz4.md`
+- **Referral Driven Growth with Brandon Barnum** — AFT Construction (55:01, 1 views)
+  https://www.youtube.com/watch?v=ZrtQJKLagHc
+  item: `items/ZrtQJKLagHc.md`
+- **I Have Recreated The Mission Impossible Hallway Illusion from Ghost Protocol** — Opus Liews (13:49, 27 views)
+  https://www.youtube.com/watch?v=-43pySRRqq0
+  item: `items/-43pySRRqq0.md`
+- **This Will SHOCK You — ISLAM Is COLLAPSING** — Fall of Nations (2:53:55, 4.1K views)
+  https://www.youtube.com/watch?v=aiBMdiSd0r8
+  item: `items/aiBMdiSd0r8.md`
+- **Betrayal and Gastronomy in the Ottoman Palace #ottoman #history #foodhistory #gastronomy** — Brevia Culinae (20:47, new)
+  https://www.youtube.com/watch?v=Mxze3FL--rk
+  item: `items/Mxze3FL--rk.md`
+- **A Secret Government Tracks the Supernatural… | Ghostwood Comic Interview** — United States Department of Nerds (1:16:07, 3 views)
+  https://www.youtube.com/watch?v=48XQ1Ma1nok
+  item: `items/48XQ1Ma1nok.md`
+- **10 Impossible Military Experiments That Were Erased From History** — Hidden Why (31:55, 35 views)
+  https://www.youtube.com/watch?v=x6h-_f8pGw8
+  item: `items/x6h-_f8pGw8.md`
+- **Reborn 1 month before the apocalypse, I awakened an infinite space and hoarded 10,000 tons of meat!** — ถนอม แก้วธรรม (11:55:01, 55 views)
+  https://www.youtube.com/watch?v=VER9RtodV-E
+  item: `items/VER9RtodV-E.md`
+- **Nancy Guthrie: The Kidnapper Was in The House When Cioni Dropped Nancy? A Plan CIONI Was....** — The Crime Vault (32:38, 50 views)
+  https://www.youtube.com/watch?v=qyTa63EJ8d4
+  item: `items/qyTa63EJ8d4.md`
+- **CLASS 2— RESILIENT FARMING: MANAGING DROUGHT,  FLOOD, AND CLIMATE RISKS** — GROWTH FOR SUSTAINABLE AGRICULTURE INITIATIVE (4:28:16, 75 views)
+  https://www.youtube.com/watch?v=Dk9KAC13bhE
+  item: `items/Dk9KAC13bhE.md`
+- **He humiliated me with mistress on our marriage day—Then regretted it when he learned I’m a rich girl** — Spring Rose Drama (1:50:11, 2.1K views)
+  https://www.youtube.com/watch?v=vD-kZkK0FoA
+  item: `items/vD-kZkK0FoA.md`
+- **Artificial Intelligence and Legal Liability in Radiology: Randomized Experimental Study-Podcast** — Jeffrey Chen by SmartRad AI (19:22, 2 views)
+  https://www.youtube.com/watch?v=F3EppywMrrw
+  item: `items/F3EppywMrrw.md`
+- **Are We the Last Human Generation? | Amrita Mahale Anna Elisabeth Mayer | KLF2026** — DC Books (55:09, 127 views)
+  https://www.youtube.com/watch?v=7br89ouQ5S4
+  item: `items/7br89ouQ5S4.md`
+- **Cohort 2 Graduation and Award Ceremony** — Elevouth (2:02:41, 40 views)
+  https://www.youtube.com/watch?v=CKNL4GuL580
+  item: `items/CKNL4GuL580.md`
+- **Why You Keep Trying to Save People (And Why It Drains You)** — Julie Vander Meulen (41:55, 4 views)
+  https://www.youtube.com/watch?v=ONjrVtXRhms
+  item: `items/ONjrVtXRhms.md`
+- **NASA mission managers provide status update on Artemis II** — WCNC (1:02:14, 2.9K views)
+  https://www.youtube.com/watch?v=1CuCGjFyI6c
+  item: `items/1CuCGjFyI6c.md`
+- **Rural girl escapes, jumps into a CEO’s car, he falls in love and spoils her** — Peach Soda-Drama (1:37:07, 4.1K views)
+  https://www.youtube.com/watch?v=_VYMLzkqAXo
+  item: `items/_VYMLzkqAXo.md`
+- **Ordinary programmer gets a system — new identity every month! First up:董事长 of his own company!** — BoomDrama (1:30:57, 1.1K views)
+  https://www.youtube.com/watch?v=tiiqdSAJs9w
+  item: `items/tiiqdSAJs9w.md`
+- **NASA’s Artemis II Daily News Conference (April 4, 2026)** — NASA (1:09:45, 420.7K views)
+  https://www.youtube.com/watch?v=O-KDKBCPrwA
+  item: `items/O-KDKBCPrwA.md`
+- **|SFM|AFM| OPTION PRICING AND VALUATION (PART 2)** — NexGen Professional Associates (3:14:31, 48 views)
+  https://www.youtube.com/watch?v=djh_-lamJzg
+  item: `items/djh_-lamJzg.md`

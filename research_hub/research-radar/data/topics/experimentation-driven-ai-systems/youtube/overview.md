@@ -189,3 +189,96 @@ Full item files belong in `items/`.
 - **他是被判定銷毀的殘次品，她是唯一肯帶走他的天才工程師，機器人嚴禁不能越界，但見到她的第一眼，只想和她永遠在一起，他不懂人類的愛情，卻學會了在她哭的時候，笨拙地擦掉她的眼淚#杨鹏丞#邓灵枢** — 追劇鴨 (2:47:33, 42.8K views)
   https://www.youtube.com/watch?v=_xYcwYsB1d4
   item: `items/_xYcwYsB1d4.md`
+
+## 2026-04-05 — 30 new videos
+
+- **Iran War Isn’t About Iran – It’s About AI & China** — New Horizon TV (1:14, 53 views)
+  https://www.youtube.com/watch?v=vQx84hmuxrM
+  item: `items/vQx84hmuxrM.md`
+- **You’re Already Using AI… But You Don’t See the Cost** — Science, but make it weird (12:08, 1 views)
+  https://www.youtube.com/watch?v=oXdzK2BWNhs
+  item: `items/oXdzK2BWNhs.md`
+- **Trading LIVE with One of the World's BEST Scalpers (Perfect Sniper Entries)** — Chart Fanatics and Andrea Cimi (5:41:15, 10.3K views)
+  https://www.youtube.com/watch?v=TvoQr6ObjnU
+  item: `items/TvoQr6ObjnU.md`
+- **I Built an AI Knowledge System - Zomniverse (ZAR)** — Wilder Ruiz (1:21, 45 views)
+  https://www.youtube.com/watch?v=DZEudjwRwWM
+  item: `items/DZEudjwRwWM.md`
+- **Why Most AI Projects Fail (And How to Move From AI Experiments to Real Business Impact)** — AI Smart Ventures (10, 33 views)
+  https://www.youtube.com/watch?v=DRIwyCns-GM
+  item: `items/DRIwyCns-GM.md`
+- **Fantastic Inventions 2026: Diving into the Future!** — THE RSG (37:19, 15 views)
+  https://www.youtube.com/watch?v=tdwKUv62HL0
+  item: `items/tdwKUv62HL0.md`
+- **AIGP Competencies - Supplemental 1 - Domain 1 Sample Questions and Answers** — François R. Joly (8:09, 2 views)
+  https://www.youtube.com/watch?v=na3LoEk0fVk
+  item: `items/na3LoEk0fVk.md`
+- **AI Feels? The SHOCKING Truth!** — One Article One Day (1:05:29, 1 views)
+  https://www.youtube.com/watch?v=SRF98drIiXw
+  item: `items/SRF98drIiXw.md`
+- **I Get Why Seedance 2.0 Broke The Internet....I'm Floored!** — OpenArt (11:39, 4.5K views)
+  https://www.youtube.com/watch?v=zP_axT1zt8c
+  item: `items/zP_axT1zt8c.md`
+- **NIST AI RMF - Module 1.1 - AI’s New Rules of Risk** — François R. Joly (6:50, 2 views)
+  https://www.youtube.com/watch?v=ctcWd2sLM10
+  item: `items/ctcWd2sLM10.md`
+- **Sweden Unleashed LOKI on Russian Drones… Total DESTRUCTION** — The Military Show (21:12, 14.8K views)
+  https://www.youtube.com/watch?v=voQYTa05Qms
+  item: `items/voQYTa05Qms.md`
+- **Referral Driven Growth with Brandon Barnum** — AFT Construction (55:01, 1 views)
+  https://www.youtube.com/watch?v=ZrtQJKLagHc
+  item: `items/ZrtQJKLagHc.md`
+- **How I Made $2,462.50 With A.I. & MaxBounty (Step-by-Step System)** — Big Fvgures (6:23, 1.2K views)
+  https://www.youtube.com/watch?v=eoKuvqQTPNg
+  item: `items/eoKuvqQTPNg.md`
+- **The AI Orchestrator Trap Most Developers Fall Into | #NEWIT** — GilliLab Logic Salt (43:10, new)
+  https://www.youtube.com/watch?v=T2Q691zpyG8
+  item: `items/T2Q691zpyG8.md`
+- **they blocked OpenClaw. now what.** — Ray Fernando (2:16:43, 8.1K views)
+  https://www.youtube.com/watch?v=sWDhIGIiK5w
+  item: `items/sWDhIGIiK5w.md`
+- **What Every Medical Influencer Is Getting Wrong | Dr. Glaucomflecken (Will Flanary)** — Doctor Mike (2:13:42, 29.9K views)
+  https://www.youtube.com/watch?v=49T38wuqF1M
+  item: `items/49T38wuqF1M.md`
+- **Oxford Physicist Contacted By Arcturians! Something BIG Is Approaching Earth… | David Clements** — Wisdom From North (1:20:17, 16.9K views)
+  https://www.youtube.com/watch?v=xcw3RHGBSDs
+  item: `items/xcw3RHGBSDs.md`
+- **Назад в прошлое | Зачем государство убивает интернет (English subtitles) @Max_Katz** — Максим Кац (15:31, 472.2K views)
+  https://www.youtube.com/watch?v=ImlEjWp4yKg
+  item: `items/ImlEjWp4yKg.md`
+- **How to Adopt AI in Your Library — A Complete 2026 Blueprint** — AI for Librarians (14:50, 48 views)
+  https://www.youtube.com/watch?v=Y7yxV4X5R_4
+  item: `items/Y7yxV4X5R_4.md`
+- **Why Americans Are Obsessed With These Convenience Stores** — CNBC (29:32, 16.1K views)
+  https://www.youtube.com/watch?v=0-67W8kzx5o
+  item: `items/0-67W8kzx5o.md`
+- **Ordinary programmer gets a system — new identity every month! First up:董事长 of his own company!** — BoomDrama (1:30:57, 1.1K views)
+  https://www.youtube.com/watch?v=tiiqdSAJs9w
+  item: `items/tiiqdSAJs9w.md`
+- **🚀 How Claude Code Changes Software Development Forever** — TechSentia (5:14, 4 views)
+  https://www.youtube.com/watch?v=FkLJcVj7vAU
+  item: `items/FkLJcVj7vAU.md`
+- **【Multi Sub】He came for fish. He got a criminal empire. Best career change. 🔥** — Water drama (1:57:38, 1.5K views)
+  https://www.youtube.com/watch?v=Z3nkNU46RdE
+  item: `items/Z3nkNU46RdE.md`
+- **CEO Faked a Coma to Teach His Rural Bride a Lesson—But She Tamed Him with a Feather Duster!lLove!** — Cheese Trap (3:22:46, 2.1K views)
+  https://www.youtube.com/watch?v=xH2EcCS2h70
+  item: `items/xH2EcCS2h70.md`
+- **AI SRE for Complex Systems** — The Reasoning Show (32:34, 7 views)
+  https://www.youtube.com/watch?v=lYgEYF0otjs
+  item: `items/lYgEYF0otjs.md`
+- **What are the Types of AI? Made Super Simple for  Non-Technical & Technical** — AI RoundTheClock (9:31, 5 views)
+  https://www.youtube.com/watch?v=oyA_rU0pxPU
+  item: `items/oyA_rU0pxPU.md`
+- **【FULL】Fired at 35,My Fake Job System Made Me Rich and Built a Business Empire!#minidrama** — RushMiniDrama (2:05:56, 3.9K views)
+  https://www.youtube.com/watch?v=rUwGP4TDu6Y
+  item: `items/rUwGP4TDu6Y.md`
+- **The Reasoning Show #1016 - AI SRE for Complex Systems** — The Reasoning Show (30:49, 8 views)
+  https://www.youtube.com/watch?v=hF3MCRDhMno
+  item: `items/hF3MCRDhMno.md`
+- **Will God Save America? | Bible Prophecy, America & the Future | LIVE Conference Day 2** — Heritage & Hope Ministries (9:01:11, 6.5K views)
+  https://www.youtube.com/watch?v=hc4jv0bCfUA
+  item: `items/hc4jv0bCfUA.md`
+- **The System Crash Your Brain Prevents (Every Single Day)** — Tom Talks Mind (34:53, 6 views)
+  https://www.youtube.com/watch?v=ZoxsZJlDBlQ
+  item: `items/ZoxsZJlDBlQ.md`

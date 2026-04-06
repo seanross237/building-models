@@ -189,3 +189,96 @@ Full item files belong in `items/`.
 - **Every Engineer Is a Manager Now 🤖 — with Chris Lattner** — Refactoring (58:59, 391 views)
   https://www.youtube.com/watch?v=PLQs_hHTzSk
   item: `items/PLQs_hHTzSk.md`
+
+## 2026-04-05 — 30 new videos
+
+- **n8n Workflows Are Great — But THIS Is What Agents Can Do That Workflows Can't** — First Step AI (4:02, 17 views)
+  https://www.youtube.com/watch?v=uS6CLRUmhcs
+  item: `items/uS6CLRUmhcs.md`
+- **Abacus CoWork: This AI Agent Finishes Your Work (Not Just Assists)** — Julia McCoy (17:30, 7.1K views)
+  https://www.youtube.com/watch?v=3wfGasnTcSg
+  item: `items/3wfGasnTcSg.md`
+- **How Multi-Agent AI Is Replacing Entire Workflows #ai #automation #robotics** — Thinking Machines (10:29, 1 views)
+  https://www.youtube.com/watch?v=vzQjaDvFcOM
+  item: `items/vzQjaDvFcOM.md`
+- **Rust tail calls beat assembly & AI shifts developer workflows - Hacker News (Apr 5, 2026)** — The Automated Daily (8:07, new)
+  https://www.youtube.com/watch?v=RO-oFz6Dq1Y
+  item: `items/RO-oFz6Dq1Y.md`
+- **Google Just Dropped Gemma 4: The Most Intelligent Open Model Ever!** — AI Revolution (13:23, 27.6K views)
+  https://www.youtube.com/watch?v=KmZCQrKNhDc
+  item: `items/KmZCQrKNhDc.md`
+- **What are AI Agents? A Complete Guide to Autonomous Workflows** — Madishan AI (3:57, 2 views)
+  https://www.youtube.com/watch?v=nH9a8q5CTPA
+  item: `items/nH9a8q5CTPA.md`
+- **AI research papers by agents & Coding agents: speed versus safety - AI News (Apr 5, 2026)** — The Automated Daily (8:48, 1 views)
+  https://www.youtube.com/watch?v=LyhoUUkESgs
+  item: `items/LyhoUUkESgs.md`
+- **Gemma 4: The Architect's Guide to Production-Ready On-Device Agents** — Rynaut — Architecting Automation (9:17, 13 views)
+  https://www.youtube.com/watch?v=zry2LA2vJpc
+  item: `items/zry2LA2vJpc.md`
+- **I Tested 2 AI Approaches in AutoCAD on Real Workflows. One Worked. One Didn't.** — Vistrux | Agentic AI for CAD (24:10, 23 views)
+  https://www.youtube.com/watch?v=m9u4aLsvQ_s
+  item: `items/m9u4aLsvQ_s.md`
+- **New Creao AI Super Agent Is INSANE! 🤯** — Julian Goldie SEO (8:09, 3.5K views)
+  https://www.youtube.com/watch?v=KNO3LzcOrso
+  item: `items/KNO3LzcOrso.md`
+- **How to Build Notion Custom Agent for Content Generation** — Camel Tech (3:02, 3 views)
+  https://www.youtube.com/watch?v=x0TTVbGXLf4
+  item: `items/x0TTVbGXLf4.md`
+- **Replace Your $2,000 Sales Stack With OpenClaw** — Build In Public (16:17, 622 views)
+  https://www.youtube.com/watch?v=yKcY2RpzEoI
+  item: `items/yKcY2RpzEoI.md`
+- **How to Make Money With Claude-Code (3 proven methods)** — Serop | AI Consultant (11:42, 28 views)
+  https://www.youtube.com/watch?v=ub84KgvqOPk
+  item: `items/ub84KgvqOPk.md`
+- **I Tested Antigravity - Here's What Shocked Me** — Zero2Launch | AI Automation (5:29, 23 views)
+  https://www.youtube.com/watch?v=beTN6eq2URY
+  item: `items/beTN6eq2URY.md`
+- **they blocked OpenClaw. now what.** — Ray Fernando (2:16:43, 8.1K views)
+  https://www.youtube.com/watch?v=sWDhIGIiK5w
+  item: `items/sWDhIGIiK5w.md`
+- **The Moment AI Stopped Answering and Started Acting** — ShortByShot (29:16, 7 views)
+  https://www.youtube.com/watch?v=StoE7BB3lVg
+  item: `items/StoE7BB3lVg.md`
+- **Claude Code Auto-Caption System (STOP PAYING FOR OPUS PRO)** — Yash | AI Automation (31:25, 53 views)
+  https://www.youtube.com/watch?v=8YA-eC9n5L4
+  item: `items/8YA-eC9n5L4.md`
+- **How to Build a Voice Call AI Agent with n8n and Retell** — Parthav AI (4:05:43, 48 views)
+  https://www.youtube.com/watch?v=u3w9yZ1CiE0
+  item: `items/u3w9yZ1CiE0.md`
+- **Live Trading Agent Workflow using Claude AI** — ChilledBeer (1:24:54, 12 views)
+  https://www.youtube.com/watch?v=XCBdfFrlNHI
+  item: `items/XCBdfFrlNHI.md`
+- **Still piecing together your own RAG system? Onyx integrates Agentic RAG to build an enterprise-g...** — DevCovery (5:56, 12 views)
+  https://www.youtube.com/watch?v=trBp5exDRw0
+  item: `items/trBp5exDRw0.md`
+- **AI models resist shutdown orders & Courts draw hard AI lines - Tech News (Apr 5, 2026)** — The Automated Daily (7:46, 1 views)
+  https://www.youtube.com/watch?v=7RXVZVg06MA
+  item: `items/7RXVZVg06MA.md`
+- **From arxiv AI papers - AI Isn’t Just Talking Anymore… It’s Taking Action** — AI Frontier Research (7:01, new)
+  https://www.youtube.com/watch?v=drfnjRbfZV8
+  item: `items/drfnjRbfZV8.md`
+- **invideo AI Advertising Studio is INSANE 🤯 Unlimited Product Ads, Images & Videos (No Subscription)** — Pro Secret (6:20, 120 views)
+  https://www.youtube.com/watch?v=bGvp0wrr9l0
+  item: `items/bGvp0wrr9l0.md`
+- **I Left Corporate to Go All In on AI. Here's My Update.** — Getting AI To Work by Brennan McDonald (9:47, 135 views)
+  https://www.youtube.com/watch?v=qg3fJYRM1jQ
+  item: `items/qg3fJYRM1jQ.md`
+- **The AI Orchestrator Trap Most Developers Fall Into | #NEWIT** — GilliLab Logic Salt (43:10, new)
+  https://www.youtube.com/watch?v=T2Q691zpyG8
+  item: `items/T2Q691zpyG8.md`
+- **LIVE CALL: How I Turned a Consultation Into a Long Term Client Using AI** — Joaqui (1:11:12, 126 views)
+  https://www.youtube.com/watch?v=u0nooso9uVI
+  item: `items/u0nooso9uVI.md`
+- **How to Adopt AI in Your Library — A Complete 2026 Blueprint** — AI for Librarians (14:50, 48 views)
+  https://www.youtube.com/watch?v=Y7yxV4X5R_4
+  item: `items/Y7yxV4X5R_4.md`
+- **Session 4   Introduction to Natural Language Processing** — HerWILL (1:42:15, 4 views)
+  https://www.youtube.com/watch?v=N08DO_akl-w
+  item: `items/N08DO_akl-w.md`
+- **Exploratory test : The Field agent - AI-Powered QA Testing workflow** — Learn Like An Adult (11:38, 15 views)
+  https://www.youtube.com/watch?v=vogICo3qHIY
+  item: `items/vogICo3qHIY.md`
+- **Beyond Chatbots: How Claude Opus 4.6 Builds Your AI "Dream Team"** — The AI Entrepreneurs (53, 268 views)
+  https://www.youtube.com/watch?v=ro0bgbZYiqo
+  item: `items/ro0bgbZYiqo.md`

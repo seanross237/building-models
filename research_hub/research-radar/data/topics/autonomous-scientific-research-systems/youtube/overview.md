@@ -189,3 +189,96 @@ Full item files belong in `items/`.
 - **Trump, Iran, and the Rise of a Luciferian System | Sacha Stone** — FAR OUT WITH FAUST (1:20:55, 150 views)
   https://www.youtube.com/watch?v=z1Xen43PYjI
   item: `items/z1Xen43PYjI.md`
+
+## 2026-04-05 — 30 new videos
+
+- **LLM Agent Automates End-to-End Research Cycle** — AI Research Roundup (3:06, 16 views)
+  https://www.youtube.com/watch?v=4IpyRAGmhwU
+  item: `items/4IpyRAGmhwU.md`
+- **UniDriveVLA: New VLA Model for Self-Driving Cars** — AI Research Roundup (5:27, 9 views)
+  https://www.youtube.com/watch?v=c7Kb6lk5Xew
+  item: `items/c7Kb6lk5Xew.md`
+- **中國北斗力挺伊朗！飛彈精準轟炸美軍，川普急瘋了，美國為何不敢動北斗？#川普 #中国 #伊朗局势 #地缘政治 #大国博弈 #中美博弈 #北斗卫星** — 小魚洞察 (28:13, 10.7K views)
+  https://www.youtube.com/watch?v=aNqh0eBOq08
+  item: `items/aNqh0eBOq08.md`
+- **⚠️All predicted! Three predictions have come true simultaneously: After the Middle East crisis...** — HIBY新聞 (2:06:48, 1.0K views)
+  https://www.youtube.com/watch?v=aLFyYC4jrfU
+  item: `items/aLFyYC4jrfU.md`
+- **Canada Just Built the World’s Most Powerful Battery — And Tesla is Terrified** — Canada Global Economics (15:02, 13.8K views)
+  https://www.youtube.com/watch?v=I0eion2YExg
+  item: `items/I0eion2YExg.md`
+- **This AI Publishes Better Papers Than Most PhD Students** — DecodedNode (7:44, 4 views)
+  https://www.youtube.com/watch?v=NduoeS-UWGE
+  item: `items/NduoeS-UWGE.md`
+- **【杰森视角】末日飞机升空，最大规模跨洋空运兵力启动！美军要干嘛？马兴瑞落马透露中共权力真相！伊朗打下美军机，逼川普下狠手？伊朗抄朝鲜作业，没人敢动，只有川普直接掀桌！习近平亲手提拔的人为何一个个倒下？** — 杰森視角官方頻道 - The Jason Angle Official (31:54, 50.0K views)
+  https://www.youtube.com/watch?v=xwclcUSW5b0
+  item: `items/xwclcUSW5b0.md`
+- **Nancy Guthrie Case: Can the DNA M-Vac Machine Help Identify Suspects** — DutyRon (1:21:55, 30.0K views)
+  https://www.youtube.com/watch?v=SVusg-micP8
+  item: `items/SVusg-micP8.md`
+- **The Yellowstone supervolcano has BEGINNED TO RISE! A TIME BOMB is ticking beneath the USA...** — Astro-Tim (54:01, 15.6K views)
+  https://www.youtube.com/watch?v=jbplJwi1tpE
+  item: `items/jbplJwi1tpE.md`
+- **Rob Clark: Sanctioned by Putin, Veteran, Pashto Translator | Combat Fuel Podcast EP.9** — Combat Fuel (2:47:13, 17 views)
+  https://www.youtube.com/watch?v=5HJUHrg3UPg
+  item: `items/5HJUHrg3UPg.md`
+- **The Moment AI Stopped Answering and Started Acting** — ShortByShot (29:16, 7 views)
+  https://www.youtube.com/watch?v=StoE7BB3lVg
+  item: `items/StoE7BB3lVg.md`
+- **Technologies 2026 That Will Change Our World!** — THE RSG (37:19, 15 views)
+  https://www.youtube.com/watch?v=tdwKUv62HL0
+  item: `items/tdwKUv62HL0.md`
+- **RCADT - INDUSTRY 6.0 Brain Engineering** — HYPOTHALAMUS Ai (48:15, 4 views)
+  https://www.youtube.com/watch?v=U7BhfFrZhOU
+  item: `items/U7BhfFrZhOU.md`
+- **The Truth About Brain-Controlled Pigeon Drones and Future Surveillance Technology** — TorontoStarts (11:18, new)
+  https://www.youtube.com/watch?v=UadlfldI4cM
+  item: `items/UadlfldI4cM.md`
+- **शरीर नहीं — आपका दिमाग थक चुका है | Break the Identity Loop (Mind-Body Connection)** — Book Tuber Hindi (11:48, 5.2K views)
+  https://www.youtube.com/watch?v=GQVwkXVDLx0
+  item: `items/GQVwkXVDLx0.md`
+- **AWhat If Humans Become Just Data Points? | Amrita Mahale Anna Elisabeth Mayer | KLF2026** — DC Books (55:09, 127 views)
+  https://www.youtube.com/watch?v=7br89ouQ5S4
+  item: `items/7br89ouQ5S4.md`
+- **This Will SHOCK You — ISLAM Is COLLAPSING** — Fall of Nations (2:53:55, 4.1K views)
+  https://www.youtube.com/watch?v=aiBMdiSd0r8
+  item: `items/aiBMdiSd0r8.md`
+- **How AI Triggered World War 3 - With a 63-Second Fake Video** — Vivid Futures (1:15:16, 49 views)
+  https://www.youtube.com/watch?v=FXhvtYvi_6Q
+  item: `items/FXhvtYvi_6Q.md`
+- **How Does GPS Actually Work? The Science Behind Your Phone Location in Telugu** — Explanation On Working (13:10, 5.6K views)
+  https://www.youtube.com/watch?v=NkGhpQH-3no
+  item: `items/NkGhpQH-3no.md`
+- **Why You Can’t Relax Anymore: The Productivity Poison** — TheHiddenCost (10:54, 1 views)
+  https://www.youtube.com/watch?v=CdW4xyn3CBs
+  item: `items/CdW4xyn3CBs.md`
+- **15 Must-See AI News Stories – Including Claude Code source code leak, Cursor3, and Codex pay-per-...** — いけともch (43:59, 7.4K views)
+  https://www.youtube.com/watch?v=DFUUUTh9gOs
+  item: `items/DFUUUTh9gOs.md`
+- **Beauty myths debunked: These are the products you need to pay special attention to!** — Dr. med. Ulrich Bauhofer | ganzheitlich gesund (7:38, 3.1K views)
+  https://www.youtube.com/watch?v=Y-2VjF4FNIY
+  item: `items/Y-2VjF4FNIY.md`
+- **🔥Is China about to crack? Parker's shocking prediction: Shanghai's independence and...** — ByBy (33:44, 12.1K views)
+  https://www.youtube.com/watch?v=znLL7E_Ll_M
+  item: `items/znLL7E_Ll_M.md`
+- **彩票必中獎，炒股必暴富！ 她靠透視神眼人生逆襲，創建商業帝國！** — DramaTide (2:00:38, 5.8K views)
+  https://www.youtube.com/watch?v=WJk7LbwddJY
+  item: `items/WJk7LbwddJY.md`
+- **Why Dune's Face Dancers Are Sci-Fi's Most Terrifying Threat | Sleep Story** — MARS (33:12, 48 views)
+  https://www.youtube.com/watch?v=Iaq5C3ZmJJA
+  item: `items/Iaq5C3ZmJJA.md`
+- **பெருமிதம் | From Bicycle Rocket Parts to Moon Landing: ISRO's Full Story | Jayasim Jayakumar** — Jayasim Jayakumar (46:19, 17.5K views)
+  https://www.youtube.com/watch?v=dynDYpXYW5k
+  item: `items/dynDYpXYW5k.md`
+- **Left or Right Side? Your HEART is in DANGER If You SLEEP the WRONG Way!** — Doctor Dre Health Tips | Health Made Simple (21:12, 5.0K views)
+  https://www.youtube.com/watch?v=8GE-xQII5xY
+  item: `items/8GE-xQII5xY.md`
+- **The Psychology of People Who Fall in Love All the Time** — Generation Psychology (11:13, new)
+  https://www.youtube.com/watch?v=TtQV_0yipgA
+  item: `items/TtQV_0yipgA.md`
+- **184 - The 2 Person $1.8B Company That Just Broke Everything!** — Health:Further (1:01:15, 8 views)
+  https://www.youtube.com/watch?v=ejscG8Z85Oo
+  item: `items/ejscG8Z85Oo.md`
+- **I Spent $1 on a "Fake" Game... And ACCIDENTALLY Crushed a REAL Magic Order?!-Manhwa Recap** — Silas Recap (2:08:17, 4.1K views)
+  https://www.youtube.com/watch?v=g9YEGpDnH1o
+  item: `items/g9YEGpDnH1o.md`

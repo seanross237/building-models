@@ -72,3 +72,18 @@ Full item files belong in `items/`.
 - **Investigate the Origin of the Signal - Tom Clancy’s The Division® 2 #23** — General Nix (1:07:20, 2 views)
   https://www.youtube.com/watch?v=ETxWy8P74Rw
   item: `items/ETxWy8P74Rw.md`
+
+## 2026-04-05 — 4 new videos
+
+- **Mapping the 2026 AI Dev Stack For Business** — AI Lens Podcast (6:34, 1 views)
+  https://www.youtube.com/watch?v=ESnTFxLrk1M
+  item: `items/ESnTFxLrk1M.md`
+- **The AI Orchestrator Trap Most Developers Fall Into | #NEWIT** — GilliLab Logic Salt (43:10, new)
+  https://www.youtube.com/watch?v=T2Q691zpyG8
+  item: `items/T2Q691zpyG8.md`
+- **中國工人維權實戰手冊：中共最怕你學會，如何突圍—權力與資本的圍剿！** — 君語瀾 JunYuLan (58:18, 1.6K views)
+  https://www.youtube.com/watch?v=TAMaand8gh0
+  item: `items/TAMaand8gh0.md`
+- **眾人都小看眼前這個小女孩，卻沒想到她天生怪力，連成年男子都不是她的對手！一切低估她的人，都被她徹底震驚！#精彩短劇 #短劇全集 #甜寵** — 砂糖劇滿屋 (2:06:53, 3.2K views)
+  https://www.youtube.com/watch?v=mBdewUHyt2I
+  item: `items/mBdewUHyt2I.md`

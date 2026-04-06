@@ -189,3 +189,96 @@ Full item files belong in `items/`.
 - **POV: You're the Last Judge in a Country Where the Law Has Been Bought** — Karamat Janjua (10:15, 4 views)
   https://www.youtube.com/watch?v=SUxfKNHjl5k
   item: `items/SUxfKNHjl5k.md`
+
+## 2026-04-05 — 30 new videos
+
+- **Self Improving Agents in 5 Minutes** — Developers Digest (5:08, 3.6K views)
+  https://www.youtube.com/watch?v=RoaPvj9Ovug
+  item: `items/RoaPvj9Ovug.md`
+- **Google's A2A Protocol Explained + Full Multi-Agent Demo (ADK + LangGraph)** — Hariharan R (32:05, 1 views)
+  https://www.youtube.com/watch?v=HU8bM4rtx-4
+  item: `items/HU8bM4rtx-4.md`
+- **🔥Сколько СТОИТ РЕМОНТ в 2026? | Из убитой ХРУЩЕВКИ сделали конфетку!** — DNEVNIK DIZAINERA (45:48, 62.1K views)
+  https://www.youtube.com/watch?v=QyWfovpbXhc
+  item: `items/QyWfovpbXhc.md`
+- **I Tested 2 AI Approaches in AutoCAD on Real Workflows. One Worked. One Didn't.** — Vistrux | Agentic AI for CAD (24:10, 23 views)
+  https://www.youtube.com/watch?v=m9u4aLsvQ_s
+  item: `items/m9u4aLsvQ_s.md`
+- **they blocked OpenClaw. now what.** — Ray Fernando (2:16:43, 8.1K views)
+  https://www.youtube.com/watch?v=sWDhIGIiK5w
+  item: `items/sWDhIGIiK5w.md`
+- **Will God Save America? | Bible Prophecy, America & the Future | LIVE Conference Day 2** — Heritage & Hope Ministries (9:01:11, 6.5K views)
+  https://www.youtube.com/watch?v=hc4jv0bCfUA
+  item: `items/hc4jv0bCfUA.md`
+- **Referral Driven Growth with Brandon Barnum** — AFT Construction (55:01, 1 views)
+  https://www.youtube.com/watch?v=ZrtQJKLagHc
+  item: `items/ZrtQJKLagHc.md`
+- **Why Americans Are Obsessed With These Convenience Stores** — CNBC (29:32, 16.1K views)
+  https://www.youtube.com/watch?v=0-67W8kzx5o
+  item: `items/0-67W8kzx5o.md`
+- **Measuring Agentic Success: 10 Benchmarks Every Architect Needs (Q191–Q200)** — Preyasi Telugu Vlogs (5:28, 1 views)
+  https://www.youtube.com/watch?v=OvVGe62QMC8
+  item: `items/OvVGe62QMC8.md`
+- **I Tested Gemma 4 Locally… Here’s What Actually Works (And What Breaks)** — Kris Torrington (6:40, 77 views)
+  https://www.youtube.com/watch?v=qh4LVnoCs-g
+  item: `items/qh4LVnoCs-g.md`
+- **🔒 Secure AI Browsing: FireCrawl vs OpenClaw vs Claude (Full Guide)** — AUTOHOTKEY Gurus (7:13, 41 views)
+  https://www.youtube.com/watch?v=D6YMVQyc6Ec
+  item: `items/D6YMVQyc6Ec.md`
+- **Coding My First SAP CAP AI App & Decoding the "Trial Trap" Errors! 🚀 | Agentic SAP** — AGENTIC SAP (50:10, 18 views)
+  https://www.youtube.com/watch?v=PnrcOPEyW7E
+  item: `items/PnrcOPEyW7E.md`
+- **🌿 Mindful Moments #UnDaoDu #Meditation #Peace** — UnDaoDu (50, 188 views)
+  https://www.youtube.com/watch?v=_4wIW4hqsvk
+  item: `items/_4wIW4hqsvk.md`
+- **Cold Blooded Killers | THRILLER | Full Movie in English** — Boxoffice | THRILLERS | Full Movies (1:26:29, 3.3K views)
+  https://www.youtube.com/watch?v=6RZlorp56HA
+  item: `items/6RZlorp56HA.md`
+- **Former FBI Agent: The Arrest in the Nancy Guthrie Case Could Be Very Soon** — Note Book VE (45:20, 81 views)
+  https://www.youtube.com/watch?v=mVZGV0zO1g4
+  item: `items/mVZGV0zO1g4.md`
+- **Our First Night in our Malaysian Built Truck Camper [S11-E4]** — TREAD the globe (42:20, 46.2K views)
+  https://www.youtube.com/watch?v=TaiuBm8bSBA
+  item: `items/TaiuBm8bSBA.md`
+- **The Family Pattern That Keeps You Stuck | Back to the Future Psychology** — Full Mental Bracket (49:06, 5 views)
+  https://www.youtube.com/watch?v=P_heMOn0ySc
+  item: `items/P_heMOn0ySc.md`
+- **Forget Devil Fruits and Haki - This is the most interesting skill in One Piece Anime** — want to code (20:28, 22 views)
+  https://www.youtube.com/watch?v=s6Sgi6cUC74
+  item: `items/s6Sgi6cUC74.md`
+- **Artificial Intelligence and Legal Liability in Radiology: Randomized Experimental Study-Podcast** — Jeffrey Chen by SmartRad AI (19:22, 2 views)
+  https://www.youtube.com/watch?v=F3EppywMrrw
+  item: `items/F3EppywMrrw.md`
+- **Revenge: He Cheated With His Sister Years Ago; Now The Rich Heiress Returns To Make Him Pay Dearly** — Queen ShortDrama (1:44:03, 557 views)
+  https://www.youtube.com/watch?v=FneJtuPAiCs
+  item: `items/FneJtuPAiCs.md`
+- **Session 4   Introduction to Natural Language Processing** — HerWILL (1:42:15, 4 views)
+  https://www.youtube.com/watch?v=N08DO_akl-w
+  item: `items/N08DO_akl-w.md`
+- **10 Things About Business in Africa No MBA Programme Will Ever Teach You | BILLION DOLLAR PROOF** — GidiGrit (25:30, 21 views)
+  https://www.youtube.com/watch?v=x_lQfdJ_6gk
+  item: `items/x_lQfdJ_6gk.md`
+- **Week 8 session 2** — DBMS - IIT Madras BS Degree (2:51:26, 143 views)
+  https://www.youtube.com/watch?v=mxEZ3wFBucQ
+  item: `items/mxEZ3wFBucQ.md`
+- **what is this game** — Timothy Omega (8:00:10, 9 views)
+  https://www.youtube.com/watch?v=00dCeSCS_Es
+  item: `items/00dCeSCS_Es.md`
+- **L'armée française dans l'enfer de la jungle** — Investigation (1:51:06, 5.9K views)
+  https://www.youtube.com/watch?v=d22kJgQVwDY
+  item: `items/d22kJgQVwDY.md`
+- **The Billionaire Made His Pregnant Wife A Prisoner — She Made Him A Criminal** — Charlotte Reed Tells (1:12:07, 28 views)
+  https://www.youtube.com/watch?v=daMwUv_oZac
+  item: `items/daMwUv_oZac.md`
+- **|SFM|AFM| OPTION PRICING AND VALUATION (PART 2)** — NexGen Professional Associates (3:14:31, 48 views)
+  https://www.youtube.com/watch?v=djh_-lamJzg
+  item: `items/djh_-lamJzg.md`
+- **JOY FOR SALE: After 6 Months Out of Water, Look What We Found! Ep 259** — Travel and Fun (50:50, 2.3K views)
+  https://www.youtube.com/watch?v=a5U4_fcYj8I
+  item: `items/a5U4_fcYj8I.md`
+- **【完結】她被他的白月光害得斷腿，他才答應娶她，用卑微換來的婚姻維持了五年，就換來他出軌的背叛，那一刻她徹底寒心，決絕轉身，被京市頂級大佬娶回家，曾經的狗男人哭紅雙眼，想將她禁錮挽回，卻早已高攀不起！** — 劇熱門 (2:11:02, 5.9K views)
+  https://www.youtube.com/watch?v=rvUvLpD1o4o
+  item: `items/rvUvLpD1o4o.md`
+- **I saw his betrayal, divorced and became the richest CEO, my ex regrets** — Vespertine Drama (2:04:22, 149 views)
+  https://www.youtube.com/watch?v=4iJgF1JaUnI
+  item: `items/4iJgF1JaUnI.md`

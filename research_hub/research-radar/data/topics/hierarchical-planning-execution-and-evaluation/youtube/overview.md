@@ -69,3 +69,57 @@ Full item files belong in `items/`.
 - **💥【New】【Multi Sub】Power Surge: No More Sidekick Role EP1-76 #anime #animation** — Joyland-Animation (6:00:29, 108 views)
   https://www.youtube.com/watch?v=R8-b3fNQ2ws
   item: `items/R8-b3fNQ2ws.md`
+
+## 2026-04-05 — 17 new videos
+
+- **【短劇 全集】😱💔现代大学生重生大庆朝，智斗大庆朝皇帝，步步揭阴谋，最终起兵反抗，改写天下命运！😱💕女頻爽劇 💕最新短劇💕熱門短劇💕愛情** — 好劇星球 (2:49:19, 508 views)
+  https://www.youtube.com/watch?v=SHn77cdYUKA
+  item: `items/SHn77cdYUKA.md`
+- **【MULTI SUB】現代特種兵穿越成古代皇子，遭父皇兄長追殺、攜現代智慧逆襲，終成一代帝君#穿越 #逆袭 #爽剧 #drama** — 瞬境剧场  Momentopia (2:28:36, 4.0K views)
+  https://www.youtube.com/watch?v=c28s1qoAkRo
+  item: `items/c28s1qoAkRo.md`
+- **My magic power is 99,999 because I gain +1 magic power for every monster I kill!#anime** — KAI Manhwa Recap (11:56:25, 10 views)
+  https://www.youtube.com/watch?v=VLNZjrYZ7Z8
+  item: `items/VLNZjrYZ7Z8.md`
+- **SCP Foundation: Geheimhaltungsstufen & Personalklassen erklärt. 🔸SCP-Stiftung🔹  (SCP-Foundation)** — SCP Stiftung (34:58, 2 views)
+  https://www.youtube.com/watch?v=h6gzRrxhhT8
+  item: `items/h6gzRrxhhT8.md`
+- **Principles by Ray Dalio | Best Book Summary for Better Decisions and Success** — Midnight Millionaire Mindset (34:03, new)
+  https://www.youtube.com/watch?v=ubcHEBqkvcU
+  item: `items/ubcHEBqkvcU.md`
+- **Your PO Should Own the Spec, Not the Developer — Here's How** — Thomas Landgraf (3:27, 4 views)
+  https://www.youtube.com/watch?v=fpi5TbuWOs4
+  item: `items/fpi5TbuWOs4.md`
+- **Will God Save America? | Bible Prophecy, America & the Future | LIVE Conference Day 2** — Heritage & Hope Ministries (9:01:11, 6.5K views)
+  https://www.youtube.com/watch?v=hc4jv0bCfUA
+  item: `items/hc4jv0bCfUA.md`
+- **She's forced to marry into a noble house and is humiliated—rises to matriarch, adored by the lord!** — 劇潮流達人 (4:25:40, 111 views)
+  https://www.youtube.com/watch?v=1x8g4NW9JM8
+  item: `items/1x8g4NW9JM8.md`
+- **Les fiancées de l'Empire (Série) Sous Napoléon, amour, pouvoir et trahison s’entrelacent** — Culture Tube and Cinéfilm (5:58:33, 3.5K views)
+  https://www.youtube.com/watch?v=oEVFEq9DYC4
+  item: `items/oEVFEq9DYC4.md`
+- **They Sent 200 Warships — Humanity Sent A Single Scout. | HFY Sci-Fi Story** — Best of HFY (1:04:30, 1 views)
+  https://www.youtube.com/watch?v=xqVRtEfUzgo
+  item: `items/xqVRtEfUzgo.md`
+- **【Full】冷宮貴人絕望自盡，意外穿越現代研習宮鬥秘訣，回到冷宮開掛逆襲一代女帝#全集短劇 #古裝 #影視** — 姜姜爱看剧 (2:10:15, 3.4K views)
+  https://www.youtube.com/watch?v=BSS7dzCAzEE
+  item: `items/BSS7dzCAzEE.md`
+- **Your Lifestyle Is Killing Your Wealth | Warren Buffett** — Buffett's Boardroom (36:02, new)
+  https://www.youtube.com/watch?v=63j3jaOqdPI
+  item: `items/63j3jaOqdPI.md`
+- **Hospital Boss Fired My Wife After her Affair And Financial Fraud. And Then... | REVENGE STORY** — Father's Perfect Revenge (2:03:17, new)
+  https://www.youtube.com/watch?v=shAGooVLD8c
+  item: `items/shAGooVLD8c.md`
+- **Older Than the Pyramids: The 12,000-Year-Old Secret** — Schlafende Geschichte (1:07:16, 212 views)
+  https://www.youtube.com/watch?v=jMeo6NkM1J8
+  item: `items/jMeo6NkM1J8.md`
+- **🔥【最新合集】《从嬴政开始：历代皇帝陆续降临 1~2季》死后误入时空围城，一日抵一年，历代帝王相继登场，王朝兴衰在此上演！全集Multi SUB #热血 #漫剧 #动漫魔女** — 动漫魔女 (4:17:38, 335 views)
+  https://www.youtube.com/watch?v=ky54MA2fzIM
+  item: `items/ky54MA2fzIM.md`
+- **和什么样的人结婚更容易幸福？这是我听过最清醒的答案！#易经 #老子 #国学智慧 #人生哲学 #修心修行  #道法自然 #无为而治 #处世之道 #心理疗愈 #晚年生活** — 阿然紀實錄 (26:02, 1 views)
+  https://www.youtube.com/watch?v=JQL7liNflaE
+  item: `items/JQL7liNflaE.md`
+- **I pretended to be his mate to survive the night — he didn’t pretend back.** — Luna’s Secret Library (1:15:10, 142 views)
+  https://www.youtube.com/watch?v=kRLgYJlTMoM
+  item: `items/kRLgYJlTMoM.md`

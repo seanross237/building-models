@@ -159,3 +159,72 @@ Full item files belong in `items/`.
 - **The End of Chatbots: Why DeerFlow AI is the First Real SuperAgent** — AI Tools Quest (3:58, 5 views)
   https://www.youtube.com/watch?v=BM83Xy8lMyY
   item: `items/BM83Xy8lMyY.md`
+
+## 2026-04-05 — 22 new videos
+
+- **Self Improving Agents in 5 Minutes** — Developers Digest (5:08, 3.6K views)
+  https://www.youtube.com/watch?v=RoaPvj9Ovug
+  item: `items/RoaPvj9Ovug.md`
+- **New Creao AI Super Agent Is INSANE! 🤯** — Julian Goldie SEO (8:09, 3.5K views)
+  https://www.youtube.com/watch?v=KNO3LzcOrso
+  item: `items/KNO3LzcOrso.md`
+- **[Video Special] The Architecture of Modern Coding Agents: Scaffolding Around the Mind** — Vinh Nguyen (5:14, 13 views)
+  https://www.youtube.com/watch?v=oxklpLnZzIU
+  item: `items/oxklpLnZzIU.md`
+- **The Agent Harness** — Vinh Nguyen (6:34, 12 views)
+  https://www.youtube.com/watch?v=-Y8CKl9DTdU
+  item: `items/-Y8CKl9DTdU.md`
+- **Human Agent Interaction Is Becoming a Bottleneck** — Vivek Haldar (8:41, 92 views)
+  https://www.youtube.com/watch?v=0nlJzL2BT-s
+  item: `items/0nlJzL2BT-s.md`
+- **they blocked OpenClaw. now what.** — Ray Fernando (2:16:43, 8.1K views)
+  https://www.youtube.com/watch?v=sWDhIGIiK5w
+  item: `items/sWDhIGIiK5w.md`
+- **North Korea’s Hidden COLLAPSE — 80 Years in the Making** — Fall of Nations (19:47, 917 views)
+  https://www.youtube.com/watch?v=GYHs4g38qo0
+  item: `items/GYHs4g38qo0.md`
+- **[Podcast] The Agent Harness** — Vinh Nguyen (42:02, 12 views)
+  https://www.youtube.com/watch?v=_efJ8baMSDw
+  item: `items/_efJ8baMSDw.md`
+- **Building Autonomous AI Agents  The Architecture of Autonomy** — Software Engineer Mind Maps (6:47, 1 views)
+  https://www.youtube.com/watch?v=g8r0XaqbdQc
+  item: `items/g8r0XaqbdQc.md`
+- **The 2026 AI Blueprint: Multi-Agent Banking Architecture (RAG + MCP) Orchestration** — TechWithShas (15:05, 12 views)
+  https://www.youtube.com/watch?v=xSOOwG0E8RM
+  item: `items/xSOOwG0E8RM.md`
+- **The AI Orchestrator Trap Most Developers Fall Into | #NEWIT** — GilliLab Logic Salt (43:10, new)
+  https://www.youtube.com/watch?v=T2Q691zpyG8
+  item: `items/T2Q691zpyG8.md`
+- **University Students' Objections to the Contemporary Understanding of Islamic Jurisprudence** — Veysel Yağmur Saka (2:23:14, 26 views)
+  https://www.youtube.com/watch?v=PUEmkTrzO6o
+  item: `items/PUEmkTrzO6o.md`
+- **From Google Blog - Google Just Dropped Gemini 3… It’s Insane** — AI Frontier Research (6:39, 1 views)
+  https://www.youtube.com/watch?v=-4ZYa26BXmw
+  item: `items/-4ZYa26BXmw.md`
+- **【Multi Sub】Parallel World Battle Royale S2 EP 1-100 #animation #anime #donghua** — Quartic element Anime (9:05:12, 525 views)
+  https://www.youtube.com/watch?v=Urf-lXNJj8A
+  item: `items/Urf-lXNJj8A.md`
+- **The Ex-FBI Agent Who Said the Arrest Was Already Coming — And Nobody Listened** — Note Book VE (45:20, 93 views)
+  https://www.youtube.com/watch?v=mVZGV0zO1g4
+  item: `items/mVZGV0zO1g4.md`
+- **At Christmas Eve, My Parents THREW Me Out Into The Snow Storm Because Of My Sister’s Lie, 5 Years...** — Revenge Stories Lab (1:07:43, 1 views)
+  https://www.youtube.com/watch?v=w-zq7mNiLEw
+  item: `items/w-zq7mNiLEw.md`
+- **Decepticon — Autonomous Agent #CyberAI #NextGenTech #CrackHash** — Crackshash_mod and PlasticSins (2:38, 58 views)
+  https://www.youtube.com/watch?v=Mk7I_skl118
+  item: `items/Mk7I_skl118.md`
+- **Axionauth Agent Demo** — Martiano (53, 5 views)
+  https://www.youtube.com/watch?v=Hfa5ba1yw1I
+  item: `items/Hfa5ba1yw1I.md`
+- **Agents That Never Sleep — Autonomous AI Systems** — That's Interesting Stuff! (6:31, 3 views)
+  https://www.youtube.com/watch?v=A1Xld6AM2_c
+  item: `items/A1Xld6AM2_c.md`
+- **💥ENG SUB💥【打工修仙：从零开始称霸仙界】Part-Time Cultivation: Zero to Immortal King #玄幻 #热血 #修仙 #逆袭 #anime** — 超有钱动漫 Anime Club (10:21:26, 1.5K views)
+  https://www.youtube.com/watch?v=R6g1YDpXbag
+  item: `items/R6g1YDpXbag.md`
+- **How to Build a Claude AI Agent | Master Autonomous Workflows & Computer** — How To Tutor (2:17, new)
+  https://www.youtube.com/watch?v=X0Ui3ILuxnU
+  item: `items/X0Ui3ILuxnU.md`
+- **MIT AI alumni club Shipping at the Speed of Thought Michael Bryzek** — Maria Kellis (1:11:32, 3 views)
+  https://www.youtube.com/watch?v=DduKznHrh4M
+  item: `items/DduKznHrh4M.md`

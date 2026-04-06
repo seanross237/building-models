@@ -189,3 +189,93 @@ Full item files belong in `items/`.
 - **🔥【爽漫】【Eng Sub】《開局萬億神豪，系統逼我養女神》意外覺醒神豪系統、獲得天量資金，為了花掉只能用於女生的財富，被迫踏上一條荒誕卻爽感十足的逆襲之路。第1-193集 #都市 #逆袭 #系统** — 八虎动漫剧场 (7:08:10, 338 views)
   https://www.youtube.com/watch?v=G8x-ge6XuNs
   item: `items/G8x-ge6XuNs.md`
+
+## 2026-04-05 — 29 new videos
+
+- **How Big is American Airlines?** — Behind Asia (23:44, 1.2K views)
+  https://www.youtube.com/watch?v=FWHYJlRqhRQ
+  item: `items/FWHYJlRqhRQ.md`
+- **The AI Orchestrator Trap Most Developers Fall Into | #NEWIT** — GilliLab Logic Salt (43:10, new)
+  https://www.youtube.com/watch?v=T2Q691zpyG8
+  item: `items/T2Q691zpyG8.md`
+- **The Billionaire Made His Pregnant Wife A Prisoner — She Made Him A Criminal** — Charlotte Reed Tells (1:12:07, 28 views)
+  https://www.youtube.com/watch?v=daMwUv_oZac
+  item: `items/daMwUv_oZac.md`
+- **窮小子帶妻子買首飾反被羞辱成乞丐！殊不知他是財神轉世，花一百返現一百萬，當場清空整個商場！拜金銷售立刻改變嘴臉下跪道歉，老婆欣喜若狂夜夜貼身服務！ #我是財神** — 野火剧场 WildBlaze (1:37:42, 90 views)
+  https://www.youtube.com/watch?v=Rui911BIWLg
+  item: `items/Rui911BIWLg.md`
+- **After Inheriting a Kingdom, I Unlock a Family System—The More Heirs I Have, the Stronger I Become!** — Revel Manga Chronicles (28:16:03, 724 views)
+  https://www.youtube.com/watch?v=JCTkkFSaP2Q
+  item: `items/JCTkkFSaP2Q.md`
+- **【Multi Sub】He came for fish. He got a criminal empire. Best career change. 🔥** — Water drama (1:57:38, 1.5K views)
+  https://www.youtube.com/watch?v=Z3nkNU46RdE
+  item: `items/Z3nkNU46RdE.md`
+- **Betrayal and Gastronomy in the Ottoman Palace #ottoman #history #foodhistory #gastronomy** — Brevia Culinae (20:47, new)
+  https://www.youtube.com/watch?v=Mxze3FL--rk
+  item: `items/Mxze3FL--rk.md`
+- **나는 구원 받았다고 믿었다 지옥에 있었다 두개의 세상을 본 남자** — 솔리데오 어메이징 그레이스 (1:44:15, 171 views)
+  https://www.youtube.com/watch?v=pzNkHOxbPb8
+  item: `items/pzNkHOxbPb8.md`
+- **Reborn 1 month before the apocalypse, I awakened an infinite space and hoarded 10,000 tons of meat!** — ถนอม แก้วธรรม (11:55:01, 55 views)
+  https://www.youtube.com/watch?v=VER9RtodV-E
+  item: `items/VER9RtodV-E.md`
+- **🌟【新番上线|ENG SUB】《弃神奥义》废柴觉醒竟拒神赐？以残缺神格吞噬龙族，逆袭弑神震惊万界！ 一口气看完 #漫剧 #热血 #玄幻 #战斗 #苍穹动漫** — Dragon Animation Club (1:09:25, 419 views)
+  https://www.youtube.com/watch?v=yq1sG3OavrE
+  item: `items/yq1sG3OavrE.md`
+- **🔔【New】【Multi Sub】Weird currency EP1-177#anime #animation** — Joyland-Animation (14:13:56, 204 views)
+  https://www.youtube.com/watch?v=B8QEADTFGog
+  item: `items/B8QEADTFGog.md`
+- **【FULL】EP01-77💥月薪三千的焊工，竟在修车铺手搓出星际母舰？用破烂造机甲，一掌掰弯顶级炮管 | 合集 | MULTI SUB** — Amazing Anime Man (1:49:23, 2.7K views)
+  https://www.youtube.com/watch?v=05uuyjGYSRI
+  item: `items/05uuyjGYSRI.md`
+- **DAY 4 OF 10 DAYS REVIVAL** — The Heralds Ministries (1:40:26, 13 views)
+  https://www.youtube.com/watch?v=bgoKSVI4Cs0
+  item: `items/bgoKSVI4Cs0.md`
+- **Multi-Sub🔥重生归来我觉醒种地系统，与豪门断亲那天全家笑我疯了！直到我种出的金瓜被拍出天价，曾经把我当废物的亲戚，现在排着队来给我打工。【我在繁华都市，靠种地成首富】 #cdrama** — StardustTV-中文短剧 (2:12:54, 454 views)
+  https://www.youtube.com/watch?v=l2Uk3TyJQIA
+  item: `items/l2Uk3TyJQIA.md`
+- **中國高能懸疑劇！暗夜追行EP2💥！機密洩漏在即，楊冪聯手張彬彬黑夜追蹤幕後黑手！ #連載 #電影 #懸疑 #電視劇#一口氣看完系列##刑事偵查電視劇#全集** — 高燃精彩瞬间 (2:01:53, 25 views)
+  https://www.youtube.com/watch?v=CZlga38eJQs
+  item: `items/CZlga38eJQs.md`
+- **【Multi Sub】Parallel World Battle Royale S2 EP 1-100 #animation #anime #donghua** — Quartic element Anime (9:05:12, 525 views)
+  https://www.youtube.com/watch?v=Urf-lXNJj8A
+  item: `items/Urf-lXNJj8A.md`
+- **解放軍英勇進攻敵陣，敵軍將領吓破胆慌忙撤退！** — C-Lab 铁血剧场 (1:08:31, 4 views)
+  https://www.youtube.com/watch?v=lVQULyF1pBE
+  item: `items/lVQULyF1pBE.md`
+- **snailtrail of plague | Pathologic 1 Stream 20** — Non Official Daily(ish) Joseph Anderson (4:25:06, 668 views)
+  https://www.youtube.com/watch?v=z_LlsMqIC-s
+  item: `items/z_LlsMqIC-s.md`
+- **AI Futures and Epoch Researchers Talk Timelines** — Yafah Edelman (1:38:29, 44 views)
+  https://www.youtube.com/watch?v=jRH9UErbHGE
+  item: `items/jRH9UErbHGE.md`
+- **The Legend of Zelda: Ocarina of Time Crowd Control 2026** — SakuraVODs (6:39:56, 13 views)
+  https://www.youtube.com/watch?v=NgqZfoUJxco
+  item: `items/NgqZfoUJxco.md`
+- **Buried Light — The Secret Brotherhood That Rivaled Christianity** — The Heretic's Library (35:28, new)
+  https://www.youtube.com/watch?v=YVBWRUkkYFc
+  item: `items/YVBWRUkkYFc.md`
+- **24.01.12 China's Impossible Trinity: Democracy, Unity & Prosperity** — WangIsHereEN (37:06, 1 views)
+  https://www.youtube.com/watch?v=OQayXOJQNTI
+  item: `items/OQayXOJQNTI.md`
+- **【Multi Sub】🔔 上班摸魚，下班降魔 Slack off at work, subdue demons after work.第2季 #修仙 #热血 #anime #男频** — Qixiang-Animation (10:21:25, 2.3K views)
+  https://www.youtube.com/watch?v=Jyaz-4r-sQY
+  item: `items/Jyaz-4r-sQY.md`
+- **The Sweet, Innocent "Puppy" vs.The Ruthless,Obsessive "Yandere"—Wait, Is That a Puppy? That’s a Wolf** — 追剧酱来啦💖Here Comes Drama-chan (1:37:04, 2.3K views)
+  https://www.youtube.com/watch?v=8iwbFWgxTyo
+  item: `items/8iwbFWgxTyo.md`
+- **【Multi Sub】 🔥全球禦獸：我的獸娘全是SSS級 Global Beast Taming: All My Beast Girls Are SSS-Rank EP 1-141 #都市#男频** — Qixiang-Animation (8:53:46, 356 views)
+  https://www.youtube.com/watch?v=_zW8iYTQIv0
+  item: `items/_zW8iYTQIv0.md`
+- **【ENG SUB】詭異末世：開局萬億詭幣 A bizarre apocalypse: Starting with trillions of bizarre coins EP 50~177#熱血 #動漫** — Bikini-Anime 动漫社 (10:18:18, 646 views)
+  https://www.youtube.com/watch?v=lYrNZZoktlM
+  item: `items/lYrNZZoktlM.md`
+- **🔥【最新合集】《全民诡异：开局掌握零元购》EP1~175：马屁精撞上真大佬！| Multi SUB #热血 #玄幻 #逆袭 #战斗 #动漫魔女** — 动漫魔女 (14:03:11, 1.3K views)
+  https://www.youtube.com/watch?v=bWitiFuT3Jc
+  item: `items/bWitiFuT3Jc.md`
+- **💥【新番上线】陨石灾变华夏无觉醒途径，携系统点化同胞，热血逆袭登顶！《点化华夏万民震惊世界》全集Multi SUB #热血 #漫剧 #动漫魔女** — 动漫魔女 (1:48:16, 127 views)
+  https://www.youtube.com/watch?v=JMM9nQrDGzQ
+  item: `items/JMM9nQrDGzQ.md`
+- **[1-84] After the Breakup, I Got the Perfect Life System and Started A Harem | Manhwa in Hindi** — Pick Me Manhwa (10:56:55, 4.4K views)
+  https://www.youtube.com/watch?v=bm14mHW7SgQ
+  item: `items/bm14mHW7SgQ.md`

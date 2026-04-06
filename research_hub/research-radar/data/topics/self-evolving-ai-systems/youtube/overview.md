@@ -207,3 +207,96 @@ Full item files belong in `items/`.
 - **🔥 24/7 Crypto Live Trading 🤖 I Built a AI Trading Bot That trades Bitcoin & Meme #Livetrading** — Tradebuttons (NA, new)
   https://www.youtube.com/watch?v=FKTPEHPrdgQ
   item: `items/FKTPEHPrdgQ.md`
+
+## 2026-04-05 — 30 new videos
+
+- **AI’s War on Your Dopamine: The Genetic Blueprint of Boredom** — The AI Paradox (26:07, new)
+  https://www.youtube.com/watch?v=Rj4FNrs6Hos
+  item: `items/Rj4FNrs6Hos.md`
+- **Top 15 New AI Robots That Will Change Everything by 2027** — AI Uncovered (11:07, 2.2K views)
+  https://www.youtube.com/watch?v=a1QsFftdN3Y
+  item: `items/a1QsFftdN3Y.md`
+- **NIST AI RMF - Module 1.1 - AI’s New Rules of Risk** — François R. Joly (6:50, 2 views)
+  https://www.youtube.com/watch?v=ctcWd2sLM10
+  item: `items/ctcWd2sLM10.md`
+- **AI Feels? The SHOCKING Truth!** — One Article One Day (1:05:29, 1 views)
+  https://www.youtube.com/watch?v=SRF98drIiXw
+  item: `items/SRF98drIiXw.md`
+- **AI SRE for Complex Systems** — The Reasoning Show (32:34, 7 views)
+  https://www.youtube.com/watch?v=lYgEYF0otjs
+  item: `items/lYgEYF0otjs.md`
+- **The Reasoning Show #1016 - AI SRE for Complex Systems** — The Reasoning Show (30:49, 8 views)
+  https://www.youtube.com/watch?v=hF3MCRDhMno
+  item: `items/hF3MCRDhMno.md`
+- **Why LangChain is DEAD  The New Architecture for Agentic AI** — The Hidden Layer: Decoding Artificial Intelligence (8:30, 2 views)
+  https://www.youtube.com/watch?v=iLyqhJeHwyI
+  item: `items/iLyqhJeHwyI.md`
+- **From Expert Systems to Generative AI: The Evolution of Internal Auditing | WCARS** — Rutgers Accounting Web (14:20, 15 views)
+  https://www.youtube.com/watch?v=EtmDoCJLRKs
+  item: `items/EtmDoCJLRKs.md`
+- **The Hidden Evolution of the Global Oracle** — Stone & Silicon (5:51, 15 views)
+  https://www.youtube.com/watch?v=NGAjMGOmPp0
+  item: `items/NGAjMGOmPp0.md`
+- **Ukraine Just Pulled Off the Most Unexpected Power Move in Modern Geopolitics | World at War** — SLAVIE (1:57:32, 439 views)
+  https://www.youtube.com/watch?v=dtwmLVRNNK8
+  item: `items/dtwmLVRNNK8.md`
+- **Lesson 2: Levels and Types of Artificial Intelligence — From Narrow AI to Generative AI** — Dr. 許軒 Hsuan Hsu (33:43, 4 views)
+  https://www.youtube.com/watch?v=w9tZh5wExng
+  item: `items/w9tZh5wExng.md`
+- **Still piecing together your own RAG system? Onyx integrates Agentic RAG to build an enterprise-g...** — DevCovery (5:56, 12 views)
+  https://www.youtube.com/watch?v=trBp5exDRw0
+  item: `items/trBp5exDRw0.md`
+- **You need to start writing personal essays** — Dan Koe (26:11, 342 views)
+  https://www.youtube.com/watch?v=3rNqNvwNcrM
+  item: `items/3rNqNvwNcrM.md`
+- **LEO ♌ SOMETHING NEEDS TO BE RETHINKEN FROM SCRATCH ⚡YOU ARE ENTERING AN IMPORTANT THRESHOLD** — Il Mago Bianco (18:19, 152 views)
+  https://www.youtube.com/watch?v=sm1Z1Z_3UYU
+  item: `items/sm1Z1Z_3UYU.md`
+- **SINGURUL ROMÂN CARE A VĂZUT PĂMÂNTUL DE SUS! - DUMITRU PRUNARIU #IGDLCC** — George Buhnici (2:35:36, 4.1K views)
+  https://www.youtube.com/watch?v=rqWezooCpxE
+  item: `items/rqWezooCpxE.md`
+- **Les fiancées de l'Empire (Série) Sous Napoléon, amour, pouvoir et trahison s’entrelacent** — Culture Tube and Cinéfilm (5:58:33, 3.5K views)
+  https://www.youtube.com/watch?v=oEVFEq9DYC4
+  item: `items/oEVFEq9DYC4.md`
+- **Destiny Swap Attempt Failed Couldn't Rig The System Against A REAL Priestess Lightworker** — Jayme the Hermetic Shaman (1:01:16, 4.5K views)
+  https://www.youtube.com/watch?v=c-IJsfpYIyA
+  item: `items/c-IJsfpYIyA.md`
+- **The Human Playbook: How to Survive the AI "Great Decoupling"** — The Thinking Lens (12:13, 6 views)
+  https://www.youtube.com/watch?v=Jc1qvdsDCfc
+  item: `items/Jc1qvdsDCfc.md`
+- **Why Learning Is a System Responsibility — Deming Explained (AI Era)** — Curiosity Kosha (4:46, 4 views)
+  https://www.youtube.com/watch?v=3gE8_fC4ipU
+  item: `items/3gE8_fC4ipU.md`
+- **4 Years of Anamya | Strengthening Uttar Pradesh’s Media Ecosystem** — Anamya Productions (4:50, 46 views)
+  https://www.youtube.com/watch?v=9IoItuRQBAU
+  item: `items/9IoItuRQBAU.md`
+- **You Might Believe We Have Given You Everything Today** — Roger Burnley (6:47, 4 views)
+  https://www.youtube.com/watch?v=fsObU6MZUbQ
+  item: `items/fsObU6MZUbQ.md`
+- **Lesson 3: Opening the Black Box — Understanding Modern AI Algorithms** — Dr. 許軒 Hsuan Hsu (30:45, 1 views)
+  https://www.youtube.com/watch?v=uzcSqoUZVUs
+  item: `items/uzcSqoUZVUs.md`
+- **He Makes You Relive Past Lives - Episode 8: JS** — L’éveil Podcast (1:36:19, 84 views)
+  https://www.youtube.com/watch?v=ztEkEYBV6GA
+  item: `items/ztEkEYBV6GA.md`
+- **The AI Orchestrator Trap Most Developers Fall Into | #NEWIT** — GilliLab Logic Salt (43:10, new)
+  https://www.youtube.com/watch?v=T2Q691zpyG8
+  item: `items/T2Q691zpyG8.md`
+- **April Ascension Energies and Light Language Activation with Jamye Price - Allowing Flow April 2026** — Jamye Price (25:30, 669 views)
+  https://www.youtube.com/watch?v=shiZtMwzvww
+  item: `items/shiZtMwzvww.md`
+- **এ কি বানিয়ে ফেলল ভারত? divyastra mk1 | kamikaze drone swarm | indian new kamikaze drone** — Indian Defence News Bangla (8:53, 8.6K views)
+  https://www.youtube.com/watch?v=pRiz_hgnL4M
+  item: `items/pRiz_hgnL4M.md`
+- **Agent Skills Explained 🔥 The New Plugin System for AI Agents (Claude, GPT, MCP, Local LLM)- Tamil** — Pi App Studio (18:33, 10 views)
+  https://www.youtube.com/watch?v=FsAfEcqcORU
+  item: `items/FsAfEcqcORU.md`
+- **Wait, Everyone is DEAD?! I Fused Sadako & Freddy to Conquer Hell! 💀💥#SystemManga #ManhuaRecap** — 小雨动漫社 (2:21:03, 2.5K views)
+  https://www.youtube.com/watch?v=nDNu98xhaNw
+  item: `items/nDNu98xhaNw.md`
+- **Bloomberg This Weekend | Daring Rescue Mission, OPEC Meeting on Energy Crisis, TMZ Goes to DC** — Bloomberg Podcasts (2:28:56, 409 views)
+  https://www.youtube.com/watch?v=xixBRWfcct0
+  item: `items/xixBRWfcct0.md`
+- **DIY Styrofoam Jungle Biotope Aquarium: 60-Day Build | The Biotope Vault** — The Biotope Vault (12:32, 12 views)
+  https://www.youtube.com/watch?v=JcryJoK6PzI
+  item: `items/JcryJoK6PzI.md`

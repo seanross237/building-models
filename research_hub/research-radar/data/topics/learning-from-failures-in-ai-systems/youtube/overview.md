@@ -189,3 +189,96 @@ Full item files belong in `items/`.
 - **Graph RAG vs Traditional RAG: A Beginner's Guide to Smarter AI Retrieval** — Chris Seferlis (12:15, 15 views)
   https://www.youtube.com/watch?v=L98f8hW9E18
   item: `items/L98f8hW9E18.md`
+
+## 2026-04-05 — 30 new videos
+
+- **Small Models, Big Impact: The Future of AI** — TomorrowToday (5:39, 1 views)
+  https://www.youtube.com/watch?v=GUf0Z9KJ4Yo
+  item: `items/GUf0Z9KJ4Yo.md`
+- **AIGP Competencies - Module 3.B - Governing AI Data** — François R. Joly (7:19, 1 views)
+  https://www.youtube.com/watch?v=bhIQoBG_p4c
+  item: `items/bhIQoBG_p4c.md`
+- **Everyone Bought the New Work Lie—Here’s the Truth** — BizTech by Dave Karpinsky (2:59, 2 views)
+  https://www.youtube.com/watch?v=V9EsmzCFdKY
+  item: `items/V9EsmzCFdKY.md`
+- **AI Pilots Fail on Purpose (here's why)** — Aarti Anand (7:16, 20 views)
+  https://www.youtube.com/watch?v=j2-vzXtijJY
+  item: `items/j2-vzXtijJY.md`
+- **Why failure makes us stronger?** — A4 Digest (6:46, 4 views)
+  https://www.youtube.com/watch?v=URE3mb3oCVw
+  item: `items/URE3mb3oCVw.md`
+- **AI’s War on Your Dopamine: The Genetic Blueprint of Boredom** — The AI Paradox (26:07, new)
+  https://www.youtube.com/watch?v=Rj4FNrs6Hos
+  item: `items/Rj4FNrs6Hos.md`
+- **Hybrid Search Failures Quiz | Test Your GenAI Retrieval Skills in 3 Minutes** — AdvSkill Learning (3:00, 3 views)
+  https://www.youtube.com/watch?v=MCDuLuufCoo
+  item: `items/MCDuLuufCoo.md`
+- **You’re Already Using AI… But You Don’t See the Cost** — Science, but make it weird (12:08, 1 views)
+  https://www.youtube.com/watch?v=oXdzK2BWNhs
+  item: `items/oXdzK2BWNhs.md`
+- **Lesson 3: Opening the Black Box — Understanding Modern AI Algorithms** — Dr. 許軒 Hsuan Hsu (30:45, 1 views)
+  https://www.youtube.com/watch?v=uzcSqoUZVUs
+  item: `items/uzcSqoUZVUs.md`
+- **What Every Medical Influencer Is Getting Wrong | Dr. Glaucomflecken (Will Flanary)** — Doctor Mike (2:13:42, 29.9K views)
+  https://www.youtube.com/watch?v=49T38wuqF1M
+  item: `items/49T38wuqF1M.md`
+- **AI Feels? The SHOCKING Truth!** — One Article One Day (1:05:29, 1 views)
+  https://www.youtube.com/watch?v=SRF98drIiXw
+  item: `items/SRF98drIiXw.md`
+- **LLMs Are Starting To Doubt Reality: Epistemic Regression Explained** — Elodine (12:05, 2.7K views)
+  https://www.youtube.com/watch?v=YLInatCbiG4
+  item: `items/YLInatCbiG4.md`
+- **You Became the System. They Kept the Value. | The Reassignment** — I Take Your Point Podcast (1:02:47, 22 views)
+  https://www.youtube.com/watch?v=TiOd-PQvNkY
+  item: `items/TiOd-PQvNkY.md`
+- **Future Proof** — John Otache (1:16:05, 61 views)
+  https://www.youtube.com/watch?v=nyYoOB4uXiY
+  item: `items/nyYoOB4uXiY.md`
+- **Why LangChain is DEAD  The New Architecture for Agentic AI** — The Hidden Layer: Decoding Artificial Intelligence (8:30, 2 views)
+  https://www.youtube.com/watch?v=iLyqhJeHwyI
+  item: `items/iLyqhJeHwyI.md`
+- **Will God Save America? | Bible Prophecy, America & the Future | LIVE Conference Day 2** — Heritage & Hope Ministries (9:01:11, 6.5K views)
+  https://www.youtube.com/watch?v=hc4jv0bCfUA
+  item: `items/hc4jv0bCfUA.md`
+- **How To FINALLY Escape The "Poverty Operating System" | Machiavelli** — The Unseen Game (30:53, 156 views)
+  https://www.youtube.com/watch?v=Cg_S5Y36nj4
+  item: `items/Cg_S5Y36nj4.md`
+- **The Moment AI Stopped Answering and Started Acting** — ShortByShot (29:16, 7 views)
+  https://www.youtube.com/watch?v=StoE7BB3lVg
+  item: `items/StoE7BB3lVg.md`
+- **[CC]《亲爱的·客栈2026》FULL EP06：王鹤棣蒙对答案，沈月徐志胜接连破防 |The Inn 2026 | MangoTV Lifestyle** — 芒果TV慢生活综艺 MangoTV Lifestyle (1:53:33, 26.2K views)
+  https://www.youtube.com/watch?v=Swl4SNkUTT8
+  item: `items/Swl4SNkUTT8.md`
+- **CompTIA SecAI+ Securing AI Systems (DOMAIN 2.1) (MITRE ATLAS)** — ConvoCourses (2:15:24, 90 views)
+  https://www.youtube.com/watch?v=_4ikq7CmckE
+  item: `items/_4ikq7CmckE.md`
+- **The Real Reason China Rose So Fast (Episode 6)** — The US-China Narrative (14:01, 1.1K views)
+  https://www.youtube.com/watch?v=koQq8isvKCo
+  item: `items/koQq8isvKCo.md`
+- **Agentic AI & Multi-Agent Orchestration in Utrecht: 2026 Guide** — Aetherlink (9:05, 3 views)
+  https://www.youtube.com/watch?v=mFCsyW9rarI
+  item: `items/mFCsyW9rarI.md`
+- **AWhat If Humans Become Just Data Points? | Amrita Mahale Anna Elisabeth Mayer | KLF2026** — DC Books (55:09, 127 views)
+  https://www.youtube.com/watch?v=7br89ouQ5S4
+  item: `items/7br89ouQ5S4.md`
+- **AI Weekly Update: The Rise of Autonomous Agents, Anthropic Code Leaks & Deepfake Scams April 4, 2026** — KYC AI LABS (4:52, 5 views)
+  https://www.youtube.com/watch?v=IloHzpDcbP8
+  item: `items/IloHzpDcbP8.md`
+- **Why We're Building a Civilization from Scratch | Mission: Future Civilization | Summer Camp 2026** — YoLabs (6:49, 2 views)
+  https://www.youtube.com/watch?v=L2yZCXfEmJ0
+  item: `items/L2yZCXfEmJ0.md`
+- **Agentic AI & Multi-Agent Orchestration: Den Haag's Enterprise Guide 2…** — Aetherlink (23:59, 1 views)
+  https://www.youtube.com/watch?v=EIBff_aRG8c
+  item: `items/EIBff_aRG8c.md`
+- **How This Image Won a British Wildlife Photography Award** — Marc Humphrey Photography (20:25, 84 views)
+  https://www.youtube.com/watch?v=_LQn69lbT-0
+  item: `items/_LQn69lbT-0.md`
+- **Addams — Your Humanitarians AI Sherpa** — humanitarians ai (3:35, 6 views)
+  https://www.youtube.com/watch?v=dDoXAkTZLFI
+  item: `items/dDoXAkTZLFI.md`
+- **The Update That Finally Fixed CS2** — TheWarOwl (12:16, 293.2K views)
+  https://www.youtube.com/watch?v=BEtrEK_brQc
+  item: `items/BEtrEK_brQc.md`
+- **OpenClaw: The 16 Trillion Token Autonomy Engine** — My Weird Prompts (20:36, 2 views)
+  https://www.youtube.com/watch?v=NpzRaAkf7GE
+  item: `items/NpzRaAkf7GE.md`

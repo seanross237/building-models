@@ -69,3 +69,54 @@ Full item files belong in `items/`.
 - **🎮 VALORANT GRIND [ ROAD TO 10K SUBSCRIBERS ] | EMJAY 27** — EMJAY 27 (1:23:26, 23 views)
   https://www.youtube.com/watch?v=iCyOoE3yz48
   item: `items/iCyOoE3yz48.md`
+
+## 2026-04-05 — 16 new videos
+
+- **Self Improving Agents in 5 Minutes** — Developers Digest (5:08, 3.6K views)
+  https://www.youtube.com/watch?v=RoaPvj9Ovug
+  item: `items/RoaPvj9Ovug.md`
+- **How Multi-Agent AI Is Replacing Entire Workflows #ai #automation #robotics** — Thinking Machines (10:29, 1 views)
+  https://www.youtube.com/watch?v=vzQjaDvFcOM
+  item: `items/vzQjaDvFcOM.md`
+- **they blocked OpenClaw. now what.** — Ray Fernando (2:16:43, 8.1K views)
+  https://www.youtube.com/watch?v=sWDhIGIiK5w
+  item: `items/sWDhIGIiK5w.md`
+- **Google Just Dropped Gemma 4: The Most Intelligent Open Model Ever!** — AI Revolution (13:23, 27.6K views)
+  https://www.youtube.com/watch?v=KmZCQrKNhDc
+  item: `items/KmZCQrKNhDc.md`
+- **This AI Agent Runs Your Tasks While You Sleep ($19 Setup)** — Franklin AI (17:07, 425 views)
+  https://www.youtube.com/watch?v=Sa43SqfiLj4
+  item: `items/Sa43SqfiLj4.md`
+- **NEW Gemma 4 Update!** — Julian Goldie SEO (8:37, 3.5K views)
+  https://www.youtube.com/watch?v=FLl71Xz22Qo
+  item: `items/FLl71Xz22Qo.md`
+- **Agentic AI & Multi-Agent Orchestration in Utrecht: 2026 Guide** — Aetherlink (9:05, 3 views)
+  https://www.youtube.com/watch?v=mFCsyW9rarI
+  item: `items/mFCsyW9rarI.md`
+- **The Moment AI Stopped Answering and Started Acting** — ShortByShot (29:16, 7 views)
+  https://www.youtube.com/watch?v=StoE7BB3lVg
+  item: `items/StoE7BB3lVg.md`
+- **Scale Globally with Agentic AI #ai #agenticai #artificialintelligence #reels #viral** — Strata Ai (49, 9 views)
+  https://www.youtube.com/watch?v=AhVXS64QZus
+  item: `items/AhVXS64QZus.md`
+- **Agents That Never Sleep — Autonomous AI Systems** — That's Interesting Stuff! (6:31, 3 views)
+  https://www.youtube.com/watch?v=A1Xld6AM2_c
+  item: `items/A1Xld6AM2_c.md`
+- **The Orchestrator Agent: Unifying the Fragmented AI Ecosystem | Explain in Hindi** — MANTOZ_AI (5:29, 8 views)
+  https://www.youtube.com/watch?v=saO5aoPjnQg
+  item: `items/saO5aoPjnQg.md`
+- **AI Agents Simplified: Build Your Digital Workforce (Claude, Manus & More!)** — Nicholas Cormier (7:09, 12 views)
+  https://www.youtube.com/watch?v=YFW55lj_Zig
+  item: `items/YFW55lj_Zig.md`
+- **The Agentic Era is Here: Why AI is Moving Faster Than Expected** — AgenticEra Podcast and Embedded Nature (57:47, 8 views)
+  https://www.youtube.com/watch?v=9OcTtEPnc8c
+  item: `items/9OcTtEPnc8c.md`
+- **Optimize RAG with AI Agents & Vector Databases | Explain in Hindi** — MANTOZ_AI (4:41, 8 views)
+  https://www.youtube.com/watch?v=KRhdpK_kcCQ
+  item: `items/KRhdpK_kcCQ.md`
+- **🎮 SUNDAY SPECIAL VALORANT GRIND [ ROAD TO 10K SUBSCRIBERS ] | EMJAY 27** — EMJAY 27 (2:03:04, 12 views)
+  https://www.youtube.com/watch?v=HXBxoUetfmc
+  item: `items/HXBxoUetfmc.md`
+- **🎮 VALORANT GRIND [ ROAD TO 10K SUBSCRIBERS ] | EMJAY 27** — EMJAY 27 (2:15:31, 36 views)
+  https://www.youtube.com/watch?v=AP-c65xV2RQ
+  item: `items/AP-c65xV2RQ.md`

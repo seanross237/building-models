@@ -75,3 +75,27 @@ Full item files belong in `items/`.
 - **512,000 Lines Leaked: Did Anthropic Just Break the Internet?** — The Pairing Mode (39:30, 8 views)
   https://www.youtube.com/watch?v=X4PW8ufihJk
   item: `items/X4PW8ufihJk.md`
+
+## 2026-04-05 — 7 new videos
+
+- **Ex-Meta AI Chief Yann LeCun | The Biggest Risk of AI & The Second Wave Coming** — Ahamed Fofana (11:05, 23 views)
+  https://www.youtube.com/watch?v=qqY_Eod8pNo
+  item: `items/qqY_Eod8pNo.md`
+- **ПРОВАЛ десятилетия | Meta Oculus Quest 2** — Просто о Сложном (26:04, 11 views)
+  https://www.youtube.com/watch?v=2c9MjvXkUe8
+  item: `items/2c9MjvXkUe8.md`
+- **Incredible Inventions 2026: The Future Is Here!** — THE RSG (37:19, 15 views)
+  https://www.youtube.com/watch?v=tdwKUv62HL0
+  item: `items/tdwKUv62HL0.md`
+- **ATARAXIA THE LOST BLUEPRINT  |  for Absolute Emotional Invulnerability  | Full Audiobook** — The Sovereign Path (3:09:37, 4 views)
+  https://www.youtube.com/watch?v=4JTIRQ-74hw
+  item: `items/4JTIRQ-74hw.md`
+- **🧠🦉| 03 -  SAMPAIO'S ATTACK ON FRISTONS FREE ENERGY PRINCIPLE  - TUMCA X INFERENCE ATIVE** — BEING AND MEMORY: The Nature of Consciousness (36:05, 3 views)
+  https://www.youtube.com/watch?v=CcajSzFLc78
+  item: `items/CcajSzFLc78.md`
+- **Reborn 1 month before the apocalypse, I awakened an infinite space and hoarded 10,000 tons of meat!** — ถนอม แก้วธรรม (11:55:01, 55 views)
+  https://www.youtube.com/watch?v=VER9RtodV-E
+  item: `items/VER9RtodV-E.md`
+- **【Multi Sub】🔥暴擊999，開局帶師妹逆襲Critical Hit 999: Starting Over with My Junior Sister第1-106集#热血 #修仙#男频** — Qixiang-Animation (7:22:25, 3.0K views)
+  https://www.youtube.com/watch?v=abnI8fTT6Os
+  item: `items/abnI8fTT6Os.md`

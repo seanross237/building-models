@@ -42,3 +42,15 @@ Full item files belong in `items/`.
 - **AI in Education: Panel Discussion: How Does AI Affect How We Learn?** — MIT Schwarzman College of Computing (1:13:22, 8 views)
   https://www.youtube.com/watch?v=WvuCgpRU7EA
   item: `items/WvuCgpRU7EA.md`
+
+## 2026-04-05 — 3 new videos
+
+- **they blocked OpenClaw. now what.** — Ray Fernando (2:16:43, 8.1K views)
+  https://www.youtube.com/watch?v=sWDhIGIiK5w
+  item: `items/sWDhIGIiK5w.md`
+- **The AI Orchestrator Trap Most Developers Fall Into | #NEWIT** — GilliLab Logic Salt (43:10, new)
+  https://www.youtube.com/watch?v=T2Q691zpyG8
+  item: `items/T2Q691zpyG8.md`
+- **MIT AI alumni club Shipping at the Speed of Thought Michael Bryzek** — Maria Kellis (1:11:32, 3 views)
+  https://www.youtube.com/watch?v=DduKznHrh4M
+  item: `items/DduKznHrh4M.md`

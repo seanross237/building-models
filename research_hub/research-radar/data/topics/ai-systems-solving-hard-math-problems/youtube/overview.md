@@ -189,3 +189,96 @@ Full item files belong in `items/`.
 - **穿越大荒年窮到跪舔寡婦求生，卻意外覺醒震驚系統！別人餓得啃樹皮，他帶著嫂子們大魚大肉吃到爽，寡婦當晚跪求他留下別走！#drama #短劇 #逆襲 #多語種** — 橙果劇場No1Drama (2:05:45, 8.0K views)
   https://www.youtube.com/watch?v=Ek8RiaPmzqM
   item: `items/Ek8RiaPmzqM.md`
+
+## 2026-04-05 — 30 new videos
+
+- **This Equation Shouldn’t Exist** — SyberMath (14:55, 580 views)
+  https://www.youtube.com/watch?v=it6kW89PpI0
+  item: `items/it6kW89PpI0.md`
+- **A Nice Algebra Problem | Math Olympiad | Find abc=?** — SALogic (10:03, 717 views)
+  https://www.youtube.com/watch?v=ABbD1Z08Z5Q
+  item: `items/ABbD1Z08Z5Q.md`
+- **An Outstanding Algebraic equation | 99% Failed to crack this!  | Can you solve this? | x=?** — Mathematics & Statistics Guru (12:32, 40 views)
+  https://www.youtube.com/watch?v=6tRxIxZcSX8
+  item: `items/6tRxIxZcSX8.md`
+- **A Nice Algebra Problem | Math Olympiad | Can you solve this? | x=?** — Mathematics & Statistics Guru (10:44, 123 views)
+  https://www.youtube.com/watch?v=QFAMZj8UpmQ
+  item: `items/QFAMZj8UpmQ.md`
+- **Solving a 'Harvard' University Entrance Question | Olympiad Mathematics** — HkLogics (3:21, 5 views)
+  https://www.youtube.com/watch?v=6Hnz_SffsrQ
+  item: `items/6Hnz_SffsrQ.md`
+- **Solving a 'Harvard' University Entrance Question | Olympiad Mathematics** — HkLogics (6:34, 30 views)
+  https://www.youtube.com/watch?v=NNNv3amuHZE
+  item: `items/NNNv3amuHZE.md`
+- **Biggest Breakthroughs in Biology 2025** — Quanta Magazine (15:56, 6.9K views)
+  https://www.youtube.com/watch?v=mf5envOypNU
+  item: `items/mf5envOypNU.md`
+- **Can You Solve This in 60 Seconds? | Math Olympiad** — Master T Maths Class (8:32, 1.6K views)
+  https://www.youtube.com/watch?v=5FS1bIR6bbQ
+  item: `items/5FS1bIR6bbQ.md`
+- **From openAI - Stop Failing Math: Use ChatGPT Like a Pro Tutor** — AI Frontier Research (4:42, new)
+  https://www.youtube.com/watch?v=31RavceUeiE
+  item: `items/31RavceUeiE.md`
+- **🔥Сколько СТОИТ РЕМОНТ в 2026? | Из убитой ХРУЩЕВКИ сделали конфетку!** — DNEVNIK DIZAINERA (45:48, 62.1K views)
+  https://www.youtube.com/watch?v=QyWfovpbXhc
+  item: `items/QyWfovpbXhc.md`
+- **Why Your AI Projects Are About to Get Much Harder** — Matin Sanny (6:29, 3 views)
+  https://www.youtube.com/watch?v=ZHEskqGK3G0
+  item: `items/ZHEskqGK3G0.md`
+- **Jim Simon’s made $31 billion off this without AI** — Moon Dev (43, 20 views)
+  https://www.youtube.com/watch?v=t6cUNhbTGBs
+  item: `items/t6cUNhbTGBs.md`
+- **University Students' Objections to the Contemporary Understanding of Islamic Jurisprudence** — Veysel Yağmur Saka (2:23:14, 26 views)
+  https://www.youtube.com/watch?v=PUEmkTrzO6o
+  item: `items/PUEmkTrzO6o.md`
+- **Trading LIVE with One of the World's BEST Scalpers (Perfect Sniper Entries)** — Chart Fanatics and Andrea Cimi (5:41:15, 10.3K views)
+  https://www.youtube.com/watch?v=TvoQr6ObjnU
+  item: `items/TvoQr6ObjnU.md`
+- **How To FINALLY Escape The "Poverty Operating System" | Machiavelli** — The Unseen Game (30:53, 156 views)
+  https://www.youtube.com/watch?v=Cg_S5Y36nj4
+  item: `items/Cg_S5Y36nj4.md`
+- **At Home, He Lives Peacefully, But In Hell, He Must Survive Against The Strongest Enemies** — Recap Manga (11:46:10, 755 views)
+  https://www.youtube.com/watch?v=iBzr9ocZNuc
+  item: `items/iBzr9ocZNuc.md`
+- **The Human Playbook: How to Survive the AI "Great Decoupling"** — The Thinking Lens (12:13, 6 views)
+  https://www.youtube.com/watch?v=Jc1qvdsDCfc
+  item: `items/Jc1qvdsDCfc.md`
+- **I can’t believe he built all these polymarket bots live** — Moon Dev (33, 215 views)
+  https://www.youtube.com/watch?v=xsl5KkoyoJA
+  item: `items/xsl5KkoyoJA.md`
+- **数十年後に生まれ変わり、若いうちに私は家族の太祖母となり、一手に家族を整え、私たちを軽蔑するすべての人を打ち負かした! #BG #コメディ #AI  #占星jm** — 美しい妊婦マンガ (2:29:51, 51 views)
+  https://www.youtube.com/watch?v=8naw9nD--qk
+  item: `items/8naw9nD--qk.md`
+- **女孩嫁進豪門卻被婆家欺辱，直到與丈夫互換身體他才知妻子的委屈，開啟瘋狂追妻模式！** — 甜甜圈短剧 (2:07:40, 24 views)
+  https://www.youtube.com/watch?v=p8y3RttgMuw
+  item: `items/p8y3RttgMuw.md`
+- **Les fiancées de l'Empire (Série) Sous Napoléon, amour, pouvoir et trahison s’entrelacent** — Culture Tube and Cinéfilm (5:58:33, 3.5K views)
+  https://www.youtube.com/watch?v=oEVFEq9DYC4
+  item: `items/oEVFEq9DYC4.md`
+- **Claude Code + Cricket + Polymarket = The Edge Nobody Knows About** — Moon Dev (10:43, 35 views)
+  https://www.youtube.com/watch?v=TM6QJV6_z7U
+  item: `items/TM6QJV6_z7U.md`
+- **AI Feels? The SHOCKING Truth!** — One Article One Day (1:05:29, 1 views)
+  https://www.youtube.com/watch?v=SRF98drIiXw
+  item: `items/SRF98drIiXw.md`
+- **As a trader this is my worst habit** — Moon Dev (1:00, 379 views)
+  https://www.youtube.com/watch?v=RDzzzW7FAcQ
+  item: `items/RDzzzW7FAcQ.md`
+- **How Close Is Quantum to Breaking Crypto? Google's Alarming New Paper** — Coin Bureau Podcast (18:56, 2.9K views)
+  https://www.youtube.com/watch?v=MvOwQPZH2-U
+  item: `items/MvOwQPZH2-U.md`
+- **穿越女尊世界，被逼娶五個老婆？我反手掏出加特林，突突了女帝和北蠻公主！今晚七個一起洞房，腰子有點痛！ #爽文  #男頻後宮 #系統逆襲** — 短剧社 (2:21:53, 39.8K views)
+  https://www.youtube.com/watch?v=UXvoZKzon4U
+  item: `items/UXvoZKzon4U.md`
+- **【八零團寵：下鄉後我帶全家狂立功】下鄉被團寵，憑本事帶全家立功賺工分，日子越過越紅火！** — 曙光剧集 Aurora Dramatica (2:30:19, 477 views)
+  https://www.youtube.com/watch?v=bTpBOIks5JU
+  item: `items/bTpBOIks5JU.md`
+- **This Will SHOCK You — ISLAM Is COLLAPSING** — Fall of Nations (2:53:55, 4.1K views)
+  https://www.youtube.com/watch?v=aiBMdiSd0r8
+  item: `items/aiBMdiSd0r8.md`
+- **Cohort 2 Graduation and Award Ceremony** — Elevouth (2:02:41, 40 views)
+  https://www.youtube.com/watch?v=CKNL4GuL580
+  item: `items/CKNL4GuL580.md`
+- **Artificial Intelligence and Legal Liability in Radiology: Randomized Experimental Study-Podcast** — Jeffrey Chen by SmartRad AI (19:22, 2 views)
+  https://www.youtube.com/watch?v=F3EppywMrrw
+  item: `items/F3EppywMrrw.md`

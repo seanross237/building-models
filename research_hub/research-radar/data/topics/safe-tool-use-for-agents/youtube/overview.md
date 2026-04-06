@@ -189,3 +189,96 @@ Full item files belong in `items/`.
 - **"Social Media Is a Chainsaw" Not A Tool To Wield Lightly Platforms Need Accountability, Parents Too** — The AI XR Podcast (55, 2 views)
   https://www.youtube.com/watch?v=2Zu5M9iUFC4
   item: `items/2Zu5M9iUFC4.md`
+
+## 2026-04-05 — 30 new videos
+
+- **Multi-Agent Orchestration Explained: From Patterns to Production** — scrollypedia (10:10, 4 views)
+  https://www.youtube.com/watch?v=EtSO9vU84ws
+  item: `items/EtSO9vU84ws.md`
+- **Self Improving Agents in 5 Minutes** — Developers Digest (5:08, 3.6K views)
+  https://www.youtube.com/watch?v=RoaPvj9Ovug
+  item: `items/RoaPvj9Ovug.md`
+- **AI research papers by agents & Coding agents: speed versus safety - AI News (Apr 5, 2026)** — The Automated Daily (8:48, 1 views)
+  https://www.youtube.com/watch?v=LyhoUUkESgs
+  item: `items/LyhoUUkESgs.md`
+- **Fmr. IRS Agent REVEALS "I haven't PAID income taxes in 28 years" it's UNCONSTITUTIONAL | Redacted** — Redacted (45:52, 57.2K views)
+  https://www.youtube.com/watch?v=BuvHmkfBn54
+  item: `items/BuvHmkfBn54.md`
+- **Hermes + Honcho  Self Improving Autonomous AI Agent!** — Julian Goldie SEO (12:56, 994 views)
+  https://www.youtube.com/watch?v=gnDFkXl9AEc
+  item: `items/gnDFkXl9AEc.md`
+- **Abacus CoWork: This AI Agent Finishes Your Work (Not Just Assists)** — Julia McCoy (17:30, 7.1K views)
+  https://www.youtube.com/watch?v=3wfGasnTcSg
+  item: `items/3wfGasnTcSg.md`
+- **Google's Agent Skills Update is WILD!** — Julian Goldie SEO (7:46, 3.2K views)
+  https://www.youtube.com/watch?v=XcJbx1-SIVs
+  item: `items/XcJbx1-SIVs.md`
+- **Build AI Apps with Python: Safe AI Agents — Input Validation and Output Filtering | Episode 21** — Taught by Celeste AI - AI Coding Coach (21:36, new)
+  https://www.youtube.com/watch?v=aKqVBFXsRcI
+  item: `items/aKqVBFXsRcI.md`
+- **they blocked OpenClaw. now what.** — Ray Fernando (2:16:43, 8.1K views)
+  https://www.youtube.com/watch?v=sWDhIGIiK5w
+  item: `items/sWDhIGIiK5w.md`
+- **NemoClaw Full Tutorial (Urdu/Hindi) | NVIDIA OpenClaw Setup + AI Agents Guide** — AI with Hassan (19:25, 859 views)
+  https://www.youtube.com/watch?v=z99wQtB3yvU
+  item: `items/z99wQtB3yvU.md`
+- **New Creao Super Agent Is INSANE! 🤯** — Julian Goldie SEO (8:09, 3.5K views)
+  https://www.youtube.com/watch?v=KNO3LzcOrso
+  item: `items/KNO3LzcOrso.md`
+- **'CUTTING THE IDLE TIME': FDA shifts focus to efficiency gains** — Fox Business (4:31, 2.0K views)
+  https://www.youtube.com/watch?v=m9qp6YRR9es
+  item: `items/m9qp6YRR9es.md`
+- **Hostinger's OpenClaw COLLAPSED $600/Month API Costs 😱 (19 Agents for $6)** — iampauljames (8:04, 2.1K views)
+  https://www.youtube.com/watch?v=yUKcxG7TXyo
+  item: `items/yUKcxG7TXyo.md`
+- **CS2 Skin Changer | FREE CS2 Skin Changer -  Unlock Every Knife & Glove 2026** — Alex Romero  R T (2:06, 1.4K views)
+  https://www.youtube.com/watch?v=mrEiu3oX_jA
+  item: `items/mrEiu3oX_jA.md`
+- **Future Proof** — John Otache (1:16:05, 61 views)
+  https://www.youtube.com/watch?v=nyYoOB4uXiY
+  item: `items/nyYoOB4uXiY.md`
+- **This AI Agent Runs Your Tasks While You Sleep ($19 Setup)** — Franklin AI (17:07, 425 views)
+  https://www.youtube.com/watch?v=Sa43SqfiLj4
+  item: `items/Sa43SqfiLj4.md`
+- **Automating Your Business with an AI CMO & CTO (Part 2)** — AI Academy by LTPhen (23:01, 4 views)
+  https://www.youtube.com/watch?v=BE-X086iosc
+  item: `items/BE-X086iosc.md`
+- **Why LangChain is DEAD  The New Architecture for Agentic AI** — The Hidden Layer: Decoding Artificial Intelligence (8:30, 2 views)
+  https://www.youtube.com/watch?v=iLyqhJeHwyI
+  item: `items/iLyqhJeHwyI.md`
+- **#safetyshoesbestbrand  manufacturers are looking for agents &distributors#SAFETOE #PPE #Shorts #OEM** — SAFETOE Safety Shoes (28, 1.2K views)
+  https://www.youtube.com/watch?v=quYQYXZlZc8
+  item: `items/quYQYXZlZc8.md`
+- **AI Is Replacing Real Estate Investors (Do This Instead)** — Joe McCall (16:03, 228 views)
+  https://www.youtube.com/watch?v=A-5-uxPzPpU
+  item: `items/A-5-uxPzPpU.md`
+- **What Every Medical Influencer Is Getting Wrong | Dr. Glaucomflecken (Will Flanary)** — Doctor Mike (2:13:42, 29.9K views)
+  https://www.youtube.com/watch?v=49T38wuqF1M
+  item: `items/49T38wuqF1M.md`
+- **'Amazing coordination’: Trump announces missing U.S. Airman rescued in Iran** — MS NOW (12:09, 57.8K views)
+  https://www.youtube.com/watch?v=f6gxLG-1fu4
+  item: `items/f6gxLG-1fu4.md`
+- **The Curious Case of… It’s Ok to be Ok ft. Nikhil Taneja and Bakul Dua** — Agatsu Foundation (1:15:56, 112 views)
+  https://www.youtube.com/watch?v=wCvGbiKhzy0
+  item: `items/wCvGbiKhzy0.md`
+- **LangGraph Ep12: Breakpoints & Human Approval (interrupt_before)** — Computer Lab Tamil (20:25, 5 views)
+  https://www.youtube.com/watch?v=ybHj0MO6cHU
+  item: `items/ybHj0MO6cHU.md`
+- **The 5 BIGGEST MISTAKES in a BATHROOM RENOVATION** — Der Fliesenleger (21:53, 1.2K views)
+  https://www.youtube.com/watch?v=zR7LyRq3G7Q
+  item: `items/zR7LyRq3G7Q.md`
+- **The thug has been caught! But have Nam and Tieu Sa found each other yet?** — Ly tieu Sa (1:23:18, 9.4K views)
+  https://www.youtube.com/watch?v=b_cz5hQe9V4
+  item: `items/b_cz5hQe9V4.md`
+- **How I Published a Book on Amazon in 18 Hours Using AI Agents** — Bear Liu (13:02, 176 views)
+  https://www.youtube.com/watch?v=dZ46OLcczzI
+  item: `items/dZ46OLcczzI.md`
+- **AWhat If Humans Become Just Data Points? | Amrita Mahale Anna Elisabeth Mayer | KLF2026** — DC Books (55:09, 127 views)
+  https://www.youtube.com/watch?v=7br89ouQ5S4
+  item: `items/7br89ouQ5S4.md`
+- **Taskmaster NZ Season 6, Episode 10 - 'Seen as sneaky.' | Full Episode** — Taskmaster (44:09, 49.5K views)
+  https://www.youtube.com/watch?v=ItmtpDemksg
+  item: `items/ItmtpDemksg.md`
+- **Will God Save America? | Bible Prophecy, America & the Future | LIVE Conference Day 2** — Heritage & Hope Ministries (9:01:11, 6.5K views)
+  https://www.youtube.com/watch?v=hc4jv0bCfUA
+  item: `items/hc4jv0bCfUA.md`

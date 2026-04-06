@@ -9,3 +9,9 @@ Full item files belong in `items/`.
 - **🚨 AI Security Disaster: 500,000 Lines Leaked & A Hidden Hack You NEED to Know** — While We Were Distracted (20:49, 6 views)
   https://www.youtube.com/watch?v=9k4m4uoVdUA
   item: `items/9k4m4uoVdUA.md`
+
+## 2026-04-05 — 1 new videos
+
+- **The AI Orchestrator Trap Most Developers Fall Into | #NEWIT** — GilliLab Logic Salt (43:10, new)
+  https://www.youtube.com/watch?v=T2Q691zpyG8
+  item: `items/T2Q691zpyG8.md`

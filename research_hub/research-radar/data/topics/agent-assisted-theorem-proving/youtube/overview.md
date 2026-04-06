@@ -18,3 +18,9 @@ Full item files belong in `items/`.
 - **OVERSEER/DRAFTSMAN GRII & III |🔥FREE LIVE CLASS🔥| ചോദ്യങ്ങളുടെ PATTERN മനസിലാക്കി RANK ഉറപ്പിക്കാം ❗** — Earnest Academy Tech Exams-PSC,RRB,SSC (1:00:41, 125 views)
   https://www.youtube.com/watch?v=QGjXLWQ7t00
   item: `items/QGjXLWQ7t00.md`
+
+## 2026-04-05 — 1 new videos
+
+- **பெருமிதம் | From Bicycle Rocket Parts to Moon Landing: ISRO's Full Story | Jayasim Jayakumar** — Jayasim Jayakumar (46:19, 17.5K views)
+  https://www.youtube.com/watch?v=dynDYpXYW5k
+  item: `items/dynDYpXYW5k.md`

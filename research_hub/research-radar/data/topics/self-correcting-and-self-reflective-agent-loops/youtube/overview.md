@@ -117,3 +117,51 @@ Full item files belong in `items/`.
 - **Too Precise to Be Human? How to Last Long with Love Robots?** — Wooden Slate (20:11, 217 views)
   https://www.youtube.com/watch?v=NDQQHUeM0iQ
   item: `items/NDQQHUeM0iQ.md`
+
+## 2026-04-05 — 15 new videos
+
+- **My magic power is 99,999 because I gain +1 magic power for every monster I kill!#anime** — KAI Manhwa Recap (11:56:25, 10 views)
+  https://www.youtube.com/watch?v=VLNZjrYZ7Z8
+  item: `items/VLNZjrYZ7Z8.md`
+- **【完整版】《黎明之劍》| 飛機失事！我竟成為衛星，見證文明誕生與滅亡！#漫剧 #anime#動態漫** — 漫帧剧场Frame Theatre (3:51:15, 50 views)
+  https://www.youtube.com/watch?v=V__tVoyVFVk
+  item: `items/V__tVoyVFVk.md`
+- **Bloomberg This Weekend | Daring Rescue Mission, OPEC Meeting on Energy Crisis, TMZ Goes to DC** — Bloomberg Podcasts (2:28:56, 409 views)
+  https://www.youtube.com/watch?v=xixBRWfcct0
+  item: `items/xixBRWfcct0.md`
+- **Gemma 4 4b and Pharmaceutical Superintelligence** — KEN WASSERMAN (20:54, 5 views)
+  https://www.youtube.com/watch?v=J0FfLyVfqzU
+  item: `items/J0FfLyVfqzU.md`
+- **At Christmas Eve, My Parents THREW Me Out Into The Snow Storm Because Of My Sister’s Lie, 5 Years...** — Revenge Stories Lab (1:07:43, 1 views)
+  https://www.youtube.com/watch?v=w-zq7mNiLEw
+  item: `items/w-zq7mNiLEw.md`
+- **🌟【新番上线|ENG SUB】《星灾降临：我以兽骨护山河》重生远古巨兽，身负核能血脉！携手大国逆袭，碾压星际入侵！ 一口气看完 #漫剧 #热血 #玄幻 #战斗 #苍穹动漫** — Dragon Animation Club (1:54:30, 1.6K views)
+  https://www.youtube.com/watch?v=GFwvmOU5NIE
+  item: `items/GFwvmOU5NIE.md`
+- **After Inheriting a Kingdom, I Unlock a Family System—The More Heirs I Have, the Stronger I Become!** — Revel Manga Chronicles (28:16:03, 724 views)
+  https://www.youtube.com/watch?v=JCTkkFSaP2Q
+  item: `items/JCTkkFSaP2Q.md`
+- **badspaceking continues shooting fascists to clean up the town (2026-04-03)** — BadSpaceKing (7:12:22, 3 views)
+  https://www.youtube.com/watch?v=rWX0io0oh20
+  item: `items/rWX0io0oh20.md`
+- **ATARAXIA THE LOST BLUEPRINT  |  for Absolute Emotional Invulnerability  | Full Audiobook** — The Sovereign Path (3:09:37, 4 views)
+  https://www.youtube.com/watch?v=4JTIRQ-74hw
+  item: `items/4JTIRQ-74hw.md`
+- **Zhao Liying made her first appearance on CCTV's News Broadcast after 15 years of low-key living** — 明星新闻中国 (57:37, 384 views)
+  https://www.youtube.com/watch?v=xi530FRYStY
+  item: `items/xi530FRYStY.md`
+- **Reborn 1 month before the apocalypse, I awakened an infinite space and hoarded 10,000 tons of meat!** — ถนอม แก้วธรรม (11:55:01, 55 views)
+  https://www.youtube.com/watch?v=VER9RtodV-E
+  item: `items/VER9RtodV-E.md`
+- **snailtrail of plague | Pathologic 1 Stream 20** — Non Official Daily(ish) Joseph Anderson (4:25:06, 668 views)
+  https://www.youtube.com/watch?v=z_LlsMqIC-s
+  item: `items/z_LlsMqIC-s.md`
+- **Your Lifestyle Is Killing Your Wealth | Warren Buffett** — Buffett's Boardroom (36:02, new)
+  https://www.youtube.com/watch?v=63j3jaOqdPI
+  item: `items/63j3jaOqdPI.md`
+- **Everything you know about AI is wrong: it's just chickens all the way down.** — Frauddy Scotty (35:30, 14 views)
+  https://www.youtube.com/watch?v=PUlhinNALIY
+  item: `items/PUlhinNALIY.md`
+- **A cute baby descended from heaven, the childless president finally has an heir!** — 云朵短剧社 (2:25:40, 1.3K views)
+  https://www.youtube.com/watch?v=KBS0ZfWumEo
+  item: `items/KBS0ZfWumEo.md`

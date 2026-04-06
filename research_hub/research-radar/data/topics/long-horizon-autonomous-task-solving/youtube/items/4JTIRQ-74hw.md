@@ -1,0 +1,26 @@
+# ATARAXIA THE LOST BLUEPRINT  |  for Absolute Emotional Invulnerability  | Full Audiobook
+
+- Topic: `long-horizon autonomous task solving`
+- Priority: `relevant`
+- Source context: `eywa`
+- Type: `youtube`
+- Video ID: `4JTIRQ-74hw`
+- Channel: `The Sovereign Path`
+- Duration: `3:09:37`
+- Views: `4 views`
+- Upload date: `NA`
+- URL: https://www.youtube.com/watch?v=4JTIRQ-74hw
+- Collected at UTC: `2026-04-05T18:15:29Z`
+- Transcript status: `pending`
+
+## Summary
+
+Not analyzed yet.
+
+## Transcript
+
+Transcript not collected yet.
+
+## Notes
+
+- Freshly collected by Research Radar.

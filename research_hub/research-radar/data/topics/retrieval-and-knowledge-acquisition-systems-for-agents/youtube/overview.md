@@ -93,3 +93,54 @@ Full item files belong in `items/`.
 - **【Multi Sub】 🎉 我在末世開超市當救世主 I opened a supermarket and became a savior in the apocalypse EP1-108 #男频** — Qixiang-Animation (8:58:56, 88 views)
   https://www.youtube.com/watch?v=tZ4cjmM5yXM
   item: `items/tZ4cjmM5yXM.md`
+
+## 2026-04-05 — 16 new videos
+
+- **Sana 2026: The No-Code AI Agent Platform for Enterprise Knowledge & Automation** — QUASA (5:33, 3 views)
+  https://www.youtube.com/watch?v=FuP4ly-HJDE
+  item: `items/FuP4ly-HJDE.md`
+- **💥【New】【Multi Sub】Maxed Out: One Skill Per Second EP1-105#anime #animation** — Joyland-Animation (2:10:14, 2.8K views)
+  https://www.youtube.com/watch?v=KWnO0C4pouc
+  item: `items/KWnO0C4pouc.md`
+- **【Multi Sub】Reward system for express delivery EP 1-40 #animation #anime** — Quartic element Anime (3:04:42, 215 views)
+  https://www.youtube.com/watch?v=mfdgwpupjrw
+  item: `items/mfdgwpupjrw.md`
+- **열채의저택차고를시작하라!가난한젊은이는신호시스템을바인딩하여노점을차리던데로부터상업제국을 장악하기까지줄곧얼굴을때리고역습하였다.** — 재현극장 (1:43:55, 1.4K views)
+  https://www.youtube.com/watch?v=BK2vauo0-Ao
+  item: `items/BK2vauo0-Ao.md`
+- **🔔【New】【Multi Sub】Weird currency EP1-177#anime #animation** — Joyland-Animation (14:13:56, 204 views)
+  https://www.youtube.com/watch?v=B8QEADTFGog
+  item: `items/B8QEADTFGog.md`
+- **🔥【爽漫】【Eng Sub】《寒冬之王：SSS級天賦崛起》零下七十度的末世，我憑唯一SSS級天賦建造機甲聖城，囤糧煉鋼、召異族，逐步揭開冰封世界背後的外星陰謀！第1-68集 #热血 #玄幻 #动漫** — 八虎动漫剧场 (5:36:29, 937 views)
+  https://www.youtube.com/watch?v=9PAtGNEn4s8
+  item: `items/9PAtGNEn4s8.md`
+- **Reborn 1 month before the apocalypse, I awakened an infinite space and hoarded 10,000 tons of meat!** — ถนอม แก้วธรรม (11:55:01, 55 views)
+  https://www.youtube.com/watch?v=VER9RtodV-E
+  item: `items/VER9RtodV-E.md`
+- **🔥【爽漫】【Eng Sub】《火球升禁咒，我點成了全能法神》每秒一個技能點，秦炎從一顆小火球開始無限升階禁咒，一路屠神證道，降維打擊守護藍星！第1-105集 #热血 #动漫 #玄幻 #anime** — 八虎动漫剧场 (2:10:15, 201 views)
+  https://www.youtube.com/watch?v=Ls5gksehJjQ
+  item: `items/Ls5gksehJjQ.md`
+- **Truth in the Black Market** — Contraband Confessions (1:21:15, 5 views)
+  https://www.youtube.com/watch?v=bVyvEWgBJg8
+  item: `items/bVyvEWgBJg8.md`
+- **🔥【最新合集】《全民诡异：开局掌握零元购》EP1~175：马屁精撞上真大佬！| Multi SUB #热血 #玄幻 #逆袭 #战斗 #动漫魔女** — 动漫魔女 (14:03:11, 1.3K views)
+  https://www.youtube.com/watch?v=bWitiFuT3Jc
+  item: `items/bWitiFuT3Jc.md`
+- **【ENG SUB】詭異末世：開局萬億詭幣 A bizarre apocalypse: Starting with trillions of bizarre coins EP 50~177#熱血 #動漫** — Bikini-Anime 动漫社 (10:18:18, 646 views)
+  https://www.youtube.com/watch?v=lYrNZZoktlM
+  item: `items/lYrNZZoktlM.md`
+- **💥【New】【Multi sub】Perfect Territory EP1-68 #anime #animation** — Joyland-Animation (5:36:26, 694 views)
+  https://www.youtube.com/watch?v=WIEYN9ZonzQ
+  item: `items/WIEYN9ZonzQ.md`
+- **窮小夥隨手救下的乞丐傳授他神級系統，別人吹牛都會在小夥身上成真！小夥直接成為全球首富，全球美女只為他而活！ #神級吹牛系統 #復仇 #打臉** — 扑通扑通短剧社 (2:09:31, 15 views)
+  https://www.youtube.com/watch?v=jSmqxL5yp_w
+  item: `items/jSmqxL5yp_w.md`
+- **💥ENG SUB💥【SSS级法神：我的技能无限连爆】SSS-Class Arcane God: My Skills Explode Infinitely 第1-105集 #玄幻 #热血 #动漫** — 超有钱动漫 Anime Club (2:10:15, 4.6K views)
+  https://www.youtube.com/watch?v=julyA4nmVDE
+  item: `items/julyA4nmVDE.md`
+- **窮小子為娶富家女決裂家族，她假死三年試我真心。殊不知身分驚世，亮權勢之日，便是她淚崩悔悟之時！ #短劇全集 #精彩短劇推薦 #短劇 #minidrama    YHDJ** — 逆拳劇場 Rising Fist (2:36:46, 6 views)
+  https://www.youtube.com/watch?v=TI4LLnlNxz8
+  item: `items/TI4LLnlNxz8.md`
+- **💥ENG SUB💥【零下70℃：我在末世建神级领地 】-70°C Doomsday: My God-Tier Territory Rises 第1-68集 #热血 #逆袭 #动漫 #玄幻** — 超有钱动漫 Anime Club (5:36:29, 451 views)
+  https://www.youtube.com/watch?v=cc8-Wjei8Ts
+  item: `items/cc8-Wjei8Ts.md`

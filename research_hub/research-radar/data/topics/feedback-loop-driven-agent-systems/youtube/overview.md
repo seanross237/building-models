@@ -189,3 +189,96 @@ Full item files belong in `items/`.
 - **If A Producer Receives 500 Scripts A Year, How Many Will They Read? Shaked Berenson [FULL INTERVIEW]** — Film Courage (1:32:38, 396 views)
   https://www.youtube.com/watch?v=DV-jlp5GOu0
   item: `items/DV-jlp5GOu0.md`
+
+## 2026-04-05 — 30 new videos
+
+- **Microsoft UNDER FIRE As Millions Are Leaving Windows 11 for Chrome OS — The Shift No One Expected** — Tech Report (15:21, 3.9K views)
+  https://www.youtube.com/watch?v=d9vuMIuxt38
+  item: `items/d9vuMIuxt38.md`
+- **[Must-See for Everyone] What is Harness Engineering? A Thorough Explanation of Essential Knowledg...** — まさおAIじっくり解説ch (30:35, 2.8K views)
+  https://www.youtube.com/watch?v=JvCIgFPgOlk
+  item: `items/JvCIgFPgOlk.md`
+- **Putin is LOSING in Ukraine - But his Strategy Could Now Get Nasty Towards Europe!** — Silicon Curtain (49:10, 2.6K views)
+  https://www.youtube.com/watch?v=iqkWf12Wcxo
+  item: `items/iqkWf12Wcxo.md`
+- **While You're Watching Oil Prices, AI Is Accelerating And Rewriting The Economy** — Jordi Visser (54:29, 7.5K views)
+  https://www.youtube.com/watch?v=oJrKVGyKfww
+  item: `items/oJrKVGyKfww.md`
+- **What Every Medical Influencer Is Getting Wrong | Dr. Glaucomflecken (Will Flanary)** — Doctor Mike (2:13:42, 29.9K views)
+  https://www.youtube.com/watch?v=49T38wuqF1M
+  item: `items/49T38wuqF1M.md`
+- **Something Took 78 Years to BREAK in North Korea — And Now the Collapse Begins** — Fall of Nations (19:47, 914 views)
+  https://www.youtube.com/watch?v=GYHs4g38qo0
+  item: `items/GYHs4g38qo0.md`
+- **Referral Driven Growth with Brandon Barnum** — AFT Construction (55:01, 1 views)
+  https://www.youtube.com/watch?v=ZrtQJKLagHc
+  item: `items/ZrtQJKLagHc.md`
+- **AI’s War on Your Dopamine: The Genetic Blueprint of Boredom** — The AI Paradox (26:07, new)
+  https://www.youtube.com/watch?v=Rj4FNrs6Hos
+  item: `items/Rj4FNrs6Hos.md`
+- **Will God Save America? | Bible Prophecy, America & the Future | LIVE Conference Day 2** — Heritage & Hope Ministries (9:01:11, 6.5K views)
+  https://www.youtube.com/watch?v=hc4jv0bCfUA
+  item: `items/hc4jv0bCfUA.md`
+- **they blocked OpenClaw. now what.** — Ray Fernando (2:16:43, 8.1K views)
+  https://www.youtube.com/watch?v=sWDhIGIiK5w
+  item: `items/sWDhIGIiK5w.md`
+- **⚠️All predicted! Three predictions have come true simultaneously: After the Middle East crisis...** — HIBY新聞 (2:06:48, 1.0K views)
+  https://www.youtube.com/watch?v=aLFyYC4jrfU
+  item: `items/aLFyYC4jrfU.md`
+- **They Replaced Wayland with XLibre & Dropped Systemd (Testing SonicDE)** — Gosh-Its-Arch (15:44, 2.0K views)
+  https://www.youtube.com/watch?v=EtsGh-NDm_Y
+  item: `items/EtsGh-NDm_Y.md`
+- **Deep Underground Tech House | Dark Hypnotic Mix** — DeepEchoTechno (33:57, 3.9K views)
+  https://www.youtube.com/watch?v=6tPjevZ_H7c
+  item: `items/6tPjevZ_H7c.md`
+- **The Silk Road Pattern: From Ancient Trade to Bitcoin and Ross Ulbricht** — The History of Money & Gold (Past&Nowdays) (12:25, 2 views)
+  https://www.youtube.com/watch?v=I60Imo7j_Tc
+  item: `items/I60Imo7j_Tc.md`
+- **Future-Proofing Career** — Strategies for Professional Growth (SPG) (14:06, 8 views)
+  https://www.youtube.com/watch?v=ITV6qqeGScM
+  item: `items/ITV6qqeGScM.md`
+- **Automating SOPs with LLM Agents: From Static Documents to Intelligent Workflows | Uplatz** — Uplatz (4:55, 1 views)
+  https://www.youtube.com/watch?v=ozYuBg1f9pI
+  item: `items/ozYuBg1f9pI.md`
+- **EVOLUTION OF THE MYPLAYER BUILDER - NBA 2K** — AugSauce (16:30, 4.7K views)
+  https://www.youtube.com/watch?v=-pPc9kbyARc
+  item: `items/-pPc9kbyARc.md`
+- **¿Cómo era la Tierra ANTES de los dinosaurios?** — Raquel de la Morena (52:12, 3.9K views)
+  https://www.youtube.com/watch?v=rtiKzYPlaNQ
+  item: `items/rtiKzYPlaNQ.md`
+- **Bloomberg This Weekend | Daring Rescue Mission, OPEC Meeting on Energy Crisis, TMZ Goes to DC** — Bloomberg Podcasts (2:28:56, 409 views)
+  https://www.youtube.com/watch?v=xixBRWfcct0
+  item: `items/xixBRWfcct0.md`
+- **A sailor is going home. I'm walking around Shekou, China. A very beautiful city! (Max Master Daily)** — Max Master (Капитан Максим) (21:22, 2.9K views)
+  https://www.youtube.com/watch?v=MfXy0ASlpLw
+  item: `items/MfXy0ASlpLw.md`
+- **10 Things About Business in Africa No MBA Programme Will Ever Teach You | BILLION DOLLAR PROOF** — GidiGrit (25:30, 21 views)
+  https://www.youtube.com/watch?v=x_lQfdJ_6gk
+  item: `items/x_lQfdJ_6gk.md`
+- **Digital Twins and Multi-Agent Orchestration: Building Intelligent, Self-Optimizing Systems | Uplatz** — Uplatz (7:58, new)
+  https://www.youtube.com/watch?v=Iz7N87yTW0g
+  item: `items/Iz7N87yTW0g.md`
+- **L'armée française dans l'enfer de la jungle** — Investigation (1:51:06, 5.9K views)
+  https://www.youtube.com/watch?v=d22kJgQVwDY
+  item: `items/d22kJgQVwDY.md`
+- **The NextGen Agile: Moving the wheels in the era of AI Agents** — Strategies for Professional Growth (SPG) (20:26, 44 views)
+  https://www.youtube.com/watch?v=cWmPPdnbXH8
+  item: `items/cWmPPdnbXH8.md`
+- **The Human Playbook: How to Survive the AI "Great Decoupling"** — The Thinking Lens (12:13, 6 views)
+  https://www.youtube.com/watch?v=Jc1qvdsDCfc
+  item: `items/Jc1qvdsDCfc.md`
+- **Joe Rogan Lost Control Exposing Cr!mes Celebrities Did On Epstein Island** — FameX (15:31, 4 views)
+  https://www.youtube.com/watch?v=efzpc-IhQ_E
+  item: `items/efzpc-IhQ_E.md`
+- **Out Fishing | FIRST LOOK | A fishing game with a dark twist!** — Arpeggio (1:22:48, 1 views)
+  https://www.youtube.com/watch?v=bTjIN9EiqcI
+  item: `items/bTjIN9EiqcI.md`
+- **Anything Damaged Shall be Healed (528Hz EMDR Bilateral & Binaural Quantum Waves)** — Meditational State • Healing Music (10:00:00, 6.4K views)
+  https://www.youtube.com/watch?v=L8R4qzG5hlc
+  item: `items/L8R4qzG5hlc.md`
+- **After his betrayal, I threw away the system’s “extra-life” coin—but he nearly died getting it back** — Love Diary (1:32:33, 502 views)
+  https://www.youtube.com/watch?v=W8ELIenRTlU
+  item: `items/W8ELIenRTlU.md`
+- **Everyone Selling AI Skills Is Doing It Wrong | Here's What Actually Works** — Vivek Mishra (57:06, 1.0K views)
+  https://www.youtube.com/watch?v=ya21DbOdXS0
+  item: `items/ya21DbOdXS0.md`

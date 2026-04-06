@@ -189,3 +189,96 @@ Full item files belong in `items/`.
 - **Rethinking Wellbeing at Work: Using AI to Build a Culture of Practice and Behavior Change at Work** — NYU SPS Human Capital Management (52:26, 14 views)
   https://www.youtube.com/watch?v=K-7HoNvkTEk
   item: `items/K-7HoNvkTEk.md`
+
+## 2026-04-05 — 30 new videos
+
+- **Self Improving Agents in 5 Minutes** — Developers Digest (5:08, 3.6K views)
+  https://www.youtube.com/watch?v=RoaPvj9Ovug
+  item: `items/RoaPvj9Ovug.md`
+- **they blocked OpenClaw. now what.** — Ray Fernando (2:16:43, 8.1K views)
+  https://www.youtube.com/watch?v=sWDhIGIiK5w
+  item: `items/sWDhIGIiK5w.md`
+- **Is AGI Already Here?** — The Bearded AI Guy (7:41, 3 views)
+  https://www.youtube.com/watch?v=_sJCupVtV9E
+  item: `items/_sJCupVtV9E.md`
+- **HyperAgents** — CosmoX (7:42, new)
+  https://www.youtube.com/watch?v=IYqCC5uga90
+  item: `items/IYqCC5uga90.md`
+- **Why LangChain is DEAD  The New Architecture for Agentic AI** — The Hidden Layer: Decoding Artificial Intelligence (8:30, 2 views)
+  https://www.youtube.com/watch?v=iLyqhJeHwyI
+  item: `items/iLyqhJeHwyI.md`
+- **Digital Twins and Multi-Agent Orchestration: Building Intelligent, Self-Optimizing Systems | Uplatz** — Uplatz (7:58, new)
+  https://www.youtube.com/watch?v=Iz7N87yTW0g
+  item: `items/Iz7N87yTW0g.md`
+- **📱 they blocked OpenClaw. now what.** — Ray Fernando (2:16:42, 2.3K views)
+  https://www.youtube.com/watch?v=wcBMCcE9yD0
+  item: `items/wcBMCcE9yD0.md`
+- **AI Daily: HyperAgents, Agentic AI, Quantum Crypto Risk, and Multi-Agent Safety Explained** — CosmoX (29:14, 4 views)
+  https://www.youtube.com/watch?v=xW6vijse3C0
+  item: `items/xW6vijse3C0.md`
+- **TB: World Tuberculosis Day Webinar 2026  Nurseslab** — Nurseslab (2:40:38, 82 views)
+  https://www.youtube.com/watch?v=U01JxkNgqvk
+  item: `items/U01JxkNgqvk.md`
+- **What Every Medical Influencer Is Getting Wrong | Dr. Glaucomflecken (Will Flanary)** — Doctor Mike (2:13:42, 29.9K views)
+  https://www.youtube.com/watch?v=49T38wuqF1M
+  item: `items/49T38wuqF1M.md`
+- **Building AI Agents in 2026** — AI With Ryan (22:01, 4 views)
+  https://www.youtube.com/watch?v=wEAeLPeC4DI
+  item: `items/wEAeLPeC4DI.md`
+- **Will God Save America? | Bible Prophecy, America & the Future | LIVE Conference Day 2** — Heritage & Hope Ministries (9:01:11, 6.5K views)
+  https://www.youtube.com/watch?v=hc4jv0bCfUA
+  item: `items/hc4jv0bCfUA.md`
+- **Ordinary programmer gets a system — new identity every month! First up:董事长 of his own company!** — BoomDrama (1:30:57, 1.1K views)
+  https://www.youtube.com/watch?v=tiiqdSAJs9w
+  item: `items/tiiqdSAJs9w.md`
+- **The Human Playbook: How to Survive the AI "Great Decoupling"** — The Thinking Lens (12:13, 6 views)
+  https://www.youtube.com/watch?v=Jc1qvdsDCfc
+  item: `items/Jc1qvdsDCfc.md`
+- **OpenClaw's new update is MASSIVE (4.2)** — Code With Robby🤖 (2:18, 27 views)
+  https://www.youtube.com/watch?v=Wvaj_Aq3RHg
+  item: `items/Wvaj_Aq3RHg.md`
+- **The Family Pattern That Keeps You Stuck | Back to the Future Psychology** — Full Mental Bracket (49:06, 5 views)
+  https://www.youtube.com/watch?v=P_heMOn0ySc
+  item: `items/P_heMOn0ySc.md`
+- **Gemma 4 Local AI Review (Real Workflows on a 4070 Ti)** — Kris Torrington (6:40, 77 views)
+  https://www.youtube.com/watch?v=qh4LVnoCs-g
+  item: `items/qh4LVnoCs-g.md`
+- **Agent Build an Autonomous AI Music Agent with Gemini 3 Flash & Python | Antigravity Tutorial** — Arman Ayva (5:01, 8 views)
+  https://www.youtube.com/watch?v=77fQ88yut3U
+  item: `items/77fQ88yut3U.md`
+- **Daily AI Brief — Part 073 (2026-04-04)** — Everstone AI (15:49, 2 views)
+  https://www.youtube.com/watch?v=AP1O4zVs-8M
+  item: `items/AP1O4zVs-8M.md`
+- **Bloomberg This Weekend | Daring Rescue Mission, OPEC Meeting on Energy Crisis, TMZ Goes to DC** — Bloomberg Podcasts (2:28:56, 409 views)
+  https://www.youtube.com/watch?v=xixBRWfcct0
+  item: `items/xixBRWfcct0.md`
+- **When AI Stopped Being a Tool and Became a Force** — ShortByShot (29:16, 7 views)
+  https://www.youtube.com/watch?v=StoE7BB3lVg
+  item: `items/StoE7BB3lVg.md`
+- **Everyone Selling AI Skills Is Doing It Wrong | Here's What Actually Works** — Vivek Mishra (57:06, 1.0K views)
+  https://www.youtube.com/watch?v=ya21DbOdXS0
+  item: `items/ya21DbOdXS0.md`
+- **Call of Duty: Black Ops 6|Reload & inspect animations** — LEFF_M8A3 (59:03, 1.9K views)
+  https://www.youtube.com/watch?v=qQVaHk2BC1E
+  item: `items/qQVaHk2BC1E.md`
+- **Les fiancées de l'Empire (Série) Sous Napoléon, amour, pouvoir et trahison s’entrelacent** — Culture Tube and Cinéfilm (5:58:33, 3.5K views)
+  https://www.youtube.com/watch?v=oEVFEq9DYC4
+  item: `items/oEVFEq9DYC4.md`
+- **MULTISUB📢新番上线《满级传球的我，梅西C罗馋哭了》第1~77集丨苏白穿越到2010年！ 那一年，C罗和梅西统治足坛的时代才刚刚开始！ 而他一开场就点满了传球天赋！#破晓动漫社** — 破晓动漫社 Dawn Anime Club (2:00:38, 11.9K views)
+  https://www.youtube.com/watch?v=T5_JC5_yjWw
+  item: `items/T5_JC5_yjWw.md`
+- **Sunday MLB Previews, Updated Polymarket Odds, 4/5/26 | Pro Baseball Today Hour 2** — SportsGrid On Demand (1:00:00, new)
+  https://www.youtube.com/watch?v=zDFVcvrYlUw
+  item: `items/zDFVcvrYlUw.md`
+- **👑Multi Sub【穿成豪門後媽爽翻啦】穿成總裁文糊咖，前世舔渣男慘死，今生狂虐白月光，一心當豪門後媽！#短劇完整版#短劇推薦#短劇全集#drama#小言推文#戀愛#嶽兩婷#陳瑞豐** — 小言推文 (2:21:44, 51.0K views)
+  https://www.youtube.com/watch?v=c-Nh_4rb4DA
+  item: `items/c-Nh_4rb4DA.md`
+- **【2026必看悬疑剧】⚔️警局内鬼曝光！空降局长一夜翻盘黑帮布局｜《警网无间》EP11⚔️  主演：王劲松，蒋勤勤** — 月见草剧场 (1:47:05, 15 views)
+  https://www.youtube.com/watch?v=q4zijv8g1SE
+  item: `items/q4zijv8g1SE.md`
+- **【完結爽劇】重生1992賣涼粉救女兒！他從路邊攤逆襲成慈善企業家，全網淚推💔🍜** — Petal Drama (1:22:15, 4.7K views)
+  https://www.youtube.com/watch?v=f7LPgLKbSHM
+  item: `items/f7LPgLKbSHM.md`
+- **【Full】Her X-ray vision ability turned her from unemployed to the richest woman.#tvshow #shortdrama** — ClashDrama (1:29:32, 36 views)
+  https://www.youtube.com/watch?v=5etKCPMxBLI
+  item: `items/5etKCPMxBLI.md`

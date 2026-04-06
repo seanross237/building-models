@@ -24,3 +24,18 @@ Full item files belong in `items/`.
 - **🔥Boy Accidentally Unlocks a Spiritual Farm Space, Where All Plants He Grows Mature at 100x Speed!** — Bella's Comic Chronicles (27:03:05, 1.4K views)
   https://www.youtube.com/watch?v=4VJ0KC_FASc
   item: `items/4VJ0KC_FASc.md`
+
+## 2026-04-05 — 4 new videos
+
+- **My magic power is 99,999 because I gain +1 magic power for every monster I kill!#anime** — KAI Manhwa Recap (11:56:25, 10 views)
+  https://www.youtube.com/watch?v=VLNZjrYZ7Z8
+  item: `items/VLNZjrYZ7Z8.md`
+- **I reached HP 9,999,999+ because my basic attacks increase my HP!#manga #manhwa** — Sk Manhwa Recap (11:55:15, 15 views)
+  https://www.youtube.com/watch?v=eZ2N278ALng
+  item: `items/eZ2N278ALng.md`
+- **After Inheriting a Kingdom, I Unlock a Family System—The More Heirs I Have, the Stronger I Become!** — Revel Manga Chronicles (28:16:03, 724 views)
+  https://www.youtube.com/watch?v=JCTkkFSaP2Q
+  item: `items/JCTkkFSaP2Q.md`
+- **The AI Orchestrator Trap Most Developers Fall Into | #NEWIT** — GilliLab Logic Salt (43:10, new)
+  https://www.youtube.com/watch?v=T2Q691zpyG8
+  item: `items/T2Q691zpyG8.md`

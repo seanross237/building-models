@@ -189,3 +189,96 @@ Full item files belong in `items/`.
 - **【MULTI SUB】一口气看爽韩漫《成为反派的靠山》** — 韩漫潮映馆 (2:21:54, 12.4K views)
   https://www.youtube.com/watch?v=cfYRKGlGPPU
   item: `items/cfYRKGlGPPU.md`
+
+## 2026-04-05 — 30 new videos
+
+- **SINGURUL ROMÂN CARE A VĂZUT PĂMÂNTUL DE SUS! - DUMITRU PRUNARIU #IGDLCC** — George Buhnici (2:35:36, 4.1K views)
+  https://www.youtube.com/watch?v=rqWezooCpxE
+  item: `items/rqWezooCpxE.md`
+- **Referral Driven Growth with Brandon Barnum** — AFT Construction (55:01, 1 views)
+  https://www.youtube.com/watch?v=ZrtQJKLagHc
+  item: `items/ZrtQJKLagHc.md`
+- **功夫電影！少年功夫高強，一群武士齊上也敵不過他！ #kungfu #功夫** — 小亦看劇 (1:33:18, 2.7K views)
+  https://www.youtube.com/watch?v=DNwxuDSa5BU
+  item: `items/DNwxuDSa5BU.md`
+- **Rob Clark: Sanctioned by Putin, Veteran, Pashto Translator | Combat Fuel Podcast EP.9** — Combat Fuel (2:47:13, 17 views)
+  https://www.youtube.com/watch?v=5HJUHrg3UPg
+  item: `items/5HJUHrg3UPg.md`
+- **Search for retired Air Force general could end grimly: Ex-FBI agent | NewsNation PRIME** — NewsNation (6:41, 73.9K views)
+  https://www.youtube.com/watch?v=yxKVh9pCstw
+  item: `items/yxKVh9pCstw.md`
+- **【2026最新古装悬疑电视剧 云襄传第二季13】陈晓本是隐士侠客，却被迫卷入江湖纷争⚡️一桩谜案竟暗藏惊天阴谋🔪他抽丝剥茧，破案求生！#cdrama #movie #电视剧 #电影 #悬疑 #古装** — 诡事放映厅 (1:14:33, 4.8K views)
+  https://www.youtube.com/watch?v=vJnaEwrwxts
+  item: `items/vJnaEwrwxts.md`
+- **Will God Save America? | Bible Prophecy, America & the Future | LIVE Conference Day 2** — Heritage & Hope Ministries (9:01:11, 6.5K views)
+  https://www.youtube.com/watch?v=hc4jv0bCfUA
+  item: `items/hc4jv0bCfUA.md`
+- **How He Became The Funniest Doctor Online | Dr. Glaucomflecken (Will Flanary)** — Doctor Mike (2:13:42, 29.9K views)
+  https://www.youtube.com/watch?v=49T38wuqF1M
+  item: `items/49T38wuqF1M.md`
+- **Les fiancées de l'Empire (Série) Sous Napoléon, amour, pouvoir et trahison s’entrelacent** — Culture Tube and Cinéfilm (5:58:33, 3.5K views)
+  https://www.youtube.com/watch?v=oEVFEq9DYC4
+  item: `items/oEVFEq9DYC4.md`
+- **A streamer guides a man to safety, only to find he’s the world's richest CEO! #drama #engsub** — Seraph Dramas (2:50:29, 2.8K views)
+  https://www.youtube.com/watch?v=vMiWFkNXyuM
+  item: `items/vMiWFkNXyuM.md`
+- **Analysis of Thunderhead: Do Humans Need Death To Find Purpose?** — It Is that deep | Fantasy Content Analyzed (28:40, 2 views)
+  https://www.youtube.com/watch?v=KzZmIzNenfM
+  item: `items/KzZmIzNenfM.md`
+- **All your Work Should Be AGENT-FRIENDLY #shorts** — DataCamp (30, 381 views)
+  https://www.youtube.com/watch?v=M8c-VEakXD0
+  item: `items/M8c-VEakXD0.md`
+- **they blocked OpenClaw. now what.** — Ray Fernando (2:16:43, 8.1K views)
+  https://www.youtube.com/watch?v=sWDhIGIiK5w
+  item: `items/sWDhIGIiK5w.md`
+- **穷小伙意外喝多，没想到直接把美女总裁拉到家人群！美女总裁竟然没生气！还要倒贴他！【我把女總裁拉進了家族聊天群】** — 泡泡龍短剧 (1:58:11, 3.5K views)
+  https://www.youtube.com/watch?v=Kqu6SCXJbDU
+  item: `items/Kqu6SCXJbDU.md`
+- **[FULL] Transmigrated into a poor guy in a broken temple — then he could talk to animals!** — PULSEDrama-01 (1:34:05, 601 views)
+  https://www.youtube.com/watch?v=Kl04dYC-fnE
+  item: `items/Kl04dYC-fnE.md`
+- **MULTISUB📢新番上线《满级传球的我，梅西C罗馋哭了》第1~77集丨苏白穿越到2010年！ 那一年，C罗和梅西统治足坛的时代才刚刚开始！ 而他一开场就点满了传球天赋！#破晓动漫社** — 破晓动漫社 Dawn Anime Club (2:00:38, 11.9K views)
+  https://www.youtube.com/watch?v=T5_JC5_yjWw
+  item: `items/T5_JC5_yjWw.md`
+- **前世養女嫉妒她嫁得好，奪她姻緣害她性命，重生後她將渣男拱手相讓抱得霸總歸，妹妹身敗名裂家人跪地懺悔，她笑著說早該如此!#短劇 #短劇全集 #drama #穿越 #愛情 #romance** — 暮暮短剧 (1:45:53, 1.2K views)
+  https://www.youtube.com/watch?v=f8wzjZ8r8Co
+  item: `items/f8wzjZ8r8Co.md`
+- **YOU HAVE TO SEE INSIDE THIS INCREDIBLE LUXURY MANSION IN FRISCO TEXAS!** — NavaRealtyGroup (34:01, 1.3K views)
+  https://www.youtube.com/watch?v=sDSjB-ktW-c
+  item: `items/sDSjB-ktW-c.md`
+- **After his betrayal, I threw away the system’s “extra-life” coin—but he nearly died getting it back** — Love Diary (1:32:33, 504 views)
+  https://www.youtube.com/watch?v=W8ELIenRTlU
+  item: `items/W8ELIenRTlU.md`
+- **Billionaire Family Pretends Poor To Test Lost Son After 18 Years And He Offers To Support Them** — Rabas Drama (1:23:47, 233 views)
+  https://www.youtube.com/watch?v=AmgBaKx3AHw
+  item: `items/AmgBaKx3AHw.md`
+- **This Will SHOCK You — ISLAM Is COLLAPSING** — Fall of Nations (2:53:55, 4.1K views)
+  https://www.youtube.com/watch?v=aiBMdiSd0r8
+  item: `items/aiBMdiSd0r8.md`
+- **Intern provokes the CEO, all expect her downfall, but he falls in love with her** — Peach Soda-Drama (1:47:28, 632 views)
+  https://www.youtube.com/watch?v=MPs-kwvGEs0
+  item: `items/MPs-kwvGEs0.md`
+- **The bloody end of Muhammad's judgment: Ali's ruthless plan to destroy Kubra and Muhammad** — Mohammad (55:02, 6.0K views)
+  https://www.youtube.com/watch?v=P8pwICwG3kE
+  item: `items/P8pwICwG3kE.md`
+- **She Mistook The Handsome CEO For Her Boyfriend, Never Knew He’d Be Her Sudden Husband** — LoveScars Drama (2:07:18, 128 views)
+  https://www.youtube.com/watch?v=Ja22C3uAmGE
+  item: `items/Ja22C3uAmGE.md`
+- **Beggar Take Wife Eat Street Noodles Get Looked Down, Turns Out Is Super Rich Billionaire Corporation** — CineDrama (1:26:55, 9.1K views)
+  https://www.youtube.com/watch?v=vbsRchMDvKw
+  item: `items/vbsRchMDvKw.md`
+- **Sundown Towns That STILL Exist — The 2026 Updated List** — Black Journals (23:24, 3.0K views)
+  https://www.youtube.com/watch?v=pBGgDHTovO0
+  item: `items/pBGgDHTovO0.md`
+- **【Multi Sub】He came for fish. He got a criminal empire. Best career change. 🔥** — Water drama (1:57:38, 1.5K views)
+  https://www.youtube.com/watch?v=Z3nkNU46RdE
+  item: `items/Z3nkNU46RdE.md`
+- **Young man uses his "treasure appraisal magic eye" to achieve a remarkable turnaround!#shortdrama** — BeamDrama (1:37:54, 11 views)
+  https://www.youtube.com/watch?v=30klxF-SIrY
+  item: `items/30klxF-SIrY.md`
+- **💥ENG SUB💥【SSS级法神：我的技能无限连爆】SSS-Class Arcane God: My Skills Explode Infinitely 第1-105集 #玄幻 #热血 #动漫** — 超有钱动漫 Anime Club (2:10:15, 4.6K views)
+  https://www.youtube.com/watch?v=julyA4nmVDE
+  item: `items/julyA4nmVDE.md`
+- **Husband Threw Us Out To Die In The Apocalypse—Unaware My Super Baby Can Regrow Food! Now He Begs!** — Juno Bless (1:40:09, 1.8K views)
+  https://www.youtube.com/watch?v=TNj5zB_VXuo
+  item: `items/TNj5zB_VXuo.md`

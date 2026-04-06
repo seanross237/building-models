@@ -189,3 +189,96 @@ Full item files belong in `items/`.
 - **Faster Than Light? Engineering Reality from Quantum Shadows to Deep Space | Artificially Informed** — Artificially Informed (1:14:01, 4 views)
   https://www.youtube.com/watch?v=ika1uQMKDn8
   item: `items/ika1uQMKDn8.md`
+
+## 2026-04-05 — 30 new videos
+
+- **The Agent Harness** — Vinh Nguyen (6:34, 12 views)
+  https://www.youtube.com/watch?v=-Y8CKl9DTdU
+  item: `items/-Y8CKl9DTdU.md`
+- **Self Improving Agents in 5 Minutes** — Developers Digest (5:08, 3.6K views)
+  https://www.youtube.com/watch?v=RoaPvj9Ovug
+  item: `items/RoaPvj9Ovug.md`
+- **Top 15 New AI Robots That Will Change Everything by 2027** — AI Uncovered (11:07, 2.2K views)
+  https://www.youtube.com/watch?v=a1QsFftdN3Y
+  item: `items/a1QsFftdN3Y.md`
+- **Harness Design for AI Agents** — How I AI as a PM (7:51, 4 views)
+  https://www.youtube.com/watch?v=MVFBuKgF0vs
+  item: `items/MVFBuKgF0vs.md`
+- **[Podcast] The Agent Harness** — Vinh Nguyen (42:02, 12 views)
+  https://www.youtube.com/watch?v=_efJ8baMSDw
+  item: `items/_efJ8baMSDw.md`
+- **Steering the Stallion: Mastering Control Over Powerful AI** — Kaizen Apps (2:07, 4 views)
+  https://www.youtube.com/watch?v=AqBTBJv1qYI
+  item: `items/AqBTBJv1qYI.md`
+- **New Creao AI Super Agent Is INSANE! 🤯** — Julian Goldie SEO (8:09, 3.5K views)
+  https://www.youtube.com/watch?v=KNO3LzcOrso
+  item: `items/KNO3LzcOrso.md`
+- **The 22-Minute Miracle: How Ireland’s New AI Strategy is Reimagining Healthcare by 2030** — Cloud Experts (6:39, 2 views)
+  https://www.youtube.com/watch?v=QqKwCOnSA9I
+  item: `items/QqKwCOnSA9I.md`
+- **I Made an FPS Game with AI...** — tef (12:56, 3.8K views)
+  https://www.youtube.com/watch?v=vqH2nGGkt3U
+  item: `items/vqH2nGGkt3U.md`
+- **Function Calling Harness** — Vinh Nguyen (8:30, 4 views)
+  https://www.youtube.com/watch?v=S-vQTUPw1_c
+  item: `items/S-vQTUPw1_c.md`
+- **How much can AI be used to stop gun deaths in the US?** — Al Jazeera English (2:58, 2.0K views)
+  https://www.youtube.com/watch?v=UizDw7yVdIA
+  item: `items/UizDw7yVdIA.md`
+- **Vibe Coding: Claude vs. Codex for AI Architecture** — Brand Tech Authority (7:10, 1 views)
+  https://www.youtube.com/watch?v=c8X4VqOE2bk
+  item: `items/c8X4VqOE2bk.md`
+- **[Video Special] The Architecture of Modern Coding Agents: Scaffolding Around the Mind** — Vinh Nguyen (5:14, 13 views)
+  https://www.youtube.com/watch?v=oxklpLnZzIU
+  item: `items/oxklpLnZzIU.md`
+- **How AI Companions Target a Generation of Isolated Young Men | Wynton Hall** — American Thought Leaders - The Epoch Times (52:09, 29.0K views)
+  https://www.youtube.com/watch?v=JxSseMf_fKo
+  item: `items/JxSseMf_fKo.md`
+- **LG Sound Suite AI + Dolby Atmos FlexConnect // The Future of Wireless Surround Sound System!** — Justin Tse (13:50, 11.0K views)
+  https://www.youtube.com/watch?v=TWdQoXZB9DE
+  item: `items/TWdQoXZB9DE.md`
+- **[Podcast] Function Calling Harness** — Vinh Nguyen (32:29, 5 views)
+  https://www.youtube.com/watch?v=WWD6LMhKR6k
+  item: `items/WWD6LMhKR6k.md`
+- **[Must-See for Everyone] What is Harness Engineering? A Thorough Explanation of Essential Knowledg...** — まさおAIじっくり解説ch (30:35, 2.8K views)
+  https://www.youtube.com/watch?v=JvCIgFPgOlk
+  item: `items/JvCIgFPgOlk.md`
+- **The only way a Meta developer runs four side jobs while raising children** — 커리어해커 알렉스 (22:23, 11.7K views)
+  https://www.youtube.com/watch?v=QzRcYt1Gy_Y
+  item: `items/QzRcYt1Gy_Y.md`
+- **they blocked OpenClaw. now what.** — Ray Fernando (2:16:43, 8.1K views)
+  https://www.youtube.com/watch?v=sWDhIGIiK5w
+  item: `items/sWDhIGIiK5w.md`
+- **YOUR SORA PROJECTS ARE BEING DELETED | HERE'S WHAT TO DO!** — Debby James (14:40, 29 views)
+  https://www.youtube.com/watch?v=2P4A_t7UIK8
+  item: `items/2P4A_t7UIK8.md`
+- **The AI Orchestrator Trap Most Developers Fall Into | #NEWIT** — GilliLab Logic Salt (43:10, new)
+  https://www.youtube.com/watch?v=T2Q691zpyG8
+  item: `items/T2Q691zpyG8.md`
+- **[Podcast] Function Calling Harness: From 6.75% to 100%** — Vinh Nguyen (35:11, 6 views)
+  https://www.youtube.com/watch?v=QEbCZbPem2g
+  item: `items/QEbCZbPem2g.md`
+- **The Conductor's Score** — Vinh Nguyen (6:32, 6 views)
+  https://www.youtube.com/watch?v=HCBMEZRQzqw
+  item: `items/HCBMEZRQzqw.md`
+- **I Was Replaced by an MBA's AI Startup – Freight Logistics Revenge Story** — Dylan's Revenge Dramaine (20:32, 7.8K views)
+  https://www.youtube.com/watch?v=zzAS8P___ag
+  item: `items/zzAS8P___ag.md`
+- **Building AI Agents in 2026** — AI With Ryan (22:01, 4 views)
+  https://www.youtube.com/watch?v=wEAeLPeC4DI
+  item: `items/wEAeLPeC4DI.md`
+- **📱 they blocked OpenClaw. now what.** — Ray Fernando (2:16:42, 2.3K views)
+  https://www.youtube.com/watch?v=wcBMCcE9yD0
+  item: `items/wcBMCcE9yD0.md`
+- **AI is Building Its Own Internet (And Leaving Us Behind) (Podcast EP1)** — Vectro AI (2:36:17, 40 views)
+  https://www.youtube.com/watch?v=ztYnvOozG9c
+  item: `items/ztYnvOozG9c.md`
+- **[Podcast] The Conductor's Score** — Vinh Nguyen (36:52, 3 views)
+  https://www.youtube.com/watch?v=IYVO02lo6Bg
+  item: `items/IYVO02lo6Bg.md`
+- **[CC] Designing an Environment That Blocks AI Mistakes. Harness Engineering** — 어레이의 개발문고 (23:29, 272 views)
+  https://www.youtube.com/watch?v=TuCGagFdrPk
+  item: `items/TuCGagFdrPk.md`
+- **Manage Your AI Workforce: Testing, Memory & Deliverables for Self Storage** — Agentive Automations (6:58, new)
+  https://www.youtube.com/watch?v=bIZQNS6rg38
+  item: `items/bIZQNS6rg38.md`
