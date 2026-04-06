@@ -282,3 +282,93 @@ Full item files belong in `items/`.
 - **OpenClaw: The 16 Trillion Token Autonomy Engine** — My Weird Prompts (20:36, 2 views)
   https://www.youtube.com/watch?v=NpzRaAkf7GE
   item: `items/NpzRaAkf7GE.md`
+
+## 2026-04-06 — 29 new videos
+
+- **AI in Diplomacy Explained | Digital Diplomacy, Negotiation & Policy Simulation** — The Learning Studio (4:20, 1 views)
+  https://www.youtube.com/watch?v=R5REe0yc7b8
+  item: `items/R5REe0yc7b8.md`
+- **AI Is About to Change Humanity Forever… Here’s What’s Coming** — Quantum Future Lab (7:04, 5 views)
+  https://www.youtube.com/watch?v=IDqEZ0BCbUQ
+  item: `items/IDqEZ0BCbUQ.md`
+- **Why Most Professionals Will Lose to AI (And a Few Won’t)** — SRR Strategic Intelligence (15:29, 10 views)
+  https://www.youtube.com/watch?v=31TyCv4adCk
+  item: `items/31TyCv4adCk.md`
+- **No One Knows How To Use A Computer Anymore** — Brodie Robertson (19:19, 2.4K views)
+  https://www.youtube.com/watch?v=bTBlFq08DMo
+  item: `items/bTBlFq08DMo.md`
+- **The Reality Grip — Hardware, Human Alpha, and the AI Drift** — ThetaDriven (5:00, new)
+  https://www.youtube.com/watch?v=PkWwg9NRrRE
+  item: `items/PkWwg9NRrRE.md`
+- **You're Building AI Agents on Layers That Won't Exist in 18 Months. (What this Means for You)** — AI News & Strategy Daily | Nate B Jones (22:53, 9.5K views)
+  https://www.youtube.com/watch?v=7HP1jFJ9W1c
+  item: `items/7HP1jFJ9W1c.md`
+- **AI Class 2 for Beginners | Types of Artificial Intelligence Explained Simply | Neural Edge** — Neural Edge (4:12, 1 views)
+  https://www.youtube.com/watch?v=aZ5pUWTfpxU
+  item: `items/aZ5pUWTfpxU.md`
+- **Why the ETL Developers are Gone in 2026!** — Chris Gambill | Data Engineering Strategy (8:45, 116 views)
+  https://www.youtube.com/watch?v=qmnfNhMMxXs
+  item: `items/qmnfNhMMxXs.md`
+- **MCP Explained | The USB-C of AI Models | One Integration for ChatGPT, Gemini & More!** — Arihant Online Academy (1:40, 10 views)
+  https://www.youtube.com/watch?v=4jQbL-FNmOc
+  item: `items/4jQbL-FNmOc.md`
+- **Dangerous AI Misalignment - What AI Thinks - ep003** — A Podcast Run by AI (25:15, 5 views)
+  https://www.youtube.com/watch?v=aauSa63u8MI
+  item: `items/aauSa63u8MI.md`
+- **How AI Learns To Spot Enemies Instantly II Anduril Industries** — Army Hooks (13:13, 6 views)
+  https://www.youtube.com/watch?v=8O3FYVZkoio
+  item: `items/8O3FYVZkoio.md`
+- **Is banning cellphones actually a good idea?** — Kevin Wheeler (8:01, 4 views)
+  https://www.youtube.com/watch?v=yZMfuazqyXc
+  item: `items/yZMfuazqyXc.md`
+- **Agentic AI: AI Agents vs Microservices (not the same!)** — Jesper Lowgren (8:39, 67 views)
+  https://www.youtube.com/watch?v=028QxeIGBzA
+  item: `items/028QxeIGBzA.md`
+- **The Intelligence of Precision** — Research Potential (6:12, 1 views)
+  https://www.youtube.com/watch?v=N9AxyPfzqhQ
+  item: `items/N9AxyPfzqhQ.md`
+- **HOW AI POWERS THE INTERNET OF THINGS IOT ?** — CT Academy (2:35, 4 views)
+  https://www.youtube.com/watch?v=6qo-hoOWWIY
+  item: `items/6qo-hoOWWIY.md`
+- **The AI Extinction Event: Salim Ismail Warns Most Companies Won’t Survive** — Info-Tech Research Group (1:54:04, 1.3K views)
+  https://www.youtube.com/watch?v=r-f07TqhLkg
+  item: `items/r-f07TqhLkg.md`
+- **200-player co-op game makes waves pre-release on Steam, with a free playtest coming soon.** — Hung Nguyen Thai (2:41, 14 views)
+  https://www.youtube.com/watch?v=8AeSZWMpdrI
+  item: `items/8AeSZWMpdrI.md`
+- **Predicting Machine Failure** — Research Potential (7:19, new)
+  https://www.youtube.com/watch?v=a9xbDcIV6HI
+  item: `items/a9xbDcIV6HI.md`
+- **How Do We Make AI Accountable? | Dr. Pavan Duggal** — AI & Cyber Law By Pavan Duggal (1:19, 16 views)
+  https://www.youtube.com/watch?v=9A8smAMgpW8
+  item: `items/9A8smAMgpW8.md`
+- **Why I Work Alone in Medical Research? Part 1 (No.1587, 4/5/2026)** — Health Talk with eclaireMD (10:35, new)
+  https://www.youtube.com/watch?v=U5stfMyNE0U
+  item: `items/U5stfMyNE0U.md`
+- **Debug LLM Drift: Beyond Latency Metrics in Production** — Master of Machines (5:57, 3 views)
+  https://www.youtube.com/watch?v=31j7QP0ij4o
+  item: `items/31j7QP0ij4o.md`
+- **They Called Me Replaceable – So I Let Their Entire System Collapse** — Business Graveyard Lessons (6:00, new)
+  https://www.youtube.com/watch?v=JtFLoZrr2h8
+  item: `items/JtFLoZrr2h8.md`
+- **I Created A Complete Report System With Venngage AI (Client-Ready in less than 10 Minutes)** — Get365AI (5:28, 1.1K views)
+  https://www.youtube.com/watch?v=Ub7ALYAEu54
+  item: `items/Ub7ALYAEu54.md`
+- **How AI agents get hacked and how to defend** — DataSuperiority (7:40, 3 views)
+  https://www.youtube.com/watch?v=mcdTwl0TiPg
+  item: `items/mcdTwl0TiPg.md`
+- **Delivering on the Promise: Life Science, Design and AI for Better Health** — Massachusetts Institute of Technology (MIT) (1:00:07, 1 views)
+  https://www.youtube.com/watch?v=Xrm3XurcB3k
+  item: `items/Xrm3XurcB3k.md`
+- **Why AI Isn’t Killing Jobs (And What It’s Actually Changing)** — Per My Last Email (36:52, 47 views)
+  https://www.youtube.com/watch?v=5s4XZaCgt0s
+  item: `items/5s4XZaCgt0s.md`
+- **中國高中政治課，究竟刪掉了你多少思考能力？台灣課本一打開，全是你沒見過的東西！｜台灣中國高中政治課本大對比｜教科書｜公平｜教育｜兩岸差異｜《公民與社會》｜宇文老師** — 宇文老師 (20:58, 8.6K views)
+  https://www.youtube.com/watch?v=D2GXUhxxPMw
+  item: `items/D2GXUhxxPMw.md`
+- **That Tingling Feeling Means Your Body Is Missing This Critical Nutrient** — The Dr. Gundry Podcast (9:20, 3.6K views)
+  https://www.youtube.com/watch?v=o26mMJ64m1o
+  item: `items/o26mMJ64m1o.md`
+- **AI Phone System: Never Lose a Call & Boost Leads 391%** — Changescape (3:51, new)
+  https://www.youtube.com/watch?v=ufNpFxGaANE
+  item: `items/ufNpFxGaANE.md`

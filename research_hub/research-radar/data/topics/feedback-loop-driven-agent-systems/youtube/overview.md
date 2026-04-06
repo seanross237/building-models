@@ -282,3 +282,96 @@ Full item files belong in `items/`.
 - **Everyone Selling AI Skills Is Doing It Wrong | Here's What Actually Works** — Vivek Mishra (57:06, 1.0K views)
   https://www.youtube.com/watch?v=ya21DbOdXS0
   item: `items/ya21DbOdXS0.md`
+
+## 2026-04-06 — 30 new videos
+
+- **Context driven AI Agents** — GDG Berlin (32:31, new)
+  https://www.youtube.com/watch?v=wv83aAfOCEs
+  item: `items/wv83aAfOCEs.md`
+- **Chris Ford has spicy takes on Engineering With AI!** — Engineering With AI (1:08:59, 2 views)
+  https://www.youtube.com/watch?v=G32QTr4s3X8
+  item: `items/G32QTr4s3X8.md`
+- **Delivering on the Promise: Life Science, Design and AI for Better Health** — Massachusetts Institute of Technology (MIT) (1:00:07, 1 views)
+  https://www.youtube.com/watch?v=Xrm3XurcB3k
+  item: `items/Xrm3XurcB3k.md`
+- **Snowflake CEO on AI Risk, Product Innovation and Winning Enterprise Customers** — After Earnings (28:24, 1.9K views)
+  https://www.youtube.com/watch?v=bzCvScDWgtg
+  item: `items/bzCvScDWgtg.md`
+- **The 80% Failure Rate Nobody's Talking About - Ai Trap** — Dr. HR (13:19, 9 views)
+  https://www.youtube.com/watch?v=pA9AazeNML0
+  item: `items/pA9AazeNML0.md`
+- **The AI Extinction Event: Salim Ismail Warns Most Companies Won’t Survive** — Info-Tech Research Group (1:54:04, 1.3K views)
+  https://www.youtube.com/watch?v=r-f07TqhLkg
+  item: `items/r-f07TqhLkg.md`
+- **20 horsepower moped part 39: will E.H.F.I. have an effect?** — ASoftaaja (1:26:59, 1.8K views)
+  https://www.youtube.com/watch?v=oUK5RjbN45c
+  item: `items/oUK5RjbN45c.md`
+- **Nancy Guthrie: He Was On The Scene First! FBI Came And Saw The Scene Corrupted.** — The Crime Vault (37:42, 42 views)
+  https://www.youtube.com/watch?v=7KOlldKyGoQ
+  item: `items/7KOlldKyGoQ.md`
+- **Scientists Can’t Explain This… WTF Is Octopus Intelligence?** — Weird Truth Files (31:52, 1 views)
+  https://www.youtube.com/watch?v=ZUwbysjd2Ps
+  item: `items/ZUwbysjd2Ps.md`
+- **How AI Fleets Fixed 31 Issues in Two Days | Merge Conflict ep. 509** — Merge Conflict Podcast (42:12, 33 views)
+  https://www.youtube.com/watch?v=juyQ9gkXqqE
+  item: `items/juyQ9gkXqqE.md`
+- **Ep 5 - Piotr Szyperski - From Full-Stack Developer to AI-Assisted Leader** — AppStream Studio (46:53, 2 views)
+  https://www.youtube.com/watch?v=CsGgCoDxQbE
+  item: `items/CsGgCoDxQbE.md`
+- **GCP Architecture Masterclass 2026 Module 2 Summary: Architecting the Autonomous Mind** — TradingMaster AI (7:37, new)
+  https://www.youtube.com/watch?v=SD-cafqupfk
+  item: `items/SD-cafqupfk.md`
+- **Quebec medical students question future | CTV News Montreal at Six for Sunday, April 5, 2026** — CTV News (46:03, 1.0K views)
+  https://www.youtube.com/watch?v=Fm7MpaTh5c4
+  item: `items/Fm7MpaTh5c4.md`
+- **The Thomas Heist** — Contraband Confessions (1:29:25, new)
+  https://www.youtube.com/watch?v=N9JCHlGi_Co
+  item: `items/N9JCHlGi_Co.md`
+- **We Know The Sick Secrets of Epstein's World | The Daily Beast Podcast** — The Daily Beast (55:04, 137.8K views)
+  https://www.youtube.com/watch?v=GzWKe8a1y8M
+  item: `items/GzWKe8a1y8M.md`
+- **The Living Engine: How Life Scripts the Earth System** — Live To Learn People (5:15, new)
+  https://www.youtube.com/watch?v=uObevC0wcZE
+  item: `items/uObevC0wcZE.md`
+- **Claude Code Agent SDK: 24/7 AI That Learns | JARVIS Phase 3** — Byrddynasty - AI Productivity (18:58, 2 views)
+  https://www.youtube.com/watch?v=GmVvM6Pi41E
+  item: `items/GmVvM6Pi41E.md`
+- **AI Build #6 - Regen Neighborhood Framework** — Regen Tribe (2:53:54, 2 views)
+  https://www.youtube.com/watch?v=_REj7Zaf1lc
+  item: `items/_REj7Zaf1lc.md`
+- **How to Become a Cloud AI Engineer in 2026 | The Exact Roadmap Nobody Shows You #cloud #ai #agenticai** — PurpleSkill (5:52, 27 views)
+  https://www.youtube.com/watch?v=KzA4pbKUL4g
+  item: `items/KzA4pbKUL4g.md`
+- **Keeping up with Tech 2026-04-02** — The Chicago Computer Society (2:07:13, 3 views)
+  https://www.youtube.com/watch?v=Q6rD2lMpj2I
+  item: `items/Q6rD2lMpj2I.md`
+- **Aaron Stannard: Software 2.0 using AI - Episode 396** — AI DevOps Podcast (50:52, 7 views)
+  https://www.youtube.com/watch?v=dlkDgeiP3eU
+  item: `items/dlkDgeiP3eU.md`
+- **Episode 20: We Built a City Budget App in 20 Minutes (AI Coding Is Here)** — Anthony and Greg (33:52, 2 views)
+  https://www.youtube.com/watch?v=8LMYZlNKSwI
+  item: `items/8LMYZlNKSwI.md`
+- **I Never Told My Son I Own 12 Apartments. His Wife Said: "Leave, You’re Useless"** — Quiet Resolve (1:06:54, 4 views)
+  https://www.youtube.com/watch?v=Gbzp0uvupUc
+  item: `items/Gbzp0uvupUc.md`
+- **The UiPath Solution for Loan Origination: QA-QC** — UiPath (5:36, 52 views)
+  https://www.youtube.com/watch?v=ne1HF22Segs
+  item: `items/ne1HF22Segs.md`
+- **What Really Burned in Tesla’s Lab That Night — And Why It Still Matters** — Codex Origin (54:20, 2 views)
+  https://www.youtube.com/watch?v=mKJvFYC4BlI
+  item: `items/mKJvFYC4BlI.md`
+- **Hundreds of elite US troops narrowly escaped annihilation Several fighter jets lost, but one officer** — 環球大戰線 (1:02:54, 8.9K views)
+  https://www.youtube.com/watch?v=gSZvV_q-OLk
+  item: `items/gSZvV_q-OLk.md`
+- **THE ZERO THRESHOLD | Architecting Your Reality from the Void | Full Audiobook** — The Sovereign Path (2:55:36, new)
+  https://www.youtube.com/watch?v=vCzhBK2vEyU
+  item: `items/vCzhBK2vEyU.md`
+- **The Grok 4 Trap: Why 20 Agents Beat One Genius Model | #NEWIT** — GilliLab Logic Salt (54:48, new)
+  https://www.youtube.com/watch?v=csafstv4gLI
+  item: `items/csafstv4gLI.md`
+- **Symposium—Iba Ndiaye: Between Latitude and Longitude** — The Met (4:18:06, 126 views)
+  https://www.youtube.com/watch?v=nfbGoajjdVI
+  item: `items/nfbGoajjdVI.md`
+- **Claude AI Explained: Friendly, Fast, and Incredibly Smart  #claude** — Topictrick (12:12, 25 views)
+  https://www.youtube.com/watch?v=MuLtPyWWB3w
+  item: `items/MuLtPyWWB3w.md`

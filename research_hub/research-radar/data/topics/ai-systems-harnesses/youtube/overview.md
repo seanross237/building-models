@@ -282,3 +282,96 @@ Full item files belong in `items/`.
 - **Manage Your AI Workforce: Testing, Memory & Deliverables for Self Storage** — Agentive Automations (6:58, new)
   https://www.youtube.com/watch?v=bIZQNS6rg38
   item: `items/bIZQNS6rg38.md`
+
+## 2026-04-06 — 30 new videos
+
+- **Natural-Language Agent Harnesses** — Praveen Govindaraj (3:42, new)
+  https://www.youtube.com/watch?v=NdfzuSTk1tQ
+  item: `items/NdfzuSTk1tQ.md`
+- **Gemma 4 on Raspberry Pi 5: A Surprisingly Usable Local AI Setup** — Zero to MVP (9:09, 48.7K views)
+  https://www.youtube.com/watch?v=kZhAj8--t8w
+  item: `items/kZhAj8--t8w.md`
+- **My Pi Agent Teams. Claude Code Leak SIGNAL. Harness Engineering** — IndyDevDan (32:27, 3.6K views)
+  https://www.youtube.com/watch?v=RairMJflUSA
+  item: `items/RairMJflUSA.md`
+- **The Only AI Agent That Gets Smarter Every Time You Use It (This Changes Everything)** — Nick Puru | AI Automation (27:32, 9.1K views)
+  https://www.youtube.com/watch?v=J-kSdzHr9Ek
+  item: `items/J-kSdzHr9Ek.md`
+- **The AI Comet Has Struck: Moonshots' Salim Ismail Warns Most Organizations Won't Survive AI** — Info-Tech Research Group (1:54:04, 1.3K views)
+  https://www.youtube.com/watch?v=r-f07TqhLkg
+  item: `items/r-f07TqhLkg.md`
+- **From PDF schematic to 3D wiring in minutes | Capital, NX (& AI)** — Siemens Software (3:36, 4 views)
+  https://www.youtube.com/watch?v=K1AJAWFKCPM
+  item: `items/K1AJAWFKCPM.md`
+- **NEW Innovations of 2026 You Must See to Believe!** — TechTrends (19:46, 769 views)
+  https://www.youtube.com/watch?v=FIueqeXG-6k
+  item: `items/FIueqeXG-6k.md`
+- **Chris Ford has spicy takes on Engineering With AI!** — Engineering With AI (1:08:59, 2 views)
+  https://www.youtube.com/watch?v=G32QTr4s3X8
+  item: `items/G32QTr4s3X8.md`
+- **“Rent a Human” in AI? The Secret Behind Reliable AI Systems** — Blockchain Council (1:14, 184 views)
+  https://www.youtube.com/watch?v=aw93Wn58aGk
+  item: `items/aw93Wn58aGk.md`
+- **What if the Code is the Easy Part?** — Boundary (2:02:27, 148 views)
+  https://www.youtube.com/watch?v=0rMG-3iiilc
+  item: `items/0rMG-3iiilc.md`
+- **Unlock the Power of AI-Enhanced Personal Systems | Wicked Smart Podcast (Episode 2)** — The Wicked Smart Podcast! (1:49:19, 11 views)
+  https://www.youtube.com/watch?v=TZXTKUDmw28
+  item: `items/TZXTKUDmw28.md`
+- **Der wichtigste KI-Leak im Jahr? Das steckt wirklich dahinter 🔎** — Christoph Magnussen (14:23, 788 views)
+  https://www.youtube.com/watch?v=gUpmu_Oxw-A
+  item: `items/gUpmu_Oxw-A.md`
+- **Tesla Robotaxis Will Cover 70% of America's Population in 2 Weeks...** — The Electric Viking (9:17, 12.2K views)
+  https://www.youtube.com/watch?v=CNJnTx1usfw
+  item: `items/CNJnTx1usfw.md`
+- **THIS is the challenge all militaries are facing: Shield AI co-founder** — Fox Business (4:48, 20.5K views)
+  https://www.youtube.com/watch?v=yJ2usuMoOKI
+  item: `items/yJ2usuMoOKI.md`
+- **Freelander Goes Electric?! AI’s Power Problem & Megawatt Charging!** — Everything Electric TECH (51:40, 11.4K views)
+  https://www.youtube.com/watch?v=lRbTpQEf6Wk
+  item: `items/lRbTpQEf6Wk.md`
+- **Your Role as Developer in The AI Era** — César Soto Valero (12:04, 9 views)
+  https://www.youtube.com/watch?v=zyEWaN66ljE
+  item: `items/zyEWaN66ljE.md`
+- **ChuckChat NewsNNotes Episode4 2026 04 06** — ChuckChat (27:47, 9 views)
+  https://www.youtube.com/watch?v=kyQW7tESwgc
+  item: `items/kyQW7tESwgc.md`
+- **AI, SEO & GEO for Remodelers: Stop Wasting Money on Marketing | Brandon Miller** — Grosso University (1:24:35, 2 views)
+  https://www.youtube.com/watch?v=7uB7gpyQcoE
+  item: `items/7uB7gpyQcoE.md`
+- **CTS Webinar: Industry and International Perspectives on AI Integration** — CTSUMN (1:15:09, 12 views)
+  https://www.youtube.com/watch?v=1m_HnnfJ6BU
+  item: `items/1m_HnnfJ6BU.md`
+- **ଇରାନ ହାତରେ ଆମେରିକାର ଗୁପ୍ତତଥ୍ୟ! US Military Leaks How China’s BeiDou & AI Changing Iran-US War Game** — Argus Digital (2:40, 4.6K views)
+  https://www.youtube.com/watch?v=yiK9l_LoiEQ
+  item: `items/yiK9l_LoiEQ.md`
+- **SpaceX IPO banks pressured & OpenAI leadership reshuffle - Tech News (Apr 6, 2026)** — The Automated Daily (8:42, 1 views)
+  https://www.youtube.com/watch?v=wZo7qdvynPw
+  item: `items/wZo7qdvynPw.md`
+- **MIT HEALS in Action: Next-Generation Talent** — Massachusetts Institute of Technology (MIT) (55:54, 6 views)
+  https://www.youtube.com/watch?v=I8rEk2vifiY
+  item: `items/I8rEk2vifiY.md`
+- **Aaron Stannard: Software 2.0 using AI - Episode 396** — AI DevOps Podcast (50:52, 7 views)
+  https://www.youtube.com/watch?v=dlkDgeiP3eU
+  item: `items/dlkDgeiP3eU.md`
+- **DepEd Order No. 003, s. 2026 I Guidelines on Artificial Intelligence (AI) in Philippine Schools** — Maestros TV (10:06, 123 views)
+  https://www.youtube.com/watch?v=Vh2sOVlIqAc
+  item: `items/Vh2sOVlIqAc.md`
+- **Prehistoric Internet Found Buried on the Ocean Floor** — OceanMyth AI (19:44, 2 views)
+  https://www.youtube.com/watch?v=R6V7Bvm6rxk
+  item: `items/R6V7Bvm6rxk.md`
+- **Yawn: Anthropic had a Leak** — Romella Janene Global (5:33, 3 views)
+  https://www.youtube.com/watch?v=KySMZ8xz3k8
+  item: `items/KySMZ8xz3k8.md`
+- **How to Program Mercedes-Benz Key on Bench (No Car Needed) | EIS/EZS Full Guide** — Autocar Star (10:07, 235 views)
+  https://www.youtube.com/watch?v=VpUo0VZDe-M
+  item: `items/VpUo0VZDe-M.md`
+- **自进化多智能体蜂群：74个AI Agent在Mac Mini上自主进化** — LocalKinAI (7:06, new)
+  https://www.youtube.com/watch?v=oBEAUUEc2NQ
+  item: `items/oBEAUUEc2NQ.md`
+- **Why a British Prison Let a Van Leave AFTER the Alarm Sounded – With a Spy Underneath** — THE SILENT BREAK (24:28, 3.7K views)
+  https://www.youtube.com/watch?v=snOeqxlzRTk
+  item: `items/snOeqxlzRTk.md`
+- **Legionnaires Forever - History & Army Documentary, Immersion in the heart of the French Foreign L...** — DOCS Histoire & Culture - FranceTV Distribution (52:00, 2 views)
+  https://www.youtube.com/watch?v=TyZ1TZLTQh8
+  item: `items/TyZ1TZLTQh8.md`

@@ -123,3 +123,69 @@ Full item files belong in `items/`.
 - **I pretended to be his mate to survive the night — he didn’t pretend back.** — Luna’s Secret Library (1:15:10, 142 views)
   https://www.youtube.com/watch?v=kRLgYJlTMoM
   item: `items/kRLgYJlTMoM.md`
+
+## 2026-04-06 — 21 new videos
+
+- **Chris Ford has spicy takes on Engineering With AI!** — Engineering With AI (1:08:59, 2 views)
+  https://www.youtube.com/watch?v=G32QTr4s3X8
+  item: `items/G32QTr4s3X8.md`
+- **Killed by my wife & her lover! Reborn, I called off the wedding in PUBLIC! Karma!** — Steel Drama (2:37:05, 5.1K views)
+  https://www.youtube.com/watch?v=X8D9mOFWOzc
+  item: `items/X8D9mOFWOzc.md`
+- **一口氣大結局！😱文學博士穿越成入贅庶子！被逼娶了傻子新娘，白天作詩征服丈母娘，晚上還要跟神秘女子練武切磋！#陳外 #魯芳岐 #最火短劇推薦 #短劇全集 #爽文 #短劇 #drama** — KK追劇girl (3:14:28, 271 views)
+  https://www.youtube.com/watch?v=ARjNkhHQ4j0
+  item: `items/ARjNkhHQ4j0.md`
+- **I have 999 skills, and my classmates accuse me of cheating, but I have an SSS-level Copy talent!** — KAI Manhwa Recap (10:47:36, 15 views)
+  https://www.youtube.com/watch?v=xuD4Wr7WgoA
+  item: `items/xuD4Wr7WgoA.md`
+- **The Epic 25,000 Year Evolution of the Republic Military** — Geetsly's (2:36:21, 726 views)
+  https://www.youtube.com/watch?v=wPtJgexDdXw
+  item: `items/wPtJgexDdXw.md`
+- **The Grok 4 Trap: Why 20 Agents Beat One Genius Model | #NEWIT** — GilliLab Logic Salt (54:48, new)
+  https://www.youtube.com/watch?v=csafstv4gLI
+  item: `items/csafstv4gLI.md`
+- **Ep 105: How I built my AI “chief of staff” | Michael Leibovich (GM, Adobe Portfolio @ Adobe)** — Supra Insider (1:01:01, 17 views)
+  https://www.youtube.com/watch?v=B29HU6ThYYE
+  item: `items/B29HU6ThYYE.md`
+- **MULTISUB📢新番上线《从嬴政开始：历代皇帝陆续降临》第1~2季丨秦始皇被传到围城之中，此处一日，外界一年，每次开启城门场景各不相同，有诸多奇幻冒险！#漫剧 #破晓动漫社** — 破晓动漫社 Dawn Anime Club (4:17:38, 2.6K views)
+  https://www.youtube.com/watch?v=p1Qc3KcErsY
+  item: `items/p1Qc3KcErsY.md`
+- **The Demonic Cult Instructor Returns | Manhwa Recap** — 天天动态漫 (4:07:27, 804 views)
+  https://www.youtube.com/watch?v=bj9GqKljChE
+  item: `items/bj9GqKljChE.md`
+- **AI Build #1 - Regen Neighborhood Framework** — Regen Tribe (2:13:18, 6 views)
+  https://www.youtube.com/watch?v=Cp_cQrSJdxY
+  item: `items/Cp_cQrSJdxY.md`
+- **Create a multi-agent system with CrewAI step by step** — Apasoft Training (29:52, 30 views)
+  https://www.youtube.com/watch?v=n0so6J-8ZhE
+  item: `items/n0so6J-8ZhE.md`
+- **The Greyfang wolves and the hidden cost of exchange** — Tale Ranch (49:08, new)
+  https://www.youtube.com/watch?v=mkbyh7WED14
+  item: `items/mkbyh7WED14.md`
+- **😱The biggest crisis of 2026? A prophecy reveals a "Normandy-style invasion of Taiwan"...** — HIBY新聞 (2:09:10, 547 views)
+  https://www.youtube.com/watch?v=JmHDnMRWmSw
+  item: `items/JmHDnMRWmSw.md`
+- **AI Build #4 - Regen Neighborhood Framework** — Regen Tribe (1:53:01, new)
+  https://www.youtube.com/watch?v=YYWLh1GRF6g
+  item: `items/YYWLh1GRF6g.md`
+- **【Hollow Knight】Tackling Hallownest's Pantheon! - Hollow Knight Live ＃25 *Spoilers** — Necie Ch. ねしー (10:01:41, 214 views)
+  https://www.youtube.com/watch?v=E4UEZg1F0cM
+  item: `items/E4UEZg1F0cM.md`
+- **RASC Light Pollution Conference March 2026: Policy, Outreach, Communication** — Bernie Hasselman (4:53:41, 16 views)
+  https://www.youtube.com/watch?v=v9g31toRknI
+  item: `items/v9g31toRknI.md`
+- **Vietnamese Diamond Development Training 2026 Session 1** — Health Coach Vũ Ngọc Thọ – Health & Freedom Mentor (38:00, 32 views)
+  https://www.youtube.com/watch?v=idtzEOyEqjs
+  item: `items/idtzEOyEqjs.md`
+- **💥【新番上线】《从木匠到八零首富》全集Multi SUB #热血 #漫剧 #动漫魔女** — 动漫魔女 (1:01:54, 259 views)
+  https://www.youtube.com/watch?v=PYJYFhnweuQ
+  item: `items/PYJYFhnweuQ.md`
+- **Everyone Thinks He Is A Naked Useless Hero, But He Is A Billionaire Capitalist.** — Inosuke Recap (16:05:18, 138 views)
+  https://www.youtube.com/watch?v=TZi2Mb8rVm0
+  item: `items/TZi2Mb8rVm0.md`
+- **MULTISUB💥最新合集💥《太古十凶：别人御兽我御兽娘》第1~141集丨蛰伏三年，林寒觉醒御兽系统，收获十个超凶兽娘！开启无敌模式逆袭，一不小心被兽娘们逼成全球战力巅峰！#破晓动漫社** — 破晓动漫社 Dawn Anime Club (8:53:25, 1.2K views)
+  https://www.youtube.com/watch?v=T-szcWva5ek
+  item: `items/T-szcWva5ek.md`
+- **After Transmigration, He Gains Ability to See Anyone’s Fate and Conquers Beautiful Senior Sisters!** — Panda Fantasy Chronicles (27:32:28, 173 views)
+  https://www.youtube.com/watch?v=NhOdiw_OBKk
+  item: `items/NhOdiw_OBKk.md`

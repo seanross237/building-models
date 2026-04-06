@@ -282,3 +282,93 @@ Full item files belong in `items/`.
 - **Husband Threw Us Out To Die In The Apocalypse—Unaware My Super Baby Can Regrow Food! Now He Begs!** — Juno Bless (1:40:09, 1.8K views)
   https://www.youtube.com/watch?v=TNj5zB_VXuo
   item: `items/TNj5zB_VXuo.md`
+
+## 2026-04-06 — 29 new videos
+
+- **Village Girl Saves a Man with a Kiss—He’s a CEO! She Reveals Epic Skills & Gets Married Instantly!** — CrushLoop TV (1:36:49, 44 views)
+  https://www.youtube.com/watch?v=x0zozh-7tV4
+  item: `items/x0zozh-7tV4.md`
+- **【完結】18歲的林清音誤闖校霸江炎的紋身店，他一眼淪陷，從此高調示愛，轟動全校，可她因原生家庭的陰影始終不敢邁出那一步，去回應他的炙熱，直到情緒失控，他紅著眼逼問：“你到底有沒有心？#马小宇#徐艺真** — 劇熱門 (2:04:05, 10.9K views)
+  https://www.youtube.com/watch?v=UqrnNNiduRg
+  item: `items/UqrnNNiduRg.md`
+- **【完結】被迫代替同父異母的姊姊接近商家繼承人商時嶼，她以假亂真促成聯姻，以為只是任務，卻意外打破了他不近女色的禁慾傳聞，那一夜之後，他徹底動心，將她視作唯一，愛到無法自拔！** — 劇熱門 (1:48:40, 31.3K views)
+  https://www.youtube.com/watch?v=pVvSXhaNqg8
+  item: `items/pVvSXhaNqg8.md`
+- **Nancy Guthrie: He Was On The Scene First! FBI Came And Saw The Scene Corrupted.** — The Crime Vault (37:42, 42 views)
+  https://www.youtube.com/watch?v=7KOlldKyGoQ
+  item: `items/7KOlldKyGoQ.md`
+- **A CEO saves a bullied rural girl: 'Let me be your stepping stone!' #drama #love #engsub** — Seraph Dramas (2:54:15, 2.5K views)
+  https://www.youtube.com/watch?v=rKlxSOt90yU
+  item: `items/rKlxSOt90yU.md`
+- **Dumped in Trash by Family,Desperate Girl was Chosen by CEO’s Mom! Married CEO & Fate flips!** — Papaya Drama (2:09:37, 2.1K views)
+  https://www.youtube.com/watch?v=vyjcobUVdCI
+  item: `items/vyjcobUVdCI.md`
+- **She said, "Dima?" — and couldn't believe it. A triple homicide, and 26 years of silence.** — Архив Волкодава (1:52:50, 9.4K views)
+  https://www.youtube.com/watch?v=lCzp40Iy-ak
+  item: `items/lCzp40Iy-ak.md`
+- **他是冷麵無情的校霸，浪蕩不羈，惹上他算是廢了，可唯獨面對她時化作溫柔大金毛，後來有人問他，為什麼對她這麼好，他想了想，說第一眼就淪陷了，從此浪子回頭，冰川融化，所有的溫柔與寵溺，都只給她一人** — 追爽劇 (2:04:03, 7.7K views)
+  https://www.youtube.com/watch?v=qtUpCoxwvgU
+  item: `items/qtUpCoxwvgU.md`
+- **Chris Ford has spicy takes on Engineering With AI!** — Engineering With AI (1:08:59, 2 views)
+  https://www.youtube.com/watch?v=G32QTr4s3X8
+  item: `items/G32QTr4s3X8.md`
+- **女孩將被追殺的男人藏在裙子底下救他一命，誰料他竟是聲名顯赫的傅氏總裁，隔天直接帶著黃金萬兩上門提親！#短劇 #短劇全集 #短劇推薦 #逆襲 #情感 #都市 #甜寵 #愛情** — 朝朝短剧 (1:49:29, 4.2K views)
+  https://www.youtube.com/watch?v=M9kHeDcslh4
+  item: `items/M9kHeDcslh4.md`
+- **A Teen Behind Bars | PRISON DRAMA | Full Movie in English 💎** — Boxoffice | DRAMA | Full Movies (1:42:25, 3.2K views)
+  https://www.youtube.com/watch?v=5rNObxnpR0o
+  item: `items/5rNObxnpR0o.md`
+- **【Multi | FULL】Live Up to Your Youth 冬去春来 | EP17 🚪Guo Zongbao’s Family Shows Up Unexpectedly! |iQIYI** — iQIYI 爱奇艺 - Get the iQIYI APP (45:35, 1.5K views)
+  https://www.youtube.com/watch?v=xqFQA2IfiwY
+  item: `items/xqFQA2IfiwY.md`
+- **Why are cities banning fossil fuel adverts? - The Climate Question podcast, BBC World Service** — BBC World Service (24:00, 2.8K views)
+  https://www.youtube.com/watch?v=c5-75GWX90A
+  item: `items/c5-75GWX90A.md`
+- **他是全校畏懼的校霸，她是被孤立的學霸，所有人以為他們是兩條平行線，直到那晚她闖進他的世界，原來她並非乖乖女，他也不是壞種，她教他做題，他替她擋拳頭，兩個破碎的靈魂緊緊相擁，相互救贖，照亮彼此#马小宇** — 追劇鴨 (2:04:03, 5.4K views)
+  https://www.youtube.com/watch?v=m6qcYxC1XII
+  item: `items/m6qcYxC1XII.md`
+- **“Easter = Opportunity: Real Estate Ideas That Turn Into SALES”** — Frank Driscoll (6:20, 23 views)
+  https://www.youtube.com/watch?v=lPXXhaNbLIY
+  item: `items/lPXXhaNbLIY.md`
+- **ENGSUB|Pregnant and Alone, She Never Expected the CEO to Fall for Her&Four Kids—Shocking Everyone 🥰✨** — MiniVerse-Drama (2:07:06, 11.2K views)
+  https://www.youtube.com/watch?v=5G-kDzrL9JY
+  item: `items/5G-kDzrL9JY.md`
+- **Best Asian Film of 2026! Chang'an Swordman 2 Online! A general fiercely blocking a thousand men!** — 侠影剧场 (1:20:11, 7.8K views)
+  https://www.youtube.com/watch?v=0-BXiK2aKuo
+  item: `items/0-BXiK2aKuo.md`
+- **【FULL】LIVE UP TO YOUR YOUTH EP17 | iQIYICDrama** — 爱奇艺华语剧场 - Get the iQIYI APP (45:35, 831 views)
+  https://www.youtube.com/watch?v=ChkSSBlTo_w
+  item: `items/ChkSSBlTo_w.md`
+- **Poor Parents Humiliated By Relatives Who Seize Land, Son Is Hidden War God Who Rages Wipes Them All** — Golden Cinema (1:01:20, 562 views)
+  https://www.youtube.com/watch?v=Q_egXVBdPT4
+  item: `items/Q_egXVBdPT4.md`
+- **He Becomes The Disciple Of The Killer To Avenge His Entire Clan** — 戰爭劇場Chinese Drama (1:29:53, 2.8K views)
+  https://www.youtube.com/watch?v=A-Fn5NVP8Us
+  item: `items/A-Fn5NVP8Us.md`
+- **The Thomas Heist** — Contraband Confessions (1:29:25, new)
+  https://www.youtube.com/watch?v=N9JCHlGi_Co
+  item: `items/N9JCHlGi_Co.md`
+- **Billionaire Family Frames Son Sends Him To Prison He Survive Returns As Rich Billionaire For Revenge** — CineDrama (1:46:56, 3.9K views)
+  https://www.youtube.com/watch?v=aIPS7fcpxxg
+  item: `items/aIPS7fcpxxg.md`
+- **Left at the altar, I was reborn and married his rival CEO, he regrets** — Vespertine Drama (1:30:06, 174 views)
+  https://www.youtube.com/watch?v=J0ImJR1_x04
+  item: `items/J0ImJR1_x04.md`
+- **Forced to bark like a dog, she’s heartbroken, returns as a rich heiress, he regrets too late** — 橙星剧场ShortTV (1:31:35, 6.6K views)
+  https://www.youtube.com/watch?v=P8DoHPQ59Qo
+  item: `items/P8DoHPQ59Qo.md`
+- **Time-traveled to ancient times, woke to a princess and beauties undressing me. #cdrama #shortplay** — MulanDrama (2:49:38, 415 views)
+  https://www.youtube.com/watch?v=7MSLGqy95mA
+  item: `items/7MSLGqy95mA.md`
+- **Justice prevails as the real murderer is shot dead inside a taxi.** — 爆火电影宇宙 (1:24:17, 599 views)
+  https://www.youtube.com/watch?v=QZtmjFdCLrQ
+  item: `items/QZtmjFdCLrQ.md`
+- **Cruel stepfather finally pays the price-Tieu Yen and her mother find the light in their lives again** — Lý Tiểu Yên life (30:01, 9.8K views)
+  https://www.youtube.com/watch?v=ny9DqtMghQQ
+  item: `items/ny9DqtMghQQ.md`
+- **Open World Space RPG - Stellar Tactics** — Nookrium (3:07:23, 913 views)
+  https://www.youtube.com/watch?v=NjNFtl_qI9E
+  item: `items/NjNFtl_qI9E.md`
+- **【ENG SUB】養女替姐姐嫁給人人嫌棄的殘暴少爺，殊不知少爺早已沉淪于她，不近女色只願寵她一人！#逆袭爽剧#drama（hzhj）** — 甜心爽剧Drama (2:20:53, 8.8K views)
+  https://www.youtube.com/watch?v=t9adgpSQg3A
+  item: `items/t9adgpSQg3A.md`

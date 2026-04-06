@@ -24,3 +24,9 @@ Full item files belong in `items/`.
 - **பெருமிதம் | From Bicycle Rocket Parts to Moon Landing: ISRO's Full Story | Jayasim Jayakumar** — Jayasim Jayakumar (46:19, 17.5K views)
   https://www.youtube.com/watch?v=dynDYpXYW5k
   item: `items/dynDYpXYW5k.md`
+
+## 2026-04-06 — 1 new videos
+
+- **D1Part2 - Getting Started - Project Overview - Microservice - Framework - RestAPIs [6Apr]** — Tausief S (2:41:06, 2.8K views)
+  https://www.youtube.com/watch?v=s9HQONq7rD4
+  item: `items/s9HQONq7rD4.md`

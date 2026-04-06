@@ -54,3 +54,21 @@ Full item files belong in `items/`.
 - **💥【新番上线】游戏宅觉醒开宝箱直觉，横扫股市，从无业游民逆袭成华尔街胆寒的投资传奇！《从游戏宅到投资之神，我狂赚五十亿》全集Multi SUB #热血 #漫剧 #动漫魔女** — 动漫魔女 (3:21:57, 296 views)
   https://www.youtube.com/watch?v=mAHq-ly97gc
   item: `items/mAHq-ly97gc.md`
+
+## 2026-04-06 — 5 new videos
+
+- **The 100-Year-Old Sword God Wants To Live Peacefully, But Has To Take Care Of A 4-Year-Old Girl** — Tanjiro Recap (7:32:55, 469 views)
+  https://www.youtube.com/watch?v=IQHcx25X6Vw
+  item: `items/IQHcx25X6Vw.md`
+- **🔥【爽漫】【Eng Sub】《渡劫失敗後，我重生少年無敵》渡劫隕落的陳凡重回少年時代，重修根基，彌補遺憾，助人渡難，最終與夥伴共同成長。 #回归 #修仙 #重生 #穿越 #anime** — 八虎动漫剧场 (8:02:04, 832 views)
+  https://www.youtube.com/watch?v=W4XV8i9GOgI
+  item: `items/W4XV8i9GOgI.md`
+- **A Beggar Crashes the Wedding with a Child—The Groom Mocks Him, but the Bride Marries Him Instead!😱** — Moonlight 月光剧场 (1:35:22, 496 views)
+  https://www.youtube.com/watch?v=Qf_G0pNqg6U
+  item: `items/Qf_G0pNqg6U.md`
+- **💥【新番上线】被强掳深山苦修十年，一朝下山剑指归途，以绝世修为归乡！《仙缘劫起凌天传 1~2季》全集Multi SUB #热血 #漫剧 #动漫魔女** — 动漫魔女 (7:44:05, 4.1K views)
+  https://www.youtube.com/watch?v=26qdSGClgTg
+  item: `items/26qdSGClgTg.md`
+- **💥ENG SUB💥【五百年一梦，我自仙界归来】Returned from the Immortal Realm #热血 #玄幻 #都市 #重生 #穿越 #anime** — 超有钱动漫 Anime Club (8:02:04, 471 views)
+  https://www.youtube.com/watch?v=k1tWtAvoTUU
+  item: `items/k1tWtAvoTUU.md`

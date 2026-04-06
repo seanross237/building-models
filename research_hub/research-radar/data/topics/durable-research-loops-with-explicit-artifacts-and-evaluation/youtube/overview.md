@@ -39,3 +39,15 @@ Full item files belong in `items/`.
 - **The AI Orchestrator Trap Most Developers Fall Into | #NEWIT** — GilliLab Logic Salt (43:10, new)
   https://www.youtube.com/watch?v=T2Q691zpyG8
   item: `items/T2Q691zpyG8.md`
+
+## 2026-04-06 — 3 new videos
+
+- **After Awakening Skeleton System He EvolvedFragile LowTier Skeleton Undying Dragon-Blood Skeleton!** — Mania Comics Legends (11:58:42, 238 views)
+  https://www.youtube.com/watch?v=91GvSuY43H8
+  item: `items/91GvSuY43H8.md`
+- **THE ZERO THRESHOLD | Architecting Your Reality from the Void | Full Audiobook** — The Sovereign Path (2:55:36, new)
+  https://www.youtube.com/watch?v=vCzhBK2vEyU
+  item: `items/vCzhBK2vEyU.md`
+- **【Multi Sub】🧨逃學五年，我成了全村的希望Skipped School 5 Years, Became Village Hope第二季 #男频 #动漫 #热血** — Qixiang-Animation (5:17:05, 242 views)
+  https://www.youtube.com/watch?v=tRW7EdQ8jWM
+  item: `items/tRW7EdQ8jWM.md`

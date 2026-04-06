@@ -36,3 +36,15 @@ Full item files belong in `items/`.
 - **🔥【最新合集】《全民诡异：开局掌握零元购》EP1~175：马屁精撞上真大佬！| Multi SUB #热血 #玄幻 #逆袭 #战斗 #动漫魔女** — 动漫魔女 (14:03:11, 1.3K views)
   https://www.youtube.com/watch?v=bWitiFuT3Jc
   item: `items/bWitiFuT3Jc.md`
+
+## 2026-04-06 — 3 new videos
+
+- **The Grok 4 Trap: Why 20 Agents Beat One Genius Model | #NEWIT** — GilliLab Logic Salt (54:48, new)
+  https://www.youtube.com/watch?v=csafstv4gLI
+  item: `items/csafstv4gLI.md`
+- **Ep.65—Claude Knows Kung Fu. Midjourney's Still in the Dojo (+V8.1?)** — Midjourney Fast Hours (1:23:41, 1.5K views)
+  https://www.youtube.com/watch?v=Dl64zUCJniU
+  item: `items/Dl64zUCJniU.md`
+- **MULTISUB💥最新合集💥《全民诡异：开局掌握零元购》第1~175集丨诡异末世降临，陈木携万亿诡币重生，开局化身“天使投资人”，买下各种诡异场景，化身规则制定者！#破晓动漫社** — 破晓动漫社 Dawn Anime Club (14:03:11, 2.0K views)
+  https://www.youtube.com/watch?v=WxLPwX7VOAc
+  item: `items/WxLPwX7VOAc.md`

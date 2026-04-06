@@ -165,3 +165,54 @@ Full item files belong in `items/`.
 - **A cute baby descended from heaven, the childless president finally has an heir!** — 云朵短剧社 (2:25:40, 1.3K views)
   https://www.youtube.com/watch?v=KBS0ZfWumEo
   item: `items/KBS0ZfWumEo.md`
+
+## 2026-04-06 — 16 new videos
+
+- **On Practice** — School of Visual Arts (1:28:09, 8 views)
+  https://www.youtube.com/watch?v=HVX5R-8vux4
+  item: `items/HVX5R-8vux4.md`
+- **She Came Out West to Cook, Not to Marry — The Cowboy's Response Stopped the Whole Town Cold** — High Noon Legends (2:02:29, 4 views)
+  https://www.youtube.com/watch?v=TRwfR-t-YtE
+  item: `items/TRwfR-t-YtE.md`
+- **THE ZERO THRESHOLD | Architecting Your Reality from the Void | Full Audiobook** — The Sovereign Path (2:55:36, new)
+  https://www.youtube.com/watch?v=vCzhBK2vEyU
+  item: `items/vCzhBK2vEyU.md`
+- **The AI Extinction Event: Salim Ismail Warns Most Companies Won’t Survive** — Info-Tech Research Group (1:54:04, 1.3K views)
+  https://www.youtube.com/watch?v=r-f07TqhLkg
+  item: `items/r-f07TqhLkg.md`
+- **How to Build Influence That Actually Matters And Why People Get It Wrong with Tyler Dickerhoof** — Blue Stiley (1:02:59, 6 views)
+  https://www.youtube.com/watch?v=sAcsft8akzA
+  item: `items/sAcsft8akzA.md`
+- **Scientists Can’t Explain This… WTF Is Octopus Intelligence?** — Weird Truth Files (31:52, 1 views)
+  https://www.youtube.com/watch?v=ZUwbysjd2Ps
+  item: `items/ZUwbysjd2Ps.md`
+- **AI Build #7 - Regen Neighborhood Framework** — Regen Tribe (2:15:05, 3 views)
+  https://www.youtube.com/watch?v=Tiap2I6bYfE
+  item: `items/Tiap2I6bYfE.md`
+- **Unlocking Long-Term Love and Connection: A Conversation with Ellen Boeder (Ep38)** — Love, Loss & Hallucinations with Scott Schumaker (1:05:49, 3 views)
+  https://www.youtube.com/watch?v=aySqO4XHv9M
+  item: `items/aySqO4XHv9M.md`
+- **AI Build #5 - Regen Neighborhood Framework** — Regen Tribe (1:42:15, 1 views)
+  https://www.youtube.com/watch?v=RilSlrJe0qA
+  item: `items/RilSlrJe0qA.md`
+- **New GEN 3 Humanoid Robot Full Body E-SKIN Does This (AI NEWS)** — AI News (8:02, 1.5K views)
+  https://www.youtube.com/watch?v=e73vuV2JDOg
+  item: `items/e73vuV2JDOg.md`
+- **How to Design Your Life in 1 Hour** — Mel Robbins Story (59:26, new)
+  https://www.youtube.com/watch?v=H__3yM9HxZ0
+  item: `items/H__3yM9HxZ0.md`
+- **After Awakening Skeleton System He EvolvedFragile LowTier Skeleton Undying Dragon-Blood Skeleton!** — Mania Comics Legends (11:58:42, 239 views)
+  https://www.youtube.com/watch?v=91GvSuY43H8
+  item: `items/91GvSuY43H8.md`
+- **Studies in Folk Song and Popular Poetry by Alfred Williams - Full Audiobook** — Supreme Audiobooks (6:53:23, 8 views)
+  https://www.youtube.com/watch?v=-EGOz-g2JJY
+  item: `items/-EGOz-g2JJY.md`
+- **Dating Apps Destroyed Dating. Here's What's Coming Next!** — What Do I Know? (2:24:36, 23 views)
+  https://www.youtube.com/watch?v=bbP_NHfeNS4
+  item: `items/bbP_NHfeNS4.md`
+- **FIRST TIME POKEMON SOULSILVER | Pokemon SoulSilver Part 1** — CelesteSolaria 2 (5:00:53, 1 views)
+  https://www.youtube.com/watch?v=xh6vseCaIik
+  item: `items/xh6vseCaIik.md`
+- **Pregnant Wife Unaware She Inherited Billions Billionaire Husband Divorces Her to Marry Her Closest F** — Betrayed Stories (1:46:15, 10 views)
+  https://www.youtube.com/watch?v=Ec-di3dGqSk
+  item: `items/Ec-di3dGqSk.md`

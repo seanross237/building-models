@@ -87,3 +87,36 @@ Full item files belong in `items/`.
 - **[ENG DUB]He married the dynasty’s most dangerous woman and chose to save her world#minidrama** — MaxBro TV (3:01:26, 21.6K views)
   https://www.youtube.com/watch?v=ebpKW_o2ujo
   item: `items/ebpKW_o2ujo.md`
+
+## 2026-04-06 — 10 new videos
+
+- **She gave birth, heavy bleeding; he with lover; she returned rich, he begged with red eyes!** — LuLu甜劇社-Drama (1:48:35, 6.5K views)
+  https://www.youtube.com/watch?v=iU-4JwIFQwE
+  item: `items/iU-4JwIFQwE.md`
+- **I have 999 skills, and my classmates accuse me of cheating, but I have an SSS-level Copy talent!** — KAI Manhwa Recap (10:47:36, 15 views)
+  https://www.youtube.com/watch?v=xuD4Wr7WgoA
+  item: `items/xuD4Wr7WgoA.md`
+- **AI Build #7 - Regen Neighborhood Framework** — Regen Tribe (2:15:05, 3 views)
+  https://www.youtube.com/watch?v=Tiap2I6bYfE
+  item: `items/Tiap2I6bYfE.md`
+- **Best Asian Film of 2026! Chang'an Swordman 2 Online! A general fiercely blocking a thousand men!** — 侠影剧场 (1:20:11, 7.8K views)
+  https://www.youtube.com/watch?v=0-BXiK2aKuo
+  item: `items/0-BXiK2aKuo.md`
+- **一口氣大結局！😱文學博士穿越成入贅庶子！被逼娶了傻子新娘，白天作詩征服丈母娘，晚上還要跟神秘女子練武切磋！#陳外 #魯芳岐 #最火短劇推薦 #短劇全集 #爽文 #短劇 #drama** — KK追劇girl (3:14:28, 272 views)
+  https://www.youtube.com/watch?v=ARjNkhHQ4j0
+  item: `items/ARjNkhHQ4j0.md`
+- **MULTISUB📢新番上线《别人规则怪谈，你红警火力覆盖》第1~60集丨绝症方士空降规则怪谈！解锁红警狂轰乱杀，从公寓开荒清诡异，硬刚幕后黑手救众生！#漫剧 #破晓动漫社** — 破晓动漫社 Dawn Anime Club (2:13:49, 1.1K views)
+  https://www.youtube.com/watch?v=2xJJ76MzYu4
+  item: `items/2xJJ76MzYu4.md`
+- **☄️New【Multi Sub 】Doomsday smuggler: I trade spicy strips for gold bricks EP 1-108#anime #animation** — Quartic element Anime (8:58:49, 88 views)
+  https://www.youtube.com/watch?v=o-ptkCGqOUk
+  item: `items/o-ptkCGqOUk.md`
+- **As Fake Eunuch He Awaken Omniscient Copy Sys Discovers Emperor Secret Forced to Favor 3000 Consorts！** — Eternal Manga Recap (10:04:00, 4 views)
+  https://www.youtube.com/watch?v=RxWBg-Sd7Es
+  item: `items/RxWBg-Sd7Es.md`
+- **He posed as his dead brother to force her to bear his child, unaware of her brutal brothel torture!** — FlashPlot Films (1:42:32, 1.8K views)
+  https://www.youtube.com/watch?v=XzCYwcNxpeg
+  item: `items/XzCYwcNxpeg.md`
+- **💥【新番上线】重生回90年代，携前世记忆纵横商海，逆袭登顶世界首富！《重生九零之野性时代 1~2季》全集Multi SUB #热血 #漫剧 #动漫魔女** — 动漫魔女 (4:38:19, 1.7K views)
+  https://www.youtube.com/watch?v=i-x5pHvEMOQ
+  item: `items/i-x5pHvEMOQ.md`

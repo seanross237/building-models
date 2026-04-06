@@ -282,3 +282,96 @@ Full item files belong in `items/`.
 - **Will God Save America? | Bible Prophecy, America & the Future | LIVE Conference Day 2** — Heritage & Hope Ministries (9:01:11, 6.5K views)
   https://www.youtube.com/watch?v=hc4jv0bCfUA
   item: `items/hc4jv0bCfUA.md`
+
+## 2026-04-06 — 30 new videos
+
+- **NEW Google AI Agent is INSANE** — Julian Goldie SEO (8:22, 2.2K views)
+  https://www.youtube.com/watch?v=o9T0CYvOXw8
+  item: `items/o9T0CYvOXw8.md`
+- **I Replaced Claude Code & OpenClaw With This One Agent (Here's What Happened)** — Nick Puru | AI Automation (27:32, 9.1K views)
+  https://www.youtube.com/watch?v=J-kSdzHr9Ek
+  item: `items/J-kSdzHr9Ek.md`
+- **Your Agent Produces at 100x. Your Org Reviews at 3x. That's the Problem.** — AI News & Strategy Daily | Nate B Jones (21:14, 39.2K views)
+  https://www.youtube.com/watch?v=kVPVmz0qJvY
+  item: `items/kVPVmz0qJvY.md`
+- **The Real Way to Control AI Agents (It's Not Prompting)** — I versus AI (16:02, 127 views)
+  https://www.youtube.com/watch?v=rn_DaPgDLOU
+  item: `items/rn_DaPgDLOU.md`
+- **Stable jobs are DEAD but there is a way** — Malewicz (17:49, 1.3K views)
+  https://www.youtube.com/watch?v=CXGX3JvukYM
+  item: `items/CXGX3JvukYM.md`
+- **5 Layers That Make AI Safe to Use in Your Business in 2026** — DailyAi.Studio (15:37, 14 views)
+  https://www.youtube.com/watch?v=1BYiMv6kUig
+  item: `items/1BYiMv6kUig.md`
+- **Tool Calling Explained with .NET AI Agents: Microsoft Agent Framework for C# Devs Ep.5** — CSharpCorner (NA, 30 views)
+  https://www.youtube.com/watch?v=h21HBgPPm0A
+  item: `items/h21HBgPPm0A.md`
+- **AI Agent Security  Trust Separation & Tool Containment Explained** — Rooted Layers | AI Systems Grounded in Research (1:50, 19 views)
+  https://www.youtube.com/watch?v=SECZuQAJvpw
+  item: `items/SECZuQAJvpw.md`
+- **AI Agent Security קורס -- שיעור 2: Agent Internals | TESTAMIND** — Lior Testa (6:14, 7 views)
+  https://www.youtube.com/watch?v=uehCITOX4-k
+  item: `items/uehCITOX4-k.md`
+- **ClawSafety: New Safety Benchmark for LLM Agents** — AI Research Roundup (5:03, 14 views)
+  https://www.youtube.com/watch?v=pzz-DOXfrQk
+  item: `items/pzz-DOXfrQk.md`
+- **Nancy Guthrie: Nancy Guthrie Was Never KIDNAPPED! This Is What Happened!** — The Crime Vault (36:12, 404 views)
+  https://www.youtube.com/watch?v=11n60Rry8Og
+  item: `items/11n60Rry8Og.md`
+- **I Found a Secret AI Agent Inside Anthropic's Leaked Source Code** — NextGenQA (7:12, 72 views)
+  https://www.youtube.com/watch?v=p1QyIjeUMig
+  item: `items/p1QyIjeUMig.md`
+- **EdgeClaw DESTROYS OpenClaw?** — Julian Goldie SEO (8:01, 330 views)
+  https://www.youtube.com/watch?v=gVXnjfsFJKE
+  item: `items/gVXnjfsFJKE.md`
+- **Securing AI: Moving Beyond Experimentation to Enterprise Deployment** — Palo Alto Networks (9:40, 8 views)
+  https://www.youtube.com/watch?v=MRjejX7V37U
+  item: `items/MRjejX7V37U.md`
+- **Everything is an Agent** — Hassan Habib (17:31, 3.0K views)
+  https://www.youtube.com/watch?v=0DCOiFMOJbg
+  item: `items/0DCOiFMOJbg.md`
+- **I Used Replit Agent 4 to Build a Free App That Could Save Your Child's Life** — Albert Mends (8:39, 632 views)
+  https://www.youtube.com/watch?v=vl1RxYkAimY
+  item: `items/vl1RxYkAimY.md`
+- **A Passion for Safety Regulations with Brandy Zadoorian – Ep. 104** — Safety Labs by Safety Products Global (51:45, 6 views)
+  https://www.youtube.com/watch?v=5lbDllLXQxM
+  item: `items/5lbDllLXQxM.md`
+- **Agentic AI: AI Agents vs Microservices (not the same!)** — Jesper Lowgren (8:39, 67 views)
+  https://www.youtube.com/watch?v=028QxeIGBzA
+  item: `items/028QxeIGBzA.md`
+- **#SafetyShoes manufacturers are looking for agents &distributors#SAFETOE #workboot #PPE #Shorts #OEM** — SAFETOE Safety Shoes (11, 1.5K views)
+  https://www.youtube.com/watch?v=Eo7GFMu84mU
+  item: `items/Eo7GFMu84mU.md`
+- **ProveIt! Challenge 2026 - MaestroHub Live Session** — Maestro Hub (48:12, 38 views)
+  https://www.youtube.com/watch?v=ATLW9gW725k
+  item: `items/ATLW9gW725k.md`
+- **Kachilu AI | Run ai Agents WITHOUT a Powerful Computer (No Setup Needed)** — Liqui AI (5:30, 581 views)
+  https://www.youtube.com/watch?v=MAKnU-XBOIY
+  item: `items/MAKnU-XBOIY.md`
+- **#SafetyShoes manufacturers are looking for agents &distributors#SAFETOE #workboot #PPE #Shorts #OEM** — SAFETOE Safety Shoes (15, 1.1K views)
+  https://www.youtube.com/watch?v=Wwkl8zqUw9I
+  item: `items/Wwkl8zqUw9I.md`
+- **Anatomy Of AI Agent** — cholakovit (6:00, 7 views)
+  https://www.youtube.com/watch?v=gHVUMvx_VCc
+  item: `items/gHVUMvx_VCc.md`
+- **Claude Code's Source Code Was Leaked — Here's What's Actually Inside** — Stacking AI (16:33, 1 views)
+  https://www.youtube.com/watch?v=TQ2JpyZcBpw
+  item: `items/TQ2JpyZcBpw.md`
+- **DO NOT Install OpenClaw Until You Watch This! 🛑** — Barry Secure (6:14, 20 views)
+  https://www.youtube.com/watch?v=pN2znq_pu8U
+  item: `items/pN2znq_pu8U.md`
+- **CS2 Skin Changer | FREE CS2 Skin Changer -  Unlock Every Knife & Glove 2026** — Alex Romero  R T (1:52, 1.2K views)
+  https://www.youtube.com/watch?v=KnOx2HShoMk
+  item: `items/KnOx2HShoMk.md`
+- **I Replaced a ₹2 Lakh AI Course in 2.2 Hours (LIVE BUILD) 🤯** — Scale Value (2:24:46, 31 views)
+  https://www.youtube.com/watch?v=uFGF6owJ9Us
+  item: `items/uFGF6owJ9Us.md`
+- **How AI Fleets Fixed 31 Issues in Two Days | Merge Conflict ep. 509** — Merge Conflict Podcast (42:12, 33 views)
+  https://www.youtube.com/watch?v=juyQ9gkXqqE
+  item: `items/juyQ9gkXqqE.md`
+- **TravelFun.ai: The All-In-One Agent Tool** — TravelFun Joel (24, 189 views)
+  https://www.youtube.com/watch?v=8R4CJrvp7aM
+  item: `items/8R4CJrvp7aM.md`
+- **What if social media didn’t make you miserable | BBC Global** — BBC Global (11:16, 1.3K views)
+  https://www.youtube.com/watch?v=Meu3wi5UVWk
+  item: `items/Meu3wi5UVWk.md`

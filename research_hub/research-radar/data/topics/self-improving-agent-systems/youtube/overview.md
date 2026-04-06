@@ -282,3 +282,96 @@ Full item files belong in `items/`.
 - **【Full】Her X-ray vision ability turned her from unemployed to the richest woman.#tvshow #shortdrama** — ClashDrama (1:29:32, 36 views)
   https://www.youtube.com/watch?v=5etKCPMxBLI
   item: `items/5etKCPMxBLI.md`
+
+## 2026-04-06 — 30 new videos
+
+- **Claude Code + Karpathy's NEW Self-Evolving System = 10x Code Generation** — WorldofAI (14:11, 11.6K views)
+  https://www.youtube.com/watch?v=9iWTRMjbBvo
+  item: `items/9iWTRMjbBvo.md`
+- **I am Switching to Hermes Agent** — Nick Puru | AI Automation (27:32, 9.1K views)
+  https://www.youtube.com/watch?v=J-kSdzHr9Ek
+  item: `items/J-kSdzHr9Ek.md`
+- **Claude Code Agent SDK: 24/7 AI That Learns | JARVIS Phase 3** — Byrddynasty - AI Productivity (18:58, 2 views)
+  https://www.youtube.com/watch?v=GmVvM6Pi41E
+  item: `items/GmVvM6Pi41E.md`
+- **Chris Ford has spicy takes on Engineering With AI!** — Engineering With AI (1:08:59, 2 views)
+  https://www.youtube.com/watch?v=G32QTr4s3X8
+  item: `items/G32QTr4s3X8.md`
+- **Drop the Hierarchy and Roles: How Self-Organizing LLM Agents Outperform Designed Structures** — Emergent Mind (1:53, 2 views)
+  https://www.youtube.com/watch?v=vxupHcAirGE
+  item: `items/vxupHcAirGE.md`
+- **PaperClip + Hermes Agent + Gemma4: The Ultimate Open Source Swarm Intelligence That Can Do Anything** — Devs Kingdom (11:57, 823 views)
+  https://www.youtube.com/watch?v=-NsQZcbCV8Q
+  item: `items/-NsQZcbCV8Q.md`
+- **Everything is an Agent** — Hassan Habib (17:31, 3.0K views)
+  https://www.youtube.com/watch?v=0DCOiFMOJbg
+  item: `items/0DCOiFMOJbg.md`
+- **AI That Evolves Itself: The Future of Vehicle AerodynamicsSelf Evolving Coding Agents** — DecodedDaily (7:49, new)
+  https://www.youtube.com/watch?v=QjH1vq56wps
+  item: `items/QjH1vq56wps.md`
+- **Agentic AI: AI Agents vs Microservices (not the same!)** — Jesper Lowgren (8:39, 67 views)
+  https://www.youtube.com/watch?v=028QxeIGBzA
+  item: `items/028QxeIGBzA.md`
+- **OpenClaw VPS Setup Tutorial (Self-Hosted AI Agent) | Abacus AI Claw** — Ai Lockup (7:32, 376 views)
+  https://www.youtube.com/watch?v=6sAL9PNKU8E
+  item: `items/6sAL9PNKU8E.md`
+- **The Grok 4 Trap: Why 20 Agents Beat One Genius Model | #NEWIT** — GilliLab Logic Salt (54:48, new)
+  https://www.youtube.com/watch?v=csafstv4gLI
+  item: `items/csafstv4gLI.md`
+- **Agentic AI and Cybersecurity: Threats, Governance, and Strategy** — The Berkman Klein Center for Internet & Society (1:02:17, 64 views)
+  https://www.youtube.com/watch?v=hk4X3mv9GVw
+  item: `items/hk4X3mv9GVw.md`
+- **Razr Kade AI News — Self-Improving AI Agent, Teens Dating Chatbots, Hollywood's Replacement | EP011** — Razr Kade AI News (4:16, 1 views)
+  https://www.youtube.com/watch?v=e54ALauEzKI
+  item: `items/e54ALauEzKI.md`
+- **Here's how to use Claude Code for FREE! (Gemma 4 + Claude Code)** — Niklas Hansen (15:42, 5.0K views)
+  https://www.youtube.com/watch?v=JJ7dEXZfRoo
+  item: `items/JJ7dEXZfRoo.md`
+- **Your Role as Developer in The AI Era** — César Soto Valero (12:04, 9 views)
+  https://www.youtube.com/watch?v=zyEWaN66ljE
+  item: `items/zyEWaN66ljE.md`
+- **Intro to Seed IQ™ - Adaptive Multiagent Autonomous Control, by Denise Holt, CEO, AIX** — AIX Global Podcast (29:43, 132 views)
+  https://www.youtube.com/watch?v=ON_b39E3MtY
+  item: `items/ON_b39E3MtY.md`
+- **Gemma 4 on Raspberry Pi 5: A Surprisingly Usable Local AI Setup** — Zero to MVP (9:09, 48.7K views)
+  https://www.youtube.com/watch?v=kZhAj8--t8w
+  item: `items/kZhAj8--t8w.md`
+- **THE ZERO THRESHOLD | Architecting Your Reality from the Void | Full Audiobook** — The Sovereign Path (2:55:36, new)
+  https://www.youtube.com/watch?v=vCzhBK2vEyU
+  item: `items/vCzhBK2vEyU.md`
+- **AI Build #6 - Regen Neighborhood Framework** — Regen Tribe (2:53:54, 2 views)
+  https://www.youtube.com/watch?v=_REj7Zaf1lc
+  item: `items/_REj7Zaf1lc.md`
+- **661: Sink Your Claws In** — Jupiter Broadcasting (1:04:19, 94 views)
+  https://www.youtube.com/watch?v=5DlYhyFU5Z8
+  item: `items/5DlYhyFU5Z8.md`
+- **Aaron Stannard: Software 2.0 using AI - Episode 396** — AI DevOps Podcast (50:52, 7 views)
+  https://www.youtube.com/watch?v=dlkDgeiP3eU
+  item: `items/dlkDgeiP3eU.md`
+- **AI Build #5 - Regen Neighborhood Framework** — Regen Tribe (1:42:15, 1 views)
+  https://www.youtube.com/watch?v=RilSlrJe0qA
+  item: `items/RilSlrJe0qA.md`
+- **AI, SEO & GEO for Remodelers: Stop Wasting Money on Marketing | Brandon Miller** — Grosso University (1:24:35, 2 views)
+  https://www.youtube.com/watch?v=7uB7gpyQcoE
+  item: `items/7uB7gpyQcoE.md`
+- **Alem Tuzlak - Tanstack Dev Tools and Tanstack AI** — devtools-fm (46:26, 82 views)
+  https://www.youtube.com/watch?v=4VuF4UchwiY
+  item: `items/4VuF4UchwiY.md`
+- **I Switched from ChatGPT to Claude. Here’s Why.** — Adam Franklin (5:30, 13 views)
+  https://www.youtube.com/watch?v=-OcZk5dyIBc
+  item: `items/-OcZk5dyIBc.md`
+- **Network Threat Hunting With Zeek and Suricata | Mark Overholser** — Wild West Hackin' Fest (24:54, 67 views)
+  https://www.youtube.com/watch?v=Sk2lK3nJD-s
+  item: `items/Sk2lK3nJD-s.md`
+- **I Stopped Training My AI. It Started Training Itself. | Ships Different S01E03** — Ships Different by VibeMart (19:53, 3 views)
+  https://www.youtube.com/watch?v=WX2nVFTC0pM
+  item: `items/WX2nVFTC0pM.md`
+- **Iran Rejects Ceasefire Ultimatum | Open Interest 4/6/2026** — Bloomberg Television (1:27:11, 641 views)
+  https://www.youtube.com/watch?v=8Uau3nJcHYQ
+  item: `items/8Uau3nJcHYQ.md`
+- **Daily AI Brief — Part 074 (2026-04-05)** — Everstone AI (22:50, 1 views)
+  https://www.youtube.com/watch?v=7fVKus2r1LE
+  item: `items/7fVKus2r1LE.md`
+- **自进化多智能体蜂群：74个AI Agent在Mac Mini上自主进化** — LocalKinAI (7:06, new)
+  https://www.youtube.com/watch?v=oBEAUUEc2NQ
+  item: `items/oBEAUUEc2NQ.md`

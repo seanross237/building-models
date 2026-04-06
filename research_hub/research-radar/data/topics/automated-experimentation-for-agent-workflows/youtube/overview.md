@@ -282,3 +282,96 @@ Full item files belong in `items/`.
 - **Beyond Chatbots: How Claude Opus 4.6 Builds Your AI "Dream Team"** — The AI Entrepreneurs (53, 268 views)
   https://www.youtube.com/watch?v=ro0bgbZYiqo
   item: `items/ro0bgbZYiqo.md`
+
+## 2026-04-06 — 30 new videos
+
+- **Top Open-Source GitHub Projects : Promptfoo, BitNet, open-swe, Proto & react-admin** — ManuAGI - AutoGPT Tutorials (13:22, 267 views)
+  https://www.youtube.com/watch?v=US-EMWkGc68
+  item: `items/US-EMWkGc68.md`
+- **AI Workflows: Put your work on autopilot** — All Gravy (1:41, new)
+  https://www.youtube.com/watch?v=2WX5nPVQnFo
+  item: `items/2WX5nPVQnFo.md`
+- **Building a Multi-Agent AI Attack Chain (Python + OpenAI) | LIVE Demo** — Shield Spectrum (5:22, 54 views)
+  https://www.youtube.com/watch?v=qhMtDRB1XC8
+  item: `items/qhMtDRB1XC8.md`
+- **Subagents: Delegate Workflows as a Subagent | SKYMOD** — SKYMOD (23, 6 views)
+  https://www.youtube.com/watch?v=vALxN9xq-6E
+  item: `items/vALxN9xq-6E.md`
+- **Your Agent Produces at 100x. Your Org Reviews at 3x. That's the Problem.** — AI News & Strategy Daily | Nate B Jones (21:14, 39.2K views)
+  https://www.youtube.com/watch?v=kVPVmz0qJvY
+  item: `items/kVPVmz0qJvY.md`
+- **98: How to Build AI Agents That Automate Workflows Without Coding with Etan Polinger** — ChiefAIOfficer (1:00:42, 12 views)
+  https://www.youtube.com/watch?v=d8foiAPBEr8
+  item: `items/d8foiAPBEr8.md`
+- **New Jobs Created by AI Agents** — Cyber AI Insights (1:51, 4 views)
+  https://www.youtube.com/watch?v=u5HV5OyDv8I
+  item: `items/u5HV5OyDv8I.md`
+- **Kachilu AI | Run ai Agents WITHOUT a Powerful Computer (No Setup Needed)** — Liqui AI (5:30, 581 views)
+  https://www.youtube.com/watch?v=MAKnU-XBOIY
+  item: `items/MAKnU-XBOIY.md`
+- **Meta Built an AI Agent That Works While Engineers Sleep (Here's How)** — The Bearded AI Guy (5:11, 1 views)
+  https://www.youtube.com/watch?v=K9s8LDoPTHQ
+  item: `items/K9s8LDoPTHQ.md`
+- **Build Your First Airtable AI Field Agent | Marketing Intake Automation** — Andrew from Simple Stack (13:19, 24 views)
+  https://www.youtube.com/watch?v=S9COZCX5oLo
+  item: `items/S9COZCX5oLo.md`
+- **Debugger AI Agent in Playwright 1.59 (CLI Trace Analysis Demo)** — Artem Bondar (18:59, 346 views)
+  https://www.youtube.com/watch?v=wqufXmzbyUs
+  item: `items/wqufXmzbyUs.md`
+- **The AI Comet Has Struck: Moonshots' Salim Ismail Warns Most Organizations Won't Survive AI** — Info-Tech Research Group (1:54:04, 1.3K views)
+  https://www.youtube.com/watch?v=r-f07TqhLkg
+  item: `items/r-f07TqhLkg.md`
+- **Building software on sand vs building on giants #opensourcetalk** — All Things Open (44, 386 views)
+  https://www.youtube.com/watch?v=8rRWuM6Msr0
+  item: `items/8rRWuM6Msr0.md`
+- **Day 159 – Vibe Coding an App Until I Make $1,000,000 | ARR: $69,455** — BridgeMind (NA, new)
+  https://www.youtube.com/watch?v=yJUN-cH_m54
+  item: `items/yJUN-cH_m54.md`
+- **Stop building AI infrastructure: Build production-ready agents in days with DronaHQ** — DronaHQ (4:00, 3 views)
+  https://www.youtube.com/watch?v=Z29kOZSKWeA
+  item: `items/Z29kOZSKWeA.md`
+- **How to use agentic AI as your decision-ready intelligence** — Hootsuite (15:11, 11 views)
+  https://www.youtube.com/watch?v=xfCF18C7pns
+  item: `items/xfCF18C7pns.md`
+- **Hermes Agent v0.7.0: The Memory Update That Changes Everything** — Blunt AI (7:30, 222 views)
+  https://www.youtube.com/watch?v=Ac48sE6FzQ8
+  item: `items/Ac48sE6FzQ8.md`
+- **Alem Tuzlak - Tanstack Dev Tools and Tanstack AI** — devtools-fm (46:26, 82 views)
+  https://www.youtube.com/watch?v=4VuF4UchwiY
+  item: `items/4VuF4UchwiY.md`
+- **How AI Fleets Fixed 31 Issues in Two Days | Merge Conflict ep. 509** — Merge Conflict Podcast (42:12, 33 views)
+  https://www.youtube.com/watch?v=juyQ9gkXqqE
+  item: `items/juyQ9gkXqqE.md`
+- **OpenClaw Just Got Better - Run Gemma 4 Locally (No API Costs)** — Kris Torrington (3:41, 36 views)
+  https://www.youtube.com/watch?v=ej4kPT7N8EI
+  item: `items/ej4kPT7N8EI.md`
+- **Building a Live Trading Agent Workflow using Claude AI** — ChilledBeer (41:40, 12 views)
+  https://www.youtube.com/watch?v=D_yIzUMJ86k
+  item: `items/D_yIzUMJ86k.md`
+- **How to Build a Voice Call AI Agent with n8n and Retell** — Parthav AI (11:54:29, 153 views)
+  https://www.youtube.com/watch?v=oxtCqyrVeyI
+  item: `items/oxtCqyrVeyI.md`
+- **AI Consultancy & Digital Transformation in Dubai 2026 | AetherLink** — Aetherlink (19:58, new)
+  https://www.youtube.com/watch?v=in4ki2pP6-s
+  item: `items/in4ki2pP6-s.md`
+- **The Real Reason One Broken Machine Disrupts an Entire Airport** — Travel Tech Podcast (34:32, 15 views)
+  https://www.youtube.com/watch?v=fDYEP0Mkd68
+  item: `items/fDYEP0Mkd68.md`
+- **Stop Manual Data Entry! ChatGPT to Google Sheets (2026 AI Guide)** — ProfitVerse (6:51, new)
+  https://www.youtube.com/watch?v=LlR_hhyx6Ww
+  item: `items/LlR_hhyx6Ww.md`
+- **🌸 March 2026 on Pentest-Tools.com: MCP server, AI-powered auth, and 5 new exploits** — Pentest-Tools (3:36, 14 views)
+  https://www.youtube.com/watch?v=7chwBSIKYlw
+  item: `items/7chwBSIKYlw.md`
+- **Best AI System for Professionals | Granola AI Meeting Assistant Tutorial** — Jon Law (12:44, 28.5K views)
+  https://www.youtube.com/watch?v=ZajJjPYDwWM
+  item: `items/ZajJjPYDwWM.md`
+- **I Replaced a ₹2 Lakh AI Course in 2.2 Hours (LIVE BUILD) 🤯** — Scale Value (2:24:46, 31 views)
+  https://www.youtube.com/watch?v=uFGF6owJ9Us
+  item: `items/uFGF6owJ9Us.md`
+- **AI Masterclass: Managing Supplier Risk with AI Agents** — Levelpath (26:59, 3 views)
+  https://www.youtube.com/watch?v=pw52yrDMBqg
+  item: `items/pw52yrDMBqg.md`
+- **✨AI UI Generator for Java: Build UI from Text with Jmix!** — Jmix (12:09, 30 views)
+  https://www.youtube.com/watch?v=iHoqS-hzHHM
+  item: `items/iHoqS-hzHHM.md`

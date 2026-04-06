@@ -51,3 +51,18 @@ Full item files belong in `items/`.
 - **🔥【最新合集】《全民诡异：开局掌握零元购》EP1~175：马屁精撞上真大佬！| Multi SUB #热血 #玄幻 #逆袭 #战斗 #动漫魔女** — 动漫魔女 (14:03:11, 1.3K views)
   https://www.youtube.com/watch?v=bWitiFuT3Jc
   item: `items/bWitiFuT3Jc.md`
+
+## 2026-04-06 — 4 new videos
+
+- **What Really Burned in Tesla’s Lab That Night — And Why It Still Matters** — Codex Origin (54:20, 2 views)
+  https://www.youtube.com/watch?v=mKJvFYC4BlI
+  item: `items/mKJvFYC4BlI.md`
+- **The IACUC and Ethical Use of Animals in Research (Responsible Conduct of Research 2026, Workshop #5)** — UB Clinical and Translational Science Institute (1:07:50, 2 views)
+  https://www.youtube.com/watch?v=V8K9gaMktUw
+  item: `items/V8K9gaMktUw.md`
+- **☄️New【Multi Sub 】Doomsday smuggler: I trade spicy strips for gold bricks EP 1-108#anime #animation** — Quartic element Anime (8:58:49, 88 views)
+  https://www.youtube.com/watch?v=o-ptkCGqOUk
+  item: `items/o-ptkCGqOUk.md`
+- **MULTISUB💥最新合集💥《全民诡异：开局掌握零元购》第1~175集丨诡异末世降临，陈木携万亿诡币重生，开局化身“天使投资人”，买下各种诡异场景，化身规则制定者！#破晓动漫社** — 破晓动漫社 Dawn Anime Club (14:03:11, 2.0K views)
+  https://www.youtube.com/watch?v=WxLPwX7VOAc
+  item: `items/WxLPwX7VOAc.md`

@@ -204,3 +204,66 @@ Full item files belong in `items/`.
 - **🔥【强推】【Eng Sub】《全民領主：開局統禦太古兇獸》林寒覺醒禦獸系統，十位兇獸娘助陣，一路逆襲成全球最強！第1-141集 #热血 #逆袭 #anime** — 八虎动漫剧场 (8:53:52, 663 views)
   https://www.youtube.com/watch?v=EAAojyj06Jk
   item: `items/EAAojyj06Jk.md`
+
+## 2026-04-06 — 20 new videos
+
+- **【FULL】Airport Encounter Unlocks His Third Eye,Feng Shui Master Rises!#minidrama** — RushMiniDrama (2:22:59, 12.5K views)
+  https://www.youtube.com/watch?v=kBGrpWGhQ6Q
+  item: `items/kBGrpWGhQ6Q.md`
+- **AI, SEO & GEO for Remodelers: Stop Wasting Money on Marketing | Brandon Miller** — Grosso University (1:24:35, 2 views)
+  https://www.youtube.com/watch?v=7uB7gpyQcoE
+  item: `items/7uB7gpyQcoE.md`
+- **The 100-Year-Old Sword God Wants To Live Peacefully, But Has To Take Care Of A 4-Year-Old Girl** — Tanjiro Recap (7:32:55, 469 views)
+  https://www.youtube.com/watch?v=IQHcx25X6Vw
+  item: `items/IQHcx25X6Vw.md`
+- **Scientists Can’t Explain This… WTF Is Octopus Intelligence?** — Weird Truth Files (31:52, 1 views)
+  https://www.youtube.com/watch?v=ZUwbysjd2Ps
+  item: `items/ZUwbysjd2Ps.md`
+- **The IACUC and Ethical Use of Animals in Research (Responsible Conduct of Research 2026, Workshop #5)** — UB Clinical and Translational Science Institute (1:07:50, 2 views)
+  https://www.youtube.com/watch?v=V8K9gaMktUw
+  item: `items/V8K9gaMktUw.md`
+- **I have 999 skills, and my classmates accuse me of cheating, but I have an SSS-level Copy talent!** — KAI Manhwa Recap (10:47:36, 15 views)
+  https://www.youtube.com/watch?v=xuD4Wr7WgoA
+  item: `items/xuD4Wr7WgoA.md`
+- **【ENG SUB】養女替姐姐嫁給人人嫌棄的殘暴少爺，殊不知少爺早已沉淪于她，不近女色只願寵她一人！#逆袭爽剧#drama（hzhj）** — 甜心爽剧Drama (2:20:53, 8.8K views)
+  https://www.youtube.com/watch?v=t9adgpSQg3A
+  item: `items/t9adgpSQg3A.md`
+- **☄️New【Multi Sub 】Doomsday smuggler: I trade spicy strips for gold bricks EP 1-108#anime #animation** — Quartic element Anime (8:58:49, 88 views)
+  https://www.youtube.com/watch?v=o-ptkCGqOUk
+  item: `items/o-ptkCGqOUk.md`
+- **The CG Prophecy Report (5 April 2026) - Getting Things Backwards** — The Superior Word (43:45, 664 views)
+  https://www.youtube.com/watch?v=Ii2HRqrScNo
+  item: `items/Ii2HRqrScNo.md`
+- **ENG SUB 🔥【全網首發】《变成丧尸在末日是种什么体验》车祸死后在冷柜醒来，变异病毒拿我没办法，幸存者骂我怪物——后来我吞噬晶核救了全城，他们跪着喊我祖宗！#热血#末世#漫剧#末世生存#赛博剧场** — 赛博剧场 (1:13:12, 473 views)
+  https://www.youtube.com/watch?v=8-Zk3gIv_2s
+  item: `items/8-Zk3gIv_2s.md`
+- **MULTI SUB《我的26歲女上司》應屆生程默遇襲後綁定天命打工系統，獲十倍薪資獎勵與專屬技能，憑藉系統拿下百萬訂單，還意外與高冷女上司成為合租室友！ #AI #漫劇 #動漫 #無盡動漫社** — 无尽动漫社 | AI Anime (1:20:47, 174 views)
+  https://www.youtube.com/watch?v=xeLbVb9hzTQ
+  item: `items/xeLbVb9hzTQ.md`
+- **After Awakening Skeleton System He EvolvedFragile LowTier Skeleton Undying Dragon-Blood Skeleton!** — Mania Comics Legends (11:58:42, 239 views)
+  https://www.youtube.com/watch?v=91GvSuY43H8
+  item: `items/91GvSuY43H8.md`
+- **How to Design Your Life in 1 Hour** — Mel Robbins Story (59:26, new)
+  https://www.youtube.com/watch?v=H__3yM9HxZ0
+  item: `items/H__3yM9HxZ0.md`
+- **Dating Apps Killed Romance. Here's What's Coming Next** — What Do I Know? (2:24:36, 23 views)
+  https://www.youtube.com/watch?v=bbP_NHfeNS4
+  item: `items/bbP_NHfeNS4.md`
+- **Betrayed by 2 beauties he made rich. Reborn, he shuns love & they regret!** — Redline Drama (1:48:21, 11.9K views)
+  https://www.youtube.com/watch?v=i-awizn_49Y
+  item: `items/i-awizn_49Y.md`
+- **【Multi sub】📢重生之我真沒錢修仙Reborn: I'm Too Poor to Cultivate 第1-138集 #热血 #玄幻 #重生 #穿越 #修仙** — Qixiang-Animation (9:30:28, 2.1K views)
+  https://www.youtube.com/watch?v=9y4yZEPvYnw
+  item: `items/9y4yZEPvYnw.md`
+- **【ENG SUB】 全球禦獸：我的獸娘全是SSS級 Global Beast Taming: All My Beast Girls are SSS-RankEP 1~141 #動畫 #二次元 #男頻** — Bikini-Anime 动漫社 (8:53:32, 2.1K views)
+  https://www.youtube.com/watch?v=XJGFOhgszZI
+  item: `items/XJGFOhgszZI.md`
+- **In her past life, her wicked father killed her. Reborn, she marries a CEO – her wicked father regret** — 熊熊短剧社 (2:41:50, 106 views)
+  https://www.youtube.com/watch?v=rTtEPLru1HM
+  item: `items/rTtEPLru1HM.md`
+- **MULTISUB💥最新合集💥《太古十凶：别人御兽我御兽娘》第1~141集丨蛰伏三年，林寒觉醒御兽系统，收获十个超凶兽娘！开启无敌模式逆袭，一不小心被兽娘们逼成全球战力巅峰！#破晓动漫社** — 破晓动漫社 Dawn Anime Club (8:53:25, 1.2K views)
+  https://www.youtube.com/watch?v=T-szcWva5ek
+  item: `items/T-szcWva5ek.md`
+- **Gabriela Machado☑️: The Explosive Rise of a Latin American Modeling and Social Media Sensation!** — Gorgeous Models (16:02, 494 views)
+  https://www.youtube.com/watch?v=d82UOTffWcI
+  item: `items/d82UOTffWcI.md`

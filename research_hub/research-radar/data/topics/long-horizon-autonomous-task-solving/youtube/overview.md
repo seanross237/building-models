@@ -99,3 +99,30 @@ Full item files belong in `items/`.
 - **【Multi Sub】🔥暴擊999，開局帶師妹逆襲Critical Hit 999: Starting Over with My Junior Sister第1-106集#热血 #修仙#男频** — Qixiang-Animation (7:22:25, 3.0K views)
   https://www.youtube.com/watch?v=abnI8fTT6Os
   item: `items/abnI8fTT6Os.md`
+
+## 2026-04-06 — 8 new videos
+
+- **The AI Extinction Event: Salim Ismail Warns Most Companies Won’t Survive** — Info-Tech Research Group (1:54:04, 1.3K views)
+  https://www.youtube.com/watch?v=r-f07TqhLkg
+  item: `items/r-f07TqhLkg.md`
+- **ASI EVOLVE  The AI That Builds AI** — pod4JournalClub (6:25, 5 views)
+  https://www.youtube.com/watch?v=u7WTdrMDMKo
+  item: `items/u7WTdrMDMKo.md`
+- **Intro to Seed IQ™ - Adaptive Multiagent Autonomous Control, by Denise Holt, CEO, AIX** — AIX Global Podcast (29:43, 132 views)
+  https://www.youtube.com/watch?v=ON_b39E3MtY
+  item: `items/ON_b39E3MtY.md`
+- **U.S. Carriers Are Hiding Something So CLASSIFIED… China, Iran and Russia Are PANICKING** — The Military Show (22:58, 46.5K views)
+  https://www.youtube.com/watch?v=47c1O6DdJVg
+  item: `items/47c1O6DdJVg.md`
+- **Transitioning to the Age of AI** — Shyam Achuthan (Shyam Tunerlabs) (6:21, 1 views)
+  https://www.youtube.com/watch?v=cEPgzA4h0ls
+  item: `items/cEPgzA4h0ls.md`
+- **11 Alive News: Second Take** — 11Alive (45:17, 4 views)
+  https://www.youtube.com/watch?v=LjtrAgjIMOs
+  item: `items/LjtrAgjIMOs.md`
+- **When GPS Lies: How Inertial Navigation Systems Work** — DeepDraft (3:29, 5 views)
+  https://www.youtube.com/watch?v=m_qui3vCN9E
+  item: `items/m_qui3vCN9E.md`
+- **IMD Professor: Why 90% of Companies Get Sustainability Wrong - Goutam Challagalla | 58** — Builders & Doers (43:16, 5 views)
+  https://www.youtube.com/watch?v=g7tjw2iIFJQ
+  item: `items/g7tjw2iIFJQ.md`
