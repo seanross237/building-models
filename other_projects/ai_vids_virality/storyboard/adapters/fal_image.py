@@ -194,18 +194,45 @@ class FalImageAdapter(StoryboardAdapter):
             raise RuntimeError(f"fal submit missing request_id: {payload}")
         return payload
 
+    def _urls_from_submit(
+        self, slug: str, submit_payload: Dict[str, Any], request_id: str
+    ) -> tuple[str, str]:
+        """Extract (status_url, response_url) from a fal submit payload.
+
+        fal's queue API returns these explicitly so the client doesn't have
+        to know about model-slug sub-path stripping rules — for slugs like
+        `nano-banana-2/edit`, fal strips the `/edit` and the poll/result
+        endpoints live under just `nano-banana-2`. Reconstructing from
+        the full slug yields a 405 against the real API.
+
+        Falls back to reconstruction so existing mocked tests keep working.
+        """
+        status_url = submit_payload.get("status_url") if isinstance(submit_payload, dict) else None
+        response_url = submit_payload.get("response_url") if isinstance(submit_payload, dict) else None
+        if status_url and not response_url:
+            response_url = status_url.removesuffix("/status")
+        if not status_url:
+            status_url = f"{self.queue_base}/{slug}/requests/{request_id}/status"
+        if not response_url:
+            response_url = f"{self.queue_base}/{slug}/requests/{request_id}"
+        return status_url, response_url
+
     def _poll(
         self,
         slug: str,
-        request_id: str,
+        submit_payload: Dict[str, Any],
         httpx_mod: Any,
         sleep_fn: Callable[[float], None] = time.sleep,
     ) -> None:
+        request_id = submit_payload.get("request_id", "") if isinstance(submit_payload, dict) else ""
+        status_url, _ = self._urls_from_submit(slug, submit_payload, request_id)
         deadline = time.time() + self.timeout_sec
-        url = f"{self.queue_base}/{slug}/requests/{request_id}/status"
         while time.time() < deadline:
-            resp = httpx_mod.get(url, headers=self._queue_headers(), timeout=30)
-            if resp.status_code != 200:
+            resp = httpx_mod.get(status_url, headers=self._queue_headers(), timeout=30)
+            # fal returns 200 when the job is COMPLETED and 202 (Accepted)
+            # while it's still IN_QUEUE / IN_PROGRESS. Both are normal —
+            # the body's "status" field is the source of truth.
+            if resp.status_code not in (200, 202):
                 raise RuntimeError(
                     f"fal poll status {resp.status_code}: {resp.text[:300]}"
                 )
@@ -218,9 +245,12 @@ class FalImageAdapter(StoryboardAdapter):
             sleep_fn(self.poll_interval_sec)
         raise RuntimeError(f"fal poll timed out after {self.timeout_sec}s")
 
-    def _fetch_result(self, slug: str, request_id: str, httpx_mod: Any) -> Dict[str, Any]:
-        url = f"{self.queue_base}/{slug}/requests/{request_id}"
-        resp = httpx_mod.get(url, headers=self._queue_headers(), timeout=60)
+    def _fetch_result(
+        self, slug: str, submit_payload: Dict[str, Any], httpx_mod: Any
+    ) -> Dict[str, Any]:
+        request_id = submit_payload.get("request_id", "") if isinstance(submit_payload, dict) else ""
+        _, response_url = self._urls_from_submit(slug, submit_payload, request_id)
+        resp = httpx_mod.get(response_url, headers=self._queue_headers(), timeout=60)
         if resp.status_code != 200:
             raise RuntimeError(
                 f"fal result status {resp.status_code}: {resp.text[:300]}"
@@ -243,9 +273,8 @@ class FalImageAdapter(StoryboardAdapter):
     ) -> Optional[str]:
         """Submit, poll, fetch, download. Returns the source URL on success."""
         submit = self._submit(slug, body, httpx_mod)
-        request_id = submit["request_id"]
-        self._poll(slug, request_id, httpx_mod)
-        result = self._fetch_result(slug, request_id, httpx_mod)
+        self._poll(slug, submit, httpx_mod)
+        result = self._fetch_result(slug, submit, httpx_mod)
         url = _extract_image_url(result)
         if not url:
             raise RuntimeError(f"fal nano-banana-2 result missing image url: {result}")

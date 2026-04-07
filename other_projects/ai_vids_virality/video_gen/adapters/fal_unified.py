@@ -286,17 +286,46 @@ class FalUnifiedAdapter(VideoProviderAdapter):
             raise RuntimeError(f"fal submit missing request_id: {payload}")
         return payload
 
+    def _urls_from_submit(
+        self, submit_payload: Dict[str, Any], request_id: str
+    ) -> tuple[str, str]:
+        """Extract (status_url, response_url) from a fal submit payload.
+
+        fal's queue API returns these explicitly so the client doesn't have
+        to know about model-slug sub-path stripping rules — for slugs like
+        `kling-video/v1.6/standard/image-to-video`, fal strips the sub-path
+        and the poll/result endpoints live under just `kling-video`, not
+        the full slug. Reconstructing the URL from the slug yields a 405
+        Method Not Allowed against the real API.
+
+        Falls back to reconstruction from `model_slug` + `request_id` so
+        existing mocked tests (which may omit these fields) keep working.
+        """
+        status_url = submit_payload.get("status_url") if isinstance(submit_payload, dict) else None
+        response_url = submit_payload.get("response_url") if isinstance(submit_payload, dict) else None
+        if status_url and not response_url:
+            response_url = status_url.removesuffix("/status")
+        if not status_url:
+            status_url = f"{self.queue_base}/{self.model_slug}/requests/{request_id}/status"
+        if not response_url:
+            response_url = f"{self.queue_base}/{self.model_slug}/requests/{request_id}"
+        return status_url, response_url
+
     def _poll(
         self,
-        request_id: str,
+        submit_payload: Dict[str, Any],
         httpx_mod: Any,
         sleep_fn: Callable[[float], None] = time.sleep,
     ) -> None:
+        request_id = submit_payload.get("request_id", "") if isinstance(submit_payload, dict) else ""
+        status_url, _ = self._urls_from_submit(submit_payload, request_id)
         deadline = time.time() + self.timeout_sec
-        url = f"{self.queue_base}/{self.model_slug}/requests/{request_id}/status"
         while time.time() < deadline:
-            resp = httpx_mod.get(url, headers=self._queue_headers(), timeout=30)
-            if resp.status_code != 200:
+            resp = httpx_mod.get(status_url, headers=self._queue_headers(), timeout=30)
+            # fal returns 200 when the job is COMPLETED and 202 (Accepted)
+            # while it's still IN_QUEUE / IN_PROGRESS. Both are normal —
+            # the body's "status" field is the source of truth.
+            if resp.status_code not in (200, 202):
                 raise RuntimeError(
                     f"fal poll status {resp.status_code}: {resp.text[:300]}"
                 )
@@ -309,9 +338,12 @@ class FalUnifiedAdapter(VideoProviderAdapter):
             sleep_fn(self.poll_interval_sec)
         raise RuntimeError(f"fal poll timed out after {self.timeout_sec}s")
 
-    def _fetch_result(self, request_id: str, httpx_mod: Any) -> Dict[str, Any]:
-        url = f"{self.queue_base}/{self.model_slug}/requests/{request_id}"
-        resp = httpx_mod.get(url, headers=self._queue_headers(), timeout=60)
+    def _fetch_result(
+        self, submit_payload: Dict[str, Any], httpx_mod: Any
+    ) -> Dict[str, Any]:
+        request_id = submit_payload.get("request_id", "") if isinstance(submit_payload, dict) else ""
+        _, response_url = self._urls_from_submit(submit_payload, request_id)
+        resp = httpx_mod.get(response_url, headers=self._queue_headers(), timeout=60)
         if resp.status_code != 200:
             raise RuntimeError(
                 f"fal result status {resp.status_code}: {resp.text[:300]}"
@@ -378,8 +410,8 @@ class FalUnifiedAdapter(VideoProviderAdapter):
             submit_payload = self._submit(body, httpx)
             request_id = submit_payload["request_id"]
             clip.job_id = request_id
-            self._poll(request_id, httpx)
-            result = self._fetch_result(request_id, httpx)
+            self._poll(submit_payload, httpx)
+            result = self._fetch_result(submit_payload, httpx)
             video_url = _extract_video_url(result)
             if not video_url:
                 raise RuntimeError(f"fal result missing video url: {result}")

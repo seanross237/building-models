@@ -504,7 +504,9 @@ def test_real_fal_video_generation(real_fal_key: str, tmp_path: Path) -> None:
     except ImportError:
         pytest.skip("Pillow not installed")
     start = tmp_path / "start.png"
-    Image.new("RGB", (256, 256), "#3a5f8a").save(start)
+    # Kling rejects images smaller than 300x300 (image_too_small validation
+    # error). Use 512x512 to give a comfortable margin.
+    Image.new("RGB", (512, 512), "#3a5f8a").save(start)
 
     adapter = FalUnifiedAdapter(
         config={
