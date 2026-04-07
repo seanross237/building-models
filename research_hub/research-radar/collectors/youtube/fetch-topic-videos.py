@@ -16,23 +16,59 @@ PRINT_FORMAT = "%(id)s|||%(title)s|||%(channel)s|||%(duration_string)s|||%(view_
 
 
 def load_topics() -> list[dict[str, object]]:
+    """Parse topics-we-care-about.yaml without PyYAML.
+
+    Recognizes the following per-topic fields:
+        slug:                          (required)
+        name:                          (required)
+        priority:                      (required)
+        youtube_query:                 (optional, string) — overrides
+            the default YouTube search query (which is `name`). Use this
+            for topics whose human-readable name is too vague to be a
+            useful search query, e.g. `"ab testing" "agent systems" LLM`.
+        collect_from:                  (list)
+        source_context:                (list)
+        youtube_required_keywords:     (optional, list of strings) —
+            post-fetch relevance gate. Drops videos whose title doesn't
+            contain at least one of these keywords (case-insensitive).
+            Use this to filter out tangential matches when YouTube's
+            search returns garbage.
+    """
     topics: list[dict[str, object]] = []
     current: dict[str, object] | None = None
+    current_list: str | None = None
 
     for raw_line in TOPICS_FILE.read_text(encoding="utf-8").splitlines():
         line = raw_line.rstrip()
         if line.startswith("  - slug: "):
             if current:
                 topics.append(current)
-            current = {"slug": line.split(": ", 1)[1], "source_context": []}
+            current = {
+                "slug": line.split(": ", 1)[1],
+                "source_context": [],
+                "collect_from": [],
+                "youtube_required_keywords": [],
+            }
+            current_list = None
         elif current and line.startswith("    name: "):
             current["name"] = line.split(": ", 1)[1]
+            current_list = None
         elif current and line.startswith("    priority: "):
             current["priority"] = line.split(": ", 1)[1]
-        elif current and line.startswith("      - "):
-            value = line.split("- ", 1)[1]
-            if value not in {"youtube", "papers"}:
-                current.setdefault("source_context", []).append(value)
+            current_list = None
+        elif current and line.startswith("    youtube_query: "):
+            value = line.split(": ", 1)[1].strip().strip('"').strip("'")
+            current["youtube_query"] = value
+            current_list = None
+        elif current and line.startswith("    collect_from:"):
+            current_list = "collect_from"
+        elif current and line.startswith("    source_context:"):
+            current_list = "source_context"
+        elif current and line.startswith("    youtube_required_keywords:"):
+            current_list = "youtube_required_keywords"
+        elif current and current_list and line.startswith("      - "):
+            value = line.split("- ", 1)[1].strip().strip('"').strip("'")
+            current.setdefault(current_list, []).append(value)
 
     if current:
         topics.append(current)
@@ -185,13 +221,30 @@ def run_topic(topic: dict[str, object], max_results: int, dry_run: bool) -> int:
     ensure_overview_header(paths["overview"], name)
     seen = read_seen_ids(paths["seen"])
 
+    # Use the topic's optional youtube_query override if present, else
+    # fall back to the human-readable name. The override exists because
+    # using the bare topic name as a YouTube search query produces a lot
+    # of irrelevant results — e.g. "ab testing" matches everything from
+    # cosmetics reviews to Chinese drama channels. A targeted query like
+    # `"ab testing" "agent systems" LLM` is much more selective.
+    query = str(topic.get("youtube_query") or name)
+
     if dry_run:
-        print(f"[collect-youtube] dry-run topic: {slug} :: {name}")
+        print(f"[collect-youtube] dry-run topic: {slug} :: {name} :: query={query!r}")
         return 0
 
-    lines = fetch_lines(name, max_results)
+    lines = fetch_lines(query, max_results)
+
+    # Optional post-fetch relevance gate. Drops videos whose title
+    # doesn't contain at least one of the topic's required keywords
+    # (case-insensitive). Catches the cases where YouTube's loose
+    # matching slips garbage past the search query.
+    required_keywords = topic.get("youtube_required_keywords") or []
+    required_lower = [str(k).lower() for k in required_keywords]
+
     new_videos: list[dict[str, str]] = []
     seen_this_run: set[str] = set()
+    filtered_count = 0
 
     for line in lines:
         video = parse_line(line)
@@ -200,6 +253,11 @@ def run_topic(topic: dict[str, object], max_results: int, dry_run: bool) -> int:
         video_id = video["id"]
         if video_id in seen or video_id in seen_this_run:
             continue
+        if required_lower:
+            title_lower = video["title"].lower()
+            if not any(kw in title_lower for kw in required_lower):
+                filtered_count += 1
+                continue
         seen_this_run.add(video_id)
         item_path = paths["items"] / f"{video_id}.md"
         item_path.write_text(item_body(topic, video), encoding="utf-8")
@@ -211,7 +269,13 @@ def run_topic(topic: dict[str, object], max_results: int, dry_run: bool) -> int:
                 handle.write(video["id"] + "\n")
         append_overview(paths["overview"], new_videos)
 
-    print(f"[collect-youtube] topic={slug} new_videos={len(new_videos)}")
+    if filtered_count:
+        print(
+            f"[collect-youtube] topic={slug} new_videos={len(new_videos)} "
+            f"filtered={filtered_count} (off-topic by required_keywords)"
+        )
+    else:
+        print(f"[collect-youtube] topic={slug} new_videos={len(new_videos)}")
     return len(new_videos)
 
 
