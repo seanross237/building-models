@@ -262,7 +262,7 @@ printf '=== codex exec exited with status =%s ===\n' "\$status" >> $quoted_run_l
 sleep 120
 EOF
 )"
-  printf -v shell_command 'bash -lc %q' "$bash_script"
+  printf -v shell_command 'arch -arm64 bash -lc %q' "$bash_script"
 
   if ! tmux new-session -d -s "$session" -c "$node_dir" "$shell_command"; then
     {
