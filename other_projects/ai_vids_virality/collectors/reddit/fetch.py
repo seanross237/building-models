@@ -9,6 +9,8 @@ Idempotent via `.seen-ids` and skips posts older than `max_age_hours`.
 from __future__ import annotations
 
 import logging
+import os
+import time
 from datetime import datetime, timezone
 from typing import Any, Dict, Iterable, List, Optional
 
@@ -27,6 +29,12 @@ from state.store import Store
 
 SOURCE_NAME = "reddit"
 USER_AGENT = "ai-vids-virality/0.2 (+https://example.com)"
+OAUTH_TOKEN_URL = "https://www.reddit.com/api/v1/access_token"
+OAUTH_API_BASE = "https://oauth.reddit.com"
+REDDIT_CLIENT_ID = "REDDIT_CLIENT_ID"
+REDDIT_CLIENT_SECRET = "REDDIT_CLIENT_SECRET"
+REDDIT_USER_AGENT = "REDDIT_USER_AGENT"
+_TOKEN_CACHE: Dict[str, Any] = {"token": None, "expires_at": 0.0}
 LOG = logging.getLogger("collectors.reddit")
 
 DEFAULT_CONFIG: Dict[str, Any] = {
@@ -36,9 +44,57 @@ DEFAULT_CONFIG: Dict[str, Any] = {
 }
 
 
+def _user_agent() -> str:
+    return os.environ.get(REDDIT_USER_AGENT, USER_AGENT)
+
+
+def _get_oauth_token(http: Any) -> Optional[str]:
+    client_id = (os.environ.get(REDDIT_CLIENT_ID) or "").strip()
+    client_secret = (os.environ.get(REDDIT_CLIENT_SECRET) or "").strip()
+    if not client_id or not client_secret:
+        return None
+
+    if time.monotonic() < float(_TOKEN_CACHE.get("expires_at", 0.0) or 0.0):
+        token = _TOKEN_CACHE.get("token")
+        return str(token) if token else None
+
+    try:
+        resp = http.post(
+            OAUTH_TOKEN_URL,
+            auth=(client_id, client_secret),
+            data={"grant_type": "client_credentials"},
+            headers={"User-Agent": _user_agent()},
+            timeout=15,
+        )
+        if getattr(resp, "status_code", 0) != 200:
+            LOG.warning("reddit oauth token fetch returned status %s", getattr(resp, "status_code", "?"))
+            return None
+        payload = resp.json()
+        if not isinstance(payload, dict):
+            LOG.warning("reddit oauth token payload was not a JSON object")
+            return None
+        token = payload.get("access_token")
+        expires_in = int(payload.get("expires_in", 0) or 0)
+        if not token:
+            LOG.warning("reddit oauth token payload missing access_token")
+            return None
+        cache_lifetime = max(0, min(expires_in - 600, 3000))
+        _TOKEN_CACHE["token"] = token
+        _TOKEN_CACHE["expires_at"] = time.monotonic() + cache_lifetime
+        return str(token)
+    except Exception as exc:  # pragma: no cover
+        LOG.warning("reddit oauth token fetch failed: %s", exc)
+        return None
+
+
 def _fetch_subreddit(sub: str, limit: int, http: Any) -> List[Dict[str, Any]]:
-    url = f"https://www.reddit.com/r/{sub}.json?limit={limit}"
-    headers = {"User-Agent": USER_AGENT}
+    token = _get_oauth_token(http)
+    if token:
+        url = f"{OAUTH_API_BASE}/r/{sub}.json?limit={limit}"
+        headers = {"Authorization": f"Bearer {token}", "User-Agent": _user_agent()}
+    else:
+        url = f"https://www.reddit.com/r/{sub}.json?limit={limit}"
+        headers = {"User-Agent": _user_agent()}
     try:
         resp = http.get(url, headers=headers, timeout=15)
     except Exception as exc:  # pragma: no cover
