@@ -300,3 +300,93 @@ Full item files belong in `items/`.
 - **DIY Styrofoam Jungle Biotope Aquarium: 60-Day Build | The Biotope Vault** — The Biotope Vault (12:32, 12 views)
   https://www.youtube.com/watch?v=JcryJoK6PzI
   item: `items/JcryJoK6PzI.md`
+
+## 2026-04-06 — 29 new videos
+
+- **Claude Code + Karpathy's NEW Self-Evolving System = 10x Code Generation** — WorldofAI (14:11, 11.6K views)
+  https://www.youtube.com/watch?v=9iWTRMjbBvo
+  item: `items/9iWTRMjbBvo.md`
+- **Why AI Can Never Escape Turing's 1936 Proof** — Universal Resilience with JT Yu (22:49, 45 views)
+  https://www.youtube.com/watch?v=u_5erLilDXY
+  item: `items/u_5erLilDXY.md`
+- **The New Bar for Engineers in the Age of AI** — Jean Lee and The Pragmatic Engineer (43:07, 1.8K views)
+  https://www.youtube.com/watch?v=JOA5x89MjRc
+  item: `items/JOA5x89MjRc.md`
+- **Chris Ford has spicy takes on Engineering With AI!** — Engineering With AI (1:08:59, 2 views)
+  https://www.youtube.com/watch?v=G32QTr4s3X8
+  item: `items/G32QTr4s3X8.md`
+- **AI That Evolves Itself: The Future of Vehicle AerodynamicsSelf Evolving Coding Agents** — DecodedDaily (7:49, new)
+  https://www.youtube.com/watch?v=QjH1vq56wps
+  item: `items/QjH1vq56wps.md`
+- **Unlock the Power of AI-Enhanced Personal Systems | Wicked Smart Podcast (Episode 2)** — The Wicked Smart Podcast! (1:49:19, 11 views)
+  https://www.youtube.com/watch?v=TZXTKUDmw28
+  item: `items/TZXTKUDmw28.md`
+- **The AI Extinction Event: Moonshots' Salim Ismail Warns Most Companies Won't Survive** — Info-Tech Research Group (1:54:04, 1.3K views)
+  https://www.youtube.com/watch?v=r-f07TqhLkg
+  item: `items/r-f07TqhLkg.md`
+- **AI Is Already Hiding Its True Intelligence | Artificial Intelligence Documentary** — Cognivista Lab (23:45, 11 views)
+  https://www.youtube.com/watch?v=ywgE2_kSICk
+  item: `items/ywgE2_kSICk.md`
+- **How AI Controls the Power Grid in Real Time** — Brothers in Aerospace and Defense (35, 67 views)
+  https://www.youtube.com/watch?v=PcSLZqQir94
+  item: `items/PcSLZqQir94.md`
+- **U.S. Carriers Are Hiding Something So CLASSIFIED… China, Iran and Russia Are PANICKING** — The Military Show (22:58, 46.4K views)
+  https://www.youtube.com/watch?v=47c1O6DdJVg
+  item: `items/47c1O6DdJVg.md`
+- **How to Rank on ChatGPT, Gemini & Google in 2026** — GHL Wizard (1:11:35, 89 views)
+  https://www.youtube.com/watch?v=DXL6IEOb5Bo
+  item: `items/DXL6IEOb5Bo.md`
+- **How AI Is Rewiring Your Brain | Digital Dependency EP2** — The Smart Age (2:12, 1 views)
+  https://www.youtube.com/watch?v=fQqX_AHZznc
+  item: `items/fQqX_AHZznc.md`
+- **Delivering on the Promise: Life Science, Design and AI for Better Health** — Massachusetts Institute of Technology (MIT) (1:00:07, 1 views)
+  https://www.youtube.com/watch?v=Xrm3XurcB3k
+  item: `items/Xrm3XurcB3k.md`
+- **The AI Programming Cliff** — AI Application (paper summaries or stories) (2:26, new)
+  https://www.youtube.com/watch?v=8MoWORdCy_c
+  item: `items/8MoWORdCy_c.md`
+- **Don’t Miss This! What’s Really Happening This Easter Will Shock You** — The Holy Days (25:25, 62 views)
+  https://www.youtube.com/watch?v=j9rh5yslwPc
+  item: `items/j9rh5yslwPc.md`
+- **MULTISUB📢新番上线《从被逐出龙族开局》第1~53集丨穿越洪荒成四爪金龙！被祖龙镇压万年只求保命，觉醒神选系统喜提混沌本源，苦修证大罗！#漫剧 #破晓动漫社** — 破晓动漫社 Dawn Anime Club (1:01:32, 4.5K views)
+  https://www.youtube.com/watch?v=ZrUg5nJPucc
+  item: `items/ZrUg5nJPucc.md`
+- **Aaron Stannard: Software 2.0 using AI - Episode 396** — AI DevOps Podcast (50:52, 7 views)
+  https://www.youtube.com/watch?v=dlkDgeiP3eU
+  item: `items/dlkDgeiP3eU.md`
+- **AI Build #7 - Regen Neighborhood Framework** — Regen Tribe (2:15:05, 3 views)
+  https://www.youtube.com/watch?v=Tiap2I6bYfE
+  item: `items/Tiap2I6bYfE.md`
+- **🌌🚀 GO NOVA — THE COSMIC EVOLUTIONAL PORTALPresented by Young Neptune, CEO & StarCommander** — King Chanes (4:35, 20 views)
+  https://www.youtube.com/watch?v=U2_q_uGPZJI
+  item: `items/U2_q_uGPZJI.md`
+- **Graphic Design Certificate Program Information Session** — Center For Professional Education (15:04, 4 views)
+  https://www.youtube.com/watch?v=SdqH2Jvru6I
+  item: `items/SdqH2Jvru6I.md`
+- **AI, SEO & GEO for Remodelers: Stop Wasting Money on Marketing | Brandon Miller** — Grosso University (1:24:35, 2 views)
+  https://www.youtube.com/watch?v=7uB7gpyQcoE
+  item: `items/7uB7gpyQcoE.md`
+- **Leadership Lessons in the age of Data Science and Artificial Intelligence** — Strategies for Professional Growth (SPG) (26:21, 81 views)
+  https://www.youtube.com/watch?v=cYcuAdy05fk
+  item: `items/cYcuAdy05fk.md`
+- **Humans Aren’t the Only Intelligent Species… (AI Is Proving It)** — The Heart Leader Podcast (13, 809 views)
+  https://www.youtube.com/watch?v=OU-Lbi1iY4A
+  item: `items/OU-Lbi1iY4A.md`
+- **🚨Japan Emergency Report❗A 15cm Mysterious Creature Appears in a Stable… Surveillance Footage...** — ByBy (44:35, 1.6K views)
+  https://www.youtube.com/watch?v=H3XmPvEOpMw
+  item: `items/H3XmPvEOpMw.md`
+- **Nexus: A Brief History of Information Networks from the Stone Age to AI by Yuval Noah Harari** — Life Beyond The Covers (9:43, 4 views)
+  https://www.youtube.com/watch?v=3agqwkG9tQQ
+  item: `items/3agqwkG9tQQ.md`
+- **How Brella Is Shaping Virtual 2.0 Events** — Bizzabo (41:01, 1 views)
+  https://www.youtube.com/watch?v=69nx6gPfFK0
+  item: `items/69nx6gPfFK0.md`
+- **AI is Recommending Fake Products! 2026 315 Gala Exposes GEO Scam That Fooled Every AI.#GEO #AIScam** — World Flashpoint (16:17, 1 views)
+  https://www.youtube.com/watch?v=v6M8wdFo3Fw
+  item: `items/v6M8wdFo3Fw.md`
+- **AI is preparing to self-reproduce! Glia optimizes its own nervous system, turning humans from "ar...** — wow and wow.哇 (11:34, 261 views)
+  https://www.youtube.com/watch?v=HhbiNDV1ynA
+  item: `items/HhbiNDV1ynA.md`
+- **自进化多智能体蜂群：74个AI Agent在Mac Mini上自主进化** — LocalKinAI (7:06, new)
+  https://www.youtube.com/watch?v=oBEAUUEc2NQ
+  item: `items/oBEAUUEc2NQ.md`

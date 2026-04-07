@@ -279,3 +279,81 @@ Full item files belong in `items/`.
 - **[1-84] After the Breakup, I Got the Perfect Life System and Started A Harem | Manhwa in Hindi** — Pick Me Manhwa (10:56:55, 4.4K views)
   https://www.youtube.com/watch?v=bm14mHW7SgQ
   item: `items/bm14mHW7SgQ.md`
+
+## 2026-04-06 — 25 new videos
+
+- **Agentic AI & Multi-Agent Orchestration: Eindhoven's Enterprise Shift** — Aetherlink (22:50, 2 views)
+  https://www.youtube.com/watch?v=d5UlRfB8u34
+  item: `items/d5UlRfB8u34.md`
+- **The Grok 4 Trap: Why 20 Agents Beat One Genius Model | #NEWIT** — GilliLab Logic Salt (54:48, new)
+  https://www.youtube.com/watch?v=csafstv4gLI
+  item: `items/csafstv4gLI.md`
+- **Google Just Dropped Gemma 4 (And It Changes Everything) 🤯 #gemma4 #googleai #localai #breakingnews** — Neural News Network (5:55, 18 views)
+  https://www.youtube.com/watch?v=rA4sZoP5esg
+  item: `items/rA4sZoP5esg.md`
+- **Iran Rejects Ceasefire Ultimatum | Open Interest 4/6/2026** — Bloomberg Television (1:27:11, 655 views)
+  https://www.youtube.com/watch?v=8Uau3nJcHYQ
+  item: `items/8Uau3nJcHYQ.md`
+- **Morning Markets for Monday, April 6, 2026** — BNN Bloomberg (46:35, 44 views)
+  https://www.youtube.com/watch?v=b-vUxiheQ-M
+  item: `items/b-vUxiheQ-M.md`
+- **Aaron Stannard: Software 2.0 using AI - Episode 396** — AI DevOps Podcast (50:52, 8 views)
+  https://www.youtube.com/watch?v=dlkDgeiP3eU
+  item: `items/dlkDgeiP3eU.md`
+- **🔥Boy Awakens Bronze Troop Type, Is Mocked by All, Until He Raises a Tiny Bug into a Million Swarm!** — Bella's Comic Chronicles (23:29:18, 556 views)
+  https://www.youtube.com/watch?v=xhlx5LAry_o
+  item: `items/xhlx5LAry_o.md`
+- **AI, SEO & GEO for Remodelers: Stop Wasting Money on Marketing | Brandon Miller** — Grosso University (1:24:35, 2 views)
+  https://www.youtube.com/watch?v=7uB7gpyQcoE
+  item: `items/7uB7gpyQcoE.md`
+- **Misadventures - Random games grab bag with OtherJoe & Alex!** — AngryJoeShow Live (8:24:24, 101 views)
+  https://www.youtube.com/watch?v=xpkZYguPj_k
+  item: `items/xpkZYguPj_k.md`
+- **女孩將被追殺的男人藏在裙子底下救他一命，誰料他竟是聲名顯赫的傅氏總裁，隔天直接帶著黃金萬兩上門提親！#短劇 #短劇全集 #短劇推薦 #逆襲 #情感 #都市 #甜寵 #愛情** — 朝朝短剧 (1:49:29, 4.2K views)
+  https://www.youtube.com/watch?v=M9kHeDcslh4
+  item: `items/M9kHeDcslh4.md`
+- **富豪善心給小乞丐一碗面，10年後他公司破產，小乞丐帶著10000億禮金登門還恩！⭐️#短劇 #逆襲 #爽劇 #豪門 #打臉 #萌娃 Chinese short drama** — 短剧星球 (1:49:01, 954 views)
+  https://www.youtube.com/watch?v=UBfdVSvgYo0
+  item: `items/UBfdVSvgYo0.md`
+- **Connecticut US House of Reps Grassroots Candidates Tell Battle Stories** — Carlos R. Gomez and 3 more (2:07:58, 8 views)
+  https://www.youtube.com/watch?v=kAg5S6lJTMk
+  item: `items/kAg5S6lJTMk.md`
+- **【FULL】EP01-84💥满级仙王嫌仙界无聊，下凡体验生活，结果随手一挥，地球差点炸了？ | 合集 | MULTI SUB** — Amazing Anime Man (2:42:41, 7.4K views)
+  https://www.youtube.com/watch?v=9ZjeBj4Nkwo
+  item: `items/9ZjeBj4Nkwo.md`
+- **【我是特种兵之子弹出膛】EP01｜新兵入伍一路逆襲，登頂狼牙特種兵王！#精彩影视  #精选电视剧 #军旅 #特种兵** — 吃瓜追偶像剧 - Cdrama (2:28:14, 14 views)
+  https://www.youtube.com/watch?v=wzRHwQ2UjMA
+  item: `items/wzRHwQ2UjMA.md`
+- **☄️New【Multi Sub 】Doomsday smuggler: I trade spicy strips for gold bricks EP 1-108#anime #animation** — Quartic element Anime (8:58:49, 88 views)
+  https://www.youtube.com/watch?v=o-ptkCGqOUk
+  item: `items/o-ptkCGqOUk.md`
+- **🔥一口气看完《镖人》：开局抽到灭世词条，从此镖行天下无人敢挡！| MULTI SUB** — 卡通狂欢嘉会 Cartoon Gala (1:30:27, 1.2K views)
+  https://www.youtube.com/watch?v=1LsvxQrMyX4
+  item: `items/1LsvxQrMyX4.md`
+- **前妻嫌貧愛富踢了他，帶著小三當眾羞辱他，他轉頭繼承百億集團，一個電話讓渣女一無所有。#短剧 #drama #情感#爽剧#短劇 #短剧全集** — 夏日剧场 (1:46:40, 8.4K views)
+  https://www.youtube.com/watch?v=B6Gx8m37xWw
+  item: `items/B6Gx8m37xWw.md`
+- **MULTISUB💥最新合集💥《全民诡异：开局掌握零元购》第1~175集丨诡异末世降临，陈木携万亿诡币重生，开局化身“天使投资人”，买下各种诡异场景，化身规则制定者！#破晓动漫社** — 破晓动漫社 Dawn Anime Club (14:03:11, 2.0K views)
+  https://www.youtube.com/watch?v=WxLPwX7VOAc
+  item: `items/WxLPwX7VOAc.md`
+- **AI Agents vs Mixture of Experts: AI Workflows Explained** — MANTOZ_AI (7:24, new)
+  https://www.youtube.com/watch?v=c_s4pLvWj3Y
+  item: `items/c_s4pLvWj3Y.md`
+- **【Multi Sub】《海關老手的直覺，三塊石頭藏驚天秘密》三塊石頭暗藏玄機，十一年經驗觸發重大危機#漫劇 #動態漫 #AI漫劇 #動漫 #動畫** — 神馬動漫 (59:04, 3.4K views)
+  https://www.youtube.com/watch?v=OyYW6pspHkM
+  item: `items/OyYW6pspHkM.md`
+- **【Multi sub】📢重生之我真沒錢修仙Reborn: I'm Too Poor to Cultivate 第1-138集 #热血 #玄幻 #重生 #穿越 #修仙** — Qixiang-Animation (9:30:28, 2.1K views)
+  https://www.youtube.com/watch?v=9y4yZEPvYnw
+  item: `items/9y4yZEPvYnw.md`
+- **El Chapo Guzmán: The Patron of Sinaloa – Special Documentary** — Reis Do Crime (32:37, 2.7K views)
+  https://www.youtube.com/watch?v=kdt6vvxrqx0
+  item: `items/kdt6vvxrqx0.md`
+- **💥【新番上线】重生回90年代，携前世记忆纵横商海，逆袭登顶世界首富！《重生九零之野性时代 1~2季》全集Multi SUB #热血 #漫剧 #动漫魔女** — 动漫魔女 (4:38:19, 1.7K views)
+  https://www.youtube.com/watch?v=i-x5pHvEMOQ
+  item: `items/i-x5pHvEMOQ.md`
+- **MutiSUB🔥穷屌丝绑定钓鱼系统开挂💥别人钓鱼我钓尸体，一竿一个大案被迫成神探，横扫恶势力震惊全城！【最强钓鱼佬，万鱼朝宗很合理】** — 爽文剧场 (1:57:38, 4.4K views)
+  https://www.youtube.com/watch?v=b6WiijHO1_c
+  item: `items/b6WiijHO1_c.md`
+- **【2026战争剧】东方红END｜毛泽东东渡黄河，1948解放战争大决战！** — 战神剧场 (2:55:23, 60 views)
+  https://www.youtube.com/watch?v=bvuQGIxWCsw
+  item: `items/bvuQGIxWCsw.md`

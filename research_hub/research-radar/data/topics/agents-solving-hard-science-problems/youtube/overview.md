@@ -282,3 +282,96 @@ Full item files belong in `items/`.
 - **|SFM|AFM| OPTION PRICING AND VALUATION (PART 2)** — NexGen Professional Associates (3:14:31, 48 views)
   https://www.youtube.com/watch?v=djh_-lamJzg
   item: `items/djh_-lamJzg.md`
+
+## 2026-04-06 — 30 new videos
+
+- **The Grok 4 Trap: Why 20 Agents Beat One Genius Model | #NEWIT** — GilliLab Logic Salt (54:48, new)
+  https://www.youtube.com/watch?v=csafstv4gLI
+  item: `items/csafstv4gLI.md`
+- **Why Returning From Mars Is Impossible: Feynman's Warning** — Feynman Wisdom Explained (17:08, 6 views)
+  https://www.youtube.com/watch?v=3BKSJRSiPfs
+  item: `items/3BKSJRSiPfs.md`
+- **Delivering on the Promise: Life Science, Design and AI for Better Health** — Massachusetts Institute of Technology (MIT) (1:00:07, 1 views)
+  https://www.youtube.com/watch?v=Xrm3XurcB3k
+  item: `items/Xrm3XurcB3k.md`
+- **Humanity, Agency, Audacity | Rob Dickson on Micro Schools, AI, and Social Fitness** — Voices for Excellence (54:16, new)
+  https://www.youtube.com/watch?v=oJETKydal7Y
+  item: `items/oJETKydal7Y.md`
+- **Enterprise Knowledge Management in the Era of Agentic AI** — GDG Berlin (37:12, 1 views)
+  https://www.youtube.com/watch?v=RSokgDxTIWs
+  item: `items/RSokgDxTIWs.md`
+- **April 6, 2026** — Empyrean Chronicles (31:46, 5 views)
+  https://www.youtube.com/watch?v=Cc8uPceGUC4
+  item: `items/Cc8uPceGUC4.md`
+- **Agentic AI and Cybersecurity: Threats, Governance, and Strategy** — The Berkman Klein Center for Internet & Society (1:02:17, 64 views)
+  https://www.youtube.com/watch?v=hk4X3mv9GVw
+  item: `items/hk4X3mv9GVw.md`
+- **Tech vs. People: The Hardest Problem with Will LaForest | Ep. 26 | Confluent Developer Podcast** — Confluent Developer (28:43, 125 views)
+  https://www.youtube.com/watch?v=_sanoGdHGB0
+  item: `items/_sanoGdHGB0.md`
+- **The AI Extinction Event: Salim Ismail Warns Most Companies Won’t Survive** — Info-Tech Research Group (1:54:04, 1.3K views)
+  https://www.youtube.com/watch?v=r-f07TqhLkg
+  item: `items/r-f07TqhLkg.md`
+- **From A Tiny Prison Cell To President Of South Africa | The Nelson Mandela Story** — Evan Carmichael (47:55, 33.3K views)
+  https://www.youtube.com/watch?v=wZFEFVUbpN8
+  item: `items/wZFEFVUbpN8.md`
+- **The Autobiography of Benjamin Franklin - Complete Audiobook | American History Classic** — AI Eternal Chapters (5:43:19, 71 views)
+  https://www.youtube.com/watch?v=grLxLo_L8Ng
+  item: `items/grLxLo_L8Ng.md`
+- **AI Build #6 - Regen Neighborhood Framework** — Regen Tribe (2:53:54, 2 views)
+  https://www.youtube.com/watch?v=_REj7Zaf1lc
+  item: `items/_REj7Zaf1lc.md`
+- **He Was Betrayed By His Wife, So He Reborn And Topped Up 2 Billion Before Apocalypse.** — Nice Recap (4:56:20, 122 views)
+  https://www.youtube.com/watch?v=LDR70RBpLIw
+  item: `items/LDR70RBpLIw.md`
+- **Spotlight Sessions: Scott Selleck** — Penn State Eberly College of Science (1:11:22, 5 views)
+  https://www.youtube.com/watch?v=ugI6zfpmfXY
+  item: `items/ugI6zfpmfXY.md`
+- **Math Implementation Webinar #8: Making Math Meaningful** — Montana Office of Public Instruction (1:03:20, 1 views)
+  https://www.youtube.com/watch?v=NYBhxeuXpuA
+  item: `items/NYBhxeuXpuA.md`
+- **Lower American River Conservancy Advisory Committee April 2, 2026 Meeting** — Wildlife Conservation Board (1:08:43, new)
+  https://www.youtube.com/watch?v=Zyv8ZuFNCxM
+  item: `items/Zyv8ZuFNCxM.md`
+- **What if social media didn’t make you miserable | BBC Global** — BBC Global (11:16, 1.3K views)
+  https://www.youtube.com/watch?v=Meu3wi5UVWk
+  item: `items/Meu3wi5UVWk.md`
+- **Regrow Hair and Stop Balding, What I Tell Patients** — AbrahamThePharmacist (4:13, 119 views)
+  https://www.youtube.com/watch?v=FbOCADbpMW4
+  item: `items/FbOCADbpMW4.md`
+- **NASA Holds News Conference After Artemis II Launch** — C-SPAN (1:01:51, 5.9K views)
+  https://www.youtube.com/watch?v=ojOBjF1zdTw
+  item: `items/ojOBjF1zdTw.md`
+- **Nancy Guthrie: He Was On The Scene First! FBI Came And Saw The Scene Corrupted.** — The Crime Vault (37:42, 42 views)
+  https://www.youtube.com/watch?v=7KOlldKyGoQ
+  item: `items/7KOlldKyGoQ.md`
+- **The $1 Powder That Erases Baked-On Brake Dust. (Car Washes Hate This)** — The Buried Blueprint (13:09, 1 views)
+  https://www.youtube.com/watch?v=KoBCUsjxLw8
+  item: `items/KoBCUsjxLw8.md`
+- **Book Launch: "The Un-Chosen Body: Disability Culture in Israel" by Ilana Szobel** — Israel Studies at Brandeis University (1:01:25, 1 views)
+  https://www.youtube.com/watch?v=akZp4bvQmZ8
+  item: `items/akZp4bvQmZ8.md`
+- **Ignite Startups: How AI Engineers Are Replacing Dev Teams with Karan Grover | Ep251** — Ignite: Conversations on Startups, VC, and Society (46:43, 9 views)
+  https://www.youtube.com/watch?v=jaIoRg9mcWY
+  item: `items/jaIoRg9mcWY.md`
+- **AI Build #1 - Regen Neighborhood Framework** — Regen Tribe (2:13:18, 6 views)
+  https://www.youtube.com/watch?v=Cp_cQrSJdxY
+  item: `items/Cp_cQrSJdxY.md`
+- **Graphic Design Certificate Program Information Session** — Center For Professional Education (15:04, 4 views)
+  https://www.youtube.com/watch?v=SdqH2Jvru6I
+  item: `items/SdqH2Jvru6I.md`
+- **OnEBoard Chat: Insights on AI Communications with Svetlana Stavreva** — OnEBoard (41:06, 20 views)
+  https://www.youtube.com/watch?v=w2OWMtkI2vs
+  item: `items/w2OWMtkI2vs.md`
+- **Why AI Isn’t Killing Jobs (And What It’s Actually Changing)** — Per My Last Email (36:52, 47 views)
+  https://www.youtube.com/watch?v=5s4XZaCgt0s
+  item: `items/5s4XZaCgt0s.md`
+- **Ep 5: I Stopped Writing Code and Started This Instead** — AppStream Studio (46:53, 2 views)
+  https://www.youtube.com/watch?v=CsGgCoDxQbE
+  item: `items/CsGgCoDxQbE.md`
+- **Lies of P: A Critique and Understanding** — Mostenire (1:07:15, 26 views)
+  https://www.youtube.com/watch?v=LEJKv7pFB-E
+  item: `items/LEJKv7pFB-E.md`
+- **THE ZERO THRESHOLD | Architecting Your Reality from the Void | Full Audiobook** — The Sovereign Path (2:55:36, new)
+  https://www.youtube.com/watch?v=vCzhBK2vEyU
+  item: `items/vCzhBK2vEyU.md`

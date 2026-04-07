@@ -282,3 +282,96 @@ Full item files belong in `items/`.
 - **Referral Driven Growth with Brandon Barnum** — AFT Construction (55:01, 1 views)
   https://www.youtube.com/watch?v=ZrtQJKLagHc
   item: `items/ZrtQJKLagHc.md`
+
+## 2026-04-06 — 30 new videos
+
+- **I Built an Open-Source Agent Kit for OpenClaw: Evaluation-Driven Development in Action** — Tim Dickey (14:41, new)
+  https://www.youtube.com/watch?v=ZPrdaawRHqY
+  item: `items/ZPrdaawRHqY.md`
+- **GCP Architecture Masterclass 2026 Module 2 Summary: Architecting the Autonomous Mind** — TradingMaster AI (7:37, new)
+  https://www.youtube.com/watch?v=SD-cafqupfk
+  item: `items/SD-cafqupfk.md`
+- **Crack IELTS, TOEFL, DET & SAT with Proficiency Hub in VoiceEra** — Voice Era AI (1:02, 4 views)
+  https://www.youtube.com/watch?v=SGM7jabwzSE
+  item: `items/SGM7jabwzSE.md`
+- **VLIW: The “Impossible” Computer** — Asianometry (39:28, 53.3K views)
+  https://www.youtube.com/watch?v=J7157XB8rxc
+  item: `items/J7157XB8rxc.md`
+- **The AI Comet Has Struck: Moonshots' Salim Ismail Warns Most Organizations Won't Survive AI** — Info-Tech Research Group (1:54:04, 1.3K views)
+  https://www.youtube.com/watch?v=r-f07TqhLkg
+  item: `items/r-f07TqhLkg.md`
+- **Conscious Development: Mindfulness-Driven Growth and Efficiency** — Strategies for Professional Growth (SPG) (11:21, 22 views)
+  https://www.youtube.com/watch?v=verYIDd1JKE
+  item: `items/verYIDd1JKE.md`
+- **Reasoning Can Hurt LLM Safety?! Rethinking Accuracy in AI Systems (EACL 2026)** — Women in AI Research WiAIR (21:43, 4 views)
+  https://www.youtube.com/watch?v=rwso1FaTxDc
+  item: `items/rwso1FaTxDc.md`
+- **Carney's Oil Pipeline Just Hit FULL CAPACITY — Trump Reacts in Shock** — Canada Political Pulse (14:26, 2 views)
+  https://www.youtube.com/watch?v=vb76-aMxAMU
+  item: `items/vb76-aMxAMU.md`
+- **From Defeat to Service | Panzer 35S 739(f)** — Tank Encyclopedia (18:17, 9.4K views)
+  https://www.youtube.com/watch?v=qx2iQuZfd40
+  item: `items/qx2iQuZfd40.md`
+- **Miami Personal Injury Lawyer  $500K Settlement SECRET Exposed** — US Law Simplified (58:29, new)
+  https://www.youtube.com/watch?v=R1oFK9_KVXA
+  item: `items/R1oFK9_KVXA.md`
+- **她去應聘豪門保姆，圈子裡都說沈家那位掌權人因意外致殘後性情大變，她卻帶着一腔熱忱闖入他的世界，小太陽一般打破他的封閉壁壘，溫暖他救贖他，幫他走出陰霾，從此大佬對她視若珍寶寵她上天！#甜宠 #先婚后爱** — 劇好追 (3:07:29, 37.0K views)
+  https://www.youtube.com/watch?v=0UTUa0s_bqc
+  item: `items/0UTUa0s_bqc.md`
+- **LAFCO - 4/1/26** — County of Sacramento (1:47:52, new)
+  https://www.youtube.com/watch?v=XnXoKHFd-rk
+  item: `items/XnXoKHFd-rk.md`
+- **BREAKING NEWS: 2026 Subaru Forester Just Revealed – Massive Changes You Won’t Believe! 😱🔥** — CARWOW787 (6:12, 503 views)
+  https://www.youtube.com/watch?v=CFwcCGqo_hg
+  item: `items/CFwcCGqo_hg.md`
+- **Engineering the Path to the Clinic** — Massachusetts Institute of Technology (MIT) (57:18, 4 views)
+  https://www.youtube.com/watch?v=H2krmuuG9TY
+  item: `items/H2krmuuG9TY.md`
+- **Improve Your English Listening (C2) | Boost Your English in 2026 | Learn Conversational English** — Relife English Podcast (54:44, 12 views)
+  https://www.youtube.com/watch?v=x61l1PTRsVA
+  item: `items/x61l1PTRsVA.md`
+- **BTSC Lab Assistant New Vacancy 2026 Out 🔥 Civil/Rural Engg | Full Details, Eligibility, Salary** — |CONCEPT DECODER (5:37, 59 views)
+  https://www.youtube.com/watch?v=dSm-u56PWcE
+  item: `items/dSm-u56PWcE.md`
+- **2026.02.25 | NASA Releases Boeing CST-100 Starliner Report on Crewed Flight Test Investigation** — SAA TV (36:31, new)
+  https://www.youtube.com/watch?v=4eqsed1xRDg
+  item: `items/4eqsed1xRDg.md`
+- **Are Expensive Knitting Needles Worth It? I Tested 5 Sets** — Deborah Knits (28:35, 374 views)
+  https://www.youtube.com/watch?v=0AzKS0JRv8Y
+  item: `items/0AzKS0JRv8Y.md`
+- **Delivering on the Promise: Life Science, Design and AI for Better Health** — Massachusetts Institute of Technology (MIT) (1:00:07, 1 views)
+  https://www.youtube.com/watch?v=Xrm3XurcB3k
+  item: `items/Xrm3XurcB3k.md`
+- **2026 Mitsubishi Pajero Sport - Still Worth It or Beaten by Fortuner?!** — Car Tour (6:38, 325 views)
+  https://www.youtube.com/watch?v=uDoeSNqLKxw
+  item: `items/uDoeSNqLKxw.md`
+- **[Podcast 23] - Shatter the Perfect Illusion, Create Your Own Sense of Worthiness** — Một bông hoa (47:45, 337 views)
+  https://www.youtube.com/watch?v=5L0Cor8z2BI
+  item: `items/5L0Cor8z2BI.md`
+- **Banks Manipulated Interest Rates Affecting Every Loan and Mortgage** — Money Power Fraud (35:28, 43 views)
+  https://www.youtube.com/watch?v=Ytey31LfaSI
+  item: `items/Ytey31LfaSI.md`
+- **What Really Burned in Tesla’s Lab That Night — And Why It Still Matters** — Codex Origin (54:20, 2 views)
+  https://www.youtube.com/watch?v=mKJvFYC4BlI
+  item: `items/mKJvFYC4BlI.md`
+- **What Happens in HITRUST QA? Avoid These Costly Mistakes** — HITRUST Secrets (1:10:52, 1 views)
+  https://www.youtube.com/watch?v=YUX2uBYLw6s
+  item: `items/YUX2uBYLw6s.md`
+- **Implementing APQP & Control Plan Using Electronic Workflows** — Omnex Quality Management Consulting & Training (1:01:57, 5 views)
+  https://www.youtube.com/watch?v=80g8fqFmt3U
+  item: `items/80g8fqFmt3U.md`
+- **🚨 Bihar Govt New Rule 2026 | Govt Employees ke liye Shock! Sirf 1 Chance Exam Ka milega aab #UDHD** — CONCEPT DECODER (3:01, 139 views)
+  https://www.youtube.com/watch?v=dtM0lUAPdC8
+  item: `items/dtM0lUAPdC8.md`
+- **2nd Int'l Conference on Pig Livability: Pre-weaning Piglet Mortality: Recent Research Results** — Iowa Pork Industry Center (34:12, 36 views)
+  https://www.youtube.com/watch?v=VaFuv3mZ_mg
+  item: `items/VaFuv3mZ_mg.md`
+- **They Laughed When She Walked In… Then She Owned the Room** — WHISPERS OF KOREA and 4 more (53:29, 30 views)
+  https://www.youtube.com/watch?v=7rbTc1ZCaM0
+  item: `items/7rbTc1ZCaM0.md`
+- **2nd International Conference on Pig Livability: Morning Panel 1** — Iowa Pork Industry Center (15:37, 27 views)
+  https://www.youtube.com/watch?v=eQTTLwL8UWs
+  item: `items/eQTTLwL8UWs.md`
+- **Symposium—Iba Ndiaye: Between Latitude and Longitude** — The Met (4:18:06, 126 views)
+  https://www.youtube.com/watch?v=nfbGoajjdVI
+  item: `items/nfbGoajjdVI.md`

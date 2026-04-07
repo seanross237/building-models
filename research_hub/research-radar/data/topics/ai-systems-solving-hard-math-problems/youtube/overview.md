@@ -282,3 +282,93 @@ Full item files belong in `items/`.
 - **Artificial Intelligence and Legal Liability in Radiology: Randomized Experimental Study-Podcast** — Jeffrey Chen by SmartRad AI (19:22, 2 views)
   https://www.youtube.com/watch?v=F3EppywMrrw
   item: `items/F3EppywMrrw.md`
+
+## 2026-04-06 — 29 new videos
+
+- **Solve for m in this nice exponential equation | Math Olympiad Mathematics** — HkLogics (12:01, 9 views)
+  https://www.youtube.com/watch?v=7KEGm43dg4s
+  item: `items/7KEGm43dg4s.md`
+- **How to solve this nice algebra equation | Olympiad problem | x=?** — Mathematics & Statistics Guru (12:35, 25 views)
+  https://www.youtube.com/watch?v=CrFWdUVCEbE
+  item: `items/CrFWdUVCEbE.md`
+- **Computer Literacy Is Completely Dead** — Brodie Robertson (19:19, 2.4K views)
+  https://www.youtube.com/watch?v=bTBlFq08DMo
+  item: `items/bTBlFq08DMo.md`
+- **The AI Extinction Event: Moonshots' Salim Ismail Warns Most Companies Won't Survive** — Info-Tech Research Group (1:54:04, 1.3K views)
+  https://www.youtube.com/watch?v=r-f07TqhLkg
+  item: `items/r-f07TqhLkg.md`
+- **Why AI Can Never Escape Turing's 1936 Proof** — Universal Resilience with JT Yu (22:49, 53 views)
+  https://www.youtube.com/watch?v=u_5erLilDXY
+  item: `items/u_5erLilDXY.md`
+- **Most traders are too scared to do this** — Moon Dev (41, 148 views)
+  https://www.youtube.com/watch?v=7dYp01yJstE
+  item: `items/7dYp01yJstE.md`
+- **🔥Boy Awakens Bronze Troop Type, Is Mocked by All, Until He Raises a Tiny Bug into a Million Swarm!** — Bella's Comic Chronicles (23:29:18, 556 views)
+  https://www.youtube.com/watch?v=xhlx5LAry_o
+  item: `items/xhlx5LAry_o.md`
+- **🔥🔥🔥【完整版】马小宇&徐艺真《她有点不乖》外冷内热校霸✖清冷倔强学霸，两个身份悬殊的人，在看到对方破碎的灵魂后，从针锋相对的同桌，到相互鼓励的伙伴，并治愈着彼此！#短剧 #完結 #蔓蔓書屋 #大结局** — 蔓蔓書屋 (2:04:05, 3.2K views)
+  https://www.youtube.com/watch?v=EbWu1fOWbiU
+  item: `items/EbWu1fOWbiU.md`
+- **I Replaced a ₹2 Lakh AI Course in 2.2 Hours (LIVE BUILD) 🤯** — Scale Value (2:24:46, 31 views)
+  https://www.youtube.com/watch?v=uFGF6owJ9Us
+  item: `items/uFGF6owJ9Us.md`
+- **From A Tiny Prison Cell To President Of South Africa | The Nelson Mandela Story** — Evan Carmichael (47:55, 33.3K views)
+  https://www.youtube.com/watch?v=wZFEFVUbpN8
+  item: `items/wZFEFVUbpN8.md`
+- **CTS Webinar: Industry and International Perspectives on AI Integration** — CTSUMN (1:15:09, 12 views)
+  https://www.youtube.com/watch?v=1m_HnnfJ6BU
+  item: `items/1m_HnnfJ6BU.md`
+- **高冷總裁二十年從不笑，直到那個送外賣的活潑女孩闖入，他被她的天真和善意徹底融化，從高牆冷酷到手心寵溺，她的笑讓他世界全變得明亮！#精彩短劇 #短劇全集 #甜寵** — 砂糖劇滿屋 (2:21:21, 7.5K views)
+  https://www.youtube.com/watch?v=rcU_775V2OU
+  item: `items/rcU_775V2OU.md`
+- **The $75,000 Mistake: The Greatest Gamble of Our Generation** — Algo Thinker (24:47, 68 views)
+  https://www.youtube.com/watch?v=1M_CusUnAPI
+  item: `items/1M_CusUnAPI.md`
+- **他是冷麵無情的校霸，浪蕩不羈，惹上他算是廢了，可唯獨面對她時化作溫柔大金毛，後來有人問他，為什麼對她這麼好，他想了想，說第一眼就淪陷了，從此浪子回頭，冰川融化，所有的溫柔與寵溺，都只給她一人** — 追爽劇 (2:04:03, 7.6K views)
+  https://www.youtube.com/watch?v=qtUpCoxwvgU
+  item: `items/qtUpCoxwvgU.md`
+- **The poor girl was forced to leave after encountering a villain.** — Lý Hồng (51:43, 21.9K views)
+  https://www.youtube.com/watch?v=jl2v8gzQ3kI
+  item: `items/jl2v8gzQ3kI.md`
+- **The Grok 4 Trap: Why 20 Agents Beat One Genius Model | #NEWIT** — GilliLab Logic Salt (54:48, new)
+  https://www.youtube.com/watch?v=csafstv4gLI
+  item: `items/csafstv4gLI.md`
+- **Why AI Isn’t Killing Jobs (And What It’s Actually Changing)** — Per My Last Email (36:52, 47 views)
+  https://www.youtube.com/watch?v=5s4XZaCgt0s
+  item: `items/5s4XZaCgt0s.md`
+- **This Agency Lost $100K and Here's Why** — Parallax (49:43, 6 views)
+  https://www.youtube.com/watch?v=f0fP_EPjOyk
+  item: `items/f0fP_EPjOyk.md`
+- **他是全校畏懼的校霸，她是被孤立的學霸，所有人以為他們是兩條平行線，直到那晚她闖進他的世界，原來她並非乖乖女，他也不是壞種，她教他做題，他替她擋拳頭，兩個破碎的靈魂緊緊相擁，相互救贖，照亮彼此#马小宇** — 追劇鴨 (2:04:03, 5.4K views)
+  https://www.youtube.com/watch?v=m6qcYxC1XII
+  item: `items/m6qcYxC1XII.md`
+- **AI, SEO & GEO for Remodelers: Stop Wasting Money on Marketing | Brandon Miller** — Grosso University (1:24:35, 2 views)
+  https://www.youtube.com/watch?v=7uB7gpyQcoE
+  item: `items/7uB7gpyQcoE.md`
+- **n8n JSON Masterclass: Basic to Advanced in One Video** — Vivek Mishra (1:56:12, 375 views)
+  https://www.youtube.com/watch?v=GS3nvP_TVLc
+  item: `items/GS3nvP_TVLc.md`
+- **Authenticity and AI-Ready Pedagogy** — Bill Moseley, Ph.D. - Computer Science Educator (1:04:54, 15 views)
+  https://www.youtube.com/watch?v=3WSU3SlJm_E
+  item: `items/3WSU3SlJm_E.md`
+- **GTM Heroes Live: RevOps + AI: Driving Leverage Without Bottlenecks** — Common Room (1:00:28, 3 views)
+  https://www.youtube.com/watch?v=jsXKCBu_II8
+  item: `items/jsXKCBu_II8.md`
+- **睜眼穿回20年前，和校花一夜纏綿後，竟能自由穿梭兩個時空！憑未來記憶幫她洗刷冤屈，一路扶持她從落魄千金逆襲千億女總裁，雙向奔赴，成為從底層殺出的神仙眷侶！#爽文** — 爽劇不斷 (2:05:55, 15.2K views)
+  https://www.youtube.com/watch?v=We_0SmVVlq4
+  item: `items/We_0SmVVlq4.md`
+- **💕Multi Sub【她有點不乖】家暴學霸 × 落魄校霸，同桌針鋒相對，卻看穿彼此破碎靈魂！#短劇完整版#短劇推薦#短劇全集#drama#小言推文#戀愛#甜寵#馬小宇#徐藝真** — 小言推文 (2:04:03, 158 views)
+  https://www.youtube.com/watch?v=I1QXNY2_H8Q
+  item: `items/I1QXNY2_H8Q.md`
+- **Weekly Collective Reading • April 5 to April 12, 2026 • The Compass: Which Way Next?** — Nicholas Ashbaugh (1:46:40, 8.0K views)
+  https://www.youtube.com/watch?v=5s1CT3OTqg0
+  item: `items/5s1CT3OTqg0.md`
+- **Humanity, Agency, Audacity | Rob Dickson on Micro Schools, AI, and Social Fitness** — Voices for Excellence (54:16, new)
+  https://www.youtube.com/watch?v=oJETKydal7Y
+  item: `items/oJETKydal7Y.md`
+- **MULTISUB📢新番上线《我家老祖，法力无边》第1~62集丨社畜逆袭万界老祖！靠气运系统自救救宗门，以现代理念改造仙域，收服各族神女，打破旧秩序，实现天下大同！#漫剧 #破晓动漫社** — 破晓动漫社 Dawn Anime Club (1:04:51, 5.0K views)
+  https://www.youtube.com/watch?v=gnCn51w6nKs
+  item: `items/gnCn51w6nKs.md`
+- **The $233B Market Replacing IPOs | CFO Explains Secondaries** — Run the Numbers with CJ Gustafson (38:05, 35 views)
+  https://www.youtube.com/watch?v=pENvBuXhGuk
+  item: `items/pENvBuXhGuk.md`

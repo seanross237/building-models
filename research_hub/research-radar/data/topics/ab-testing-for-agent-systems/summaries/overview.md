@@ -143,3 +143,73 @@ Full item files belong in `items/`.
   source: https://www.youtube.com/watch?v=FneJtuPAiCs
   summary file: `items/youtube--FneJtuPAiCs.md`
   presentation candidate: `false`
+
+## 2026-04-06 — youtube score 1
+
+- **渣男出軌還嘲諷她沒情趣沒人要，怎料分手後她一心撲在事業上，半年後她瘦了，美了，銀行卡余額翻了10倍，還吸引強製愛的霸總、暗戀的學長、討好的奶狗紛紛爭奪她的芳心，渣男氣的後槽牙都咬碎了！**
+  source: https://www.youtube.com/watch?v=3QKw1Fyslis
+  summary file: `items/youtube--3QKw1Fyslis.md`
+  presentation candidate: `false`
+
+## 2026-04-06 — youtube score 2
+
+- **Episode 20: We Built a City Budget App in 20 Minutes (AI Coding Is Here)**
+  source: https://www.youtube.com/watch?v=8LMYZlNKSwI
+  summary file: `items/youtube--8LMYZlNKSwI.md`
+  presentation candidate: `false`
+
+## 2026-04-06 — youtube score 1
+
+- **2nd International Conference on Pig Livability: Pre-weaning Piglet Mortality Open Discussion**
+  source: https://www.youtube.com/watch?v=AqiFVesdAAc
+  summary file: `items/youtube--AqiFVesdAAc.md`
+  presentation candidate: `false`
+
+## 2026-04-06 — youtube score 1
+
+- **Podcast: Breaking down the NHL Playoff Races**
+  source: https://www.youtube.com/watch?v=D-4XcaHN3Ps
+  summary file: `items/youtube--D-4XcaHN3Ps.md`
+  presentation candidate: `false`
+
+## 2026-04-06 — youtube score 1
+
+- **Ep.65—Claude Knows Kung Fu. Midjourney's Still in the Dojo (+V8.1?)**
+  source: https://www.youtube.com/watch?v=Dl64zUCJniU
+  summary file: `items/youtube--Dl64zUCJniU.md`
+  presentation candidate: `false`
+
+## 2026-04-06 — youtube score 1
+
+- **Claude Code Ultra Plan Tested: What Anthropic Doesn't Tell You**
+  source: https://www.youtube.com/watch?v=EcBnUIyWKjs
+  summary file: `items/youtube--EcBnUIyWKjs.md`
+  presentation candidate: `false`
+
+## 2026-04-06 — youtube score 6
+
+- **Google's A2A Protocol Explained + Full Multi-Agent Demo (ADK + LangGraph)**
+  source: https://www.youtube.com/watch?v=HU8bM4rtx-4
+  summary file: `items/youtube--HU8bM4rtx-4.md`
+  presentation candidate: `false`
+
+## 2026-04-06 — youtube score 1
+
+- **The CG Prophecy Report (5 April 2026) - Getting Things Backwards**
+  source: https://www.youtube.com/watch?v=Ii2HRqrScNo
+  summary file: `items/youtube--Ii2HRqrScNo.md`
+  presentation candidate: `false`
+
+## 2026-04-06 — youtube score 1
+
+- **Left at the altar, I was reborn and married his rival CEO, he regrets**
+  source: https://www.youtube.com/watch?v=J0ImJR1_x04
+  summary file: `items/youtube--J0ImJR1_x04.md`
+  presentation candidate: `false`
+
+## 2026-04-06 — youtube score 1
+
+- **If This Happens, 90% of People Are Screwed | No BS With Birchy | EP 233**
+  source: https://www.youtube.com/watch?v=J1YbyhD6Z9Q
+  summary file: `items/youtube--J1YbyhD6Z9Q.md`
+  presentation candidate: `false`

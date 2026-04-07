@@ -1,0 +1,26 @@
+# Build Your First Airtable AI Field Agent | Marketing Intake Automation
+
+- Topic: `automated experimentation for agent workflows`
+- Priority: `super_relevant`
+- Source context: `eywa`
+- Type: `youtube`
+- Video ID: `S9COZCX5oLo`
+- Channel: `Andrew from Simple Stack`
+- Duration: `13:19`
+- Views: `24 views`
+- Upload date: `NA`
+- URL: https://www.youtube.com/watch?v=S9COZCX5oLo
+- Collected at UTC: `2026-04-06T18:15:11Z`
+- Transcript status: `pending`
+
+## Summary
+
+Not analyzed yet.
+
+## Transcript
+
+Transcript not collected yet.
+
+## Notes
+
+- Freshly collected by Research Radar.

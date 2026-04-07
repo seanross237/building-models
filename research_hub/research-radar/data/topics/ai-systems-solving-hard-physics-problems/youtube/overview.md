@@ -282,3 +282,96 @@ Full item files belong in `items/`.
 - **То, Что Нашли под Вавилоном? Теперь НАВСЕГДА Переписывает Историю Человечества** — Портал Секретов (23:28, new)
   https://www.youtube.com/watch?v=_4zYQ3oWhrs
   item: `items/_4zYQ3oWhrs.md`
+
+## 2026-04-06 — 30 new videos
+
+- **The AI Extinction Event: Salim Ismail Warns Most Companies Won’t Survive** — Info-Tech Research Group (1:54:04, 1.3K views)
+  https://www.youtube.com/watch?v=r-f07TqhLkg
+  item: `items/r-f07TqhLkg.md`
+- **Why AI Can Never Escape Turing's 1936 Proof** — Universal Resilience with JT Yu (22:49, 53 views)
+  https://www.youtube.com/watch?v=u_5erLilDXY
+  item: `items/u_5erLilDXY.md`
+- **The Holden Paradox — Why Societies Choose Monsters Over Mapmakers** — ThetaDriven (8:16, 1 views)
+  https://www.youtube.com/watch?v=KC242qlDlyw
+  item: `items/KC242qlDlyw.md`
+- **How to solve this nice algebra equation | Olympiad problem | x=?** — Mathematics & Statistics Guru (12:35, 25 views)
+  https://www.youtube.com/watch?v=CrFWdUVCEbE
+  item: `items/CrFWdUVCEbE.md`
+- **Solve for m in this nice exponential equation | Math Olympiad Mathematics** — HkLogics (12:01, 8 views)
+  https://www.youtube.com/watch?v=7KEGm43dg4s
+  item: `items/7KEGm43dg4s.md`
+- **Why Returning From Mars Is Impossible: Feynman's Warning** — Feynman Wisdom Explained (17:08, 6 views)
+  https://www.youtube.com/watch?v=3BKSJRSiPfs
+  item: `items/3BKSJRSiPfs.md`
+- **The Reality Grip — Hardware, Human Alpha, and the AI Drift** — ThetaDriven (5:00, new)
+  https://www.youtube.com/watch?v=PkWwg9NRrRE
+  item: `items/PkWwg9NRrRE.md`
+- **🔥Boy Awakens Bronze Troop Type, Is Mocked by All, Until He Raises a Tiny Bug into a Million Swarm!** — Bella's Comic Chronicles (23:29:18, 556 views)
+  https://www.youtube.com/watch?v=xhlx5LAry_o
+  item: `items/xhlx5LAry_o.md`
+- **倪海廈：4月8號壬子日必看！4生肖穿綠色，3種人穿青色，保你2026馬年翻天覆地#倪海廈 #黃帝內經 #養生 #國學 #易經 #清明 #開運 #招財 #補財庫 #中醫 #風水 #2026運勢 #農曆** — 漢唐健康 (1:20:42, 2.3K views)
+  https://www.youtube.com/watch?v=gsJXqj8VEnY
+  item: `items/gsJXqj8VEnY.md`
+- **You Followed Every Step. So Why Didn't It Work?** — Nexus Weave (22:43, 4 views)
+  https://www.youtube.com/watch?v=9gzaNEAEqAk
+  item: `items/9gzaNEAEqAk.md`
+- **Valiant Thor: The Alien Who Worked at the Pentagon** — The Folklore Case Files (1:26:51, 12 views)
+  https://www.youtube.com/watch?v=TpP2JsUWIcM
+  item: `items/TpP2JsUWIcM.md`
+- **AESTHETIC DENTISTRY & DENTAL MORPHOLOGY EXPLAINED |DENTAL PATH| EP. 05 - FT. DIMITRIS KAPAGIANNIDIS** — Dental Path (1:47:59, 20 views)
+  https://www.youtube.com/watch?v=fClGH6_9ALM
+  item: `items/fClGH6_9ALM.md`
+- **From Discovery to Impact in Healthcare** — Massachusetts Institute of Technology (MIT) (40:32, 7 views)
+  https://www.youtube.com/watch?v=KdAf6oDD8-c
+  item: `items/KdAf6oDD8-c.md`
+- **What is a quantum field? The hidden structure of reality** — ExoRexor (20:55, 88 views)
+  https://www.youtube.com/watch?v=yKi-kGRKTHY
+  item: `items/yKi-kGRKTHY.md`
+- **MULTISUB📢新番上线《我家老祖，法力无边》第1~62集丨社畜逆袭万界老祖！靠气运系统自救救宗门，以现代理念改造仙域，收服各族神女，打破旧秩序，实现天下大同！#漫剧 #破晓动漫社** — 破晓动漫社 Dawn Anime Club (1:04:51, 5.0K views)
+  https://www.youtube.com/watch?v=gnCn51w6nKs
+  item: `items/gnCn51w6nKs.md`
+- **What’s Next & Closing Remarks** — Massachusetts Institute of Technology (MIT) (47:21, 2 views)
+  https://www.youtube.com/watch?v=FS_ZYnu-Stk
+  item: `items/FS_ZYnu-Stk.md`
+- **THE KENO HILL SHOCK: Why Canadian Miners Are About To Break The Silver Market…** — Jon Clinton (10:56, 1.7K views)
+  https://www.youtube.com/watch?v=FsCIuOGa8kQ
+  item: `items/FsCIuOGa8kQ.md`
+- **System Design Ch.4: Message Queues** — Learning Podcasts (10:07, 18 views)
+  https://www.youtube.com/watch?v=AiTMIguGKPU
+  item: `items/AiTMIguGKPU.md`
+- **倪海廈：祛濕解毒“神仙水”潮濕天必備！有效針對濕氣重，易疲憊，關節酸痛的人群， 清熱祛濕，強筋健骨！#濕氣重怎麼辦#關節痛#膝蓋痛#退化性關節炎#痛風#痛風飲食#慢性疲勞#睡不飽#四妙散#祛濕茶** — 倪師國學健康養生官方 (26:49, 443 views)
+  https://www.youtube.com/watch?v=0XBX7r8vKEU
+  item: `items/0XBX7r8vKEU.md`
+- **AI Build #3 - Regen Neighborhood Framework** — Regen Tribe (2:09:45, 3 views)
+  https://www.youtube.com/watch?v=DXhwD6EUbx4
+  item: `items/DXhwD6EUbx4.md`
+- **The REAL Reason Coffee Is Dangerous After 60 (Not Caffeine)** — Dr. Okoro (24:51, 2 views)
+  https://www.youtube.com/watch?v=E8agElb1PCo
+  item: `items/E8agElb1PCo.md`
+- **Volts ϟ 4.3.2026 – Hannah Safford/Loren Schulman (Rethinking Climate Regulation From The Ground Up)** — Volts (1:20:50, 2 views)
+  https://www.youtube.com/watch?v=eZU3TVteZFQ
+  item: `items/eZU3TVteZFQ.md`
+- **Reincarnate Infinitely | Best Action Comedy Movie | Free Full Movie 4K** — 高分观影社 (1:15:51, 1.4K views)
+  https://www.youtube.com/watch?v=GSRVOpSXuF0
+  item: `items/GSRVOpSXuF0.md`
+- **😱The biggest crisis of 2026? A prophecy reveals a "Normandy-style invasion of Taiwan"...** — HIBY新聞 (2:09:10, 547 views)
+  https://www.youtube.com/watch?v=JmHDnMRWmSw
+  item: `items/JmHDnMRWmSw.md`
+- **The Haunting of Recording | Space designated simply as ‘the great absence’** — Supernatural Horror Story (1:09:11, new)
+  https://www.youtube.com/watch?v=QKXiMgdGGb4
+  item: `items/QKXiMgdGGb4.md`
+- **What Dance Scholars can Learn from Warehouse Surveillance** — Berkeley School of Information (1:26:05, new)
+  https://www.youtube.com/watch?v=R2-gcIWTFUs
+  item: `items/R2-gcIWTFUs.md`
+- **穿越到女人為尊的世界，覺醒震驚系統，當眾接納五位罪奴嬌妻，反手掏出直升機劫法場救母！看我用加特林橫掃北蠻大軍，讓不可一世的女帝跪求我回宮，最後熱武器打爆北蠻鐵騎，迎娶七位嬌妻！😎** — 追梦剧场 (2:34:06, 19.9K views)
+  https://www.youtube.com/watch?v=0O3PUM_-Nzo
+  item: `items/0O3PUM_-Nzo.md`
+- **#189 - Mining, Money, and Long-Term Strategy | Abundant Mines CEO Beau Turner** — The Necessary Entrepreneur (45:05, 4 views)
+  https://www.youtube.com/watch?v=zKKJtAJKRg8
+  item: `items/zKKJtAJKRg8.md`
+- **穿越成廢物太子，被滿朝文武欺辱！他不裝了！造出火槍大砲，轟平敵國，蛀蟲跪地求饒：陛下，饒命！ #神功小子#爽劇#覺醒#逆襲#反殺#武俠#戰鬥 #功夫** — KK追剧社 (2:50:29, 138 views)
+  https://www.youtube.com/watch?v=vuqTFQhIS6M
+  item: `items/vuqTFQhIS6M.md`
+- **THE MISSILE THAT THINKS — Why AI is our Only Hope (And Our Biggest Risk)** — Strategic Forecaster (17:40, 12 views)
+  https://www.youtube.com/watch?v=u33KDTjnJyM
+  item: `items/u33KDTjnJyM.md`

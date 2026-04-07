@@ -120,3 +120,33 @@ Full item files belong in `items/`.
 - **🎮 VALORANT GRIND [ ROAD TO 10K SUBSCRIBERS ] | EMJAY 27** — EMJAY 27 (2:15:31, 36 views)
   https://www.youtube.com/watch?v=AP-c65xV2RQ
   item: `items/AP-c65xV2RQ.md`
+
+## 2026-04-06 — 9 new videos
+
+- **Meta Built an AI Agent That Works While Engineers Sleep (Here's How)** — The Bearded AI Guy (5:11, 1 views)
+  https://www.youtube.com/watch?v=K9s8LDoPTHQ
+  item: `items/K9s8LDoPTHQ.md`
+- **Not every AI agent in Ads Manager is safe; some risk bans. #marketinghacks** — Luca Brinkhues (1:07, 65 views)
+  https://www.youtube.com/watch?v=nYlibzMxNX8
+  item: `items/nYlibzMxNX8.md`
+- **Day 159 – Vibe Coding an App Until I Make $1,000,000 | ARR: $69,455** — BridgeMind (NA, new)
+  https://www.youtube.com/watch?v=yJUN-cH_m54
+  item: `items/yJUN-cH_m54.md`
+- **Why Your SEO Traffic Is Down 40% (And How to Fix It in 2026)** — Neighbourhood Co. (4:00, 1 views)
+  https://www.youtube.com/watch?v=5mt5aiRL58U
+  item: `items/5mt5aiRL58U.md`
+- **🎮 VALORANT GRIND TILL I GET MIKS [ ROAD TO 10K SUBSCRIBERS ] | EMJAY 27** — EMJAY 27 (NA, new)
+  https://www.youtube.com/watch?v=QgzfDwKFfS0
+  item: `items/QgzfDwKFfS0.md`
+- **How Automotive Dealerships Operationalize WhatsApp Across the Sales Lifecycle** — Respond.io (4:44, 23 views)
+  https://www.youtube.com/watch?v=_Q7G98e6Yc0
+  item: `items/_Q7G98e6Yc0.md`
+- **I Canceled GPT and Switched to Free Claude — Saved ₩526,800 with Superior Performance** — AI경제패턴 (24:55, 16 views)
+  https://www.youtube.com/watch?v=iHQlU5M6dRA
+  item: `items/iHQlU5M6dRA.md`
+- **Snowflake CEO on AI Risk, Product Innovation and Winning Enterprise Customers** — After Earnings (28:24, 1.9K views)
+  https://www.youtube.com/watch?v=bzCvScDWgtg
+  item: `items/bzCvScDWgtg.md`
+- **Ep.65—Claude Knows Kung Fu. Midjourney's Still in the Dojo (+V8.1?)** — Midjourney Fast Hours (1:23:41, 1.5K views)
+  https://www.youtube.com/watch?v=Dl64zUCJniU
+  item: `items/Dl64zUCJniU.md`

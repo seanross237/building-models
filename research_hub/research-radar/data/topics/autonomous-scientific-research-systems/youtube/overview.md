@@ -282,3 +282,96 @@ Full item files belong in `items/`.
 - **I Spent $1 on a "Fake" Game... And ACCIDENTALLY Crushed a REAL Magic Order?!-Manhwa Recap** — Silas Recap (2:08:17, 4.1K views)
   https://www.youtube.com/watch?v=g9YEGpDnH1o
   item: `items/g9YEGpDnH1o.md`
+
+## 2026-04-06 — 30 new videos
+
+- **AI-Powered Labs Accelerating Scientific Discovery | Podcast** — National Science Foundation News (20:53, 121 views)
+  https://www.youtube.com/watch?v=YjIUKbKXFu0
+  item: `items/YjIUKbKXFu0.md`
+- **Delivering on the Promise: Life Science, Design and AI for Better Health** — Massachusetts Institute of Technology (MIT) (1:00:07, 1 views)
+  https://www.youtube.com/watch?v=Xrm3XurcB3k
+  item: `items/Xrm3XurcB3k.md`
+- **Insights from NVIDIA Research | NVIDIA GTC** — NVIDIA Developer (38:18, 66 views)
+  https://www.youtube.com/watch?v=6vVzPnU7KwM
+  item: `items/6vVzPnU7KwM.md`
+- **Defining the Next Era of Health Innovation** — Massachusetts Institute of Technology (MIT) (49:46, 5 views)
+  https://www.youtube.com/watch?v=zIHxtNTV23s
+  item: `items/zIHxtNTV23s.md`
+- **ChuckChat NewsNNotes Episode4 2026 04 06** — ChuckChat (27:47, 7 views)
+  https://www.youtube.com/watch?v=kyQW7tESwgc
+  item: `items/kyQW7tESwgc.md`
+- **The AI Extinction Event: Moonshots' Salim Ismail Warns Most Companies Won't Survive** — Info-Tech Research Group (1:54:04, 1.3K views)
+  https://www.youtube.com/watch?v=r-f07TqhLkg
+  item: `items/r-f07TqhLkg.md`
+- **Why AI Can Never Escape Turing's 1936 Proof** — Universal Resilience with JT Yu (22:49, 45 views)
+  https://www.youtube.com/watch?v=u_5erLilDXY
+  item: `items/u_5erLilDXY.md`
+- **Going viral: Ancient UFO recovered from ocean... Bob Lazar drops a bombshell about the sports model!** — Mach dich schlau! - Mystery, Doku & Space (22:02, new)
+  https://www.youtube.com/watch?v=w1oMIaCRBlU
+  item: `items/w1oMIaCRBlU.md`
+- **Should I keep holding onto Samsung Electronics stock? The market-shaking future of HBM semiconduc...** — EBSDocumentary (EBS 다큐) (44:02, 29.4K views)
+  https://www.youtube.com/watch?v=U2KCC6oETZA
+  item: `items/U2KCC6oETZA.md`
+- **How Russia's 400 Cruise Missile Transfer Changes Iran's Strike Range — Prof. Jiang Xueqin Analysis** — Dr. Emma (15:43, 51.4K views)
+  https://www.youtube.com/watch?v=uEqo3FQ7KZo
+  item: `items/uEqo3FQ7KZo.md`
+- **The Ghost of a Comet: Why MAPS Just Vanished into the Sun...** — Horizon Feed (25:41, 2.0K views)
+  https://www.youtube.com/watch?v=tVaJvOzC4rY
+  item: `items/tVaJvOzC4rY.md`
+- **Marc D'Antonio - 40 Billion Habitable Worlds and Something Living in Our Oceans | Basement Trailer** — The Why Files (3:14, 102.7K views)
+  https://www.youtube.com/watch?v=SfJzA-MguTg
+  item: `items/SfJzA-MguTg.md`
+- **$45B MicroLED X99 Factory (2027): Walking Inside Samsung's Futuristic Display Core** — Processify (22:35, 152 views)
+  https://www.youtube.com/watch?v=0y7ctGU8OsY
+  item: `items/0y7ctGU8OsY.md`
+- **Iran Rejects Ceasefire Ultimatum | Open Interest 4/6/2026** — Bloomberg Television (1:27:11, 652 views)
+  https://www.youtube.com/watch?v=8Uau3nJcHYQ
+  item: `items/8Uau3nJcHYQ.md`
+- **Agentic AI and Cybersecurity: Threats, Governance, and Strategy** — The Berkman Klein Center for Internet & Society (1:02:17, 64 views)
+  https://www.youtube.com/watch?v=hk4X3mv9GVw
+  item: `items/hk4X3mv9GVw.md`
+- **GCP Architecture Masterclass 2026 Module 2 Summary: Architecting the Autonomous Mind** — TradingMaster AI (7:37, new)
+  https://www.youtube.com/watch?v=SD-cafqupfk
+  item: `items/SD-cafqupfk.md`
+- **Humanity, Agency, Audacity | Rob Dickson on Micro Schools, AI, and Social Fitness** — Voices for Excellence (54:16, new)
+  https://www.youtube.com/watch?v=oJETKydal7Y
+  item: `items/oJETKydal7Y.md`
+- **What Hit the Sun Yesterday Left Something Behind Nobody Is Talking About** — The Science Studio (44:35, 12.5K views)
+  https://www.youtube.com/watch?v=RWUS0b0gIKw
+  item: `items/RWUS0b0gIKw.md`
+- **Episode 5 - Piotr Szyperski - The Shift Every Developer Will Face in The Age of AI** — AppStream Studio (46:53, 2 views)
+  https://www.youtube.com/watch?v=CsGgCoDxQbE
+  item: `items/CsGgCoDxQbE.md`
+- **Advanced Architectures for Vertical AI Agents | 90-Lesson Code-First Masterclass | Systemdr** — SystemDR - Scalable System Design (3:44, 9 views)
+  https://www.youtube.com/watch?v=KAkm2SGawsQ
+  item: `items/KAkm2SGawsQ.md`
+- **The Architecture of Peace: Engineering Our Way Out of WWIII #Peace #Geopolitics #AI #war** — BerryHappy (6:28, 12 views)
+  https://www.youtube.com/watch?v=TMqxmKaS8QU
+  item: `items/TMqxmKaS8QU.md`
+- **10 STRANGEST FORESTRY MACHINES EVER BUILT** — Forestry Giants (25:56, 285 views)
+  https://www.youtube.com/watch?v=T3PqdCazQ30
+  item: `items/T3PqdCazQ30.md`
+- **Copilot is "for entertainment purposes only": Microsoft's Terms Of Use | Next in AI | Astha La Vista** — Next in AI: Astha La Vista (5:56, 13 views)
+  https://www.youtube.com/watch?v=Reh_UyaHk4Y
+  item: `items/Reh_UyaHk4Y.md`
+- **Introduction to Teoria Fabrica Realica (TFR) - The Sovereign Scientific Operating System** — Ivan Pasev (10:13, 8 views)
+  https://www.youtube.com/watch?v=mcuKnM5HNwc
+  item: `items/mcuKnM5HNwc.md`
+- **CIA, JFK & Hidden Power Networks: Inside America’s Secret History | Eyes Wide Open | Episode 160** — The TLB Podcast (2:17:17, 47 views)
+  https://www.youtube.com/watch?v=AHkoGJ--Hk0
+  item: `items/AHkoGJ--Hk0.md`
+- **AI Automation for Beginners: Build a Zero-Human Company (Paperclip AI)** — LumenLearn (22:05, 11 views)
+  https://www.youtube.com/watch?v=VK9o-xeFwA8
+  item: `items/VK9o-xeFwA8.md`
+- **ईरान जंग के बीच भारत ने खड़ा किया फौलादी योद्धा, तेजस के साथ धमाका करने कैट्स हंटर की एंट्री !** — Indilinks News (9:49, 11.3K views)
+  https://www.youtube.com/watch?v=qSYknW0tkEM
+  item: `items/qSYknW0tkEM.md`
+- **Bats Inspire Advance in Aerial Robots** — WPI (4:44, 4 views)
+  https://www.youtube.com/watch?v=qxNvKzKr4QA
+  item: `items/qxNvKzKr4QA.md`
+- **होर्मुज संकट के बीच भारत ने कर डाला पिनाका से भी बड़ा धमाका, सूर्यास्त्र की आंधी में उड़ा अमेरिका !** — Indilinks News (10:26, 12.6K views)
+  https://www.youtube.com/watch?v=m8iR1d7j7GU
+  item: `items/m8iR1d7j7GU.md`
+- **Symposium—Iba Ndiaye: Between Latitude and Longitude** — The Met (4:18:06, 126 views)
+  https://www.youtube.com/watch?v=nfbGoajjdVI
+  item: `items/nfbGoajjdVI.md`

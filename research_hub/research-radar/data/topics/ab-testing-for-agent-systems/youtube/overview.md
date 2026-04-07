@@ -282,3 +282,96 @@ Full item files belong in `items/`.
 - **I saw his betrayal, divorced and became the richest CEO, my ex regrets** — Vespertine Drama (2:04:22, 149 views)
   https://www.youtube.com/watch?v=4iJgF1JaUnI
   item: `items/4iJgF1JaUnI.md`
+
+## 2026-04-06 — 30 new videos
+
+- **Anthropic Just Dropped Multi-Agent Planning for Claude Code** — Ray Amjad (7:53, 16.0K views)
+  https://www.youtube.com/watch?v=UNhA17l6CWw
+  item: `items/UNhA17l6CWw.md`
+- **Claude Code Ultra Plan Tested: What Anthropic Doesn't Tell You** — Engr Mejba Ahmed (1:20, 11 views)
+  https://www.youtube.com/watch?v=EcBnUIyWKjs
+  item: `items/EcBnUIyWKjs.md`
+- **Best AI System for Professionals | Granola AI Meeting Assistant Tutorial** — Jon Law (12:44, 28.5K views)
+  https://www.youtube.com/watch?v=ZajJjPYDwWM
+  item: `items/ZajJjPYDwWM.md`
+- **Episode 20: We Built a City Budget App in 20 Minutes (AI Coding Is Here)** — Anthony and Greg (33:52, 2 views)
+  https://www.youtube.com/watch?v=8LMYZlNKSwI
+  item: `items/8LMYZlNKSwI.md`
+- **Peace Lily Turning Yellow? How to Revive Any Dying Plant With This Simple Trick.** — Wonder Garden (12:42, 1.0K views)
+  https://www.youtube.com/watch?v=nZq7h8_BNBY
+  item: `items/nZq7h8_BNBY.md`
+- **Podcast: Breaking down the NHL Playoff Races** — NHL Europe (1:50:58, 4 views)
+  https://www.youtube.com/watch?v=D-4XcaHN3Ps
+  item: `items/D-4XcaHN3Ps.md`
+- **The Grok 4 Trap: Why 20 Agents Beat One Genius Model | #NEWIT** — GilliLab Logic Salt (54:48, new)
+  https://www.youtube.com/watch?v=csafstv4gLI
+  item: `items/csafstv4gLI.md`
+- **GTM Heroes Live: RevOps + AI: Driving Leverage Without Bottlenecks** — Common Room (1:00:28, 3 views)
+  https://www.youtube.com/watch?v=jsXKCBu_II8
+  item: `items/jsXKCBu_II8.md`
+- **OpenClaw Setup: Stop Paying for APIs (Run Gemma 4 Free)** — Kris Torrington (3:41, 36 views)
+  https://www.youtube.com/watch?v=ej4kPT7N8EI
+  item: `items/ej4kPT7N8EI.md`
+- **Agentic AI and Cybersecurity: Threats, Governance, and Strategy** — The Berkman Klein Center for Internet & Society (1:02:17, 64 views)
+  https://www.youtube.com/watch?v=hk4X3mv9GVw
+  item: `items/hk4X3mv9GVw.md`
+- **Aaron Stannard: Software 2.0 using AI - Episode 396** — AI DevOps Podcast (50:52, 7 views)
+  https://www.youtube.com/watch?v=dlkDgeiP3eU
+  item: `items/dlkDgeiP3eU.md`
+- **D1Part2 - Getting Started - Project Overview - Microservice - Framework - RestAPIs [6Apr]** — Tausief S (2:41:06, 2.8K views)
+  https://www.youtube.com/watch?v=s9HQONq7rD4
+  item: `items/s9HQONq7rD4.md`
+- **Why a British Prison Let a Van Leave AFTER the Alarm Sounded – With a Spy Underneath** — THE SILENT BREAK (24:28, 3.7K views)
+  https://www.youtube.com/watch?v=snOeqxlzRTk
+  item: `items/snOeqxlzRTk.md`
+- **Scientists Can’t Explain This… WTF Is Octopus Intelligence?** — Weird Truth Files (31:52, 1 views)
+  https://www.youtube.com/watch?v=ZUwbysjd2Ps
+  item: `items/ZUwbysjd2Ps.md`
+- **渣男出軌還嘲諷她沒情趣沒人要，怎料分手後她一心撲在事業上，半年後她瘦了，美了，銀行卡余額翻了10倍，還吸引強製愛的霸總、暗戀的學長、討好的奶狗紛紛爭奪她的芳心，渣男氣的後槽牙都咬碎了！** — 劇抓馬 (1:54:55, 12.5K views)
+  https://www.youtube.com/watch?v=3QKw1Fyslis
+  item: `items/3QKw1Fyslis.md`
+- **Ep.65—Claude Knows Kung Fu. Midjourney's Still in the Dojo (+V8.1?)** — Midjourney Fast Hours (1:23:41, 1.5K views)
+  https://www.youtube.com/watch?v=Dl64zUCJniU
+  item: `items/Dl64zUCJniU.md`
+- **Think in English: Why You Freeze When Speaking English (And It's Not Grammar) | A2–B1** — English Unlocked: The Podcast (12:53, 5 views)
+  https://www.youtube.com/watch?v=lBw-M9kMN6A
+  item: `items/lBw-M9kMN6A.md`
+- **The CG Prophecy Report (5 April 2026) - Getting Things Backwards** — The Superior Word (43:45, 664 views)
+  https://www.youtube.com/watch?v=Ii2HRqrScNo
+  item: `items/Ii2HRqrScNo.md`
+- **Núi hoang thành núi vàng! Nông dân nhờ hệ thống làm giàu, dắt làng nghịch tập!v** — Kịch Hay Mỗi Ngày (2:30:08, 312 views)
+  https://www.youtube.com/watch?v=pLWtREwKtpc
+  item: `items/pLWtREwKtpc.md`
+- **Organ Child (2025) Movie Explained | English Subtitle Added** — Hello! Bangla (24:22, 91 views)
+  https://www.youtube.com/watch?v=Sbq9cH7dOP8
+  item: `items/Sbq9cH7dOP8.md`
+- **The insurance company killed my sister, so I killed the boss and exposed their crimes** — Teatro da Fruta Verde (48:20, 14 views)
+  https://www.youtube.com/watch?v=ZYFMqThVnnQ
+  item: `items/ZYFMqThVnnQ.md`
+- **2nd International Conference on Pig Livability: Pre-weaning Piglet Mortality Open Discussion** — Iowa Pork Industry Center (26:29, 35 views)
+  https://www.youtube.com/watch?v=AqiFVesdAAc
+  item: `items/AqiFVesdAAc.md`
+- **🔥Boy Awakens Bronze Troop Type, Is Mocked by All, Until He Raises a Tiny Bug into a Million Swarm!** — Bella's Comic Chronicles (23:29:18, 556 views)
+  https://www.youtube.com/watch?v=xhlx5LAry_o
+  item: `items/xhlx5LAry_o.md`
+- **【完結】18歲的林清音誤闖校霸江炎的紋身店，他一眼淪陷，從此高調示愛，轟動全校，可她因原生家庭的陰影始終不敢邁出那一步，去回應他的炙熱，直到情緒失控，他紅著眼逼問：“你到底有沒有心？#马小宇#徐艺真** — 劇熱門 (2:04:05, 10.9K views)
+  https://www.youtube.com/watch?v=UqrnNNiduRg
+  item: `items/UqrnNNiduRg.md`
+- **All His Efforts Got Betrayal;She Cried In Vain As He Married Anothe,She Cried In Deep Regret** — Queen ShortDrama (2:14:05, 238 views)
+  https://www.youtube.com/watch?v=LzGbkiDV1vg
+  item: `items/LzGbkiDV1vg.md`
+- **Forced to bark like a dog, she’s heartbroken, returns as a rich heiress, he regrets too late** — 橙星剧场ShortTV (1:31:35, 6.6K views)
+  https://www.youtube.com/watch?v=P8DoHPQ59Qo
+  item: `items/P8DoHPQ59Qo.md`
+- **Left at the altar, I was reborn and married his rival CEO, he regrets** — Vespertine Drama (1:30:06, 138 views)
+  https://www.youtube.com/watch?v=J0ImJR1_x04
+  item: `items/J0ImJR1_x04.md`
+- **【全網首發】萬人迷沈雲兮意外穿書，綁定攻略系統，只要刷滿男主林思辰好感度就能回家！她撒嬌撩撥用盡手段，好感度卻一路暴跌。直到男主俯身貼耳低笑：姐姐別裝了，你的心聲我聽得一清二楚～#甜宠 #系统** — 西溪爆米花剧场 (1:41:58, 2.8K views)
+  https://www.youtube.com/watch?v=rsToM3wTTPE
+  item: `items/rsToM3wTTPE.md`
+- **Poor man awakens divine fishing system, catching female CEO, endless ingredients, change life** — 烈焰爽劇SHORT (1:04:22, 4.0K views)
+  https://www.youtube.com/watch?v=z8ja7tynQEU
+  item: `items/z8ja7tynQEU.md`
+- **他是冷麵無情的校霸，浪蕩不羈，惹上他算是廢了，可唯獨面對她時化作溫柔大金毛，後來有人問他，為什麼對她這麼好，他想了想，說第一眼就淪陷了，從此浪子回頭，冰川融化，所有的溫柔與寵溺，都只給她一人** — 追爽劇 (2:04:03, 7.6K views)
+  https://www.youtube.com/watch?v=qtUpCoxwvgU
+  item: `items/qtUpCoxwvgU.md`

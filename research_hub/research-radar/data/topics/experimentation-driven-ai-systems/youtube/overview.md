@@ -282,3 +282,96 @@ Full item files belong in `items/`.
 - **The System Crash Your Brain Prevents (Every Single Day)** — Tom Talks Mind (34:53, 6 views)
   https://www.youtube.com/watch?v=ZoxsZJlDBlQ
   item: `items/ZoxsZJlDBlQ.md`
+
+## 2026-04-06 — 30 new videos
+
+- **The Human Edge: Software Testing in an AI-Driven World (with Ruslan Desyatnikov)** — Rice Consulting Services, Inc. (55:22, 8 views)
+  https://www.youtube.com/watch?v=eva-z7qdY-M
+  item: `items/eva-z7qdY-M.md`
+- **Ithara: Pioneering A New Era Of AI-Driven Software Engineering I TNP** — Suzega (25:15, 7 views)
+  https://www.youtube.com/watch?v=kyqL8JEikgc
+  item: `items/kyqL8JEikgc.md`
+- **Girls Built a Vehicle the World Has Never Seen Before! #Diy #repairing** — Highland Mechanic Girl (1:15:10, 4.4K views)
+  https://www.youtube.com/watch?v=41asIAF89QM
+  item: `items/41asIAF89QM.md`
+- **NEW Innovations of 2026 You Must See to Believe!** — TechTrends (19:46, 769 views)
+  https://www.youtube.com/watch?v=FIueqeXG-6k
+  item: `items/FIueqeXG-6k.md`
+- **AI-Powered Labs Accelerating Scientific Discovery | Podcast** — National Science Foundation News (20:53, 121 views)
+  https://www.youtube.com/watch?v=YjIUKbKXFu0
+  item: `items/YjIUKbKXFu0.md`
+- **Chris Ford has spicy takes on Engineering With AI!** — Engineering With AI (1:08:59, 2 views)
+  https://www.youtube.com/watch?v=G32QTr4s3X8
+  item: `items/G32QTr4s3X8.md`
+- **The Prompt Engineering Technique QA Teams Are Using in 2026** — DevHacks 360 (2:45, 4 views)
+  https://www.youtube.com/watch?v=mREtR6pV2SI
+  item: `items/mREtR6pV2SI.md`
+- **#18 How HR Can Drive AI Transformation, with Mónica Duque Estévez, Head of People, Influur** — Daria Rudnik Coaching & Consulting (31:30, new)
+  https://www.youtube.com/watch?v=Bctg3vpfEXk
+  item: `items/Bctg3vpfEXk.md`
+- **Gemma 4 on Raspberry Pi 5: A Surprisingly Usable Local AI Setup** — Zero to MVP (9:09, 48.7K views)
+  https://www.youtube.com/watch?v=kZhAj8--t8w
+  item: `items/kZhAj8--t8w.md`
+- **Insights from NVIDIA Research | NVIDIA GTC** — NVIDIA Developer (38:18, 64 views)
+  https://www.youtube.com/watch?v=6vVzPnU7KwM
+  item: `items/6vVzPnU7KwM.md`
+- **Introduction to ACT for autonomous driving | VLA for autonomous driving bootcamp | Lecture 2** — Vizuara (2:30:00, 357 views)
+  https://www.youtube.com/watch?v=XFlo6YKaFKU
+  item: `items/XFlo6YKaFKU.md`
+- **AI Algo Bot Testing on GOLD XAUUSD** — Algo Bot Lab (3:34, new)
+  https://www.youtube.com/watch?v=o3dYG6iyoJY
+  item: `items/o3dYG6iyoJY.md`
+- **NASA Artemis 2 and AI | 2 min Guide** — AI 360 Snap (2:30, 1 views)
+  https://www.youtube.com/watch?v=0EzZUyOzMwE
+  item: `items/0EzZUyOzMwE.md`
+- **Episode 132 AI Agents Orchestration** — Helen Yu (19:18, 804 views)
+  https://www.youtube.com/watch?v=aUWRJ_pIOw8
+  item: `items/aUWRJ_pIOw8.md`
+- **Delivering on the Promise: Life Science, Design and AI for Better Health** — Massachusetts Institute of Technology (MIT) (1:00:07, 1 views)
+  https://www.youtube.com/watch?v=Xrm3XurcB3k
+  item: `items/Xrm3XurcB3k.md`
+- **Defining the Next Era of Health Innovation** — Massachusetts Institute of Technology (MIT) (49:46, 5 views)
+  https://www.youtube.com/watch?v=zIHxtNTV23s
+  item: `items/zIHxtNTV23s.md`
+- **AI Build #1 - Regen Neighborhood Framework** — Regen Tribe (2:13:18, 6 views)
+  https://www.youtube.com/watch?v=Cp_cQrSJdxY
+  item: `items/Cp_cQrSJdxY.md`
+- **The Role of AI in Advertising - What's Actually Working for B2B SaaS Startups - with Brook Shepard** — Growth Vertical (48:26, 4 views)
+  https://www.youtube.com/watch?v=e04tUz9isWU
+  item: `items/e04tUz9isWU.md`
+- **Enterprise AI Consulting Framework — Board-Level Guide** — Apptunix - #1 App Development Company (3:08, 30 views)
+  https://www.youtube.com/watch?v=gHOyFiDiJAk
+  item: `items/gHOyFiDiJAk.md`
+- **I Created a Full Cinematic AI Video with MovieFlow + Usdt Reward Feature Explained** — AI BORDER (4:34, 5.5K views)
+  https://www.youtube.com/watch?v=rai234e2ODg
+  item: `items/rai234e2ODg.md`
+- **AI in Diplomacy Explained | Digital Diplomacy, Negotiation & Policy Simulation** — The Learning Studio (4:20, 1 views)
+  https://www.youtube.com/watch?v=R5REe0yc7b8
+  item: `items/R5REe0yc7b8.md`
+- **Ad Creative FULL COURSE 2 HOURS: Create, Test, and Scale (2026)** — Alessio Cordeddu (2:26:25, 817 views)
+  https://www.youtube.com/watch?v=vxyxCpFskzA
+  item: `items/vxyxCpFskzA.md`
+- **Engineering the Path to the Clinic** — Massachusetts Institute of Technology (MIT) (57:18, 4 views)
+  https://www.youtube.com/watch?v=H2krmuuG9TY
+  item: `items/H2krmuuG9TY.md`
+- **How AI Fleets Fixed 31 Issues in Two Days | Merge Conflict ep. 509** — Merge Conflict Podcast (42:12, 33 views)
+  https://www.youtube.com/watch?v=juyQ9gkXqqE
+  item: `items/juyQ9gkXqqE.md`
+- **Agentic AI and Cybersecurity: Threats, Governance, and Strategy** — The Berkman Klein Center for Internet & Society (1:02:17, 64 views)
+  https://www.youtube.com/watch?v=hk4X3mv9GVw
+  item: `items/hk4X3mv9GVw.md`
+- **From Scripts to AI: Thiago Maior on Navigating the Shift Toward Vibe Coding and Automation** — Entrepreneurs, Executives, and Eccentrics (35:13, new)
+  https://www.youtube.com/watch?v=W9EXIaVKrZI
+  item: `items/W9EXIaVKrZI.md`
+- **CTS Webinar: Industry and International Perspectives on AI Integration** — CTSUMN (1:15:09, 12 views)
+  https://www.youtube.com/watch?v=1m_HnnfJ6BU
+  item: `items/1m_HnnfJ6BU.md`
+- **Reasoning Beats Raw Power - TCR 04/06/26** — Shared Sapience (18:59, 3 views)
+  https://www.youtube.com/watch?v=oboeaEF63hU
+  item: `items/oboeaEF63hU.md`
+- **Introducing Workiva: AI, Data, and Assurance in One Platform** — Workiva (3:28, 3 views)
+  https://www.youtube.com/watch?v=nNt-DmgVVqs
+  item: `items/nNt-DmgVVqs.md`
+- **Reasoning Can Hurt LLM Safety?! Rethinking Accuracy in AI Systems (EACL 2026)** — Women in AI Research WiAIR (21:43, 4 views)
+  https://www.youtube.com/watch?v=rwso1FaTxDc
+  item: `items/rwso1FaTxDc.md`

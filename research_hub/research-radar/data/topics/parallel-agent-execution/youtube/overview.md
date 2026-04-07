@@ -228,3 +228,66 @@ Full item files belong in `items/`.
 - **MIT AI alumni club Shipping at the Speed of Thought Michael Bryzek** — Maria Kellis (1:11:32, 3 views)
   https://www.youtube.com/watch?v=DduKznHrh4M
   item: `items/DduKznHrh4M.md`
+
+## 2026-04-06 — 20 new videos
+
+- **Master Claude Code: Prompts, Agents & MCP 2026** — Thetips4you (41:40, 134 views)
+  https://www.youtube.com/watch?v=YF_ucLkkHTw
+  item: `items/YF_ucLkkHTw.md`
+- **AI Agent SEO Analysis: Instant Audits, Smarter Strategy & Cost Savings** — Andrew Melnychuk-Oseen (6:04, 2 views)
+  https://www.youtube.com/watch?v=d3xgXXjEArs
+  item: `items/d3xgXXjEArs.md`
+- **Dojo Walkthrough: Solo and Duo + Remote + Telegram** — ehAye™ Engine (1:26:09, 5 views)
+  https://www.youtube.com/watch?v=SusStpimwc4
+  item: `items/SusStpimwc4.md`
+- **98: How to Build AI Agents That Automate Workflows Without Coding with Etan Polinger** — ChiefAIOfficer (1:00:42, 12 views)
+  https://www.youtube.com/watch?v=d8foiAPBEr8
+  item: `items/d8foiAPBEr8.md`
+- **Debugger AI Agent in Playwright 1.59 (CLI Trace Analysis Demo)** — Artem Bondar (18:59, 346 views)
+  https://www.youtube.com/watch?v=wqufXmzbyUs
+  item: `items/wqufXmzbyUs.md`
+- **The Gemini 3.1 Pro Features Nobody's Talking About** — Technical Potpourri by Sudipta Deb (17:43, 14 views)
+  https://www.youtube.com/watch?v=gawUKtj7FF4
+  item: `items/gawUKtj7FF4.md`
+- **YC-Bench: New LLM Agent Long-Term Planning Test** — AI Research Roundup (5:20, 7 views)
+  https://www.youtube.com/watch?v=TDtn13yhY-Y
+  item: `items/TDtn13yhY-Y.md`
+- **[ClaudeCode × AquaVoice × AGI Cockpit] AI agents × 3 amazing tools will change the way you work [...** — taishiyade@元シリコンバレーCTO個人開発者 (25:22, 791 views)
+  https://www.youtube.com/watch?v=pWNjTobdwvg
+  item: `items/pWNjTobdwvg.md`
+- **The Grok 4 Trap: Why 20 Agents Beat One Genius Model | #NEWIT** — GilliLab Logic Salt (54:48, new)
+  https://www.youtube.com/watch?v=csafstv4gLI
+  item: `items/csafstv4gLI.md`
+- **AI Build #4 - Regen Neighborhood Framework** — Regen Tribe (1:53:01, new)
+  https://www.youtube.com/watch?v=YYWLh1GRF6g
+  item: `items/YYWLh1GRF6g.md`
+- **Symposium—Iba Ndiaye: Between Latitude and Longitude** — The Met (4:18:06, 126 views)
+  https://www.youtube.com/watch?v=nfbGoajjdVI
+  item: `items/nfbGoajjdVI.md`
+- **The Autobiography of Benjamin Franklin - Complete Audiobook | American History Classic** — AI Eternal Chapters (5:43:19, 71 views)
+  https://www.youtube.com/watch?v=grLxLo_L8Ng
+  item: `items/grLxLo_L8Ng.md`
+- **ARIA — Multi-Agent AI Assistant That Executes Tasks, Calendar & Notes | Hackathon Demo** — Mousom Jidung (3:00, 4 views)
+  https://www.youtube.com/watch?v=nxmvM_-ZbWM
+  item: `items/nxmvM_-ZbWM.md`
+- **The Demonic Cult Instructor Returns | Manhwa Recap** — 天天动态漫 (4:07:27, 804 views)
+  https://www.youtube.com/watch?v=bj9GqKljChE
+  item: `items/bj9GqKljChE.md`
+- **This AI Doesn’t Just Answer… It Does the Work (Agent Bay Test)** — Ai Scope (3:03, 6.5K views)
+  https://www.youtube.com/watch?v=6Pw86-jz0oE
+  item: `items/6Pw86-jz0oE.md`
+- **Buda AI: Build Your 🦞Claws Company — Multi-Agent AI Workspace for Building Agents Company (v1)** — Buda AI (2:31, 3 views)
+  https://www.youtube.com/watch?v=7lBu5YBYvi4
+  item: `items/7lBu5YBYvi4.md`
+- **Openclaw Playbook - Agent Memory, Token Strategy & More** — InnerG Intelligence (17:50, 95 views)
+  https://www.youtube.com/watch?v=SN-0kRX8aC0
+  item: `items/SN-0kRX8aC0.md`
+- **【爽漫】【Eng Sub】《無敵仙尊下山，全城大佬跪迎》仙界最強狠人渡劫失敗成為普通底層打工人！小孩八歲修仙，十八歲已達元嬰境，下山後竟發現全是大佬！  #熱血 #冒險 #修仙 #戰鬥** — 八虎动漫剧场 (10:21:26, 714 views)
+  https://www.youtube.com/watch?v=Zxn_ShtU9Is
+  item: `items/Zxn_ShtU9Is.md`
+- **Studies in Folk Song and Popular Poetry by Alfred Williams - Full Audiobook** — Supreme Audiobooks (6:53:23, 8 views)
+  https://www.youtube.com/watch?v=-EGOz-g2JJY
+  item: `items/-EGOz-g2JJY.md`
+- **A HOUSE STORY** — UNIFY Marriage Ministry (2:33:36, 23 views)
+  https://www.youtube.com/watch?v=ueY6TBfg8rg
+  item: `items/ueY6TBfg8rg.md`

@@ -87,3 +87,18 @@ Full item files belong in `items/`.
 - **眾人都小看眼前這個小女孩，卻沒想到她天生怪力，連成年男子都不是她的對手！一切低估她的人，都被她徹底震驚！#精彩短劇 #短劇全集 #甜寵** — 砂糖劇滿屋 (2:06:53, 3.2K views)
   https://www.youtube.com/watch?v=mBdewUHyt2I
   item: `items/mBdewUHyt2I.md`
+
+## 2026-04-06 — 4 new videos
+
+- **Agentic AI and Cybersecurity: Threats, Governance, and Strategy** — The Berkman Klein Center for Internet & Society (1:02:17, 64 views)
+  https://www.youtube.com/watch?v=hk4X3mv9GVw
+  item: `items/hk4X3mv9GVw.md`
+- **Ithara: Pioneering A New Era Of AI-Driven Software Engineering I TNP** — Suzega (25:15, 7 views)
+  https://www.youtube.com/watch?v=kyqL8JEikgc
+  item: `items/kyqL8JEikgc.md`
+- **Aaron Stannard: Software 2.0 using AI - Episode 396** — AI DevOps Podcast (50:52, 7 views)
+  https://www.youtube.com/watch?v=dlkDgeiP3eU
+  item: `items/dlkDgeiP3eU.md`
+- **Why Every CISO Must Use AI Now and How to Do It Without Losing Control with Greg McCord - Ep 203** — Cyber Business Podcast (37:33, new)
+  https://www.youtube.com/watch?v=AMgpCH9jyus
+  item: `items/AMgpCH9jyus.md`

@@ -54,3 +54,24 @@ Full item files belong in `items/`.
 - **MIT AI alumni club Shipping at the Speed of Thought Michael Bryzek** — Maria Kellis (1:11:32, 3 views)
   https://www.youtube.com/watch?v=DduKznHrh4M
   item: `items/DduKznHrh4M.md`
+
+## 2026-04-06 — 6 new videos
+
+- **Episode 132 AI Agents Orchestration** — Helen Yu (19:18, 804 views)
+  https://www.youtube.com/watch?v=aUWRJ_pIOw8
+  item: `items/aUWRJ_pIOw8.md`
+- **Chris Ford has spicy takes on Engineering With AI!** — Engineering With AI (1:08:59, 2 views)
+  https://www.youtube.com/watch?v=G32QTr4s3X8
+  item: `items/G32QTr4s3X8.md`
+- **The Grok 4 Trap: Why 20 Agents Beat One Genius Model | #NEWIT** — GilliLab Logic Salt (54:48, new)
+  https://www.youtube.com/watch?v=csafstv4gLI
+  item: `items/csafstv4gLI.md`
+- **THE ZERO THRESHOLD | Architecting Your Reality from the Void | Full Audiobook** — The Sovereign Path (2:55:36, new)
+  https://www.youtube.com/watch?v=vCzhBK2vEyU
+  item: `items/vCzhBK2vEyU.md`
+- **AI Masterclass: Managing Supplier Risk with AI Agents** — Levelpath (26:59, 4 views)
+  https://www.youtube.com/watch?v=pw52yrDMBqg
+  item: `items/pw52yrDMBqg.md`
+- **Aaron Stannard: Software 2.0 using AI - Episode 396** — AI DevOps Podcast (50:52, 8 views)
+  https://www.youtube.com/watch?v=dlkDgeiP3eU
+  item: `items/dlkDgeiP3eU.md`

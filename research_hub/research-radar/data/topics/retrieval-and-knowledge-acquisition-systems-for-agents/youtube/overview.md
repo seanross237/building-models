@@ -144,3 +144,45 @@ Full item files belong in `items/`.
 - **💥ENG SUB💥【零下70℃：我在末世建神级领地 】-70°C Doomsday: My God-Tier Territory Rises 第1-68集 #热血 #逆袭 #动漫 #玄幻** — 超有钱动漫 Anime Club (5:36:29, 451 views)
   https://www.youtube.com/watch?v=cc8-Wjei8Ts
   item: `items/cc8-Wjei8Ts.md`
+
+## 2026-04-06 — 13 new videos
+
+- **赋能大模型实现真正的“内在觉醒”：SKILL0 框架通过参数化技能内化，将智能体任务成功率推向新高度** — Agent 创世纪 (8:57, 5 views)
+  https://www.youtube.com/watch?v=HP1od4uoUEg
+  item: `items/HP1od4uoUEg.md`
+- **MULTISUB💥最新合集💥《全民诡异：开局掌握零元购》第1~175集丨诡异末世降临，陈木携万亿诡币重生，开局化身“天使投资人”，买下各种诡异场景，化身规则制定者！#破晓动漫社** — 破晓动漫社 Dawn Anime Club (14:03:11, 2.0K views)
+  https://www.youtube.com/watch?v=WxLPwX7VOAc
+  item: `items/WxLPwX7VOAc.md`
+- **Exploring the SCP Foundation: Uncontained SCPs** — The Exploring Series (40:04, 32.9K views)
+  https://www.youtube.com/watch?v=5G_rmMV-QSk
+  item: `items/5G_rmMV-QSk.md`
+- **Valiant Thor: The Alien Who Worked at the Pentagon** — The Folklore Case Files (1:26:51, 12 views)
+  https://www.youtube.com/watch?v=TpP2JsUWIcM
+  item: `items/TpP2JsUWIcM.md`
+- **☄️New【Multi Sub 】Doomsday smuggler: I trade spicy strips for gold bricks EP 1-108#anime #animation** — Quartic element Anime (8:58:49, 88 views)
+  https://www.youtube.com/watch?v=o-ptkCGqOUk
+  item: `items/o-ptkCGqOUk.md`
+- **Symposium—Iba Ndiaye: Between Latitude and Longitude** — The Met (4:18:06, 126 views)
+  https://www.youtube.com/watch?v=nfbGoajjdVI
+  item: `items/nfbGoajjdVI.md`
+- **Why the US Just Bombed Iran | From the 1953 Coup to Khamenei’s Assassination** — Secrets Of A Dark World (1:12:05, 41 views)
+  https://www.youtube.com/watch?v=YmPTj-XqaSQ
+  item: `items/YmPTj-XqaSQ.md`
+- **KSAT News at Noon : Apr 06, 2026** — KSAT 12 (59:43, new)
+  https://www.youtube.com/watch?v=hk7tnPvktTY
+  item: `items/hk7tnPvktTY.md`
+- **Núi hoang thành núi vàng! Nông dân nhờ hệ thống làm giàu, dắt làng nghịch tập!v** — Kịch Hay Mỗi Ngày (2:30:08, 312 views)
+  https://www.youtube.com/watch?v=pLWtREwKtpc
+  item: `items/pLWtREwKtpc.md`
+- **💥ENG SUB💥【医武双修：从灭门遗孤到都市巅峰】Medical Martial: From Ruin to Urban Dominance #热血 #玄幻 #修仙 #anime #都市** — 超有钱动漫 Anime Club (6:45:12, 321 views)
+  https://www.youtube.com/watch?v=cwTUasFTZZE
+  item: `items/cwTUasFTZZE.md`
+- **After Awakening Skeleton System He EvolvedFragile LowTier Skeleton Undying Dragon-Blood Skeleton!** — Mania Comics Legends (11:58:42, 239 views)
+  https://www.youtube.com/watch?v=91GvSuY43H8
+  item: `items/91GvSuY43H8.md`
+- **My Naughty Ghost The Novel - Chapter 20: The Weight of Contracts #drclef #scp** — My Naughty Ghost (내장난꾸러기고스트) (14:01, new)
+  https://www.youtube.com/watch?v=aZrxNwabO8Y
+  item: `items/aZrxNwabO8Y.md`
+- **I Canceled GPT and Switched to Free Claude — Saved ₩526,800 with Superior Performance** — AI경제패턴 (24:55, 16 views)
+  https://www.youtube.com/watch?v=iHQlU5M6dRA
+  item: `items/iHQlU5M6dRA.md`
