@@ -1,0 +1,48 @@
+# Run Timeline
+
+1. [node_root] Run started for task: Solve this Super-Eywa grading-bank question.
+Question ID: atlas-derived-A6-universal-de-giorgi-exponent-formula
+Title: A6. Universal De Giorgi Exponent Formula
+
+Problem:
+What is the De Giorgi exponent for dissipative PDEs with varying diffusion order s in dimension n?
+
+Grading target:
+Exact formula match plus verification across 6 or more PDEs:
+
+- 3D Navier-Stokes
+- 2D Navier-Stokes
+- 1D Burgers
+- SQG
+- MHD
+- fractional Navier-Stokes
+
+Return format:
+FINAL_ANSWER: <your answer>
+JUSTIFICATION: <brief justification>
+2. [node_root] Node started: Solve this Super-Eywa grading-bank question.
+Question ID: atlas-derived-A6-universal-de-giorgi-exponent-formula
+Title: A6. Universal De Giorgi Exponent Formula
+
+Problem:
+What is the De Giorgi exponent for dissipative PDEs with varying diffusion order s in dimension n?
+
+Grading target:
+Exact formula match plus verification across 6 or more PDEs:
+
+- 3D Navier-Stokes
+- 2D Navier-Stokes
+- 1D Burgers
+- SQG
+- MHD
+- fractional Navier-Stokes
+
+Return format:
+FINAL_ANSWER: <your answer>
+JUSTIFICATION: <brief justification>
+3. [node_root] Node recruited 1 helper(s)
+4. [node_root_helper_01] Node started: Derive the universal De Giorgi exponent formula for dissipative PDEs with diffusion order s in dimension n by performing a formal scaling analysis. Follow these specific steps: 1. Define Scaling Transformations: Introduce a scaling parameter lambda > 0 and define the transformations for the independent and dependent variables: x -> lambda x, t -> lambda^beta t, and u -> lambda^alpha u. 2. Determine Term Scaling: Calculate how the non-linear term (typically of the form u . grad u or u grad u) and the dissipative term (typically the fractional Laplacian (-Delta)^s u) scale under these transformations in terms of lambda, alpha, beta, s, and n. 3. Balance the Terms: Set the scaling of the non-linear term equal to the scaling of the dissipative term to establish the critical relationship between the exponents alpha, beta, s, and n. 4. Solve for the Exponent: Use the relationship between space and time scaling (consistent with the order of the dissipative operator) to solve for the final universal exponent formula. 5. Verification: Validate your derived formula by calculating the specific exponents for the following cases to ensure they match known values: 3D Navier-Stokes (s=1, n=3), 2D Navier-Stokes (s=1, n=2), 1D Burgers (s=1, n=1), Surface Quasi-Geostrophic (SQG) equation, Magnetohydrodynamics (MHD), Fractional Navier-Stokes (s in (0, 1)). Return your result in the format: FINAL_ANSWER: <the derived formula> JUSTIFICATION: <brief summary of the scaling derivation and verification results>
+5. [node_root_helper_01] Node completed with action report_success
+6. [node_root_helper_01] Node wrote final output for run atlas-derived-A6-universal-de-giorgi-exponent-formula__transmute__mx1_non_holdout_full_agent_v1_2026_04_06__transmute__08__run_2026_04_07_023150
+7. [node_root] Node completed with action recruit_help
+8. [node_root] Run completed with 2 node(s)

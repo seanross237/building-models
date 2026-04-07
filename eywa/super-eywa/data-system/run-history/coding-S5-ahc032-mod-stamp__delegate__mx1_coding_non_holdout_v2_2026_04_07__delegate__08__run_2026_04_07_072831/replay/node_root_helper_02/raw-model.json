@@ -1,0 +1,149 @@
+{
+  "provider": "openrouter",
+  "note": "Per-turn provider payloads, authored JSON, and compiled outputs are recorded here.",
+  "steps": [
+    {
+      "step": 1,
+      "note": "authored local execution deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 1\nNode depth: 1\nAllowed decisions: ['execute_locally']\nPrompt family: execute\nBase header prompt: ''\nSelected prompt text:\nSolve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nSolve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}\n\nQuestion:\nWrite a complete main.py script that reads the input N, M, K, the initial board, and the M stamps from stdin. It should incorporate the logic provided by the heuristic_optimizer to find a set of placements. Finally, it must print the number of placements L, followed by L lines of m i j, ensuring all indices and coordinates are within the valid bounds of the 9x9 board and the 3x3 stamp size.",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "execute_locally",
+        "decision_notes": "Task requires code generation.",
+        "response": "FINAL_ANSWER: import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    N, M, K = map(int, input_data[:3])\n    idx = 3\n    board = []\n    for _ in range(N):\n        board.append(list(map(int, input_data[idx:idx+N])))\n        idx += N\n    stamps = []\n    for _ in range(M):\n        stamp = []\n        for _ in range(3):\n            stamp.append(list(map(int, input_data[idx:idx+3])))\n            idx += 3\n        stamps.append(stamp)\n    \n    placements = []\n    current_board = [row[:] for row in board]\n    \n    for m_idx, stamp in enumerate(stamps):\n        best_score = -1\n        best_pos = None\n        for r in range(N - 2):\n            for c in range(N - 2):\n                score = 0\n                for dr in range(3):\n                    for dc in range(3):\n                        if stamp[dr][dc] == 1 and current_board[r+dr][c+dc] == 0:\n                            score += 1\n                if score > best_score:\n                    best_score = score\n                    best_pos = (r, c)\n        \n        if best_pos and best_score > 0:\n            r, c = best_pos\n            placements.append((m_idx, r, c))\n            for dr in range(3):\n                for dc in range(3):\n                    if stamp[dr][dc] == 1:\n                        current_board[r+dr][c+dc] = 1\n\n    print(len(placements))\n    for p in placements:\n        print(f\"{p[0]} {p[1]} {p[2]}\")\n\nif __name__ == \"__main__\":\n    solve()\n\nJUSTIFICATION: Provided a complete Python script for the described logic.",
+        "result_type": "summary"
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "coding-S5-ahc032-mod-stamp__delegate__mx1_coding_non_holdout_v2_2026_04_07__delegate__08__run_2026_04_07_072831",
+        "node_id": "node_root_helper_02",
+        "action_type": "report_success",
+        "results": [
+          {
+            "result_type": "summary",
+            "content": "FINAL_ANSWER: import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    N, M, K = map(int, input_data[:3])\n    idx = 3\n    board = []\n    for _ in range(N):\n        board.append(list(map(int, input_data[idx:idx+N])))\n        idx += N\n    stamps = []\n    for _ in range(M):\n        stamp = []\n        for _ in range(3):\n            stamp.append(list(map(int, input_data[idx:idx+3])))\n            idx += 3\n        stamps.append(stamp)\n    \n    placements = []\n    current_board = [row[:] for row in board]\n    \n    for m_idx, stamp in enumerate(stamps):\n        best_score = -1\n        best_pos = None\n        for r in range(N - 2):\n            for c in range(N - 2):\n                score = 0\n                for dr in range(3):\n                    for dc in range(3):\n                        if stamp[dr][dc] == 1 and current_board[r+dr][c+dc] == 0:\n                            score += 1\n                if score > best_score:\n                    best_score = score\n                    best_pos = (r, c)\n        \n        if best_pos and best_score > 0:\n            r, c = best_pos\n            placements.append((m_idx, r, c))\n            for dr in range(3):\n                for dc in range(3):\n                    if stamp[dr][dc] == 1:\n                        current_board[r+dr][c+dc] = 1\n\n    print(len(placements))\n    for p in placements:\n        print(f\"{p[0]} {p[1]} {p[2]}\")\n\nif __name__ == \"__main__\":\n    solve()\n\nJUSTIFICATION: Provided a complete Python script for the described logic.",
+            "attachment_refs": []
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "success_report",
+            "target": {
+              "target_type": "creating_parent",
+              "target_ref": "node_root"
+            },
+            "message": "FINAL_ANSWER: import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    N, M, K = map(int, input_data[:3])\n    idx = 3\n    board = []\n    for _ in range(N):\n        board.append(list(map(int, input_data[idx:idx+N])))\n        idx += N\n    stamps = []\n    for _ in range(M):\n        stamp = []\n        for _ in range(3):\n            stamp.append(list(map(int, input_data[idx:idx+3])))\n            idx += 3\n        stamps.append(stamp)\n    \n    placements = []\n    current_board = [row[:] for row in board]\n    \n    for m_idx, stamp in enumerate(stamps):\n        best_score = -1\n        best_pos = None\n        for r in range(N - 2):\n            for c in range(N - 2):\n                score = 0\n                for dr in range(3):\n                    for dc in range(3):\n                        if stamp[dr][dc] == 1 and current_board[r+dr][c+dc] == 0:\n                            score += 1\n                if score > best_score:\n                    best_score = score\n                    best_pos = (r, c)\n        \n        if best_pos and best_score > 0:\n            r, c = best_pos\n            placements.append((m_idx, r, c))\n            for dr in range(3):\n                for dc in range(3):\n                    if stamp[dr][dc] == 1:\n                        current_board[r+dr][c+dc] = 1\n\n    print(len(placements))\n    for p in placements:\n        print(f\"{p[0]} {p[1]} {p[2]}\")\n\nif __name__ == \"__main__\":\n    solve()\n\nJUSTIFICATION: Provided a complete Python script for the described logic.",
+            "attachment_refs": []
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}\n\nQuestion:\nWrite a complete main.py script that reads the input N, M, K, the initial board, and the M stamps from stdin. It should incorporate the logic provided by the heuristic_optimizer to find a set of placements. Finally, it must print the number of placements L, followed by L lines of m i j, ensuring all indices and coordinates are within the valid bounds of the 9x9 board and the 3x3 stamp size."
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775546932-rsvUx1csfaCJ0XMuqyoX",
+              "object": "chat.completion",
+              "created": 1775546932,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Parasail",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\"schema_name\": \"eywa_node_response\", \"schema_version\": \"v1\", \"orchestration_decision\": \"execute_locally\", \"decision_notes\": \"Task requires code generation.\", \"response\": \"FINAL_ANSWER: import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data: return\\n    N, M, K = map(int, input_data[:3])\\n    idx = 3\\n    board = []\\n    for _ in range(N):\\n        board.append(list(map(int, input_data[idx:idx+N])))\\n        idx += N\\n    stamps = []\\n    for _ in range(M):\\n        stamp = []\\n        for _ in range(3):\\n            stamp.append(list(map(int, input_data[idx:idx+3])))\\n            idx += 3\\n        stamps.append(stamp)\\n    \\n    placements = []\\n    current_board = [row[:] for row in board]\\n    \\n    for m_idx, stamp in enumerate(stamps):\\n        best_score = -1\\n        best_pos = None\\n        for r in range(N - 2):\\n            for c in range(N - 2):\\n                score = 0\\n                for dr in range(3):\\n                    for dc in range(3):\\n                        if stamp[dr][dc] == 1 and current_board[r+dr][c+dc] == 0:\\n                            score += 1\\n                if score > best_score:\\n                    best_score = score\\n                    best_pos = (r, c)\\n        \\n        if best_pos and best_score > 0:\\n            r, c = best_pos\\n            placements.append((m_idx, r, c))\\n            for dr in range(3):\\n                for dc in range(3):\\n                    if stamp[dr][dc] == 1:\\n                        current_board[r+dr][c+dc] = 1\\n\\n    print(len(placements))\\n    for p in placements:\\n        print(f\\\"{p[0]} {p[1]} {p[2]}\\\")\\n\\nif __name__ == \\\"__main__\\\":\\n    solve()\\n\\nJUSTIFICATION: Provided a complete Python script for the described logic.\" , \"result_type\": \"summary\"}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 350,
+                "completion_tokens": 571,
+                "total_tokens": 921,
+                "cost": 0.0002739,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.0002739,
+                  "upstream_inference_prompt_cost": 4.55e-05,
+                  "upstream_inference_completions_cost": 0.0002284
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\"schema_name\": \"eywa_node_response\", \"schema_version\": \"v1\", \"orchestration_decision\": \"execute_locally\", \"decision_notes\": \"Task requires code generation.\", \"response\": \"FINAL_ANSWER: import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data: return\\n    N, M, K = map(int, input_data[:3])\\n    idx = 3\\n    board = []\\n    for _ in range(N):\\n        board.append(list(map(int, input_data[idx:idx+N])))\\n        idx += N\\n    stamps = []\\n    for _ in range(M):\\n        stamp = []\\n        for _ in range(3):\\n            stamp.append(list(map(int, input_data[idx:idx+3])))\\n            idx += 3\\n        stamps.append(stamp)\\n    \\n    placements = []\\n    current_board = [row[:] for row in board]\\n    \\n    for m_idx, stamp in enumerate(stamps):\\n        best_score = -1\\n        best_pos = None\\n        for r in range(N - 2):\\n            for c in range(N - 2):\\n                score = 0\\n                for dr in range(3):\\n                    for dc in range(3):\\n                        if stamp[dr][dc] == 1 and current_board[r+dr][c+dc] == 0:\\n                            score += 1\\n                if score > best_score:\\n                    best_score = score\\n                    best_pos = (r, c)\\n        \\n        if best_pos and best_score > 0:\\n            r, c = best_pos\\n            placements.append((m_idx, r, c))\\n            for dr in range(3):\\n                for dc in range(3):\\n                    if stamp[dr][dc] == 1:\\n                        current_board[r+dr][c+dc] = 1\\n\\n    print(len(placements))\\n    for p in placements:\\n        print(f\\\"{p[0]} {p[1]} {p[2]}\\\")\\n\\nif __name__ == \\\"__main__\\\":\\n    solve()\\n\\nJUSTIFICATION: Provided a complete Python script for the described logic.\" , \"result_type\": \"summary\"}",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "execute_locally",
+              "decision_notes": "Task requires code generation.",
+              "response": "FINAL_ANSWER: import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    N, M, K = map(int, input_data[:3])\n    idx = 3\n    board = []\n    for _ in range(N):\n        board.append(list(map(int, input_data[idx:idx+N])))\n        idx += N\n    stamps = []\n    for _ in range(M):\n        stamp = []\n        for _ in range(3):\n            stamp.append(list(map(int, input_data[idx:idx+3])))\n            idx += 3\n        stamps.append(stamp)\n    \n    placements = []\n    current_board = [row[:] for row in board]\n    \n    for m_idx, stamp in enumerate(stamps):\n        best_score = -1\n        best_pos = None\n        for r in range(N - 2):\n            for c in range(N - 2):\n                score = 0\n                for dr in range(3):\n                    for dc in range(3):\n                        if stamp[dr][dc] == 1 and current_board[r+dr][c+dc] == 0:\n                            score += 1\n                if score > best_score:\n                    best_score = score\n                    best_pos = (r, c)\n        \n        if best_pos and best_score > 0:\n            r, c = best_pos\n            placements.append((m_idx, r, c))\n            for dr in range(3):\n                for dc in range(3):\n                    if stamp[dr][dc] == 1:\n                        current_board[r+dr][c+dc] = 1\n\n    print(len(placements))\n    for p in placements:\n        print(f\"{p[0]} {p[1]} {p[2]}\")\n\nif __name__ == \"__main__\":\n    solve()\n\nJUSTIFICATION: Provided a complete Python script for the described logic.",
+              "result_type": "summary"
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "execute_locally",
+          "decision_notes": "Task requires code generation.",
+          "response": "FINAL_ANSWER: import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    N, M, K = map(int, input_data[:3])\n    idx = 3\n    board = []\n    for _ in range(N):\n        board.append(list(map(int, input_data[idx:idx+N])))\n        idx += N\n    stamps = []\n    for _ in range(M):\n        stamp = []\n        for _ in range(3):\n            stamp.append(list(map(int, input_data[idx:idx+3])))\n            idx += 3\n        stamps.append(stamp)\n    \n    placements = []\n    current_board = [row[:] for row in board]\n    \n    for m_idx, stamp in enumerate(stamps):\n        best_score = -1\n        best_pos = None\n        for r in range(N - 2):\n            for c in range(N - 2):\n                score = 0\n                for dr in range(3):\n                    for dc in range(3):\n                        if stamp[dr][dc] == 1 and current_board[r+dr][c+dc] == 0:\n                            score += 1\n                if score > best_score:\n                    best_score = score\n                    best_pos = (r, c)\n        \n        if best_pos and best_score > 0:\n            r, c = best_pos\n            placements.append((m_idx, r, c))\n            for dr in range(3):\n                for dc in range(3):\n                    if stamp[dr][dc] == 1:\n                        current_board[r+dr][c+dc] = 1\n\n    print(len(placements))\n    for p in placements:\n        print(f\"{p[0]} {p[1]} {p[2]}\")\n\nif __name__ == \"__main__\":\n    solve()\n\nJUSTIFICATION: Provided a complete Python script for the described logic.",
+          "result_type": "summary"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 350,
+        "completion_tokens": 571,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 0,
+        "total_tokens": 921,
+        "cost_usd": 0.0002739,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775546932-rsvUx1csfaCJ0XMuqyoX",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.0002739
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

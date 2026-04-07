@@ -1,0 +1,15 @@
+{
+  "contract_name": "final_output",
+  "contract_version": "v1",
+  "run_id": "coding-S5-ahc032-mod-stamp__execute__mx1_non_holdout_full_agent_v1_2026_04_06__execute__18__run_2026_04_07_024625",
+  "created_at_utc": "2026-04-07T02:47:08Z",
+  "source_node_id": "node_root",
+  "source_node_record_ref": "nodes/node_root/node_record.json",
+  "action_type": "report_success",
+  "terminal_result_destination": "final_output",
+  "result": {
+    "result_type": "summary",
+    "content": "import sys\n\ndef solve():\n    # Parse input\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n\n    # Expected input format: \n    # N (grid size, 9), K (max stamps, 81), then N*N grid values\n    # Since the problem says 9x9 board and K=81, we assume N=9\n    try:\n        N = int(input_data[0])\n        K = int(input_data[1])\n        grid = []\n        idx = 2\n        for r in range(N):\n            row = []\n            for c in range(N):\n                row.append(int(input_data[idx]))\n                idx += 1\n            grid.append(row)\n    except (ValueError, IndexError):\n        return\n\n    MOD = 998244353\n\n    # A 3x3 stamp can be placed at (r, c) where 0 <= r <= N-3 and 0 <= c <= N-3\n    # For a 9x9 board, r and c range from 0 to 6.\n    # Total possible placements: 7 * 7 = 49\n    \n    possible_placements = []\n    for r in range(N - 2):\n        for c in range(N - 2):\n            current_sum = 0\n            cells = []\n            for dr in range(3):\n                for dc in range(3):\n                    current_sum += grid[r + dr][c + dc]\n                    cells.append((r + dr, c + dc))\n            possible_placements.append((current_sum, cells))\n\n    # The problem asks to maximize the sum of board entries modulo 998244353.\n    # This is tricky because (A + B) % MOD is not necessarily > (A % MOD + B % MOD) % MOD.\n    # However, the problem says 'maximize the sum of board entries modulo 998244353'.\n    # This usually means: Calculate the total sum of the board after applying stamps, then take modulo.\n    # But stamps usually 'add' values or 'replace' values. \n    # Re-reading: 'maximize the sum of board entries modulo 998244353'.\n    # In typical AHC problems, stamps add a value to the cells. \n    # If the stamps add the values already in the cells, the sum increases.\n    # If the stamps are just selecting cells, it's different.\n    # Given the constraints (K=81, 9x9 board), and the nature of 'stamps', \n    # it's likely that",
+    "attachment_refs": []
+  }
+}

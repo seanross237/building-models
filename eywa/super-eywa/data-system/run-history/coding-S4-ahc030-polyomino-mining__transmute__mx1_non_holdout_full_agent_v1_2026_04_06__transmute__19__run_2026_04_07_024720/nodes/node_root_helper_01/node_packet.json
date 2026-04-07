@@ -1,0 +1,85 @@
+{
+  "contract_name": "node_packet",
+  "contract_version": "v1",
+  "run_id": "coding-S4-ahc030-polyomino-mining__transmute__mx1_non_holdout_full_agent_v1_2026_04_06__transmute__19__run_2026_04_07_024720",
+  "node_id": "node_root_helper_01",
+  "created_at_utc": "2026-04-07T02:47:36Z",
+  "creation_parent_node_id": "node_root",
+  "input": {
+    "instructions": "Implement a search-and-prune algorithm based on the following technical specification:\n\n1. **Data Structure (Candidate Configuration Space):**\n   Represent the state space $\\mathcal{S}$ as a set of valid configurations $C = \\{c_1, c_2, \\dots, c_n\\}$. Each configuration $c_i$ is a mapping of known polyomino shapes to specific coordinates on a grid such that no two shapes overlap and all shapes remain within grid boundaries. Use a bitmask or a coordinate-set representation for each $c_i$ to allow for rapid intersection and membership testing.\n\n2. **Update Mechanisms (Pruning Logic):**\n   - **Certain Query (Drilling):** Given a coordinate $x$, if the result is 'Oil', prune all $c_i \\in \\mathcal{S}$ where $x \\notin c_i$. If the result is 'Empty', prune all $c_i \\in \\mathcal{S}$ where $x \\in c_i$.\n   - **Noisy Query (Aggregate):** Given a set of coordinates $X$, the query returns a value $V$ representing the count of oil cells in $X$ plus/minus noise $\\epsilon$. Update $\\mathcal{S}$ by pruning all $c_i$ where $|\\text{count}(c_i \\cap X) - V| > \\text{threshold}$, where the threshold is derived from the known noise distribution of the aggregate query.\n\n3. **Action Selection Heuristic (Information Gain per Unit Cost):**\n   Define the utility of an action $a$ as $U(a) = \\frac{\\Delta H(a)}{\\text{Cost}(a)}$, where $\\Delta H(a)$ is the expected reduction in the entropy of the candidate set $\\mathcal{S}$ or the expected reduction in the cardinality $|\\mathcal{S}|$. \n   - For drilling: $U(drill, x) = \\frac{|\\mathcal{S}| - |\\mathcal{S}_{x=oil}| - |\\mathcal{S}_{x=empty}|}{\\text{Cost}_{drill}}$.\n   - For aggregate: $U(agg, X) = \\frac{\\mathbb{E}[|\\mathcal{S}| - |\\mathcal{S}_{new}|]}{\\text{Cost}_{agg}$, where $|\\mathcal{S}_{new}|$ is the expected size of the set after applying the noisy constraint.\n   Select $a^* = \\arg\\max_a U(a)$.\n\n4. **Termination Criterion:**\n   Proceed to the final guess when the cardinality of the candidate set $|\\mathcal{S}|$ satisfies a convergence threshold such that the expected cost of the final guess (which may involve error penalties) is lower than the expected cost of further probing. Specifically, terminate when $\\max_{c \\in \\mathcal{S}} \\text{Penalty}(c) < \\mathbb{E}[\\text{Cost of next optimal probe}]$.",
+    "provided_context_refs": [],
+    "attachment_refs": []
+  },
+  "variable_resolution": {
+    "run_level_defaults": {
+      "runtime_provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it",
+      "prompt_family": "transmute",
+      "selected_prompt_text": "Deconstruct this problem into a concrete computational blueprint for a search-and-prune algorithm. Your goal is to provide a technical specification that allows a subsequent agent to implement a solution. Specifically, define: 1) A data structure for representing the set of all valid candidate configurations (placements of the known shapes) that satisfies the geometric constraints, 2) A precise mechanism for updating this set of candidates based on the results of both certain (drilling) and noisy (aggregate) queries, 3) A specific, computable heuristic for selecting the next action that maximizes the reduction in the candidate set size relative to the action's cost, and 4) The logic for determining when the candidate set is sufficiently small to proceed to the final guess. Focus on the algorithmic mechanics of state-space pruning and the interplay between the different query types. Do not include specific problem instances, numbers, or names from the original text.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"transmute\",\n  \"decision_notes\": \"optional string\",\n  \"message_for_next_agent\": \"plain-text reformulation for the next agent\"\n}",
+      "base_header_prompt": "",
+      "review_prompt_family": "",
+      "review_selected_prompt_text": "",
+      "review_base_header_prompt": "",
+      "child_prompt_family": "execute",
+      "child_selected_prompt_text": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}",
+      "child_base_header_prompt": "",
+      "terminal_result_destination": "auto",
+      "child_terminal_result_destination": "",
+      "injected_prompt_profile": "agent_orchestration_basic_instruction_prompt",
+      "additional_instruction_prompt_profiles": [],
+      "context_policy": "minimal",
+      "workflow_structure": "sequential_parent_review",
+      "verification_policy": "light",
+      "tool_policy": "none",
+      "json_response_policy": "strict_required",
+      "orchestration_policy": "agent_decides",
+      "budget_policy": {
+        "max_depth": 1,
+        "max_helpers_per_node": 1,
+        "max_turns_per_node": 4
+      },
+      "routing_policy": "return_to_creator",
+      "recovery_policy": "report_problem"
+    },
+    "node_level_overrides": {
+      "prompt_family": "execute",
+      "selected_prompt_text": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}",
+      "terminal_result_destination": "final_output"
+    },
+    "resolved_variables": {
+      "runtime_provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it",
+      "prompt_family": "execute",
+      "selected_prompt_text": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}",
+      "base_header_prompt": "",
+      "review_prompt_family": "",
+      "review_selected_prompt_text": "",
+      "review_base_header_prompt": "",
+      "child_prompt_family": "execute",
+      "child_selected_prompt_text": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}",
+      "child_base_header_prompt": "",
+      "terminal_result_destination": "final_output",
+      "child_terminal_result_destination": "",
+      "injected_prompt_profile": "agent_orchestration_basic_instruction_prompt",
+      "additional_instruction_prompt_profiles": [],
+      "context_policy": "minimal",
+      "workflow_structure": "sequential_parent_review",
+      "verification_policy": "light",
+      "tool_policy": "none",
+      "json_response_policy": "strict_required",
+      "orchestration_policy": "agent_decides",
+      "budget_policy": {
+        "max_depth": 1,
+        "max_helpers_per_node": 1,
+        "max_turns_per_node": 4
+      },
+      "routing_policy": "return_to_creator",
+      "recovery_policy": "report_problem"
+    }
+  },
+  "node_setup": {
+    "created_by_action_type": "recruit_help",
+    "terminal_result_destination": "final_output",
+    "notes": []
+  }
+}

@@ -1,9 +1,12 @@
-"""Stub analyzer that scores raw signals using a deterministic rule.
+"""Rule-based signal analyzer.
 
-Phase 1 deliberately uses a length-based scorer so we can test queue
-transitions without any LLM calls. Phase 2 will swap this for a real
-prompt + schema-validated Claude call (see analyze-items.py in
-research-radar for the pattern we'll mirror).
+Phase 2 reads `config/comedy-lens.md` and `config/thresholds.yaml`, then
+applies the keyword scorer in `lens_rules.py` to every unanalyzed signal
+across every source directory under `data/signals/`. Signals at or above
+the threshold get promoted to the idea-factory queue.
+
+Phase 3 will swap `lens_rules.score_text(...)` for an LLM call but the
+function signatures here will not change.
 """
 from __future__ import annotations
 
@@ -12,10 +15,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Optional
 
+from analyzers.score_signals.lens_rules import Lens, load_lens, score_text
 from state.store import Store
 
 
-SOURCE_DIR_NAME = "signals"
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_LENS_PATH = PROJECT_ROOT / "config" / "comedy-lens.md"
+DEFAULT_THRESHOLDS_PATH = PROJECT_ROOT / "config" / "thresholds.yaml"
+DEFAULT_THRESHOLD = 7
 
 
 def _parse_frontmatter(text: str) -> Dict[str, str]:
@@ -41,14 +48,11 @@ def _parse_summary(text: str) -> str:
     return match.group(1).strip()
 
 
-def stub_score(title: str) -> int:
-    """Deterministic scorer used in Phase 1.
-
-    Anchored at 5 with a length-derived bump so different titles get
-    different scores in the 5..14 range, then clamped to 1..10.
-    """
-    base = 5 + (len(title) % 10)
-    return max(1, min(10, base))
+def _parse_body(text: str) -> str:
+    match = re.search(r"^## Source content\n\n(.+?)(?=\n## |\Z)", text, flags=re.MULTILINE | re.DOTALL)
+    if not match:
+        return ""
+    return match.group(1).strip()
 
 
 def _now() -> str:
@@ -68,13 +72,56 @@ def _iter_signal_files(store: Store) -> List[Path]:
     return paths
 
 
-def analyze_pending(store: Store, threshold: int = 7) -> List[str]:
-    """Find unanalyzed signals, score them, and promote any above threshold.
+def _load_threshold(thresholds_path: Path) -> int:
+    if not thresholds_path.exists():
+        return DEFAULT_THRESHOLD
+    try:
+        import yaml  # type: ignore
+        data = yaml.safe_load(thresholds_path.read_text(encoding="utf-8")) or {}
+    except Exception:
+        return DEFAULT_THRESHOLD
+    scoring = data.get("scoring") if isinstance(data, dict) else None
+    if isinstance(scoring, dict) and "promote_to_factory" in scoring:
+        try:
+            return int(scoring["promote_to_factory"])
+        except (TypeError, ValueError):
+            return DEFAULT_THRESHOLD
+    return DEFAULT_THRESHOLD
 
-    Returns the list of signal IDs that were promoted to the idea-factory queue.
-    Idempotent: a signal that already has a marker in any downstream queue is
-    skipped.
+
+def _signal_already_consumed(store: Store, signal_id: str) -> bool:
+    for sketch in store.list_sketches():
+        if sketch.signal_id == signal_id:
+            return True
+    return False
+
+
+def stub_score(title: str) -> int:
+    """Phase 1 deterministic length-based scorer.
+
+    Kept for backwards compatibility with the Phase 1 tests; the production
+    pipeline now uses `lens_rules.score_text` via `analyze_pending`.
     """
+    base = 5 + (len(title) % 10)
+    return max(1, min(10, base))
+
+
+def analyze_pending(
+    store: Store,
+    threshold: Optional[int] = None,
+    lens: Optional[Lens] = None,
+) -> List[str]:
+    """Score every unanalyzed signal and promote any at-or-above threshold.
+
+    Returns the list of signal IDs that were promoted to the idea-factory
+    queue. Idempotent: signals already in the queue or already attached to
+    a sketch are skipped.
+    """
+    if threshold is None:
+        threshold = _load_threshold(DEFAULT_THRESHOLDS_PATH)
+    if lens is None:
+        lens = load_lens(DEFAULT_LENS_PATH)
+
     promoted: List[str] = []
     idea_queue = store.queue_dir("idea-factory")
     idea_queue.mkdir(parents=True, exist_ok=True)
@@ -88,7 +135,8 @@ def analyze_pending(store: Store, threshold: int = 7) -> List[str]:
             continue
 
         title = meta.get("title", path.stem)
-        score = stub_score(title)
+        body = _parse_body(text) or _parse_summary(text)
+        score = score_text(title, body, lens)
         if score < threshold:
             continue
 
@@ -100,7 +148,7 @@ def analyze_pending(store: Store, threshold: int = 7) -> List[str]:
             "summary": _parse_summary(text),
             "sketchability_score": score,
             "comedy_angles": [
-                {"angle": "absurdist", "note": "stub angle from rule-based scorer"}
+                {"angle": "rule-based", "note": "lens-driven keyword scorer"},
             ],
             "character_archetypes": ["everyman", "authority figure"],
             "topical_window_hours": 48,
@@ -111,11 +159,3 @@ def analyze_pending(store: Store, threshold: int = 7) -> List[str]:
         store.write_queue_marker("idea-factory", signal_id, payload)
         promoted.append(signal_id)
     return promoted
-
-
-def _signal_already_consumed(store: Store, signal_id: str) -> bool:
-    """True if any sketch already references this signal."""
-    for sketch in store.list_sketches():
-        if sketch.signal_id == signal_id:
-            return True
-    return False

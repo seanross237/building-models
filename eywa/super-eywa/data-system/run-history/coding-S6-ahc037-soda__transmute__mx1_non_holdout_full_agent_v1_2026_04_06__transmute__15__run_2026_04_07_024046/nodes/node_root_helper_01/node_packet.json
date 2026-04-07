@@ -1,0 +1,85 @@
+{
+  "contract_name": "node_packet",
+  "contract_version": "v1",
+  "run_id": "coding-S6-ahc037-soda__transmute__mx1_non_holdout_full_agent_v1_2026_04_06__transmute__15__run_2026_04_07_024046",
+  "node_id": "node_root_helper_01",
+  "created_at_utc": "2026-04-07T02:41:21Z",
+  "creation_parent_node_id": "node_root",
+  "input": {
+    "instructions": "Problem Reformulation: Minimum Cost Beverage Derivation\n\n1. Mathematical Model\n\nState Space:\nA state is defined as a coordinate pair (s, c) in the non-negative integer quadrant Z+ x Z+, representing sweetness and carbonation levels respectively. The initial state is (0, 0).\n\nOperations (Transitions):\nLet a state be (s, c). A monotone derivation operation is a transition to a new state (s', c') such that s' >= s and c' >= c, where at least one inequality is strict. \nLet the set of available operations be O. Each operation o in O is defined by a vector (ds, dc) and an associated cost function f(s, c, ds, dc). \nCommon monotone operations in such problems typically include:\n- Addition: (s, c) -> (s + ds, c + dc) with cost k\n- Scaling: (s, c) -> (s * m, c * n) with cost k\n\nTarget Set:\nA set of 1000 target coordinates T = {(s_1, c_1), (s_2, c_2), ..., (s_1000, c_1000)}.\n\nObjective Function:\nMinimize the total cost C, where C is the sum of the costs of all operations used to derive all elements in T from (0, 0). Note that operations can be reused (i.e., a derived beverage can serve as a precursor for multiple subsequent beverages, forming a directed acyclic graph or tree structure).\n\nConstraints:\n- All derived states (s_i, c_i) must satisfy s_i >= 0 and c_i >= 0.\n- All transitions must be monotone: if (s, c) -> (s', c'), then s' >= s and c' >= c.\n- The final set of reached states must contain T.\n\n2. Algorithmic Strategy\n\nThe problem is a variation of the Steiner Tree Problem in a directed acyclic graph (DAG), specifically a Steiner Tree problem on a grid where nodes are beverage coordinates and edges are derivation operations. Since we want to minimize the total cost to reach a specific set of nodes from a root, and operations can be shared:\n\nStep 1: Graph Construction\nConstruct a directed graph G = (V, E). V consists of (0, 0), all target nodes in T, and any intermediate nodes that could potentially minimize the cost (this may require a bounded search space based on the maximum s and c in T).\nE consists of edges representing the derivation operations with weights equal to their costs.\n\nStep 2: Optimization Approach\nIf the number of target nodes is small, use the Dreyfus-Wagner dynamic programming algorithm for the Steiner Tree problem. \nIf the number of target nodes is large (as in this case, 1000), the problem is NP-hard. Use a heuristic approach:\n- Greedy Steiner Tree: Iteratively connect the closest target node to the current tree using Dijkstra's algorithm.\n- Prim-like approach: Build a Minimum Spanning Tree on the target nodes using shortest-path distances calculated via Dijkstra/A*.",
+    "provided_context_refs": [],
+    "attachment_refs": []
+  },
+  "variable_resolution": {
+    "run_level_defaults": {
+      "runtime_provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it",
+      "prompt_family": "transmute",
+      "selected_prompt_text": "Reformulate the provided problem into a formal mathematical model and an algorithmic strategy. Your goal is to provide a structured specification that a downstream solver can use. Your response should: 1. Define the state space and the transition mechanics (operations) using symbolic notation. 2. Formulate the objective function and all constraints. 3. Describe the optimal algorithmic approach (e.g., a specific graph-based search, dynamic programming, or heuristic) suited for this problem's structure. Focus on the mathematical and logical framework rather than implementation details. Use plain text only inside the message. Do not use markdown formatting, code fences, or LaTeX-style backslashes.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"transmute\",\n  \"decision_notes\": \"optional string\",\n  \"message_for_next_agent\": \"plain-text reformulation for the next agent\"\n}",
+      "base_header_prompt": "",
+      "review_prompt_family": "",
+      "review_selected_prompt_text": "",
+      "review_base_header_prompt": "",
+      "child_prompt_family": "execute",
+      "child_selected_prompt_text": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}",
+      "child_base_header_prompt": "",
+      "terminal_result_destination": "auto",
+      "child_terminal_result_destination": "",
+      "injected_prompt_profile": "agent_orchestration_basic_instruction_prompt",
+      "additional_instruction_prompt_profiles": [],
+      "context_policy": "minimal",
+      "workflow_structure": "sequential_parent_review",
+      "verification_policy": "light",
+      "tool_policy": "none",
+      "json_response_policy": "strict_required",
+      "orchestration_policy": "agent_decides",
+      "budget_policy": {
+        "max_depth": 1,
+        "max_helpers_per_node": 1,
+        "max_turns_per_node": 4
+      },
+      "routing_policy": "return_to_creator",
+      "recovery_policy": "report_problem"
+    },
+    "node_level_overrides": {
+      "prompt_family": "execute",
+      "selected_prompt_text": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}",
+      "terminal_result_destination": "final_output"
+    },
+    "resolved_variables": {
+      "runtime_provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it",
+      "prompt_family": "execute",
+      "selected_prompt_text": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}",
+      "base_header_prompt": "",
+      "review_prompt_family": "",
+      "review_selected_prompt_text": "",
+      "review_base_header_prompt": "",
+      "child_prompt_family": "execute",
+      "child_selected_prompt_text": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}",
+      "child_base_header_prompt": "",
+      "terminal_result_destination": "final_output",
+      "child_terminal_result_destination": "",
+      "injected_prompt_profile": "agent_orchestration_basic_instruction_prompt",
+      "additional_instruction_prompt_profiles": [],
+      "context_policy": "minimal",
+      "workflow_structure": "sequential_parent_review",
+      "verification_policy": "light",
+      "tool_policy": "none",
+      "json_response_policy": "strict_required",
+      "orchestration_policy": "agent_decides",
+      "budget_policy": {
+        "max_depth": 1,
+        "max_helpers_per_node": 1,
+        "max_turns_per_node": 4
+      },
+      "routing_policy": "return_to_creator",
+      "recovery_policy": "report_problem"
+    }
+  },
+  "node_setup": {
+    "created_by_action_type": "recruit_help",
+    "terminal_result_destination": "final_output",
+    "notes": []
+  }
+}

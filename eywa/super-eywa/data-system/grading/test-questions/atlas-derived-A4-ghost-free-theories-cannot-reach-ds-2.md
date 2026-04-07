@@ -1,10 +1,12 @@
 # A4. Ghost-Free Theories Cannot Reach d_s = 2
 
-- Type: Atlas-derived
+- Family: atlas-derived
+- Entry Type: reasoning
 - Domain: Physics / quantum gravity
+- Grader Type: binary_reasoning
 - Source: Atlas Quantum Gravity mission (25 explorations)
 
-## Question
+## Problem
 
 Can ghost-free, Lorentz-invariant theories produce spectral dimension d_s = 2 in the UV?
 
@@ -28,4 +30,4 @@ Binary:
 
 ## Notes
 
-- 
+-

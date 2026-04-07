@@ -1,6 +1,7 @@
 # Agent Triggers
 
 When talking to Sean, avoid paragraphs when possible and prefer formatted text with line breaks.
+Keep responses to Sean to 15 lines or fewer unless more detail is genuinely necessary. Trust Sean to follow up if he wants more.
 
 When making a presentation for Super-Eywa, first look at:
 

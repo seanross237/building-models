@@ -1,0 +1,15 @@
+{
+  "contract_name": "final_output",
+  "contract_version": "v1",
+  "run_id": "coding-S1-ahc001-atcoder-ad__execute__mx1_non_holdout_full_agent_v1_2026_04_06__execute__17__run_2026_04_07_024441",
+  "created_at_utc": "2026-04-07T02:45:34Z",
+  "source_node_id": "node_root",
+  "source_node_record_ref": "nodes/node_root/node_record.json",
+  "action_type": "report_success",
+  "terminal_result_destination": "final_output",
+  "result": {
+    "result_type": "summary",
+    "content": "FINAL_ANSWER: import sys\nimport math\n\ndef solve():\n    # Input Parsing\n    # Expected input format: \n    # N (number of advertisers)\n    # For each advertiser: x y target_area\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    N = int(input_data[0])\n    advertisers = []\n    idx = 1\n    for i in range(N):\n        x = float(input_data[idx])\n        y = float(input_data[idx+1])\n        area = float(input_data[idx+2])\n        advertisers.append({'id': i, 'x': x, 'y': y, 'area': area})\n        idx += 3\n\n    # Sort advertisers by area descending (Greedy heuristic)\n    advertisers.sort(key=lambda a: a['area'], reverse=True)\n\n    # Spatial Management: Grid-based approach\n    # Grid size 10000x10000. We use a coarse grid to check for collisions quickly.\n    GRID_SIZE = 100\n    CELL_DIM = 10000 / GRID_SIZE\n    grid = [[[] for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]\n\n    def get_grid_coords(x, y):\n        gx = max(0, min(GRID_SIZE - 1, int(x / CELL_DIM)))\n        gy = max(0, min(GRID_SIZE - 1, int(y / CELL_DIM)))\n        return gx, gy\n\n    def is_overlapping(x1, y1, w1, h1, x2, y2, w2, h2):\n        return not (x1 + w1 <= x2 or x2 + w2 <= x1 or y1 + h1 <= y2 or y2 + h2 <= y1)\n\n    results = []\n\n    for adv in advertisers:\n        target_area = adv['area']\n        cx, cy = adv['x'], adv['y']\n        \n        # Try to form a square first\n        side = math.sqrt(target_area)\n        half = side / 2.0\n        \n        # Initial bounds\n        x_min, x_max = cx - half, cx + half\n        y_min, y_max = cy - half, cy + half\n\n        # Clamp to 10000x10000 boundary\n        x_min = max(0.0, x_min)\n        y_min = max(0.0, y_min)\n        x_max = min(10000.0, x_max)\n        y_max = min(10000.0, y_max)",
+    "attachment_refs": []
+  }
+}

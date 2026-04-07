@@ -177,7 +177,7 @@ def validate_node_record(payload: Dict[str, Any]) -> None:
         ],
         "node_record.orchestration",
     )
-    allowed_decisions = {"execute_locally", "transmute", "delegate", "report_problem"}
+    allowed_decisions = {"execute_locally", "transmute", "delegate", "review", "report_problem"}
     if orchestration["initial_decision"] not in allowed_decisions:
         raise ContractError(f"invalid initial_decision: {orchestration['initial_decision']}")
     if orchestration["final_decision"] not in allowed_decisions:
@@ -216,6 +216,7 @@ def validate_node_authored_response(
         "execute_locally",
         "transmute",
         "delegate",
+        "review",
         "report_problem",
     }
     if decision not in valid_decisions:
@@ -235,6 +236,18 @@ def validate_node_authored_response(
         result_type = payload.get("result_type")
         if result_type is not None and not isinstance(result_type, str):
             raise ContractError("execute_locally result_type must be a string when present")
+        artifacts = payload.get("artifacts")
+        if artifacts is not None:
+            if not isinstance(artifacts, list) or not artifacts:
+                raise ContractError("execute_locally artifacts must be a non-empty list when present")
+            for artifact in artifacts:
+                if not isinstance(artifact, dict):
+                    raise ContractError("execute_locally artifacts entries must be objects")
+                _require_keys(artifact, ["path", "content"], "node_authored_response.execute_locally.artifact")
+                if not isinstance(artifact["path"], str) or not artifact["path"].strip():
+                    raise ContractError("execute_locally artifact path must be a non-empty string")
+                if not isinstance(artifact["content"], str):
+                    raise ContractError("execute_locally artifact content must be a string")
         return
 
     if decision == "report_problem":
@@ -250,6 +263,18 @@ def validate_node_authored_response(
         next_node_overrides = payload.get("next_node_overrides")
         if next_node_overrides is not None and not isinstance(next_node_overrides, dict):
             raise ContractError("transmute next_node_overrides must be an object when present")
+        return
+
+    if decision == "review":
+        draft_response = payload.get("draft_response")
+        if not isinstance(draft_response, str) or not draft_response.strip():
+            raise ContractError("review draft_response must be a non-empty string")
+        message = payload.get("message_for_reviewer")
+        if not isinstance(message, str) or not message.strip():
+            raise ContractError("review message_for_reviewer must be a non-empty string")
+        next_node_overrides = payload.get("next_node_overrides")
+        if next_node_overrides is not None and not isinstance(next_node_overrides, dict):
+            raise ContractError("review next_node_overrides must be an object when present")
         return
 
     helpers = payload.get("helpers")

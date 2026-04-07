@@ -1,0 +1,171 @@
+{
+  "provider": "openrouter",
+  "note": "Per-turn provider payloads, authored JSON, and compiled outputs are recorded here.",
+  "steps": [
+    {
+      "step": 1,
+      "note": "authored local execution deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 1\nNode depth: 1\nAllowed decisions: ['execute_locally']\nPrompt family: execute\nBase header prompt: ''\nSelected prompt text:\nSolve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nThe response field should be only a brief submission summary. Do not put contestant stdout in the response field.\nYour main.py must read from stdin and print only the contestant output required by the problem.\nDo not print explanations, labels, debug text, or estimated scores.\nIf the Output section requires a leading count/header line, print it exactly.\nPrefer a simple valid baseline over malformed ambitious output.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nSolve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nThe response field should be only a brief submission summary. Do not put contestant stdout in the response field.\nYour main.py must read from stdin and print only the contestant output required by the problem.\nDo not print explanations, labels, debug text, or estimated scores.\nIf the Output section requires a leading count/header line, print it exactly.\nPrefer a simple valid baseline over malformed ambitious output.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\n\nQuestion:\nOBJECTIVE: Minimize the total cost C of creating N target beverages starting from an initial state (0, 0). The score to maximize is round(10^6 * N * L / (1 + C)), where L is the maximum coordinate value present in the input. CONSTRAINTS: 1. Initial state: (0, 0). 2. Target set: N points (a_i, b_i). 3. Operation: Create a new beverage (tx, ty) from an existing beverage (fx, fy) such that tx >= fx and ty >= fy. 4. Operation Cost: (tx - fx) + (ty - fy). 5. Total Cost C: Sum of costs of all operations used to reach all N target points. 6. Validity: A beverage must exist in the current set of created beverages before it can be used as a source for a new operation. Every target beverage must be included in the set of created beverages. INPUT FORMAT: - Integer N (number of target beverages). - N lines, each containing two integers: a_i b_i. OUTPUT FORMAT: - Integer m (total number of operations). - m lines, each containing four integers: from_x from_y to_x to_y. ALGORITHMIC REQUIREMENTS: - This is a Steiner Tree-like problem on a 2D grid with monotonic movement constraints. - To minimize C, find a sequence of operations that connects (0, 0) to all (a_i, b_i) using the minimum total Manhattan distance, ensuring each step moves in a non-decreasing direction for both coordinates. - A greedy approach or a Minimum Spanning Tree variant adapted for the monotonicity constraint (tx >= fx and ty >= fy) is recommended. - Complexity: Aim for efficient construction of the operation sequence to handle N = 1000.",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "execute_locally",
+        "decision_notes": "Implementing greedy Manhattan MST approach.",
+        "response": "FINAL_ANSWER: m operations\nJUSTIFICATION: Greedy connection minimizes total Manhattan cost.",
+        "result_type": "code_submission",
+        "artifacts": [
+          {
+            "path": "main.py",
+            "content": "import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    targets = []\n    idx = 1\n    for _ in range(n):\n        x = int(input_data[idx])\n        y = int(input_data[idx+1])\n        targets.append((x, y))\n        idx += 2\n\n    # Sort targets primarily by x, then by y to facilitate monotonic paths\n    # This is a heuristic for the Steiner-like problem with monotonicity\n    targets.sort()\n\n    # We start with (0,0) in our set of available beverages\n    current_beverages = [(0, 0)]\n    operations = []\n\n    # For each target, find the best existing beverage to connect from\n    # 'Best' here means minimizing (tx-fx) + (ty-fy) subject to tx>=fx, ty>=fy\n    for tx, ty in targets:\n        best_dist = float('inf')\n        best_source = None\n        \n        for fx, fy in current_beverages:\n            if tx >= fx and ty >= fy:\n                dist = (tx - fx) + (ty - fy)\n                if dist < best_dist:\n                    best_dist = dist\n                    best_source = (fx, fy)\n        \n        if best_source:\n            operations.append((best_source[0], best_source[1], tx, ty))\n            current_beverages.append((tx, ty))\n        else:\n            # If no monotonic source found, we must connect from (0,0) \n            # or handle it by creating intermediate points. \n            # However, the problem implies a valid path exists.\n            # In a grid with (0,0) and positive targets, (0,0) is always a fallback.\n            # But we need to ensure monotonicity. If tx < fx or ty < fy, \n            # we can't use that source. Since we sort by x, tx >= fx is likely.\n            # If ty < fy, we might need to find a different source.\n            # Let's refine: find source with max fx <= tx and max fy <= ty.\n            \n            # Fallback: find any source that satisfies monotonicity\n            # If none, this specific target might be unreachable under strict rules\n            # but the problem implies a solution exists.\n            pass\n\n    print(len(operations))\n    for op in operations:\n        print(f\"{op[0]} {op[1]} {op[2]} {op[3]}\")\n\nif __name__ == \"__main__\":\n    solve()"
+          }
+        ]
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "coding-S6-ahc037-soda__transmute__mx1_coding_non_holdout_v2_2026_04_07__transmute__02__run_2026_04_07_081147",
+        "node_id": "node_root_helper_01",
+        "action_type": "report_success",
+        "results": [
+          {
+            "result_type": "code_submission",
+            "content": "FINAL_ANSWER: m operations\nJUSTIFICATION: Greedy connection minimizes total Manhattan cost.",
+            "attachment_refs": [
+              "artifacts/node_root_helper_01/turn_01/main.py"
+            ]
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "success_report",
+            "target": {
+              "target_type": "final_output",
+              "target_ref": "run_final_output"
+            },
+            "message": "FINAL_ANSWER: m operations\nJUSTIFICATION: Greedy connection minimizes total Manhattan cost.",
+            "attachment_refs": [
+              "artifacts/node_root_helper_01/turn_01/main.py"
+            ]
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nThe response field should be only a brief submission summary. Do not put contestant stdout in the response field.\nYour main.py must read from stdin and print only the contestant output required by the problem.\nDo not print explanations, labels, debug text, or estimated scores.\nIf the Output section requires a leading count/header line, print it exactly.\nPrefer a simple valid baseline over malformed ambitious output.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\n\nQuestion:\nOBJECTIVE: Minimize the total cost C of creating N target beverages starting from an initial state (0, 0). The score to maximize is round(10^6 * N * L / (1 + C)), where L is the maximum coordinate value present in the input. CONSTRAINTS: 1. Initial state: (0, 0). 2. Target set: N points (a_i, b_i). 3. Operation: Create a new beverage (tx, ty) from an existing beverage (fx, fy) such that tx >= fx and ty >= fy. 4. Operation Cost: (tx - fx) + (ty - fy). 5. Total Cost C: Sum of costs of all operations used to reach all N target points. 6. Validity: A beverage must exist in the current set of created beverages before it can be used as a source for a new operation. Every target beverage must be included in the set of created beverages. INPUT FORMAT: - Integer N (number of target beverages). - N lines, each containing two integers: a_i b_i. OUTPUT FORMAT: - Integer m (total number of operations). - m lines, each containing four integers: from_x from_y to_x to_y. ALGORITHMIC REQUIREMENTS: - This is a Steiner Tree-like problem on a 2D grid with monotonic movement constraints. - To minimize C, find a sequence of operations that connects (0, 0) to all (a_i, b_i) using the minimum total Manhattan distance, ensuring each step moves in a non-decreasing direction for both coordinates. - A greedy approach or a Minimum Spanning Tree variant adapted for the monotonicity constraint (tx >= fx and ty >= fy) is recommended. - Complexity: Aim for efficient construction of the operation sequence to handle N = 1000."
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775549526-4ZgeOcXpddEbkwh63lRG",
+              "object": "chat.completion",
+              "created": 1775549526,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Parasail",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\"schema_name\": \"eywa_node_response\", \"schema_version\": \"v1\", \"orchestration_decision\": \"execute_locally\", \"decision_notes\": \"Implementing greedy Manhattan MST approach.\", \"response\": \"FINAL_ANSWER: m operations\\nJUSTIFICATION: Greedy connection minimizes total Manhattan cost.\", \"result_type\": \"code_submission\", \"artifacts\": [{\"path\": \"main.py\", \"content\": \"import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    n = int(input_data[0])\\n    targets = []\\n    idx = 1\\n    for _ in range(n):\\n        x = int(input_data[idx])\\n        y = int(input_data[idx+1])\\n        targets.append((x, y))\\n        idx += 2\\n\\n    # Sort targets primarily by x, then by y to facilitate monotonic paths\\n    # This is a heuristic for the Steiner-like problem with monotonicity\\n    targets.sort()\\n\\n    # We start with (0,0) in our set of available beverages\\n    current_beverages = [(0, 0)]\\n    operations = []\\n\\n    # For each target, find the best existing beverage to connect from\\n    # 'Best' here means minimizing (tx-fx) + (ty-fy) subject to tx>=fx, ty>=fy\\n    for tx, ty in targets:\\n        best_dist = float('inf')\\n        best_source = None\\n        \\n        for fx, fy in current_beverages:\\n            if tx >= fx and ty >= fy:\\n                dist = (tx - fx) + (ty - fy)\\n                if dist < best_dist:\\n                    best_dist = dist\\n                    best_source = (fx, fy)\\n        \\n        if best_source:\\n            operations.append((best_source[0], best_source[1], tx, ty))\\n            current_beverages.append((tx, ty))\\n        else:\\n            # If no monotonic source found, we must connect from (0,0) \\n            # or handle it by creating intermediate points. \\n            # However, the problem implies a valid path exists.\\n            # In a grid with (0,0) and positive targets, (0,0) is always a fallback.\\n            # But we need to ensure monotonicity. If tx < fx or ty < fy, \\n            # we can't use that source. Since we sort by x, tx >= fx is likely.\\n            # If ty < fy, we might need to find a different source.\\n            # Let's refine: find source with max fx <= tx and max fy <= ty.\\n            \\n            # Fallback: find any source that satisfies monotonicity\\n            # If none, this specific target might be unreachable under strict rules\\n            # but the problem implies a solution exists.\\n            pass\\n\\n    print(len(operations))\\n    for op in operations:\\n        print(f\\\"{op[0]} {op[1]} {op[2]} {op[3]}\\\")\\n\\nif __name__ == \\\"__main__\\\":\\n    solve()\"}]}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 807,
+                "completion_tokens": 744,
+                "total_tokens": 1551,
+                "cost": 0.00040251,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00040251,
+                  "upstream_inference_prompt_cost": 0.00010491,
+                  "upstream_inference_completions_cost": 0.0002976
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\"schema_name\": \"eywa_node_response\", \"schema_version\": \"v1\", \"orchestration_decision\": \"execute_locally\", \"decision_notes\": \"Implementing greedy Manhattan MST approach.\", \"response\": \"FINAL_ANSWER: m operations\\nJUSTIFICATION: Greedy connection minimizes total Manhattan cost.\", \"result_type\": \"code_submission\", \"artifacts\": [{\"path\": \"main.py\", \"content\": \"import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    n = int(input_data[0])\\n    targets = []\\n    idx = 1\\n    for _ in range(n):\\n        x = int(input_data[idx])\\n        y = int(input_data[idx+1])\\n        targets.append((x, y))\\n        idx += 2\\n\\n    # Sort targets primarily by x, then by y to facilitate monotonic paths\\n    # This is a heuristic for the Steiner-like problem with monotonicity\\n    targets.sort()\\n\\n    # We start with (0,0) in our set of available beverages\\n    current_beverages = [(0, 0)]\\n    operations = []\\n\\n    # For each target, find the best existing beverage to connect from\\n    # 'Best' here means minimizing (tx-fx) + (ty-fy) subject to tx>=fx, ty>=fy\\n    for tx, ty in targets:\\n        best_dist = float('inf')\\n        best_source = None\\n        \\n        for fx, fy in current_beverages:\\n            if tx >= fx and ty >= fy:\\n                dist = (tx - fx) + (ty - fy)\\n                if dist < best_dist:\\n                    best_dist = dist\\n                    best_source = (fx, fy)\\n        \\n        if best_source:\\n            operations.append((best_source[0], best_source[1], tx, ty))\\n            current_beverages.append((tx, ty))\\n        else:\\n            # If no monotonic source found, we must connect from (0,0) \\n            # or handle it by creating intermediate points. \\n            # However, the problem implies a valid path exists.\\n            # In a grid with (0,0) and positive targets, (0,0) is always a fallback.\\n            # But we need to ensure monotonicity. If tx < fx or ty < fy, \\n            # we can't use that source. Since we sort by x, tx >= fx is likely.\\n            # If ty < fy, we might need to find a different source.\\n            # Let's refine: find source with max fx <= tx and max fy <= ty.\\n            \\n            # Fallback: find any source that satisfies monotonicity\\n            # If none, this specific target might be unreachable under strict rules\\n            # but the problem implies a solution exists.\\n            pass\\n\\n    print(len(operations))\\n    for op in operations:\\n        print(f\\\"{op[0]} {op[1]} {op[2]} {op[3]}\\\")\\n\\nif __name__ == \\\"__main__\\\":\\n    solve()\"}]}",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "execute_locally",
+              "decision_notes": "Implementing greedy Manhattan MST approach.",
+              "response": "FINAL_ANSWER: m operations\nJUSTIFICATION: Greedy connection minimizes total Manhattan cost.",
+              "result_type": "code_submission",
+              "artifacts": [
+                {
+                  "path": "main.py",
+                  "content": "import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    targets = []\n    idx = 1\n    for _ in range(n):\n        x = int(input_data[idx])\n        y = int(input_data[idx+1])\n        targets.append((x, y))\n        idx += 2\n\n    # Sort targets primarily by x, then by y to facilitate monotonic paths\n    # This is a heuristic for the Steiner-like problem with monotonicity\n    targets.sort()\n\n    # We start with (0,0) in our set of available beverages\n    current_beverages = [(0, 0)]\n    operations = []\n\n    # For each target, find the best existing beverage to connect from\n    # 'Best' here means minimizing (tx-fx) + (ty-fy) subject to tx>=fx, ty>=fy\n    for tx, ty in targets:\n        best_dist = float('inf')\n        best_source = None\n        \n        for fx, fy in current_beverages:\n            if tx >= fx and ty >= fy:\n                dist = (tx - fx) + (ty - fy)\n                if dist < best_dist:\n                    best_dist = dist\n                    best_source = (fx, fy)\n        \n        if best_source:\n            operations.append((best_source[0], best_source[1], tx, ty))\n            current_beverages.append((tx, ty))\n        else:\n            # If no monotonic source found, we must connect from (0,0) \n            # or handle it by creating intermediate points. \n            # However, the problem implies a valid path exists.\n            # In a grid with (0,0) and positive targets, (0,0) is always a fallback.\n            # But we need to ensure monotonicity. If tx < fx or ty < fy, \n            # we can't use that source. Since we sort by x, tx >= fx is likely.\n            # If ty < fy, we might need to find a different source.\n            # Let's refine: find source with max fx <= tx and max fy <= ty.\n            \n            # Fallback: find any source that satisfies monotonicity\n            # If none, this specific target might be unreachable under strict rules\n            # but the problem implies a solution exists.\n            pass\n\n    print(len(operations))\n    for op in operations:\n        print(f\"{op[0]} {op[1]} {op[2]} {op[3]}\")\n\nif __name__ == \"__main__\":\n    solve()"
+                }
+              ]
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "execute_locally",
+          "decision_notes": "Implementing greedy Manhattan MST approach.",
+          "response": "FINAL_ANSWER: m operations\nJUSTIFICATION: Greedy connection minimizes total Manhattan cost.",
+          "result_type": "code_submission",
+          "artifacts": [
+            {
+              "path": "main.py",
+              "content": "import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    targets = []\n    idx = 1\n    for _ in range(n):\n        x = int(input_data[idx])\n        y = int(input_data[idx+1])\n        targets.append((x, y))\n        idx += 2\n\n    # Sort targets primarily by x, then by y to facilitate monotonic paths\n    # This is a heuristic for the Steiner-like problem with monotonicity\n    targets.sort()\n\n    # We start with (0,0) in our set of available beverages\n    current_beverages = [(0, 0)]\n    operations = []\n\n    # For each target, find the best existing beverage to connect from\n    # 'Best' here means minimizing (tx-fx) + (ty-fy) subject to tx>=fx, ty>=fy\n    for tx, ty in targets:\n        best_dist = float('inf')\n        best_source = None\n        \n        for fx, fy in current_beverages:\n            if tx >= fx and ty >= fy:\n                dist = (tx - fx) + (ty - fy)\n                if dist < best_dist:\n                    best_dist = dist\n                    best_source = (fx, fy)\n        \n        if best_source:\n            operations.append((best_source[0], best_source[1], tx, ty))\n            current_beverages.append((tx, ty))\n        else:\n            # If no monotonic source found, we must connect from (0,0) \n            # or handle it by creating intermediate points. \n            # However, the problem implies a valid path exists.\n            # In a grid with (0,0) and positive targets, (0,0) is always a fallback.\n            # But we need to ensure monotonicity. If tx < fx or ty < fy, \n            # we can't use that source. Since we sort by x, tx >= fx is likely.\n            # If ty < fy, we might need to find a different source.\n            # Let's refine: find source with max fx <= tx and max fy <= ty.\n            \n            # Fallback: find any source that satisfies monotonicity\n            # If none, this specific target might be unreachable under strict rules\n            # but the problem implies a solution exists.\n            pass\n\n    print(len(operations))\n    for op in operations:\n        print(f\"{op[0]} {op[1]} {op[2]} {op[3]}\")\n\nif __name__ == \"__main__\":\n    solve()"
+            }
+          ]
+        }
+      },
+      "usage": {
+        "prompt_tokens": 807,
+        "completion_tokens": 744,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 0,
+        "total_tokens": 1551,
+        "cost_usd": 0.00040251,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775549526-4ZgeOcXpddEbkwh63lRG",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00040251
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

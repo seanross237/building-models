@@ -304,6 +304,57 @@ class RuntimeTests(unittest.TestCase):
                 ["transmute"],
             )
 
+    def test_review_family_creates_one_child_then_parent_finalizes(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            cmd = [
+                "python3",
+                str(RUNNER),
+                "--task",
+                "Draft an answer, get it reviewed, and then finalize it.",
+                "--run-id",
+                "run_test_review",
+                "--variables-json",
+                json.dumps(
+                    {
+                        "prompt_family": "review",
+                        "child_prompt_family": "execute",
+                    }
+                ),
+                "--run-history-root",
+                tmpdir,
+                "--runtime-provider",
+                "deterministic",
+                "--model",
+                "deterministic-local-v1",
+            ]
+            subprocess.run(cmd, check=True, capture_output=True, text=True)
+            run_dir = Path(tmpdir) / "run_test_review"
+
+            summary = json.loads((run_dir / "run_summary.json").read_text(encoding="utf-8"))
+            self.assertEqual(summary["node_count"], 2)
+            self.assertEqual(summary["final_output_node_id"], "node_root")
+
+            root_record = json.loads(
+                (run_dir / "nodes" / "node_root" / "node_record.json").read_text(encoding="utf-8")
+            )
+            self.assertEqual(root_record["orchestration"]["initial_decision"], "review")
+            self.assertEqual(root_record["orchestration"]["final_decision"], "execute_locally")
+            self.assertTrue(root_record["orchestration"]["awaited_child_results"])
+
+            child_record = json.loads(
+                (run_dir / "nodes" / "node_root_helper_01" / "node_record.json").read_text(encoding="utf-8")
+            )
+            self.assertEqual(child_record["variables"]["prompt_family"], "execute")
+            self.assertEqual(child_record["orchestration"]["terminal_result_destination"], "creator")
+
+            replay = json.loads(
+                (run_dir / "replay" / "node_root" / "raw-model.json").read_text(encoding="utf-8")
+            )
+            self.assertEqual(
+                [step["authored_response"]["orchestration_decision"] for step in replay["steps"]],
+                ["review", "execute_locally"],
+            )
+
 
 if __name__ == "__main__":
     unittest.main()

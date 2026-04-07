@@ -2,57 +2,23 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
 import re
 from pathlib import Path
 from typing import Any, Dict
 
-
-@dataclass(frozen=True)
-class QuestionCase:
-    question_id: str
-    title: str
-    source_path: Path
-    sections: Dict[str, str]
+from coding_packets_v1 import load_coding_packet
+from question_bank_v1 import QuestionCase, load_question_case
 
 
 def parse_question_file(path: Path) -> QuestionCase:
-    raw_text = path.read_text(encoding="utf-8")
-    lines = raw_text.splitlines()
-    title = path.stem
-    if lines and lines[0].startswith("# "):
-        title = lines[0][2:].strip()
-
-    sections: Dict[str, str] = {}
-    current_section: str | None = None
-    buffer: list[str] = []
-
-    def flush() -> None:
-        nonlocal buffer, current_section
-        if current_section is not None:
-            sections[current_section] = "\n".join(buffer).strip()
-        buffer = []
-
-    for line in lines[1:]:
-        if line.startswith("## "):
-            flush()
-            current_section = line[3:].strip().lower().replace(" ", "_")
-            continue
-        if current_section is None:
-            continue
-        buffer.append(line)
-    flush()
-
-    return QuestionCase(
-        question_id=path.stem,
-        title=title,
-        source_path=path.resolve(),
-        sections=sections,
-    )
+    return load_question_case(source_path=path)
 
 
 def build_task_prompt(question_case: QuestionCase) -> str:
-    question_body = question_case.sections.get("question") or question_case.sections.get("task") or ""
+    if question_case.entry_type == "coding":
+        return _build_coding_task_prompt(question_case)
+
+    question_body = question_case.sections.get("problem") or ""
     grading_body = question_case.sections.get("grading", "")
 
     parts = [
@@ -60,7 +26,7 @@ def build_task_prompt(question_case: QuestionCase) -> str:
         f"Question ID: {question_case.question_id}",
         f"Title: {question_case.title}",
         "",
-        "Question:",
+        "Problem:",
         question_body.strip(),
     ]
 
@@ -84,22 +50,75 @@ def build_task_prompt(question_case: QuestionCase) -> str:
     return "\n".join(parts).strip()
 
 
-def grade_result(question_case: QuestionCase, result_text: str) -> Dict[str, Any]:
-    question_id = question_case.question_id
-    extracted_answer = extract_final_answer(result_text)
+def _build_coding_task_prompt(question_case: QuestionCase) -> str:
+    packet = load_coding_packet(question_id=question_case.question_id, strict=False)
+    problem_body = (
+        packet.problem_statement_path.read_text(encoding="utf-8").strip()
+        if packet is not None
+        else (question_case.sections.get("problem") or "").strip()
+    )
+    grading_body = question_case.sections.get("grading", "")
+    parts = [
+        "Solve this Super-Eywa coding benchmark.",
+        f"Question ID: {question_case.question_id}",
+        f"Title: {question_case.title}",
+        "",
+        "Problem:",
+        problem_body,
+        "",
+        "Submission contract:",
+        "- Return a single Python submission file named main.py.",
+        "- Read from stdin and write to stdout.",
+        "- Put the full file content in the artifacts list of your execute_locally JSON response.",
+        "- Use the response field only for a brief submission summary.",
+        "- Do not wrap the code in markdown fences inside artifacts.",
+        "",
+        "Critical validity rules:",
+        "- Your program is judged by the stdout it prints when run, not by the summary in your JSON response.",
+        "- Print exactly the contestant output described in the Output section, and nothing else.",
+        "- Do not print the objective score, estimated score, labels, explanations, or debug text unless the Output section explicitly requires them.",
+        "- If the Output section requires a count/header on the first line, print that first line exactly.",
+        "- Every printed index, count, and coordinate must stay within the allowed ranges.",
+        "- Prefer a simple valid baseline solution over an ambitious but invalid one.",
+        "- If the problem permits an empty or minimal valid plan, that is better than malformed output.",
+    ]
+    if grading_body.strip():
+        parts.extend(
+            [
+                "",
+                "Grading target:",
+                grading_body.strip(),
+            ]
+        )
+    if packet is not None and packet.valid_baseline_hint:
+        parts.extend(
+            [
+                "",
+                "Packet baseline hint:",
+                packet.valid_baseline_hint,
+            ]
+        )
+    return "\n".join(parts).strip()
 
-    if question_id == "architecture-derived-B4-hensel-lifting-verification":
-        return _grade_hensel_lifting(question_case, extracted_answer, 110)
-    if question_id == "architecture-derived-B5-combinatorial-probability-random-chords":
-        return _grade_exact_numeric(question_case, extracted_answer, 204)
-    if question_id == "architecture-derived-B6-binary-representation-minimization":
-        return _grade_exact_numeric(question_case, extracted_answer, 3)
-    if question_id == "architecture-derived-B2-sign-sensitive-derivation-exciton-rydberg-energy":
-        return _grade_numeric_tolerance(question_case, extracted_answer, -0.08, 0.005)
-    if question_id == "architecture-derived-B10-mean-field-lattice-gas-occupancy":
-        return _grade_numeric_tolerance(question_case, extracted_answer, 0.424, 0.01)
-    if question_id == "architecture-derived-B11-board-game-rule-chaining":
-        return _grade_exact_string(question_case, extracted_answer, "unknown")
+
+def grade_result(question_case: QuestionCase, result_text: str) -> Dict[str, Any]:
+    extracted_answer = extract_final_answer(result_text)
+    grader_type = question_case.grader_type
+    grader_config = dict(question_case.grader_config or {})
+
+    if grader_type == "exact_numeric_hensel_target":
+        return _grade_hensel_lifting(question_case, extracted_answer, int(grader_config["expected"]))
+    if grader_type == "exact_numeric":
+        return _grade_exact_numeric(question_case, extracted_answer, float(grader_config["expected"]))
+    if grader_type == "numeric_tolerance":
+        return _grade_numeric_tolerance(
+            question_case,
+            extracted_answer,
+            float(grader_config["expected"]),
+            float(grader_config["tolerance"]),
+        )
+    if grader_type == "exact_normalized_string":
+        return _grade_exact_string(question_case, extracted_answer, str(grader_config["expected"]))
 
     return {
         "grading_status": "ungraded",
@@ -120,7 +139,7 @@ def extract_final_answer(result_text: str) -> str:
     return first_nonempty_line
 
 
-def _grade_exact_numeric(question_case: QuestionCase, extracted_answer: str, expected_value: int) -> Dict[str, Any]:
+def _grade_exact_numeric(question_case: QuestionCase, extracted_answer: str, expected_value: float) -> Dict[str, Any]:
     number = _extract_number(extracted_answer)
     correct = number is not None and abs(number - expected_value) < 1e-9
     return {

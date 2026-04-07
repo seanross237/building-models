@@ -1,0 +1,1 @@
+import sys\n\nN, M, K = map(int, sys.stdin.readline().split())\nboard = [list(map(int, sys.stdin.readline().split())) for _ in range(N)]\nstamps = [\n    [list(map(int, sys.stdin.readline().split())) for _ in range(3)]\n    for _ in range(M)\n]\n\n# Baseline solution: no placements\nprint(0)

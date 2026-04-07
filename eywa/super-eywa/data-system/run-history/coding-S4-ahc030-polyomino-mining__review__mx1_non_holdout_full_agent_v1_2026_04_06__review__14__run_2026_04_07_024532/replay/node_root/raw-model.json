@@ -1,0 +1,368 @@
+{
+  "provider": "openrouter",
+  "note": "Per-turn provider payloads, authored JSON, and compiled outputs are recorded here.",
+  "steps": [
+    {
+      "step": 1,
+      "note": "authored review decision deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 1\nNode depth: 0\nAllowed decisions: ['review']\nPrompt family: review\nBase header prompt: ''\nSelected prompt text:\nWrite a tentative answer and ask one reviewer child to perform a critical error-correction audit. The reviewer must identify the specific logical or mathematical reason why the current proposed strategy fails to achieve the optimal objective (e.g., minimizing cost or maximizing accuracy). The reviewer should not just add detail, but must propose a fundamental correction or a different algorithmic direction if the current one is sub-optimal. The goal is to break out of current reasoning patterns that are not yielding correct results.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"review\",\n  \"decision_notes\": \"optional string\",\n  \"draft_response\": \"plain-text draft answer\",\n  \"message_for_reviewer\": \"plain-text review request for the child\"\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nWrite a tentative answer and ask one reviewer child to perform a critical error-correction audit. The reviewer must identify the specific logical or mathematical reason why the current proposed strategy fails to achieve the optimal objective (e.g., minimizing cost or maximizing accuracy). The reviewer should not just add detail, but must propose a fundamental correction or a different algorithmic direction if the current one is sub-optimal. The goal is to break out of current reasoning patterns that are not yielding correct results.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"review\",\n  \"decision_notes\": \"optional string\",\n  \"draft_response\": \"plain-text draft answer\",\n  \"message_for_reviewer\": \"plain-text review request for the child\"\n}\n\nQuestion:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: coding-S4-ahc030-polyomino-mining\nTitle: S4. AHC030 / Polyomino Mining\n\nProblem:\nGiven known polyomino oil-field shapes but unknown placements, recover all oil-containing cells with as little probing cost as possible using drilling, noisy aggregate queries, and final guesses.\n\nGrading target:\nLower probing cost is better.\nContest score is derived from absolute and relative cost.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "review",
+        "decision_notes": "The draft provides a heuristic-based approach using greedy spatial sampling, which is likely sub-optimal for a problem involving noisy aggregate queries and known shapes. A formal review is required to determine if a Bayesian inference or a POMDP-based approach is necessary.",
+        "draft_response": "To solve the Polyomino Mining problem, we propose a three-stage strategy:\n\n1. **Initial Probing (Sparse Sampling):** Deploy a grid-based drilling pattern with a step size $k$ related to the maximum diameter of the known polyomino shapes. This establishes 'anchor points' to detect the presence of oil fields.\n\n2. **Aggregate Query Refinement:** Once a probe returns a positive signal, use noisy aggregate queries in the local neighborhood. We will use a sliding window approach to estimate the density of oil cells, using the known polyomino shapes as templates to perform a cross-correlation between the query results and the possible shape orientations.\n\n3. **Shape Fitting and Final Guess:** For each detected cluster, perform a maximum likelihood estimation (MLE) to fit the known polyomino templates to the noisy aggregate data. The final answer will be the union of all cells covered by the highest-probability shape placements.\n\nFINAL_ANSWER: [Set of coordinates representing the recovered oil cells]\nJUSTIFICATION: The strategy minimizes cost by using sparse initial drilling and leverages the known geometry of the polyominoes to interpret noisy aggregate data via template matching.",
+        "message_for_reviewer": "Perform a critical error-correction audit on the proposed strategy. Specifically, identify the mathematical or logical reason why a 'greedy spatial sampling + template matching' approach fails to achieve the optimal objective in the presence of 'noisy aggregate queries.' Does this approach fail to account for the information gain (entropy reduction) provided by the aggregate queries compared to individual drilling? If the current strategy is sub-optimal, propose a fundamental algorithmic shift (e.g., moving from heuristic template matching to a Bayesian Belief Propagation model or a POMDP framework) that explicitly optimizes the trade-off between probing cost and uncertainty reduction.",
+        "next_node_overrides": {}
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "coding-S4-ahc030-polyomino-mining__review__mx1_non_holdout_full_agent_v1_2026_04_06__review__14__run_2026_04_07_024532",
+        "node_id": "node_root",
+        "action_type": "recruit_help",
+        "results": [
+          {
+            "result_type": "plan",
+            "content": "The draft provides a heuristic-based approach using greedy spatial sampling, which is likely sub-optimal for a problem involving noisy aggregate queries and known shapes. A formal review is required to determine if a Bayesian inference or a POMDP-based approach is necessary.\nnode_root_helper_01 (review_child): Review this draft answer carefully.\nFind flaws, missing reasoning, or corrections, then produce the strongest corrected answer you can.\n\nReview focus:\nPerform a critical error-correction audit on the proposed strategy. Specifically, identify the mathematical or logical reason why a 'greedy spatial sampling + template matching' approach fails to achieve the optimal objective in the presence of 'noisy aggregate queries.' Does this approach fail to account for the information gain (entropy reduction) provided by the aggregate queries compared to individual drilling? If the current strategy is sub-optimal, propose a fundamental algorithmic shift (e.g., moving from heuristic template matching to a Bayesian Belief Propagation model or a POMDP framework) that explicitly optimizes the trade-off between probing cost and uncertainty reduction.\n\nOriginal question:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: coding-S4-ahc030-polyomino-mining\nTitle: S4. AHC030 / Polyomino Mining\n\nProblem:\nGiven known polyomino oil-field shapes but unknown placements, recover all oil-containing cells with as little probing cost as possible using drilling, noisy aggregate queries, and final guesses.\n\nGrading target:\nLower probing cost is better.\nContest score is derived from absolute and relative cost.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>\n\nDraft answer:\nTo solve the Polyomino Mining problem, we propose a three-stage strategy:\n\n1. **Initial Probing (Sparse Sampling):** Deploy a grid-based drilling pattern with a step size $k$ related to the maximum diameter of the known polyomino shapes. This establishes 'anchor points' to detect the presence of oil fields.\n\n2. **Aggregate Query Refinement:** Once a probe returns a positive signal, use noisy aggregate queries in the local neighborhood. We will use a sliding window approach to estimate the density of oil cells, using the known polyomino shapes as templates to perform a cross-correlation between the query results and the possible shape orientations.\n\n3. **Shape Fitting and Final Guess:** For each detected cluster, perform a maximum likelihood estimation (MLE) to fit the known polyomino templates to the noisy aggregate data. The final answer will be the union of all cells covered by the highest-probability shape placements.\n\nFINAL_ANSWER: [Set of coordinates representing the recovered oil cells]\nJUSTIFICATION: The strategy minimizes cost by using sparse initial drilling and leverages the known geometry of the polyominoes to interpret noisy aggregate data via template matching.",
+            "attachment_refs": []
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "helper_assignment",
+            "target": {
+              "target_type": "new_helper",
+              "target_ref": "node_root_helper_01"
+            },
+            "message": "Review this draft answer carefully.\nFind flaws, missing reasoning, or corrections, then produce the strongest corrected answer you can.\n\nReview focus:\nPerform a critical error-correction audit on the proposed strategy. Specifically, identify the mathematical or logical reason why a 'greedy spatial sampling + template matching' approach fails to achieve the optimal objective in the presence of 'noisy aggregate queries.' Does this approach fail to account for the information gain (entropy reduction) provided by the aggregate queries compared to individual drilling? If the current strategy is sub-optimal, propose a fundamental algorithmic shift (e.g., moving from heuristic template matching to a Bayesian Belief Propagation model or a POMDP framework) that explicitly optimizes the trade-off between probing cost and uncertainty reduction.\n\nOriginal question:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: coding-S4-ahc030-polyomino-mining\nTitle: S4. AHC030 / Polyomino Mining\n\nProblem:\nGiven known polyomino oil-field shapes but unknown placements, recover all oil-containing cells with as little probing cost as possible using drilling, noisy aggregate queries, and final guesses.\n\nGrading target:\nLower probing cost is better.\nContest score is derived from absolute and relative cost.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>\n\nDraft answer:\nTo solve the Polyomino Mining problem, we propose a three-stage strategy:\n\n1. **Initial Probing (Sparse Sampling):** Deploy a grid-based drilling pattern with a step size $k$ related to the maximum diameter of the known polyomino shapes. This establishes 'anchor points' to detect the presence of oil fields.\n\n2. **Aggregate Query Refinement:** Once a probe returns a positive signal, use noisy aggregate queries in the local neighborhood. We will use a sliding window approach to estimate the density of oil cells, using the known polyomino shapes as templates to perform a cross-correlation between the query results and the possible shape orientations.\n\n3. **Shape Fitting and Final Guess:** For each detected cluster, perform a maximum likelihood estimation (MLE) to fit the known polyomino templates to the noisy aggregate data. The final answer will be the union of all cells covered by the highest-probability shape placements.\n\nFINAL_ANSWER: [Set of coordinates representing the recovered oil cells]\nJUSTIFICATION: The strategy minimizes cost by using sparse initial drilling and leverages the known geometry of the polyominoes to interpret noisy aggregate data via template matching.",
+            "attachment_refs": []
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Write a tentative answer and ask one reviewer child to perform a critical error-correction audit. The reviewer must identify the specific logical or mathematical reason why the current proposed strategy fails to achieve the optimal objective (e.g., minimizing cost or maximizing accuracy). The reviewer should not just add detail, but must propose a fundamental correction or a different algorithmic direction if the current one is sub-optimal. The goal is to break out of current reasoning patterns that are not yielding correct results.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"review\",\n  \"decision_notes\": \"optional string\",\n  \"draft_response\": \"plain-text draft answer\",\n  \"message_for_reviewer\": \"plain-text review request for the child\"\n}\n\nQuestion:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: coding-S4-ahc030-polyomino-mining\nTitle: S4. AHC030 / Polyomino Mining\n\nProblem:\nGiven known polyomino oil-field shapes but unknown placements, recover all oil-containing cells with as little probing cost as possible using drilling, noisy aggregate queries, and final guesses.\n\nGrading target:\nLower probing cost is better.\nContest score is derived from absolute and relative cost.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>"
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775529932-J3Umak3fBoNi5ulbpBJb",
+              "object": "chat.completion",
+              "created": 1775529932,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Venice",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"review\",\n  \"decision_notes\": \"The draft provides a heuristic-based approach using greedy spatial sampling, which is likely sub-optimal for a problem involving noisy aggregate queries and known shapes. A formal review is required to determine if a Bayesian inference or a POMDP-based approach is necessary.\",\n  \"draft_response\": \"To solve the Polyomino Mining problem, we propose a three-stage strategy:\\n\\n1. **Initial Probing (Sparse Sampling):** Deploy a grid-based drilling pattern with a step size $k$ related to the maximum diameter of the known polyomino shapes. This establishes 'anchor points' to detect the presence of oil fields.\\n\\n2. **Aggregate Query Refinement:** Once a probe returns a positive signal, use noisy aggregate queries in the local neighborhood. We will use a sliding window approach to estimate the density of oil cells, using the known polyomino shapes as templates to perform a cross-correlation between the query results and the possible shape orientations.\\n\\n3. **Shape Fitting and Final Guess:** For each detected cluster, perform a maximum likelihood estimation (MLE) to fit the known polyomino templates to the noisy aggregate data. The final answer will be the union of all cells covered by the highest-probability shape placements.\\n\\nFINAL_ANSWER: [Set of coordinates representing the recovered oil cells]\\nJUSTIFICATION: The strategy minimizes cost by using sparse initial drilling and leverages the known geometry of the polyominoes to interpret noisy aggregate data via template matching.\",\n  \"message_for_reviewer\": \"Perform a critical error-correction audit on the proposed strategy. Specifically, identify the mathematical or logical reason why a 'greedy spatial sampling + template matching' approach fails to achieve the optimal objective in the presence of 'noisy aggregate queries.' Does this approach fail to account for the information gain (entropy reduction) provided by the aggregate queries compared to individual drilling? If the current strategy is sub-optimal, propose a fundamental algorithmic shift (e.g., moving from heuristic template matching to a Bayesian Belief Propagation model or a POMDP framework) that explicitly optimizes the trade-off between probing cost and uncertainty reduction.\"\n}\n```",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 340,
+                "completion_tokens": 491,
+                "total_tokens": 831,
+                "cost": 0.00030075,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00030075,
+                  "upstream_inference_prompt_cost": 5.525e-05,
+                  "upstream_inference_completions_cost": 0.0002455
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"review\",\n  \"decision_notes\": \"The draft provides a heuristic-based approach using greedy spatial sampling, which is likely sub-optimal for a problem involving noisy aggregate queries and known shapes. A formal review is required to determine if a Bayesian inference or a POMDP-based approach is necessary.\",\n  \"draft_response\": \"To solve the Polyomino Mining problem, we propose a three-stage strategy:\\n\\n1. **Initial Probing (Sparse Sampling):** Deploy a grid-based drilling pattern with a step size $k$ related to the maximum diameter of the known polyomino shapes. This establishes 'anchor points' to detect the presence of oil fields.\\n\\n2. **Aggregate Query Refinement:** Once a probe returns a positive signal, use noisy aggregate queries in the local neighborhood. We will use a sliding window approach to estimate the density of oil cells, using the known polyomino shapes as templates to perform a cross-correlation between the query results and the possible shape orientations.\\n\\n3. **Shape Fitting and Final Guess:** For each detected cluster, perform a maximum likelihood estimation (MLE) to fit the known polyomino templates to the noisy aggregate data. The final answer will be the union of all cells covered by the highest-probability shape placements.\\n\\nFINAL_ANSWER: [Set of coordinates representing the recovered oil cells]\\nJUSTIFICATION: The strategy minimizes cost by using sparse initial drilling and leverages the known geometry of the polyominoes to interpret noisy aggregate data via template matching.\",\n  \"message_for_reviewer\": \"Perform a critical error-correction audit on the proposed strategy. Specifically, identify the mathematical or logical reason why a 'greedy spatial sampling + template matching' approach fails to achieve the optimal objective in the presence of 'noisy aggregate queries.' Does this approach fail to account for the information gain (entropy reduction) provided by the aggregate queries compared to individual drilling? If the current strategy is sub-optimal, propose a fundamental algorithmic shift (e.g., moving from heuristic template matching to a Bayesian Belief Propagation model or a POMDP framework) that explicitly optimizes the trade-off between probing cost and uncertainty reduction.\"\n}\n```",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "review",
+              "decision_notes": "The draft provides a heuristic-based approach using greedy spatial sampling, which is likely sub-optimal for a problem involving noisy aggregate queries and known shapes. A formal review is required to determine if a Bayesian inference or a POMDP-based approach is necessary.",
+              "draft_response": "To solve the Polyomino Mining problem, we propose a three-stage strategy:\n\n1. **Initial Probing (Sparse Sampling):** Deploy a grid-based drilling pattern with a step size $k$ related to the maximum diameter of the known polyomino shapes. This establishes 'anchor points' to detect the presence of oil fields.\n\n2. **Aggregate Query Refinement:** Once a probe returns a positive signal, use noisy aggregate queries in the local neighborhood. We will use a sliding window approach to estimate the density of oil cells, using the known polyomino shapes as templates to perform a cross-correlation between the query results and the possible shape orientations.\n\n3. **Shape Fitting and Final Guess:** For each detected cluster, perform a maximum likelihood estimation (MLE) to fit the known polyomino templates to the noisy aggregate data. The final answer will be the union of all cells covered by the highest-probability shape placements.\n\nFINAL_ANSWER: [Set of coordinates representing the recovered oil cells]\nJUSTIFICATION: The strategy minimizes cost by using sparse initial drilling and leverages the known geometry of the polyominoes to interpret noisy aggregate data via template matching.",
+              "message_for_reviewer": "Perform a critical error-correction audit on the proposed strategy. Specifically, identify the mathematical or logical reason why a 'greedy spatial sampling + template matching' approach fails to achieve the optimal objective in the presence of 'noisy aggregate queries.' Does this approach fail to account for the information gain (entropy reduction) provided by the aggregate queries compared to individual drilling? If the current strategy is sub-optimal, propose a fundamental algorithmic shift (e.g., moving from heuristic template matching to a Bayesian Belief Propagation model or a POMDP framework) that explicitly optimizes the trade-off between probing cost and uncertainty reduction.",
+              "next_node_overrides": {}
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "review",
+          "decision_notes": "The draft provides a heuristic-based approach using greedy spatial sampling, which is likely sub-optimal for a problem involving noisy aggregate queries and known shapes. A formal review is required to determine if a Bayesian inference or a POMDP-based approach is necessary.",
+          "draft_response": "To solve the Polyomino Mining problem, we propose a three-stage strategy:\n\n1. **Initial Probing (Sparse Sampling):** Deploy a grid-based drilling pattern with a step size $k$ related to the maximum diameter of the known polyomino shapes. This establishes 'anchor points' to detect the presence of oil fields.\n\n2. **Aggregate Query Refinement:** Once a probe returns a positive signal, use noisy aggregate queries in the local neighborhood. We will use a sliding window approach to estimate the density of oil cells, using the known polyomino shapes as templates to perform a cross-correlation between the query results and the possible shape orientations.\n\n3. **Shape Fitting and Final Guess:** For each detected cluster, perform a maximum likelihood estimation (MLE) to fit the known polyomino templates to the noisy aggregate data. The final answer will be the union of all cells covered by the highest-probability shape placements.\n\nFINAL_ANSWER: [Set of coordinates representing the recovered oil cells]\nJUSTIFICATION: The strategy minimizes cost by using sparse initial drilling and leverages the known geometry of the polyominoes to interpret noisy aggregate data via template matching.",
+          "message_for_reviewer": "Perform a critical error-correction audit on the proposed strategy. Specifically, identify the mathematical or logical reason why a 'greedy spatial sampling + template matching' approach fails to achieve the optimal objective in the presence of 'noisy aggregate queries.' Does this approach fail to account for the information gain (entropy reduction) provided by the aggregate queries compared to individual drilling? If the current strategy is sub-optimal, propose a fundamental algorithmic shift (e.g., moving from heuristic template matching to a Bayesian Belief Propagation model or a POMDP framework) that explicitly optimizes the trade-off between probing cost and uncertainty reduction.",
+          "next_node_overrides": {}
+        }
+      },
+      "usage": {
+        "prompt_tokens": 340,
+        "completion_tokens": 491,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 0,
+        "total_tokens": 831,
+        "cost_usd": 0.00030075,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775529932-J3Umak3fBoNi5ulbpBJb",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00030075
+            }
+          ]
+        }
+      }
+    },
+    {
+      "step": 2,
+      "note": "authored local execution after reviewing child results deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 2\nNode depth: 0\nAllowed decisions: ['execute_locally']\nPrompt family: review\nBase header prompt: ''\nSelected prompt text:\nA review child has already returned critique or an improved draft. Use that returned work to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"string\",\n  \"result_type\": \"optional string\"\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nA review child has already returned critique or an improved draft. Use that returned work to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"string\",\n  \"result_type\": \"optional string\"\n}\n\nChild results already returned to you:\n[\n  {\n    \"node_id\": \"node_root_helper_01\",\n    \"summary\": \"FINAL_ANSWER: Implement a POMDP framework to optimize probing.\\nJUSTIFICATION: Greedy template matching ignores information gain from noisy aggregate queries.\"\n  }\n]\n\nQuestion:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: coding-S4-ahc030-polyomino-mining\nTitle: S4. AHC030 / Polyomino Mining\n\nProblem:\nGiven known polyomino oil-field shapes but unknown placements, recover all oil-containing cells with as little probing cost as possible using drilling, noisy aggregate queries, and final guesses.\n\nGrading target:\nLower probing cost is better.\nContest score is derived from absolute and relative cost.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "execute_locally",
+        "decision_notes": "The child result provided a high-level strategy. I will formalize this into a structured algorithmic approach suitable for a coding competition context.",
+        "response": "FINAL_ANSWER: To minimize probing cost, implement a Partially Observable Markov Decision Process (POMDP) framework to optimize the sequence of probes. The state space consists of all possible valid placements of the known polyomino shapes on the grid. The observation model accounts for the noise in aggregate queries (e.g., a query returning a count of oil cells with a probability distribution). Algorithm Steps: 1. State Representation: Maintain a belief distribution b(s) over all possible configurations of oil-containing cells that are consistent with the known polyomino shapes. 2. Action Selection: At each step, choose an action a (either a single-cell drill or an aggregate query) that maximizes the Expected Information Gain (EIG) or minimizes the expected future cost to reach a high-confidence state. - Use aggregate queries early to prune the vast majority of invalid configurations. - Use single-cell drilling only when the belief distribution is highly concentrated on a few specific cells to confirm presence/absence. 3. Update: Upon receiving a noisy aggregate result z, update the belief using Bayes' Rule: b'(s) proportional to P(z|s)b(s). 4. Termination: Stop when the entropy of the belief distribution falls below a threshold where a final guess (the MAP estimate) is likely to be correct with high probability. JUSTIFICATION: Greedy template matching or simple scanning ignores the probabilistic value of aggregate queries. A POMDP approach treats the problem as an information-gathering task, balancing the high cost of drilling against the high information gain (and lower cost) of noisy aggregate queries to prune the search space efficiently.",
+        "result_type": "text"
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "coding-S4-ahc030-polyomino-mining__review__mx1_non_holdout_full_agent_v1_2026_04_06__review__14__run_2026_04_07_024532",
+        "node_id": "node_root",
+        "action_type": "report_success",
+        "results": [
+          {
+            "result_type": "text",
+            "content": "FINAL_ANSWER: To minimize probing cost, implement a Partially Observable Markov Decision Process (POMDP) framework to optimize the sequence of probes. The state space consists of all possible valid placements of the known polyomino shapes on the grid. The observation model accounts for the noise in aggregate queries (e.g., a query returning a count of oil cells with a probability distribution). Algorithm Steps: 1. State Representation: Maintain a belief distribution b(s) over all possible configurations of oil-containing cells that are consistent with the known polyomino shapes. 2. Action Selection: At each step, choose an action a (either a single-cell drill or an aggregate query) that maximizes the Expected Information Gain (EIG) or minimizes the expected future cost to reach a high-confidence state. - Use aggregate queries early to prune the vast majority of invalid configurations. - Use single-cell drilling only when the belief distribution is highly concentrated on a few specific cells to confirm presence/absence. 3. Update: Upon receiving a noisy aggregate result z, update the belief using Bayes' Rule: b'(s) proportional to P(z|s)b(s). 4. Termination: Stop when the entropy of the belief distribution falls below a threshold where a final guess (the MAP estimate) is likely to be correct with high probability. JUSTIFICATION: Greedy template matching or simple scanning ignores the probabilistic value of aggregate queries. A POMDP approach treats the problem as an information-gathering task, balancing the high cost of drilling against the high information gain (and lower cost) of noisy aggregate queries to prune the search space efficiently.",
+            "attachment_refs": []
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "success_report",
+            "target": {
+              "target_type": "final_output",
+              "target_ref": "run_final_output"
+            },
+            "message": "FINAL_ANSWER: To minimize probing cost, implement a Partially Observable Markov Decision Process (POMDP) framework to optimize the sequence of probes. The state space consists of all possible valid placements of the known polyomino shapes on the grid. The observation model accounts for the noise in aggregate queries (e.g., a query returning a count of oil cells with a probability distribution). Algorithm Steps: 1. State Representation: Maintain a belief distribution b(s) over all possible configurations of oil-containing cells that are consistent with the known polyomino shapes. 2. Action Selection: At each step, choose an action a (either a single-cell drill or an aggregate query) that maximizes the Expected Information Gain (EIG) or minimizes the expected future cost to reach a high-confidence state. - Use aggregate queries early to prune the vast majority of invalid configurations. - Use single-cell drilling only when the belief distribution is highly concentrated on a few specific cells to confirm presence/absence. 3. Update: Upon receiving a noisy aggregate result z, update the belief using Bayes' Rule: b'(s) proportional to P(z|s)b(s). 4. Termination: Stop when the entropy of the belief distribution falls below a threshold where a final guess (the MAP estimate) is likely to be correct with high probability. JUSTIFICATION: Greedy template matching or simple scanning ignores the probabilistic value of aggregate queries. A POMDP approach treats the problem as an information-gathering task, balancing the high cost of drilling against the high information gain (and lower cost) of noisy aggregate queries to prune the search space efficiently.",
+            "attachment_refs": []
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "A review child has already returned critique or an improved draft. Use that returned work to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"string\",\n  \"result_type\": \"optional string\"\n}\n\nChild results already returned to you:\n[\n  {\n    \"node_id\": \"node_root_helper_01\",\n    \"summary\": \"FINAL_ANSWER: Implement a POMDP framework to optimize probing.\\nJUSTIFICATION: Greedy template matching ignores information gain from noisy aggregate queries.\"\n  }\n]\n\nQuestion:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: coding-S4-ahc030-polyomino-mining\nTitle: S4. AHC030 / Polyomino Mining\n\nProblem:\nGiven known polyomino oil-field shapes but unknown placements, recover all oil-containing cells with as little probing cost as possible using drilling, noisy aggregate queries, and final guesses.\n\nGrading target:\nLower probing cost is better.\nContest score is derived from absolute and relative cost.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>"
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775529950-0DqsBhVxlZPcO89XtAQ6",
+              "object": "chat.completion",
+              "created": 1775529950,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Parasail",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"The child result provided a high-level strategy. I will formalize this into a structured algorithmic approach suitable for a coding competition context.\",\n  \"response\": \"FINAL_ANSWER: To minimize probing cost, implement a Partially Observable Markov Decision Process (POMDP) framework to optimize the sequence of probes. The state space consists of all possible valid placements of the known polyomino shapes on the grid. The observation model accounts for the noise in aggregate queries (e.g., a query returning a count of oil cells with a probability distribution). \\n\\nAlgorithm Steps:\\n1. **State Representation**: Maintain a belief distribution $b(s)$ over all possible configurations of oil-containing cells that are consistent with the known polyomino shapes.\\n2. **Action Selection**: At each step, choose an action $a$ (either a single-cell drill or an aggregate query) that maximizes the Expected Information Gain (EIG) or minimizes the expected future cost to reach a high-confidence state. \\n   - Use aggregate queries early to prune the vast majority of invalid configurations.\\n   - Use single-cell drilling only when the belief distribution is highly concentrated on a few specific cells to confirm presence/absence.\\n3. **Update**: Upon receiving a noisy aggregate result $z$, update the belief using Bayes' Rule: $b'(s) \\propto P(z|s)b(s)$.\\n4. **Termination**: Stop when the entropy of the belief distribution falls below a threshold where a final guess (the MAP estimate) is likely to be correct with high probability.\\n\\nJUSTIFICATION: Greedy template matching or simple scanning ignores the probabilistic value of aggregate queries. A POMDP approach treats the problem as an information-gathering task, balancing the high cost of drilling against the high information gain (and lower cost) of noisy aggregate queries to prune the search space efficiently.\",\n  \"result_type\": \"text\"\n}\n```",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 341,
+                "completion_tokens": 453,
+                "total_tokens": 794,
+                "cost": 0.00022553,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 160,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00022553,
+                  "upstream_inference_prompt_cost": 4.433e-05,
+                  "upstream_inference_completions_cost": 0.0001812
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"The child result provided a high-level strategy. I will formalize this into a structured algorithmic approach suitable for a coding competition context.\",\n  \"response\": \"FINAL_ANSWER: To minimize probing cost, implement a Partially Observable Markov Decision Process (POMDP) framework to optimize the sequence of probes. The state space consists of all possible valid placements of the known polyomino shapes on the grid. The observation model accounts for the noise in aggregate queries (e.g., a query returning a count of oil cells with a probability distribution). \\n\\nAlgorithm Steps:\\n1. **State Representation**: Maintain a belief distribution $b(s)$ over all possible configurations of oil-containing cells that are consistent with the known polyomino shapes.\\n2. **Action Selection**: At each step, choose an action $a$ (either a single-cell drill or an aggregate query) that maximizes the Expected Information Gain (EIG) or minimizes the expected future cost to reach a high-confidence state. \\n   - Use aggregate queries early to prune the vast majority of invalid configurations.\\n   - Use single-cell drilling only when the belief distribution is highly concentrated on a few specific cells to confirm presence/absence.\\n3. **Update**: Upon receiving a noisy aggregate result $z$, update the belief using Bayes' Rule: $b'(s) \\propto P(z|s)b(s)$.\\n4. **Termination**: Stop when the entropy of the belief distribution falls below a threshold where a final guess (the MAP estimate) is likely to be correct with high probability.\\n\\nJUSTIFICATION: Greedy template matching or simple scanning ignores the probabilistic value of aggregate queries. A POMDP approach treats the problem as an information-gathering task, balancing the high cost of drilling against the high information gain (and lower cost) of noisy aggregate queries to prune the search space efficiently.\",\n  \"result_type\": \"text\"\n}\n```",
+            "parse_error": null,
+            "parsed_response": null
+          },
+          {
+            "phase": "json_repair",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": "You repair invalid Super-Eywa node responses into strict JSON. Return only valid JSON."
+                },
+                {
+                  "role": "user",
+                  "content": "Rewrite the following content as valid JSON only for the eywa_node_response v1 schema. Allowed orchestration_decision values for this turn: execute_locally. Use the exact top-level fields required by eywa_node_response v1. Do not wrap the object under another key. Use plain text strings only. Do not use markdown, code fences, or backslashes.\n\nOriginal content:\n```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"The child result provided a high-level strategy. I will formalize this into a structured algorithmic approach suitable for a coding competition context.\",\n  \"response\": \"FINAL_ANSWER: To minimize probing cost, implement a Partially Observable Markov Decision Process (POMDP) framework to optimize the sequence of probes. The state space consists of all possible valid placements of the known polyomino shapes on the grid. The observation model accounts for the noise in aggregate queries (e.g., a query returning a count of oil cells with a probability distribution). \\n\\nAlgorithm Steps:\\n1. **State Representation**: Maintain a belief distribution $b(s)$ over all possible configurations of oil-containing cells that are consistent with the known polyomino shapes.\\n2. **Action Selection**: At each step, choose an action $a$ (either a single-cell drill or an aggregate query) that maximizes the Expected Information Gain (EIG) or minimizes the expected future cost to reach a high-confidence state. \\n   - Use aggregate queries early to prune the vast majority of invalid configurations.\\n   - Use single-cell drilling only when the belief distribution is highly concentrated on a few specific cells to confirm presence/absence.\\n3. **Update**: Upon receiving a noisy aggregate result $z$, update the belief using Bayes' Rule: $b'(s) \\propto P(z|s)b(s)$.\\n4. **Termination**: Stop when the entropy of the belief distribution falls below a threshold where a final guess (the MAP estimate) is likely to be correct with high probability.\\n\\nJUSTIFICATION: Greedy template matching or simple scanning ignores the probabilistic value of aggregate queries. A POMDP approach treats the problem as an information-gathering task, balancing the high cost of drilling against the high information gain (and lower cost) of noisy aggregate queries to prune the search space efficiently.\",\n  \"result_type\": \"text\"\n}\n```"
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775530005-eZLwTyOsCLspB1qoGZfJ",
+              "object": "chat.completion",
+              "created": 1775530005,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Parasail",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n\"schema_name\": \"eywa_node_response\",\n\"schema_version\": \"v1\",\n\"orchestration_decision\": \"execute_locally\",\n\"decision_notes\": \"The child result provided a high-level strategy. I will formalize this into a structured algorithmic approach suitable for a coding competition context.\",\n\"response\": \"FINAL_ANSWER: To minimize probing cost, implement a Partially Observable Markov Decision Process (POMDP) framework to optimize the sequence of probes. The state space consists of all possible valid placements of the known polyomino shapes on the grid. The observation model accounts for the noise in aggregate queries (e.g., a query returning a count of oil cells with a probability distribution). Algorithm Steps: 1. State Representation: Maintain a belief distribution b(s) over all possible configurations of oil-containing cells that are consistent with the known polyomino shapes. 2. Action Selection: At each step, choose an action a (either a single-cell drill or an aggregate query) that maximizes the Expected Information Gain (EIG) or minimizes the expected future cost to reach a high-confidence state. - Use aggregate queries early to prune the vast majority of invalid configurations. - Use single-cell drilling only when the belief distribution is highly concentrated on a few specific cells to confirm presence/absence. 3. Update: Upon receiving a noisy aggregate result z, update the belief using Bayes' Rule: b'(s) proportional to P(z|s)b(s). 4. Termination: Stop when the entropy of the belief distribution falls below a threshold where a final guess (the MAP estimate) is likely to be correct with high probability. JUSTIFICATION: Greedy template matching or simple scanning ignores the probabilistic value of aggregate queries. A POMDP approach treats the problem as an information-gathering task, balancing the high cost of drilling against the high information gain (and lower cost) of noisy aggregate queries to prune the search space efficiently.\",\n\"result_type\": \"text\"\n}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 584,
+                "completion_tokens": 420,
+                "total_tokens": 1004,
+                "cost": 0.00024392,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 160,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00024392,
+                  "upstream_inference_prompt_cost": 7.592e-05,
+                  "upstream_inference_completions_cost": 0.000168
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\n\"schema_name\": \"eywa_node_response\",\n\"schema_version\": \"v1\",\n\"orchestration_decision\": \"execute_locally\",\n\"decision_notes\": \"The child result provided a high-level strategy. I will formalize this into a structured algorithmic approach suitable for a coding competition context.\",\n\"response\": \"FINAL_ANSWER: To minimize probing cost, implement a Partially Observable Markov Decision Process (POMDP) framework to optimize the sequence of probes. The state space consists of all possible valid placements of the known polyomino shapes on the grid. The observation model accounts for the noise in aggregate queries (e.g., a query returning a count of oil cells with a probability distribution). Algorithm Steps: 1. State Representation: Maintain a belief distribution b(s) over all possible configurations of oil-containing cells that are consistent with the known polyomino shapes. 2. Action Selection: At each step, choose an action a (either a single-cell drill or an aggregate query) that maximizes the Expected Information Gain (EIG) or minimizes the expected future cost to reach a high-confidence state. - Use aggregate queries early to prune the vast majority of invalid configurations. - Use single-cell drilling only when the belief distribution is highly concentrated on a few specific cells to confirm presence/absence. 3. Update: Upon receiving a noisy aggregate result z, update the belief using Bayes' Rule: b'(s) proportional to P(z|s)b(s). 4. Termination: Stop when the entropy of the belief distribution falls below a threshold where a final guess (the MAP estimate) is likely to be correct with high probability. JUSTIFICATION: Greedy template matching or simple scanning ignores the probabilistic value of aggregate queries. A POMDP approach treats the problem as an information-gathering task, balancing the high cost of drilling against the high information gain (and lower cost) of noisy aggregate queries to prune the search space efficiently.\",\n\"result_type\": \"text\"\n}",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "execute_locally",
+              "decision_notes": "The child result provided a high-level strategy. I will formalize this into a structured algorithmic approach suitable for a coding competition context.",
+              "response": "FINAL_ANSWER: To minimize probing cost, implement a Partially Observable Markov Decision Process (POMDP) framework to optimize the sequence of probes. The state space consists of all possible valid placements of the known polyomino shapes on the grid. The observation model accounts for the noise in aggregate queries (e.g., a query returning a count of oil cells with a probability distribution). Algorithm Steps: 1. State Representation: Maintain a belief distribution b(s) over all possible configurations of oil-containing cells that are consistent with the known polyomino shapes. 2. Action Selection: At each step, choose an action a (either a single-cell drill or an aggregate query) that maximizes the Expected Information Gain (EIG) or minimizes the expected future cost to reach a high-confidence state. - Use aggregate queries early to prune the vast majority of invalid configurations. - Use single-cell drilling only when the belief distribution is highly concentrated on a few specific cells to confirm presence/absence. 3. Update: Upon receiving a noisy aggregate result z, update the belief using Bayes' Rule: b'(s) proportional to P(z|s)b(s). 4. Termination: Stop when the entropy of the belief distribution falls below a threshold where a final guess (the MAP estimate) is likely to be correct with high probability. JUSTIFICATION: Greedy template matching or simple scanning ignores the probabilistic value of aggregate queries. A POMDP approach treats the problem as an information-gathering task, balancing the high cost of drilling against the high information gain (and lower cost) of noisy aggregate queries to prune the search space efficiently.",
+              "result_type": "text"
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "execute_locally",
+          "decision_notes": "The child result provided a high-level strategy. I will formalize this into a structured algorithmic approach suitable for a coding competition context.",
+          "response": "FINAL_ANSWER: To minimize probing cost, implement a Partially Observable Markov Decision Process (POMDP) framework to optimize the sequence of probes. The state space consists of all possible valid placements of the known polyomino shapes on the grid. The observation model accounts for the noise in aggregate queries (e.g., a query returning a count of oil cells with a probability distribution). Algorithm Steps: 1. State Representation: Maintain a belief distribution b(s) over all possible configurations of oil-containing cells that are consistent with the known polyomino shapes. 2. Action Selection: At each step, choose an action a (either a single-cell drill or an aggregate query) that maximizes the Expected Information Gain (EIG) or minimizes the expected future cost to reach a high-confidence state. - Use aggregate queries early to prune the vast majority of invalid configurations. - Use single-cell drilling only when the belief distribution is highly concentrated on a few specific cells to confirm presence/absence. 3. Update: Upon receiving a noisy aggregate result z, update the belief using Bayes' Rule: b'(s) proportional to P(z|s)b(s). 4. Termination: Stop when the entropy of the belief distribution falls below a threshold where a final guess (the MAP estimate) is likely to be correct with high probability. JUSTIFICATION: Greedy template matching or simple scanning ignores the probabilistic value of aggregate queries. A POMDP approach treats the problem as an information-gathering task, balancing the high cost of drilling against the high information gain (and lower cost) of noisy aggregate queries to prune the search space efficiently.",
+          "result_type": "text"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 925,
+        "completion_tokens": 873,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 320,
+        "total_tokens": 1798,
+        "cost_usd": 0.00046945,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775529950-0DqsBhVxlZPcO89XtAQ6",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00022553
+            },
+            {
+              "response_id": "gen-1775530005-eZLwTyOsCLspB1qoGZfJ",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00024392
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

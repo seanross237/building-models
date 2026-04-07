@@ -1,10 +1,12 @@
 # S1. AHC001 / AtCoder Ad
 
-- Type: Coding
+- Family: coding
+- Entry Type: coding
 - Subtype: Score-gradient task
+- Grader Type: continuous_score
 - Source: https://atcoder.jp/contests/ahc001/tasks/ahc001_a
 
-## Task
+## Problem
 
 Place many non-overlapping axis-aligned ad rectangles in a 10000 x 10000 square so each advertiser gets a rectangle containing its requested point and with area close to its requested target area.
 
@@ -20,4 +22,4 @@ It rewards iterative repair, spatial reasoning, and score-climbing instead of on
 
 ## Notes
 
-- 
+-

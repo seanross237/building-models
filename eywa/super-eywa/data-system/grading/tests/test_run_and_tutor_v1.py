@@ -62,6 +62,8 @@ class RunAndTutorV1Tests(unittest.TestCase):
             self.assertIn("total_tokens", parsed)
             self.assertIn("total_wall_time_ms", parsed)
             self.assertIn("total_cost_usd", parsed)
+            self.assertEqual(parsed["grader_provider"], "deterministic")
+            self.assertEqual(parsed["grading_method"], "deterministic_reference_v1")
 
             grading_record_path = Path(parsed["grading_record"])
             grading_record = json.loads(grading_record_path.read_text(encoding="utf-8"))
@@ -72,6 +74,9 @@ class RunAndTutorV1Tests(unittest.TestCase):
             self.assertIn("total_tokens", grading_record)
             self.assertIn("total_wall_time_ms", grading_record)
             self.assertIn("total_cost_usd", grading_record)
+            self.assertEqual(grading_record["grader_provider"], "deterministic")
+            self.assertEqual(grading_record["grading_method"], "deterministic_reference_v1")
+            self.assertTrue(Path(grading_record["grading_trace_path"]).exists())
 
     def test_manual_tutor_writes_sidecar_and_links_grading_record(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:

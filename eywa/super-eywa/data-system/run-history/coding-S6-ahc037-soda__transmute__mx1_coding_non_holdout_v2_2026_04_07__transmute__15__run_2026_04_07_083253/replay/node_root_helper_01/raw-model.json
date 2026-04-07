@@ -1,0 +1,171 @@
+{
+  "provider": "openrouter",
+  "note": "Per-turn provider payloads, authored JSON, and compiled outputs are recorded here.",
+  "steps": [
+    {
+      "step": 1,
+      "note": "authored local execution deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 1\nNode depth: 1\nAllowed decisions: ['execute_locally']\nPrompt family: execute\nBase header prompt: ''\nSelected prompt text:\nSolve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nThe response field should be only a brief submission summary. Do not put contestant stdout in the response field.\nYour main.py must read from stdin and print only the contestant output required by the problem.\nDo not print explanations, labels, debug text, or estimated scores.\nIf the Output section requires a leading count/header line, print it exactly.\nPrefer a simple valid baseline over malformed ambitious output.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nSolve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nThe response field should be only a brief submission summary. Do not put contestant stdout in the response field.\nYour main.py must read from stdin and print only the contestant output required by the problem.\nDo not print explanations, labels, debug text, or estimated scores.\nIf the Output section requires a leading count/header line, print it exactly.\nPrefer a simple valid baseline over malformed ambitious output.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\n\nQuestion:\nProblem Class: Minimum Cost Arborescence / Steiner Tree on a 2D Grid with Monotonicity Constraints.\n\nMathematical Objective:\nMinimize the total cost C = sum over all operations i of ((tx_i - fx_i) + (ty_i - fy_i)), where (fx_i, fy_i) is the source beverage and (tx_i, ty_i) is the resulting beverage. The objective is to maximize the score function: round(10^6 * N * L / (1 + C)), where N is the number of target nodes and L is the maximum coordinate scale.\n\nCombinatorial Structure:\nGiven a set of N target points S = {(a_1, b_1), ..., (a_N, b_N)} and a starting point P_0 = (0, 0), construct a directed tree (arborescence) such that every point in S is a node in the tree. The edges must satisfy the monotonicity constraint: for an edge from (fx, fy) to (tx, ty), it must hold that tx >= fx and ty >= fy.\n\nState-Transition and Validity Rules:\n1. Initial State: The set of existing beverages contains only {(0, 0)}.\n2. Transition: An operation takes an existing beverage (fx, fy) and creates a new beverage (tx, ty).\n3. Monotonicity: For every operation, tx >= fx and ty >= fy.\n4. Reachability: Every target beverage (a_i, b_i) must be present in the set of existing beverages at the end of the sequence of operations.\n5. Sequence Validity: An operation can only use a beverage that has been previously created or is the initial (0, 0).\n\nInput Protocol:\n- Integer N: The number of target beverages.\n- N lines: Each containing two integers a_i and b_i representing the target coordinates.\n\nOutput Protocol:\n- Integer m: The total number of operations performed.\n- m lines: Each containing four integers 'from_x from_y to_x to_y' representing a single operation.\n\nCritical Properties for Optimization:\n- The problem is equivalent to finding a minimum weight spanning arborescence in a DAG where edges are defined by the Manhattan distance and the monotonicity constraint. \n- Since the cost is the Manhattan distance, the total cost C is minimized when the path from (0,0) to any (a_i, b_i) is monotonic. \n- A greedy approach or a Minimum Spanning Tree approach (like Prim's or Kruskal's adapted for the monotonicity constraint) can be used to build the tree. \n- Note that intermediate nodes (non-target nodes) can be created if they help reduce the total Manhattan distance to multiple targets, though in a pure Manhattan metric with monotonicity, the optimal structure is often a subset of the target points plus the origin.",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "execute_locally",
+        "decision_notes": "Implementing greedy Manhattan arborescence.",
+        "response": "FINAL_ANSWER: m operations\nJUSTIFICATION: Greedy construction of monotonic paths to targets.",
+        "result_type": "code_submission",
+        "artifacts": [
+          {
+            "path": "main.py",
+            "content": "import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    N = int(input_data[0])\n    targets = []\n    idx = 1\n    for _ in range(N):\n        a = int(input_data[idx])\n        b = int(input_data[idx+1])\n        targets.append((a, b))\n        idx += 2\n\n    # Sort targets to facilitate monotonic construction\n    # Sorting by x then y helps in building a tree\n    targets.sort()\n\n    # We use a simple approach: connect each target to the origin\n    # or to a previously added target that satisfies monotonicity.\n    # To minimize cost, we want to reuse paths.\n    \n    # For this specific problem structure (Manhattan + Monotonicity),\n    # the cost of an edge (x1, y1) -> (x2, y2) is (x2-x1) + (y2-y1).\n    # Total cost is sum of edge costs.\n    \n    # Let's keep track of nodes currently in our tree\n    nodes = [(0, 0)]\n    edges = []\n\n    for tx, ty in targets:\n        best_dist = float('inf')\n        best_node = None\n        \n        for fx, fy in nodes:\n            if tx >= fx and ty >= fy:\n                dist = (tx - fx) + (ty - fy)\n                if dist < best_dist:\n                    best_dist = dist\n                    best_node = (fx, fy)\n        \n        # If no existing node can reach (tx, ty) monotonically,\n        # we must connect from (0,0) or create an intermediate.\n        # But (0,0) is always a valid source for any (tx, ty) where tx,ty >= 0.\n        if best_node is None:\n            best_node = (0, 0)\n            best_dist = tx + ty\n            \n        edges.append((best_node[0], best_node[1], tx, ty))\n        nodes.append((tx, ty))\n\n    print(len(edges))\n    for e in edges:\n        print(f\"{e[0]} {e[1]} {e[2]} {e[3]}\")\n\nif __name__ == \"__main__\":\n    solve()"
+          }
+        ]
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "coding-S6-ahc037-soda__transmute__mx1_coding_non_holdout_v2_2026_04_07__transmute__15__run_2026_04_07_083253",
+        "node_id": "node_root_helper_01",
+        "action_type": "report_success",
+        "results": [
+          {
+            "result_type": "code_submission",
+            "content": "FINAL_ANSWER: m operations\nJUSTIFICATION: Greedy construction of monotonic paths to targets.",
+            "attachment_refs": [
+              "artifacts/node_root_helper_01/turn_01/main.py"
+            ]
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "success_report",
+            "target": {
+              "target_type": "final_output",
+              "target_ref": "run_final_output"
+            },
+            "message": "FINAL_ANSWER: m operations\nJUSTIFICATION: Greedy construction of monotonic paths to targets.",
+            "attachment_refs": [
+              "artifacts/node_root_helper_01/turn_01/main.py"
+            ]
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nThe response field should be only a brief submission summary. Do not put contestant stdout in the response field.\nYour main.py must read from stdin and print only the contestant output required by the problem.\nDo not print explanations, labels, debug text, or estimated scores.\nIf the Output section requires a leading count/header line, print it exactly.\nPrefer a simple valid baseline over malformed ambitious output.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\n\nQuestion:\nProblem Class: Minimum Cost Arborescence / Steiner Tree on a 2D Grid with Monotonicity Constraints.\n\nMathematical Objective:\nMinimize the total cost C = sum over all operations i of ((tx_i - fx_i) + (ty_i - fy_i)), where (fx_i, fy_i) is the source beverage and (tx_i, ty_i) is the resulting beverage. The objective is to maximize the score function: round(10^6 * N * L / (1 + C)), where N is the number of target nodes and L is the maximum coordinate scale.\n\nCombinatorial Structure:\nGiven a set of N target points S = {(a_1, b_1), ..., (a_N, b_N)} and a starting point P_0 = (0, 0), construct a directed tree (arborescence) such that every point in S is a node in the tree. The edges must satisfy the monotonicity constraint: for an edge from (fx, fy) to (tx, ty), it must hold that tx >= fx and ty >= fy.\n\nState-Transition and Validity Rules:\n1. Initial State: The set of existing beverages contains only {(0, 0)}.\n2. Transition: An operation takes an existing beverage (fx, fy) and creates a new beverage (tx, ty).\n3. Monotonicity: For every operation, tx >= fx and ty >= fy.\n4. Reachability: Every target beverage (a_i, b_i) must be present in the set of existing beverages at the end of the sequence of operations.\n5. Sequence Validity: An operation can only use a beverage that has been previously created or is the initial (0, 0).\n\nInput Protocol:\n- Integer N: The number of target beverages.\n- N lines: Each containing two integers a_i and b_i representing the target coordinates.\n\nOutput Protocol:\n- Integer m: The total number of operations performed.\n- m lines: Each containing four integers 'from_x from_y to_x to_y' representing a single operation.\n\nCritical Properties for Optimization:\n- The problem is equivalent to finding a minimum weight spanning arborescence in a DAG where edges are defined by the Manhattan distance and the monotonicity constraint. \n- Since the cost is the Manhattan distance, the total cost C is minimized when the path from (0,0) to any (a_i, b_i) is monotonic. \n- A greedy approach or a Minimum Spanning Tree approach (like Prim's or Kruskal's adapted for the monotonicity constraint) can be used to build the tree. \n- Note that intermediate nodes (non-target nodes) can be created if they help reduce the total Manhattan distance to multiple targets, though in a pure Manhattan metric with monotonicity, the optimal structure is often a subset of the target points plus the origin."
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775550786-Sm0KfeXc3drKBPm8UWI4",
+              "object": "chat.completion",
+              "created": 1775550786,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Venice",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\"schema_name\": \"eywa_node_response\", \"schema_version\": \"v1\", \"orchestration_decision\": \"execute_locally\", \"decision_notes\": \"Implementing greedy Manhattan arborescence.\", \"response\": \"FINAL_ANSWER: m operations\\nJUSTIFICATION: Greedy construction of monotonic paths to targets.\", \"result_type\": \"code_submission\", \"artifacts\": [{\"path\": \"main.py\", \"content\": \"import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    N = int(input_data[0])\\n    targets = []\\n    idx = 1\\n    for _ in range(N):\\n        a = int(input_data[idx])\\n        b = int(input_data[idx+1])\\n        targets.append((a, b))\\n        idx += 2\\n\\n    # Sort targets to facilitate monotonic construction\\n    # Sorting by x then y helps in building a tree\\n    targets.sort()\\n\\n    # We use a simple approach: connect each target to the origin\\n    # or to a previously added target that satisfies monotonicity.\\n    # To minimize cost, we want to reuse paths.\\n    \\n    # For this specific problem structure (Manhattan + Monotonicity),\\n    # the cost of an edge (x1, y1) -> (x2, y2) is (x2-x1) + (y2-y1).\\n    # Total cost is sum of edge costs.\\n    \\n    # Let's keep track of nodes currently in our tree\\n    nodes = [(0, 0)]\\n    edges = []\\n\\n    for tx, ty in targets:\\n        best_dist = float('inf')\\n        best_node = None\\n        \\n        for fx, fy in nodes:\\n            if tx >= fx and ty >= fy:\\n                dist = (tx - fx) + (ty - fy)\\n                if dist < best_dist:\\n                    best_dist = dist\\n                    best_node = (fx, fy)\\n        \\n        # If no existing node can reach (tx, ty) monotonically,\\n        # we must connect from (0,0) or create an intermediate.\\n        # But (0,0) is always a valid source for any (tx, ty) where tx,ty >= 0.\\n        if best_node is None:\\n            best_node = (0, 0)\\n            best_dist = tx + ty\\n            \\n        edges.append((best_node[0], best_node[1], tx, ty))\\n        nodes.append((tx, ty))\\n\\n    print(len(edges))\\n    for e in edges:\\n        print(f\\\"{e[0]} {e[1]} {e[2]} {e[3]}\\\")\\n\\nif __name__ == \\\"__main__\\\":\\n    solve()\"}]}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 1017,
+                "completion_tokens": 680,
+                "total_tokens": 1697,
+                "cost": 0.0005052625,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.0005052625,
+                  "upstream_inference_prompt_cost": 0.0001652625,
+                  "upstream_inference_completions_cost": 0.00034
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\"schema_name\": \"eywa_node_response\", \"schema_version\": \"v1\", \"orchestration_decision\": \"execute_locally\", \"decision_notes\": \"Implementing greedy Manhattan arborescence.\", \"response\": \"FINAL_ANSWER: m operations\\nJUSTIFICATION: Greedy construction of monotonic paths to targets.\", \"result_type\": \"code_submission\", \"artifacts\": [{\"path\": \"main.py\", \"content\": \"import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    N = int(input_data[0])\\n    targets = []\\n    idx = 1\\n    for _ in range(N):\\n        a = int(input_data[idx])\\n        b = int(input_data[idx+1])\\n        targets.append((a, b))\\n        idx += 2\\n\\n    # Sort targets to facilitate monotonic construction\\n    # Sorting by x then y helps in building a tree\\n    targets.sort()\\n\\n    # We use a simple approach: connect each target to the origin\\n    # or to a previously added target that satisfies monotonicity.\\n    # To minimize cost, we want to reuse paths.\\n    \\n    # For this specific problem structure (Manhattan + Monotonicity),\\n    # the cost of an edge (x1, y1) -> (x2, y2) is (x2-x1) + (y2-y1).\\n    # Total cost is sum of edge costs.\\n    \\n    # Let's keep track of nodes currently in our tree\\n    nodes = [(0, 0)]\\n    edges = []\\n\\n    for tx, ty in targets:\\n        best_dist = float('inf')\\n        best_node = None\\n        \\n        for fx, fy in nodes:\\n            if tx >= fx and ty >= fy:\\n                dist = (tx - fx) + (ty - fy)\\n                if dist < best_dist:\\n                    best_dist = dist\\n                    best_node = (fx, fy)\\n        \\n        # If no existing node can reach (tx, ty) monotonically,\\n        # we must connect from (0,0) or create an intermediate.\\n        # But (0,0) is always a valid source for any (tx, ty) where tx,ty >= 0.\\n        if best_node is None:\\n            best_node = (0, 0)\\n            best_dist = tx + ty\\n            \\n        edges.append((best_node[0], best_node[1], tx, ty))\\n        nodes.append((tx, ty))\\n\\n    print(len(edges))\\n    for e in edges:\\n        print(f\\\"{e[0]} {e[1]} {e[2]} {e[3]}\\\")\\n\\nif __name__ == \\\"__main__\\\":\\n    solve()\"}]}",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "execute_locally",
+              "decision_notes": "Implementing greedy Manhattan arborescence.",
+              "response": "FINAL_ANSWER: m operations\nJUSTIFICATION: Greedy construction of monotonic paths to targets.",
+              "result_type": "code_submission",
+              "artifacts": [
+                {
+                  "path": "main.py",
+                  "content": "import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    N = int(input_data[0])\n    targets = []\n    idx = 1\n    for _ in range(N):\n        a = int(input_data[idx])\n        b = int(input_data[idx+1])\n        targets.append((a, b))\n        idx += 2\n\n    # Sort targets to facilitate monotonic construction\n    # Sorting by x then y helps in building a tree\n    targets.sort()\n\n    # We use a simple approach: connect each target to the origin\n    # or to a previously added target that satisfies monotonicity.\n    # To minimize cost, we want to reuse paths.\n    \n    # For this specific problem structure (Manhattan + Monotonicity),\n    # the cost of an edge (x1, y1) -> (x2, y2) is (x2-x1) + (y2-y1).\n    # Total cost is sum of edge costs.\n    \n    # Let's keep track of nodes currently in our tree\n    nodes = [(0, 0)]\n    edges = []\n\n    for tx, ty in targets:\n        best_dist = float('inf')\n        best_node = None\n        \n        for fx, fy in nodes:\n            if tx >= fx and ty >= fy:\n                dist = (tx - fx) + (ty - fy)\n                if dist < best_dist:\n                    best_dist = dist\n                    best_node = (fx, fy)\n        \n        # If no existing node can reach (tx, ty) monotonically,\n        # we must connect from (0,0) or create an intermediate.\n        # But (0,0) is always a valid source for any (tx, ty) where tx,ty >= 0.\n        if best_node is None:\n            best_node = (0, 0)\n            best_dist = tx + ty\n            \n        edges.append((best_node[0], best_node[1], tx, ty))\n        nodes.append((tx, ty))\n\n    print(len(edges))\n    for e in edges:\n        print(f\"{e[0]} {e[1]} {e[2]} {e[3]}\")\n\nif __name__ == \"__main__\":\n    solve()"
+                }
+              ]
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "execute_locally",
+          "decision_notes": "Implementing greedy Manhattan arborescence.",
+          "response": "FINAL_ANSWER: m operations\nJUSTIFICATION: Greedy construction of monotonic paths to targets.",
+          "result_type": "code_submission",
+          "artifacts": [
+            {
+              "path": "main.py",
+              "content": "import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    N = int(input_data[0])\n    targets = []\n    idx = 1\n    for _ in range(N):\n        a = int(input_data[idx])\n        b = int(input_data[idx+1])\n        targets.append((a, b))\n        idx += 2\n\n    # Sort targets to facilitate monotonic construction\n    # Sorting by x then y helps in building a tree\n    targets.sort()\n\n    # We use a simple approach: connect each target to the origin\n    # or to a previously added target that satisfies monotonicity.\n    # To minimize cost, we want to reuse paths.\n    \n    # For this specific problem structure (Manhattan + Monotonicity),\n    # the cost of an edge (x1, y1) -> (x2, y2) is (x2-x1) + (y2-y1).\n    # Total cost is sum of edge costs.\n    \n    # Let's keep track of nodes currently in our tree\n    nodes = [(0, 0)]\n    edges = []\n\n    for tx, ty in targets:\n        best_dist = float('inf')\n        best_node = None\n        \n        for fx, fy in nodes:\n            if tx >= fx and ty >= fy:\n                dist = (tx - fx) + (ty - fy)\n                if dist < best_dist:\n                    best_dist = dist\n                    best_node = (fx, fy)\n        \n        # If no existing node can reach (tx, ty) monotonically,\n        # we must connect from (0,0) or create an intermediate.\n        # But (0,0) is always a valid source for any (tx, ty) where tx,ty >= 0.\n        if best_node is None:\n            best_node = (0, 0)\n            best_dist = tx + ty\n            \n        edges.append((best_node[0], best_node[1], tx, ty))\n        nodes.append((tx, ty))\n\n    print(len(edges))\n    for e in edges:\n        print(f\"{e[0]} {e[1]} {e[2]} {e[3]}\")\n\nif __name__ == \"__main__\":\n    solve()"
+            }
+          ]
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1017,
+        "completion_tokens": 680,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 0,
+        "total_tokens": 1697,
+        "cost_usd": 0.0005052625,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775550786-Sm0KfeXc3drKBPm8UWI4",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.0005052625
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

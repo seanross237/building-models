@@ -1,5 +1,46 @@
-# Phase 1 sources. Just the reddit_stub collector for now.
+# Phase 2 sources, Phase 8 cleanup: keep mainstream, drop niche.
 collectors:
-  - id: reddit_stub
+  - id: reddit
     enabled: true
-    cadence_minutes: 30
+    module: collectors.reddit.fetch
+    config:
+      subreddits: [popular, news, worldnews, nottheonion, politics]
+      limit_per_sub: 25
+      max_age_hours: 24
+  - id: hacker_news
+    enabled: true
+    module: collectors.hacker_news.fetch
+    config:
+      limit: 30
+      max_age_hours: 24
+  - id: google_news
+    enabled: true
+    module: collectors.google_news.fetch
+    config:
+      feeds:
+        - "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en"
+        - "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=en-US&gl=US&ceid=US:en"
+        - "https://news.google.com/rss/headlines/section/topic/NATION?hl=en-US&gl=US&ceid=US:en"
+      limit_per_feed: 20
+      max_age_hours: 24
+  - id: mainstream_news
+    enabled: true
+    module: collectors.google_news.fetch
+    config:
+      source_name: mainstream_news
+      feeds:
+        - "https://feeds.bbci.co.uk/news/rss.xml"            # BBC top stories
+        - "https://feeds.bbci.co.uk/news/world/rss.xml"      # BBC world
+        - "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"  # NYT home
+        - "https://feeds.npr.org/1001/rss.xml"               # NPR top stories
+        - "https://feeds.apnews.com/rss/apf-topnews"         # AP top news
+      limit_per_feed: 15
+      max_age_hours: 24
+  - id: youtube_trending
+    enabled: false                                            # disabled — not news
+    module: collectors.youtube_trending.fetch
+    config:
+      limit: 20
+  - id: reddit_stub
+    enabled: false                                            # kept as test fixture
+    module: collectors.reddit_stub.fetch

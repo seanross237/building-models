@@ -1,10 +1,20 @@
-"""Reddit stub collector.
+"""Reddit stub collector — KEPT AS A TEST FIXTURE ONLY (Phase 2+).
 
-Phase 1 emits three hardcoded signal markdown files into
-`data/signals/reddit_stub/items/`. The seam (`fetch(store)`) matches the
-shape that real collectors will use in Phase 2 — they take a Store, write
-markdown items with YAML frontmatter, dedupe via `.seen-ids`, and return
-the list of new signal IDs.
+Originally this was the Phase 1 stub that emitted three hardcoded signal
+markdown files into `data/signals/reddit_stub/items/`. As of Phase 2 the
+real collectors live under `collectors/reddit/`, `collectors/hacker_news/`,
+`collectors/google_news/`, and `collectors/youtube_trending/`. This module
+is **disabled in `config/sources.yaml`** and is no longer wired into the
+default pipeline run.
+
+It is preserved (and still tested) because:
+1. Several tests depend on its deterministic three-signal output as a
+   convenient fixture for the analyzer / idea-factory / end-to-end paths.
+2. It documents the seam shape (`fetch(store) -> list[str]`) that all
+   Phase 2 collectors follow.
+
+Do not run this in production. If you find yourself enabling it again,
+prefer one of the real collectors instead.
 """
 from __future__ import annotations
 

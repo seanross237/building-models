@@ -1,0 +1,39 @@
+# Phase 4/8 storyboard config.
+#
+# Adapters are tried in order — the first one whose `is_available()`
+# returns True is used for a given storyboard run. The stub is kept at
+# the bottom so the pipeline still completes if no real image model
+# is reachable.
+#
+# Phase 8: fal-image is the default. It calls `fal-ai/nano-banana` for
+# character refs and `fal-ai/nano-banana/edit` (Google's gemini-2.5-flash
+# image model) for per-beat frames conditioned on the character refs.
+# One key (FAL_KEY) replaces a direct GEMINI_API_KEY for the storyboard
+# layer, which keeps Phase 8's promise of "one credential, real videos".
+adapters:
+  - id: fal-image
+    enabled: true
+    adapter: storyboard.adapters.fal_image.FalImageAdapter
+    config:
+      text_slug: fal-ai/nano-banana-2
+      edit_slug: fal-ai/nano-banana-2/edit
+      poll_interval_sec: 3
+      timeout_sec: 240
+  - id: gemini-image
+    enabled: true
+    adapter: storyboard.adapters.gemini_image.GeminiImageAdapter
+    config:
+      model: gemini-2.5-flash-image
+      timeout_sec: 120
+  - id: stub
+    enabled: true
+    adapter: storyboard.adapters.stub_storyboard.StubStoryboardAdapter
+    config: {}
+
+default_style_guide: |
+  Bright, slightly stylized 3D animation. Cinematic lighting. Consistent
+  character faces and outfits across every frame. Clean composition.
+  Sketch-comedy energy, neither photoreal nor cartoony — think in between.
+
+frame_size: 1024x1024
+character_ref_size: 512x512

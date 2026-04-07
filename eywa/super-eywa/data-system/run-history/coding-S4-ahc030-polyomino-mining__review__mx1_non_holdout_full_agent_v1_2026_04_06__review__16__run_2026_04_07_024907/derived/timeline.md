@@ -1,0 +1,59 @@
+# Run Timeline
+
+1. [node_root] Run started for task: Solve this Super-Eywa grading-bank question.
+Question ID: coding-S4-ahc030-polyomino-mining
+Title: S4. AHC030 / Polyomino Mining
+
+Problem:
+Given known polyomino oil-field shapes but unknown placements, recover all oil-containing cells with as little probing cost as possible using drilling, noisy aggregate queries, and final guesses.
+
+Grading target:
+Lower probing cost is better.
+Contest score is derived from absolute and relative cost.
+
+Return format:
+FINAL_ANSWER: <your answer>
+JUSTIFICATION: <brief justification>
+2. [node_root] Node started: Solve this Super-Eywa grading-bank question.
+Question ID: coding-S4-ahc030-polyomino-mining
+Title: S4. AHC030 / Polyomino Mining
+
+Problem:
+Given known polyomino oil-field shapes but unknown placements, recover all oil-containing cells with as little probing cost as possible using drilling, noisy aggregate queries, and final guesses.
+
+Grading target:
+Lower probing cost is better.
+Contest score is derived from absolute and relative cost.
+
+Return format:
+FINAL_ANSWER: <your answer>
+JUSTIFICATION: <brief justification>
+3. [node_root] Node recruited 1 helper(s)
+4. [node_root_helper_01] Node started: Review this draft answer carefully.
+Find flaws, missing reasoning, or corrections, then produce the strongest corrected answer you can.
+
+Review focus:
+Act as a Logic Debugger. Ignore the Bayesian math and the specific implementation of the entropy calculation. Focus exclusively on the core logical assumption: 'That a sparse grid of aggregate queries followed by high-entropy probing is the optimal way to locate discrete, known shapes.' Identify a specific scenario or edge case where this logic fails. For example: Could the 'noise' in aggregate queries create a feedback loop of false positives that leads the agent into a 'trap' of high-cost drilling in empty areas? If polyominoes are highly interleaved or overlapping, does the assumption that 'high entropy = high information' hold, or could the strategy get stuck in a local optimum of resolving one shape while missing others? Is there a scenario where a purely random or a purely deterministic geometric scan would outperform this adaptive approach? If the logic is fundamentally flawed, suggest a different conceptual approach (e.g., a purely geometric constraint-satisfaction approach vs. a probabilistic one).
+
+Original question:
+Solve this Super-Eywa grading-bank question.
+Question ID: coding-S4-ahc030-polyomino-mining
+Title: S4. AHC030 / Polyomino Mining
+
+Problem:
+Given known polyomino oil-field shapes but unknown placements, recover all oil-containing cells with as little probing cost as possible using drilling, noisy aggregate queries, and final guesses.
+
+Grading target:
+Lower probing cost is better.
+Contest score is derived from absolute and relative cost.
+
+Return format:
+FINAL_ANSWER: <your answer>
+JUSTIFICATION: <brief justification>
+
+Draft answer:
+To minimize probing cost, I propose a two-phase strategy: 1. Coarse-Grained Bayesian Mapping: Instead of drilling individual cells, perform a sparse grid of noisy aggregate queries. Use a Bayesian update model where each query result updates the probability map P(cell in oil) for all cells in the queried region. The prior is based on the known polyomino shapes, and the likelihood function accounts for the query noise. 2. Information-Gain Driven Probing: Identify regions with high entropy (where the probability is near 0.5). In these regions, perform targeted drilling or smaller aggregate queries. Use a greedy heuristic to select the next probe location that maximizes the expected reduction in total uncertainty (Shannon entropy) regarding the presence of the known polyomino shapes. 3. Pattern Matching: Once a cluster of high-probability cells is identified, use a template-matching algorithm to align the known polyomino shapes with the detected clusters to confirm placements. FINAL_ANSWER: A Bayesian-driven adaptive sampling strategy that prioritizes probes in high-entropy regions to minimize total cost. JUSTIFICATION: This approach minimizes cost by avoiding redundant probes in certain/uncertain areas and uses aggregate queries to gain global information before committing to expensive local drilling.
+5. [node_root_helper_01] Node completed with action report_success
+6. [node_root] Node completed with action report_success
+7. [node_root] Node wrote final output for run coding-S4-ahc030-polyomino-mining__review__mx1_non_holdout_full_agent_v1_2026_04_06__review__16__run_2026_04_07_024907
+8. [node_root] Run completed with 2 node(s)

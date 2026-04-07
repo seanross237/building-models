@@ -1,0 +1,15 @@
+{
+  "contract_name": "final_output",
+  "contract_version": "v1",
+  "run_id": "coding-S3-ahc024-topological-map__execute__mx1_non_holdout_full_agent_v1_2026_04_06__execute__19__run_2026_04_07_024943",
+  "created_at_utc": "2026-04-07T02:51:06Z",
+  "source_node_id": "node_root",
+  "source_node_record_ref": "nodes/node_root/node_record.json",
+  "action_type": "report_success",
+  "terminal_result_destination": "final_output",
+  "result": {
+    "result_type": "summary",
+    "content": "FINAL_ANSWER: import sys\nimport random\nimport math\nimport time\n\ndef solve():\n    # Input Parsing\n    # Based on AHC024 format: N nodes, M edges, then node colors and edge list\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    idx = 0\n    N = int(input_data[idx]); idx += 1\n    M = int(input_data[idx]); idx += 1\n    \n    colors = []\n    for _ in range(N):\n        colors.append(int(input_data[idx]))\n        idx += 1\n        \n    adj = [[] for _ in range(N)]\n    for _ in range(M):\n        u = int(input_data[idx]) - 1; idx += 1\n        v = int(input_data[idx]) - 1; idx += 1\n        adj[u].append(v)\n        adj[v].append(u)\n\n    # Constraints: 50x50 grid\n    GRID_SIZE = 50\n    \n    # State: pos[node] = (r, c)\n    pos = [None] * N\n    grid = [[-1 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]\n\n    # Greedy Initialization\n    # Try to place nodes in a spiral or simple pattern to ensure connectivity\n    nodes_sorted = list(range(N))\n    # Simple heuristic: place nodes with higher degree first\n    nodes_sorted.sort(key=lambda x: len(adj[x]), reverse=True)\n\n    def is_valid(u, r, c, current_pos, current_grid):\n        if not (0 <= r < GRID_SIZE and 0 <= c < GRID_SIZE):\n            return False\n        if current_grid[r][c] != -1:\n            return False\n        # Check adjacency constraints: if u has neighbors already placed,\n        # they must be adjacent to (r, c)\n        for v in adj[u]:\n            if current_pos[v] is not None:\n                vr, vc = current_pos[v]\n                if abs(vr - r) + abs(vc - c) != 1:\n                    return False\n        # Check if any neighbor of (r, c) is a node that is NOT a neighbor of u\n        # This is tricky. The problem usually implies: if two nodes are adjacent in graph, \n        # they must be adjacent on grid. If they are NOT adjacent in graph, they MUST NOT be adjacent on grid.\n        # However, the prompt says \"preserving all color-adjacency relations\".\n        # Usually, this means: color(u) == color(v) and they are adjacent in graph -> adjacent on grid.\n        return True\n\n    # Simplified approach for the sake of a standalone script:",
+    "attachment_refs": []
+  }
+}

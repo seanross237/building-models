@@ -1,0 +1,244 @@
+{
+  "provider": "openrouter",
+  "note": "Per-turn provider payloads, authored JSON, and compiled outputs are recorded here.",
+  "steps": [
+    {
+      "step": 1,
+      "note": "authored local execution deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 1\nNode depth: 0\nAllowed decisions: ['execute_locally']\nPrompt family: execute\nBase header prompt: ''\nSelected prompt text:\nSolve the question directly, prioritizing high-scoring algorithmic strategies.\n\nCRITICAL: Return ONLY a valid JSON object. Do NOT use markdown code fences (e.g., no ```json). Do NOT add any text before or after the JSON object.\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nYour main.py must read from stdin and print only the contestant output required by the problem. Do not print debug text, labels, or estimated scores.\n\nIn the response field, provide a brief submission summary. Do not include contestant stdout in the response field.\n\nKeep decision_notes extremely short (3 to 8 words).\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nThe response field should be only a brief submission summary. Do not put contestant stdout in the response field.\nYour main.py must read from stdin and print only the contestant output required by the problem.\nDo not print explanations, labels, debug text, or estimated scores.\nIf the Output section requires a leading count/header line, print it exactly.\nPrefer a simple valid baseline over malformed ambitious output.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nSolve the question directly, prioritizing high-scoring algorithmic strategies.\n\nCRITICAL: Return ONLY a valid JSON object. Do NOT use markdown code fences (e.g., no ```json). Do NOT add any text before or after the JSON object.\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nYour main.py must read from stdin and print only the contestant output required by the problem. Do not print debug text, labels, or estimated scores.\n\nIn the response field, provide a brief submission summary. Do not include contestant stdout in the response field.\n\nKeep decision_notes extremely short (3 to 8 words).\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nThe response field should be only a brief submission summary. Do not put contestant stdout in the response field.\nYour main.py must read from stdin and print only the contestant output required by the problem.\nDo not print explanations, labels, debug text, or estimated scores.\nIf the Output section requires a leading count/header line, print it exactly.\nPrefer a simple valid baseline over malformed ambitious output.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\n\nQuestion:\nSolve this Super-Eywa coding benchmark.\nQuestion ID: coding-S1-ahc001-atcoder-ad\nTitle: S1. AHC001 / AtCoder Ad\n\nProblem:\n# AHC001 / AtCoder Ad\n\nWrite `main.py`.\n\nYou are given `N` advertisers.\nAdvertiser `i` requests a point `(x_i, y_i)` and a target area `r_i` inside a `10000 x 10000` square.\nOutput one axis-aligned rectangle for each advertiser.\n\n## Objective\n\n- Every rectangle must stay inside the board.\n- Rectangle `i` must contain its requested point `(x_i, y_i)`.\n- Rectangles must not overlap.\n- The score rewards making each rectangle area close to `r_i`.\n\n## Input\n\n- Line 1: `N`\n- Next `N` lines: `x_i y_i r_i`\n\n## Output\n\n- Print exactly `N` lines.\n- Line `i` must be `x1 y1 x2 y2` for advertiser `i`.\n- The rectangle is `[x1, x2) x [y1, y2)`.\n\n## Notes\n\n- A rectangle with invalid bounds or one that misses its required point receives no benefit.\n- Overlapping rectangles make the score collapse to zero.\n- This v1 packet uses the official AtCoder visualizer on three bundled public instances.\n\nSubmission contract:\n- Return a single Python submission file named main.py.\n- Read from stdin and write to stdout.\n- Put the full file content in the artifacts list of your execute_locally JSON response.\n- Use the response field only for a brief submission summary.\n- Do not wrap the code in markdown fences inside artifacts.\n\nCritical validity rules:\n- Your program is judged by the stdout it prints when run, not by the summary in your JSON response.\n- Print exactly the contestant output described in the Output section, and nothing else.\n- Do not print the objective score, estimated score, labels, explanations, or debug text unless the Output section explicitly requires them.\n- If the Output section requires a count/header on the first line, print that first line exactly.\n- Every printed index, count, and coordinate must stay within the allowed ranges.\n- Prefer a simple valid baseline solution over an ambitious but invalid one.\n- If the problem permits an empty or minimal valid plan, that is better than malformed output.\n\nGrading target:\nContinuous score from advertiser satisfaction.\nHigher is better.",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "execute_locally",
+        "decision_notes": "Greedy rectangle placement strategy.",
+        "response": "Python script submitted for AHC001.",
+        "result_type": "code_submission",
+        "artifacts": [
+          {
+            "path": "main.py",
+            "content": "import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    N = int(input_data[0])\n    advertisers = []\n    idx = 1\n    for i in range(N):\n        x = int(input_data[idx])\n        y = int(input_data[idx+1])\n        r = int(input_data[idx+2])\n        advertisers.append({'id': i, 'x': x, 'y': y, 'r': r})\n        idx += 3\n\n    # Sort advertisers by r to handle smaller ones first or by position\n    # A simple approach: use a grid or just very small rectangles to avoid overlap.\n    # To maximize score, we want area close to r. \n    # However, the constraint is NO overlap. \n    # Let's try to assign a tiny rectangle around (x, y) to ensure no overlap.\n    # Or better, a small epsilon-sized rectangle.\n    \n    # To avoid overlap, we can use a very small width/height.\n    # But we want to approach r. \n    # Let's try a simple strategy: sort by x, then y, and try to expand.\n    # Actually, a safer way to avoid overlap is to use a very small rectangle.\n    # Given the constraints and the nature of the problem, a simple valid baseline\n    # is to output [x, x+1) [y, y+1) if it doesn't overlap. \n    # But we need to handle N up to a large number.\n    \n    # Let's use a very small rectangle for each: [x, x+0.0001) [y, y+0.0001)\n    # Wait, coordinates are integers? The problem says (x, y) and r. \n    # Usually, in these problems, coordinates are integers. \n    # If we use [x, x+1) and [y, y+1), they might overlap if points are same.\n    \n    # Let's try to use a tiny rectangle around the point.\n    # Since we need to output x1 y1 x2 y2, let's use integer bounds if possible.\n    # If we use [x, x+1) and [y, y+1), we must ensure no two points are the same.\n    # If points are the same, we must offset them.\n    \n    # Let's use a simple grid-based approach or just tiny rectangles.\n    # To be safe and valid: [x, x+1) [y, y+1) is a rectangle of area 1.\n    # If points are identical, we can't use the same [x, x+1) [y, y+1).\n    \n    # Let's refine: for each point, we'll output [x, x+1) [y, y+1)."
+          }
+        ]
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "coding-S1-ahc001-atcoder-ad__execute__mx1_coding_non_holdout_v2_2026_04_07__execute__03__run_2026_04_07_071816",
+        "node_id": "node_root",
+        "action_type": "report_success",
+        "results": [
+          {
+            "result_type": "code_submission",
+            "content": "Python script submitted for AHC001.",
+            "attachment_refs": [
+              "artifacts/node_root/turn_01/main.py"
+            ]
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "success_report",
+            "target": {
+              "target_type": "final_output",
+              "target_ref": "run_final_output"
+            },
+            "message": "Python script submitted for AHC001.",
+            "attachment_refs": [
+              "artifacts/node_root/turn_01/main.py"
+            ]
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Solve the question directly, prioritizing high-scoring algorithmic strategies.\n\nCRITICAL: Return ONLY a valid JSON object. Do NOT use markdown code fences (e.g., no ```json). Do NOT add any text before or after the JSON object.\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nYour main.py must read from stdin and print only the contestant output required by the problem. Do not print debug text, labels, or estimated scores.\n\nIn the response field, provide a brief submission summary. Do not include contestant stdout in the response field.\n\nKeep decision_notes extremely short (3 to 8 words).\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nThe response field should be only a brief submission summary. Do not put contestant stdout in the response field.\nYour main.py must read from stdin and print only the contestant output required by the problem.\nDo not print explanations, labels, debug text, or estimated scores.\nIf the Output section requires a leading count/header line, print it exactly.\nPrefer a simple valid baseline over malformed ambitious output.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\n\nQuestion:\nSolve this Super-Eywa coding benchmark.\nQuestion ID: coding-S1-ahc001-atcoder-ad\nTitle: S1. AHC001 / AtCoder Ad\n\nProblem:\n# AHC001 / AtCoder Ad\n\nWrite `main.py`.\n\nYou are given `N` advertisers.\nAdvertiser `i` requests a point `(x_i, y_i)` and a target area `r_i` inside a `10000 x 10000` square.\nOutput one axis-aligned rectangle for each advertiser.\n\n## Objective\n\n- Every rectangle must stay inside the board.\n- Rectangle `i` must contain its requested point `(x_i, y_i)`.\n- Rectangles must not overlap.\n- The score rewards making each rectangle area close to `r_i`.\n\n## Input\n\n- Line 1: `N`\n- Next `N` lines: `x_i y_i r_i`\n\n## Output\n\n- Print exactly `N` lines.\n- Line `i` must be `x1 y1 x2 y2` for advertiser `i`.\n- The rectangle is `[x1, x2) x [y1, y2)`.\n\n## Notes\n\n- A rectangle with invalid bounds or one that misses its required point receives no benefit.\n- Overlapping rectangles make the score collapse to zero.\n- This v1 packet uses the official AtCoder visualizer on three bundled public instances.\n\nSubmission contract:\n- Return a single Python submission file named main.py.\n- Read from stdin and write to stdout.\n- Put the full file content in the artifacts list of your execute_locally JSON response.\n- Use the response field only for a brief submission summary.\n- Do not wrap the code in markdown fences inside artifacts.\n\nCritical validity rules:\n- Your program is judged by the stdout it prints when run, not by the summary in your JSON response.\n- Print exactly the contestant output described in the Output section, and nothing else.\n- Do not print the objective score, estimated score, labels, explanations, or debug text unless the Output section explicitly requires them.\n- If the Output section requires a count/header on the first line, print that first line exactly.\n- Every printed index, count, and coordinate must stay within the allowed ranges.\n- Prefer a simple valid baseline solution over an ambitious but invalid one.\n- If the problem permits an empty or minimal valid plan, that is better than malformed output.\n\nGrading target:\nContinuous score from advertiser satisfaction.\nHigher is better."
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775546296-QnCtl7sKsqvUlRBbMoph",
+              "object": "chat.completion",
+              "created": 1775546296,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Novita",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "length",
+                  "native_finish_reason": "length",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"Greedy rectangle placement strategy.\",\n  \"response\": \"Python script submitted for AHC001.\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    N = int(input_data[0])\\n    advertisers = []\\n    idx = 1\\n    for i in range(N):\\n        x = int(input_data[idx])\\n        y = int(input_data[idx+1])\\n        r = int(input_data[idx+2])\\n        advertisers.append({'id': i, 'x': x, 'y': y, 'r': r})\\n        idx += 3\\n\\n    # Sort advertisers by r to handle smaller ones first or by position\\n    # A simple approach: use a grid or just very small rectangles to avoid overlap.\\n    # To maximize score, we want area close to r. \\n    # However, the constraint is NO overlap. \\n    # Let's try to assign a tiny rectangle around (x, y) to ensure no overlap.\\n    # Or better, a small epsilon-sized rectangle.\\n    \\n    # To avoid overlap, we can use a very small width/height.\\n    # But we want to approach r. \\n    # Let's try a simple strategy: sort by x, then y, and try to expand.\\n    # Actually, a safer way to avoid overlap is to use a very small rectangle.\\n    # Given the constraints and the nature of the problem, a simple valid baseline\\n    # is to output [x, x+1) [y, y+1) if it doesn't overlap. \\n    # But we need to handle N up to a large number.\\n    \\n    # Let's use a very small rectangle for each: [x, x+0.0001) [y, y+0.0001)\\n    # Wait, coordinates are integers? The problem says (x, y) and r. \\n    # Usually, in these problems, coordinates are integers. \\n    # If we use [x, x+1) and [y, y+1), they might overlap if points are same.\\n    \\n    # Let's try to use a tiny rectangle around the point.\\n    # Since we need to output x1 y1 x2 y2, let's use integer bounds if possible.\\n    # If we use [x, x+1) and [y, y+1), we must ensure no two points are the same.\\n    # If points are the same, we must offset them.\\n    \\n    # Let's use a simple grid-based approach or just tiny rectangles.\\n    # To be safe and valid: [x, x+1) [y, y+1) is a rectangle of area 1.\\n    # If points are identical, we can't use the same [x, x+1) [y, y+1).\\n    \\n    # Let's refine: for each point, we'll output [x, x+1) [y, y+1).\\",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 1015,
+                "completion_tokens": 800,
+                "total_tokens": 1815,
+                "cost": 0.00045195,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00045195,
+                  "upstream_inference_prompt_cost": 0.00013195,
+                  "upstream_inference_completions_cost": 0.00032
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"Greedy rectangle placement strategy.\",\n  \"response\": \"Python script submitted for AHC001.\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    N = int(input_data[0])\\n    advertisers = []\\n    idx = 1\\n    for i in range(N):\\n        x = int(input_data[idx])\\n        y = int(input_data[idx+1])\\n        r = int(input_data[idx+2])\\n        advertisers.append({'id': i, 'x': x, 'y': y, 'r': r})\\n        idx += 3\\n\\n    # Sort advertisers by r to handle smaller ones first or by position\\n    # A simple approach: use a grid or just very small rectangles to avoid overlap.\\n    # To maximize score, we want area close to r. \\n    # However, the constraint is NO overlap. \\n    # Let's try to assign a tiny rectangle around (x, y) to ensure no overlap.\\n    # Or better, a small epsilon-sized rectangle.\\n    \\n    # To avoid overlap, we can use a very small width/height.\\n    # But we want to approach r. \\n    # Let's try a simple strategy: sort by x, then y, and try to expand.\\n    # Actually, a safer way to avoid overlap is to use a very small rectangle.\\n    # Given the constraints and the nature of the problem, a simple valid baseline\\n    # is to output [x, x+1) [y, y+1) if it doesn't overlap. \\n    # But we need to handle N up to a large number.\\n    \\n    # Let's use a very small rectangle for each: [x, x+0.0001) [y, y+0.0001)\\n    # Wait, coordinates are integers? The problem says (x, y) and r. \\n    # Usually, in these problems, coordinates are integers. \\n    # If we use [x, x+1) and [y, y+1), they might overlap if points are same.\\n    \\n    # Let's try to use a tiny rectangle around the point.\\n    # Since we need to output x1 y1 x2 y2, let's use integer bounds if possible.\\n    # If we use [x, x+1) and [y, y+1), we must ensure no two points are the same.\\n    # If points are the same, we must offset them.\\n    \\n    # Let's use a simple grid-based approach or just tiny rectangles.\\n    # To be safe and valid: [x, x+1) [y, y+1) is a rectangle of area 1.\\n    # If points are identical, we can't use the same [x, x+1) [y, y+1).\\n    \\n    # Let's refine: for each point, we'll output [x, x+1) [y, y+1).\\",
+            "parse_error": null,
+            "parsed_response": null
+          },
+          {
+            "phase": "json_repair",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": "You repair invalid Super-Eywa node responses into strict JSON. Return only valid JSON."
+                },
+                {
+                  "role": "user",
+                  "content": "Rewrite the following content as valid JSON only for the eywa_node_response v1 schema. Allowed orchestration_decision values for this turn: execute_locally. Use the exact top-level fields required by eywa_node_response v1. Do not wrap the object under another key. Use plain text strings only. Do not use markdown, code fences, or backslashes.\n\nOriginal content:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"Greedy rectangle placement strategy.\",\n  \"response\": \"Python script submitted for AHC001.\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    N = int(input_data[0])\\n    advertisers = []\\n    idx = 1\\n    for i in range(N):\\n        x = int(input_data[idx])\\n        y = int(input_data[idx+1])\\n        r = int(input_data[idx+2])\\n        advertisers.append({'id': i, 'x': x, 'y': y, 'r': r})\\n        idx += 3\\n\\n    # Sort advertisers by r to handle smaller ones first or by position\\n    # A simple approach: use a grid or just very small rectangles to avoid overlap.\\n    # To maximize score, we want area close to r. \\n    # However, the constraint is NO overlap. \\n    # Let's try to assign a tiny rectangle around (x, y) to ensure no overlap.\\n    # Or better, a small epsilon-sized rectangle.\\n    \\n    # To avoid overlap, we can use a very small width/height.\\n    # But we want to approach r. \\n    # Let's try a simple strategy: sort by x, then y, and try to expand.\\n    # Actually, a safer way to avoid overlap is to use a very small rectangle.\\n    # Given the constraints and the nature of the problem, a simple valid baseline\\n    # is to output [x, x+1) [y, y+1) if it doesn't overlap. \\n    # But we need to handle N up to a large number.\\n    \\n    # Let's use a very small rectangle for each: [x, x+0.0001) [y, y+0.0001)\\n    # Wait, coordinates are integers? The problem says (x, y) and r. \\n    # Usually, in these problems, coordinates are integers. \\n    # If we use [x, x+1) and [y, y+1), they might overlap if points are same.\\n    \\n    # Let's try to use a tiny rectangle around the point.\\n    # Since we need to output x1 y1 x2 y2, let's use integer bounds if possible.\\n    # If we use [x, x+1) and [y, y+1), we must ensure no two points are the same.\\n    # If points are the same, we must offset them.\\n    \\n    # Let's use a simple grid-based approach or just tiny rectangles.\\n    # To be safe and valid: [x, x+1) [y, y+1) is a rectangle of area 1.\\n    # If points are identical, we can't use the same [x, x+1) [y, y+1).\\n    \\n    # Let's refine: for each point, we'll output [x, x+1) [y, y+1).\\"
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775546384-2NTQ68j8J06iWKtHMAKX",
+              "object": "chat.completion",
+              "created": 1775546384,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Novita",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n\"schema_name\": \"eywa_node_response\",\n\"schema_version\": \"v1\",\n\"orchestration_decision\": \"execute_locally\",\n\"decision_notes\": \"Greedy rectangle placement strategy.\",\n\"response\": \"Python script submitted for AHC001.\",\n\"result_type\": \"code_submission\",\n\"artifacts\": [\n{\n\"path\": \"main.py\",\n\"content\": \"import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    N = int(input_data[0])\\n    advertisers = []\\n    idx = 1\\n    for i in range(N):\\n        x = int(input_data[idx])\\n        y = int(input_data[idx+1])\\n        r = int(input_data[idx+2])\\n        advertisers.append({'id': i, 'x': x, 'y': y, 'r': r})\\n        idx += 3\\n\\n    # Sort advertisers by r to handle smaller ones first or by position\\n    # A simple approach: use a grid or just very small rectangles to avoid overlap.\\n    # To maximize score, we want area close to r. \\n    # However, the constraint is NO overlap. \\n    # Let's try to assign a tiny rectangle around (x, y) to ensure no overlap.\\n    # Or better, a small epsilon-sized rectangle.\\n    \\n    # To avoid overlap, we can use a very small width/height.\\n    # But we want to approach r. \\n    # Let's try a simple strategy: sort by x, then y, and try to expand.\\n    # Actually, a safer way to avoid overlap is to use a very small rectangle.\\n    # Given the constraints and the nature of the problem, a simple valid baseline\\n    # is to output [x, x+1) [y, y+1) if it doesn't overlap. \\n    # But we need to handle N up to a large number.\\n    \\n    # Let's use a very small rectangle for each: [x, x+0.0001) [y, y+0.0001)\\n    # Wait, coordinates are integers? The problem says (x, y) and r. \\n    # Usually, in these problems, coordinates are integers. \\n    # If we use [x, x+1) and [y, y+1), they might overlap if points are same.\\n    \\n    # Let's try to use a tiny rectangle around the point.\\n    # Since we need to output x1 y1 x2 y2, let's use integer bounds if possible.\\n    # If we use [x, x+1) and [y, y+1), we must ensure no two points are the same.\\n    # If points are the same, we must offset them.\\n    \\n    # Let's use a simple grid-based approach or just tiny rectangles.\\n    # To be safe and valid: [x, x+1) [y, y+1) is a rectangle of area 1.\\n    # If points are identical, we can't use the same [x, x+1) [y, y+1).\\n    \\n    # Let's refine: for each point, we'll output [x, x+1) [y, y+1).\"\n}\n]\n}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 932,
+                "completion_tokens": 797,
+                "total_tokens": 1729,
+                "cost": 0.00043996,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 128,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00043996,
+                  "upstream_inference_prompt_cost": 0.00012116,
+                  "upstream_inference_completions_cost": 0.0003188
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\n\"schema_name\": \"eywa_node_response\",\n\"schema_version\": \"v1\",\n\"orchestration_decision\": \"execute_locally\",\n\"decision_notes\": \"Greedy rectangle placement strategy.\",\n\"response\": \"Python script submitted for AHC001.\",\n\"result_type\": \"code_submission\",\n\"artifacts\": [\n{\n\"path\": \"main.py\",\n\"content\": \"import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    N = int(input_data[0])\\n    advertisers = []\\n    idx = 1\\n    for i in range(N):\\n        x = int(input_data[idx])\\n        y = int(input_data[idx+1])\\n        r = int(input_data[idx+2])\\n        advertisers.append({'id': i, 'x': x, 'y': y, 'r': r})\\n        idx += 3\\n\\n    # Sort advertisers by r to handle smaller ones first or by position\\n    # A simple approach: use a grid or just very small rectangles to avoid overlap.\\n    # To maximize score, we want area close to r. \\n    # However, the constraint is NO overlap. \\n    # Let's try to assign a tiny rectangle around (x, y) to ensure no overlap.\\n    # Or better, a small epsilon-sized rectangle.\\n    \\n    # To avoid overlap, we can use a very small width/height.\\n    # But we want to approach r. \\n    # Let's try a simple strategy: sort by x, then y, and try to expand.\\n    # Actually, a safer way to avoid overlap is to use a very small rectangle.\\n    # Given the constraints and the nature of the problem, a simple valid baseline\\n    # is to output [x, x+1) [y, y+1) if it doesn't overlap. \\n    # But we need to handle N up to a large number.\\n    \\n    # Let's use a very small rectangle for each: [x, x+0.0001) [y, y+0.0001)\\n    # Wait, coordinates are integers? The problem says (x, y) and r. \\n    # Usually, in these problems, coordinates are integers. \\n    # If we use [x, x+1) and [y, y+1), they might overlap if points are same.\\n    \\n    # Let's try to use a tiny rectangle around the point.\\n    # Since we need to output x1 y1 x2 y2, let's use integer bounds if possible.\\n    # If we use [x, x+1) and [y, y+1), we must ensure no two points are the same.\\n    # If points are the same, we must offset them.\\n    \\n    # Let's use a simple grid-based approach or just tiny rectangles.\\n    # To be safe and valid: [x, x+1) [y, y+1) is a rectangle of area 1.\\n    # If points are identical, we can't use the same [x, x+1) [y, y+1).\\n    \\n    # Let's refine: for each point, we'll output [x, x+1) [y, y+1).\"\n}\n]\n}",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "execute_locally",
+              "decision_notes": "Greedy rectangle placement strategy.",
+              "response": "Python script submitted for AHC001.",
+              "result_type": "code_submission",
+              "artifacts": [
+                {
+                  "path": "main.py",
+                  "content": "import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    N = int(input_data[0])\n    advertisers = []\n    idx = 1\n    for i in range(N):\n        x = int(input_data[idx])\n        y = int(input_data[idx+1])\n        r = int(input_data[idx+2])\n        advertisers.append({'id': i, 'x': x, 'y': y, 'r': r})\n        idx += 3\n\n    # Sort advertisers by r to handle smaller ones first or by position\n    # A simple approach: use a grid or just very small rectangles to avoid overlap.\n    # To maximize score, we want area close to r. \n    # However, the constraint is NO overlap. \n    # Let's try to assign a tiny rectangle around (x, y) to ensure no overlap.\n    # Or better, a small epsilon-sized rectangle.\n    \n    # To avoid overlap, we can use a very small width/height.\n    # But we want to approach r. \n    # Let's try a simple strategy: sort by x, then y, and try to expand.\n    # Actually, a safer way to avoid overlap is to use a very small rectangle.\n    # Given the constraints and the nature of the problem, a simple valid baseline\n    # is to output [x, x+1) [y, y+1) if it doesn't overlap. \n    # But we need to handle N up to a large number.\n    \n    # Let's use a very small rectangle for each: [x, x+0.0001) [y, y+0.0001)\n    # Wait, coordinates are integers? The problem says (x, y) and r. \n    # Usually, in these problems, coordinates are integers. \n    # If we use [x, x+1) and [y, y+1), they might overlap if points are same.\n    \n    # Let's try to use a tiny rectangle around the point.\n    # Since we need to output x1 y1 x2 y2, let's use integer bounds if possible.\n    # If we use [x, x+1) and [y, y+1), we must ensure no two points are the same.\n    # If points are the same, we must offset them.\n    \n    # Let's use a simple grid-based approach or just tiny rectangles.\n    # To be safe and valid: [x, x+1) [y, y+1) is a rectangle of area 1.\n    # If points are identical, we can't use the same [x, x+1) [y, y+1).\n    \n    # Let's refine: for each point, we'll output [x, x+1) [y, y+1)."
+                }
+              ]
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "execute_locally",
+          "decision_notes": "Greedy rectangle placement strategy.",
+          "response": "Python script submitted for AHC001.",
+          "result_type": "code_submission",
+          "artifacts": [
+            {
+              "path": "main.py",
+              "content": "import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    N = int(input_data[0])\n    advertisers = []\n    idx = 1\n    for i in range(N):\n        x = int(input_data[idx])\n        y = int(input_data[idx+1])\n        r = int(input_data[idx+2])\n        advertisers.append({'id': i, 'x': x, 'y': y, 'r': r})\n        idx += 3\n\n    # Sort advertisers by r to handle smaller ones first or by position\n    # A simple approach: use a grid or just very small rectangles to avoid overlap.\n    # To maximize score, we want area close to r. \n    # However, the constraint is NO overlap. \n    # Let's try to assign a tiny rectangle around (x, y) to ensure no overlap.\n    # Or better, a small epsilon-sized rectangle.\n    \n    # To avoid overlap, we can use a very small width/height.\n    # But we want to approach r. \n    # Let's try a simple strategy: sort by x, then y, and try to expand.\n    # Actually, a safer way to avoid overlap is to use a very small rectangle.\n    # Given the constraints and the nature of the problem, a simple valid baseline\n    # is to output [x, x+1) [y, y+1) if it doesn't overlap. \n    # But we need to handle N up to a large number.\n    \n    # Let's use a very small rectangle for each: [x, x+0.0001) [y, y+0.0001)\n    # Wait, coordinates are integers? The problem says (x, y) and r. \n    # Usually, in these problems, coordinates are integers. \n    # If we use [x, x+1) and [y, y+1), they might overlap if points are same.\n    \n    # Let's try to use a tiny rectangle around the point.\n    # Since we need to output x1 y1 x2 y2, let's use integer bounds if possible.\n    # If we use [x, x+1) and [y, y+1), we must ensure no two points are the same.\n    # If points are the same, we must offset them.\n    \n    # Let's use a simple grid-based approach or just tiny rectangles.\n    # To be safe and valid: [x, x+1) [y, y+1) is a rectangle of area 1.\n    # If points are identical, we can't use the same [x, x+1) [y, y+1).\n    \n    # Let's refine: for each point, we'll output [x, x+1) [y, y+1)."
+            }
+          ]
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1947,
+        "completion_tokens": 1597,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 128,
+        "total_tokens": 3544,
+        "cost_usd": 0.00089191,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775546296-QnCtl7sKsqvUlRBbMoph",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00045195
+            },
+            {
+              "response_id": "gen-1775546384-2NTQ68j8J06iWKtHMAKX",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00043996
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

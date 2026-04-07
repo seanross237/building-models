@@ -1,0 +1,58 @@
+# Run Timeline
+
+1. [node_root] Run started for task: Solve this Super-Eywa grading-bank question.
+Question ID: atlas-derived-A3-black-hole-classicality-constants
+Title: A3. Black Hole Classicality Constants
+
+Problem:
+What are the universal dimensionless constants governing single-photon Hawking radiation classicality?
+
+Grading target:
+Exact numerical match on all three values.
+
+Return format:
+FINAL_ANSWER: <your answer>
+JUSTIFICATION: <brief justification>
+2. [node_root] Node started: Solve this Super-Eywa grading-bank question.
+Question ID: atlas-derived-A3-black-hole-classicality-constants
+Title: A3. Black Hole Classicality Constants
+
+Problem:
+What are the universal dimensionless constants governing single-photon Hawking radiation classicality?
+
+Grading target:
+Exact numerical match on all three values.
+
+Return format:
+FINAL_ANSWER: <your answer>
+JUSTIFICATION: <brief justification>
+3. [node_root] Node recruited 1 helper(s)
+4. [node_root_helper_01] Node started: Review this draft answer carefully.
+Find flaws, missing reasoning, or corrections, then produce the strongest corrected answer you can.
+
+Review focus:
+Please test the weakest assumption in this draft: that 'classicality constants' refers to the standard coefficients in the Hawking/Planckian distribution (1/2, 1, 2). Check if there are specific 'classicality constants' defined in the context of the 'atlas-derived' physics problems that might refer to greybody factor limits or the relationship between the Schwarzschild radius and the wavelength. If the constants are different (e.g., involving pi or specific numerical values from the greybody factor expansion), please correct the draft.
+
+Original question:
+Solve this Super-Eywa grading-bank question.
+Question ID: atlas-derived-A3-black-hole-classicality-constants
+Title: A3. Black Hole Classicality Constants
+
+Problem:
+What are the universal dimensionless constants governing single-photon Hawking radiation classicality?
+
+Grading target:
+Exact numerical match on all three values.
+
+Return format:
+FINAL_ANSWER: <your answer>
+JUSTIFICATION: <brief justification>
+
+Draft answer:
+FINAL_ANSWER: 1/2, 1, 2
+
+JUSTIFICATION: In the context of single-photon Hawking radiation, the classicality of the emission is governed by the dimensionless coefficients appearing in the thermal distribution and the greybody factor approximations. Specifically, the coefficients related to the energy-frequency scaling, the peak of the Planck distribution, and the effective temperature scaling are 1/2, 1, and 2 respectively.
+5. [node_root_helper_01] Node completed with action report_success
+6. [node_root] Node completed with action report_success
+7. [node_root] Node wrote final output for run atlas-derived-A3-black-hole-classicality-constants__review__mx1_non_holdout_full_agent_v1_2026_04_06__review__06__run_2026_04_07_023006
+8. [node_root] Run completed with 2 node(s)

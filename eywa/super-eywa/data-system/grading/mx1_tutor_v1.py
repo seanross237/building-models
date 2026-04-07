@@ -151,6 +151,7 @@ def build_tutor_prompt(
     starter_prompt_text = str(manifest.get("starter_prompt_text") or "")
     current_prompt_text = str(current_attempt.get("prompt_text") or "")
     current_score = float(current_attempt.get("score") or 0.0)
+    current_correct = grading_record.get("grading", {}).get("correct")
     current_metrics = {
         "score": current_attempt.get("score"),
         "correct": current_attempt.get("correct"),
@@ -171,11 +172,19 @@ def build_tutor_prompt(
         if current_iteration <= exploration_iterations
         else "Prefer refinement unless the history shows a plateau."
     )
-    efficiency_note = (
-        "Because the current answer is still wrong, treat tokens and wall-clock time as background only; prioritize finding a prompt that improves correctness."
-        if current_score <= 0.0
-        else "Only after preserving score should you use tokens and wall-clock time as tie-breakers."
-    )
+    if current_correct is None:
+        efficiency_note = (
+            "This task uses a continuous score. If the score is still zero, prioritize getting to any valid positive score first. "
+            "After that, optimize score before using tokens and wall-clock time as tie-breakers."
+            if current_score <= 0.0
+            else "This task uses a continuous score. Optimize score first, and use tokens and wall-clock time only as tie-breakers after preserving or improving score."
+        )
+    else:
+        efficiency_note = (
+            "Because the current answer is still wrong, treat tokens and wall-clock time as background only; prioritize finding a prompt that improves correctness."
+            if current_score <= 0.0
+            else "Only after preserving score should you use tokens and wall-clock time as tie-breakers."
+        )
 
     return (
         "You are the MX1 prompt tutor. Your job is to recommend the next prompt text for the current prompt family.\n"
@@ -226,7 +235,7 @@ def _build_deterministic_tutor(
         reason = "The answers are still wrong, so this phase should keep exploring meaningfully different prompt directions."
         new_prompt_text = _exploration_prompt_text(family, direction="simplify")
     elif wrong_so_far and plateau_streak >= 2:
-        action = "new_direction"
+        action = "pivot"
         reason = "The answers are still wrong across multiple attempts, so the next prompt should pivot hard to a different reasoning strategy."
         new_prompt_text = _exploration_prompt_text(family, direction="feasibility_checks")
     elif wrong_so_far:
@@ -261,9 +270,7 @@ def _build_deterministic_tutor(
     )
 
     tutor = {
-        "correctness_assessment": "ungraded" if grading_record.get("grading", {}).get("score") is None else (
-            "correct" if grading_record.get("grading", {}).get("correct") else "incorrect"
-        ),
+        "correctness_assessment": _correctness_assessment(grading_record),
         "assessment": {
             "score_direction": score_direction,
             "token_direction": token_direction,
@@ -295,7 +302,38 @@ def _build_deterministic_tutor(
     return tutor, provider_payload
 
 
+def _correctness_assessment(grading_record: dict[str, Any]) -> str:
+    grading = grading_record.get("grading", {}) or {}
+    score = grading.get("score")
+    correct = grading.get("correct")
+    if score is None:
+        return "ungraded"
+    if correct is True:
+        return "correct"
+    if correct is False:
+        return "incorrect"
+    return "scored"
+
+
 def _exploration_prompt_text(family: str, *, direction: str) -> str:
+    if family == "execute":
+        if direction == "feasibility_checks":
+            return (
+                "Solve the problem directly, but first test the smallest or simplest candidate answers before expanding the search. "
+                "Use direct contradiction or quick feasibility checks when possible."
+            )
+        if direction == "formalize":
+            return (
+                "Solve the problem directly by restating it as a precise mathematical target, then carry out only the deductions or calculations needed for the final answer."
+            )
+        if direction == "compress":
+            return (
+                "Solve the problem directly with a shorter, tighter reasoning chain that still preserves the exact target and final answer format."
+            )
+        return (
+            "Solve the problem directly, keep attention on the core mathematical step, and avoid wandering into side explanations that do not change the final answer."
+        )
+
     if family == "delegate":
         if direction == "feasibility_checks":
             return (
@@ -313,6 +351,23 @@ def _exploration_prompt_text(family: str, *, direction: str) -> str:
             )
         return (
             "Decompose the problem into a few genuinely useful subproblems that expose the key mathematical checks needed for the final answer."
+        )
+
+    if family == "review":
+        if direction == "feasibility_checks":
+            return (
+                "Write a draft answer and send one reviewer child a focused request to test the weakest assumptions, check small candidate cases, and correct the draft if needed."
+            )
+        if direction == "formalize":
+            return (
+                "Write a compact draft answer, then send one reviewer child a precise critique request that checks the logic, the exact target, and the final answer format before you finalize."
+            )
+        if direction == "compress":
+            return (
+                "Keep the same draft-and-review structure, but make the review request shorter and more targeted so the child focuses on the highest-risk part of the draft."
+            )
+        return (
+            "Write a tentative answer and ask one reviewer child to poke holes in it, verify the reasoning, and improve any weak step before the final response is produced."
         )
 
     if direction == "feasibility_checks":
@@ -385,12 +440,29 @@ def _build_openrouter_tutor(
             ),
         },
     ]
-    response = client.create_chat_completion(
-        model=tutor_model,
-        messages=request_messages,
-        max_tokens=1200,
-        temperature=0.2,
-    )
+    try:
+        response = client.create_chat_completion(
+            model=tutor_model,
+            messages=request_messages,
+            max_tokens=1200,
+            temperature=0.2,
+        )
+    except OpenRouterClientError as exc:
+        tutor, fallback_payload = _build_deterministic_tutor(
+            manifest=manifest,
+            grading_record=grading_record,
+            current_attempt=current_attempt,
+            prior_attempts=prior_attempts,
+        )
+        return tutor, {
+            "provider": "openrouter",
+            "request": request_messages,
+            "response": None,
+            "repair_response": None,
+            "parse_error": str(exc),
+            "fallback_provider_payload": fallback_payload,
+            "fallback_reason": "openrouter_request_failed",
+        }
     choice = dict(response.get("choices", [{}])[0])
     message = dict(choice.get("message") or {})
     content = str(message.get("content") or "")
@@ -400,16 +472,52 @@ def _build_openrouter_tutor(
         tutor = _parse_json_or_repair(content)
     except MX1TutorError as exc:
         repair_parse_error = str(exc)
-        repair_response = _repair_tutor_json(
-            client=client,
-            tutor_model=tutor_model,
-            expected_shape=expected_shape,
-            original_content=content,
-        )
+        try:
+            repair_response = _repair_tutor_json(
+                client=client,
+                tutor_model=tutor_model,
+                expected_shape=expected_shape,
+                original_content=content,
+            )
+        except OpenRouterClientError as repair_exc:
+            tutor, fallback_payload = _build_deterministic_tutor(
+                manifest=manifest,
+                grading_record=grading_record,
+                current_attempt=current_attempt,
+                prior_attempts=prior_attempts,
+            )
+            return tutor, {
+                "provider": "openrouter",
+                "request": request_messages,
+                "response": response,
+                "repair_response": None,
+                "parse_error": repair_parse_error,
+                "repair_parse_error": str(repair_exc),
+                "fallback_provider_payload": fallback_payload,
+                "fallback_reason": "repair_request_failed",
+            }
         repair_choice = dict(repair_response.get("choices", [{}])[0])
         repair_message = dict(repair_choice.get("message") or {})
         repair_content = str(repair_message.get("content") or "")
-        tutor = _parse_json_or_repair(repair_content)
+        try:
+            tutor = _parse_json_or_repair(repair_content)
+        except MX1TutorError as repair_exc:
+            tutor, fallback_payload = _build_deterministic_tutor(
+                manifest=manifest,
+                grading_record=grading_record,
+                current_attempt=current_attempt,
+                prior_attempts=prior_attempts,
+            )
+            return tutor, {
+                "provider": "openrouter",
+                "request": request_messages,
+                "response": response,
+                "repair_response": repair_response,
+                "parse_error": repair_parse_error,
+                "repair_parse_error": str(repair_exc),
+                "fallback_provider_payload": fallback_payload,
+                "fallback_reason": "repair_response_could_not_be_parsed",
+            }
     return tutor, {
         "provider": "openrouter",
         "request": request_messages,
@@ -423,17 +531,30 @@ def _parse_json_or_repair(content: str) -> dict[str, Any]:
     text = content.strip()
     if not text:
         raise MX1TutorError("Tutor response was empty.")
-    try:
-        return json.loads(text)
-    except json.JSONDecodeError:
-        start = text.find("{")
-        end = text.rfind("}")
-        if start >= 0 and end > start:
-            try:
-                return json.loads(text[start : end + 1])
-            except json.JSONDecodeError as exc:
-                raise MX1TutorError("Tutor response could not be parsed as JSON.") from exc
-        raise MX1TutorError("Tutor response could not be parsed as JSON.")
+    for candidate in _json_parse_candidates(text):
+        try:
+            return json.loads(candidate)
+        except json.JSONDecodeError:
+            continue
+    raise MX1TutorError("Tutor response could not be parsed as JSON.")
+
+
+def _json_parse_candidates(text: str) -> list[str]:
+    candidates = [text]
+    start = text.find("{")
+    end = text.rfind("}")
+    if start >= 0 and end > start:
+        candidates.append(text[start : end + 1])
+    sanitized = [_escape_invalid_json_backslashes(candidate) for candidate in candidates]
+    ordered: list[str] = []
+    for candidate in candidates + sanitized:
+        if candidate not in ordered:
+            ordered.append(candidate)
+    return ordered
+
+
+def _escape_invalid_json_backslashes(text: str) -> str:
+    return re.sub(r'\\(?!["\\/bfnrt]|u[0-9a-fA-F]{4})', r"\\\\", text)
 
 
 def _repair_tutor_json(
@@ -539,7 +660,15 @@ def looks_question_specific(prompt_text: str) -> bool:
     lowered = text.lower()
     if any(marker in lowered for marker in ("problem:", "original problem:", "subproblem 1:", "subproblem 2:")):
         return True
-    if re.search(r"\b\d+\b", text):
+    if re.search(
+        r"\b(?:split|break|decompose)\b.*\b(?:into|to|at most)\s+(?:\d+|one|two|three|four|five)\b",
+        lowered,
+    ):
+        return True
+    if re.search(
+        r"\b(?:\d+|one|two|three|four|five)\s+(?:helpers?|parts?|subproblems?)\b",
+        lowered,
+    ):
         return True
     return False
 

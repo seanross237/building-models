@@ -1,0 +1,116 @@
+# Run Timeline
+
+1. [node_root] Run started for task: Solve this Super-Eywa coding benchmark.
+Question ID: coding-S3-ahc024-topological-map
+Title: S3. AHC024 / Topological Map
+
+Problem:
+# AHC024 / Topological Map
+
+Write `main.py`.
+
+You are given a `50 x 50` colored map.
+Colors `1..M` must preserve their connectivity and all color-adjacency relations.
+Color `0` represents empty cells.
+
+## Objective
+
+- Output a `50 x 50` grid using colors `0..M`.
+- Every nonzero color must remain connected.
+- Two colors must be adjacent in the output if and only if they were adjacent in the input.
+- The score is `E + 1`, where `E` is the number of `0` cells in the final grid.
+- Higher is better.
+
+## Input
+
+- The instance provides `N = 50`, `M`, and the original `50 x 50` color grid.
+
+## Output
+
+- Print `50` lines.
+- Each line must contain `50` integers in `0..M`.
+- The official tool accepts multiple candidate grids and scores the last one, but the simplest valid submission is one final `50 x 50` grid.
+
+## Notes
+
+- This v1 packet uses the official AtCoder visualizer on three bundled public instances.
+
+Submission contract:
+- Return a single Python submission file named main.py.
+- Read from stdin and write to stdout.
+- Put the full file content in the artifacts list of your execute_locally JSON response.
+- Use the response field only for a brief submission summary.
+- Do not wrap the code in markdown fences inside artifacts.
+
+Critical validity rules:
+- Your program is judged by the stdout it prints when run, not by the summary in your JSON response.
+- Print exactly the contestant output described in the Output section, and nothing else.
+- Do not print the objective score, estimated score, labels, explanations, or debug text unless the Output section explicitly requires them.
+- If the Output section requires a count/header on the first line, print that first line exactly.
+- Every printed index, count, and coordinate must stay within the allowed ranges.
+- Prefer a simple valid baseline solution over an ambitious but invalid one.
+- If the problem permits an empty or minimal valid plan, that is better than malformed output.
+
+Grading target:
+E + 1, where E is the number of empty cells.
+Higher is better.
+2. [node_root] Node started: Solve this Super-Eywa coding benchmark.
+Question ID: coding-S3-ahc024-topological-map
+Title: S3. AHC024 / Topological Map
+
+Problem:
+# AHC024 / Topological Map
+
+Write `main.py`.
+
+You are given a `50 x 50` colored map.
+Colors `1..M` must preserve their connectivity and all color-adjacency relations.
+Color `0` represents empty cells.
+
+## Objective
+
+- Output a `50 x 50` grid using colors `0..M`.
+- Every nonzero color must remain connected.
+- Two colors must be adjacent in the output if and only if they were adjacent in the input.
+- The score is `E + 1`, where `E` is the number of `0` cells in the final grid.
+- Higher is better.
+
+## Input
+
+- The instance provides `N = 50`, `M`, and the original `50 x 50` color grid.
+
+## Output
+
+- Print `50` lines.
+- Each line must contain `50` integers in `0..M`.
+- The official tool accepts multiple candidate grids and scores the last one, but the simplest valid submission is one final `50 x 50` grid.
+
+## Notes
+
+- This v1 packet uses the official AtCoder visualizer on three bundled public instances.
+
+Submission contract:
+- Return a single Python submission file named main.py.
+- Read from stdin and write to stdout.
+- Put the full file content in the artifacts list of your execute_locally JSON response.
+- Use the response field only for a brief submission summary.
+- Do not wrap the code in markdown fences inside artifacts.
+
+Critical validity rules:
+- Your program is judged by the stdout it prints when run, not by the summary in your JSON response.
+- Print exactly the contestant output described in the Output section, and nothing else.
+- Do not print the objective score, estimated score, labels, explanations, or debug text unless the Output section explicitly requires them.
+- If the Output section requires a count/header on the first line, print that first line exactly.
+- Every printed index, count, and coordinate must stay within the allowed ranges.
+- Prefer a simple valid baseline solution over an ambitious but invalid one.
+- If the problem permits an empty or minimal valid plan, that is better than malformed output.
+
+Grading target:
+E + 1, where E is the number of empty cells.
+Higher is better.
+3. [node_root] Node recruited 1 helper(s)
+4. [node_root_helper_01] Node started: TASK: Implement a Python script (main.py) to solve a topological map reconstruction problem. INPUT SPECIFICATION: - Grid Size: N = 50 (fixed). - M: Number of distinct non-zero colors. - Input Grid: A 50x50 matrix of integers in range 0 to M. CONSTRAINTS AND VALIDITY RULES: 1. Connectivity Preservation: For every color c in {1, ..., M}, all cells of color c in the output must form a single connected component (using 4-connectivity: up, down, left, right). 2. Adjacency Preservation (If and Only If): Two colors c1 and c2 (where c1, c2 > 0 and c1 != c2) are considered adjacent if there exists at least one pair of cells (r1, c1) and (r2, c2) in the input grid such that they are 4-neighbors and have colors c1 and c2 respectively. In the output grid, these two colors must remain 4-adjacent. Conversely, if two colors were NOT adjacent in the input, they MUST NOT be 4-adjacent in the output. 3. Empty Cells: Color 0 represents empty space. Color 0 does not have connectivity or adjacency constraints relative to other colors. OBJECTIVE: - Maximize E, where E is the count of cells with value 0 in the output grid. - Score = E + 1. ALGORITHMIC STRATEGY: 1. Pre-processing: - Identify all unique colors 1 to M. - Build an adjacency graph G where nodes are colors 1 to M. An edge exists between c1 and c2 if they are 4-neighbors in the input. - Verify connectivity for each color in the input to ensure the input itself is valid (though the problem implies it is). 2. Optimization Approach: - The problem is equivalent to finding the smallest possible set of cells for each color that satisfies the adjacency graph G and the connectivity requirement. - This can be modeled as finding a layout of skeletons or paths for each color. - A simple baseline: Represent each color as a single cell or a small cluster. However, a single cell per color might violate adjacency if the graph G requires specific connections. - A more robust approach: Use a Steiner Tree-like approach or a grid-based layout where each color is a small connected component, and components are placed such that they touch only their required neighbors. - Since N=50 is relatively large and M is likely small, you can attempt to place colors in a sparse pattern. 3. Implementation Steps: - Parse the 50x50 input. - Construct the adjacency list for colors 1..M. - Generate an output grid of 50x50 initialized to 0. - Place colors 1..M such that all adjacency and connectivity rules are met. - Print the 50x50 grid to stdout. OUTPUT FORMAT: - Exactly 50 lines. - Each line contains 50 space-separated integers (0 to M). - No extra text, headers, or debug info.
+5. [node_root_helper_01] Node completed with action report_success
+6. [node_root_helper_01] Node wrote final output for run coding-S3-ahc024-topological-map__transmute__mx1_coding_non_holdout_v2_2026_04_07__transmute__02__run_2026_04_07_075424
+7. [node_root] Node completed with action recruit_help
+8. [node_root] Run completed with 2 node(s)

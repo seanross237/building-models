@@ -52,7 +52,7 @@ python3 -m unittest discover -s data-system/grading/tests -p 'test_*.py'
 - depth is hard-capped to `3` in runtime code
 - node-authored responses are now JSON-only and must include `orchestration_decision`
 - agents now decide orchestration intent; runtime validates that intent and realizes legal packets, edges, and records
-- prompt families now include `none`, `execute`, `transmute`, `delegate`, and `agent_chooses`
+- prompt families now include `none`, `execute`, `transmute`, `delegate`, `review`, and `agent_chooses`
 - `selected_prompt_text` is the main per-node prompt body when explicitly set
 - `review_prompt_family` and `review_selected_prompt_text` can switch the same node into a different prompt mode once child results return
 - `base_header_prompt` is an optional prefix and currently defaults to blank

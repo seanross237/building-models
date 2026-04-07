@@ -1,0 +1,99 @@
+{
+  "contract_name": "node_record",
+  "contract_version": "v1",
+  "run_id": "coding-S1-ahc001-atcoder-ad__review__mx1_non_holdout_full_agent_v1_2026_04_06__review__17__run_2026_04_07_024631",
+  "node_id": "node_root",
+  "state": "completed",
+  "input": {
+    "instructions": "Solve this Super-Eywa grading-bank question.\nQuestion ID: coding-S1-ahc001-atcoder-ad\nTitle: S1. AHC001 / AtCoder Ad\n\nProblem:\nPlace many non-overlapping axis-aligned ad rectangles in a 10000 x 10000 square so each advertiser gets a rectangle containing its requested point and with area close to its requested target area.\n\nGrading target:\nContinuous score from advertiser satisfaction.\nHigher is better.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>",
+    "provided_context_refs": [],
+    "attachment_refs": []
+  },
+  "variables": {
+    "runtime_provider": "openrouter",
+    "model": "google/gemma-4-26b-a4b-it",
+    "prompt_family": "review",
+    "selected_prompt_text": "Write a draft answer and instruct one reviewer child to act as a Technical Implementation Auditor. The reviewer's goal is to ensure the draft provides a complete, non-truncated, and executable algorithmic blueprint. The reviewer must specifically check for: 1) a complete sequence of operations from start to finish, 2) explicit data structure definitions and their update rules, and 3) the exact logic for handling geometric constraints. If the draft is truncated or lacks specific mathematical steps, the reviewer must provide a fully expanded, complete version of the algorithm that is ready for coding.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"review\",\n  \"decision_notes\": \"optional string\",\n  \"draft_response\": \"plain-text draft answer\",\n  \"message_for_reviewer\": \"plain-text review request for the child\"\n}",
+    "base_header_prompt": "",
+    "review_prompt_family": "",
+    "review_selected_prompt_text": "",
+    "review_base_header_prompt": "",
+    "child_prompt_family": "execute",
+    "child_selected_prompt_text": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}",
+    "child_base_header_prompt": "",
+    "terminal_result_destination": "auto",
+    "child_terminal_result_destination": "",
+    "injected_prompt_profile": "agent_orchestration_basic_instruction_prompt",
+    "additional_instruction_prompt_profiles": [],
+    "context_policy": "minimal",
+    "workflow_structure": "sequential_parent_review",
+    "verification_policy": "light",
+    "tool_policy": "none",
+    "json_response_policy": "strict_required",
+    "orchestration_policy": "agent_decides",
+    "budget_policy": {
+      "max_depth": 1,
+      "max_helpers_per_node": 1,
+      "max_turns_per_node": 4
+    },
+    "routing_policy": "return_to_creator",
+    "recovery_policy": "report_problem"
+  },
+  "orchestration": {
+    "turn_count": 2,
+    "initial_decision": "review",
+    "final_decision": "execute_locally",
+    "decision_notes": "The child result provides a complete algorithmic approach including data structures, initialization, the core loop with geometric constraints, and a splitting strategy. I will format this into the final required response.",
+    "helper_count": 1,
+    "terminal_result_destination": "final_output",
+    "awaited_child_results": true
+  },
+  "prompt": {
+    "rendered_prompt_text": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 2\nNode depth: 0\nAllowed decisions: ['execute_locally']\nPrompt family: review\nBase header prompt: ''\nSelected prompt text:\nA review child has already returned critique or an improved draft. Use that returned work to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"string\",\n  \"result_type\": \"optional string\"\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nA review child has already returned critique or an improved draft. Use that returned work to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"string\",\n  \"result_type\": \"optional string\"\n}\n\nChild results already returned to you:\n[\n  {\n    \"node_id\": \"node_root_helper_01\",\n    \"summary\": \"FINAL_ANSWER: 1. Data Structures: Region {x1, y1, x2, y2}, Advertiser {id, px, py, target_area}, AvailableRegions (R-tree). 2. Initialization: AvailableRegions = {Region(0, 0, 10000, 10000)}, PriorityQueue PQ = Sort(Advertisers by target_area DESC). 3. Loop: While PQ not empty: a. Pop Advertiser A. b. Query AvailableRegions for Region R containing (A.px, A.py). If none, skip. c. Calculate dimensions (w, h) for A: Let W = R.x2 - R.x1, H = R.y2 - R.y1. Find w, h such that w*h approx A.target_area, w <= W, h <= H, and A.px in [x, x+w], A.py in [y, y+h]. Specifically, set w = min(W, sqrt(A.target_area * W/H)) and h = A.target_area/w, adjusted to fit A.px/A.py. d. Place Rectangle (x1, y1, x2, y2). e. Guillotine Split: Remove R. Add R_split1 (x1, y1, x2, y1+h) and R_split2 (x1, y1+h, x2, y2) OR R_split1 (x1, y1, x1+w, y2) and R_split2 (x1+w, y1, x2, y2) based on which minimizes aspect ratio variance. 4. Termination: PQ empty. \\nJUSTIFICATION: Provides complete data structures, geometric splitting, and exact placement logic.\"\n  }\n]\n\nQuestion:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: coding-S1-ahc001-atcoder-ad\nTitle: S1. AHC001 / AtCoder Ad\n\nProblem:\nPlace many non-overlapping axis-aligned ad rectangles in a 10000 x 10000 square so each advertiser gets a rectangle containing its requested point and with area close to its requested target area.\n\nGrading target:\nContinuous score from advertiser satisfaction.\nHigher is better.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>",
+    "prompt_artifact_refs": []
+  },
+  "results": [
+    {
+      "result_type": "summary",
+      "content": "FINAL_ANSWER: 1. Data Structures: - Region: A rectangle defined by {x1, y1, x2, y2}. - Advertiser: A struct containing {id, px, py, target_area}. - AvailableRegions: A spatial data structure (such as an R-tree or a simple list of disjoint rectangles) to track empty space. 2. Initialization: - Set AvailableRegions = { Region(0, 0, 10000, 10000) }. - Create a Priority Queue (PQ) containing all Advertisers, sorted by target_area in descending order. 3. Algorithm Loop: While PQ is not empty: a. Pop the advertiser A with the largest target_area from the PQ. b. Query AvailableRegions to find a region R that contains the point (A.px, A.py). If no such region exists, skip this advertiser. c. Calculate the dimensions (w, h) for the rectangle to be placed: - Let W = R.x2 - R.x1 and H = R.y2 - R.y1. - To satisfy the area constraint while ensuring the point (A.px, A.py) is covered, calculate w and h such that w * h approx A.target_area, subject to w <= W and h <= H. - A robust approach: Set w = min(W, sqrt(A.target_area * W/H)) and h = A.target_area/w. If h > H, recalculate h = H and w = A.target_area/H. - Adjust the rectangle's boundaries (x1, y1, x2, y2) such that x1 <= A.px <= x2 and y1 <= A.py <= y2 within the bounds of R. d. Place the rectangle and update the space: - Remove the original region R from AvailableRegions. - Perform a Guillotine Split on R using the boundaries of the newly placed rectangle. This creates two new rectangular regions: - Option 1 (Horizontal split): R_split1 = (R.x1, R.y1, R.x2, rect.y1) and R_split2 = (R.x1, rect.y2, R.x2, R.y2) (plus side strips). - Option 2 (Vertical split): R_split1 = (R.x1, R.y1, rect.x1, R.y2) and R_split2 = (rect.x2, R.y1, R.x2, R.y2) (plus side strips).",
+      "attachment_refs": []
+    }
+  ],
+  "logging": {
+    "metrics": {
+      "input_tokens": 2014,
+      "output_tokens": 2026,
+      "total_tokens": 4040,
+      "cost_usd": 0.00107222,
+      "wall_time_ms": 106039,
+      "provider_details": {
+        "responses": [
+          {
+            "response_id": "gen-1775529991-byBV7YElgYLIfG4mmgRV",
+            "model": "google/gemma-4-26b-a4b-it-20260403",
+            "usage_from": "chat_completions",
+            "response_cost_usd": 0.00027968
+          },
+          {
+            "response_id": "gen-1775530019-5C6U72gi8JxZvMZeMTfu",
+            "model": "google/gemma-4-26b-a4b-it-20260403",
+            "usage_from": "chat_completions",
+            "response_cost_usd": 0.00041178
+          },
+          {
+            "response_id": "gen-1775530072-2Lv6RYTGJMwMDq3XBYNR",
+            "model": "google/gemma-4-26b-a4b-it-20260403",
+            "usage_from": "chat_completions",
+            "response_cost_usd": 0.00038076
+          }
+        ]
+      },
+      "reasoning_tokens": 0,
+      "cached_prompt_tokens": 160
+    },
+    "events_ref": "events.jsonl",
+    "edges_ref": "edges.json"
+  },
+  "replay_ref": "replay/node_root",
+  "final_action_type": "report_success"
+}

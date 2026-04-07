@@ -1,0 +1,85 @@
+# Phase 5/8 video generation config.
+#
+# `routing.default` is the order in which adapters are tried when a beat
+# arrives. The pipeline picks the first adapter whose `is_available()`
+# returns True. Stub is always last so the pipeline still completes when
+# no real provider keys are present.
+#
+# Phase 8 added the unified fal adapter at the top of the routing list.
+# When `FAL_KEY` (or `FAL_API_KEY`) is set in the environment, every
+# beat goes through fal — which lets us reach Kling / Luma / Veo3 /
+# Pika / Runway / MiniMax with one credential. The legacy direct
+# adapters stay below it as fallbacks for when the user wants to use
+# their first-party keys instead.
+#
+# `budget.max_cost_cents_per_sketch` is a hard cap. Before each clip is
+# requested the pipeline checks the running cost and if adding another
+# estimated clip cost would exceed the cap, it stops generating new clips
+# and proceeds to stitch what it already has.
+routing:
+  default: [fal, kling, luma, runway, pika, veo, stub]
+
+budget:
+  max_cost_cents_per_sketch: 500   # $5 hard cap
+
+adapters:
+  - id: fal
+    enabled: true
+    adapter: video_gen.adapters.fal_unified.FalUnifiedAdapter
+    config:
+      # Default to the highest-quality Kling on fal. Swap to a cheaper
+      # slug (e.g. fal-ai/kling-video/v1.6/standard/image-to-video at
+      # ~25 cents per 5sec, or fal-ai/pika/v2.2/image-to-video at ~20)
+      # to keep daily costs lower.
+      model_slug: fal-ai/kling-video/v2.1/master/image-to-video
+      poll_interval_sec: 5
+      timeout_sec: 600
+  - id: kling
+    enabled: true
+    adapter: video_gen.adapters.kling.KlingAdapter
+    config:
+      model: kling-v1-6
+      mode: std
+      cfg_scale: 0.5
+      poll_interval_sec: 5
+      timeout_sec: 600
+      cost_cents_per_5s: 50
+  - id: luma
+    enabled: true
+    adapter: video_gen.adapters.luma.LumaAdapter
+    config:
+      model: ray-2
+      aspect_ratio: "16:9"
+      poll_interval_sec: 5
+      timeout_sec: 600
+      cost_cents_per_5s: 70
+  - id: runway
+    enabled: true
+    adapter: video_gen.adapters.runway.RunwayAdapter
+    config:
+      model: gen4_turbo
+      ratio: "1280:720"
+      poll_interval_sec: 5
+      timeout_sec: 600
+      cost_cents_per_5s: 100
+  - id: pika
+    enabled: true
+    adapter: video_gen.adapters.pika.PikaAdapter
+    config:
+      resolution: 720p
+      poll_interval_sec: 5
+      timeout_sec: 600
+      cost_cents_per_5s: 20
+  - id: veo
+    enabled: true
+    adapter: video_gen.adapters.veo.VeoAdapter
+    config:
+      model: veo-3.0-generate-001
+      location: us-central1
+      poll_interval_sec: 10
+      timeout_sec: 900
+      cost_cents_per_5s: 150
+  - id: stub
+    enabled: true
+    adapter: video_gen.adapters.stub_video.StubVideoAdapter
+    config: {}

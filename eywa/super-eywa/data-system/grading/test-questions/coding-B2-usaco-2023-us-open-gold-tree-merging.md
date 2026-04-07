@@ -1,10 +1,12 @@
 # B2. USACO 2023 US Open Gold / Tree Merging
 
-- Type: Coding
+- Family: coding
+- Entry Type: coding
 - Subtype: Binary anchor
+- Grader Type: binary_hidden_tests
 - Source: https://usaco.org/index.php?cpid=1331&page=viewproblem2
 
-## Task
+## Problem
 
 Reconstruct a valid sequence of sibling-merge operations that transforms an initial rooted tree into a final rooted tree.
 
@@ -19,4 +21,4 @@ Good test of whether the agent can produce a valid transformation sequence, not 
 
 ## Notes
 
-- 
+-

@@ -1,0 +1,72 @@
+# Run Timeline
+
+1. [node_root] Run started for task: Solve this Super-Eywa grading-bank question.
+Question ID: coding-S5-ahc032-mod-stamp
+Title: S5. AHC032 / Mod Stamp
+
+Problem:
+Choose up to K = 81 placements of 3 x 3 stamps on a 9 x 9 board to maximize the sum of board entries modulo 998244353.
+
+Grading target:
+Score is the sum of final cell values modulo 998244353.
+Higher is better.
+
+Return format:
+FINAL_ANSWER: <your answer>
+JUSTIFICATION: <brief justification>
+2. [node_root] Node started: Solve this Super-Eywa grading-bank question.
+Question ID: coding-S5-ahc032-mod-stamp
+Title: S5. AHC032 / Mod Stamp
+
+Problem:
+Choose up to K = 81 placements of 3 x 3 stamps on a 9 x 9 board to maximize the sum of board entries modulo 998244353.
+
+Grading target:
+Score is the sum of final cell values modulo 998244353.
+Higher is better.
+
+Return format:
+FINAL_ANSWER: <your answer>
+JUSTIFICATION: <brief justification>
+3. [node_root] Node recruited 1 helper(s)
+4. [node_root_helper_01] Node started: Review this draft answer carefully.
+Find flaws, missing reasoning, or corrections, then produce the strongest corrected answer you can.
+
+Review focus:
+Please critically evaluate the draft's reasoning. 1) Identify any logical leaps, specifically regarding whether the problem implies the sum can exceed 998244353. 2) Check if the draft overlooks the possibility that 'placements' might be restricted (e.g., non-overlapping) or if the stamp values themselves are provided in a way that requires specific calculation. 3) Determine if the conclusion is rigorous or if it fails to address the core complexity of the 'modulo' constraint in a maximization problem.
+
+Original question:
+Solve this Super-Eywa grading-bank question.
+Question ID: coding-S5-ahc032-mod-stamp
+Title: S5. AHC032 / Mod Stamp
+
+Problem:
+Choose up to K = 81 placements of 3 x 3 stamps on a 9 x 9 board to maximize the sum of board entries modulo 998244353.
+
+Grading target:
+Score is the sum of final cell values modulo 998244353.
+Higher is better.
+
+Return format:
+FINAL_ANSWER: <your answer>
+JUSTIFICATION: <brief justification>
+
+Draft answer:
+To maximize the sum of board entries modulo 998244353, we must first understand the mechanics of the 'stamp' operation. A 3x3 stamp adds a specific pattern to a 9x9 board. Since the goal is to maximize the sum modulo 998244353, we are not simply looking for the largest absolute sum, but the largest value in the range [0, 998244352]. 
+
+However, in most competitive programming contexts involving 'maximizing sum modulo M', if the values added are positive and the total sum does not naturally exceed M, the problem reduces to a standard maximization problem. If the sum can exceed M, the problem becomes a variation of the subset sum or knapsack problem where we want the sum to be congruent to -1 mod M.
+
+Assuming the stamp values are positive and the total sum is likely to be less than 998244353 (given the board size and stamp size), the optimal strategy is a greedy approach: 
+1. Calculate the contribution of every possible 3x3 placement. 
+2. Since placements can overlap, the contribution of a stamp depends on the current state of the board. 
+3. However, if the stamps are additive and independent, we simply pick the K placements that provide the highest incremental value.
+
+Given the constraints (K=81, 9x9 board), we can place a 3x3 stamp at every possible top-left corner (from (0,0) to (6,6)). There are 7x7 = 49 such positions. Since K=81 and 49 < 81, we can actually cover every possible 3x3 position once. If multiple stamps can be placed on the same position, we would prioritize the ones that increase the sum most effectively.
+
+FINAL_ANSWER: The maximum sum is achieved by placing stamps on all 49 possible 3x3 positions if the goal is absolute maximization, or by selecting a combination that results in a sum congruent to 998244352 mod 998244353.
+
+JUSTIFICATION: The problem asks for a maximization modulo M. If the total possible sum is less than M, greedy selection of the highest value stamps is optimal. If the sum can exceed M, the problem requires finding a subset of placements whose sum is closest to M-1 (mod M).
+5. [node_root_helper_01] Node completed with action report_success
+6. [node_root] Node completed with action report_success
+7. [node_root] Node wrote final output for run coding-S5-ahc032-mod-stamp__review__mx1_non_holdout_full_agent_v1_2026_04_06__review__11__run_2026_04_07_023322
+8. [node_root] Run completed with 2 node(s)

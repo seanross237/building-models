@@ -15,6 +15,7 @@ REPO_ROOT = THIS_DIR.parents[1]
 if str(THIS_DIR) not in sys.path:
     sys.path.insert(0, str(THIS_DIR))
 
+from coding_packets_v1 import coding_packet_exists  # noqa: E402
 from run_test_question_v1 import run_question_case  # noqa: E402
 
 
@@ -95,7 +96,12 @@ def load_question_paths(question_root: Path) -> list[Path]:
 def classify_question(question_id: str) -> tuple[str, str]:
     if question_id in BENCHMARK_INCOMPLETE:
         return "benchmark_incomplete", BENCHMARK_INCOMPLETE[question_id]
-    if question_id in HARNESS_MISSING:
+    if question_id.startswith("coding-") and not coding_packet_exists(question_id):
+        return "harness_missing", HARNESS_MISSING.get(
+            question_id,
+            "Coding task has no runnable packet bundle here yet.",
+        )
+    if question_id in HARNESS_MISSING and not question_id.startswith("coding-"):
         return "harness_missing", HARNESS_MISSING[question_id]
     return "runnable", ""
 

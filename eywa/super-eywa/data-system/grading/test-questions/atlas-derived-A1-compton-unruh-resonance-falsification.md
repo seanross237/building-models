@@ -1,10 +1,12 @@
 # A1. Compton-Unruh Resonance Falsification
 
-- Type: Atlas-derived
+- Family: atlas-derived
+- Entry Type: reasoning
 - Domain: Physics / dimensional analysis
+- Grader Type: binary_reasoning
 - Source: Atlas Compton-Unruh mission (8 explorations)
 
-## Question
+## Problem
 
 Does a particle's Compton frequency resonate with Unruh radiation at cosmological acceleration a ~ cH_0?
 
@@ -24,4 +26,4 @@ Binary:
 
 ## Notes
 
-- 
+-

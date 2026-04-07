@@ -1,10 +1,12 @@
 # B4. Hensel Lifting Verification
 
-- Type: Architecture-derived
+- Family: architecture-derived
+- Entry Type: reasoning
 - Domain: Number theory
+- Grader Type: exact_numeric_hensel_target
 - Source: Architecture Exp, MATH-03
 
-## Question
+## Problem
 
 Find least prime p where there exists n such that n^4 + 1 = 0 (mod p^2).
 Then find least m where m^4 + 1 = 0 (mod p^2).
@@ -29,4 +31,4 @@ Opus got 110.
 
 ## Notes
 
-- 
+-

@@ -1,0 +1,171 @@
+{
+  "provider": "openrouter",
+  "note": "Per-turn provider payloads, authored JSON, and compiled outputs are recorded here.",
+  "steps": [
+    {
+      "step": 1,
+      "note": "authored local execution deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 1\nNode depth: 1\nAllowed decisions: ['execute_locally']\nPrompt family: execute\nBase header prompt: ''\nSelected prompt text:\nSolve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nThe response field should be only a brief submission summary. Do not put contestant stdout in the response field.\nYour main.py must read from stdin and print only the contestant output required by the problem.\nDo not print explanations, labels, debug text, or estimated scores.\nIf the Output section requires a leading count/header line, print it exactly.\nPrefer a simple valid baseline over malformed ambitious output.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nSolve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nThe response field should be only a brief submission summary. Do not put contestant stdout in the response field.\nYour main.py must read from stdin and print only the contestant output required by the problem.\nDo not print explanations, labels, debug text, or estimated scores.\nIf the Output section requires a leading count/header line, print it exactly.\nPrefer a simple valid baseline over malformed ambitious output.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\n\nQuestion:\nTask: Optimize stamp placement on a grid to maximize the sum of cell values. Input: N (grid dimension, 9x9), M (number of available stamps, 20), K (max placements, 81). Initial N x N grid of integers. M stamps, each a 3x3 grid of integers. State Space: A 9x9 grid of integers. Initial state is the input grid. Transition Rules: Operation: Select stamp index m (0 to M-1) and top-left coordinate (i, j) such that 0 <= i <= N-3 and 0 <= j <= N-3. Effect: For all 0 <= di, dj < 3, grid[i+di][j+dj] = (grid[i+di][j+dj] + stamp[m][di][dj]) mod 998244353. Constraint: Total operations L <= K. Objective Function: Maximize Sum(grid[i][j]) for all 0 <= i, j < N. Note: The sum is calculated after all modulo operations are applied to individual cells. Output Format: Line 1: L (number of placements, 0 <= L <= K). Next L lines: m i j (stamp index, top-left row, top-left column). Constraints: Grid size: 9x9. Stamp size: 3x3. Modulo: 998244353. Max placements: 81. All stamp placements must be fully contained within the 9x9 grid boundaries.",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "execute_locally",
+        "decision_notes": "Greedy approach for stamp placement.",
+        "response": "FINAL_ANSWER: 0\nJUSTIFICATION: No stamps placed to avoid reducing sum.",
+        "result_type": "code_submission",
+        "artifacts": [
+          {
+            "path": "main.py",
+            "content": "import sys\n\ndef solve():\n    try:\n        line1 = sys.stdin.readline().split()\n        if not line1: return\n        N, M, K = map(int, line1)\n        \n        grid = []\n        for _ in range(N):\n            grid.append(list(map(int, sys.stdin.readline().split())))\n            \n        stamps = []\n        for _ in range(M):\n            stamp = []\n            for _ in range(3):\n                stamp.append(list(map(int, sys.stdin.readline().split())))\n            stamps.append(stamp)\n            \n        # Simple greedy: try all placements and pick the best one\n        # that increases the total sum.\n        # Since we can do up to K placements, we can repeat this.\n        \n        MOD = 998244353\n        placements = []\n        \n        for _ in range(K):\n            best_gain = 0\n            best_move = None\n            \n            current_sum = sum(sum(row) for row in grid)\n            \n            for m in range(M):\n                for i in range(N - 2):\n                    for j in range(N - 2):\n                        new_sum = current_sum\n                        for di in range(3):\n                            for dj in range(3):\n                                old_val = grid[i+di][j+dj]\n                                new_val = (old_val + stamps[m][di][dj]) % MOD\n                                new_sum += (new_val - old_val)\n                        \n                        gain = new_sum - current_sum\n                        if gain > best_gain:\n                            best_gain = gain\n                            best_move = (m, i, j)\n            \n            if best_move:\n                m, i, j = best_move\n                placements.append((m, i, j))\n                for di in range(3):\n                    for dj in range(3):\n                        grid[i+di][j+dj] = (grid[i+di][j+dj] + stamps[m][di][dj]) % MOD\n            else:\n                break\n                \n        print(len(placements))\n        for p in placements:\n            print(f\"{p[0]} {p[1]} {p[2]}\")\n            \n    except EOFError:\n        pass\n\nif __name__ == \"__main__\":\n    solve()"
+          }
+        ]
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "coding-S5-ahc032-mod-stamp__transmute__mx1_coding_non_holdout_v2_2026_04_07__transmute__08__run_2026_04_07_072411",
+        "node_id": "node_root_helper_01",
+        "action_type": "report_success",
+        "results": [
+          {
+            "result_type": "code_submission",
+            "content": "FINAL_ANSWER: 0\nJUSTIFICATION: No stamps placed to avoid reducing sum.",
+            "attachment_refs": [
+              "artifacts/node_root_helper_01/turn_01/main.py"
+            ]
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "success_report",
+            "target": {
+              "target_type": "final_output",
+              "target_ref": "run_final_output"
+            },
+            "message": "FINAL_ANSWER: 0\nJUSTIFICATION: No stamps placed to avoid reducing sum.",
+            "attachment_refs": [
+              "artifacts/node_root_helper_01/turn_01/main.py"
+            ]
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nThe response field should be only a brief submission summary. Do not put contestant stdout in the response field.\nYour main.py must read from stdin and print only the contestant output required by the problem.\nDo not print explanations, labels, debug text, or estimated scores.\nIf the Output section requires a leading count/header line, print it exactly.\nPrefer a simple valid baseline over malformed ambitious output.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\n\nQuestion:\nTask: Optimize stamp placement on a grid to maximize the sum of cell values. Input: N (grid dimension, 9x9), M (number of available stamps, 20), K (max placements, 81). Initial N x N grid of integers. M stamps, each a 3x3 grid of integers. State Space: A 9x9 grid of integers. Initial state is the input grid. Transition Rules: Operation: Select stamp index m (0 to M-1) and top-left coordinate (i, j) such that 0 <= i <= N-3 and 0 <= j <= N-3. Effect: For all 0 <= di, dj < 3, grid[i+di][j+dj] = (grid[i+di][j+dj] + stamp[m][di][dj]) mod 998244353. Constraint: Total operations L <= K. Objective Function: Maximize Sum(grid[i][j]) for all 0 <= i, j < N. Note: The sum is calculated after all modulo operations are applied to individual cells. Output Format: Line 1: L (number of placements, 0 <= L <= K). Next L lines: m i j (stamp index, top-left row, top-left column). Constraints: Grid size: 9x9. Stamp size: 3x3. Modulo: 998244353. Max placements: 81. All stamp placements must be fully contained within the 9x9 grid boundaries."
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775546713-JCqt2nRQxgWb3jb8rxCD",
+              "object": "chat.completion",
+              "created": 1775546713,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Parasail",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\"schema_name\": \"eywa_node_response\", \"schema_version\": \"v1\", \"orchestration_decision\": \"execute_locally\", \"decision_notes\": \"Greedy approach for stamp placement.\", \"response\": \"FINAL_ANSWER: 0\\nJUSTIFICATION: No stamps placed to avoid reducing sum.\", \"result_type\": \"code_submission\", \"artifacts\": [{\"path\": \"main.py\", \"content\": \"import sys\\n\\ndef solve():\\n    try:\\n        line1 = sys.stdin.readline().split()\\n        if not line1: return\\n        N, M, K = map(int, line1)\\n        \\n        grid = []\\n        for _ in range(N):\\n            grid.append(list(map(int, sys.stdin.readline().split())))\\n            \\n        stamps = []\\n        for _ in range(M):\\n            stamp = []\\n            for _ in range(3):\\n                stamp.append(list(map(int, sys.stdin.readline().split())))\\n            stamps.append(stamp)\\n            \\n        # Simple greedy: try all placements and pick the best one\\n        # that increases the total sum.\\n        # Since we can do up to K placements, we can repeat this.\\n        \\n        MOD = 998244353\\n        placements = []\\n        \\n        for _ in range(K):\\n            best_gain = 0\\n            best_move = None\\n            \\n            current_sum = sum(sum(row) for row in grid)\\n            \\n            for m in range(M):\\n                for i in range(N - 2):\\n                    for j in range(N - 2):\\n                        new_sum = current_sum\\n                        for di in range(3):\\n                            for dj in range(3):\\n                                old_val = grid[i+di][j+dj]\\n                                new_val = (old_val + stamps[m][di][dj]) % MOD\\n                                new_sum += (new_val - old_val)\\n                        \\n                        gain = new_sum - current_sum\\n                        if gain > best_gain:\\n                            best_gain = gain\\n                            best_move = (m, i, j)\\n            \\n            if best_move:\\n                m, i, j = best_move\\n                placements.append((m, i, j))\\n                for di in range(3):\\n                    for dj in range(3):\\n                        grid[i+di][j+dj] = (grid[i+di][j+dj] + stamps[m][di][dj]) % MOD\\n            else:\\n                break\\n                \\n        print(len(placements))\\n        for p in placements:\\n            print(f\\\"{p[0]} {p[1]} {p[2]}\\\")\\n            \\n    except EOFError:\\n        pass\\n\\nif __name__ == \\\"__main__\\\":\\n    solve()\"}]}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 753,
+                "completion_tokens": 698,
+                "total_tokens": 1451,
+                "cost": 0.00037709,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00037709,
+                  "upstream_inference_prompt_cost": 9.789e-05,
+                  "upstream_inference_completions_cost": 0.0002792
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\"schema_name\": \"eywa_node_response\", \"schema_version\": \"v1\", \"orchestration_decision\": \"execute_locally\", \"decision_notes\": \"Greedy approach for stamp placement.\", \"response\": \"FINAL_ANSWER: 0\\nJUSTIFICATION: No stamps placed to avoid reducing sum.\", \"result_type\": \"code_submission\", \"artifacts\": [{\"path\": \"main.py\", \"content\": \"import sys\\n\\ndef solve():\\n    try:\\n        line1 = sys.stdin.readline().split()\\n        if not line1: return\\n        N, M, K = map(int, line1)\\n        \\n        grid = []\\n        for _ in range(N):\\n            grid.append(list(map(int, sys.stdin.readline().split())))\\n            \\n        stamps = []\\n        for _ in range(M):\\n            stamp = []\\n            for _ in range(3):\\n                stamp.append(list(map(int, sys.stdin.readline().split())))\\n            stamps.append(stamp)\\n            \\n        # Simple greedy: try all placements and pick the best one\\n        # that increases the total sum.\\n        # Since we can do up to K placements, we can repeat this.\\n        \\n        MOD = 998244353\\n        placements = []\\n        \\n        for _ in range(K):\\n            best_gain = 0\\n            best_move = None\\n            \\n            current_sum = sum(sum(row) for row in grid)\\n            \\n            for m in range(M):\\n                for i in range(N - 2):\\n                    for j in range(N - 2):\\n                        new_sum = current_sum\\n                        for di in range(3):\\n                            for dj in range(3):\\n                                old_val = grid[i+di][j+dj]\\n                                new_val = (old_val + stamps[m][di][dj]) % MOD\\n                                new_sum += (new_val - old_val)\\n                        \\n                        gain = new_sum - current_sum\\n                        if gain > best_gain:\\n                            best_gain = gain\\n                            best_move = (m, i, j)\\n            \\n            if best_move:\\n                m, i, j = best_move\\n                placements.append((m, i, j))\\n                for di in range(3):\\n                    for dj in range(3):\\n                        grid[i+di][j+dj] = (grid[i+di][j+dj] + stamps[m][di][dj]) % MOD\\n            else:\\n                break\\n                \\n        print(len(placements))\\n        for p in placements:\\n            print(f\\\"{p[0]} {p[1]} {p[2]}\\\")\\n            \\n    except EOFError:\\n        pass\\n\\nif __name__ == \\\"__main__\\\":\\n    solve()\"}]}",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "execute_locally",
+              "decision_notes": "Greedy approach for stamp placement.",
+              "response": "FINAL_ANSWER: 0\nJUSTIFICATION: No stamps placed to avoid reducing sum.",
+              "result_type": "code_submission",
+              "artifacts": [
+                {
+                  "path": "main.py",
+                  "content": "import sys\n\ndef solve():\n    try:\n        line1 = sys.stdin.readline().split()\n        if not line1: return\n        N, M, K = map(int, line1)\n        \n        grid = []\n        for _ in range(N):\n            grid.append(list(map(int, sys.stdin.readline().split())))\n            \n        stamps = []\n        for _ in range(M):\n            stamp = []\n            for _ in range(3):\n                stamp.append(list(map(int, sys.stdin.readline().split())))\n            stamps.append(stamp)\n            \n        # Simple greedy: try all placements and pick the best one\n        # that increases the total sum.\n        # Since we can do up to K placements, we can repeat this.\n        \n        MOD = 998244353\n        placements = []\n        \n        for _ in range(K):\n            best_gain = 0\n            best_move = None\n            \n            current_sum = sum(sum(row) for row in grid)\n            \n            for m in range(M):\n                for i in range(N - 2):\n                    for j in range(N - 2):\n                        new_sum = current_sum\n                        for di in range(3):\n                            for dj in range(3):\n                                old_val = grid[i+di][j+dj]\n                                new_val = (old_val + stamps[m][di][dj]) % MOD\n                                new_sum += (new_val - old_val)\n                        \n                        gain = new_sum - current_sum\n                        if gain > best_gain:\n                            best_gain = gain\n                            best_move = (m, i, j)\n            \n            if best_move:\n                m, i, j = best_move\n                placements.append((m, i, j))\n                for di in range(3):\n                    for dj in range(3):\n                        grid[i+di][j+dj] = (grid[i+di][j+dj] + stamps[m][di][dj]) % MOD\n            else:\n                break\n                \n        print(len(placements))\n        for p in placements:\n            print(f\"{p[0]} {p[1]} {p[2]}\")\n            \n    except EOFError:\n        pass\n\nif __name__ == \"__main__\":\n    solve()"
+                }
+              ]
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "execute_locally",
+          "decision_notes": "Greedy approach for stamp placement.",
+          "response": "FINAL_ANSWER: 0\nJUSTIFICATION: No stamps placed to avoid reducing sum.",
+          "result_type": "code_submission",
+          "artifacts": [
+            {
+              "path": "main.py",
+              "content": "import sys\n\ndef solve():\n    try:\n        line1 = sys.stdin.readline().split()\n        if not line1: return\n        N, M, K = map(int, line1)\n        \n        grid = []\n        for _ in range(N):\n            grid.append(list(map(int, sys.stdin.readline().split())))\n            \n        stamps = []\n        for _ in range(M):\n            stamp = []\n            for _ in range(3):\n                stamp.append(list(map(int, sys.stdin.readline().split())))\n            stamps.append(stamp)\n            \n        # Simple greedy: try all placements and pick the best one\n        # that increases the total sum.\n        # Since we can do up to K placements, we can repeat this.\n        \n        MOD = 998244353\n        placements = []\n        \n        for _ in range(K):\n            best_gain = 0\n            best_move = None\n            \n            current_sum = sum(sum(row) for row in grid)\n            \n            for m in range(M):\n                for i in range(N - 2):\n                    for j in range(N - 2):\n                        new_sum = current_sum\n                        for di in range(3):\n                            for dj in range(3):\n                                old_val = grid[i+di][j+dj]\n                                new_val = (old_val + stamps[m][di][dj]) % MOD\n                                new_sum += (new_val - old_val)\n                        \n                        gain = new_sum - current_sum\n                        if gain > best_gain:\n                            best_gain = gain\n                            best_move = (m, i, j)\n            \n            if best_move:\n                m, i, j = best_move\n                placements.append((m, i, j))\n                for di in range(3):\n                    for dj in range(3):\n                        grid[i+di][j+dj] = (grid[i+di][j+dj] + stamps[m][di][dj]) % MOD\n            else:\n                break\n                \n        print(len(placements))\n        for p in placements:\n            print(f\"{p[0]} {p[1]} {p[2]}\")\n            \n    except EOFError:\n        pass\n\nif __name__ == \"__main__\":\n    solve()"
+            }
+          ]
+        }
+      },
+      "usage": {
+        "prompt_tokens": 753,
+        "completion_tokens": 698,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 0,
+        "total_tokens": 1451,
+        "cost_usd": 0.00037709,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775546713-JCqt2nRQxgWb3jb8rxCD",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00037709
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

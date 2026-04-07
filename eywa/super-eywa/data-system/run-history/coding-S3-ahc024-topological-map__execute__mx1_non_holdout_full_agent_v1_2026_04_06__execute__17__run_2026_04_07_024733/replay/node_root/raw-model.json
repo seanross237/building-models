@@ -1,0 +1,222 @@
+{
+  "provider": "openrouter",
+  "note": "Per-turn provider payloads, authored JSON, and compiled outputs are recorded here.",
+  "steps": [
+    {
+      "step": 1,
+      "note": "authored local execution deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 1\nNode depth: 0\nAllowed decisions: ['execute_locally']\nPrompt family: execute\nBase header prompt: ''\nSelected prompt text:\nAct as an expert competitive programmer. Your goal is to provide a complete, high-performance Python 3 script that solves the optimization problem described. \n\nSOLVER REQUIREMENTS:\n1. ALGORITHMIC STRATEGY: Implement a robust heuristic (such as Simulated Annealing, Hill Climbing, or a Greedy approach with local search) to maximize the objective function while strictly adhering to all connectivity and adjacency constraints.\n2. INPUT/OUTPUT: The script must read from `sys.stdin` and print to `sys.stdout`. Since the exact input format is not provided, implement a flexible parser that handles standard competitive programming integer-based inputs (e.g., dimensions, adjacency lists).\n3. COMPLETENESS: The script must be a fully functional, standalone solver. Do not use placeholders like '# implement logic here'.\n\nOUTPUT FORMAT:\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nAct as an expert competitive programmer. Your goal is to provide a complete, high-performance Python 3 script that solves the optimization problem described. \n\nSOLVER REQUIREMENTS:\n1. ALGORITHMIC STRATEGY: Implement a robust heuristic (such as Simulated Annealing, Hill Climbing, or a Greedy approach with local search) to maximize the objective function while strictly adhering to all connectivity and adjacency constraints.\n2. INPUT/OUTPUT: The script must read from `sys.stdin` and print to `sys.stdout`. Since the exact input format is not provided, implement a flexible parser that handles standard competitive programming integer-based inputs (e.g., dimensions, adjacency lists).\n3. COMPLETENESS: The script must be a fully functional, standalone solver. Do not use placeholders like '# implement logic here'.\n\nOUTPUT FORMAT:\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}\n\nQuestion:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: coding-S3-ahc024-topological-map\nTitle: S3. AHC024 / Topological Map\n\nProblem:\nCompress a colored city map onto a 50 x 50 grid while preserving all color-adjacency relations and connectivity constraints, and maximize empty space.\n\nGrading target:\nE + 1, where E is the number of empty cells.\nHigher is better.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "execute_locally",
+        "decision_notes": "The problem is a complex spatial optimization task (packing colored regions on a grid while maintaining adjacency and connectivity). I will provide a high-performance Simulated Annealing solver designed for this specific class of topological packing problems.",
+        "response": "FINAL_ANSWER: \nimport sys\nimport random\nimport math\nimport time\n\n# --- Problem Constants ---\nGRID_SIZE = 50\n\ndef solve():\n    # --- Input Parsing ---\n    # Expected input format: \n    # N (number of colors/regions)\n    # For each region i:\n    #   M_i (number of cells in region i)\n    #   List of cells (r, c) or adjacency relations\n    # Since the exact format is variable, we implement a robust parser for adjacency lists.\n    \n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    ptr = 0\n    try:\n        num_regions = int(input_data[ptr])\n        ptr += 1\n    except:\n        return\n\n    regions = []\n    for i in range(num_regions):\n        num_cells = int(input_data[ptr])\n        ptr += 1\n        cells = []\n        for _ in range(num_cells):\n            r = int(input_data[ptr])\n            c = int(input_data[ptr+1])\n            cells.append((r, c))\n            ptr += 2\n        regions.append(cells)\n\n    # --- Solver Logic: Simulated Annealing with Local Search ---\n    # Goal: Place regions on 50x50 grid to maximize empty cells.\n    # Constraint: Adjacency and Connectivity.\n    \n    # State representation: grid[50][50] storing region ID or 0 for empty.\n    grid = [[0 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]\n    \n    # Initial Placement: Greedy approach\n    # We try to place regions in a compact manner.\n    current_empty = GRID_SIZE * GRID_SIZE\n    \n    def get_neighbors(r, c):\n        for dr, dc in [(0,1), (0,-1), (1,0), (-1,0)]:\n            nr, nc = r + dr, c + dc\n            if 0 <= nr < GRID_SIZE and 0 <= nc < GRID_SIZE:\n                yield nr, nc\n\n    def is_valid(region_idx, new_cells):\n        # Check bounds and collisions\n        temp_cells = set(new_cells)\n        for r, c in temp_cells:\n            if not (0 <= r < GRID_SIZE and 0 <= c < GRID_SIZE):\n                return False\n            if grid[r][c] != 0 and grid[r][c] != region_idx + 1:\n                return False\n        \n        # Check connectivity (BFS/DFS)\n        if not temp_cells:\n            return True\n        start = next(iter(temp_cells))\n        visited = {start}\n        stack = [start]\n        while stack:",
+        "result_type": "summary"
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "coding-S3-ahc024-topological-map__execute__mx1_non_holdout_full_agent_v1_2026_04_06__execute__17__run_2026_04_07_024733",
+        "node_id": "node_root",
+        "action_type": "report_success",
+        "results": [
+          {
+            "result_type": "summary",
+            "content": "FINAL_ANSWER: \nimport sys\nimport random\nimport math\nimport time\n\n# --- Problem Constants ---\nGRID_SIZE = 50\n\ndef solve():\n    # --- Input Parsing ---\n    # Expected input format: \n    # N (number of colors/regions)\n    # For each region i:\n    #   M_i (number of cells in region i)\n    #   List of cells (r, c) or adjacency relations\n    # Since the exact format is variable, we implement a robust parser for adjacency lists.\n    \n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    ptr = 0\n    try:\n        num_regions = int(input_data[ptr])\n        ptr += 1\n    except:\n        return\n\n    regions = []\n    for i in range(num_regions):\n        num_cells = int(input_data[ptr])\n        ptr += 1\n        cells = []\n        for _ in range(num_cells):\n            r = int(input_data[ptr])\n            c = int(input_data[ptr+1])\n            cells.append((r, c))\n            ptr += 2\n        regions.append(cells)\n\n    # --- Solver Logic: Simulated Annealing with Local Search ---\n    # Goal: Place regions on 50x50 grid to maximize empty cells.\n    # Constraint: Adjacency and Connectivity.\n    \n    # State representation: grid[50][50] storing region ID or 0 for empty.\n    grid = [[0 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]\n    \n    # Initial Placement: Greedy approach\n    # We try to place regions in a compact manner.\n    current_empty = GRID_SIZE * GRID_SIZE\n    \n    def get_neighbors(r, c):\n        for dr, dc in [(0,1), (0,-1), (1,0), (-1,0)]:\n            nr, nc = r + dr, c + dc\n            if 0 <= nr < GRID_SIZE and 0 <= nc < GRID_SIZE:\n                yield nr, nc\n\n    def is_valid(region_idx, new_cells):\n        # Check bounds and collisions\n        temp_cells = set(new_cells)\n        for r, c in temp_cells:\n            if not (0 <= r < GRID_SIZE and 0 <= c < GRID_SIZE):\n                return False\n            if grid[r][c] != 0 and grid[r][c] != region_idx + 1:\n                return False\n        \n        # Check connectivity (BFS/DFS)\n        if not temp_cells:\n            return True\n        start = next(iter(temp_cells))\n        visited = {start}\n        stack = [start]\n        while stack:",
+            "attachment_refs": []
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "success_report",
+            "target": {
+              "target_type": "final_output",
+              "target_ref": "run_final_output"
+            },
+            "message": "FINAL_ANSWER: \nimport sys\nimport random\nimport math\nimport time\n\n# --- Problem Constants ---\nGRID_SIZE = 50\n\ndef solve():\n    # --- Input Parsing ---\n    # Expected input format: \n    # N (number of colors/regions)\n    # For each region i:\n    #   M_i (number of cells in region i)\n    #   List of cells (r, c) or adjacency relations\n    # Since the exact format is variable, we implement a robust parser for adjacency lists.\n    \n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    ptr = 0\n    try:\n        num_regions = int(input_data[ptr])\n        ptr += 1\n    except:\n        return\n\n    regions = []\n    for i in range(num_regions):\n        num_cells = int(input_data[ptr])\n        ptr += 1\n        cells = []\n        for _ in range(num_cells):\n            r = int(input_data[ptr])\n            c = int(input_data[ptr+1])\n            cells.append((r, c))\n            ptr += 2\n        regions.append(cells)\n\n    # --- Solver Logic: Simulated Annealing with Local Search ---\n    # Goal: Place regions on 50x50 grid to maximize empty cells.\n    # Constraint: Adjacency and Connectivity.\n    \n    # State representation: grid[50][50] storing region ID or 0 for empty.\n    grid = [[0 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]\n    \n    # Initial Placement: Greedy approach\n    # We try to place regions in a compact manner.\n    current_empty = GRID_SIZE * GRID_SIZE\n    \n    def get_neighbors(r, c):\n        for dr, dc in [(0,1), (0,-1), (1,0), (-1,0)]:\n            nr, nc = r + dr, c + dc\n            if 0 <= nr < GRID_SIZE and 0 <= nc < GRID_SIZE:\n                yield nr, nc\n\n    def is_valid(region_idx, new_cells):\n        # Check bounds and collisions\n        temp_cells = set(new_cells)\n        for r, c in temp_cells:\n            if not (0 <= r < GRID_SIZE and 0 <= c < GRID_SIZE):\n                return False\n            if grid[r][c] != 0 and grid[r][c] != region_idx + 1:\n                return False\n        \n        # Check connectivity (BFS/DFS)\n        if not temp_cells:\n            return True\n        start = next(iter(temp_cells))\n        visited = {start}\n        stack = [start]\n        while stack:",
+            "attachment_refs": []
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Act as an expert competitive programmer. Your goal is to provide a complete, high-performance Python 3 script that solves the optimization problem described. \n\nSOLVER REQUIREMENTS:\n1. ALGORITHMIC STRATEGY: Implement a robust heuristic (such as Simulated Annealing, Hill Climbing, or a Greedy approach with local search) to maximize the objective function while strictly adhering to all connectivity and adjacency constraints.\n2. INPUT/OUTPUT: The script must read from `sys.stdin` and print to `sys.stdout`. Since the exact input format is not provided, implement a flexible parser that handles standard competitive programming integer-based inputs (e.g., dimensions, adjacency lists).\n3. COMPLETENESS: The script must be a fully functional, standalone solver. Do not use placeholders like '# implement logic here'.\n\nOUTPUT FORMAT:\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}\n\nQuestion:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: coding-S3-ahc024-topological-map\nTitle: S3. AHC024 / Topological Map\n\nProblem:\nCompress a colored city map onto a 50 x 50 grid while preserving all color-adjacency relations and connectivity constraints, and maximize empty space.\n\nGrading target:\nE + 1, where E is the number of empty cells.\nHigher is better.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>"
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775530053-ceRSzEdgr1XWyMMcrIap",
+              "object": "chat.completion",
+              "created": 1775530053,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Novita",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "length",
+                  "native_finish_reason": "length",
+                  "message": {
+                    "role": "assistant",
+                    "content": "```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"The problem is a complex spatial optimization task (packing colored regions on a grid while maintaining adjacency and connectivity). I will provide a high-performance Simulated Annealing solver designed for this specific class of topological packing problems.\",\n  \"response\": \"FINAL_ANSWER: \\nimport sys\\nimport random\\nimport math\\nimport time\\n\\n# --- Problem Constants ---\\nGRID_SIZE = 50\\n\\ndef solve():\\n    # --- Input Parsing ---\\n    # Expected input format: \\n    # N (number of colors/regions)\\n    # For each region i:\\n    #   M_i (number of cells in region i)\\n    #   List of cells (r, c) or adjacency relations\\n    # Since the exact format is variable, we implement a robust parser for adjacency lists.\\n    \\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    ptr = 0\\n    try:\\n        num_regions = int(input_data[ptr])\\n        ptr += 1\\n    except:\\n        return\\n\\n    regions = []\\n    for i in range(num_regions):\\n        num_cells = int(input_data[ptr])\\n        ptr += 1\\n        cells = []\\n        for _ in range(num_cells):\\n            r = int(input_data[ptr])\\n            c = int(input_data[ptr+1])\\n            cells.append((r, c))\\n            ptr += 2\\n        regions.append(cells)\\n\\n    # --- Solver Logic: Simulated Annealing with Local Search ---\\n    # Goal: Place regions on 50x50 grid to maximize empty cells.\\n    # Constraint: Adjacency and Connectivity.\\n    \\n    # State representation: grid[50][50] storing region ID or 0 for empty.\\n    grid = [[0 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]\\n    \\n    # Initial Placement: Greedy approach\\n    # We try to place regions in a compact manner.\\n    current_empty = GRID_SIZE * GRID_SIZE\\n    \\n    def get_neighbors(r, c):\\n        for dr, dc in [(0,1), (0,-1), (1,0), (-1,0)]:\\n            nr, nc = r + dr, c + dc\\n            if 0 <= nr < GRID_SIZE and 0 <= nc < GRID_SIZE:\\n                yield nr, nc\\n\\n    def is_valid(region_idx, new_cells):\\n        # Check bounds and collisions\\n        temp_cells = set(new_cells)\\n        for r, c in temp_cells:\\n            if not (0 <= r < GRID_SIZE and 0 <= c < GRID_SIZE):\\n                return False\\n            if grid[r][c] != 0 and grid[r][c] != region_idx + 1:\\n                return False\\n        \\n        # Check connectivity (BFS/DFS)\\n        if not temp_cells:\\n            return True\\n        start = next(iter(temp_cells))\\n        visited = {start}\\n        stack = [start]\\n        while stack:\\n",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 425,
+                "completion_tokens": 800,
+                "total_tokens": 1225,
+                "cost": 0.00037525,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00037525,
+                  "upstream_inference_prompt_cost": 5.525e-05,
+                  "upstream_inference_completions_cost": 0.00032
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"The problem is a complex spatial optimization task (packing colored regions on a grid while maintaining adjacency and connectivity). I will provide a high-performance Simulated Annealing solver designed for this specific class of topological packing problems.\",\n  \"response\": \"FINAL_ANSWER: \\nimport sys\\nimport random\\nimport math\\nimport time\\n\\n# --- Problem Constants ---\\nGRID_SIZE = 50\\n\\ndef solve():\\n    # --- Input Parsing ---\\n    # Expected input format: \\n    # N (number of colors/regions)\\n    # For each region i:\\n    #   M_i (number of cells in region i)\\n    #   List of cells (r, c) or adjacency relations\\n    # Since the exact format is variable, we implement a robust parser for adjacency lists.\\n    \\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    ptr = 0\\n    try:\\n        num_regions = int(input_data[ptr])\\n        ptr += 1\\n    except:\\n        return\\n\\n    regions = []\\n    for i in range(num_regions):\\n        num_cells = int(input_data[ptr])\\n        ptr += 1\\n        cells = []\\n        for _ in range(num_cells):\\n            r = int(input_data[ptr])\\n            c = int(input_data[ptr+1])\\n            cells.append((r, c))\\n            ptr += 2\\n        regions.append(cells)\\n\\n    # --- Solver Logic: Simulated Annealing with Local Search ---\\n    # Goal: Place regions on 50x50 grid to maximize empty cells.\\n    # Constraint: Adjacency and Connectivity.\\n    \\n    # State representation: grid[50][50] storing region ID or 0 for empty.\\n    grid = [[0 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]\\n    \\n    # Initial Placement: Greedy approach\\n    # We try to place regions in a compact manner.\\n    current_empty = GRID_SIZE * GRID_SIZE\\n    \\n    def get_neighbors(r, c):\\n        for dr, dc in [(0,1), (0,-1), (1,0), (-1,0)]:\\n            nr, nc = r + dr, c + dc\\n            if 0 <= nr < GRID_SIZE and 0 <= nc < GRID_SIZE:\\n                yield nr, nc\\n\\n    def is_valid(region_idx, new_cells):\\n        # Check bounds and collisions\\n        temp_cells = set(new_cells)\\n        for r, c in temp_cells:\\n            if not (0 <= r < GRID_SIZE and 0 <= c < GRID_SIZE):\\n                return False\\n            if grid[r][c] != 0 and grid[r][c] != region_idx + 1:\\n                return False\\n        \\n        # Check connectivity (BFS/DFS)\\n        if not temp_cells:\\n            return True\\n        start = next(iter(temp_cells))\\n        visited = {start}\\n        stack = [start]\\n        while stack:\\n",
+            "parse_error": null,
+            "parsed_response": null
+          },
+          {
+            "phase": "json_repair",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": "You repair invalid Super-Eywa node responses into strict JSON. Return only valid JSON."
+                },
+                {
+                  "role": "user",
+                  "content": "Rewrite the following content as valid JSON only for the eywa_node_response v1 schema. Allowed orchestration_decision values for this turn: execute_locally. Use the exact top-level fields required by eywa_node_response v1. Do not wrap the object under another key. Use plain text strings only. Do not use markdown, code fences, or backslashes.\n\nOriginal content:\n```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"The problem is a complex spatial optimization task (packing colored regions on a grid while maintaining adjacency and connectivity). I will provide a high-performance Simulated Annealing solver designed for this specific class of topological packing problems.\",\n  \"response\": \"FINAL_ANSWER: \\nimport sys\\nimport random\\nimport math\\nimport time\\n\\n# --- Problem Constants ---\\nGRID_SIZE = 50\\n\\ndef solve():\\n    # --- Input Parsing ---\\n    # Expected input format: \\n    # N (number of colors/regions)\\n    # For each region i:\\n    #   M_i (number of cells in region i)\\n    #   List of cells (r, c) or adjacency relations\\n    # Since the exact format is variable, we implement a robust parser for adjacency lists.\\n    \\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    ptr = 0\\n    try:\\n        num_regions = int(input_data[ptr])\\n        ptr += 1\\n    except:\\n        return\\n\\n    regions = []\\n    for i in range(num_regions):\\n        num_cells = int(input_data[ptr])\\n        ptr += 1\\n        cells = []\\n        for _ in range(num_cells):\\n            r = int(input_data[ptr])\\n            c = int(input_data[ptr+1])\\n            cells.append((r, c))\\n            ptr += 2\\n        regions.append(cells)\\n\\n    # --- Solver Logic: Simulated Annealing with Local Search ---\\n    # Goal: Place regions on 50x50 grid to maximize empty cells.\\n    # Constraint: Adjacency and Connectivity.\\n    \\n    # State representation: grid[50][50] storing region ID or 0 for empty.\\n    grid = [[0 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]\\n    \\n    # Initial Placement: Greedy approach\\n    # We try to place regions in a compact manner.\\n    current_empty = GRID_SIZE * GRID_SIZE\\n    \\n    def get_neighbors(r, c):\\n        for dr, dc in [(0,1), (0,-1), (1,0), (-1,0)]:\\n            nr, nc = r + dr, c + dc\\n            if 0 <= nr < GRID_SIZE and 0 <= nc < GRID_SIZE:\\n                yield nr, nc\\n\\n    def is_valid(region_idx, new_cells):\\n        # Check bounds and collisions\\n        temp_cells = set(new_cells)\\n        for r, c in temp_cells:\\n            if not (0 <= r < GRID_SIZE and 0 <= c < GRID_SIZE):\\n                return False\\n            if grid[r][c] != 0 and grid[r][c] != region_idx + 1:\\n                return False\\n        \\n        # Check connectivity (BFS/DFS)\\n        if not temp_cells:\\n            return True\\n        start = next(iter(temp_cells))\\n        visited = {start}\\n        stack = [start]\\n        while stack:\\n"
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775530060-FPkfEUsVXPvbkk5tl0Fq",
+              "object": "chat.completion",
+              "created": 1775530060,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Novita",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n\"schema_name\": \"eywa_node_response\",\n\"schema_version\": \"v1\",\n\"orchestration_decision\": \"execute_locally\",\n\"decision_notes\": \"The problem is a complex spatial optimization task (packing colored regions on a grid while maintaining adjacency and connectivity). I will provide a high-performance Simulated Annealing solver designed for this specific class of topological packing problems.\",\n\"response\": \"FINAL_ANSWER: \\nimport sys\\nimport random\\nimport math\\nimport time\\n\\n# --- Problem Constants ---\\nGRID_SIZE = 50\\n\\ndef solve():\\n    # --- Input Parsing ---\\n    # Expected input format: \\n    # N (number of colors/regions)\\n    # For each region i:\\n    #   M_i (number of cells in region i)\\n    #   List of cells (r, c) or adjacency relations\\n    # Since the exact format is variable, we implement a robust parser for adjacency lists.\\n    \\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    ptr = 0\\n    try:\\n        num_regions = int(input_data[ptr])\\n        ptr += 1\\n    except:\\n        return\\n\\n    regions = []\\n    for i in range(num_regions):\\n        num_cells = int(input_data[ptr])\\n        ptr += 1\\n        cells = []\\n        for _ in range(num_cells):\\n            r = int(input_data[ptr])\\n            c = int(input_data[ptr+1])\\n            cells.append((r, c))\\n            ptr += 2\\n        regions.append(cells)\\n\\n    # --- Solver Logic: Simulated Annealing with Local Search ---\\n    # Goal: Place regions on 50x50 grid to maximize empty cells.\\n    # Constraint: Adjacency and Connectivity.\\n    \\n    # State representation: grid[50][50] storing region ID or 0 for empty.\\n    grid = [[0 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]\\n    \\n    # Initial Placement: Greedy approach\\n    # We try to place regions in a compact manner.\\n    current_empty = GRID_SIZE * GRID_SIZE\\n    \\n    def get_neighbors(r, c):\\n        for dr, dc in [(0,1), (0,-1), (1,0), (-1,0)]:\\n            nr, nc = r + dr, c + dc\\n            if 0 <= nr < GRID_SIZE and 0 <= nc < GRID_SIZE:\\n                yield nr, nc\\n\\n    def is_valid(region_idx, new_cells):\\n        # Check bounds and collisions\\n        temp_cells = set(new_cells)\\n        for r, c in temp_cells:\\n            if not (0 <= r < GRID_SIZE and 0 <= c < GRID_SIZE):\\n                return False\\n            if grid[r][c] != 0 and grid[r][c] != region_idx + 1:\\n                return False\\n        \\n        # Check connectivity (BFS/DFS)\\n        if not temp_cells:\\n            return True\\n        start = next(iter(temp_cells))\\n        visited = {start}\\n        stack = [start]\\n        while stack:\\n\"\n}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 932,
+                "completion_tokens": 796,
+                "total_tokens": 1728,
+                "cost": 0.00043956,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 128,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00043956,
+                  "upstream_inference_prompt_cost": 0.00012116,
+                  "upstream_inference_completions_cost": 0.0003184
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\n\"schema_name\": \"eywa_node_response\",\n\"schema_version\": \"v1\",\n\"orchestration_decision\": \"execute_locally\",\n\"decision_notes\": \"The problem is a complex spatial optimization task (packing colored regions on a grid while maintaining adjacency and connectivity). I will provide a high-performance Simulated Annealing solver designed for this specific class of topological packing problems.\",\n\"response\": \"FINAL_ANSWER: \\nimport sys\\nimport random\\nimport math\\nimport time\\n\\n# --- Problem Constants ---\\nGRID_SIZE = 50\\n\\ndef solve():\\n    # --- Input Parsing ---\\n    # Expected input format: \\n    # N (number of colors/regions)\\n    # For each region i:\\n    #   M_i (number of cells in region i)\\n    #   List of cells (r, c) or adjacency relations\\n    # Since the exact format is variable, we implement a robust parser for adjacency lists.\\n    \\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    ptr = 0\\n    try:\\n        num_regions = int(input_data[ptr])\\n        ptr += 1\\n    except:\\n        return\\n\\n    regions = []\\n    for i in range(num_regions):\\n        num_cells = int(input_data[ptr])\\n        ptr += 1\\n        cells = []\\n        for _ in range(num_cells):\\n            r = int(input_data[ptr])\\n            c = int(input_data[ptr+1])\\n            cells.append((r, c))\\n            ptr += 2\\n        regions.append(cells)\\n\\n    # --- Solver Logic: Simulated Annealing with Local Search ---\\n    # Goal: Place regions on 50x50 grid to maximize empty cells.\\n    # Constraint: Adjacency and Connectivity.\\n    \\n    # State representation: grid[50][50] storing region ID or 0 for empty.\\n    grid = [[0 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]\\n    \\n    # Initial Placement: Greedy approach\\n    # We try to place regions in a compact manner.\\n    current_empty = GRID_SIZE * GRID_SIZE\\n    \\n    def get_neighbors(r, c):\\n        for dr, dc in [(0,1), (0,-1), (1,0), (-1,0)]:\\n            nr, nc = r + dr, c + dc\\n            if 0 <= nr < GRID_SIZE and 0 <= nc < GRID_SIZE:\\n                yield nr, nc\\n\\n    def is_valid(region_idx, new_cells):\\n        # Check bounds and collisions\\n        temp_cells = set(new_cells)\\n        for r, c in temp_cells:\\n            if not (0 <= r < GRID_SIZE and 0 <= c < GRID_SIZE):\\n                return False\\n            if grid[r][c] != 0 and grid[r][c] != region_idx + 1:\\n                return False\\n        \\n        # Check connectivity (BFS/DFS)\\n        if not temp_cells:\\n            return True\\n        start = next(iter(temp_cells))\\n        visited = {start}\\n        stack = [start]\\n        while stack:\\n\"\n}",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "execute_locally",
+              "decision_notes": "The problem is a complex spatial optimization task (packing colored regions on a grid while maintaining adjacency and connectivity). I will provide a high-performance Simulated Annealing solver designed for this specific class of topological packing problems.",
+              "response": "FINAL_ANSWER: \nimport sys\nimport random\nimport math\nimport time\n\n# --- Problem Constants ---\nGRID_SIZE = 50\n\ndef solve():\n    # --- Input Parsing ---\n    # Expected input format: \n    # N (number of colors/regions)\n    # For each region i:\n    #   M_i (number of cells in region i)\n    #   List of cells (r, c) or adjacency relations\n    # Since the exact format is variable, we implement a robust parser for adjacency lists.\n    \n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    ptr = 0\n    try:\n        num_regions = int(input_data[ptr])\n        ptr += 1\n    except:\n        return\n\n    regions = []\n    for i in range(num_regions):\n        num_cells = int(input_data[ptr])\n        ptr += 1\n        cells = []\n        for _ in range(num_cells):\n            r = int(input_data[ptr])\n            c = int(input_data[ptr+1])\n            cells.append((r, c))\n            ptr += 2\n        regions.append(cells)\n\n    # --- Solver Logic: Simulated Annealing with Local Search ---\n    # Goal: Place regions on 50x50 grid to maximize empty cells.\n    # Constraint: Adjacency and Connectivity.\n    \n    # State representation: grid[50][50] storing region ID or 0 for empty.\n    grid = [[0 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]\n    \n    # Initial Placement: Greedy approach\n    # We try to place regions in a compact manner.\n    current_empty = GRID_SIZE * GRID_SIZE\n    \n    def get_neighbors(r, c):\n        for dr, dc in [(0,1), (0,-1), (1,0), (-1,0)]:\n            nr, nc = r + dr, c + dc\n            if 0 <= nr < GRID_SIZE and 0 <= nc < GRID_SIZE:\n                yield nr, nc\n\n    def is_valid(region_idx, new_cells):\n        # Check bounds and collisions\n        temp_cells = set(new_cells)\n        for r, c in temp_cells:\n            if not (0 <= r < GRID_SIZE and 0 <= c < GRID_SIZE):\n                return False\n            if grid[r][c] != 0 and grid[r][c] != region_idx + 1:\n                return False\n        \n        # Check connectivity (BFS/DFS)\n        if not temp_cells:\n            return True\n        start = next(iter(temp_cells))\n        visited = {start}\n        stack = [start]\n        while stack:",
+              "result_type": "summary"
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "execute_locally",
+          "decision_notes": "The problem is a complex spatial optimization task (packing colored regions on a grid while maintaining adjacency and connectivity). I will provide a high-performance Simulated Annealing solver designed for this specific class of topological packing problems.",
+          "response": "FINAL_ANSWER: \nimport sys\nimport random\nimport math\nimport time\n\n# --- Problem Constants ---\nGRID_SIZE = 50\n\ndef solve():\n    # --- Input Parsing ---\n    # Expected input format: \n    # N (number of colors/regions)\n    # For each region i:\n    #   M_i (number of cells in region i)\n    #   List of cells (r, c) or adjacency relations\n    # Since the exact format is variable, we implement a robust parser for adjacency lists.\n    \n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    ptr = 0\n    try:\n        num_regions = int(input_data[ptr])\n        ptr += 1\n    except:\n        return\n\n    regions = []\n    for i in range(num_regions):\n        num_cells = int(input_data[ptr])\n        ptr += 1\n        cells = []\n        for _ in range(num_cells):\n            r = int(input_data[ptr])\n            c = int(input_data[ptr+1])\n            cells.append((r, c))\n            ptr += 2\n        regions.append(cells)\n\n    # --- Solver Logic: Simulated Annealing with Local Search ---\n    # Goal: Place regions on 50x50 grid to maximize empty cells.\n    # Constraint: Adjacency and Connectivity.\n    \n    # State representation: grid[50][50] storing region ID or 0 for empty.\n    grid = [[0 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]\n    \n    # Initial Placement: Greedy approach\n    # We try to place regions in a compact manner.\n    current_empty = GRID_SIZE * GRID_SIZE\n    \n    def get_neighbors(r, c):\n        for dr, dc in [(0,1), (0,-1), (1,0), (-1,0)]:\n            nr, nc = r + dr, c + dc\n            if 0 <= nr < GRID_SIZE and 0 <= nc < GRID_SIZE:\n                yield nr, nc\n\n    def is_valid(region_idx, new_cells):\n        # Check bounds and collisions\n        temp_cells = set(new_cells)\n        for r, c in temp_cells:\n            if not (0 <= r < GRID_SIZE and 0 <= c < GRID_SIZE):\n                return False\n            if grid[r][c] != 0 and grid[r][c] != region_idx + 1:\n                return False\n        \n        # Check connectivity (BFS/DFS)\n        if not temp_cells:\n            return True\n        start = next(iter(temp_cells))\n        visited = {start}\n        stack = [start]\n        while stack:",
+          "result_type": "summary"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1357,
+        "completion_tokens": 1596,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 128,
+        "total_tokens": 2953,
+        "cost_usd": 0.00081481,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775530053-ceRSzEdgr1XWyMMcrIap",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00037525
+            },
+            {
+              "response_id": "gen-1775530060-FPkfEUsVXPvbkk5tl0Fq",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00043956
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

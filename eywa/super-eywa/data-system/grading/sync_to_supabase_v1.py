@@ -21,16 +21,7 @@ REPO_ROOT = THIS_DIR.parents[1]
 if str(THIS_DIR) not in sys.path:
     sys.path.insert(0, str(THIS_DIR))
 
-from grading_methods.simple_grade_v1 import parse_question_file  # noqa: E402
-
-
-AUTO_GRADED_QUESTION_IDS = {
-    "architecture-derived-B4-hensel-lifting-verification",
-    "architecture-derived-B5-combinatorial-probability-random-chords",
-    "architecture-derived-B6-binary-representation-minimization",
-    "architecture-derived-B10-mean-field-lattice-gas-occupancy",
-    "architecture-derived-B11-board-game-rule-chaining",
-}
+from question_bank_v1 import load_question_bank_catalog  # noqa: E402
 
 
 class SupabaseSyncError(RuntimeError):
@@ -135,28 +126,23 @@ def sync_question_bank(*, config: dict[str, str]) -> None:
 
 
 def build_question_bank_rows() -> list[dict[str, Any]]:
-    question_dir = THIS_DIR / "test-questions"
+    catalog = load_question_bank_catalog()
     rows: list[dict[str, Any]] = []
-    for path in sorted(question_dir.glob("*.md")):
-        if path.name in {"README.md", "questions-thoughts.md"}:
-            continue
-        question = parse_question_file(path)
-        grading_text = question.sections.get("grading", "")
+    for question in catalog.get("questions") or []:
+        grading_text = str(question.get("grading_text") or "")
         rows.append(
             {
-                "question_id": question.question_id,
-                "title": question.title,
-                "family": infer_question_family(path.name),
-                "question_file": str(path),
-                "has_question": "question" in question.sections,
-                "has_task": "task" in question.sections,
-                "has_correct_answer": bool(question.sections.get("correct_answer", "").strip()),
+                "question_id": question["question_id"],
+                "title": question["title"],
+                "family": question["family"],
+                "question_file": question["source_file"],
+                "has_question": question.get("entry_type") == "reasoning",
+                "has_task": question.get("entry_type") == "coding",
+                "has_correct_answer": bool(str(question.get("correct_answer") or "").strip()),
                 "grading_text": grading_text,
-                "intended_grading_mode": infer_intended_grading_mode(grading_text),
-                "currently_auto_graded": question.question_id in AUTO_GRADED_QUESTION_IDS,
-                "source_json": {
-                    "sections": question.sections,
-                },
+                "intended_grading_mode": question.get("grader_type") or infer_intended_grading_mode(grading_text),
+                "currently_auto_graded": bool(question.get("auto_graded_now")),
+                "source_json": question,
             }
         )
     return rows
@@ -178,6 +164,16 @@ def sync_grading_record(*, config: dict[str, str], grading_record_path: Path) ->
         "label": grading_record["label"],
         "runtime_provider": grading_record["runtime_provider"],
         "model": grading_record["model"],
+        "grader_provider": grading_record.get("grader_provider"),
+        "grader_model": grading_record.get("grader_model"),
+        "grading_method": grading_record.get("grading_method"),
+        "task_correct": grading_record.get("task_correct"),
+        "task_score": grading_record.get("task_score"),
+        "submission_compliance": grading_record.get("submission_compliance"),
+        "recovery_used": grading_record.get("recovery_used"),
+        "submission_source": grading_record.get("submission_source"),
+        "recovery_notes": grading_record.get("recovery_notes"),
+        "grading_trace_path": grading_record.get("grading_trace_path"),
         "reviewer_provider": grading_record.get("reviewer_provider"),
         "reviewer_model": grading_record.get("reviewer_model"),
         "validation_status": grading_record.get("validation_status"),
@@ -193,6 +189,8 @@ def sync_grading_record(*, config: dict[str, str], grading_record_path: Path) ->
         "final_result_excerpt": grading_record.get("final_result_excerpt"),
         "final_result_node_id": grading_record.get("final_result_node_id"),
         "final_result_path": grading_record.get("final_result_path"),
+        "submission_artifact_refs": grading_record.get("submission_artifact_refs") or [],
+        "coding_execution": grading_record.get("coding_execution") or {},
         "run_dir": grading_record.get("run_dir"),
         "grading_record_path": str(grading_record_path),
         "review_record_path": grading_record.get("review_record_path"),

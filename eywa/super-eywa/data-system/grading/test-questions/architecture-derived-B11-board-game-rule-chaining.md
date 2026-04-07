@@ -1,10 +1,12 @@
 # B11. Board Game Rule Chaining
 
-- Type: Architecture-derived
+- Family: architecture-derived
+- Entry Type: reasoning
 - Domain: Logic / rule-based reasoning
+- Grader Type: exact_normalized_string
 - Source: Architecture Exp, LOGIC-02
 
-## Question
+## Problem
 
 Given 45 rules of a complex board game, chain the rules forward and decide:
 Does the butterfly reveal a secret to the fish?
@@ -23,4 +25,4 @@ Binary:
 
 ## Notes
 
-- 
+-

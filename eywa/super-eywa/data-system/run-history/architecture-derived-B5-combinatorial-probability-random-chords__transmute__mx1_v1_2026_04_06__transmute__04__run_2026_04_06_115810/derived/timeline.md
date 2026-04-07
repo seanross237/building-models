@@ -1,0 +1,38 @@
+# Run Timeline
+
+1. [node_root] Run started for task: Solve this Super-Eywa grading-bank question.
+Question ID: architecture-derived-B5-combinatorial-probability-random-chords
+Title: B5. Combinatorial Probability (Random Chords)
+
+Problem:
+Disk divided into 4 quadrants.
+Add 25 random chords with endpoints in different quadrants.
+What is the expected number of regions?
+
+Grading target:
+Exact numerical match.
+
+Return format:
+FINAL_ANSWER: <your answer>
+JUSTIFICATION: <brief justification>
+2. [node_root] Node started: Solve this Super-Eywa grading-bank question.
+Question ID: architecture-derived-B5-combinatorial-probability-random-chords
+Title: B5. Combinatorial Probability (Random Chords)
+
+Problem:
+Disk divided into 4 quadrants.
+Add 25 random chords with endpoints in different quadrants.
+What is the expected number of regions?
+
+Grading target:
+Exact numerical match.
+
+Return format:
+FINAL_ANSWER: <your answer>
+JUSTIFICATION: <brief justification>
+3. [node_root] Node recruited 1 helper(s)
+4. [node_root_helper_01] Node started: Let D be a disk divided into 4 quadrants Q1, Q2, Q3, Q4. Let n = 25 be the number of chords. Each chord C_i (for i = 1 to n) is defined by two endpoints p_{i,1} and p_{i,2} chosen uniformly and independently from the boundary of the disk, subject to the constraint that p_{i,1} and p_{i,2} must belong to different quadrants. Let X be the random variable representing the number of regions formed by these n chords. Using Euler's formula for planar graphs, the number of regions R is given by R = 1 + V_int + E_int, where V_int is the number of intersection points of the chords inside the disk and E_int is the number of chords (since each chord is an edge in the graph sense, but we must account for the segments created by intersections). More precisely, for n chords, R = 1 + n + I, where I is the number of intersection points inside the disk, provided no three chords are concurrent. Since the endpoints are chosen from continuous distributions, the probability of three chords being concurrent is zero. Therefore, the problem reduces to finding E[R] = 1 + n + E[I]. Let I_ij be an indicator variable that is 1 if chord C_i and chord C_j intersect, and 0 otherwise. Then I = sum_{1 <= i < j <= n} I_ij. By linearity of expectation, E[I] = (n choose 2) * P(C_i and C_j intersect). The core task is to calculate P(C_i and C_j intersect) given the quadrant constraint: endpoints of a chord must be in different quadrants. Let the quadrants be represented by intervals [0, pi/2), [pi/2, pi), [pi, 3pi/2), and [3pi/2, 2pi). A chord is defined by (a, b) where a and b are in different intervals. Calculate the probability that two such chords (a, b) and (c, d) intersect.
+5. [node_root_helper_01] Node completed with action report_success
+6. [node_root_helper_01] Node wrote final output for run architecture-derived-B5-combinatorial-probability-random-chords__transmute__mx1_v1_2026_04_06__transmute__04__run_2026_04_06_115810
+7. [node_root] Node completed with action recruit_help
+8. [node_root] Run completed with 2 node(s)

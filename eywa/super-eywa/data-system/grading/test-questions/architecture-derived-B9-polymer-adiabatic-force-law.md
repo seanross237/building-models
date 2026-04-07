@@ -1,10 +1,12 @@
 # B9. Polymer Adiabatic Force Law
 
-- Type: Architecture-derived
+- Family: architecture-derived
+- Entry Type: reasoning
 - Domain: Physics / statistical mechanics
+- Grader Type: manual_exact
 - Source: Architecture Exp, SCI-04
 
-## Question
+## Problem
 
 Freely jointed polymer chain with n mass points joined by struts of length l.
 What is the force law F(x) when thermally isolated?
@@ -24,4 +26,4 @@ Sign-explicit prompting was needed.
 
 ## Notes
 
-- 
+-

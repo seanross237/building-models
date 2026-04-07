@@ -25,3 +25,28 @@
 - Late in the loop, the tutor generated a prompt whose JSON scaffold had drifted from the `transmute` family toward `execute_locally`.
 - Fixed by normalizing any applied tutor prompt back onto the family’s canonical scaffold before it becomes the loop’s next prompt.
 - Added a test so future loops cannot silently drift prompt families this way.
+
+## B6 Clean Guarded Rerun
+
+- Cleared the old B6 local MX1 artifacts for the contaminated `live_b6_transmute_v*` and `parallel_b6_delegate_v1` loops.
+- Added a family-level prompt guard for MX1 tutor recommendations:
+  - tutor instructions now explicitly ask for reusable family prompts rather than question-specific rewrites
+  - prompt application now detects question-specific guidance (for example `Problem:` / `Subproblem 1:` framing or fixed decomposition-count instructions) and coerces it back to the family starter guidance
+- Ran two fresh B6 loops with new labels:
+  - `guarded_b6_transmute_v1`
+  - `guarded_b6_delegate_v1`
+- Clean rerun result:
+  - `transmute`: 10 of 10 wrong
+  - `delegate`: 10 of 10 wrong
+- This strongly suggests the earlier B6 `delegate` success was caused by question-specific overfitting in the prompt text rather than a robust family-level improvement.
+
+## B6 Guarded Rerun Extended To 20
+
+- Relaxed the guard so numbers are allowed in prompt text again, while still blocking explicit `Problem:` / `Subproblem:` framing and fixed helper-count directives.
+- Resumed both existing guarded B6 manifests to 20 iterations total so the tutor could see the full first 10 attempts in history.
+- Extended result:
+  - `transmute`: 20 of 20 wrong
+  - `delegate`: 3 of 20 correct (`13`, `17`, `20`)
+- Current read:
+  - `transmute` still shows no useful signal on B6
+  - `delegate` now has a weaker but real signal on B6 once the tutor is allowed to mention numerical stepping or bounded helper counts again, though it is still far from stable

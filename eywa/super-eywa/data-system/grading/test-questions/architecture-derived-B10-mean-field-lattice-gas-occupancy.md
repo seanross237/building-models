@@ -1,10 +1,12 @@
 # B10. Mean-Field Lattice Gas Occupancy
 
-- Type: Architecture-derived
+- Family: architecture-derived
+- Entry Type: reasoning
 - Domain: Chemistry / statistical mechanics
+- Grader Type: numeric_tolerance
 - Source: Architecture Exp, SCI-08
 
-## Question
+## Problem
 
 Grand canonical ensemble, mean-field approximation.
 
@@ -33,4 +35,4 @@ No architecture fully solved it.
 
 ## Notes
 
-- 
+-

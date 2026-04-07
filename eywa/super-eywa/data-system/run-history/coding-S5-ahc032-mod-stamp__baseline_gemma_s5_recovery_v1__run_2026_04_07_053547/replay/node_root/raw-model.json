@@ -1,0 +1,244 @@
+{
+  "provider": "openrouter",
+  "note": "Per-turn provider payloads, authored JSON, and compiled outputs are recorded here.",
+  "steps": [
+    {
+      "step": 1,
+      "note": "authored local execution deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 1\nNode depth: 0\nAllowed decisions: ['execute_locally']\nPrompt family: execute\nBase header prompt: ''\nSelected prompt text:\nYou are going to solve the following question yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nYou are going to solve the following question yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\n\nQuestion:\nSolve this Super-Eywa coding benchmark.\nQuestion ID: coding-S5-ahc032-mod-stamp\nTitle: S5. AHC032 / Mod Stamp\n\nProblem:\n# AHC032 / Mod Stamp\n\nWrite `main.py`.\n\nYou are given a `9 x 9` board of integers and `M = 20` different `3 x 3` stamps.\nYou may place at most `K = 81` stamps.\n\n## Objective\n\n- Each placement chooses a stamp index `m` and a top-left board position `(i, j)`.\n- The chosen `3 x 3` stamp is added to the board modulo `998244353`.\n- The score is the sum of all final board entries.\n- Higher is better.\n\n## Input\n\n- Line 1: `N M K`\n- Next `N` lines: the initial board\n- Then for each stamp: `3` lines describing the stamp entries\n\n## Output\n\n- First line: `L`, the number of placements, with `0 <= L <= K`\n- Then `L` lines of `m i j`\n- `m` is the stamp index\n- `(i, j)` is the top-left placement position, with the full `3 x 3` stamp inside the board\n\n## Notes\n\n- This v1 packet uses the official AtCoder visualizer on three bundled public instances.\n\nSubmission contract:\n- Return a single Python submission file named main.py.\n- Read from stdin and write to stdout.\n- Put the full file content in the artifacts list of your execute_locally JSON response.\n- Use the response field only for a brief submission summary.\n- Do not wrap the code in markdown fences inside artifacts.\n\nGrading target:\nScore is the sum of final cell values modulo 998244353.\nHigher is better.",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "execute_locally",
+        "decision_notes": "I will implement a greedy algorithm that iteratively selects the stamp and position that provides the maximum increase in the total sum of the board, while respecting the modulo arithmetic and the limit K.",
+        "response": "Greedy implementation for AHC032 / Mod Stamp.",
+        "result_type": "code_submission",
+        "artifacts": [
+          {
+            "path": "main.py",
+            "content": "import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    ptr = 0\n    N = int(input_data[ptr]); ptr += 1\n    M = int(input_data[ptr]); ptr += 1\n    K = int(input_data[ptr]); ptr += 1\n    \n    MOD = 998244353\n    \n    board = []\n    for i in range(N):\n        row = []\n        for j in range(N):\n            row.append(int(input_data[ptr]))\n            ptr += 1\n        board.append(row)\n        \n    stamps = []\n    for m in range(M):\n        stamp = []\n        for i in range(3):\n            row = []\n            for j in range(3):\n                row.append(int(input_data[ptr]))\n                ptr += 1\n            stamp.append(row)\n        stamps.append(stamp)\n\n    placements = []\n    \n    for _ in range(K):\n        best_gain = -float('inf')\n        best_move = None\n        \n        for m in range(M):\n            for i in range(N - 2):\n                for j in range(N - 2):\n                    current_gain = 0\n                    for di in range(3):\n                        for dj in range(3):\n                            old_val = board[i + di][j + dj]\n                            new_val = (old_val + stamps[m][di][dj]) % MOD\n                            current_gain += (new_val - old_val)\n                    \n                    if current_gain > best_gain:\n                        best_gain = current_gain\n                        best_move = (m, i, j)\n        \n        if best_move and best_gain > 0:\n            m, i, j = best_move\n            placements.append((m, i, j))\n            for di in range(3):\n                for dj in range(3):\n                    board[i + di][j + dj] = (board[i + di][j + dj] + stamps[m][di][dj]) % MOD\n\n    for m, i, j in placements:\n        print(f\"{m} {i} {j}\")\n\nsolve()"
+          }
+        ]
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "coding-S5-ahc032-mod-stamp__baseline_gemma_s5_recovery_v1__run_2026_04_07_053547",
+        "node_id": "node_root",
+        "action_type": "report_success",
+        "results": [
+          {
+            "result_type": "code_submission",
+            "content": "Greedy implementation for AHC032 / Mod Stamp.",
+            "attachment_refs": [
+              "artifacts/node_root/turn_01/main.py"
+            ]
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "success_report",
+            "target": {
+              "target_type": "final_output",
+              "target_ref": "run_final_output"
+            },
+            "message": "Greedy implementation for AHC032 / Mod Stamp.",
+            "attachment_refs": [
+              "artifacts/node_root/turn_01/main.py"
+            ]
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "You are going to solve the following question yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\n\nQuestion:\nSolve this Super-Eywa coding benchmark.\nQuestion ID: coding-S5-ahc032-mod-stamp\nTitle: S5. AHC032 / Mod Stamp\n\nProblem:\n# AHC032 / Mod Stamp\n\nWrite `main.py`.\n\nYou are given a `9 x 9` board of integers and `M = 20` different `3 x 3` stamps.\nYou may place at most `K = 81` stamps.\n\n## Objective\n\n- Each placement chooses a stamp index `m` and a top-left board position `(i, j)`.\n- The chosen `3 x 3` stamp is added to the board modulo `998244353`.\n- The score is the sum of all final board entries.\n- Higher is better.\n\n## Input\n\n- Line 1: `N M K`\n- Next `N` lines: the initial board\n- Then for each stamp: `3` lines describing the stamp entries\n\n## Output\n\n- First line: `L`, the number of placements, with `0 <= L <= K`\n- Then `L` lines of `m i j`\n- `m` is the stamp index\n- `(i, j)` is the top-left placement position, with the full `3 x 3` stamp inside the board\n\n## Notes\n\n- This v1 packet uses the official AtCoder visualizer on three bundled public instances.\n\nSubmission contract:\n- Return a single Python submission file named main.py.\n- Read from stdin and write to stdout.\n- Put the full file content in the artifacts list of your execute_locally JSON response.\n- Use the response field only for a brief submission summary.\n- Do not wrap the code in markdown fences inside artifacts.\n\nGrading target:\nScore is the sum of final cell values modulo 998244353.\nHigher is better."
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775540148-e5V11Xe9rYsgs1jxK2cb",
+              "object": "chat.completion",
+              "created": 1775540148,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Venice",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "length",
+                  "native_finish_reason": "length",
+                  "message": {
+                    "role": "assistant",
+                    "content": "```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"I will implement a greedy algorithm that iteratively selects the stamp and position that provides the maximum increase in the total sum of the board, while respecting the modulo arithmetic and the limit K.\",\n  \"response\": \"Greedy implementation for AHC032 / Mod Stamp.\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    ptr = 0\\n    N = int(input_data[ptr]); ptr += 1\\n    M = int(input_data[ptr]); ptr += 1\\n    K = int(input_data[ptr]); ptr += 1\\n    \\n    MOD = 998244353\\n    \\n    board = []\\n    for i in range(N):\\n        row = []\\n        for j in range(N):\\n            row.append(int(input_data[ptr]))\\n            ptr += 1\\n        board.append(row)\\n        \\n    stamps = []\\n    for m in range(M):\\n        stamp = []\\n        for i in range(3):\\n            row = []\\n            for j in range(3):\\n                row.append(int(input_data[ptr]))\\n                ptr += 1\\n            stamp.append(row)\\n        stamps.append(stamp)\\n\\n    placements = []\\n    \\n    # Greedy approach: in each step, find the stamp and position (i, j)\\n    # that maximizes the sum of the board after the addition.\\n    # Since we add modulo 998244353, we want to avoid wrapping around if possible,\\n    # or wrap around to a very large value. \\n    # However, the problem says 'added to the board modulo 998244353'.\\n    # This usually means (board[i][j] + stamp[di][dj]) % MOD.\\n    \\n    for _ in range(K):\\n        best_gain = -float('inf')\\n        best_move = None\\n        \\n        for m in range(M):\\n            for i in range(N - 2):\\n                for j in range(N - 2):\\n                    current_gain = 0\\n                    for di in range(3):\\n                        for dj in range(3):\\n                            old_val = board[i + di][j + dj]\\n                            new_val = (old_val + stamps[m][di][dj]) % MOD\\n                            current_gain += (new_val - old_val)\\n                    \\n                    if current_gain > best_gain:\\n                        best_gain = current_gain\\n                        best_move = (m, i, j)\\n        \\n        if best_move and best_gain > 0:\\n            m, i, j = best_move\\n            placements.append((m, i, j))\\n            for di in range(3):\\n                for dj in range(3):\\n                    board[i + di][j + dj]",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 574,
+                "completion_tokens": 800,
+                "total_tokens": 1374,
+                "cost": 0.000493275,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.000493275,
+                  "upstream_inference_prompt_cost": 9.3275e-05,
+                  "upstream_inference_completions_cost": 0.0004
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"I will implement a greedy algorithm that iteratively selects the stamp and position that provides the maximum increase in the total sum of the board, while respecting the modulo arithmetic and the limit K.\",\n  \"response\": \"Greedy implementation for AHC032 / Mod Stamp.\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    ptr = 0\\n    N = int(input_data[ptr]); ptr += 1\\n    M = int(input_data[ptr]); ptr += 1\\n    K = int(input_data[ptr]); ptr += 1\\n    \\n    MOD = 998244353\\n    \\n    board = []\\n    for i in range(N):\\n        row = []\\n        for j in range(N):\\n            row.append(int(input_data[ptr]))\\n            ptr += 1\\n        board.append(row)\\n        \\n    stamps = []\\n    for m in range(M):\\n        stamp = []\\n        for i in range(3):\\n            row = []\\n            for j in range(3):\\n                row.append(int(input_data[ptr]))\\n                ptr += 1\\n            stamp.append(row)\\n        stamps.append(stamp)\\n\\n    placements = []\\n    \\n    # Greedy approach: in each step, find the stamp and position (i, j)\\n    # that maximizes the sum of the board after the addition.\\n    # Since we add modulo 998244353, we want to avoid wrapping around if possible,\\n    # or wrap around to a very large value. \\n    # However, the problem says 'added to the board modulo 998244353'.\\n    # This usually means (board[i][j] + stamp[di][dj]) % MOD.\\n    \\n    for _ in range(K):\\n        best_gain = -float('inf')\\n        best_move = None\\n        \\n        for m in range(M):\\n            for i in range(N - 2):\\n                for j in range(N - 2):\\n                    current_gain = 0\\n                    for di in range(3):\\n                        for dj in range(3):\\n                            old_val = board[i + di][j + dj]\\n                            new_val = (old_val + stamps[m][di][dj]) % MOD\\n                            current_gain += (new_val - old_val)\\n                    \\n                    if current_gain > best_gain:\\n                        best_gain = current_gain\\n                        best_move = (m, i, j)\\n        \\n        if best_move and best_gain > 0:\\n            m, i, j = best_move\\n            placements.append((m, i, j))\\n            for di in range(3):\\n                for dj in range(3):\\n                    board[i + di][j + dj]",
+            "parse_error": null,
+            "parsed_response": null
+          },
+          {
+            "phase": "json_repair",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": "You repair invalid Super-Eywa node responses into strict JSON. Return only valid JSON."
+                },
+                {
+                  "role": "user",
+                  "content": "Rewrite the following content as valid JSON only for the eywa_node_response v1 schema. Allowed orchestration_decision values for this turn: execute_locally. Use the exact top-level fields required by eywa_node_response v1. Do not wrap the object under another key. Use plain text strings only. Do not use markdown, code fences, or backslashes.\n\nOriginal content:\n```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"I will implement a greedy algorithm that iteratively selects the stamp and position that provides the maximum increase in the total sum of the board, while respecting the modulo arithmetic and the limit K.\",\n  \"response\": \"Greedy implementation for AHC032 / Mod Stamp.\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    ptr = 0\\n    N = int(input_data[ptr]); ptr += 1\\n    M = int(input_data[ptr]); ptr += 1\\n    K = int(input_data[ptr]); ptr += 1\\n    \\n    MOD = 998244353\\n    \\n    board = []\\n    for i in range(N):\\n        row = []\\n        for j in range(N):\\n            row.append(int(input_data[ptr]))\\n            ptr += 1\\n        board.append(row)\\n        \\n    stamps = []\\n    for m in range(M):\\n        stamp = []\\n        for i in range(3):\\n            row = []\\n            for j in range(3):\\n                row.append(int(input_data[ptr]))\\n                ptr += 1\\n            stamp.append(row)\\n        stamps.append(stamp)\\n\\n    placements = []\\n    \\n    # Greedy approach: in each step, find the stamp and position (i, j)\\n    # that maximizes the sum of the board after the addition.\\n    # Since we add modulo 998244353, we want to avoid wrapping around if possible,\\n    # or wrap around to a very large value. \\n    # However, the problem says 'added to the board modulo 998244353'.\\n    # This usually means (board[i][j] + stamp[di][dj]) % MOD.\\n    \\n    for _ in range(K):\\n        best_gain = -float('inf')\\n        best_move = None\\n        \\n        for m in range(M):\\n            for i in range(N - 2):\\n                for j in range(N - 2):\\n                    current_gain = 0\\n                    for di in range(3):\\n                        for dj in range(3):\\n                            old_val = board[i + di][j + dj]\\n                            new_val = (old_val + stamps[m][di][dj]) % MOD\\n                            current_gain += (new_val - old_val)\\n                    \\n                    if current_gain > best_gain:\\n                        best_gain = current_gain\\n                        best_move = (m, i, j)\\n        \\n        if best_move and best_gain > 0:\\n            m, i, j = best_move\\n            placements.append((m, i, j))\\n            for di in range(3):\\n                for dj in range(3):\\n                    board[i + di][j + dj]"
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775540164-gb4X2k3q82gVkTd61sJz",
+              "object": "chat.completion",
+              "created": 1775540164,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Parasail",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n\"schema_name\": \"eywa_node_response\",\n\"schema_version\": \"v1\",\n\"orchestration_decision\": \"execute_locally\",\n\"decision_notes\": \"I will implement a greedy algorithm that iteratively selects the stamp and position that provides the maximum increase in the total sum of the board, while respecting the modulo arithmetic and the limit K.\",\n\"response\": \"Greedy implementation for AHC032 / Mod Stamp.\",\n\"result_type\": \"code_submission\",\n\"artifacts\": [\n{\n\"path\": \"main.py\",\n\"content\": \"import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    ptr = 0\\n    N = int(input_data[ptr]); ptr += 1\\n    M = int(input_data[ptr]); ptr += 1\\n    K = int(input_data[ptr]); ptr += 1\\n    \\n    MOD = 998244353\\n    \\n    board = []\\n    for i in range(N):\\n        row = []\\n        for j in range(N):\\n            row.append(int(input_data[ptr]))\\n            ptr += 1\\n        board.append(row)\\n        \\n    stamps = []\\n    for m in range(M):\\n        stamp = []\\n        for i in range(3):\\n            row = []\\n            for j in range(3):\\n                row.append(int(input_data[ptr]))\\n                ptr += 1\\n            stamp.append(row)\\n        stamps.append(stamp)\\n\\n    placements = []\\n    \\n    for _ in range(K):\\n        best_gain = -float('inf')\\n        best_move = None\\n        \\n        for m in range(M):\\n            for i in range(N - 2):\\n                for j in range(N - 2):\\n                    current_gain = 0\\n                    for di in range(3):\\n                        for dj in range(3):\\n                            old_val = board[i + di][j + dj]\\n                            new_val = (old_val + stamps[m][di][dj]) % MOD\\n                            current_gain += (new_val - old_val)\\n                    \\n                    if current_gain > best_gain:\\n                        best_gain = current_gain\\n                        best_move = (m, i, j)\\n        \\n        if best_move and best_gain > 0:\\n            m, i, j = best_move\\n            placements.append((m, i, j))\\n            for di in range(3):\\n                for dj in range(3):\\n                    board[i + di][j + dj] = (board[i + di][j + dj] + stamps[m][di][dj]) % MOD\\n\\n    for m, i, j in placements:\\n        print(f\\\"{m} {i} {j}\\\")\\n\\nsolve()\"\n}\n]\n}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 932,
+                "completion_tokens": 726,
+                "total_tokens": 1658,
+                "cost": 0.00041156,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00041156,
+                  "upstream_inference_prompt_cost": 0.00012116,
+                  "upstream_inference_completions_cost": 0.0002904
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\n\"schema_name\": \"eywa_node_response\",\n\"schema_version\": \"v1\",\n\"orchestration_decision\": \"execute_locally\",\n\"decision_notes\": \"I will implement a greedy algorithm that iteratively selects the stamp and position that provides the maximum increase in the total sum of the board, while respecting the modulo arithmetic and the limit K.\",\n\"response\": \"Greedy implementation for AHC032 / Mod Stamp.\",\n\"result_type\": \"code_submission\",\n\"artifacts\": [\n{\n\"path\": \"main.py\",\n\"content\": \"import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    ptr = 0\\n    N = int(input_data[ptr]); ptr += 1\\n    M = int(input_data[ptr]); ptr += 1\\n    K = int(input_data[ptr]); ptr += 1\\n    \\n    MOD = 998244353\\n    \\n    board = []\\n    for i in range(N):\\n        row = []\\n        for j in range(N):\\n            row.append(int(input_data[ptr]))\\n            ptr += 1\\n        board.append(row)\\n        \\n    stamps = []\\n    for m in range(M):\\n        stamp = []\\n        for i in range(3):\\n            row = []\\n            for j in range(3):\\n                row.append(int(input_data[ptr]))\\n                ptr += 1\\n            stamp.append(row)\\n        stamps.append(stamp)\\n\\n    placements = []\\n    \\n    for _ in range(K):\\n        best_gain = -float('inf')\\n        best_move = None\\n        \\n        for m in range(M):\\n            for i in range(N - 2):\\n                for j in range(N - 2):\\n                    current_gain = 0\\n                    for di in range(3):\\n                        for dj in range(3):\\n                            old_val = board[i + di][j + dj]\\n                            new_val = (old_val + stamps[m][di][dj]) % MOD\\n                            current_gain += (new_val - old_val)\\n                    \\n                    if current_gain > best_gain:\\n                        best_gain = current_gain\\n                        best_move = (m, i, j)\\n        \\n        if best_move and best_gain > 0:\\n            m, i, j = best_move\\n            placements.append((m, i, j))\\n            for di in range(3):\\n                for dj in range(3):\\n                    board[i + di][j + dj] = (board[i + di][j + dj] + stamps[m][di][dj]) % MOD\\n\\n    for m, i, j in placements:\\n        print(f\\\"{m} {i} {j}\\\")\\n\\nsolve()\"\n}\n]\n}",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "execute_locally",
+              "decision_notes": "I will implement a greedy algorithm that iteratively selects the stamp and position that provides the maximum increase in the total sum of the board, while respecting the modulo arithmetic and the limit K.",
+              "response": "Greedy implementation for AHC032 / Mod Stamp.",
+              "result_type": "code_submission",
+              "artifacts": [
+                {
+                  "path": "main.py",
+                  "content": "import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    ptr = 0\n    N = int(input_data[ptr]); ptr += 1\n    M = int(input_data[ptr]); ptr += 1\n    K = int(input_data[ptr]); ptr += 1\n    \n    MOD = 998244353\n    \n    board = []\n    for i in range(N):\n        row = []\n        for j in range(N):\n            row.append(int(input_data[ptr]))\n            ptr += 1\n        board.append(row)\n        \n    stamps = []\n    for m in range(M):\n        stamp = []\n        for i in range(3):\n            row = []\n            for j in range(3):\n                row.append(int(input_data[ptr]))\n                ptr += 1\n            stamp.append(row)\n        stamps.append(stamp)\n\n    placements = []\n    \n    for _ in range(K):\n        best_gain = -float('inf')\n        best_move = None\n        \n        for m in range(M):\n            for i in range(N - 2):\n                for j in range(N - 2):\n                    current_gain = 0\n                    for di in range(3):\n                        for dj in range(3):\n                            old_val = board[i + di][j + dj]\n                            new_val = (old_val + stamps[m][di][dj]) % MOD\n                            current_gain += (new_val - old_val)\n                    \n                    if current_gain > best_gain:\n                        best_gain = current_gain\n                        best_move = (m, i, j)\n        \n        if best_move and best_gain > 0:\n            m, i, j = best_move\n            placements.append((m, i, j))\n            for di in range(3):\n                for dj in range(3):\n                    board[i + di][j + dj] = (board[i + di][j + dj] + stamps[m][di][dj]) % MOD\n\n    for m, i, j in placements:\n        print(f\"{m} {i} {j}\")\n\nsolve()"
+                }
+              ]
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "execute_locally",
+          "decision_notes": "I will implement a greedy algorithm that iteratively selects the stamp and position that provides the maximum increase in the total sum of the board, while respecting the modulo arithmetic and the limit K.",
+          "response": "Greedy implementation for AHC032 / Mod Stamp.",
+          "result_type": "code_submission",
+          "artifacts": [
+            {
+              "path": "main.py",
+              "content": "import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    ptr = 0\n    N = int(input_data[ptr]); ptr += 1\n    M = int(input_data[ptr]); ptr += 1\n    K = int(input_data[ptr]); ptr += 1\n    \n    MOD = 998244353\n    \n    board = []\n    for i in range(N):\n        row = []\n        for j in range(N):\n            row.append(int(input_data[ptr]))\n            ptr += 1\n        board.append(row)\n        \n    stamps = []\n    for m in range(M):\n        stamp = []\n        for i in range(3):\n            row = []\n            for j in range(3):\n                row.append(int(input_data[ptr]))\n                ptr += 1\n            stamp.append(row)\n        stamps.append(stamp)\n\n    placements = []\n    \n    for _ in range(K):\n        best_gain = -float('inf')\n        best_move = None\n        \n        for m in range(M):\n            for i in range(N - 2):\n                for j in range(N - 2):\n                    current_gain = 0\n                    for di in range(3):\n                        for dj in range(3):\n                            old_val = board[i + di][j + dj]\n                            new_val = (old_val + stamps[m][di][dj]) % MOD\n                            current_gain += (new_val - old_val)\n                    \n                    if current_gain > best_gain:\n                        best_gain = current_gain\n                        best_move = (m, i, j)\n        \n        if best_move and best_gain > 0:\n            m, i, j = best_move\n            placements.append((m, i, j))\n            for di in range(3):\n                for dj in range(3):\n                    board[i + di][j + dj] = (board[i + di][j + dj] + stamps[m][di][dj]) % MOD\n\n    for m, i, j in placements:\n        print(f\"{m} {i} {j}\")\n\nsolve()"
+            }
+          ]
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1506,
+        "completion_tokens": 1526,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 0,
+        "total_tokens": 3032,
+        "cost_usd": 0.0009048350000000001,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775540148-e5V11Xe9rYsgs1jxK2cb",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.000493275
+            },
+            {
+              "response_id": "gen-1775540164-gb4X2k3q82gVkTd61sJz",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00041156
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,10 +1,12 @@
 # A9. Yang-Mills Mass Gap Proof Has Irreparable Gap
 
-- Type: Atlas-derived
+- Family: atlas-derived
+- Entry Type: reasoning
 - Domain: Mathematics / gauge theory
+- Grader Type: manual_exact
 - Source: Atlas Yang-Mills Validation mission
 
-## Question
+## Problem
 
 Is beta < 1/6 the correct mass gap threshold for lattice Yang-Mills, and does the B^2 formula proof hold?
 
@@ -26,4 +28,4 @@ Must identify the proof gap and provide an alternative route or derive the corre
 
 ## Notes
 
-- 
+-

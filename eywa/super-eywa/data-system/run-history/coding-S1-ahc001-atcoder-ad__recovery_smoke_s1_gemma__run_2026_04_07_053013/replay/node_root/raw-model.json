@@ -1,0 +1,244 @@
+{
+  "provider": "openrouter",
+  "note": "Per-turn provider payloads, authored JSON, and compiled outputs are recorded here.",
+  "steps": [
+    {
+      "step": 1,
+      "note": "authored local execution deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 1\nNode depth: 0\nAllowed decisions: ['execute_locally', 'report_problem']\nPrompt family: agent_chooses\nBase header prompt: ''\nSelected prompt text:\nChoose how to proceed on this turn. Valid orchestration decisions for this turn are: execute_locally, report_problem. Return exactly one JSON object matching one of these formats:\n{\n  \"execute_locally_example\": {\n    \"schema_name\": \"eywa_node_response\",\n    \"schema_version\": \"v1\",\n    \"orchestration_decision\": \"execute_locally\",\n    \"decision_notes\": \"optional string\",\n    \"response\": \"brief submission summary\",\n    \"result_type\": \"code_submission\",\n    \"artifacts\": [\n      {\n        \"path\": \"main.py\",\n        \"content\": \"full Python file contents as one escaped string\"\n      }\n    ]\n  },\n  \"report_problem_example\": {\n    \"schema_name\": \"eywa_node_response\",\n    \"schema_version\": \"v1\",\n    \"orchestration_decision\": \"report_problem\",\n    \"decision_notes\": \"optional string\",\n    \"response\": \"string\"\n  }\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nChoose how to proceed on this turn. Valid orchestration decisions for this turn are: execute_locally, report_problem. Return exactly one JSON object matching one of these formats:\n{\n  \"execute_locally_example\": {\n    \"schema_name\": \"eywa_node_response\",\n    \"schema_version\": \"v1\",\n    \"orchestration_decision\": \"execute_locally\",\n    \"decision_notes\": \"optional string\",\n    \"response\": \"brief submission summary\",\n    \"result_type\": \"code_submission\",\n    \"artifacts\": [\n      {\n        \"path\": \"main.py\",\n        \"content\": \"full Python file contents as one escaped string\"\n      }\n    ]\n  },\n  \"report_problem_example\": {\n    \"schema_name\": \"eywa_node_response\",\n    \"schema_version\": \"v1\",\n    \"orchestration_decision\": \"report_problem\",\n    \"decision_notes\": \"optional string\",\n    \"response\": \"string\"\n  }\n}\n\nQuestion:\nSolve this Super-Eywa coding benchmark.\nQuestion ID: coding-S1-ahc001-atcoder-ad\nTitle: S1. AHC001 / AtCoder Ad\n\nProblem:\n# AHC001 / AtCoder Ad\n\nWrite `main.py`.\n\nYou are given `N` advertisers.\nAdvertiser `i` requests a point `(x_i, y_i)` and a target area `r_i` inside a `10000 x 10000` square.\nOutput one axis-aligned rectangle for each advertiser.\n\n## Objective\n\n- Every rectangle must stay inside the board.\n- Rectangle `i` must contain its requested point `(x_i, y_i)`.\n- Rectangles must not overlap.\n- The score rewards making each rectangle area close to `r_i`.\n\n## Input\n\n- Line 1: `N`\n- Next `N` lines: `x_i y_i r_i`\n\n## Output\n\n- Print exactly `N` lines.\n- Line `i` must be `x1 y1 x2 y2` for advertiser `i`.\n- The rectangle is `[x1, x2) x [y1, y2)`.\n\n## Notes\n\n- A rectangle with invalid bounds or one that misses its required point receives no benefit.\n- Overlapping rectangles make the score collapse to zero.\n- This v1 packet uses the official AtCoder visualizer on three bundled public instances.\n\nSubmission contract:\n- Return a single Python submission file named main.py.\n- Read from stdin and write to stdout.\n- Put the full file content in the artifacts list of your execute_locally JSON response.\n- Use the response field only for a brief submission summary.\n- Do not wrap the code in markdown fences inside artifacts.\n\nGrading target:\nContinuous score from advertiser satisfaction.\nHigher is better.",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "execute_locally",
+        "decision_notes": "Implementing a greedy approach with rectangle expansion to maximize area while avoiding overlaps and staying within bounds.",
+        "response": "Submitting main.py with a greedy expansion strategy.",
+        "result_type": "code_submission",
+        "artifacts": [
+          {
+            "path": "main.py",
+            "content": "import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    N = int(input_data[0])\n    advertisers = []\n    idx = 1\n    for i in range(N):\n        x = int(input_data[idx])\n        y = int(input_data[idx+1])\n        r = int(input_data[idx+2])\n        advertisers.append({'id': i, 'x': x, 'y': y, 'r': r})\n        idx += 3\n\n    sorted_adv = sorted(advertisers, key=lambda a: a['r'], reverse=True)\n    results = [None] * N\n    occupied = []\n    BOARD_SIZE = 10000\n\n    def intersects(rect1, rect2):\n        x1_a, y1_a, x2_a, y2_a = rect1\n        x1_b, y1_b, x2_b, y2_b = rect2\n        return not (x2_a <= x1_b or x2_b <= x1_a or y2_a <= y1_b or y2_b <= y1_a)\n\n    for adv in sorted_adv:\n        target_x, target_y, target_r = adv['x'], adv['y'], adv['r']\n        best_rect = (target_x, target_y, target_x + 1, target_y + 1)\n        best_area = 1\n        curr_x1, curr_y1 = target_x, target_y\n        curr_x2, curr_y2 = target_x + 1, target_y + 1"
+          }
+        ]
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "coding-S1-ahc001-atcoder-ad__recovery_smoke_s1_gemma__run_2026_04_07_053013",
+        "node_id": "node_root",
+        "action_type": "report_success",
+        "results": [
+          {
+            "result_type": "code_submission",
+            "content": "Submitting main.py with a greedy expansion strategy.",
+            "attachment_refs": [
+              "artifacts/node_root/turn_01/main.py"
+            ]
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "success_report",
+            "target": {
+              "target_type": "final_output",
+              "target_ref": "run_final_output"
+            },
+            "message": "Submitting main.py with a greedy expansion strategy.",
+            "attachment_refs": [
+              "artifacts/node_root/turn_01/main.py"
+            ]
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Choose how to proceed on this turn. Valid orchestration decisions for this turn are: execute_locally, report_problem. Return exactly one JSON object matching one of these formats:\n{\n  \"execute_locally_example\": {\n    \"schema_name\": \"eywa_node_response\",\n    \"schema_version\": \"v1\",\n    \"orchestration_decision\": \"execute_locally\",\n    \"decision_notes\": \"optional string\",\n    \"response\": \"brief submission summary\",\n    \"result_type\": \"code_submission\",\n    \"artifacts\": [\n      {\n        \"path\": \"main.py\",\n        \"content\": \"full Python file contents as one escaped string\"\n      }\n    ]\n  },\n  \"report_problem_example\": {\n    \"schema_name\": \"eywa_node_response\",\n    \"schema_version\": \"v1\",\n    \"orchestration_decision\": \"report_problem\",\n    \"decision_notes\": \"optional string\",\n    \"response\": \"string\"\n  }\n}\n\nQuestion:\nSolve this Super-Eywa coding benchmark.\nQuestion ID: coding-S1-ahc001-atcoder-ad\nTitle: S1. AHC001 / AtCoder Ad\n\nProblem:\n# AHC001 / AtCoder Ad\n\nWrite `main.py`.\n\nYou are given `N` advertisers.\nAdvertiser `i` requests a point `(x_i, y_i)` and a target area `r_i` inside a `10000 x 10000` square.\nOutput one axis-aligned rectangle for each advertiser.\n\n## Objective\n\n- Every rectangle must stay inside the board.\n- Rectangle `i` must contain its requested point `(x_i, y_i)`.\n- Rectangles must not overlap.\n- The score rewards making each rectangle area close to `r_i`.\n\n## Input\n\n- Line 1: `N`\n- Next `N` lines: `x_i y_i r_i`\n\n## Output\n\n- Print exactly `N` lines.\n- Line `i` must be `x1 y1 x2 y2` for advertiser `i`.\n- The rectangle is `[x1, x2) x [y1, y2)`.\n\n## Notes\n\n- A rectangle with invalid bounds or one that misses its required point receives no benefit.\n- Overlapping rectangles make the score collapse to zero.\n- This v1 packet uses the official AtCoder visualizer on three bundled public instances.\n\nSubmission contract:\n- Return a single Python submission file named main.py.\n- Read from stdin and write to stdout.\n- Put the full file content in the artifacts list of your execute_locally JSON response.\n- Use the response field only for a brief submission summary.\n- Do not wrap the code in markdown fences inside artifacts.\n\nGrading target:\nContinuous score from advertiser satisfaction.\nHigher is better."
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775539816-ldbJEcOx8TCEElS7Klr2",
+              "object": "chat.completion",
+              "created": 1775539816,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Parasail",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "length",
+                  "native_finish_reason": "length",
+                  "message": {
+                    "role": "assistant",
+                    "content": "```json\n{\n  \"execute_locally_example\": {\n    \"schema_name\": \"eywa_node_response\",\n    \"schema_version\": \"v1\",\n    \"orchestration_decision\": \"execute_locally\",\n    \"decision_notes\": \"Implementing a greedy approach with rectangle expansion to maximize area while avoiding overlaps and staying within bounds.\",\n    \"response\": \"Submitting main.py with a greedy expansion strategy.\",\n    \"result_type\": \"code_submission\",\n    \"artifacts\": [\n      {\n        \"path\": \"main.py\",\n        \"content\": \"import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    N = int(input_data[0])\\n    advertisers = []\\n    idx = 1\\n    for i in range(N):\\n        x = int(input_data[idx])\\n        y = int(input_data[idx+1])\\n        r = int(input_data[idx+2])\\n        advertisers.append({'id': i, 'x': x, 'y': y, 'r': r})\\n        idx += 3\\n\\n    # Sort advertisers by target area descending to prioritize larger ones\\n    sorted_adv = sorted(advertisers, key=lambda a: a['r'], reverse=True)\\n    \\n    # Rectangles: (x1, y1, x2, y2)\\n    results = [None] * N\\n    # Occupied regions list: list of (x1, y1, x2, y2)\\n    occupied = []\\n\\n    BOARD_SIZE = 10000\\n\\n    def intersects(rect1, rect2):\\n        x1_a, y1_a, x2_a, y2_a = rect1\\n        x1_b, y1_b, x2_b, y2_b = rect2\\n        return not (x2_a <= x1_b or x2_b <= x1_a or y2_a <= y1_b or y2_b <= y1_a)\\n\\n    for adv in sorted_adv:\\n        target_x, target_y, target_r = adv['x'], adv['y'], adv['r']\\n        \\n        # Start with a minimal rectangle containing the point\\n        # We try to find a rectangle [x1, x2) x [y1, y2) such that \\n        # x1 <= target_x < x2 and y1 <= target_y < y2\\n        # and (x2-x1)*(y2-y1) is close to target_r\\n        \\n        best_rect = (target_x, target_y, target_x + 1, target_y + 1)\\n        best_area = 1\\n        \\n        # Heuristic: Try to expand in steps to find a good area\\n        # Since we need to avoid overlaps, we'll use a simple greedy expansion\\n        # We'll try to grow the rectangle symmetrically or towards empty space\\n        \\n        # Initial small rectangle\\n        curr_x1, curr_y1 = target_x, target_y\\n        curr_x2, curr_y2 = target_x + 1, target_y + 1\\n        \\n        # Try to expand the rectangle to reach",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 687,
+                "completion_tokens": 800,
+                "total_tokens": 1487,
+                "cost": 0.00040931,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00040931,
+                  "upstream_inference_prompt_cost": 8.931e-05,
+                  "upstream_inference_completions_cost": 0.00032
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "```json\n{\n  \"execute_locally_example\": {\n    \"schema_name\": \"eywa_node_response\",\n    \"schema_version\": \"v1\",\n    \"orchestration_decision\": \"execute_locally\",\n    \"decision_notes\": \"Implementing a greedy approach with rectangle expansion to maximize area while avoiding overlaps and staying within bounds.\",\n    \"response\": \"Submitting main.py with a greedy expansion strategy.\",\n    \"result_type\": \"code_submission\",\n    \"artifacts\": [\n      {\n        \"path\": \"main.py\",\n        \"content\": \"import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    N = int(input_data[0])\\n    advertisers = []\\n    idx = 1\\n    for i in range(N):\\n        x = int(input_data[idx])\\n        y = int(input_data[idx+1])\\n        r = int(input_data[idx+2])\\n        advertisers.append({'id': i, 'x': x, 'y': y, 'r': r})\\n        idx += 3\\n\\n    # Sort advertisers by target area descending to prioritize larger ones\\n    sorted_adv = sorted(advertisers, key=lambda a: a['r'], reverse=True)\\n    \\n    # Rectangles: (x1, y1, x2, y2)\\n    results = [None] * N\\n    # Occupied regions list: list of (x1, y1, x2, y2)\\n    occupied = []\\n\\n    BOARD_SIZE = 10000\\n\\n    def intersects(rect1, rect2):\\n        x1_a, y1_a, x2_a, y2_a = rect1\\n        x1_b, y1_b, x2_b, y2_b = rect2\\n        return not (x2_a <= x1_b or x2_b <= x1_a or y2_a <= y1_b or y2_b <= y1_a)\\n\\n    for adv in sorted_adv:\\n        target_x, target_y, target_r = adv['x'], adv['y'], adv['r']\\n        \\n        # Start with a minimal rectangle containing the point\\n        # We try to find a rectangle [x1, x2) x [y1, y2) such that \\n        # x1 <= target_x < x2 and y1 <= target_y < y2\\n        # and (x2-x1)*(y2-y1) is close to target_r\\n        \\n        best_rect = (target_x, target_y, target_x + 1, target_y + 1)\\n        best_area = 1\\n        \\n        # Heuristic: Try to expand in steps to find a good area\\n        # Since we need to avoid overlaps, we'll use a simple greedy expansion\\n        # We'll try to grow the rectangle symmetrically or towards empty space\\n        \\n        # Initial small rectangle\\n        curr_x1, curr_y1 = target_x, target_y\\n        curr_x2, curr_y2 = target_x + 1, target_y + 1\\n        \\n        # Try to expand the rectangle to reach",
+            "parse_error": null,
+            "parsed_response": null
+          },
+          {
+            "phase": "json_repair",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": "You repair invalid Super-Eywa node responses into strict JSON. Return only valid JSON."
+                },
+                {
+                  "role": "user",
+                  "content": "Rewrite the following content as valid JSON only for the eywa_node_response v1 schema. Allowed orchestration_decision values for this turn: execute_locally, report_problem. Use the exact top-level fields required by eywa_node_response v1. Do not wrap the object under another key. Use plain text strings only. Do not use markdown, code fences, or backslashes.\n\nOriginal content:\n```json\n{\n  \"execute_locally_example\": {\n    \"schema_name\": \"eywa_node_response\",\n    \"schema_version\": \"v1\",\n    \"orchestration_decision\": \"execute_locally\",\n    \"decision_notes\": \"Implementing a greedy approach with rectangle expansion to maximize area while avoiding overlaps and staying within bounds.\",\n    \"response\": \"Submitting main.py with a greedy expansion strategy.\",\n    \"result_type\": \"code_submission\",\n    \"artifacts\": [\n      {\n        \"path\": \"main.py\",\n        \"content\": \"import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    N = int(input_data[0])\\n    advertisers = []\\n    idx = 1\\n    for i in range(N):\\n        x = int(input_data[idx])\\n        y = int(input_data[idx+1])\\n        r = int(input_data[idx+2])\\n        advertisers.append({'id': i, 'x': x, 'y': y, 'r': r})\\n        idx += 3\\n\\n    # Sort advertisers by target area descending to prioritize larger ones\\n    sorted_adv = sorted(advertisers, key=lambda a: a['r'], reverse=True)\\n    \\n    # Rectangles: (x1, y1, x2, y2)\\n    results = [None] * N\\n    # Occupied regions list: list of (x1, y1, x2, y2)\\n    occupied = []\\n\\n    BOARD_SIZE = 10000\\n\\n    def intersects(rect1, rect2):\\n        x1_a, y1_a, x2_a, y2_a = rect1\\n        x1_b, y1_b, x2_b, y2_b = rect2\\n        return not (x2_a <= x1_b or x2_b <= x1_a or y2_a <= y1_b or y2_b <= y1_a)\\n\\n    for adv in sorted_adv:\\n        target_x, target_y, target_r = adv['x'], adv['y'], adv['r']\\n        \\n        # Start with a minimal rectangle containing the point\\n        # We try to find a rectangle [x1, x2) x [y1, y2) such that \\n        # x1 <= target_x < x2 and y1 <= target_y < y2\\n        # and (x2-x1)*(y2-y1) is close to target_r\\n        \\n        best_rect = (target_x, target_y, target_x + 1, target_y + 1)\\n        best_area = 1\\n        \\n        # Heuristic: Try to expand in steps to find a good area\\n        # Since we need to avoid overlaps, we'll use a simple greedy expansion\\n        # We'll try to grow the rectangle symmetrically or towards empty space\\n        \\n        # Initial small rectangle\\n        curr_x1, curr_y1 = target_x, target_y\\n        curr_x2, curr_y2 = target_x + 1, target_y + 1\\n        \\n        # Try to expand the rectangle to reach"
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775539832-yiDf6atjsarhcrPOR7Xm",
+              "object": "chat.completion",
+              "created": 1775539832,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Parasail",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n\"schema_name\": \"eywa_node_response\",\n\"schema_version\": \"v1\",\n\"orchestration_decision\": \"execute_locally\",\n\"decision_notes\": \"Implementing a greedy approach with rectangle expansion to maximize area while avoiding overlaps and staying within bounds.\",\n\"response\": \"Submitting main.py with a greedy expansion strategy.\",\n\"result_type\": \"code_submission\",\n\"artifacts\": [\n{\n\"path\": \"main.py\",\n\"content\": \"import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    N = int(input_data[0])\\n    advertisers = []\\n    idx = 1\\n    for i in range(N):\\n        x = int(input_data[idx])\\n        y = int(input_data[idx+1])\\n        r = int(input_data[idx+2])\\n        advertisers.append({'id': i, 'x': x, 'y': y, 'r': r})\\n        idx += 3\\n\\n    sorted_adv = sorted(advertisers, key=lambda a: a['r'], reverse=True)\\n    results = [None] * N\\n    occupied = []\\n    BOARD_SIZE = 10000\\n\\n    def intersects(rect1, rect2):\\n        x1_a, y1_a, x2_a, y2_a = rect1\\n        x1_b, y1_b, x2_b, y2_b = rect2\\n        return not (x2_a <= x1_b or x2_b <= x1_a or y2_a <= y1_b or y2_b <= y1_a)\\n\\n    for adv in sorted_adv:\\n        target_x, target_y, target_r = adv['x'], adv['y'], adv['r']\\n        best_rect = (target_x, target_y, target_x + 1, target_y + 1)\\n        best_area = 1\\n        curr_x1, curr_y1 = target_x, target_y\\n        curr_x2, curr_y2 = target_x + 1, target_y + 1\"\n}\n]\n}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 936,
+                "completion_tokens": 552,
+                "total_tokens": 1488,
+                "cost": 0.00034248,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00034248,
+                  "upstream_inference_prompt_cost": 0.00012168,
+                  "upstream_inference_completions_cost": 0.0002208
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\n\"schema_name\": \"eywa_node_response\",\n\"schema_version\": \"v1\",\n\"orchestration_decision\": \"execute_locally\",\n\"decision_notes\": \"Implementing a greedy approach with rectangle expansion to maximize area while avoiding overlaps and staying within bounds.\",\n\"response\": \"Submitting main.py with a greedy expansion strategy.\",\n\"result_type\": \"code_submission\",\n\"artifacts\": [\n{\n\"path\": \"main.py\",\n\"content\": \"import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    N = int(input_data[0])\\n    advertisers = []\\n    idx = 1\\n    for i in range(N):\\n        x = int(input_data[idx])\\n        y = int(input_data[idx+1])\\n        r = int(input_data[idx+2])\\n        advertisers.append({'id': i, 'x': x, 'y': y, 'r': r})\\n        idx += 3\\n\\n    sorted_adv = sorted(advertisers, key=lambda a: a['r'], reverse=True)\\n    results = [None] * N\\n    occupied = []\\n    BOARD_SIZE = 10000\\n\\n    def intersects(rect1, rect2):\\n        x1_a, y1_a, x2_a, y2_a = rect1\\n        x1_b, y1_b, x2_b, y2_b = rect2\\n        return not (x2_a <= x1_b or x2_b <= x1_a or y2_a <= y1_b or y2_b <= y1_a)\\n\\n    for adv in sorted_adv:\\n        target_x, target_y, target_r = adv['x'], adv['y'], adv['r']\\n        best_rect = (target_x, target_y, target_x + 1, target_y + 1)\\n        best_area = 1\\n        curr_x1, curr_y1 = target_x, target_y\\n        curr_x2, curr_y2 = target_x + 1, target_y + 1\"\n}\n]\n}",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "execute_locally",
+              "decision_notes": "Implementing a greedy approach with rectangle expansion to maximize area while avoiding overlaps and staying within bounds.",
+              "response": "Submitting main.py with a greedy expansion strategy.",
+              "result_type": "code_submission",
+              "artifacts": [
+                {
+                  "path": "main.py",
+                  "content": "import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    N = int(input_data[0])\n    advertisers = []\n    idx = 1\n    for i in range(N):\n        x = int(input_data[idx])\n        y = int(input_data[idx+1])\n        r = int(input_data[idx+2])\n        advertisers.append({'id': i, 'x': x, 'y': y, 'r': r})\n        idx += 3\n\n    sorted_adv = sorted(advertisers, key=lambda a: a['r'], reverse=True)\n    results = [None] * N\n    occupied = []\n    BOARD_SIZE = 10000\n\n    def intersects(rect1, rect2):\n        x1_a, y1_a, x2_a, y2_a = rect1\n        x1_b, y1_b, x2_b, y2_b = rect2\n        return not (x2_a <= x1_b or x2_b <= x1_a or y2_a <= y1_b or y2_b <= y1_a)\n\n    for adv in sorted_adv:\n        target_x, target_y, target_r = adv['x'], adv['y'], adv['r']\n        best_rect = (target_x, target_y, target_x + 1, target_y + 1)\n        best_area = 1\n        curr_x1, curr_y1 = target_x, target_y\n        curr_x2, curr_y2 = target_x + 1, target_y + 1"
+                }
+              ]
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "execute_locally",
+          "decision_notes": "Implementing a greedy approach with rectangle expansion to maximize area while avoiding overlaps and staying within bounds.",
+          "response": "Submitting main.py with a greedy expansion strategy.",
+          "result_type": "code_submission",
+          "artifacts": [
+            {
+              "path": "main.py",
+              "content": "import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    N = int(input_data[0])\n    advertisers = []\n    idx = 1\n    for i in range(N):\n        x = int(input_data[idx])\n        y = int(input_data[idx+1])\n        r = int(input_data[idx+2])\n        advertisers.append({'id': i, 'x': x, 'y': y, 'r': r})\n        idx += 3\n\n    sorted_adv = sorted(advertisers, key=lambda a: a['r'], reverse=True)\n    results = [None] * N\n    occupied = []\n    BOARD_SIZE = 10000\n\n    def intersects(rect1, rect2):\n        x1_a, y1_a, x2_a, y2_a = rect1\n        x1_b, y1_b, x2_b, y2_b = rect2\n        return not (x2_a <= x1_b or x2_b <= x1_a or y2_a <= y1_b or y2_b <= y1_a)\n\n    for adv in sorted_adv:\n        target_x, target_y, target_r = adv['x'], adv['y'], adv['r']\n        best_rect = (target_x, target_y, target_x + 1, target_y + 1)\n        best_area = 1\n        curr_x1, curr_y1 = target_x, target_y\n        curr_x2, curr_y2 = target_x + 1, target_y + 1"
+            }
+          ]
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1623,
+        "completion_tokens": 1352,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 0,
+        "total_tokens": 2975,
+        "cost_usd": 0.00075179,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775539816-ldbJEcOx8TCEElS7Klr2",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00040931
+            },
+            {
+              "response_id": "gen-1775539832-yiDf6atjsarhcrPOR7Xm",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00034248
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,10 +1,12 @@
 # S2. AHC012 / AtCoder 10th Anniversary
 
-- Type: Coding
+- Family: coding
+- Entry Type: coding
 - Subtype: Score-gradient task
+- Grader Type: continuous_score
 - Source: https://atcoder.jp/contests/ahc012/tasks/ahc012_a
 
-## Task
+## Problem
 
 Cut a circular cake with at most K = 100 straight lines so the strawberry-count distribution of pieces matches the attendee-demand distribution as well as possible.
 
@@ -20,4 +22,4 @@ Good for planning, search, and refinement loops.
 
 ## Notes
 
-- 
+-

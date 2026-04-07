@@ -1,10 +1,12 @@
 # B12. Knowledge-Gated Domain Question (FTIR Gelation)
 
-- Type: Architecture-derived
+- Family: architecture-derived
+- Entry Type: reasoning
 - Domain: Biophysics / spectroscopy
+- Grader Type: exact_choice_letter
 - Source: Architecture Exp, SCI-01
 
-## Question
+## Problem
 
 Given FTIR peaks at 1645, 1652, 1618, and 1680 cm^-1 with heating behavior and concentration effects, explain the protein gelation mechanism.
 
@@ -25,4 +27,4 @@ Fix rate was 100% with domain knowledge provided.
 
 ## Notes
 
-- 
+-

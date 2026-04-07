@@ -1,10 +1,12 @@
 # B1. Constraint-First Planning (Ceramic Sintering)
 
-- Type: Architecture-derived
+- Family: architecture-derived
+- Entry Type: reasoning
 - Domain: Materials science
+- Grader Type: exact_choice_letter
 - Source: Architecture Exp, SCI-10
 
-## Question
+## Problem
 
 Which effect is unlikely to arise from coarsening gas evolution during ceramic sintering?
 
@@ -25,4 +27,4 @@ All other approaches got 0/15.
 
 ## Notes
 
-- 
+-

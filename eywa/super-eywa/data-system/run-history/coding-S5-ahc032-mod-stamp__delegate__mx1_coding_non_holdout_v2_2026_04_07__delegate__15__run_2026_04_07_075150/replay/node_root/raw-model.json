@@ -1,0 +1,429 @@
+{
+  "provider": "openrouter",
+  "note": "Per-turn provider payloads, authored JSON, and compiled outputs are recorded here.",
+  "steps": [
+    {
+      "step": 1,
+      "note": "authored delegate decision deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 1\nNode depth: 0\nAllowed decisions: ['delegate']\nPrompt family: delegate\nBase header prompt: ''\nSelected prompt text:\nBreak the problem into a small number of genuinely useful subproblems for other agents.\nDo not restate the original question in multiple ways.\nEach helper should get one focused mathematical or algorithmic job that materially helps solve the original problem (e.g., designing a greedy heuristic, implementing a local search refinement, or managing state transitions).\nChoose a small number of helpers (maximum 2) based on the task complexity.\nUse plain text only inside helper instructions. Do not use markdown, code fences, or LaTeX-style backslashes.\n\nReturn exactly one valid JSON object in this format (do not use markdown code fences):\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"optional string\",\n  \"helpers\": [\n    {\n      \"label\": \"helper_1\",\n      \"instructions\": \"plain-text subproblem for the first helper\"\n    }\n  ],\n  \"synthesis_brief\": \"how the parent should combine the child results\"\n}\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"optional string\",\n  \"helpers\": [\n    {\n      \"label\": \"helper_1\",\n      \"instructions\": \"plain-text subproblem for the first helper\"\n    }\n  ],\n  \"synthesis_brief\": \"how the parent should combine the child results\"\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nBreak the problem into a small number of genuinely useful subproblems for other agents.\nDo not restate the original question in multiple ways.\nEach helper should get one focused mathematical or algorithmic job that materially helps solve the original problem (e.g., designing a greedy heuristic, implementing a local search refinement, or managing state transitions).\nChoose a small number of helpers (maximum 2) based on the task complexity.\nUse plain text only inside helper instructions. Do not use markdown, code fences, or LaTeX-style backslashes.\n\nReturn exactly one valid JSON object in this format (do not use markdown code fences):\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"optional string\",\n  \"helpers\": [\n    {\n      \"label\": \"helper_1\",\n      \"instructions\": \"plain-text subproblem for the first helper\"\n    }\n  ],\n  \"synthesis_brief\": \"how the parent should combine the child results\"\n}\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"optional string\",\n  \"helpers\": [\n    {\n      \"label\": \"helper_1\",\n      \"instructions\": \"plain-text subproblem for the first helper\"\n    }\n  ],\n  \"synthesis_brief\": \"how the parent should combine the child results\"\n}\n\nQuestion:\nSolve this Super-Eywa coding benchmark.\nQuestion ID: coding-S5-ahc032-mod-stamp\nTitle: S5. AHC032 / Mod Stamp\n\nProblem:\n# AHC032 / Mod Stamp\n\nWrite `main.py`.\n\nYou are given a `9 x 9` board of integers and `M = 20` different `3 x 3` stamps.\nYou may place at most `K = 81` stamps.\n\n## Objective\n\n- Each placement chooses a stamp index `m` and a top-left board position `(i, j)`.\n- The chosen `3 x 3` stamp is added to the board modulo `998244353`.\n- The score is the sum of all final board entries.\n- Higher is better.\n\n## Input\n\n- Line 1: `N M K`\n- Next `N` lines: the initial board\n- Then for each stamp: `3` lines describing the stamp entries\n\n## Output\n\n- First line: `L`, the number of placements, with `0 <= L <= K`\n- Then `L` lines of `m i j`\n- `m` is the stamp index\n- `(i, j)` is the top-left placement position, with the full `3 x 3` stamp inside the board\n\n## Notes\n\n- This v1 packet uses the official AtCoder visualizer on three bundled public instances.\n\nSubmission contract:\n- Return a single Python submission file named main.py.\n- Read from stdin and write to stdout.\n- Put the full file content in the artifacts list of your execute_locally JSON response.\n- Use the response field only for a brief submission summary.\n- Do not wrap the code in markdown fences inside artifacts.\n\nCritical validity rules:\n- Your program is judged by the stdout it prints when run, not by the summary in your JSON response.\n- Print exactly the contestant output described in the Output section, and nothing else.\n- Do not print the objective score, estimated score, labels, explanations, or debug text unless the Output section explicitly requires them.\n- If the Output section requires a count/header on the first line, print that first line exactly.\n- Every printed index, count, and coordinate must stay within the allowed ranges.\n- Prefer a simple valid baseline solution over an ambitious but invalid one.\n- If the problem permits an empty or minimal valid plan, that is better than malformed output.\n\nGrading target:\nScore is the sum of final cell values modulo 998244353.\nHigher is better.\n\nPacket baseline hint:\nA fully valid baseline for this task is a program that prints exactly one line containing 0 and then exits. That means L = 0 placements, with no additional output lines.",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "delegate",
+        "decision_notes": "The problem is a combinatorial optimization task where we need to select a sequence of stamp placements to maximize the sum of the board elements modulo 998244353. Since the modulo is large and the board is small, the objective is essentially to maximize the sum of the board elements without causing them to wrap around too much, or strategically using the modulo if it were a different type of problem (though here it is additive modulo).",
+        "helpers": [
+          {
+            "label": "heuristic_generator",
+            "instructions": "Design a greedy or local search algorithm that selects stamp placements (m, i, j) to maximize the sum of the board. Since the board is only 9x9 and K=81, consider a greedy approach that picks the placement providing the largest immediate increase in the sum of board elements, or a hill-climbing approach that iteratively swaps or adds placements to improve the total sum. Account for the modulo 998244353 in the board updates.",
+            "variable_overrides": {}
+          },
+          {
+            "label": "implementation_engineer",
+            "instructions": "Implement the main.py script. The script must read N, M, K, the initial board, and the M stamps from stdin. It should use the algorithm provided by the heuristic_generator to find a valid set of up to K placements. Finally, it must output the number of placements L, followed by L lines of m i j, ensuring all indices and coordinates are within the valid bounds (0-8 for board, 0-6 for top-left of 3x3 stamps).",
+            "variable_overrides": {}
+          }
+        ],
+        "synthesis_brief": "Combine the heuristic logic into a robust Python script that handles input/output according to the specification and ensures the number of placements does not exceed K."
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "coding-S5-ahc032-mod-stamp__delegate__mx1_coding_non_holdout_v2_2026_04_07__delegate__15__run_2026_04_07_075150",
+        "node_id": "node_root",
+        "action_type": "recruit_help",
+        "results": [
+          {
+            "result_type": "plan",
+            "content": "The problem is a combinatorial optimization task where we need to select a sequence of stamp placements to maximize the sum of the board elements modulo 998244353. Since the modulo is large and the board is small, the objective is essentially to maximize the sum of the board elements without causing them to wrap around too much, or strategically using the modulo if it were a different type of problem (though here it is additive modulo).\nnode_root_helper_01 (heuristic_generator): Design a greedy or local search algorithm that selects stamp placements (m, i, j) to maximize the sum of the board. Since the board is only 9x9 and K=81, consider a greedy approach that picks the placement providing the largest immediate increase in the sum of board elements, or a hill-climbing approach that iteratively swaps or adds placements to improve the total sum. Account for the modulo 998244353 in the board updates.\nnode_root_helper_02 (implementation_engineer): Implement the main.py script. The script must read N, M, K, the initial board, and the M stamps from stdin. It should use the algorithm provided by the heuristic_generator to find a valid set of up to K placements. Finally, it must output the number of placements L, followed by L lines of m i j, ensuring all indices and coordinates are within the valid bounds (0-8 for board, 0-6 for top-left of 3x3 stamps).",
+            "attachment_refs": []
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "helper_assignment",
+            "target": {
+              "target_type": "new_helper",
+              "target_ref": "node_root_helper_01"
+            },
+            "message": "Design a greedy or local search algorithm that selects stamp placements (m, i, j) to maximize the sum of the board. Since the board is only 9x9 and K=81, consider a greedy approach that picks the placement providing the largest immediate increase in the sum of board elements, or a hill-climbing approach that iteratively swaps or adds placements to improve the total sum. Account for the modulo 998244353 in the board updates.",
+            "attachment_refs": []
+          },
+          {
+            "message_type": "helper_assignment",
+            "target": {
+              "target_type": "new_helper",
+              "target_ref": "node_root_helper_02"
+            },
+            "message": "Implement the main.py script. The script must read N, M, K, the initial board, and the M stamps from stdin. It should use the algorithm provided by the heuristic_generator to find a valid set of up to K placements. Finally, it must output the number of placements L, followed by L lines of m i j, ensuring all indices and coordinates are within the valid bounds (0-8 for board, 0-6 for top-left of 3x3 stamps).",
+            "attachment_refs": []
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Break the problem into a small number of genuinely useful subproblems for other agents.\nDo not restate the original question in multiple ways.\nEach helper should get one focused mathematical or algorithmic job that materially helps solve the original problem (e.g., designing a greedy heuristic, implementing a local search refinement, or managing state transitions).\nChoose a small number of helpers (maximum 2) based on the task complexity.\nUse plain text only inside helper instructions. Do not use markdown, code fences, or LaTeX-style backslashes.\n\nReturn exactly one valid JSON object in this format (do not use markdown code fences):\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"optional string\",\n  \"helpers\": [\n    {\n      \"label\": \"helper_1\",\n      \"instructions\": \"plain-text subproblem for the first helper\"\n    }\n  ],\n  \"synthesis_brief\": \"how the parent should combine the child results\"\n}\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"optional string\",\n  \"helpers\": [\n    {\n      \"label\": \"helper_1\",\n      \"instructions\": \"plain-text subproblem for the first helper\"\n    }\n  ],\n  \"synthesis_brief\": \"how the parent should combine the child results\"\n}\n\nQuestion:\nSolve this Super-Eywa coding benchmark.\nQuestion ID: coding-S5-ahc032-mod-stamp\nTitle: S5. AHC032 / Mod Stamp\n\nProblem:\n# AHC032 / Mod Stamp\n\nWrite `main.py`.\n\nYou are given a `9 x 9` board of integers and `M = 20` different `3 x 3` stamps.\nYou may place at most `K = 81` stamps.\n\n## Objective\n\n- Each placement chooses a stamp index `m` and a top-left board position `(i, j)`.\n- The chosen `3 x 3` stamp is added to the board modulo `998244353`.\n- The score is the sum of all final board entries.\n- Higher is better.\n\n## Input\n\n- Line 1: `N M K`\n- Next `N` lines: the initial board\n- Then for each stamp: `3` lines describing the stamp entries\n\n## Output\n\n- First line: `L`, the number of placements, with `0 <= L <= K`\n- Then `L` lines of `m i j`\n- `m` is the stamp index\n- `(i, j)` is the top-left placement position, with the full `3 x 3` stamp inside the board\n\n## Notes\n\n- This v1 packet uses the official AtCoder visualizer on three bundled public instances.\n\nSubmission contract:\n- Return a single Python submission file named main.py.\n- Read from stdin and write to stdout.\n- Put the full file content in the artifacts list of your execute_locally JSON response.\n- Use the response field only for a brief submission summary.\n- Do not wrap the code in markdown fences inside artifacts.\n\nCritical validity rules:\n- Your program is judged by the stdout it prints when run, not by the summary in your JSON response.\n- Print exactly the contestant output described in the Output section, and nothing else.\n- Do not print the objective score, estimated score, labels, explanations, or debug text unless the Output section explicitly requires them.\n- If the Output section requires a count/header on the first line, print that first line exactly.\n- Every printed index, count, and coordinate must stay within the allowed ranges.\n- Prefer a simple valid baseline solution over an ambitious but invalid one.\n- If the problem permits an empty or minimal valid plan, that is better than malformed output.\n\nGrading target:\nScore is the sum of final cell values modulo 998244353.\nHigher is better.\n\nPacket baseline hint:\nA fully valid baseline for this task is a program that prints exactly one line containing 0 and then exits. That means L = 0 placements, with no additional output lines."
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775548311-RKDbWelNhvnE9uGfUkaH",
+              "object": "chat.completion",
+              "created": 1775548311,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Novita",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"The problem is a combinatorial optimization task where we need to select a sequence of stamp placements to maximize the sum of the board elements modulo 998244353. Since the modulo is large and the board is small, the objective is essentially to maximize the sum of the board elements without causing them to wrap around too much, or strategically using the modulo if it were a different type of problem (though here it is additive modulo).\",\n  \"helpers\": [\n    {\n      \"label\": \"heuristic_generator\",\n      \"instructions\": \"Design a greedy or local search algorithm that selects stamp placements (m, i, j) to maximize the sum of the board. Since the board is only 9x9 and K=81, consider a greedy approach that picks the placement providing the largest immediate increase in the sum of board elements, or a hill-climbing approach that iteratively swaps or adds placements to improve the total sum. Account for the modulo 998244353 in the board updates.\"\n    },\n    {\n      \"label\": \"implementation_engineer\",\n      \"instructions\": \"Implement the main.py script. The script must read N, M, K, the initial board, and the M stamps from stdin. It should use the algorithm provided by the heuristic_generator to find a valid set of up to K placements. Finally, it must output the number of placements L, followed by L lines of m i j, ensuring all indices and coordinates are within the valid bounds (0-8 for board, 0-6 for top-left of 3x3 stamps).\"\n    }\n  ],\n  \"synthesis_brief\": \"Combine the heuristic logic into a robust Python script that handles input/output according to the specification and ensures the number of placements does not exceed K.\"\n}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 1005,
+                "completion_tokens": 432,
+                "total_tokens": 1437,
+                "cost": 0.00030345,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00030345,
+                  "upstream_inference_prompt_cost": 0.00013065,
+                  "upstream_inference_completions_cost": 0.0001728
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"The problem is a combinatorial optimization task where we need to select a sequence of stamp placements to maximize the sum of the board elements modulo 998244353. Since the modulo is large and the board is small, the objective is essentially to maximize the sum of the board elements without causing them to wrap around too much, or strategically using the modulo if it were a different type of problem (though here it is additive modulo).\",\n  \"helpers\": [\n    {\n      \"label\": \"heuristic_generator\",\n      \"instructions\": \"Design a greedy or local search algorithm that selects stamp placements (m, i, j) to maximize the sum of the board. Since the board is only 9x9 and K=81, consider a greedy approach that picks the placement providing the largest immediate increase in the sum of board elements, or a hill-climbing approach that iteratively swaps or adds placements to improve the total sum. Account for the modulo 998244353 in the board updates.\"\n    },\n    {\n      \"label\": \"implementation_engineer\",\n      \"instructions\": \"Implement the main.py script. The script must read N, M, K, the initial board, and the M stamps from stdin. It should use the algorithm provided by the heuristic_generator to find a valid set of up to K placements. Finally, it must output the number of placements L, followed by L lines of m i j, ensuring all indices and coordinates are within the valid bounds (0-8 for board, 0-6 for top-left of 3x3 stamps).\"\n    }\n  ],\n  \"synthesis_brief\": \"Combine the heuristic logic into a robust Python script that handles input/output according to the specification and ensures the number of placements does not exceed K.\"\n}",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "delegate",
+              "decision_notes": "The problem is a combinatorial optimization task where we need to select a sequence of stamp placements to maximize the sum of the board elements modulo 998244353. Since the modulo is large and the board is small, the objective is essentially to maximize the sum of the board elements without causing them to wrap around too much, or strategically using the modulo if it were a different type of problem (though here it is additive modulo).",
+              "helpers": [
+                {
+                  "label": "heuristic_generator",
+                  "instructions": "Design a greedy or local search algorithm that selects stamp placements (m, i, j) to maximize the sum of the board. Since the board is only 9x9 and K=81, consider a greedy approach that picks the placement providing the largest immediate increase in the sum of board elements, or a hill-climbing approach that iteratively swaps or adds placements to improve the total sum. Account for the modulo 998244353 in the board updates.",
+                  "variable_overrides": {}
+                },
+                {
+                  "label": "implementation_engineer",
+                  "instructions": "Implement the main.py script. The script must read N, M, K, the initial board, and the M stamps from stdin. It should use the algorithm provided by the heuristic_generator to find a valid set of up to K placements. Finally, it must output the number of placements L, followed by L lines of m i j, ensuring all indices and coordinates are within the valid bounds (0-8 for board, 0-6 for top-left of 3x3 stamps).",
+                  "variable_overrides": {}
+                }
+              ],
+              "synthesis_brief": "Combine the heuristic logic into a robust Python script that handles input/output according to the specification and ensures the number of placements does not exceed K."
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "delegate",
+          "decision_notes": "The problem is a combinatorial optimization task where we need to select a sequence of stamp placements to maximize the sum of the board elements modulo 998244353. Since the modulo is large and the board is small, the objective is essentially to maximize the sum of the board elements without causing them to wrap around too much, or strategically using the modulo if it were a different type of problem (though here it is additive modulo).",
+          "helpers": [
+            {
+              "label": "heuristic_generator",
+              "instructions": "Design a greedy or local search algorithm that selects stamp placements (m, i, j) to maximize the sum of the board. Since the board is only 9x9 and K=81, consider a greedy approach that picks the placement providing the largest immediate increase in the sum of board elements, or a hill-climbing approach that iteratively swaps or adds placements to improve the total sum. Account for the modulo 998244353 in the board updates.",
+              "variable_overrides": {}
+            },
+            {
+              "label": "implementation_engineer",
+              "instructions": "Implement the main.py script. The script must read N, M, K, the initial board, and the M stamps from stdin. It should use the algorithm provided by the heuristic_generator to find a valid set of up to K placements. Finally, it must output the number of placements L, followed by L lines of m i j, ensuring all indices and coordinates are within the valid bounds (0-8 for board, 0-6 for top-left of 3x3 stamps).",
+              "variable_overrides": {}
+            }
+          ],
+          "synthesis_brief": "Combine the heuristic logic into a robust Python script that handles input/output according to the specification and ensures the number of placements does not exceed K."
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1005,
+        "completion_tokens": 432,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 0,
+        "total_tokens": 1437,
+        "cost_usd": 0.00030345,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775548311-RKDbWelNhvnE9uGfUkaH",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00030345
+            }
+          ]
+        }
+      }
+    },
+    {
+      "step": 2,
+      "note": "authored local execution after reviewing child results deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 2\nNode depth: 0\nAllowed decisions: ['execute_locally']\nPrompt family: delegate\nBase header prompt: ''\nSelected prompt text:\nChild results have already come back to you. Use them to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nChild results have already come back to you. Use them to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\n\nSynthesis brief from the earlier child-creation step:\nCombine the heuristic logic into a robust Python script that handles input/output according to the specification and ensures the number of placements does not exceed K.\n\nChild results already returned to you:\n[\n  {\n    \"node_id\": \"node_root_helper_01\",\n    \"summary\": \"FINAL_ANSWER: Greedy algorithm: iteratively select placement (m, i, j) maximizing immediate sum increase.\\nJUSTIFICATION: Greedy approach maximizes local gain per step for 9x9 board.\"\n  },\n  {\n    \"node_id\": \"node_root_helper_02\",\n    \"summary\": \"FINAL_ANSWER: Implementation of main.py script\\nJUSTIFICATION: Task requires writing a Python script for stamp placement.\"\n  }\n]\n\nQuestion:\nSolve this Super-Eywa coding benchmark.\nQuestion ID: coding-S5-ahc032-mod-stamp\nTitle: S5. AHC032 / Mod Stamp\n\nProblem:\n# AHC032 / Mod Stamp\n\nWrite `main.py`.\n\nYou are given a `9 x 9` board of integers and `M = 20` different `3 x 3` stamps.\nYou may place at most `K = 81` stamps.\n\n## Objective\n\n- Each placement chooses a stamp index `m` and a top-left board position `(i, j)`.\n- The chosen `3 x 3` stamp is added to the board modulo `998244353`.\n- The score is the sum of all final board entries.\n- Higher is better.\n\n## Input\n\n- Line 1: `N M K`\n- Next `N` lines: the initial board\n- Then for each stamp: `3` lines describing the stamp entries\n\n## Output\n\n- First line: `L`, the number of placements, with `0 <= L <= K`\n- Then `L` lines of `m i j`\n- `m` is the stamp index\n- `(i, j)` is the top-left placement position, with the full `3 x 3` stamp inside the board\n\n## Notes\n\n- This v1 packet uses the official AtCoder visualizer on three bundled public instances.\n\nSubmission contract:\n- Return a single Python submission file named main.py.\n- Read from stdin and write to stdout.\n- Put the full file content in the artifacts list of your execute_locally JSON response.\n- Use the response field only for a brief submission summary.\n- Do not wrap the code in markdown fences inside artifacts.\n\nCritical validity rules:\n- Your program is judged by the stdout it prints when run, not by the summary in your JSON response.\n- Print exactly the contestant output described in the Output section, and nothing else.\n- Do not print the objective score, estimated score, labels, explanations, or debug text unless the Output section explicitly requires them.\n- If the Output section requires a count/header on the first line, print that first line exactly.\n- Every printed index, count, and coordinate must stay within the allowed ranges.\n- Prefer a simple valid baseline solution over an ambitious but invalid one.\n- If the problem permits an empty or minimal valid plan, that is better than malformed output.\n\nGrading target:\nScore is the sum of final cell values modulo 998244353.\nHigher is better.\n\nPacket baseline hint:\nA fully valid baseline for this task is a program that prints exactly one line containing 0 and then exits. That means L = 0 placements, with no additional output lines.",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "execute_locally",
+        "decision_notes": "Synthesizing the greedy heuristic into a final Python script. The script reads the board and stamps, then iteratively selects the placement (stamp, row, col) that provides the maximum increase to the total sum of the board elements, subject to the modulo constraint and the limit K.",
+        "response": "Greedy heuristic implementation for stamp placement.",
+        "result_type": "code_submission",
+        "artifacts": [
+          {
+            "path": "main.py",
+            "content": "import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    ptr = 0\n    N = int(input_data[ptr])\n    M = int(input_data[ptr+1])\n    K = int(input_data[ptr+2])\n    ptr += 3\n    \n    MOD = 998244353\n\n    board = []\n    for i in range(N):\n        row = []\n        for j in range(N):\n            row.append(int(input_data[ptr]))\n            ptr += 1\n        board.append(row)\n\n    stamps = []\n    for m in range(M):\n        stamp = []\n        for r in range(3):\n            s_row = []\n            for c in range(3):\n                s_row.append(int(input_data[ptr]))\n                ptr += 1\n            stamp.append(s_row)\n        stamps.append(stamp)\n\n    for _ in range(K):\n        best_gain = -float('inf')\n        best_move = None\n\n        for m in range(M):\n            for i in range(N - 2):\n                for j in range(N - 2):\n                    current_gain = 0\n                    for dr in range(3):\n                        for dc in range(3):\n                            old_val = board[i + dr][j + dc]\n                            new_val = (old_val + stamps[m][dr][dc]) % MOD\n                            current_gain += (new_val - old_val)\n                    \n                    if current_gain > best_gain:\n                        best_gain = current_gain\n                        best_move = (m, i, j)\n        \n        if best_move:\n            m, i, j = best_move\n            for dr in range(3):\n                for dc in range(3):\n                    board[i + dr][j + dc] = (board[i + dr][j + dc] + stamps[m][dr][dc]) % MOD\n        else:\n            break\n\n    total_sum = sum(sum(row) for row in board) % MOD\n    print(total_sum)\n\nsolve()"
+          }
+        ]
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "coding-S5-ahc032-mod-stamp__delegate__mx1_coding_non_holdout_v2_2026_04_07__delegate__15__run_2026_04_07_075150",
+        "node_id": "node_root",
+        "action_type": "report_success",
+        "results": [
+          {
+            "result_type": "code_submission",
+            "content": "Greedy heuristic implementation for stamp placement.",
+            "attachment_refs": [
+              "artifacts/node_root/turn_02/main.py"
+            ]
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "success_report",
+            "target": {
+              "target_type": "final_output",
+              "target_ref": "run_final_output"
+            },
+            "message": "Greedy heuristic implementation for stamp placement.",
+            "attachment_refs": [
+              "artifacts/node_root/turn_02/main.py"
+            ]
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Child results have already come back to you. Use them to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\n\nSynthesis brief from the earlier child-creation step:\nCombine the heuristic logic into a robust Python script that handles input/output according to the specification and ensures the number of placements does not exceed K.\n\nChild results already returned to you:\n[\n  {\n    \"node_id\": \"node_root_helper_01\",\n    \"summary\": \"FINAL_ANSWER: Greedy algorithm: iteratively select placement (m, i, j) maximizing immediate sum increase.\\nJUSTIFICATION: Greedy approach maximizes local gain per step for 9x9 board.\"\n  },\n  {\n    \"node_id\": \"node_root_helper_02\",\n    \"summary\": \"FINAL_ANSWER: Implementation of main.py script\\nJUSTIFICATION: Task requires writing a Python script for stamp placement.\"\n  }\n]\n\nQuestion:\nSolve this Super-Eywa coding benchmark.\nQuestion ID: coding-S5-ahc032-mod-stamp\nTitle: S5. AHC032 / Mod Stamp\n\nProblem:\n# AHC032 / Mod Stamp\n\nWrite `main.py`.\n\nYou are given a `9 x 9` board of integers and `M = 20` different `3 x 3` stamps.\nYou may place at most `K = 81` stamps.\n\n## Objective\n\n- Each placement chooses a stamp index `m` and a top-left board position `(i, j)`.\n- The chosen `3 x 3` stamp is added to the board modulo `998244353`.\n- The score is the sum of all final board entries.\n- Higher is better.\n\n## Input\n\n- Line 1: `N M K`\n- Next `N` lines: the initial board\n- Then for each stamp: `3` lines describing the stamp entries\n\n## Output\n\n- First line: `L`, the number of placements, with `0 <= L <= K`\n- Then `L` lines of `m i j`\n- `m` is the stamp index\n- `(i, j)` is the top-left placement position, with the full `3 x 3` stamp inside the board\n\n## Notes\n\n- This v1 packet uses the official AtCoder visualizer on three bundled public instances.\n\nSubmission contract:\n- Return a single Python submission file named main.py.\n- Read from stdin and write to stdout.\n- Put the full file content in the artifacts list of your execute_locally JSON response.\n- Use the response field only for a brief submission summary.\n- Do not wrap the code in markdown fences inside artifacts.\n\nCritical validity rules:\n- Your program is judged by the stdout it prints when run, not by the summary in your JSON response.\n- Print exactly the contestant output described in the Output section, and nothing else.\n- Do not print the objective score, estimated score, labels, explanations, or debug text unless the Output section explicitly requires them.\n- If the Output section requires a count/header on the first line, print that first line exactly.\n- Every printed index, count, and coordinate must stay within the allowed ranges.\n- Prefer a simple valid baseline solution over an ambitious but invalid one.\n- If the problem permits an empty or minimal valid plan, that is better than malformed output.\n\nGrading target:\nScore is the sum of final cell values modulo 998244353.\nHigher is better.\n\nPacket baseline hint:\nA fully valid baseline for this task is a program that prints exactly one line containing 0 and then exits. That means L = 0 placements, with no additional output lines."
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775548349-TaZyBQVDLG9scwVgTPit",
+              "object": "chat.completion",
+              "created": 1775548349,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Novita",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "length",
+                  "native_finish_reason": "length",
+                  "message": {
+                    "role": "assistant",
+                    "content": "```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"Synthesizing the greedy heuristic into a final Python script. The script reads the board and stamps, then iteratively selects the placement (stamp, row, col) that provides the maximum increase to the total sum of the board elements, subject to the modulo constraint and the limit K.\",\n  \"response\": \"Greedy heuristic implementation for stamp placement.\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"import sys\\n\\ndef solve():\\n    # Read N, M, K\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    ptr = 0\\n    N = int(input_data[ptr])\\n    M = int(input_data[ptr+1])\\n    K = int(input_data[ptr+2])\\n    ptr += 3\\n    \\n    MOD = 998244353\\n\\n    # Read initial board\\n    board = []\\n    for i in range(N):\\n        row = []\\n        for j in range(N):\\n            row.append(int(input_data[ptr]))\\n            ptr += 1\\n        board.append(row)\\n\\n    # Read M stamps\\n    stamps = []\\n    for m in range(M):\\n        stamp = []\\n        for r in range(3):\\n            s_row = []\\n            for c in range(3):\\n                s_row.append(int(input_data[ptr]))\\n                ptr += 1\\n            stamp.append(s_row)\\n        stamps.append(stamp)\\n\\n    placements = []\\n    \\n    # Greedy approach: \\n    # In each step, find the (m, i, j) that maximizes the sum of the board after placement.\\n    # Since we want to maximize the sum, and the board is updated modulo 998244353,\\n    # we look for the placement that results in the largest increase in the sum.\\n    # Note: Because of the modulo, a simple greedy might be tricky, but since the \\n    # values are likely positive and the modulo is very large, we treat it as additive.\\n\\n    for _ in range(K):\\n        best_gain = -float('inf')\\n        best_move = None\\n\\n        for m in range(M):\\n            for i in range(N - 2):\\n                for j in range(N - 2):\\n                    current_gain = 0\\n                    for dr in range(3):\\n                        for dc in range(3):\\n                            # Calculate what the new value would be\\n                            old_val = board[i + dr][j + dc]\\n                            new_val = (old_val + stamps[m][dr][dc]) % MOD\\n                            current_gain += (new_val - old_val)\\n                    \\n                    if current_gain > best_gain:\\n                        best_gain = current_gain\\n                        best_move = (m, i, j)\\n        \\n        # If no move improves the sum (or if best_gain is negative/zero), we",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 964,
+                "completion_tokens": 800,
+                "total_tokens": 1764,
+                "cost": 0.00044532,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 128,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00044532,
+                  "upstream_inference_prompt_cost": 0.00012532,
+                  "upstream_inference_completions_cost": 0.00032
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"Synthesizing the greedy heuristic into a final Python script. The script reads the board and stamps, then iteratively selects the placement (stamp, row, col) that provides the maximum increase to the total sum of the board elements, subject to the modulo constraint and the limit K.\",\n  \"response\": \"Greedy heuristic implementation for stamp placement.\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"import sys\\n\\ndef solve():\\n    # Read N, M, K\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    ptr = 0\\n    N = int(input_data[ptr])\\n    M = int(input_data[ptr+1])\\n    K = int(input_data[ptr+2])\\n    ptr += 3\\n    \\n    MOD = 998244353\\n\\n    # Read initial board\\n    board = []\\n    for i in range(N):\\n        row = []\\n        for j in range(N):\\n            row.append(int(input_data[ptr]))\\n            ptr += 1\\n        board.append(row)\\n\\n    # Read M stamps\\n    stamps = []\\n    for m in range(M):\\n        stamp = []\\n        for r in range(3):\\n            s_row = []\\n            for c in range(3):\\n                s_row.append(int(input_data[ptr]))\\n                ptr += 1\\n            stamp.append(s_row)\\n        stamps.append(stamp)\\n\\n    placements = []\\n    \\n    # Greedy approach: \\n    # In each step, find the (m, i, j) that maximizes the sum of the board after placement.\\n    # Since we want to maximize the sum, and the board is updated modulo 998244353,\\n    # we look for the placement that results in the largest increase in the sum.\\n    # Note: Because of the modulo, a simple greedy might be tricky, but since the \\n    # values are likely positive and the modulo is very large, we treat it as additive.\\n\\n    for _ in range(K):\\n        best_gain = -float('inf')\\n        best_move = None\\n\\n        for m in range(M):\\n            for i in range(N - 2):\\n                for j in range(N - 2):\\n                    current_gain = 0\\n                    for dr in range(3):\\n                        for dc in range(3):\\n                            # Calculate what the new value would be\\n                            old_val = board[i + dr][j + dc]\\n                            new_val = (old_val + stamps[m][dr][dc]) % MOD\\n                            current_gain += (new_val - old_val)\\n                    \\n                    if current_gain > best_gain:\\n                        best_gain = current_gain\\n                        best_move = (m, i, j)\\n        \\n        # If no move improves the sum (or if best_gain is negative/zero), we",
+            "parse_error": null,
+            "parsed_response": null
+          },
+          {
+            "phase": "json_repair",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": "You repair invalid Super-Eywa node responses into strict JSON. Return only valid JSON."
+                },
+                {
+                  "role": "user",
+                  "content": "Rewrite the following content as valid JSON only for the eywa_node_response v1 schema. Allowed orchestration_decision values for this turn: execute_locally. Use the exact top-level fields required by eywa_node_response v1. Do not wrap the object under another key. Use plain text strings only. Do not use markdown, code fences, or backslashes.\n\nOriginal content:\n```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"Synthesizing the greedy heuristic into a final Python script. The script reads the board and stamps, then iteratively selects the placement (stamp, row, col) that provides the maximum increase to the total sum of the board elements, subject to the modulo constraint and the limit K.\",\n  \"response\": \"Greedy heuristic implementation for stamp placement.\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"import sys\\n\\ndef solve():\\n    # Read N, M, K\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    ptr = 0\\n    N = int(input_data[ptr])\\n    M = int(input_data[ptr+1])\\n    K = int(input_data[ptr+2])\\n    ptr += 3\\n    \\n    MOD = 998244353\\n\\n    # Read initial board\\n    board = []\\n    for i in range(N):\\n        row = []\\n        for j in range(N):\\n            row.append(int(input_data[ptr]))\\n            ptr += 1\\n        board.append(row)\\n\\n    # Read M stamps\\n    stamps = []\\n    for m in range(M):\\n        stamp = []\\n        for r in range(3):\\n            s_row = []\\n            for c in range(3):\\n                s_row.append(int(input_data[ptr]))\\n                ptr += 1\\n            stamp.append(s_row)\\n        stamps.append(stamp)\\n\\n    placements = []\\n    \\n    # Greedy approach: \\n    # In each step, find the (m, i, j) that maximizes the sum of the board after placement.\\n    # Since we want to maximize the sum, and the board is updated modulo 998244353,\\n    # we look for the placement that results in the largest increase in the sum.\\n    # Note: Because of the modulo, a simple greedy might be tricky, but since the \\n    # values are likely positive and the modulo is very large, we treat it as additive.\\n\\n    for _ in range(K):\\n        best_gain = -float('inf')\\n        best_move = None\\n\\n        for m in range(M):\\n            for i in range(N - 2):\\n                for j in range(N - 2):\\n                    current_gain = 0\\n                    for dr in range(3):\\n                        for dc in range(3):\\n                            # Calculate what the new value would be\\n                            old_val = board[i + dr][j + dc]\\n                            new_val = (old_val + stamps[m][dr][dc]) % MOD\\n                            current_gain += (new_val - old_val)\\n                    \\n                    if current_gain > best_gain:\\n                        best_gain = current_gain\\n                        best_move = (m, i, j)\\n        \\n        # If no move improves the sum (or if best_gain is negative/zero), we"
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775548420-oZX5oHPHi0zziJthiyrH",
+              "object": "chat.completion",
+              "created": 1775548420,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Parasail",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n\"schema_name\": \"eywa_node_response\",\n\"schema_version\": \"v1\",\n\"orchestration_decision\": \"execute_locally\",\n\"decision_notes\": \"Synthesizing the greedy heuristic into a final Python script. The script reads the board and stamps, then iteratively selects the placement (stamp, row, col) that provides the maximum increase to the total sum of the board elements, subject to the modulo constraint and the limit K.\",\n\"response\": \"Greedy heuristic implementation for stamp placement.\",\n\"result_type\": \"code_submission\",\n\"artifacts\": [\n{\n\"path\": \"main.py\",\n\"content\": \"import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    ptr = 0\\n    N = int(input_data[ptr])\\n    M = int(input_data[ptr+1])\\n    K = int(input_data[ptr+2])\\n    ptr += 3\\n    \\n    MOD = 998244353\\n\\n    board = []\\n    for i in range(N):\\n        row = []\\n        for j in range(N):\\n            row.append(int(input_data[ptr]))\\n            ptr += 1\\n        board.append(row)\\n\\n    stamps = []\\n    for m in range(M):\\n        stamp = []\\n        for r in range(3):\\n            s_row = []\\n            for c in range(3):\\n                s_row.append(int(input_data[ptr]))\\n                ptr += 1\\n            stamp.append(s_row)\\n        stamps.append(stamp)\\n\\n    for _ in range(K):\\n        best_gain = -float('inf')\\n        best_move = None\\n\\n        for m in range(M):\\n            for i in range(N - 2):\\n                for j in range(N - 2):\\n                    current_gain = 0\\n                    for dr in range(3):\\n                        for dc in range(3):\\n                            old_val = board[i + dr][j + dc]\\n                            new_val = (old_val + stamps[m][dr][dc]) % MOD\\n                            current_gain += (new_val - old_val)\\n                    \\n                    if current_gain > best_gain:\\n                        best_gain = current_gain\\n                        best_move = (m, i, j)\\n        \\n        if best_move:\\n            m, i, j = best_move\\n            for dr in range(3):\\n                for dc in range(3):\\n                    board[i + dr][j + dc] = (board[i + dr][j + dc] + stamps[m][dr][dc]) % MOD\\n        else:\\n            break\\n\\n    total_sum = sum(sum(row) for row in board) % MOD\\n    print(total_sum)\\n\\nsolve()\"\n}\n]\n}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 932,
+                "completion_tokens": 722,
+                "total_tokens": 1654,
+                "cost": 0.00040996,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00040996,
+                  "upstream_inference_prompt_cost": 0.00012116,
+                  "upstream_inference_completions_cost": 0.0002888
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\n\"schema_name\": \"eywa_node_response\",\n\"schema_version\": \"v1\",\n\"orchestration_decision\": \"execute_locally\",\n\"decision_notes\": \"Synthesizing the greedy heuristic into a final Python script. The script reads the board and stamps, then iteratively selects the placement (stamp, row, col) that provides the maximum increase to the total sum of the board elements, subject to the modulo constraint and the limit K.\",\n\"response\": \"Greedy heuristic implementation for stamp placement.\",\n\"result_type\": \"code_submission\",\n\"artifacts\": [\n{\n\"path\": \"main.py\",\n\"content\": \"import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    ptr = 0\\n    N = int(input_data[ptr])\\n    M = int(input_data[ptr+1])\\n    K = int(input_data[ptr+2])\\n    ptr += 3\\n    \\n    MOD = 998244353\\n\\n    board = []\\n    for i in range(N):\\n        row = []\\n        for j in range(N):\\n            row.append(int(input_data[ptr]))\\n            ptr += 1\\n        board.append(row)\\n\\n    stamps = []\\n    for m in range(M):\\n        stamp = []\\n        for r in range(3):\\n            s_row = []\\n            for c in range(3):\\n                s_row.append(int(input_data[ptr]))\\n                ptr += 1\\n            stamp.append(s_row)\\n        stamps.append(stamp)\\n\\n    for _ in range(K):\\n        best_gain = -float('inf')\\n        best_move = None\\n\\n        for m in range(M):\\n            for i in range(N - 2):\\n                for j in range(N - 2):\\n                    current_gain = 0\\n                    for dr in range(3):\\n                        for dc in range(3):\\n                            old_val = board[i + dr][j + dc]\\n                            new_val = (old_val + stamps[m][dr][dc]) % MOD\\n                            current_gain += (new_val - old_val)\\n                    \\n                    if current_gain > best_gain:\\n                        best_gain = current_gain\\n                        best_move = (m, i, j)\\n        \\n        if best_move:\\n            m, i, j = best_move\\n            for dr in range(3):\\n                for dc in range(3):\\n                    board[i + dr][j + dc] = (board[i + dr][j + dc] + stamps[m][dr][dc]) % MOD\\n        else:\\n            break\\n\\n    total_sum = sum(sum(row) for row in board) % MOD\\n    print(total_sum)\\n\\nsolve()\"\n}\n]\n}",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "execute_locally",
+              "decision_notes": "Synthesizing the greedy heuristic into a final Python script. The script reads the board and stamps, then iteratively selects the placement (stamp, row, col) that provides the maximum increase to the total sum of the board elements, subject to the modulo constraint and the limit K.",
+              "response": "Greedy heuristic implementation for stamp placement.",
+              "result_type": "code_submission",
+              "artifacts": [
+                {
+                  "path": "main.py",
+                  "content": "import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    ptr = 0\n    N = int(input_data[ptr])\n    M = int(input_data[ptr+1])\n    K = int(input_data[ptr+2])\n    ptr += 3\n    \n    MOD = 998244353\n\n    board = []\n    for i in range(N):\n        row = []\n        for j in range(N):\n            row.append(int(input_data[ptr]))\n            ptr += 1\n        board.append(row)\n\n    stamps = []\n    for m in range(M):\n        stamp = []\n        for r in range(3):\n            s_row = []\n            for c in range(3):\n                s_row.append(int(input_data[ptr]))\n                ptr += 1\n            stamp.append(s_row)\n        stamps.append(stamp)\n\n    for _ in range(K):\n        best_gain = -float('inf')\n        best_move = None\n\n        for m in range(M):\n            for i in range(N - 2):\n                for j in range(N - 2):\n                    current_gain = 0\n                    for dr in range(3):\n                        for dc in range(3):\n                            old_val = board[i + dr][j + dc]\n                            new_val = (old_val + stamps[m][dr][dc]) % MOD\n                            current_gain += (new_val - old_val)\n                    \n                    if current_gain > best_gain:\n                        best_gain = current_gain\n                        best_move = (m, i, j)\n        \n        if best_move:\n            m, i, j = best_move\n            for dr in range(3):\n                for dc in range(3):\n                    board[i + dr][j + dc] = (board[i + dr][j + dc] + stamps[m][dr][dc]) % MOD\n        else:\n            break\n\n    total_sum = sum(sum(row) for row in board) % MOD\n    print(total_sum)\n\nsolve()"
+                }
+              ]
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "execute_locally",
+          "decision_notes": "Synthesizing the greedy heuristic into a final Python script. The script reads the board and stamps, then iteratively selects the placement (stamp, row, col) that provides the maximum increase to the total sum of the board elements, subject to the modulo constraint and the limit K.",
+          "response": "Greedy heuristic implementation for stamp placement.",
+          "result_type": "code_submission",
+          "artifacts": [
+            {
+              "path": "main.py",
+              "content": "import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    ptr = 0\n    N = int(input_data[ptr])\n    M = int(input_data[ptr+1])\n    K = int(input_data[ptr+2])\n    ptr += 3\n    \n    MOD = 998244353\n\n    board = []\n    for i in range(N):\n        row = []\n        for j in range(N):\n            row.append(int(input_data[ptr]))\n            ptr += 1\n        board.append(row)\n\n    stamps = []\n    for m in range(M):\n        stamp = []\n        for r in range(3):\n            s_row = []\n            for c in range(3):\n                s_row.append(int(input_data[ptr]))\n                ptr += 1\n            stamp.append(s_row)\n        stamps.append(stamp)\n\n    for _ in range(K):\n        best_gain = -float('inf')\n        best_move = None\n\n        for m in range(M):\n            for i in range(N - 2):\n                for j in range(N - 2):\n                    current_gain = 0\n                    for dr in range(3):\n                        for dc in range(3):\n                            old_val = board[i + dr][j + dc]\n                            new_val = (old_val + stamps[m][dr][dc]) % MOD\n                            current_gain += (new_val - old_val)\n                    \n                    if current_gain > best_gain:\n                        best_gain = current_gain\n                        best_move = (m, i, j)\n        \n        if best_move:\n            m, i, j = best_move\n            for dr in range(3):\n                for dc in range(3):\n                    board[i + dr][j + dc] = (board[i + dr][j + dc] + stamps[m][dr][dc]) % MOD\n        else:\n            break\n\n    total_sum = sum(sum(row) for row in board) % MOD\n    print(total_sum)\n\nsolve()"
+            }
+          ]
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1896,
+        "completion_tokens": 1522,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 128,
+        "total_tokens": 3418,
+        "cost_usd": 0.00085528,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775548349-TaZyBQVDLG9scwVgTPit",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00044532
+            },
+            {
+              "response_id": "gen-1775548420-oZX5oHPHi0zziJthiyrH",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00040996
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -55,12 +55,16 @@ class DeterministicLocalExecutor:
         prompt_family = str(
             node_packet["variable_resolution"]["resolved_variables"].get("prompt_family", "agent_chooses")
         )
+        submission_contract_type = str(
+            node_packet["variable_resolution"]["resolved_variables"].get("submission_contract_type", "")
+        ).strip()
         authored_response = self._build_deterministic_response(
             instructions=str(node_packet["input"]["instructions"]),
             child_summaries=child_summaries,
             allowed_decisions=allowed_decisions,
             max_helpers=max_helpers,
             prompt_family=prompt_family,
+            submission_contract_type=submission_contract_type,
         )
         validated = validate_authored_response(
             authored_response,
@@ -95,6 +99,7 @@ class DeterministicLocalExecutor:
         allowed_decisions: Iterable[str],
         max_helpers: int,
         prompt_family: str,
+        submission_contract_type: str,
     ) -> Dict[str, Any]:
         allowed = set(allowed_decisions)
         lowered = instructions.lower()
@@ -125,6 +130,16 @@ class DeterministicLocalExecutor:
                 "orchestration_decision": "transmute",
                 "decision_notes": "The task is being reframed for a single downstream node.",
                 "message_for_next_agent": self._transmuted_instruction(instructions),
+            }
+
+        if prompt_family == "review" and "review" in allowed:
+            return {
+                "schema_name": "eywa_node_response",
+                "schema_version": "v1",
+                "orchestration_decision": "review",
+                "decision_notes": "The task should benefit from a critique pass before finalizing.",
+                "draft_response": self._local_response(instructions),
+                "message_for_reviewer": self._review_request(instructions),
             }
 
         if prompt_family == "delegate" and "delegate" in allowed:
@@ -167,8 +182,18 @@ class DeterministicLocalExecutor:
                     "synthesis_brief": "Combine the helper results into one concise final response.",
                 }
 
-        if "execute_locally" in allowed:
+        if "review" in allowed:
             return {
+                "schema_name": "eywa_node_response",
+                "schema_version": "v1",
+                "orchestration_decision": "review",
+                "decision_notes": "A critique pass could improve the draft before the parent finalizes it.",
+                "draft_response": self._local_response(instructions),
+                "message_for_reviewer": self._review_request(instructions),
+            }
+
+        if "execute_locally" in allowed:
+            payload = {
                 "schema_name": "eywa_node_response",
                 "schema_version": "v1",
                 "orchestration_decision": "execute_locally",
@@ -176,6 +201,24 @@ class DeterministicLocalExecutor:
                 "response": self._local_response(instructions),
                 "result_type": "summary",
             }
+            if submission_contract_type == "coding_single_file_python":
+                payload["response"] = "Submitted deterministic placeholder main.py"
+                payload["result_type"] = "code_submission"
+                payload["artifacts"] = [
+                    {
+                        "path": "main.py",
+                        "content": (
+                            "import sys\n\n"
+                            "def main():\n"
+                            "    data = sys.stdin.read().strip()\n"
+                            "    if data:\n"
+                            "        print(0)\n\n"
+                            "if __name__ == '__main__':\n"
+                            "    main()\n"
+                        ),
+                    }
+                ]
+            return payload
 
         if "transmute" in allowed:
             return {
@@ -220,6 +263,13 @@ class DeterministicLocalExecutor:
             f"{instructions}"
         )
 
+    def _review_request(self, instructions: str) -> str:
+        return (
+            "Review the draft answer against the original task. "
+            "Check for mistakes, missing steps, or a weak final answer format, then return the strongest corrected answer you can.\n"
+            f"Task: {instructions}"
+        )
+
     def _split_instructions(self, instructions: str, max_helpers: int) -> List[str]:
         splitter_patterns = [
             r"\sand\s",
@@ -239,6 +289,8 @@ class DeterministicLocalExecutor:
             return "authored transmute decision deterministically"
         if decision == "delegate":
             return "authored delegate decision deterministically"
+        if decision == "review":
+            return "authored review decision deterministically"
         if decision == "report_problem":
             return "authored problem report deterministically"
         if has_child_summaries:

@@ -1,0 +1,15 @@
+{
+  "contract_name": "final_output",
+  "contract_version": "v1",
+  "run_id": "coding-S3-ahc024-topological-map__execute__mx1_non_holdout_full_agent_v1_2026_04_06__execute__20__run_2026_04_07_025128",
+  "created_at_utc": "2026-04-07T02:51:58Z",
+  "source_node_id": "node_root",
+  "source_node_record_ref": "nodes/node_root/node_record.json",
+  "action_type": "report_success",
+  "terminal_result_destination": "final_output",
+  "result": {
+    "result_type": "summary",
+    "content": "FINAL_ANSWER: import sys\nimport random\nimport math\n\ndef solve():\n    # Input Parsing\n    # Expected format: \n    # N (number of colors)\n    # For each color: size (number of cells in this color)\n    # Adjacency list: which colors are adjacent\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    \n    idx = 0\n    N = int(input_data[idx]); idx += 1\n    color_sizes = []\n    for _ in range(N):\n        color_sizes.append(int(input_data[idx]))\n        idx += 1\n    \n    adj = [[] for _ in range(N)]\n    # Assuming the rest of the input defines edges between colors\n    # This part is generic to handle common AHC input styles\n    while idx < len(input_data):\n        u = int(input_data[idx]); idx += 1\n        v = int(input_data[idx]); idx += 1\n        adj[u].append(v)\n        adj[v].append(u)\n\n    GRID_SIZE = 50\n    grid = [[-1 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]\n    \n    # State: list of (r, c) for each cell of each color\n    # To simplify, we represent state as a mapping of (color, cell_index) -> (r, c)\n    state = {}\n    \n    def get_score(current_state):\n        # Score = E (empty cells) - Penalty (broken adjacencies/connectivity)\n        # For this implementation, we focus on maximizing E by minimizing used cells\n        used_cells = len(current_state)\n        return (GRID_SIZE * GRID_SIZE) - used_cells\n\n    # Greedy Initialization\n    occupied = set()\n    for c in range(N):\n        for i in range(color_sizes[c]):\n            placed = False\n            # Try to place near existing colors to satisfy adjacency\n            candidates = []\n            if c > 0:\n                for (rc, ci) in state.keys():\n                    if rc == c - 1:\n                        r, col = state[(rc, ci)]\n                        for dr, dc in [(0,1),(0,-1),(1,0),(-1,0)]:\n                            nr, nc = r+dr, col+dc\n                            if 0 <= nr < GRID_SIZE and 0 <= nc < GRID_SIZE:\n                                candidates.append((nr, nc))\n            \n            if not candidates:\n                # Search for first empty\n                for r in range(",
+    "attachment_refs": []
+  }
+}

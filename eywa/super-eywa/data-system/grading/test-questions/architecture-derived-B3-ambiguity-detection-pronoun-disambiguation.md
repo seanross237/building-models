@@ -1,10 +1,12 @@
 # B3. Ambiguity Detection (Pronoun Disambiguation)
 
-- Type: Architecture-derived
+- Family: architecture-derived
+- Entry Type: reasoning
 - Domain: Natural language understanding
+- Grader Type: exact_choice_letter
 - Source: Architecture Exp, LOGIC-05
 
-## Question
+## Problem
 
 "The investigator wanted to interview the witness in person but he was too late. On his way, he got stuck in traffic."
 
@@ -27,4 +29,4 @@ Adversarial elimination got 3/4.
 
 ## Notes
 
-- 
+-

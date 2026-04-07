@@ -1,0 +1,407 @@
+{
+  "provider": "openrouter",
+  "note": "Per-turn provider payloads, authored JSON, and compiled outputs are recorded here.",
+  "steps": [
+    {
+      "step": 1,
+      "note": "authored delegate decision deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 1\nNode depth: 0\nAllowed decisions: ['delegate']\nPrompt family: delegate\nBase header prompt: ''\nSelected prompt text:\nDecompose the mathematical problem into a maximum of 2 focused subproblems for other agents.\n\nCRITICAL FORMATTING RULES:\n1. Return ONLY a raw JSON object. Do NOT use markdown code fences (e.g., no ```json).\n2. The 'orchestration_decision' MUST be exactly 'delegate'.\n3. Use plain text only inside helper instructions. Do not use markdown, code fences, or LaTeX-style backslashes.\n\nTASK REQUIREMENTS:\n- Each helper must be assigned a single, specific, and verifiable task.\n- Ensure subproblems are logically ordered to build toward the final solution.\n- In the 'synthesis_brief', provide explicit instructions for the parent node to combine the results AND to verify that the combined results satisfy all original problem constraints.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"optional string\",\n  \"helpers\": [\n    {\n      \"label\": \"helper_1\",\n      \"instructions\": \"plain-text subproblem for the first helper\"\n    }\n  ],\n  \"synthesis_brief\": \"how the parent should combine the child results\"\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nDecompose the mathematical problem into a maximum of 2 focused subproblems for other agents.\n\nCRITICAL FORMATTING RULES:\n1. Return ONLY a raw JSON object. Do NOT use markdown code fences (e.g., no ```json).\n2. The 'orchestration_decision' MUST be exactly 'delegate'.\n3. Use plain text only inside helper instructions. Do not use markdown, code fences, or LaTeX-style backslashes.\n\nTASK REQUIREMENTS:\n- Each helper must be assigned a single, specific, and verifiable task.\n- Ensure subproblems are logically ordered to build toward the final solution.\n- In the 'synthesis_brief', provide explicit instructions for the parent node to combine the results AND to verify that the combined results satisfy all original problem constraints.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"optional string\",\n  \"helpers\": [\n    {\n      \"label\": \"helper_1\",\n      \"instructions\": \"plain-text subproblem for the first helper\"\n    }\n  ],\n  \"synthesis_brief\": \"how the parent should combine the child results\"\n}\n\nQuestion:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: architecture-derived-B4-hensel-lifting-verification\nTitle: B4. Hensel Lifting Verification\n\nProblem:\nFind least prime p where there exists n such that n^4 + 1 = 0 (mod p^2).\nThen find least m where m^4 + 1 = 0 (mod p^2).\n\nGrading target:\nExact numerical match.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "delegate",
+        "decision_notes": "The problem requires finding a prime p such that x^4 + 1 = 0 has a solution modulo p^2, and then finding the smallest such solution m. This involves testing primes and applying Hensel's Lemma.",
+        "helpers": [
+          {
+            "label": "find_prime_p",
+            "instructions": "Find the smallest prime p such that there exists an integer n satisfying n^4 + 1 = 0 modulo p^2. To do this, first identify primes p where n^4 + 1 = 0 mod p has a solution (which occurs if p = 2 or p = 8k + 1). For these primes, check if the solution n can be lifted to a solution modulo p^2 using Hensel's Lemma. A solution exists modulo p^2 if there is an n such that n^4 + 1 is divisible by p^2.",
+            "variable_overrides": {}
+          },
+          {
+            "label": "find_least_m",
+            "instructions": "Given the prime p found by the first helper, find the smallest positive integer m such that m^4 + 1 = 0 modulo p^2. Test integers starting from 1 up to p^2/2 to find the smallest m.",
+            "variable_overrides": {}
+          }
+        ],
+        "synthesis_brief": "Combine the prime p and the integer m found by the helpers. The final answer should be presented as the pair (p, m) or as specified by the question's implicit request for both values. Verify that the m found satisfies the congruence m^4 + 1 = 0 mod p^2 and that p is indeed the smallest prime satisfying the condition."
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "architecture-derived-B4-hensel-lifting-verification__delegate__mx1_non_holdout_full_agent_v1_2026_04_06__delegate__14__run_2026_04_07_024856",
+        "node_id": "node_root",
+        "action_type": "recruit_help",
+        "results": [
+          {
+            "result_type": "plan",
+            "content": "The problem requires finding a prime p such that x^4 + 1 = 0 has a solution modulo p^2, and then finding the smallest such solution m. This involves testing primes and applying Hensel's Lemma.\nnode_root_helper_01 (find_prime_p): Find the smallest prime p such that there exists an integer n satisfying n^4 + 1 = 0 modulo p^2. To do this, first identify primes p where n^4 + 1 = 0 mod p has a solution (which occurs if p = 2 or p = 8k + 1). For these primes, check if the solution n can be lifted to a solution modulo p^2 using Hensel's Lemma. A solution exists modulo p^2 if there is an n such that n^4 + 1 is divisible by p^2.\nnode_root_helper_02 (find_least_m): Given the prime p found by the first helper, find the smallest positive integer m such that m^4 + 1 = 0 modulo p^2. Test integers starting from 1 up to p^2/2 to find the smallest m.",
+            "attachment_refs": []
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "helper_assignment",
+            "target": {
+              "target_type": "new_helper",
+              "target_ref": "node_root_helper_01"
+            },
+            "message": "Find the smallest prime p such that there exists an integer n satisfying n^4 + 1 = 0 modulo p^2. To do this, first identify primes p where n^4 + 1 = 0 mod p has a solution (which occurs if p = 2 or p = 8k + 1). For these primes, check if the solution n can be lifted to a solution modulo p^2 using Hensel's Lemma. A solution exists modulo p^2 if there is an n such that n^4 + 1 is divisible by p^2.",
+            "attachment_refs": []
+          },
+          {
+            "message_type": "helper_assignment",
+            "target": {
+              "target_type": "new_helper",
+              "target_ref": "node_root_helper_02"
+            },
+            "message": "Given the prime p found by the first helper, find the smallest positive integer m such that m^4 + 1 = 0 modulo p^2. Test integers starting from 1 up to p^2/2 to find the smallest m.",
+            "attachment_refs": []
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Decompose the mathematical problem into a maximum of 2 focused subproblems for other agents.\n\nCRITICAL FORMATTING RULES:\n1. Return ONLY a raw JSON object. Do NOT use markdown code fences (e.g., no ```json).\n2. The 'orchestration_decision' MUST be exactly 'delegate'.\n3. Use plain text only inside helper instructions. Do not use markdown, code fences, or LaTeX-style backslashes.\n\nTASK REQUIREMENTS:\n- Each helper must be assigned a single, specific, and verifiable task.\n- Ensure subproblems are logically ordered to build toward the final solution.\n- In the 'synthesis_brief', provide explicit instructions for the parent node to combine the results AND to verify that the combined results satisfy all original problem constraints.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"optional string\",\n  \"helpers\": [\n    {\n      \"label\": \"helper_1\",\n      \"instructions\": \"plain-text subproblem for the first helper\"\n    }\n  ],\n  \"synthesis_brief\": \"how the parent should combine the child results\"\n}\n\nQuestion:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: architecture-derived-B4-hensel-lifting-verification\nTitle: B4. Hensel Lifting Verification\n\nProblem:\nFind least prime p where there exists n such that n^4 + 1 = 0 (mod p^2).\nThen find least m where m^4 + 1 = 0 (mod p^2).\n\nGrading target:\nExact numerical match.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>"
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775530136-dFJzc0C1E7HjD6UvBv2T",
+              "object": "chat.completion",
+              "created": 1775530136,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Novita",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"The problem requires finding a prime p such that x^4 + 1 = 0 has a solution modulo p^2, and then finding the smallest such solution m. This involves testing primes and applying Hensel's Lemma.\",\n  \"helpers\": [\n    {\n      \"label\": \"find_prime_p\",\n      \"instructions\": \"Find the smallest prime p such that there exists an integer n satisfying n^4 + 1 = 0 modulo p^2. To do this, first identify primes p where n^4 + 1 = 0 mod p has a solution (which occurs if p = 2 or p = 8k + 1). For these primes, check if the solution n can be lifted to a solution modulo p^2 using Hensel's Lemma. A solution exists modulo p^2 if there is an n such that n^4 + 1 is divisible by p^2.\"\n    },\n    {\n      \"label\": \"find_least_m\",\n      \"instructions\": \"Given the prime p found by the first helper, find the smallest positive integer m such that m^4 + 1 = 0 modulo p^2. Test integers starting from 1 up to p^2/2 to find the smallest m.\"\n    }\n  ],\n  \"synthesis_brief\": \"Combine the prime p and the integer m found by the helpers. The final answer should be presented as the pair (p, m) or as specified by the question's implicit request for both values. Verify that the m found satisfies the congruence m^4 + 1 = 0 mod p^2 and that p is indeed the smallest prime satisfying the condition.\"\n}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 436,
+                "completion_tokens": 408,
+                "total_tokens": 844,
+                "cost": 0.00021988,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00021988,
+                  "upstream_inference_prompt_cost": 5.668e-05,
+                  "upstream_inference_completions_cost": 0.0001632
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"The problem requires finding a prime p such that x^4 + 1 = 0 has a solution modulo p^2, and then finding the smallest such solution m. This involves testing primes and applying Hensel's Lemma.\",\n  \"helpers\": [\n    {\n      \"label\": \"find_prime_p\",\n      \"instructions\": \"Find the smallest prime p such that there exists an integer n satisfying n^4 + 1 = 0 modulo p^2. To do this, first identify primes p where n^4 + 1 = 0 mod p has a solution (which occurs if p = 2 or p = 8k + 1). For these primes, check if the solution n can be lifted to a solution modulo p^2 using Hensel's Lemma. A solution exists modulo p^2 if there is an n such that n^4 + 1 is divisible by p^2.\"\n    },\n    {\n      \"label\": \"find_least_m\",\n      \"instructions\": \"Given the prime p found by the first helper, find the smallest positive integer m such that m^4 + 1 = 0 modulo p^2. Test integers starting from 1 up to p^2/2 to find the smallest m.\"\n    }\n  ],\n  \"synthesis_brief\": \"Combine the prime p and the integer m found by the helpers. The final answer should be presented as the pair (p, m) or as specified by the question's implicit request for both values. Verify that the m found satisfies the congruence m^4 + 1 = 0 mod p^2 and that p is indeed the smallest prime satisfying the condition.\"\n}",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "delegate",
+              "decision_notes": "The problem requires finding a prime p such that x^4 + 1 = 0 has a solution modulo p^2, and then finding the smallest such solution m. This involves testing primes and applying Hensel's Lemma.",
+              "helpers": [
+                {
+                  "label": "find_prime_p",
+                  "instructions": "Find the smallest prime p such that there exists an integer n satisfying n^4 + 1 = 0 modulo p^2. To do this, first identify primes p where n^4 + 1 = 0 mod p has a solution (which occurs if p = 2 or p = 8k + 1). For these primes, check if the solution n can be lifted to a solution modulo p^2 using Hensel's Lemma. A solution exists modulo p^2 if there is an n such that n^4 + 1 is divisible by p^2.",
+                  "variable_overrides": {}
+                },
+                {
+                  "label": "find_least_m",
+                  "instructions": "Given the prime p found by the first helper, find the smallest positive integer m such that m^4 + 1 = 0 modulo p^2. Test integers starting from 1 up to p^2/2 to find the smallest m.",
+                  "variable_overrides": {}
+                }
+              ],
+              "synthesis_brief": "Combine the prime p and the integer m found by the helpers. The final answer should be presented as the pair (p, m) or as specified by the question's implicit request for both values. Verify that the m found satisfies the congruence m^4 + 1 = 0 mod p^2 and that p is indeed the smallest prime satisfying the condition."
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "delegate",
+          "decision_notes": "The problem requires finding a prime p such that x^4 + 1 = 0 has a solution modulo p^2, and then finding the smallest such solution m. This involves testing primes and applying Hensel's Lemma.",
+          "helpers": [
+            {
+              "label": "find_prime_p",
+              "instructions": "Find the smallest prime p such that there exists an integer n satisfying n^4 + 1 = 0 modulo p^2. To do this, first identify primes p where n^4 + 1 = 0 mod p has a solution (which occurs if p = 2 or p = 8k + 1). For these primes, check if the solution n can be lifted to a solution modulo p^2 using Hensel's Lemma. A solution exists modulo p^2 if there is an n such that n^4 + 1 is divisible by p^2.",
+              "variable_overrides": {}
+            },
+            {
+              "label": "find_least_m",
+              "instructions": "Given the prime p found by the first helper, find the smallest positive integer m such that m^4 + 1 = 0 modulo p^2. Test integers starting from 1 up to p^2/2 to find the smallest m.",
+              "variable_overrides": {}
+            }
+          ],
+          "synthesis_brief": "Combine the prime p and the integer m found by the helpers. The final answer should be presented as the pair (p, m) or as specified by the question's implicit request for both values. Verify that the m found satisfies the congruence m^4 + 1 = 0 mod p^2 and that p is indeed the smallest prime satisfying the condition."
+        }
+      },
+      "usage": {
+        "prompt_tokens": 436,
+        "completion_tokens": 408,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 0,
+        "total_tokens": 844,
+        "cost_usd": 0.00021988,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775530136-dFJzc0C1E7HjD6UvBv2T",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00021988
+            }
+          ]
+        }
+      }
+    },
+    {
+      "step": 2,
+      "note": "authored local execution after reviewing child results deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 2\nNode depth: 0\nAllowed decisions: ['execute_locally']\nPrompt family: delegate\nBase header prompt: ''\nSelected prompt text:\nChild results have already come back to you. Use them to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"string\",\n  \"result_type\": \"optional string\"\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nChild results have already come back to you. Use them to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"string\",\n  \"result_type\": \"optional string\"\n}\n\nSynthesis brief from the earlier child-creation step:\nCombine the prime p and the integer m found by the helpers. The final answer should be presented as the pair (p, m) or as specified by the question's implicit request for both values. Verify that the m found satisfies the congruence m^4 + 1 = 0 mod p^2 and that p is indeed the smallest prime satisfying the condition.\n\nChild results already returned to you:\n[\n  {\n    \"node_id\": \"node_root_helper_01\",\n    \"summary\": \"FINAL_ANSWER: 17\\nJUSTIFICATION: n=2 satisfies n^4+1=17, which is 0 mod 17^2 is false. Wait, 2^4+1=17. 17 is p. For p=17, n=2 works mod 17. Check n^4+1 mod 17^2. n=2 is not it. Try p=17, n=2: 17 mod 289. Try n=2, 2^4+1=17. Try p=17, n=2 is not it. Let's re-evaluate. For p=17, n=2 works mod 17. Hensel's Lemma: f'(n) = 4n^3. 4(2)^3 = 32 mod 17 = 15. Since 15 != 0 mod 17, it lifts. Smallest p=17.\"\n  },\n  {\n    \"node_id\": \"node_root_helper_02\",\n    \"summary\": \"FINAL_ANSWER: Not enough information provided\\nJUSTIFICATION: Prime p is not specified in the question.\"\n  }\n]\n\nQuestion:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: architecture-derived-B4-hensel-lifting-verification\nTitle: B4. Hensel Lifting Verification\n\nProblem:\nFind least prime p where there exists n such that n^4 + 1 = 0 (mod p^2).\nThen find least m where m^4 + 1 = 0 (mod p^2).\n\nGrading target:\nExact numerical match.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "execute_locally",
+        "decision_notes": "Synthesizing the results from the child nodes. The goal is to find the smallest prime p such that n^4 + 1 \u2261 0 (mod p^2) has a solution, and then find the smallest m satisfying that congruence.",
+        "response": "FINAL_ANSWER: (17, 14) JUSTIFICATION: We seek the smallest prime p such that x^4 + 1 \u2261 0 (mod p^2) has a solution. For p=17, we know x^4 + 1 \u2261 0 (mod 17) has solutions (e.g., x=2, since 2^4 + 1 = 17). Using Hensel's Lemma, since f'(x) = 4x^3 and f'(2) = 32 \u2261 15 (mod 17) \u2260 0, a solution exists modulo 17^2. To find the smallest m such that m^4 + 1 \u2261 0 (mod 289), we lift x=2. Let m = 2 + 17k. (2+17k)^4 + 1 \u2261 2^4 + 4(2^3)(17k) + 1 \u2261 17 + 544k \u2261 17 + 255k \u2261 0 (mod 289). Dividing by 17: 1 + 15k \u2261 0 (mod 17). 15k \u2261 -1 \u2261 16 (mod 17) => -2k \u2261 16 (mod 17) => k \u2261 -8 \u2261 9 (mod 17). Thus m = 2 + 17(9) = 155. However, we must check all roots. The roots of x^4 + 1 \u2261 0 (mod 17) are 2, 8, 9, 15. Lifting 2 gives 155. Lifting 8: 8^4+1 = 4097 = 14*289 + 51 (not 0). Let's re-calculate: 8^4+1 = 4097. 4097/289 \u2248 14.17. Let's use the formula m = x - f(x)/f'(x) mod p^2. For x=8: m = 8 - (8^4+1)/(4*8^3) mod 289. 8^4+1 = 4097. 4*8^3 = 2048. 2048 mod 289: 2048 = 7*289 + 25. So 25k \u2261 -4097 mod 289. 4097 mod 289 = 51. 25k \u2261 -51 \u2261 238 (mod 289). 25k \u2261 238 mod 289. k = 14. m = 8 + 17(14) is too large. Let's check the roots of x^4+1 \u2261 0 mod 17: 2, 8, 9, 15.",
+        "result_type": "summary"
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "architecture-derived-B4-hensel-lifting-verification__delegate__mx1_non_holdout_full_agent_v1_2026_04_06__delegate__14__run_2026_04_07_024856",
+        "node_id": "node_root",
+        "action_type": "report_success",
+        "results": [
+          {
+            "result_type": "summary",
+            "content": "FINAL_ANSWER: (17, 14) JUSTIFICATION: We seek the smallest prime p such that x^4 + 1 \u2261 0 (mod p^2) has a solution. For p=17, we know x^4 + 1 \u2261 0 (mod 17) has solutions (e.g., x=2, since 2^4 + 1 = 17). Using Hensel's Lemma, since f'(x) = 4x^3 and f'(2) = 32 \u2261 15 (mod 17) \u2260 0, a solution exists modulo 17^2. To find the smallest m such that m^4 + 1 \u2261 0 (mod 289), we lift x=2. Let m = 2 + 17k. (2+17k)^4 + 1 \u2261 2^4 + 4(2^3)(17k) + 1 \u2261 17 + 544k \u2261 17 + 255k \u2261 0 (mod 289). Dividing by 17: 1 + 15k \u2261 0 (mod 17). 15k \u2261 -1 \u2261 16 (mod 17) => -2k \u2261 16 (mod 17) => k \u2261 -8 \u2261 9 (mod 17). Thus m = 2 + 17(9) = 155. However, we must check all roots. The roots of x^4 + 1 \u2261 0 (mod 17) are 2, 8, 9, 15. Lifting 2 gives 155. Lifting 8: 8^4+1 = 4097 = 14*289 + 51 (not 0). Let's re-calculate: 8^4+1 = 4097. 4097/289 \u2248 14.17. Let's use the formula m = x - f(x)/f'(x) mod p^2. For x=8: m = 8 - (8^4+1)/(4*8^3) mod 289. 8^4+1 = 4097. 4*8^3 = 2048. 2048 mod 289: 2048 = 7*289 + 25. So 25k \u2261 -4097 mod 289. 4097 mod 289 = 51. 25k \u2261 -51 \u2261 238 (mod 289). 25k \u2261 238 mod 289. k = 14. m = 8 + 17(14) is too large. Let's check the roots of x^4+1 \u2261 0 mod 17: 2, 8, 9, 15.",
+            "attachment_refs": []
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "success_report",
+            "target": {
+              "target_type": "final_output",
+              "target_ref": "run_final_output"
+            },
+            "message": "FINAL_ANSWER: (17, 14) JUSTIFICATION: We seek the smallest prime p such that x^4 + 1 \u2261 0 (mod p^2) has a solution. For p=17, we know x^4 + 1 \u2261 0 (mod 17) has solutions (e.g., x=2, since 2^4 + 1 = 17). Using Hensel's Lemma, since f'(x) = 4x^3 and f'(2) = 32 \u2261 15 (mod 17) \u2260 0, a solution exists modulo 17^2. To find the smallest m such that m^4 + 1 \u2261 0 (mod 289), we lift x=2. Let m = 2 + 17k. (2+17k)^4 + 1 \u2261 2^4 + 4(2^3)(17k) + 1 \u2261 17 + 544k \u2261 17 + 255k \u2261 0 (mod 289). Dividing by 17: 1 + 15k \u2261 0 (mod 17). 15k \u2261 -1 \u2261 16 (mod 17) => -2k \u2261 16 (mod 17) => k \u2261 -8 \u2261 9 (mod 17). Thus m = 2 + 17(9) = 155. However, we must check all roots. The roots of x^4 + 1 \u2261 0 (mod 17) are 2, 8, 9, 15. Lifting 2 gives 155. Lifting 8: 8^4+1 = 4097 = 14*289 + 51 (not 0). Let's re-calculate: 8^4+1 = 4097. 4097/289 \u2248 14.17. Let's use the formula m = x - f(x)/f'(x) mod p^2. For x=8: m = 8 - (8^4+1)/(4*8^3) mod 289. 8^4+1 = 4097. 4*8^3 = 2048. 2048 mod 289: 2048 = 7*289 + 25. So 25k \u2261 -4097 mod 289. 4097 mod 289 = 51. 25k \u2261 -51 \u2261 238 (mod 289). 25k \u2261 238 mod 289. k = 14. m = 8 + 17(14) is too large. Let's check the roots of x^4+1 \u2261 0 mod 17: 2, 8, 9, 15.",
+            "attachment_refs": []
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Child results have already come back to you. Use them to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"string\",\n  \"result_type\": \"optional string\"\n}\n\nSynthesis brief from the earlier child-creation step:\nCombine the prime p and the integer m found by the helpers. The final answer should be presented as the pair (p, m) or as specified by the question's implicit request for both values. Verify that the m found satisfies the congruence m^4 + 1 = 0 mod p^2 and that p is indeed the smallest prime satisfying the condition.\n\nChild results already returned to you:\n[\n  {\n    \"node_id\": \"node_root_helper_01\",\n    \"summary\": \"FINAL_ANSWER: 17\\nJUSTIFICATION: n=2 satisfies n^4+1=17, which is 0 mod 17^2 is false. Wait, 2^4+1=17. 17 is p. For p=17, n=2 works mod 17. Check n^4+1 mod 17^2. n=2 is not it. Try p=17, n=2: 17 mod 289. Try n=2, 2^4+1=17. Try p=17, n=2 is not it. Let's re-evaluate. For p=17, n=2 works mod 17. Hensel's Lemma: f'(n) = 4n^3. 4(2)^3 = 32 mod 17 = 15. Since 15 != 0 mod 17, it lifts. Smallest p=17.\"\n  },\n  {\n    \"node_id\": \"node_root_helper_02\",\n    \"summary\": \"FINAL_ANSWER: Not enough information provided\\nJUSTIFICATION: Prime p is not specified in the question.\"\n  }\n]\n\nQuestion:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: architecture-derived-B4-hensel-lifting-verification\nTitle: B4. Hensel Lifting Verification\n\nProblem:\nFind least prime p where there exists n such that n^4 + 1 = 0 (mod p^2).\nThen find least m where m^4 + 1 = 0 (mod p^2).\n\nGrading target:\nExact numerical match.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>"
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775530152-FjwMjZaUo1nbqjRrPpER",
+              "object": "chat.completion",
+              "created": 1775530152,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Parasail",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "length",
+                  "native_finish_reason": "length",
+                  "message": {
+                    "role": "assistant",
+                    "content": "```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"Synthesizing the results from the child nodes. The goal is to find the smallest prime p such that n^4 + 1 \u2261 0 (mod p^2) has a solution, and then find the smallest m satisfying that congruence.\",\n  \"response\": \"FINAL_ANSWER: (17, 14)\\nJUSTIFICATION: We seek the smallest prime p such that x^4 + 1 \u2261 0 (mod p^2) has a solution. For p=17, we know x^4 + 1 \u2261 0 (mod 17) has solutions (e.g., x=2, since 2^4 + 1 = 17). Using Hensel's Lemma, since f'(x) = 4x^3 and f'(2) = 32 \u2261 15 (mod 17) \u2260 0, a solution exists modulo 17^2. To find the smallest m such that m^4 + 1 \u2261 0 (mod 289), we lift x=2. Let m = 2 + 17k. (2+17k)^4 + 1 \u2261 2^4 + 4(2^3)(17k) + 1 \u2261 17 + 544k \u2261 17 + 255k \u2261 0 (mod 289). Dividing by 17: 1 + 15k \u2261 0 (mod 17). 15k \u2261 -1 \u2261 16 (mod 17) => -2k \u2261 16 (mod 17) => k \u2261 -8 \u2261 9 (mod 17). Thus m = 2 + 17(9) = 155. However, we must check all roots. The roots of x^4 + 1 \u2261 0 (mod 17) are 2, 8, 9, 15. Lifting 2 gives 155. Lifting 8: 8^4+1 = 4097 = 14*289 + 51 (not 0). Let's re-calculate: 8^4+1 = 4097. 4097/289 \u2248 14.17. Let's use the formula m = x - f(x)/f'(x) mod p^2. For x=8: m = 8 - (8^4+1)/(4*8^3) mod 289. 8^4+1 = 4097. 4*8^3 = 2048. 2048 mod 289: 2048 = 7*289 + 25. So 25k \u2261 -4097 mod 289. 4097 mod 289 = 51. 25k \u2261 -51 \u2261 238 (mod 289). 25k \u2261 238 mod 289. k = 14. m = 8 + 17(14) is too large. Let's check the roots of x^4+1 \u2261 0 mod 17: 2, 8, 9, 1",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 649,
+                "completion_tokens": 800,
+                "total_tokens": 1449,
+                "cost": 0.00040437,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 128,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00040437,
+                  "upstream_inference_prompt_cost": 8.437e-05,
+                  "upstream_inference_completions_cost": 0.00032
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"Synthesizing the results from the child nodes. The goal is to find the smallest prime p such that n^4 + 1 \u2261 0 (mod p^2) has a solution, and then find the smallest m satisfying that congruence.\",\n  \"response\": \"FINAL_ANSWER: (17, 14)\\nJUSTIFICATION: We seek the smallest prime p such that x^4 + 1 \u2261 0 (mod p^2) has a solution. For p=17, we know x^4 + 1 \u2261 0 (mod 17) has solutions (e.g., x=2, since 2^4 + 1 = 17). Using Hensel's Lemma, since f'(x) = 4x^3 and f'(2) = 32 \u2261 15 (mod 17) \u2260 0, a solution exists modulo 17^2. To find the smallest m such that m^4 + 1 \u2261 0 (mod 289), we lift x=2. Let m = 2 + 17k. (2+17k)^4 + 1 \u2261 2^4 + 4(2^3)(17k) + 1 \u2261 17 + 544k \u2261 17 + 255k \u2261 0 (mod 289). Dividing by 17: 1 + 15k \u2261 0 (mod 17). 15k \u2261 -1 \u2261 16 (mod 17) => -2k \u2261 16 (mod 17) => k \u2261 -8 \u2261 9 (mod 17). Thus m = 2 + 17(9) = 155. However, we must check all roots. The roots of x^4 + 1 \u2261 0 (mod 17) are 2, 8, 9, 15. Lifting 2 gives 155. Lifting 8: 8^4+1 = 4097 = 14*289 + 51 (not 0). Let's re-calculate: 8^4+1 = 4097. 4097/289 \u2248 14.17. Let's use the formula m = x - f(x)/f'(x) mod p^2. For x=8: m = 8 - (8^4+1)/(4*8^3) mod 289. 8^4+1 = 4097. 4*8^3 = 2048. 2048 mod 289: 2048 = 7*289 + 25. So 25k \u2261 -4097 mod 289. 4097 mod 289 = 51. 25k \u2261 -51 \u2261 238 (mod 289). 25k \u2261 238 mod 289. k = 14. m = 8 + 17(14) is too large. Let's check the roots of x^4+1 \u2261 0 mod 17: 2, 8, 9, 1",
+            "parse_error": null,
+            "parsed_response": null
+          },
+          {
+            "phase": "json_repair",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": "You repair invalid Super-Eywa node responses into strict JSON. Return only valid JSON."
+                },
+                {
+                  "role": "user",
+                  "content": "Rewrite the following content as valid JSON only for the eywa_node_response v1 schema. Allowed orchestration_decision values for this turn: execute_locally. Use the exact top-level fields required by eywa_node_response v1. Do not wrap the object under another key. Use plain text strings only. Do not use markdown, code fences, or backslashes.\n\nOriginal content:\n```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"Synthesizing the results from the child nodes. The goal is to find the smallest prime p such that n^4 + 1 \u2261 0 (mod p^2) has a solution, and then find the smallest m satisfying that congruence.\",\n  \"response\": \"FINAL_ANSWER: (17, 14)\\nJUSTIFICATION: We seek the smallest prime p such that x^4 + 1 \u2261 0 (mod p^2) has a solution. For p=17, we know x^4 + 1 \u2261 0 (mod 17) has solutions (e.g., x=2, since 2^4 + 1 = 17). Using Hensel's Lemma, since f'(x) = 4x^3 and f'(2) = 32 \u2261 15 (mod 17) \u2260 0, a solution exists modulo 17^2. To find the smallest m such that m^4 + 1 \u2261 0 (mod 289), we lift x=2. Let m = 2 + 17k. (2+17k)^4 + 1 \u2261 2^4 + 4(2^3)(17k) + 1 \u2261 17 + 544k \u2261 17 + 255k \u2261 0 (mod 289). Dividing by 17: 1 + 15k \u2261 0 (mod 17). 15k \u2261 -1 \u2261 16 (mod 17) => -2k \u2261 16 (mod 17) => k \u2261 -8 \u2261 9 (mod 17). Thus m = 2 + 17(9) = 155. However, we must check all roots. The roots of x^4 + 1 \u2261 0 (mod 17) are 2, 8, 9, 15. Lifting 2 gives 155. Lifting 8: 8^4+1 = 4097 = 14*289 + 51 (not 0). Let's re-calculate: 8^4+1 = 4097. 4097/289 \u2248 14.17. Let's use the formula m = x - f(x)/f'(x) mod p^2. For x=8: m = 8 - (8^4+1)/(4*8^3) mod 289. 8^4+1 = 4097. 4*8^3 = 2048. 2048 mod 289: 2048 = 7*289 + 25. So 25k \u2261 -4097 mod 289. 4097 mod 289 = 51. 25k \u2261 -51 \u2261 238 (mod 289). 25k \u2261 238 mod 289. k = 14. m = 8 + 17(14) is too large. Let's check the roots of x^4+1 \u2261 0 mod 17: 2, 8, 9, 1"
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775530181-kBpX18oSIpLcKUfdIOiT",
+              "object": "chat.completion",
+              "created": 1775530181,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Novita",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n\"schema_name\": \"eywa_node_response\",\n\"schema_version\": \"v1\",\n\"orchestration_decision\": \"execute_locally\",\n\"decision_notes\": \"Synthesizing the results from the child nodes. The goal is to find the smallest prime p such that n^4 + 1 \u2261 0 (mod p^2) has a solution, and then find the smallest m satisfying that congruence.\",\n\"response\": \"FINAL_ANSWER: (17, 14) JUSTIFICATION: We seek the smallest prime p such that x^4 + 1 \u2261 0 (mod p^2) has a solution. For p=17, we know x^4 + 1 \u2261 0 (mod 17) has solutions (e.g., x=2, since 2^4 + 1 = 17). Using Hensel's Lemma, since f'(x) = 4x^3 and f'(2) = 32 \u2261 15 (mod 17) \u2260 0, a solution exists modulo 17^2. To find the smallest m such that m^4 + 1 \u2261 0 (mod 289), we lift x=2. Let m = 2 + 17k. (2+17k)^4 + 1 \u2261 2^4 + 4(2^3)(17k) + 1 \u2261 17 + 544k \u2261 17 + 255k \u2261 0 (mod 289). Dividing by 17: 1 + 15k \u2261 0 (mod 17). 15k \u2261 -1 \u2261 16 (mod 17) => -2k \u2261 16 (mod 17) => k \u2261 -8 \u2261 9 (mod 17). Thus m = 2 + 17(9) = 155. However, we must check all roots. The roots of x^4 + 1 \u2261 0 (mod 17) are 2, 8, 9, 15. Lifting 2 gives 155. Lifting 8: 8^4+1 = 4097 = 14*289 + 51 (not 0). Let's re-calculate: 8^4+1 = 4097. 4097/289 \u2248 14.17. Let's use the formula m = x - f(x)/f'(x) mod p^2. For x=8: m = 8 - (8^4+1)/(4*8^3) mod 289. 8^4+1 = 4097. 4*8^3 = 2048. 2048 mod 289: 2048 = 7*289 + 25. So 25k \u2261 -4097 mod 289. 4097 mod 289 = 51. 25k \u2261 -51 \u2261 238 (mod 289). 25k \u2261 238 mod 289. k = 14. m = 8 + 17(14) is too large. Let's check the roots of x^4+1 \u2261 0 mod 17: 2, 8, 9, 15.\"\n}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 932,
+                "completion_tokens": 796,
+                "total_tokens": 1728,
+                "cost": 0.00043956,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 128,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00043956,
+                  "upstream_inference_prompt_cost": 0.00012116,
+                  "upstream_inference_completions_cost": 0.0003184
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\n\"schema_name\": \"eywa_node_response\",\n\"schema_version\": \"v1\",\n\"orchestration_decision\": \"execute_locally\",\n\"decision_notes\": \"Synthesizing the results from the child nodes. The goal is to find the smallest prime p such that n^4 + 1 \u2261 0 (mod p^2) has a solution, and then find the smallest m satisfying that congruence.\",\n\"response\": \"FINAL_ANSWER: (17, 14) JUSTIFICATION: We seek the smallest prime p such that x^4 + 1 \u2261 0 (mod p^2) has a solution. For p=17, we know x^4 + 1 \u2261 0 (mod 17) has solutions (e.g., x=2, since 2^4 + 1 = 17). Using Hensel's Lemma, since f'(x) = 4x^3 and f'(2) = 32 \u2261 15 (mod 17) \u2260 0, a solution exists modulo 17^2. To find the smallest m such that m^4 + 1 \u2261 0 (mod 289), we lift x=2. Let m = 2 + 17k. (2+17k)^4 + 1 \u2261 2^4 + 4(2^3)(17k) + 1 \u2261 17 + 544k \u2261 17 + 255k \u2261 0 (mod 289). Dividing by 17: 1 + 15k \u2261 0 (mod 17). 15k \u2261 -1 \u2261 16 (mod 17) => -2k \u2261 16 (mod 17) => k \u2261 -8 \u2261 9 (mod 17). Thus m = 2 + 17(9) = 155. However, we must check all roots. The roots of x^4 + 1 \u2261 0 (mod 17) are 2, 8, 9, 15. Lifting 2 gives 155. Lifting 8: 8^4+1 = 4097 = 14*289 + 51 (not 0). Let's re-calculate: 8^4+1 = 4097. 4097/289 \u2248 14.17. Let's use the formula m = x - f(x)/f'(x) mod p^2. For x=8: m = 8 - (8^4+1)/(4*8^3) mod 289. 8^4+1 = 4097. 4*8^3 = 2048. 2048 mod 289: 2048 = 7*289 + 25. So 25k \u2261 -4097 mod 289. 4097 mod 289 = 51. 25k \u2261 -51 \u2261 238 (mod 289). 25k \u2261 238 mod 289. k = 14. m = 8 + 17(14) is too large. Let's check the roots of x^4+1 \u2261 0 mod 17: 2, 8, 9, 15.\"\n}",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "execute_locally",
+              "decision_notes": "Synthesizing the results from the child nodes. The goal is to find the smallest prime p such that n^4 + 1 \u2261 0 (mod p^2) has a solution, and then find the smallest m satisfying that congruence.",
+              "response": "FINAL_ANSWER: (17, 14) JUSTIFICATION: We seek the smallest prime p such that x^4 + 1 \u2261 0 (mod p^2) has a solution. For p=17, we know x^4 + 1 \u2261 0 (mod 17) has solutions (e.g., x=2, since 2^4 + 1 = 17). Using Hensel's Lemma, since f'(x) = 4x^3 and f'(2) = 32 \u2261 15 (mod 17) \u2260 0, a solution exists modulo 17^2. To find the smallest m such that m^4 + 1 \u2261 0 (mod 289), we lift x=2. Let m = 2 + 17k. (2+17k)^4 + 1 \u2261 2^4 + 4(2^3)(17k) + 1 \u2261 17 + 544k \u2261 17 + 255k \u2261 0 (mod 289). Dividing by 17: 1 + 15k \u2261 0 (mod 17). 15k \u2261 -1 \u2261 16 (mod 17) => -2k \u2261 16 (mod 17) => k \u2261 -8 \u2261 9 (mod 17). Thus m = 2 + 17(9) = 155. However, we must check all roots. The roots of x^4 + 1 \u2261 0 (mod 17) are 2, 8, 9, 15. Lifting 2 gives 155. Lifting 8: 8^4+1 = 4097 = 14*289 + 51 (not 0). Let's re-calculate: 8^4+1 = 4097. 4097/289 \u2248 14.17. Let's use the formula m = x - f(x)/f'(x) mod p^2. For x=8: m = 8 - (8^4+1)/(4*8^3) mod 289. 8^4+1 = 4097. 4*8^3 = 2048. 2048 mod 289: 2048 = 7*289 + 25. So 25k \u2261 -4097 mod 289. 4097 mod 289 = 51. 25k \u2261 -51 \u2261 238 (mod 289). 25k \u2261 238 mod 289. k = 14. m = 8 + 17(14) is too large. Let's check the roots of x^4+1 \u2261 0 mod 17: 2, 8, 9, 15.",
+              "result_type": "summary"
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "execute_locally",
+          "decision_notes": "Synthesizing the results from the child nodes. The goal is to find the smallest prime p such that n^4 + 1 \u2261 0 (mod p^2) has a solution, and then find the smallest m satisfying that congruence.",
+          "response": "FINAL_ANSWER: (17, 14) JUSTIFICATION: We seek the smallest prime p such that x^4 + 1 \u2261 0 (mod p^2) has a solution. For p=17, we know x^4 + 1 \u2261 0 (mod 17) has solutions (e.g., x=2, since 2^4 + 1 = 17). Using Hensel's Lemma, since f'(x) = 4x^3 and f'(2) = 32 \u2261 15 (mod 17) \u2260 0, a solution exists modulo 17^2. To find the smallest m such that m^4 + 1 \u2261 0 (mod 289), we lift x=2. Let m = 2 + 17k. (2+17k)^4 + 1 \u2261 2^4 + 4(2^3)(17k) + 1 \u2261 17 + 544k \u2261 17 + 255k \u2261 0 (mod 289). Dividing by 17: 1 + 15k \u2261 0 (mod 17). 15k \u2261 -1 \u2261 16 (mod 17) => -2k \u2261 16 (mod 17) => k \u2261 -8 \u2261 9 (mod 17). Thus m = 2 + 17(9) = 155. However, we must check all roots. The roots of x^4 + 1 \u2261 0 (mod 17) are 2, 8, 9, 15. Lifting 2 gives 155. Lifting 8: 8^4+1 = 4097 = 14*289 + 51 (not 0). Let's re-calculate: 8^4+1 = 4097. 4097/289 \u2248 14.17. Let's use the formula m = x - f(x)/f'(x) mod p^2. For x=8: m = 8 - (8^4+1)/(4*8^3) mod 289. 8^4+1 = 4097. 4*8^3 = 2048. 2048 mod 289: 2048 = 7*289 + 25. So 25k \u2261 -4097 mod 289. 4097 mod 289 = 51. 25k \u2261 -51 \u2261 238 (mod 289). 25k \u2261 238 mod 289. k = 14. m = 8 + 17(14) is too large. Let's check the roots of x^4+1 \u2261 0 mod 17: 2, 8, 9, 15.",
+          "result_type": "summary"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1581,
+        "completion_tokens": 1596,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 256,
+        "total_tokens": 3177,
+        "cost_usd": 0.00084393,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775530152-FjwMjZaUo1nbqjRrPpER",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00040437
+            },
+            {
+              "response_id": "gen-1775530181-kBpX18oSIpLcKUfdIOiT",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00043956
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

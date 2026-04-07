@@ -1,10 +1,12 @@
 # B6. Binary Representation Minimization
 
-- Type: Architecture-derived
+- Family: architecture-derived
+- Entry Type: reasoning
 - Domain: Number theory / binary arithmetic
+- Grader Type: exact_numeric
 - Source: Architecture Exp, MATH-13
 
-## Question
+## Problem
 
 For each n, let k(n) be the number of ones in the binary representation of 2023*n.
 Find the minimum k(n).
@@ -24,4 +26,4 @@ Opus got 3.
 
 ## Notes
 
-- 
+-

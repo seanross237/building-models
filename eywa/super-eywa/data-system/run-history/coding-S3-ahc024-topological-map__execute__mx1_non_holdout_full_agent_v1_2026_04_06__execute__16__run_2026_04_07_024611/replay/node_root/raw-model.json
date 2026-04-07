@@ -1,0 +1,222 @@
+{
+  "provider": "openrouter",
+  "note": "Per-turn provider payloads, authored JSON, and compiled outputs are recorded here.",
+  "steps": [
+    {
+      "step": 1,
+      "note": "authored local execution deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 1\nNode depth: 0\nAllowed decisions: ['execute_locally']\nPrompt family: execute\nBase header prompt: ''\nSelected prompt text:\nAct as an expert competitive programmer. Your task is to write a robust, standalone Python 3 script that implements a high-performance heuristic (such as Simulated Annealing or a Greedy approach with local search) to solve the optimization problem described. \n\nSOLVER REQUIREMENTS:\n1. INPUT/OUTPUT: The script must read all input from `sys.stdin` and print the result to `sys.stdout` in the exact format required by the problem. Assume a standard competitive programming input format where dimensions and connectivity data are provided as integers.\n2. ALGORITHMIC COMPLETENESS: The script must contain a fully functional implementation of your chosen heuristic. It must be able to process an input instance and produce a valid output without requiring manual intervention or additional code. Avoid using placeholders like '# implement logic here'.\n3. NO NARRATION: The 'response' field must contain ONLY the Python code, prefixed by 'FINAL_ANSWER: '. Do not provide any explanations, justifications, or introductory text.\n4. JSON INTEGRITY: The entire script must be a single string within the 'response' field. Ensure all newlines are escaped as '\\n' and all double quotes are escaped as '\"'. Do not use markdown code fences (```) inside the JSON.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nAct as an expert competitive programmer. Your task is to write a robust, standalone Python 3 script that implements a high-performance heuristic (such as Simulated Annealing or a Greedy approach with local search) to solve the optimization problem described. \n\nSOLVER REQUIREMENTS:\n1. INPUT/OUTPUT: The script must read all input from `sys.stdin` and print the result to `sys.stdout` in the exact format required by the problem. Assume a standard competitive programming input format where dimensions and connectivity data are provided as integers.\n2. ALGORITHMIC COMPLETENESS: The script must contain a fully functional implementation of your chosen heuristic. It must be able to process an input instance and produce a valid output without requiring manual intervention or additional code. Avoid using placeholders like '# implement logic here'.\n3. NO NARRATION: The 'response' field must contain ONLY the Python code, prefixed by 'FINAL_ANSWER: '. Do not provide any explanations, justifications, or introductory text.\n4. JSON INTEGRITY: The entire script must be a single string within the 'response' field. Ensure all newlines are escaped as '\\n' and all double quotes are escaped as '\"'. Do not use markdown code fences (```) inside the JSON.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}\n\nQuestion:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: coding-S3-ahc024-topological-map\nTitle: S3. AHC024 / Topological Map\n\nProblem:\nCompress a colored city map onto a 50 x 50 grid while preserving all color-adjacency relations and connectivity constraints, and maximize empty space.\n\nGrading target:\nE + 1, where E is the number of empty cells.\nHigher is better.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "execute_locally",
+        "decision_notes": "The user wants a Python script to solve a specific optimization problem (AHC024 Topological Map). Since the problem description is a summary and doesn't provide the exact input format or constraints (like the number of colors, the adjacency list structure, etc.), I will implement a robust Simulated Annealing solver designed for a generic grid-based placement problem that respects adjacency constraints, which is the core of the AHC024 problem.",
+        "response": "FINAL_ANSWER: import sys\nimport random\nimport math\nimport time\n\ndef solve():\n    # Reading input\n    # Based on AHC024 typical format: \n    # N (number of colors), M (number of adjacency relations)\n    # Then M lines of (u, v)\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    idx = 0\n    N = int(input_data[idx])\n    idx += 1\n    M = int(input_data[idx])\n    idx += 1\n    \n    adj = [[] for _ in range(N + 1)]\n    for _ in range(M):\n        u = int(input_data[idx])\n        v = int(input_data[idx+1])\n        adj[u].append(v)\n        adj[v].append(u)\n        idx += 2\n\n    GRID_SIZE = 50\n    # grid[r][c] stores color ID, 0 for empty\n    grid = [[0 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]\n    # pos[color] = (r, c)\n    pos = {} \n\n    def get_score(current_grid, current_pos):\n        # Score is number of empty cells - penalty for broken adjacencies\n        empty_cells = 0\n        for r in range(GRID_SIZE):\n            for c in range(GRID_SIZE):\n                if current_grid[r][c] == 0:\n                    empty_cells += 1\n        \n        penalty = 0\n        for u in range(1, N + 1):\n            r, c = current_pos[u]\n            for v in adj[u]:\n                # Check if v is adjacent to u in grid\n                found = False\n                for dr, dc in [(0,1), (0,-1), (1,0), (-1,0)]:\n                    nr, nc = r + dr, c + dc\n                    if 0 <= nr < GRID_SIZE and 0 <= nc < GRID_SIZE:\n                        if current_grid[nr][nc] == v:\n                            found = True\n                            break\n                if not found:\n                    penalty += 1\n        \n        # Each edge is counted twice in the penalty loop\n        return empty_cells - (penalty // 2)\n\n    # Initial Greedy Placement\n    # Place colors in a spiral or simple scan to keep them close\n    placed_count = 0\n    for r in range(GRID_SIZE):\n        for c in range(GRID_SIZE):\n            if placed_count < N:\n                pass",
+        "result_type": "summary"
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "coding-S3-ahc024-topological-map__execute__mx1_non_holdout_full_agent_v1_2026_04_06__execute__16__run_2026_04_07_024611",
+        "node_id": "node_root",
+        "action_type": "report_success",
+        "results": [
+          {
+            "result_type": "summary",
+            "content": "FINAL_ANSWER: import sys\nimport random\nimport math\nimport time\n\ndef solve():\n    # Reading input\n    # Based on AHC024 typical format: \n    # N (number of colors), M (number of adjacency relations)\n    # Then M lines of (u, v)\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    idx = 0\n    N = int(input_data[idx])\n    idx += 1\n    M = int(input_data[idx])\n    idx += 1\n    \n    adj = [[] for _ in range(N + 1)]\n    for _ in range(M):\n        u = int(input_data[idx])\n        v = int(input_data[idx+1])\n        adj[u].append(v)\n        adj[v].append(u)\n        idx += 2\n\n    GRID_SIZE = 50\n    # grid[r][c] stores color ID, 0 for empty\n    grid = [[0 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]\n    # pos[color] = (r, c)\n    pos = {} \n\n    def get_score(current_grid, current_pos):\n        # Score is number of empty cells - penalty for broken adjacencies\n        empty_cells = 0\n        for r in range(GRID_SIZE):\n            for c in range(GRID_SIZE):\n                if current_grid[r][c] == 0:\n                    empty_cells += 1\n        \n        penalty = 0\n        for u in range(1, N + 1):\n            r, c = current_pos[u]\n            for v in adj[u]:\n                # Check if v is adjacent to u in grid\n                found = False\n                for dr, dc in [(0,1), (0,-1), (1,0), (-1,0)]:\n                    nr, nc = r + dr, c + dc\n                    if 0 <= nr < GRID_SIZE and 0 <= nc < GRID_SIZE:\n                        if current_grid[nr][nc] == v:\n                            found = True\n                            break\n                if not found:\n                    penalty += 1\n        \n        # Each edge is counted twice in the penalty loop\n        return empty_cells - (penalty // 2)\n\n    # Initial Greedy Placement\n    # Place colors in a spiral or simple scan to keep them close\n    placed_count = 0\n    for r in range(GRID_SIZE):\n        for c in range(GRID_SIZE):\n            if placed_count < N:\n                pass",
+            "attachment_refs": []
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "success_report",
+            "target": {
+              "target_type": "final_output",
+              "target_ref": "run_final_output"
+            },
+            "message": "FINAL_ANSWER: import sys\nimport random\nimport math\nimport time\n\ndef solve():\n    # Reading input\n    # Based on AHC024 typical format: \n    # N (number of colors), M (number of adjacency relations)\n    # Then M lines of (u, v)\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    idx = 0\n    N = int(input_data[idx])\n    idx += 1\n    M = int(input_data[idx])\n    idx += 1\n    \n    adj = [[] for _ in range(N + 1)]\n    for _ in range(M):\n        u = int(input_data[idx])\n        v = int(input_data[idx+1])\n        adj[u].append(v)\n        adj[v].append(u)\n        idx += 2\n\n    GRID_SIZE = 50\n    # grid[r][c] stores color ID, 0 for empty\n    grid = [[0 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]\n    # pos[color] = (r, c)\n    pos = {} \n\n    def get_score(current_grid, current_pos):\n        # Score is number of empty cells - penalty for broken adjacencies\n        empty_cells = 0\n        for r in range(GRID_SIZE):\n            for c in range(GRID_SIZE):\n                if current_grid[r][c] == 0:\n                    empty_cells += 1\n        \n        penalty = 0\n        for u in range(1, N + 1):\n            r, c = current_pos[u]\n            for v in adj[u]:\n                # Check if v is adjacent to u in grid\n                found = False\n                for dr, dc in [(0,1), (0,-1), (1,0), (-1,0)]:\n                    nr, nc = r + dr, c + dc\n                    if 0 <= nr < GRID_SIZE and 0 <= nc < GRID_SIZE:\n                        if current_grid[nr][nc] == v:\n                            found = True\n                            break\n                if not found:\n                    penalty += 1\n        \n        # Each edge is counted twice in the penalty loop\n        return empty_cells - (penalty // 2)\n\n    # Initial Greedy Placement\n    # Place colors in a spiral or simple scan to keep them close\n    placed_count = 0\n    for r in range(GRID_SIZE):\n        for c in range(GRID_SIZE):\n            if placed_count < N:\n                pass",
+            "attachment_refs": []
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Act as an expert competitive programmer. Your task is to write a robust, standalone Python 3 script that implements a high-performance heuristic (such as Simulated Annealing or a Greedy approach with local search) to solve the optimization problem described. \n\nSOLVER REQUIREMENTS:\n1. INPUT/OUTPUT: The script must read all input from `sys.stdin` and print the result to `sys.stdout` in the exact format required by the problem. Assume a standard competitive programming input format where dimensions and connectivity data are provided as integers.\n2. ALGORITHMIC COMPLETENESS: The script must contain a fully functional implementation of your chosen heuristic. It must be able to process an input instance and produce a valid output without requiring manual intervention or additional code. Avoid using placeholders like '# implement logic here'.\n3. NO NARRATION: The 'response' field must contain ONLY the Python code, prefixed by 'FINAL_ANSWER: '. Do not provide any explanations, justifications, or introductory text.\n4. JSON INTEGRITY: The entire script must be a single string within the 'response' field. Ensure all newlines are escaped as '\\n' and all double quotes are escaped as '\"'. Do not use markdown code fences (```) inside the JSON.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}\n\nQuestion:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: coding-S3-ahc024-topological-map\nTitle: S3. AHC024 / Topological Map\n\nProblem:\nCompress a colored city map onto a 50 x 50 grid while preserving all color-adjacency relations and connectivity constraints, and maximize empty space.\n\nGrading target:\nE + 1, where E is the number of empty cells.\nHigher is better.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>"
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775529972-oOO6DCR8Ey9fkrTNcl6Q",
+              "object": "chat.completion",
+              "created": 1775529972,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Parasail",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "length",
+                  "native_finish_reason": "length",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"The user wants a Python script to solve a specific optimization problem (AHC024 Topological Map). Since the problem description is a summary and doesn't provide the exact input format or constraints (like the number of colors, the adjacency list structure, etc.), I will implement a robust Simulated Annealing solver designed for a generic grid-based placement problem that respects adjacency constraints, which is the core of the AHC024 problem.\",\n  \"response\": \"FINAL_ANSWER: import sys\\nimport random\\nimport math\\nimport time\\n\\ndef solve():\\n    # Reading input\\n    # Based on AHC024 typical format: \\n    # N (number of colors), M (number of adjacency relations)\\n    # Then M lines of (u, v)\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    idx = 0\\n    N = int(input_data[idx])\\n    idx += 1\\n    M = int(input_data[idx])\\n    idx += 1\\n    \\n    adj = [[] for _ in range(N + 1)]\\n    for _ in range(M):\\n        u = int(input_data[idx])\\n        v = int(input_data[idx+1])\\n        adj[u].append(v)\\n        adj[v].append(u)\\n        idx += 2\\n\\n    GRID_SIZE = 50\\n    # grid[r][c] stores color ID, 0 for empty\\n    grid = [[0 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]\\n    # pos[color] = (r, c)\\n    pos = {} \\n\\n    def get_score(current_grid, current_pos):\\n        # Score is number of empty cells - penalty for broken adjacencies\\n        empty_cells = 0\\n        for r in range(GRID_SIZE):\\n            for c in range(GRID_SIZE):\\n                if current_grid[r][c] == 0:\\n                    empty_cells += 1\\n        \\n        penalty = 0\\n        for u in range(1, N + 1):\\n            r, c = current_pos[u]\\n            for v in adj[u]:\\n                # Check if v is adjacent to u in grid\\n                found = False\\n                for dr, dc in [(0,1), (0,-1), (1,0), (-1,0)]:\\n                    nr, nc = r + dr, c + dc\\n                    if 0 <= nr < GRID_SIZE and 0 <= nc < GRID_SIZE:\\n                        if current_grid[nr][nc] == v:\\n                            found = True\\n                            break\\n                if not found:\\n                    penalty += 1\\n        \\n        # Each edge is counted twice in the penalty loop\\n        return empty_cells - (penalty // 2)\\n\\n    # Initial Greedy Placement\\n    # Place colors in a spiral or simple scan to keep them close\\n    placed_count = 0\\n    for r in range(GRID_SIZE):\\n        for c in range(GRID_SIZE):\\n            if placed_count < N:\\n                ",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 511,
+                "completion_tokens": 800,
+                "total_tokens": 1311,
+                "cost": 0.00038643,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00038643,
+                  "upstream_inference_prompt_cost": 6.643e-05,
+                  "upstream_inference_completions_cost": 0.00032
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"The user wants a Python script to solve a specific optimization problem (AHC024 Topological Map). Since the problem description is a summary and doesn't provide the exact input format or constraints (like the number of colors, the adjacency list structure, etc.), I will implement a robust Simulated Annealing solver designed for a generic grid-based placement problem that respects adjacency constraints, which is the core of the AHC024 problem.\",\n  \"response\": \"FINAL_ANSWER: import sys\\nimport random\\nimport math\\nimport time\\n\\ndef solve():\\n    # Reading input\\n    # Based on AHC024 typical format: \\n    # N (number of colors), M (number of adjacency relations)\\n    # Then M lines of (u, v)\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    idx = 0\\n    N = int(input_data[idx])\\n    idx += 1\\n    M = int(input_data[idx])\\n    idx += 1\\n    \\n    adj = [[] for _ in range(N + 1)]\\n    for _ in range(M):\\n        u = int(input_data[idx])\\n        v = int(input_data[idx+1])\\n        adj[u].append(v)\\n        adj[v].append(u)\\n        idx += 2\\n\\n    GRID_SIZE = 50\\n    # grid[r][c] stores color ID, 0 for empty\\n    grid = [[0 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]\\n    # pos[color] = (r, c)\\n    pos = {} \\n\\n    def get_score(current_grid, current_pos):\\n        # Score is number of empty cells - penalty for broken adjacencies\\n        empty_cells = 0\\n        for r in range(GRID_SIZE):\\n            for c in range(GRID_SIZE):\\n                if current_grid[r][c] == 0:\\n                    empty_cells += 1\\n        \\n        penalty = 0\\n        for u in range(1, N + 1):\\n            r, c = current_pos[u]\\n            for v in adj[u]:\\n                # Check if v is adjacent to u in grid\\n                found = False\\n                for dr, dc in [(0,1), (0,-1), (1,0), (-1,0)]:\\n                    nr, nc = r + dr, c + dc\\n                    if 0 <= nr < GRID_SIZE and 0 <= nc < GRID_SIZE:\\n                        if current_grid[nr][nc] == v:\\n                            found = True\\n                            break\\n                if not found:\\n                    penalty += 1\\n        \\n        # Each edge is counted twice in the penalty loop\\n        return empty_cells - (penalty // 2)\\n\\n    # Initial Greedy Placement\\n    # Place colors in a spiral or simple scan to keep them close\\n    placed_count = 0\\n    for r in range(GRID_SIZE):\\n        for c in range(GRID_SIZE):\\n            if placed_count < N:\\n",
+            "parse_error": null,
+            "parsed_response": null
+          },
+          {
+            "phase": "json_repair",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": "You repair invalid Super-Eywa node responses into strict JSON. Return only valid JSON."
+                },
+                {
+                  "role": "user",
+                  "content": "Rewrite the following content as valid JSON only for the eywa_node_response v1 schema. Allowed orchestration_decision values for this turn: execute_locally. Use the exact top-level fields required by eywa_node_response v1. Do not wrap the object under another key. Use plain text strings only. Do not use markdown, code fences, or backslashes.\n\nOriginal content:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"The user wants a Python script to solve a specific optimization problem (AHC024 Topological Map). Since the problem description is a summary and doesn't provide the exact input format or constraints (like the number of colors, the adjacency list structure, etc.), I will implement a robust Simulated Annealing solver designed for a generic grid-based placement problem that respects adjacency constraints, which is the core of the AHC024 problem.\",\n  \"response\": \"FINAL_ANSWER: import sys\\nimport random\\nimport math\\nimport time\\n\\ndef solve():\\n    # Reading input\\n    # Based on AHC024 typical format: \\n    # N (number of colors), M (number of adjacency relations)\\n    # Then M lines of (u, v)\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    idx = 0\\n    N = int(input_data[idx])\\n    idx += 1\\n    M = int(input_data[idx])\\n    idx += 1\\n    \\n    adj = [[] for _ in range(N + 1)]\\n    for _ in range(M):\\n        u = int(input_data[idx])\\n        v = int(input_data[idx+1])\\n        adj[u].append(v)\\n        adj[v].append(u)\\n        idx += 2\\n\\n    GRID_SIZE = 50\\n    # grid[r][c] stores color ID, 0 for empty\\n    grid = [[0 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]\\n    # pos[color] = (r, c)\\n    pos = {} \\n\\n    def get_score(current_grid, current_pos):\\n        # Score is number of empty cells - penalty for broken adjacencies\\n        empty_cells = 0\\n        for r in range(GRID_SIZE):\\n            for c in range(GRID_SIZE):\\n                if current_grid[r][c] == 0:\\n                    empty_cells += 1\\n        \\n        penalty = 0\\n        for u in range(1, N + 1):\\n            r, c = current_pos[u]\\n            for v in adj[u]:\\n                # Check if v is adjacent to u in grid\\n                found = False\\n                for dr, dc in [(0,1), (0,-1), (1,0), (-1,0)]:\\n                    nr, nc = r + dr, c + dc\\n                    if 0 <= nr < GRID_SIZE and 0 <= nc < GRID_SIZE:\\n                        if current_grid[nr][nc] == v:\\n                            found = True\\n                            break\\n                if not found:\\n                    penalty += 1\\n        \\n        # Each edge is counted twice in the penalty loop\\n        return empty_cells - (penalty // 2)\\n\\n    # Initial Greedy Placement\\n    # Place colors in a spiral or simple scan to keep them close\\n    placed_count = 0\\n    for r in range(GRID_SIZE):\\n        for c in range(GRID_SIZE):\\n            if placed_count < N:\\n"
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775530003-k11zEsfyFQE6UJG6Yvz7",
+              "object": "chat.completion",
+              "created": 1775530003,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Parasail",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n\"schema_name\": \"eywa_node_response\",\n\"schema_version\": \"v1\",\n\"orchestration_decision\": \"execute_locally\",\n\"decision_notes\": \"The user wants a Python script to solve a specific optimization problem (AHC024 Topological Map). Since the problem description is a summary and doesn't provide the exact input format or constraints (like the number of colors, the adjacency list structure, etc.), I will implement a robust Simulated Annealing solver designed for a generic grid-based placement problem that respects adjacency constraints, which is the core of the AHC024 problem.\",\n\"response\": \"FINAL_ANSWER: import sys\\nimport random\\nimport math\\nimport time\\n\\ndef solve():\\n    # Reading input\\n    # Based on AHC024 typical format: \\n    # N (number of colors), M (number of adjacency relations)\\n    # Then M lines of (u, v)\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    idx = 0\\n    N = int(input_data[idx])\\n    idx += 1\\n    M = int(input_data[idx])\\n    idx += 1\\n    \\n    adj = [[] for _ in range(N + 1)]\\n    for _ in range(M):\\n        u = int(input_data[idx])\\n        v = int(input_data[idx+1])\\n        adj[u].append(v)\\n        adj[v].append(u)\\n        idx += 2\\n\\n    GRID_SIZE = 50\\n    # grid[r][c] stores color ID, 0 for empty\\n    grid = [[0 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]\\n    # pos[color] = (r, c)\\n    pos = {} \\n\\n    def get_score(current_grid, current_pos):\\n        # Score is number of empty cells - penalty for broken adjacencies\\n        empty_cells = 0\\n        for r in range(GRID_SIZE):\\n            for c in range(GRID_SIZE):\\n                if current_grid[r][c] == 0:\\n                    empty_cells += 1\\n        \\n        penalty = 0\\n        for u in range(1, N + 1):\\n            r, c = current_pos[u]\\n            for v in adj[u]:\\n                # Check if v is adjacent to u in grid\\n                found = False\\n                for dr, dc in [(0,1), (0,-1), (1,0), (-1,0)]:\\n                    nr, nc = r + dr, c + dc\\n                    if 0 <= nr < GRID_SIZE and 0 <= nc < GRID_SIZE:\\n                        if current_grid[nr][nc] == v:\\n                            found = True\\n                            break\\n                if not found:\\n                    penalty += 1\\n        \\n        # Each edge is counted twice in the penalty loop\\n        return empty_cells - (penalty // 2)\\n\\n    # Initial Greedy Placement\\n    # Place colors in a spiral or simple scan to keep them close\\n    placed_count = 0\\n    for r in range(GRID_SIZE):\\n        for c in range(GRID_SIZE):\\n            if placed_count < N:\\n                pass\"\n}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 931,
+                "completion_tokens": 800,
+                "total_tokens": 1731,
+                "cost": 0.00044103,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00044103,
+                  "upstream_inference_prompt_cost": 0.00012103,
+                  "upstream_inference_completions_cost": 0.00032
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\n\"schema_name\": \"eywa_node_response\",\n\"schema_version\": \"v1\",\n\"orchestration_decision\": \"execute_locally\",\n\"decision_notes\": \"The user wants a Python script to solve a specific optimization problem (AHC024 Topological Map). Since the problem description is a summary and doesn't provide the exact input format or constraints (like the number of colors, the adjacency list structure, etc.), I will implement a robust Simulated Annealing solver designed for a generic grid-based placement problem that respects adjacency constraints, which is the core of the AHC024 problem.\",\n\"response\": \"FINAL_ANSWER: import sys\\nimport random\\nimport math\\nimport time\\n\\ndef solve():\\n    # Reading input\\n    # Based on AHC024 typical format: \\n    # N (number of colors), M (number of adjacency relations)\\n    # Then M lines of (u, v)\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    idx = 0\\n    N = int(input_data[idx])\\n    idx += 1\\n    M = int(input_data[idx])\\n    idx += 1\\n    \\n    adj = [[] for _ in range(N + 1)]\\n    for _ in range(M):\\n        u = int(input_data[idx])\\n        v = int(input_data[idx+1])\\n        adj[u].append(v)\\n        adj[v].append(u)\\n        idx += 2\\n\\n    GRID_SIZE = 50\\n    # grid[r][c] stores color ID, 0 for empty\\n    grid = [[0 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]\\n    # pos[color] = (r, c)\\n    pos = {} \\n\\n    def get_score(current_grid, current_pos):\\n        # Score is number of empty cells - penalty for broken adjacencies\\n        empty_cells = 0\\n        for r in range(GRID_SIZE):\\n            for c in range(GRID_SIZE):\\n                if current_grid[r][c] == 0:\\n                    empty_cells += 1\\n        \\n        penalty = 0\\n        for u in range(1, N + 1):\\n            r, c = current_pos[u]\\n            for v in adj[u]:\\n                # Check if v is adjacent to u in grid\\n                found = False\\n                for dr, dc in [(0,1), (0,-1), (1,0), (-1,0)]:\\n                    nr, nc = r + dr, c + dc\\n                    if 0 <= nr < GRID_SIZE and 0 <= nc < GRID_SIZE:\\n                        if current_grid[nr][nc] == v:\\n                            found = True\\n                            break\\n                if not found:\\n                    penalty += 1\\n        \\n        # Each edge is counted twice in the penalty loop\\n        return empty_cells - (penalty // 2)\\n\\n    # Initial Greedy Placement\\n    # Place colors in a spiral or simple scan to keep them close\\n    placed_count = 0\\n    for r in range(GRID_SIZE):\\n        for c in range(GRID_SIZE):\\n            if placed_count < N:\\n                pass\"\n}",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "execute_locally",
+              "decision_notes": "The user wants a Python script to solve a specific optimization problem (AHC024 Topological Map). Since the problem description is a summary and doesn't provide the exact input format or constraints (like the number of colors, the adjacency list structure, etc.), I will implement a robust Simulated Annealing solver designed for a generic grid-based placement problem that respects adjacency constraints, which is the core of the AHC024 problem.",
+              "response": "FINAL_ANSWER: import sys\nimport random\nimport math\nimport time\n\ndef solve():\n    # Reading input\n    # Based on AHC024 typical format: \n    # N (number of colors), M (number of adjacency relations)\n    # Then M lines of (u, v)\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    idx = 0\n    N = int(input_data[idx])\n    idx += 1\n    M = int(input_data[idx])\n    idx += 1\n    \n    adj = [[] for _ in range(N + 1)]\n    for _ in range(M):\n        u = int(input_data[idx])\n        v = int(input_data[idx+1])\n        adj[u].append(v)\n        adj[v].append(u)\n        idx += 2\n\n    GRID_SIZE = 50\n    # grid[r][c] stores color ID, 0 for empty\n    grid = [[0 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]\n    # pos[color] = (r, c)\n    pos = {} \n\n    def get_score(current_grid, current_pos):\n        # Score is number of empty cells - penalty for broken adjacencies\n        empty_cells = 0\n        for r in range(GRID_SIZE):\n            for c in range(GRID_SIZE):\n                if current_grid[r][c] == 0:\n                    empty_cells += 1\n        \n        penalty = 0\n        for u in range(1, N + 1):\n            r, c = current_pos[u]\n            for v in adj[u]:\n                # Check if v is adjacent to u in grid\n                found = False\n                for dr, dc in [(0,1), (0,-1), (1,0), (-1,0)]:\n                    nr, nc = r + dr, c + dc\n                    if 0 <= nr < GRID_SIZE and 0 <= nc < GRID_SIZE:\n                        if current_grid[nr][nc] == v:\n                            found = True\n                            break\n                if not found:\n                    penalty += 1\n        \n        # Each edge is counted twice in the penalty loop\n        return empty_cells - (penalty // 2)\n\n    # Initial Greedy Placement\n    # Place colors in a spiral or simple scan to keep them close\n    placed_count = 0\n    for r in range(GRID_SIZE):\n        for c in range(GRID_SIZE):\n            if placed_count < N:\n                pass",
+              "result_type": "summary"
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "execute_locally",
+          "decision_notes": "The user wants a Python script to solve a specific optimization problem (AHC024 Topological Map). Since the problem description is a summary and doesn't provide the exact input format or constraints (like the number of colors, the adjacency list structure, etc.), I will implement a robust Simulated Annealing solver designed for a generic grid-based placement problem that respects adjacency constraints, which is the core of the AHC024 problem.",
+          "response": "FINAL_ANSWER: import sys\nimport random\nimport math\nimport time\n\ndef solve():\n    # Reading input\n    # Based on AHC024 typical format: \n    # N (number of colors), M (number of adjacency relations)\n    # Then M lines of (u, v)\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    idx = 0\n    N = int(input_data[idx])\n    idx += 1\n    M = int(input_data[idx])\n    idx += 1\n    \n    adj = [[] for _ in range(N + 1)]\n    for _ in range(M):\n        u = int(input_data[idx])\n        v = int(input_data[idx+1])\n        adj[u].append(v)\n        adj[v].append(u)\n        idx += 2\n\n    GRID_SIZE = 50\n    # grid[r][c] stores color ID, 0 for empty\n    grid = [[0 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]\n    # pos[color] = (r, c)\n    pos = {} \n\n    def get_score(current_grid, current_pos):\n        # Score is number of empty cells - penalty for broken adjacencies\n        empty_cells = 0\n        for r in range(GRID_SIZE):\n            for c in range(GRID_SIZE):\n                if current_grid[r][c] == 0:\n                    empty_cells += 1\n        \n        penalty = 0\n        for u in range(1, N + 1):\n            r, c = current_pos[u]\n            for v in adj[u]:\n                # Check if v is adjacent to u in grid\n                found = False\n                for dr, dc in [(0,1), (0,-1), (1,0), (-1,0)]:\n                    nr, nc = r + dr, c + dc\n                    if 0 <= nr < GRID_SIZE and 0 <= nc < GRID_SIZE:\n                        if current_grid[nr][nc] == v:\n                            found = True\n                            break\n                if not found:\n                    penalty += 1\n        \n        # Each edge is counted twice in the penalty loop\n        return empty_cells - (penalty // 2)\n\n    # Initial Greedy Placement\n    # Place colors in a spiral or simple scan to keep them close\n    placed_count = 0\n    for r in range(GRID_SIZE):\n        for c in range(GRID_SIZE):\n            if placed_count < N:\n                pass",
+          "result_type": "summary"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1442,
+        "completion_tokens": 1600,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 0,
+        "total_tokens": 3042,
+        "cost_usd": 0.00082746,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775529972-oOO6DCR8Ey9fkrTNcl6Q",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00038643
+            },
+            {
+              "response_id": "gen-1775530003-k11zEsfyFQE6UJG6Yvz7",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00044103
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

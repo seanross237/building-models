@@ -1,10 +1,12 @@
 # S3. AHC024 / Topological Map
 
-- Type: Coding
+- Family: coding
+- Entry Type: coding
 - Subtype: Score-gradient task
+- Grader Type: continuous_score
 - Source: https://atcoder.jp/contests/ahc024/tasks/ahc024_a
 
-## Task
+## Problem
 
 Compress a colored city map onto a 50 x 50 grid while preserving all color-adjacency relations and connectivity constraints, and maximize empty space.
 
@@ -20,4 +22,4 @@ Strong signal on whether the agent can reason about invariants while optimizing 
 
 ## Notes
 
-- 
+-

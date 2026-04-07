@@ -1,10 +1,12 @@
 # A10. Riemann Hypothesis Super-Rigidity Gap
 
-- Type: Atlas-derived
+- Family: atlas-derived
+- Entry Type: reasoning
 - Domain: Mathematics / spectral theory
+- Grader Type: binary_reasoning
 - Source: Atlas Riemann Hypothesis mission
 
-## Question
+## Problem
 
 Can a Hermitian matrix eigenvalue spectrum match the Riemann zeta zeros' 47% super-rigidity (Delta_3_sat = 0.155)?
 
@@ -24,4 +26,4 @@ Binary:
 
 ## Notes
 
-- 
+-

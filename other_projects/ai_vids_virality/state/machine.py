@@ -31,7 +31,7 @@ VALID_TRANSITIONS: Dict[Status, Set[Status]] = {
     Status.SCRIPTED: {Status.STORYBOARD_REVIEW, Status.REJECTED},
     Status.STORYBOARD_REVIEW: {Status.VIDEO_PENDING, Status.REJECTED},
     Status.VIDEO_PENDING: {Status.CRITIC_REVIEW, Status.REJECTED},
-    Status.CRITIC_REVIEW: {Status.PUBLISHED, Status.REJECTED},
+    Status.CRITIC_REVIEW: {Status.PUBLISHED, Status.VIDEO_PENDING, Status.REJECTED},
     Status.PUBLISHED: set(),
     Status.REJECTED: set(),
 }

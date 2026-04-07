@@ -1,0 +1,15 @@
+{
+  "contract_name": "final_output",
+  "contract_version": "v1",
+  "run_id": "coding-S3-ahc024-topological-map__execute__mx1_non_holdout_full_agent_v1_2026_04_06__execute__17__run_2026_04_07_024733",
+  "created_at_utc": "2026-04-07T02:47:55Z",
+  "source_node_id": "node_root",
+  "source_node_record_ref": "nodes/node_root/node_record.json",
+  "action_type": "report_success",
+  "terminal_result_destination": "final_output",
+  "result": {
+    "result_type": "summary",
+    "content": "FINAL_ANSWER: \nimport sys\nimport random\nimport math\nimport time\n\n# --- Problem Constants ---\nGRID_SIZE = 50\n\ndef solve():\n    # --- Input Parsing ---\n    # Expected input format: \n    # N (number of colors/regions)\n    # For each region i:\n    #   M_i (number of cells in region i)\n    #   List of cells (r, c) or adjacency relations\n    # Since the exact format is variable, we implement a robust parser for adjacency lists.\n    \n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    ptr = 0\n    try:\n        num_regions = int(input_data[ptr])\n        ptr += 1\n    except:\n        return\n\n    regions = []\n    for i in range(num_regions):\n        num_cells = int(input_data[ptr])\n        ptr += 1\n        cells = []\n        for _ in range(num_cells):\n            r = int(input_data[ptr])\n            c = int(input_data[ptr+1])\n            cells.append((r, c))\n            ptr += 2\n        regions.append(cells)\n\n    # --- Solver Logic: Simulated Annealing with Local Search ---\n    # Goal: Place regions on 50x50 grid to maximize empty cells.\n    # Constraint: Adjacency and Connectivity.\n    \n    # State representation: grid[50][50] storing region ID or 0 for empty.\n    grid = [[0 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]\n    \n    # Initial Placement: Greedy approach\n    # We try to place regions in a compact manner.\n    current_empty = GRID_SIZE * GRID_SIZE\n    \n    def get_neighbors(r, c):\n        for dr, dc in [(0,1), (0,-1), (1,0), (-1,0)]:\n            nr, nc = r + dr, c + dc\n            if 0 <= nr < GRID_SIZE and 0 <= nc < GRID_SIZE:\n                yield nr, nc\n\n    def is_valid(region_idx, new_cells):\n        # Check bounds and collisions\n        temp_cells = set(new_cells)\n        for r, c in temp_cells:\n            if not (0 <= r < GRID_SIZE and 0 <= c < GRID_SIZE):\n                return False\n            if grid[r][c] != 0 and grid[r][c] != region_idx + 1:\n                return False\n        \n        # Check connectivity (BFS/DFS)\n        if not temp_cells:\n            return True\n        start = next(iter(temp_cells))\n        visited = {start}\n        stack = [start]\n        while stack:",
+    "attachment_refs": []
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "contract_name": "final_output",
+  "contract_version": "v1",
+  "run_id": "coding-S4-ahc030-polyomino-mining__execute__mx1_non_holdout_full_agent_v1_2026_04_06__execute__20__run_2026_04_07_024524",
+  "created_at_utc": "2026-04-07T02:46:26Z",
+  "source_node_id": "node_root",
+  "source_node_record_ref": "nodes/node_root/node_record.json",
+  "action_type": "report_success",
+  "terminal_result_destination": "final_output",
+  "result": {
+    "result_type": "summary",
+    "content": "FINAL_ANSWER: import sys\nimport math\nfrom collections import deque\n\nclass StateModel:\n    def __init__(self, width, height, polyominoes):\n        self.width = width\n        self.height = height\n        self.polyominoes = polyominoes\n        self.prob_map = [[0.0 for _ in range(width)] for _ in range(height)]\n        self.is_drilled = [[False for _ in range(width)] for _ in range(height)]\n        self.is_oil = [[False for _ in range(width)] for _ in range(height)]\n        self.possible_placements = self._precompute_placements()\n\n    def _precompute_placements(self):\n        placements = []\n        for poly in self.polyominoes:\n            for r in range(self.height):\n                for c in range(self.width):\n                    cells = []\n                    valid = True\n                    for dr, dc in poly:\n                        nr, nc = r + dr, c + dc\n                        if 0 <= nr < self.height and 0 <= nc < self.width:\n                            cells.append((nr, nc))\n                        else:\n                            valid = False\n                            break\n                    if valid:\n                        placements.append(set(cells))\n        return placements\n\n    def update_probabilities(self, observed_cells):\n        for r in range(self.height):\n            for c in range(self.width):\n                count = 0\n                for p in self.possible_placements:\n                    if (r, c) in p:\n                        consistent = True\n                        for orr, oc in observed_cells:\n                            if (orr, oc) not in p:\n                                pass\n                        count += 1\n                self.prob_map[r][c] = count / len(self.possible_placements) if self.possible_placements else 0\n\nclass HeuristicEngine:\n    def __init__(self, model):\n        self.model = model\n\n    def select_next_probe(self):\n        best_cell = (0, 0)\n        max_val = -1.0\n        for r in range(self.model.height):\n            for c in range(self.model.width):\n                if not self.model.is_drilled[r][c]:\n                    val = self.model.prob_map[r][c]\n                    if val > max_val:\n                        max_val = val\n                        best_cell = (r, c)\n        return best_cell",
+    "attachment_refs": []
+  }
+}

@@ -92,6 +92,48 @@ class PromptingTests(unittest.TestCase):
         self.assertTrue(prompt_bundle["user_prompt"].startswith("Now use the child result and solve it."))
         self.assertIn("Child results already returned to you", prompt_bundle["user_prompt"])
 
+    def test_review_family_uses_one_child_review_prompt_then_executes(self) -> None:
+        node_packet = {
+            "run_id": "run_prompting_review_family_test",
+            "node_id": "node_root",
+            "input": {
+                "instructions": "Original question text.",
+                "provided_context_refs": [],
+                "attachment_refs": [],
+            },
+            "variable_resolution": {
+                "resolved_variables": {
+                    "prompt_family": "review",
+                    "selected_prompt_text": "",
+                    "base_header_prompt": "",
+                    "additional_instruction_prompt_profiles": [],
+                    "budget_policy": {
+                        "max_depth": 3,
+                        "max_helpers_per_node": 3,
+                        "max_turns_per_node": 4,
+                    },
+                }
+            },
+        }
+
+        first_turn = build_turn_prompt(
+            node_packet,
+            allowed_decisions=["review"],
+            turn_index=1,
+            depth=0,
+        )
+        self.assertEqual(first_turn["prompt_family"], "review")
+        self.assertIn('"orchestration_decision": "review"', first_turn["user_prompt"])
+
+        second_turn = build_turn_prompt(
+            node_packet,
+            allowed_decisions=["execute_locally"],
+            turn_index=2,
+            depth=0,
+            child_results=[{"node_id": "node_root_helper_01", "summary": "critique"}],
+        )
+        self.assertEqual(second_turn["prompt_family"], "review")
+        self.assertIn('"orchestration_decision": "execute_locally"', second_turn["user_prompt"])
 
 if __name__ == "__main__":
     unittest.main()

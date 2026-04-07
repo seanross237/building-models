@@ -1,10 +1,12 @@
 # A2. Unruh-de Sitter Temperature Ratio = MOND Interpolation
 
-- Type: Atlas-derived
+- Family: atlas-derived
+- Entry Type: reasoning
 - Domain: Physics / gravity / galactic dynamics
+- Grader Type: manual_exact
 - Source: Atlas Compton-Unruh mission
 
-## Question
+## Problem
 
 What is the ratio T_U(a)/T_dS(a) of flat-space Unruh temperature to de Sitter-modified Unruh temperature?
 
@@ -23,4 +25,4 @@ Exact algebraic identity match plus numerical fit verification.
 
 ## Notes
 
-- 
+-

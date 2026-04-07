@@ -1,10 +1,12 @@
 # B2. Sign-Sensitive Derivation (Exciton Rydberg Energy)
 
-- Type: Architecture-derived
+- Family: architecture-derived
+- Entry Type: reasoning
 - Domain: Physics / condensed matter
+- Grader Type: numeric_tolerance
 - Source: Architecture Exp, SCI-03
 
-## Question
+## Problem
 
 Band gap 3 eV, screened Coulomb, 1s exciton peak at 1 eV.
 What is the Rydberg energy for n = 3?
@@ -25,4 +27,4 @@ Only sign-explicit prompting fixed it.
 
 ## Notes
 
-- 
+-

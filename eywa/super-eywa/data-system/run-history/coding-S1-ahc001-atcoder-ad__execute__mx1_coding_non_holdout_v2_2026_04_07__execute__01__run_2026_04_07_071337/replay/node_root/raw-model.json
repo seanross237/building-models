@@ -1,0 +1,171 @@
+{
+  "provider": "openrouter",
+  "note": "Per-turn provider payloads, authored JSON, and compiled outputs are recorded here.",
+  "steps": [
+    {
+      "step": 1,
+      "note": "authored local execution deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 1\nNode depth: 0\nAllowed decisions: ['execute_locally']\nPrompt family: execute\nBase header prompt: ''\nSelected prompt text:\nSolve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nThe response field should be only a brief submission summary. Do not put contestant stdout in the response field.\nYour main.py must read from stdin and print only the contestant output required by the problem.\nDo not print explanations, labels, debug text, or estimated scores.\nIf the Output section requires a leading count/header line, print it exactly.\nPrefer a simple valid baseline over malformed ambitious output.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nSolve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nThe response field should be only a brief submission summary. Do not put contestant stdout in the response field.\nYour main.py must read from stdin and print only the contestant output required by the problem.\nDo not print explanations, labels, debug text, or estimated scores.\nIf the Output section requires a leading count/header line, print it exactly.\nPrefer a simple valid baseline over malformed ambitious output.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\n\nQuestion:\nSolve this Super-Eywa coding benchmark.\nQuestion ID: coding-S1-ahc001-atcoder-ad\nTitle: S1. AHC001 / AtCoder Ad\n\nProblem:\n# AHC001 / AtCoder Ad\n\nWrite `main.py`.\n\nYou are given `N` advertisers.\nAdvertiser `i` requests a point `(x_i, y_i)` and a target area `r_i` inside a `10000 x 10000` square.\nOutput one axis-aligned rectangle for each advertiser.\n\n## Objective\n\n- Every rectangle must stay inside the board.\n- Rectangle `i` must contain its requested point `(x_i, y_i)`.\n- Rectangles must not overlap.\n- The score rewards making each rectangle area close to `r_i`.\n\n## Input\n\n- Line 1: `N`\n- Next `N` lines: `x_i y_i r_i`\n\n## Output\n\n- Print exactly `N` lines.\n- Line `i` must be `x1 y1 x2 y2` for advertiser `i`.\n- The rectangle is `[x1, x2) x [y1, y2)`.\n\n## Notes\n\n- A rectangle with invalid bounds or one that misses its required point receives no benefit.\n- Overlapping rectangles make the score collapse to zero.\n- This v1 packet uses the official AtCoder visualizer on three bundled public instances.\n\nSubmission contract:\n- Return a single Python submission file named main.py.\n- Read from stdin and write to stdout.\n- Put the full file content in the artifacts list of your execute_locally JSON response.\n- Use the response field only for a brief submission summary.\n- Do not wrap the code in markdown fences inside artifacts.\n\nCritical validity rules:\n- Your program is judged by the stdout it prints when run, not by the summary in your JSON response.\n- Print exactly the contestant output described in the Output section, and nothing else.\n- Do not print the objective score, estimated score, labels, explanations, or debug text unless the Output section explicitly requires them.\n- If the Output section requires a count/header on the first line, print that first line exactly.\n- Every printed index, count, and coordinate must stay within the allowed ranges.\n- Prefer a simple valid baseline solution over an ambitious but invalid one.\n- If the problem permits an empty or minimal valid plan, that is better than malformed output.\n\nGrading target:\nContinuous score from advertiser satisfaction.\nHigher is better.",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "execute_locally",
+        "decision_notes": "Implementing a simple non-overlapping rectangle strategy.",
+        "response": "FINAL_ANSWER: main.py\nJUSTIFICATION: Uses tiny rectangles around points to avoid overlap.",
+        "result_type": "code_submission",
+        "artifacts": [
+          {
+            "path": "main.py",
+            "content": "import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    N = int(input_data[0])\n    idx = 1\n    \n    # To avoid overlap, we can use very small rectangles\n    # centered at (x, y). Since coordinates are integers\n    # and we need [x1, x2) x [y1, y2),\n    # we can use [x, x+1) x [y, y+1).\n    # However, if multiple points are the same, we need to offset.\n    \n    points = []\n    for i in range(N):\n        x = int(input_data[idx])\n        y = int(input_data[idx+1])\n        r = int(input_data[idx+2])\n        points.append((x, y, r, i))\n        idx += 3\n\n    # Sort points to handle potential overlaps via a grid or offset\n    # For a simple baseline, we use a tiny 1x1 rectangle.\n    # If points are identical, we offset slightly.\n    \n    # Using a dictionary to track occupied integer coordinates\n    occupied = set()\n    \n    results = [None] * N\n    \n    for x, y, r, i in points:\n        # Try to find the smallest available 1x1 rectangle\n        # starting at (x, y), (x+1, y), (x, y+1), etc.\n        found = False\n        for dx in range(100):\n            for dy in range(100):\n                nx, ny = x + dx, y + dy\n                if (nx, ny) not in occupied:\n                    # Check bounds\n                    if 0 <= nx < 10000 and 0 <= ny < 10000:\n                        results[i] = (nx, ny, nx + 1, ny + 1)\n                        occupied.add((nx, ny))\n                        found = True\n                        break\n            if found: break\n        \n        if not found:\n            # Fallback to a 1x1 at x, y if possible, or just something valid\n            # This part is unlikely to be hit given 10000x10000 grid\n            results[i] = (x, y, x + 1, y + 1)\n\n    for res in results:\n        print(f\"{res[0]} {res[1]} {res[2]} {res[3]}\")\n\nif __name__ == \"__main__\":\n    solve()"
+          }
+        ]
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "coding-S1-ahc001-atcoder-ad__execute__mx1_coding_non_holdout_v2_2026_04_07__execute__01__run_2026_04_07_071337",
+        "node_id": "node_root",
+        "action_type": "report_success",
+        "results": [
+          {
+            "result_type": "code_submission",
+            "content": "FINAL_ANSWER: main.py\nJUSTIFICATION: Uses tiny rectangles around points to avoid overlap.",
+            "attachment_refs": [
+              "artifacts/node_root/turn_01/main.py"
+            ]
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "success_report",
+            "target": {
+              "target_type": "final_output",
+              "target_ref": "run_final_output"
+            },
+            "message": "FINAL_ANSWER: main.py\nJUSTIFICATION: Uses tiny rectangles around points to avoid overlap.",
+            "attachment_refs": [
+              "artifacts/node_root/turn_01/main.py"
+            ]
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nThe response field should be only a brief submission summary. Do not put contestant stdout in the response field.\nYour main.py must read from stdin and print only the contestant output required by the problem.\nDo not print explanations, labels, debug text, or estimated scores.\nIf the Output section requires a leading count/header line, print it exactly.\nPrefer a simple valid baseline over malformed ambitious output.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\n\nQuestion:\nSolve this Super-Eywa coding benchmark.\nQuestion ID: coding-S1-ahc001-atcoder-ad\nTitle: S1. AHC001 / AtCoder Ad\n\nProblem:\n# AHC001 / AtCoder Ad\n\nWrite `main.py`.\n\nYou are given `N` advertisers.\nAdvertiser `i` requests a point `(x_i, y_i)` and a target area `r_i` inside a `10000 x 10000` square.\nOutput one axis-aligned rectangle for each advertiser.\n\n## Objective\n\n- Every rectangle must stay inside the board.\n- Rectangle `i` must contain its requested point `(x_i, y_i)`.\n- Rectangles must not overlap.\n- The score rewards making each rectangle area close to `r_i`.\n\n## Input\n\n- Line 1: `N`\n- Next `N` lines: `x_i y_i r_i`\n\n## Output\n\n- Print exactly `N` lines.\n- Line `i` must be `x1 y1 x2 y2` for advertiser `i`.\n- The rectangle is `[x1, x2) x [y1, y2)`.\n\n## Notes\n\n- A rectangle with invalid bounds or one that misses its required point receives no benefit.\n- Overlapping rectangles make the score collapse to zero.\n- This v1 packet uses the official AtCoder visualizer on three bundled public instances.\n\nSubmission contract:\n- Return a single Python submission file named main.py.\n- Read from stdin and write to stdout.\n- Put the full file content in the artifacts list of your execute_locally JSON response.\n- Use the response field only for a brief submission summary.\n- Do not wrap the code in markdown fences inside artifacts.\n\nCritical validity rules:\n- Your program is judged by the stdout it prints when run, not by the summary in your JSON response.\n- Print exactly the contestant output described in the Output section, and nothing else.\n- Do not print the objective score, estimated score, labels, explanations, or debug text unless the Output section explicitly requires them.\n- If the Output section requires a count/header on the first line, print that first line exactly.\n- Every printed index, count, and coordinate must stay within the allowed ranges.\n- Prefer a simple valid baseline solution over an ambitious but invalid one.\n- If the problem permits an empty or minimal valid plan, that is better than malformed output.\n\nGrading target:\nContinuous score from advertiser satisfaction.\nHigher is better."
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775546017-g8CrF9uYNvUQCb6OUkmP",
+              "object": "chat.completion",
+              "created": 1775546017,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Parasail",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\"schema_name\": \"eywa_node_response\", \"schema_version\": \"v1\", \"orchestration_decision\": \"execute_locally\", \"decision_notes\": \"Implementing a simple non-overlapping rectangle strategy.\", \"response\": \"FINAL_ANSWER: main.py\\nJUSTIFICATION: Uses tiny rectangles around points to avoid overlap.\", \"result_type\": \"code_submission\", \"artifacts\": [{\"path\": \"main.py\", \"content\": \"import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    N = int(input_data[0])\\n    idx = 1\\n    \\n    # To avoid overlap, we can use very small rectangles\\n    # centered at (x, y). Since coordinates are integers\\n    # and we need [x1, x2) x [y1, y2),\\n    # we can use [x, x+1) x [y, y+1).\\n    # However, if multiple points are the same, we need to offset.\\n    \\n    points = []\\n    for i in range(N):\\n        x = int(input_data[idx])\\n        y = int(input_data[idx+1])\\n        r = int(input_data[idx+2])\\n        points.append((x, y, r, i))\\n        idx += 3\\n\\n    # Sort points to handle potential overlaps via a grid or offset\\n    # For a simple baseline, we use a tiny 1x1 rectangle.\\n    # If points are identical, we offset slightly.\\n    \\n    # Using a dictionary to track occupied integer coordinates\\n    occupied = set()\\n    \\n    results = [None] * N\\n    \\n    for x, y, r, i in points:\\n        # Try to find the smallest available 1x1 rectangle\\n        # starting at (x, y), (x+1, y), (x, y+1), etc.\\n        found = False\\n        for dx in range(100):\\n            for dy in range(100):\\n                nx, ny = x + dx, y + dy\\n                if (nx, ny) not in occupied:\\n                    # Check bounds\\n                    if 0 <= nx < 10000 and 0 <= ny < 10000:\\n                        results[i] = (nx, ny, nx + 1, ny + 1)\\n                        occupied.add((nx, ny))\\n                        found = True\\n                        break\\n            if found: break\\n        \\n        if not found:\\n            # Fallback to a 1x1 at x, y if possible, or just something valid\\n            # This part is unlikely to be hit given 10000x10000 grid\\n            results[i] = (x, y, x + 1, y + 1)\\n\\n    for res in results:\\n        print(f\\\"{res[0]} {res[1]} {res[2]} {res[3]}\\\")\\n\\nif __name__ == \\\"__main__\\\":\\n    solve()\"}]}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 983,
+                "completion_tokens": 738,
+                "total_tokens": 1721,
+                "cost": 0.00042299,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00042299,
+                  "upstream_inference_prompt_cost": 0.00012779,
+                  "upstream_inference_completions_cost": 0.0002952
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\"schema_name\": \"eywa_node_response\", \"schema_version\": \"v1\", \"orchestration_decision\": \"execute_locally\", \"decision_notes\": \"Implementing a simple non-overlapping rectangle strategy.\", \"response\": \"FINAL_ANSWER: main.py\\nJUSTIFICATION: Uses tiny rectangles around points to avoid overlap.\", \"result_type\": \"code_submission\", \"artifacts\": [{\"path\": \"main.py\", \"content\": \"import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    N = int(input_data[0])\\n    idx = 1\\n    \\n    # To avoid overlap, we can use very small rectangles\\n    # centered at (x, y). Since coordinates are integers\\n    # and we need [x1, x2) x [y1, y2),\\n    # we can use [x, x+1) x [y, y+1).\\n    # However, if multiple points are the same, we need to offset.\\n    \\n    points = []\\n    for i in range(N):\\n        x = int(input_data[idx])\\n        y = int(input_data[idx+1])\\n        r = int(input_data[idx+2])\\n        points.append((x, y, r, i))\\n        idx += 3\\n\\n    # Sort points to handle potential overlaps via a grid or offset\\n    # For a simple baseline, we use a tiny 1x1 rectangle.\\n    # If points are identical, we offset slightly.\\n    \\n    # Using a dictionary to track occupied integer coordinates\\n    occupied = set()\\n    \\n    results = [None] * N\\n    \\n    for x, y, r, i in points:\\n        # Try to find the smallest available 1x1 rectangle\\n        # starting at (x, y), (x+1, y), (x, y+1), etc.\\n        found = False\\n        for dx in range(100):\\n            for dy in range(100):\\n                nx, ny = x + dx, y + dy\\n                if (nx, ny) not in occupied:\\n                    # Check bounds\\n                    if 0 <= nx < 10000 and 0 <= ny < 10000:\\n                        results[i] = (nx, ny, nx + 1, ny + 1)\\n                        occupied.add((nx, ny))\\n                        found = True\\n                        break\\n            if found: break\\n        \\n        if not found:\\n            # Fallback to a 1x1 at x, y if possible, or just something valid\\n            # This part is unlikely to be hit given 10000x10000 grid\\n            results[i] = (x, y, x + 1, y + 1)\\n\\n    for res in results:\\n        print(f\\\"{res[0]} {res[1]} {res[2]} {res[3]}\\\")\\n\\nif __name__ == \\\"__main__\\\":\\n    solve()\"}]}",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "execute_locally",
+              "decision_notes": "Implementing a simple non-overlapping rectangle strategy.",
+              "response": "FINAL_ANSWER: main.py\nJUSTIFICATION: Uses tiny rectangles around points to avoid overlap.",
+              "result_type": "code_submission",
+              "artifacts": [
+                {
+                  "path": "main.py",
+                  "content": "import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    N = int(input_data[0])\n    idx = 1\n    \n    # To avoid overlap, we can use very small rectangles\n    # centered at (x, y). Since coordinates are integers\n    # and we need [x1, x2) x [y1, y2),\n    # we can use [x, x+1) x [y, y+1).\n    # However, if multiple points are the same, we need to offset.\n    \n    points = []\n    for i in range(N):\n        x = int(input_data[idx])\n        y = int(input_data[idx+1])\n        r = int(input_data[idx+2])\n        points.append((x, y, r, i))\n        idx += 3\n\n    # Sort points to handle potential overlaps via a grid or offset\n    # For a simple baseline, we use a tiny 1x1 rectangle.\n    # If points are identical, we offset slightly.\n    \n    # Using a dictionary to track occupied integer coordinates\n    occupied = set()\n    \n    results = [None] * N\n    \n    for x, y, r, i in points:\n        # Try to find the smallest available 1x1 rectangle\n        # starting at (x, y), (x+1, y), (x, y+1), etc.\n        found = False\n        for dx in range(100):\n            for dy in range(100):\n                nx, ny = x + dx, y + dy\n                if (nx, ny) not in occupied:\n                    # Check bounds\n                    if 0 <= nx < 10000 and 0 <= ny < 10000:\n                        results[i] = (nx, ny, nx + 1, ny + 1)\n                        occupied.add((nx, ny))\n                        found = True\n                        break\n            if found: break\n        \n        if not found:\n            # Fallback to a 1x1 at x, y if possible, or just something valid\n            # This part is unlikely to be hit given 10000x10000 grid\n            results[i] = (x, y, x + 1, y + 1)\n\n    for res in results:\n        print(f\"{res[0]} {res[1]} {res[2]} {res[3]}\")\n\nif __name__ == \"__main__\":\n    solve()"
+                }
+              ]
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "execute_locally",
+          "decision_notes": "Implementing a simple non-overlapping rectangle strategy.",
+          "response": "FINAL_ANSWER: main.py\nJUSTIFICATION: Uses tiny rectangles around points to avoid overlap.",
+          "result_type": "code_submission",
+          "artifacts": [
+            {
+              "path": "main.py",
+              "content": "import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    N = int(input_data[0])\n    idx = 1\n    \n    # To avoid overlap, we can use very small rectangles\n    # centered at (x, y). Since coordinates are integers\n    # and we need [x1, x2) x [y1, y2),\n    # we can use [x, x+1) x [y, y+1).\n    # However, if multiple points are the same, we need to offset.\n    \n    points = []\n    for i in range(N):\n        x = int(input_data[idx])\n        y = int(input_data[idx+1])\n        r = int(input_data[idx+2])\n        points.append((x, y, r, i))\n        idx += 3\n\n    # Sort points to handle potential overlaps via a grid or offset\n    # For a simple baseline, we use a tiny 1x1 rectangle.\n    # If points are identical, we offset slightly.\n    \n    # Using a dictionary to track occupied integer coordinates\n    occupied = set()\n    \n    results = [None] * N\n    \n    for x, y, r, i in points:\n        # Try to find the smallest available 1x1 rectangle\n        # starting at (x, y), (x+1, y), (x, y+1), etc.\n        found = False\n        for dx in range(100):\n            for dy in range(100):\n                nx, ny = x + dx, y + dy\n                if (nx, ny) not in occupied:\n                    # Check bounds\n                    if 0 <= nx < 10000 and 0 <= ny < 10000:\n                        results[i] = (nx, ny, nx + 1, ny + 1)\n                        occupied.add((nx, ny))\n                        found = True\n                        break\n            if found: break\n        \n        if not found:\n            # Fallback to a 1x1 at x, y if possible, or just something valid\n            # This part is unlikely to be hit given 10000x10000 grid\n            results[i] = (x, y, x + 1, y + 1)\n\n    for res in results:\n        print(f\"{res[0]} {res[1]} {res[2]} {res[3]}\")\n\nif __name__ == \"__main__\":\n    solve()"
+            }
+          ]
+        }
+      },
+      "usage": {
+        "prompt_tokens": 983,
+        "completion_tokens": 738,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 0,
+        "total_tokens": 1721,
+        "cost_usd": 0.00042299,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775546017-g8CrF9uYNvUQCb6OUkmP",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00042299
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

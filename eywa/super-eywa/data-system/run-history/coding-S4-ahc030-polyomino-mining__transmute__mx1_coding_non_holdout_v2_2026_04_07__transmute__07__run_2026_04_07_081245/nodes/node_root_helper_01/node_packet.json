@@ -1,0 +1,89 @@
+{
+  "contract_name": "node_packet",
+  "contract_version": "v1",
+  "run_id": "coding-S4-ahc030-polyomino-mining__transmute__mx1_coding_non_holdout_v2_2026_04_07__transmute__07__run_2026_04_07_081245",
+  "node_id": "node_root_helper_01",
+  "created_at_utc": "2026-04-07T08:12:58Z",
+  "creation_parent_node_id": "node_root",
+  "input": {
+    "instructions": "TECHNICAL REQUIREMENTS DOCUMENT: POLYOMINO MINING\n\n1. INTERACTION PROTOCOL\n\nInput Parsing:\n- Read initial configuration from stdin: Grid dimensions (W, H), number of hidden oil fields (N), noise parameter (P), and a list of polyomino shapes (sets of relative coordinates).\n\nCommand Syntax (stdout):\n- Single-cell drill: q 1 x y\n- Multi-cell aggregate query: q k x1 y1 x2 y2 ... xk yk\n- Final submission: a k x1 y1 x2 y2 ... xk yk\n\nResponse Format (stdin):\n- For 'q' commands: Read a response indicating the presence or absence of oil (subject to noise parameter P).\n- For 'a' command: The interaction terminates.\n\nNote: Flush stdout after every command.\n\n2. OPTIMIZATION LOGIC\n\nObjective Function:\n- Minimize Total Probing Cost.\n- Cost is the sum of costs associated with each 'q' command. Single-cell queries and multi-cell aggregate queries have different cost weights (implied by the problem structure).\n\nGoal:\n- Identify the exact set of coordinates belonging to the N hidden polyominoes while minimizing the cumulative cost of queries used to resolve uncertainty.\n\n3. ALGORITHMIC CORE\n\nSearch Space and Constraints:\n- The search space consists of all possible valid placements of the provided polyomino shapes on the W x H grid.\n- The presence of noise (P) means query results are probabilistic rather than deterministic.\n\nLogic Requirements:\n- Implement a probabilistic model (e.g., Bayesian update) to maintain a belief map of oil cell probabilities across the grid.\n- Develop a query selection strategy: Choose query coordinates (single or aggregate) that maximize Information Gain regarding the placement of the N polyominoes relative to the cost of the query.\n- Handle shape recognition: Use the known polyomino templates to constrain the possible configurations of oil cells.\n- Termination: Once the confidence in the identified oil configuration meets a threshold or the cost-benefit of further querying becomes negative, execute the 'a' command.\n\n4. STRICT EXECUTION RULES\n\n- File Naming: The solution must be contained in a file named main.py.\n- I/O: Use only stdin for input and stdout for output. Do not use file I/O.\n- Output Purity: Do not print debug information, scores, labels, or explanations. The only output allowed is the command syntax defined in the Interaction Protocol.\n- Error Handling: Ensure all coordinates are within [0, W-1] and [0, H-1]. Ensure the final submission 'a' contains the correct number of cells 'k'.",
+    "provided_context_refs": [],
+    "attachment_refs": []
+  },
+  "variable_resolution": {
+    "run_level_defaults": {
+      "runtime_provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it",
+      "prompt_family": "transmute",
+      "selected_prompt_text": "Act as a Lead Engineer. Your task is to transmute the provided problem description into a concise, actionable Technical Requirements Document (TRD) for a software engineer. \n\nThe TRD must enable the engineer to implement a complete, working solution from scratch. It must include:\n1. The Interaction Protocol: A precise description of the input parsing, the exact command syntax for all supported queries, and the expected response format.\n2. The Optimization Logic: A clear definition of the objective function and the cost-minimization goal.\n3. The Algorithmic Core: A high-level description of the logic required to handle the specific constraints (e.g., noise, shape recognition, or search space optimization).\n4. Strict Execution Rules: Requirements for file naming, stdin/stdout usage, and the prohibition of debug/extra output.\n\nDo not include specific problem instance values or example data. Focus on the general logic and the protocol. \n\nUse plain text only inside the message. Do not use markdown formatting, code fences, or LaTeX-style backslashes.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"transmute\",\n  \"decision_notes\": \"optional string\",\n  \"message_for_next_agent\": \"plain-text reformulation for the next agent\"\n}",
+      "base_header_prompt": "",
+      "review_prompt_family": "",
+      "review_selected_prompt_text": "",
+      "review_base_header_prompt": "",
+      "child_prompt_family": "execute",
+      "child_selected_prompt_text": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nThe response field should be only a brief submission summary. Do not put contestant stdout in the response field.\nYour main.py must read from stdin and print only the contestant output required by the problem.\nDo not print explanations, labels, debug text, or estimated scores.\nIf the Output section requires a leading count/header line, print it exactly.\nPrefer a simple valid baseline over malformed ambitious output.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}",
+      "child_base_header_prompt": "",
+      "submission_contract_type": "coding_single_file_python",
+      "submission_entry_file": "main.py",
+      "terminal_result_destination": "auto",
+      "child_terminal_result_destination": "",
+      "injected_prompt_profile": "agent_orchestration_basic_instruction_prompt",
+      "additional_instruction_prompt_profiles": [],
+      "context_policy": "minimal",
+      "workflow_structure": "sequential_parent_review",
+      "verification_policy": "light",
+      "tool_policy": "none",
+      "json_response_policy": "strict_required",
+      "orchestration_policy": "agent_decides",
+      "budget_policy": {
+        "max_depth": 1,
+        "max_helpers_per_node": 1,
+        "max_turns_per_node": 4
+      },
+      "routing_policy": "return_to_creator",
+      "recovery_policy": "report_problem"
+    },
+    "node_level_overrides": {
+      "prompt_family": "execute",
+      "selected_prompt_text": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nThe response field should be only a brief submission summary. Do not put contestant stdout in the response field.\nYour main.py must read from stdin and print only the contestant output required by the problem.\nDo not print explanations, labels, debug text, or estimated scores.\nIf the Output section requires a leading count/header line, print it exactly.\nPrefer a simple valid baseline over malformed ambitious output.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}",
+      "terminal_result_destination": "final_output"
+    },
+    "resolved_variables": {
+      "runtime_provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it",
+      "prompt_family": "execute",
+      "selected_prompt_text": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nThe response field should be only a brief submission summary. Do not put contestant stdout in the response field.\nYour main.py must read from stdin and print only the contestant output required by the problem.\nDo not print explanations, labels, debug text, or estimated scores.\nIf the Output section requires a leading count/header line, print it exactly.\nPrefer a simple valid baseline over malformed ambitious output.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}",
+      "base_header_prompt": "",
+      "review_prompt_family": "",
+      "review_selected_prompt_text": "",
+      "review_base_header_prompt": "",
+      "child_prompt_family": "execute",
+      "child_selected_prompt_text": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nThe response field should be only a brief submission summary. Do not put contestant stdout in the response field.\nYour main.py must read from stdin and print only the contestant output required by the problem.\nDo not print explanations, labels, debug text, or estimated scores.\nIf the Output section requires a leading count/header line, print it exactly.\nPrefer a simple valid baseline over malformed ambitious output.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}",
+      "child_base_header_prompt": "",
+      "submission_contract_type": "coding_single_file_python",
+      "submission_entry_file": "main.py",
+      "terminal_result_destination": "final_output",
+      "child_terminal_result_destination": "",
+      "injected_prompt_profile": "agent_orchestration_basic_instruction_prompt",
+      "additional_instruction_prompt_profiles": [],
+      "context_policy": "minimal",
+      "workflow_structure": "sequential_parent_review",
+      "verification_policy": "light",
+      "tool_policy": "none",
+      "json_response_policy": "strict_required",
+      "orchestration_policy": "agent_decides",
+      "budget_policy": {
+        "max_depth": 1,
+        "max_helpers_per_node": 1,
+        "max_turns_per_node": 4
+      },
+      "routing_policy": "return_to_creator",
+      "recovery_policy": "report_problem"
+    }
+  },
+  "node_setup": {
+    "created_by_action_type": "recruit_help",
+    "terminal_result_destination": "final_output",
+    "notes": []
+  }
+}

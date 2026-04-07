@@ -1,0 +1,429 @@
+{
+  "provider": "openrouter",
+  "note": "Per-turn provider payloads, authored JSON, and compiled outputs are recorded here.",
+  "steps": [
+    {
+      "step": 1,
+      "note": "authored delegate decision deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 1\nNode depth: 0\nAllowed decisions: ['delegate']\nPrompt family: delegate\nBase header prompt: ''\nSelected prompt text:\nBreak the problem into a small number of genuinely useful subproblems for other agents.\nDo not restate the original question in multiple ways.\nEach helper should get one focused mathematical or algorithmic job that materially helps solve the original problem.\nChoose the number of helpers based on the task complexity.\nUse plain text only inside helper instructions. Do not use markdown, code fences, or LaTeX-style backslashes.\n\nReturn exactly one valid JSON object in this format. Do not wrap the JSON in markdown code fences:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"optional string\",\n  \"helpers\": [\n    {\n      \"label\": \"helper_1\",\n      \"instructions\": \"plain-text subproblem for the first helper\"\n    }\n  ],\n  \"synthesis_brief\": \"how the parent should combine the child results\"\n}\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"optional string\",\n  \"helpers\": [\n    {\n      \"label\": \"helper_1\",\n      \"instructions\": \"plain-text subproblem for the first helper\"\n    }\n  ],\n  \"synthesis_brief\": \"how the parent should combine the child results\"\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nBreak the problem into a small number of genuinely useful subproblems for other agents.\nDo not restate the original question in multiple ways.\nEach helper should get one focused mathematical or algorithmic job that materially helps solve the original problem.\nChoose the number of helpers based on the task complexity.\nUse plain text only inside helper instructions. Do not use markdown, code fences, or LaTeX-style backslashes.\n\nReturn exactly one valid JSON object in this format. Do not wrap the JSON in markdown code fences:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"optional string\",\n  \"helpers\": [\n    {\n      \"label\": \"helper_1\",\n      \"instructions\": \"plain-text subproblem for the first helper\"\n    }\n  ],\n  \"synthesis_brief\": \"how the parent should combine the child results\"\n}\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"optional string\",\n  \"helpers\": [\n    {\n      \"label\": \"helper_1\",\n      \"instructions\": \"plain-text subproblem for the first helper\"\n    }\n  ],\n  \"synthesis_brief\": \"how the parent should combine the child results\"\n}\n\nQuestion:\nSolve this Super-Eywa coding benchmark.\nQuestion ID: coding-S5-ahc032-mod-stamp\nTitle: S5. AHC032 / Mod Stamp\n\nProblem:\n# AHC032 / Mod Stamp\n\nWrite `main.py`.\n\nYou are given a `9 x 9` board of integers and `M = 20` different `3 x 3` stamps.\nYou may place at most `K = 81` stamps.\n\n## Objective\n\n- Each placement chooses a stamp index `m` and a top-left board position `(i, j)`.\n- The chosen `3 x 3` stamp is added to the board modulo `998244353`.\n- The score is the sum of all final board entries.\n- Higher is better.\n\n## Input\n\n- Line 1: `N M K`\n- Next `N` lines: the initial board\n- Then for each stamp: `3` lines describing the stamp entries\n\n## Output\n\n- First line: `L`, the number of placements, with `0 <= L <= K`\n- Then `L` lines of `m i j`\n- `m` is the stamp index\n- `(i, j)` is the top-left placement position, with the full `3 x 3` stamp inside the board\n\n## Notes\n\n- This v1 packet uses the official AtCoder visualizer on three bundled public instances.\n\nSubmission contract:\n- Return a single Python submission file named main.py.\n- Read from stdin and write to stdout.\n- Put the full file content in the artifacts list of your execute_locally JSON response.\n- Use the response field only for a brief submission summary.\n- Do not wrap the code in markdown fences inside artifacts.\n\nCritical validity rules:\n- Your program is judged by the stdout it prints when run, not by the summary in your JSON response.\n- Print exactly the contestant output described in the Output section, and nothing else.\n- Do not print the objective score, estimated score, labels, explanations, or debug text unless the Output section explicitly requires them.\n- If the Output section requires a count/header on the first line, print that first line exactly.\n- Every printed index, count, and coordinate must stay within the allowed ranges.\n- Prefer a simple valid baseline solution over an ambitious but invalid one.\n- If the problem permits an empty or minimal valid plan, that is better than malformed output.\n\nGrading target:\nScore is the sum of final cell values modulo 998244353.\nHigher is better.\n\nPacket baseline hint:\nA fully valid baseline for this task is a program that prints exactly one line containing 0 and then exits. That means L = 0 placements, with no additional output lines.",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "delegate",
+        "decision_notes": "The problem is a combinatorial optimization task where we need to maximize the sum of board elements after applying up to K 3x3 stamp additions modulo 998244353. Since the modulo is very large, the sum is essentially the sum of the values. The problem can be approached via a greedy strategy or a local search/hill climbing approach.",
+        "helpers": [
+          {
+            "label": "greedy_strategy_developer",
+            "instructions": "Develop a Python script that implements a greedy algorithm for this problem. The algorithm should iteratively select the stamp and position (m, i, j) that provides the maximum increase to the total sum of the board, while ensuring the total number of placements does not exceed K. The script must handle the modulo 998244353 arithmetic correctly for each cell update.",
+            "variable_overrides": {}
+          },
+          {
+            "label": "local_search_refiner",
+            "instructions": "Design a refinement step for the greedy solution. Given an initial set of stamp placements, implement a local search (such as hill climbing or simulated annealing) that attempts to swap, add, or remove placements to further increase the total sum of the board entries.",
+            "variable_overrides": {}
+          }
+        ],
+        "synthesis_brief": "Combine the greedy baseline with the local search refinement into a single main.py file. The final script should read the input, execute the greedy approach to find a strong initial state, apply the local search to optimize it, and then output the number of placements followed by the placement details in the required format."
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "coding-S5-ahc032-mod-stamp__delegate__mx1_coding_non_holdout_v2_2026_04_07__delegate__09__run_2026_04_07_073010",
+        "node_id": "node_root",
+        "action_type": "recruit_help",
+        "results": [
+          {
+            "result_type": "plan",
+            "content": "The problem is a combinatorial optimization task where we need to maximize the sum of board elements after applying up to K 3x3 stamp additions modulo 998244353. Since the modulo is very large, the sum is essentially the sum of the values. The problem can be approached via a greedy strategy or a local search/hill climbing approach.\nnode_root_helper_01 (greedy_strategy_developer): Develop a Python script that implements a greedy algorithm for this problem. The algorithm should iteratively select the stamp and position (m, i, j) that provides the maximum increase to the total sum of the board, while ensuring the total number of placements does not exceed K. The script must handle the modulo 998244353 arithmetic correctly for each cell update.\nnode_root_helper_02 (local_search_refiner): Design a refinement step for the greedy solution. Given an initial set of stamp placements, implement a local search (such as hill climbing or simulated annealing) that attempts to swap, add, or remove placements to further increase the total sum of the board entries.",
+            "attachment_refs": []
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "helper_assignment",
+            "target": {
+              "target_type": "new_helper",
+              "target_ref": "node_root_helper_01"
+            },
+            "message": "Develop a Python script that implements a greedy algorithm for this problem. The algorithm should iteratively select the stamp and position (m, i, j) that provides the maximum increase to the total sum of the board, while ensuring the total number of placements does not exceed K. The script must handle the modulo 998244353 arithmetic correctly for each cell update.",
+            "attachment_refs": []
+          },
+          {
+            "message_type": "helper_assignment",
+            "target": {
+              "target_type": "new_helper",
+              "target_ref": "node_root_helper_02"
+            },
+            "message": "Design a refinement step for the greedy solution. Given an initial set of stamp placements, implement a local search (such as hill climbing or simulated annealing) that attempts to swap, add, or remove placements to further increase the total sum of the board entries.",
+            "attachment_refs": []
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Break the problem into a small number of genuinely useful subproblems for other agents.\nDo not restate the original question in multiple ways.\nEach helper should get one focused mathematical or algorithmic job that materially helps solve the original problem.\nChoose the number of helpers based on the task complexity.\nUse plain text only inside helper instructions. Do not use markdown, code fences, or LaTeX-style backslashes.\n\nReturn exactly one valid JSON object in this format. Do not wrap the JSON in markdown code fences:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"optional string\",\n  \"helpers\": [\n    {\n      \"label\": \"helper_1\",\n      \"instructions\": \"plain-text subproblem for the first helper\"\n    }\n  ],\n  \"synthesis_brief\": \"how the parent should combine the child results\"\n}\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"optional string\",\n  \"helpers\": [\n    {\n      \"label\": \"helper_1\",\n      \"instructions\": \"plain-text subproblem for the first helper\"\n    }\n  ],\n  \"synthesis_brief\": \"how the parent should combine the child results\"\n}\n\nQuestion:\nSolve this Super-Eywa coding benchmark.\nQuestion ID: coding-S5-ahc032-mod-stamp\nTitle: S5. AHC032 / Mod Stamp\n\nProblem:\n# AHC032 / Mod Stamp\n\nWrite `main.py`.\n\nYou are given a `9 x 9` board of integers and `M = 20` different `3 x 3` stamps.\nYou may place at most `K = 81` stamps.\n\n## Objective\n\n- Each placement chooses a stamp index `m` and a top-left board position `(i, j)`.\n- The chosen `3 x 3` stamp is added to the board modulo `998244353`.\n- The score is the sum of all final board entries.\n- Higher is better.\n\n## Input\n\n- Line 1: `N M K`\n- Next `N` lines: the initial board\n- Then for each stamp: `3` lines describing the stamp entries\n\n## Output\n\n- First line: `L`, the number of placements, with `0 <= L <= K`\n- Then `L` lines of `m i j`\n- `m` is the stamp index\n- `(i, j)` is the top-left placement position, with the full `3 x 3` stamp inside the board\n\n## Notes\n\n- This v1 packet uses the official AtCoder visualizer on three bundled public instances.\n\nSubmission contract:\n- Return a single Python submission file named main.py.\n- Read from stdin and write to stdout.\n- Put the full file content in the artifacts list of your execute_locally JSON response.\n- Use the response field only for a brief submission summary.\n- Do not wrap the code in markdown fences inside artifacts.\n\nCritical validity rules:\n- Your program is judged by the stdout it prints when run, not by the summary in your JSON response.\n- Print exactly the contestant output described in the Output section, and nothing else.\n- Do not print the objective score, estimated score, labels, explanations, or debug text unless the Output section explicitly requires them.\n- If the Output section requires a count/header on the first line, print that first line exactly.\n- Every printed index, count, and coordinate must stay within the allowed ranges.\n- Prefer a simple valid baseline solution over an ambitious but invalid one.\n- If the problem permits an empty or minimal valid plan, that is better than malformed output.\n\nGrading target:\nScore is the sum of final cell values modulo 998244353.\nHigher is better.\n\nPacket baseline hint:\nA fully valid baseline for this task is a program that prints exactly one line containing 0 and then exits. That means L = 0 placements, with no additional output lines."
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775547010-08Y4cGwtSvQxacqVyrVv",
+              "object": "chat.completion",
+              "created": 1775547010,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Novita",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"The problem is a combinatorial optimization task where we need to maximize the sum of board elements after applying up to K 3x3 stamp additions modulo 998244353. Since the modulo is very large, the sum is essentially the sum of the values. The problem can be approached via a greedy strategy or a local search/hill climbing approach.\",\n  \"helpers\": [\n    {\n      \"label\": \"greedy_strategy_developer\",\n      \"instructions\": \"Develop a Python script that implements a greedy algorithm for this problem. The algorithm should iteratively select the stamp and position (m, i, j) that provides the maximum increase to the total sum of the board, while ensuring the total number of placements does not exceed K. The script must handle the modulo 998244353 arithmetic correctly for each cell update.\"\n    },\n    {\n      \"label\": \"local_search_refiner\",\n      \"instructions\": \"Design a refinement step for the greedy solution. Given an initial set of stamp placements, implement a local search (such as hill climbing or simulated annealing) that attempts to swap, add, or remove placements to further increase the total sum of the board entries.\"\n    }\n  ],\n  \"synthesis_brief\": \"Combine the greedy baseline with the local search refinement into a single main.py file. The final script should read the input, execute the greedy approach to find a strong initial state, apply the local search to optimize it, and then output the number of placements followed by the placement details in the required format.\"\n}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 982,
+                "completion_tokens": 380,
+                "total_tokens": 1362,
+                "cost": 0.00027966,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00027966,
+                  "upstream_inference_prompt_cost": 0.00012766,
+                  "upstream_inference_completions_cost": 0.000152
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"The problem is a combinatorial optimization task where we need to maximize the sum of board elements after applying up to K 3x3 stamp additions modulo 998244353. Since the modulo is very large, the sum is essentially the sum of the values. The problem can be approached via a greedy strategy or a local search/hill climbing approach.\",\n  \"helpers\": [\n    {\n      \"label\": \"greedy_strategy_developer\",\n      \"instructions\": \"Develop a Python script that implements a greedy algorithm for this problem. The algorithm should iteratively select the stamp and position (m, i, j) that provides the maximum increase to the total sum of the board, while ensuring the total number of placements does not exceed K. The script must handle the modulo 998244353 arithmetic correctly for each cell update.\"\n    },\n    {\n      \"label\": \"local_search_refiner\",\n      \"instructions\": \"Design a refinement step for the greedy solution. Given an initial set of stamp placements, implement a local search (such as hill climbing or simulated annealing) that attempts to swap, add, or remove placements to further increase the total sum of the board entries.\"\n    }\n  ],\n  \"synthesis_brief\": \"Combine the greedy baseline with the local search refinement into a single main.py file. The final script should read the input, execute the greedy approach to find a strong initial state, apply the local search to optimize it, and then output the number of placements followed by the placement details in the required format.\"\n}",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "delegate",
+              "decision_notes": "The problem is a combinatorial optimization task where we need to maximize the sum of board elements after applying up to K 3x3 stamp additions modulo 998244353. Since the modulo is very large, the sum is essentially the sum of the values. The problem can be approached via a greedy strategy or a local search/hill climbing approach.",
+              "helpers": [
+                {
+                  "label": "greedy_strategy_developer",
+                  "instructions": "Develop a Python script that implements a greedy algorithm for this problem. The algorithm should iteratively select the stamp and position (m, i, j) that provides the maximum increase to the total sum of the board, while ensuring the total number of placements does not exceed K. The script must handle the modulo 998244353 arithmetic correctly for each cell update.",
+                  "variable_overrides": {}
+                },
+                {
+                  "label": "local_search_refiner",
+                  "instructions": "Design a refinement step for the greedy solution. Given an initial set of stamp placements, implement a local search (such as hill climbing or simulated annealing) that attempts to swap, add, or remove placements to further increase the total sum of the board entries.",
+                  "variable_overrides": {}
+                }
+              ],
+              "synthesis_brief": "Combine the greedy baseline with the local search refinement into a single main.py file. The final script should read the input, execute the greedy approach to find a strong initial state, apply the local search to optimize it, and then output the number of placements followed by the placement details in the required format."
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "delegate",
+          "decision_notes": "The problem is a combinatorial optimization task where we need to maximize the sum of board elements after applying up to K 3x3 stamp additions modulo 998244353. Since the modulo is very large, the sum is essentially the sum of the values. The problem can be approached via a greedy strategy or a local search/hill climbing approach.",
+          "helpers": [
+            {
+              "label": "greedy_strategy_developer",
+              "instructions": "Develop a Python script that implements a greedy algorithm for this problem. The algorithm should iteratively select the stamp and position (m, i, j) that provides the maximum increase to the total sum of the board, while ensuring the total number of placements does not exceed K. The script must handle the modulo 998244353 arithmetic correctly for each cell update.",
+              "variable_overrides": {}
+            },
+            {
+              "label": "local_search_refiner",
+              "instructions": "Design a refinement step for the greedy solution. Given an initial set of stamp placements, implement a local search (such as hill climbing or simulated annealing) that attempts to swap, add, or remove placements to further increase the total sum of the board entries.",
+              "variable_overrides": {}
+            }
+          ],
+          "synthesis_brief": "Combine the greedy baseline with the local search refinement into a single main.py file. The final script should read the input, execute the greedy approach to find a strong initial state, apply the local search to optimize it, and then output the number of placements followed by the placement details in the required format."
+        }
+      },
+      "usage": {
+        "prompt_tokens": 982,
+        "completion_tokens": 380,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 0,
+        "total_tokens": 1362,
+        "cost_usd": 0.00027966,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775547010-08Y4cGwtSvQxacqVyrVv",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00027966
+            }
+          ]
+        }
+      }
+    },
+    {
+      "step": 2,
+      "note": "authored local execution after reviewing child results deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 2\nNode depth: 0\nAllowed decisions: ['execute_locally']\nPrompt family: delegate\nBase header prompt: ''\nSelected prompt text:\nChild results have already come back to you. Use them to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nChild results have already come back to you. Use them to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\n\nSynthesis brief from the earlier child-creation step:\nCombine the greedy baseline with the local search refinement into a single main.py file. The final script should read the input, execute the greedy approach to find a strong initial state, apply the local search to optimize it, and then output the number of placements followed by the placement details in the required format.\n\nChild results already returned to you:\n[\n  {\n    \"node_id\": \"node_root_helper_01\",\n    \"summary\": \"FINAL_ANSWER: Python script provided below\\nJUSTIFICATION: Greedy algorithm with modulo arithmetic implemented.\"\n  },\n  {\n    \"node_id\": \"node_root_helper_02\",\n    \"summary\": \"FINAL_ANSWER: Implement hill climbing by iteratively applying add, remove, or swap operations to maximize board sum.\\nJUSTIFICATION: Local search optimizes greedy solutions via iterative neighborhood improvements.\"\n  }\n]\n\nQuestion:\nSolve this Super-Eywa coding benchmark.\nQuestion ID: coding-S5-ahc032-mod-stamp\nTitle: S5. AHC032 / Mod Stamp\n\nProblem:\n# AHC032 / Mod Stamp\n\nWrite `main.py`.\n\nYou are given a `9 x 9` board of integers and `M = 20` different `3 x 3` stamps.\nYou may place at most `K = 81` stamps.\n\n## Objective\n\n- Each placement chooses a stamp index `m` and a top-left board position `(i, j)`.\n- The chosen `3 x 3` stamp is added to the board modulo `998244353`.\n- The score is the sum of all final board entries.\n- Higher is better.\n\n## Input\n\n- Line 1: `N M K`\n- Next `N` lines: the initial board\n- Then for each stamp: `3` lines describing the stamp entries\n\n## Output\n\n- First line: `L`, the number of placements, with `0 <= L <= K`\n- Then `L` lines of `m i j`\n- `m` is the stamp index\n- `(i, j)` is the top-left placement position, with the full `3 x 3` stamp inside the board\n\n## Notes\n\n- This v1 packet uses the official AtCoder visualizer on three bundled public instances.\n\nSubmission contract:\n- Return a single Python submission file named main.py.\n- Read from stdin and write to stdout.\n- Put the full file content in the artifacts list of your execute_locally JSON response.\n- Use the response field only for a brief submission summary.\n- Do not wrap the code in markdown fences inside artifacts.\n\nCritical validity rules:\n- Your program is judged by the stdout it prints when run, not by the summary in your JSON response.\n- Print exactly the contestant output described in the Output section, and nothing else.\n- Do not print the objective score, estimated score, labels, explanations, or debug text unless the Output section explicitly requires them.\n- If the Output section requires a count/header on the first line, print that first line exactly.\n- Every printed index, count, and coordinate must stay within the allowed ranges.\n- Prefer a simple valid baseline solution over an ambitious but invalid one.\n- If the problem permits an empty or minimal valid plan, that is better than malformed output.\n\nGrading target:\nScore is the sum of final cell values modulo 998244353.\nHigher is better.\n\nPacket baseline hint:\nA fully valid baseline for this task is a program that prints exactly one line containing 0 and then exits. That means L = 0 placements, with no additional output lines.",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "execute_locally",
+        "decision_notes": "Synthesizing greedy baseline and local search refinement into a single main.py script.",
+        "response": "Final Python script combining greedy initialization and hill-climbing local search.",
+        "result_type": "code_submission",
+        "artifacts": [
+          {
+            "path": "main.py",
+            "content": "import sys\nimport random\nimport time\n\ndef solve():\n    # Read N, M, K\n    try:\n        line1 = sys.stdin.readline().split()\n        if not line1: return\n        N, M, K = map(int, line1)\n    except EOFError:\n        return\n\n    MOD = 998244353\n\n    # Read initial board\n    board = []\n    for _ in range(N):\n        board.append(list(map(int, sys.stdin.readline().split())))\n\n    # Read M stamps\n    stamps = []\n    for _ in range(M):\n        stamp = []\n        for _ in range(3):\n            stamp.append(list(map(int, sys.stdin.readline().split())))\n        stamps.append(stamp)\n\n    # Helper to calculate score change\n    # Since we want to maximize sum(board), and board is updated modulo MOD,\n    # we must track the actual values. However, the problem says \"The chosen 3x3 stamp is added to the board modulo 998244353\".\n    # This implies: board[i][j] = (board[i][j] + stamp[di][dj]) % MOD.\n    \n    def get_score_delta(current_board, stamp_idx, r, c):\n        delta = 0\n        stamp = stamps[stamp_idx]\n        for dr in range(3):\n            for dc in range(3):\n                old_val = current_board[r + dr][c + dc]\n                new_val = (old_val + stamp[dr][dc]) % MOD\n                delta += (new_val - old_val)\n        return delta\n\n    def apply_stamp(current_board, stamp_idx, r, c):\n        stamp = stamps[stamp_idx]\n        for dr in range(3):\n            for dc in range(3):\n                current_board[r + dr][c + dc] = (current_board[r + dr][c + dc] + stamp[dr][dc]) % MOD\n\n    def remove_stamp(current_board, stamp_idx, r, c):\n        stamp = stamps[stamp_idx]\n        for dr in range(3):\n            for dc in range(3):\n                # To reverse (a + b) % MOD = c, we do (c - b) % MOD\n                current_board[r + dr][c + dc] = (current_board[r + dr][c + dc] - stamp[dr][dc]) % MOD\n\n    # Greedy Phase\n    current_board = [row[:] for row in board]\n    placements = [] # list of (m, i, j)\n    \n    # We have K placements allowed."
+          }
+        ]
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "coding-S5-ahc032-mod-stamp__delegate__mx1_coding_non_holdout_v2_2026_04_07__delegate__09__run_2026_04_07_073010",
+        "node_id": "node_root",
+        "action_type": "report_success",
+        "results": [
+          {
+            "result_type": "code_submission",
+            "content": "Final Python script combining greedy initialization and hill-climbing local search.",
+            "attachment_refs": [
+              "artifacts/node_root/turn_02/main.py"
+            ]
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "success_report",
+            "target": {
+              "target_type": "final_output",
+              "target_ref": "run_final_output"
+            },
+            "message": "Final Python script combining greedy initialization and hill-climbing local search.",
+            "attachment_refs": [
+              "artifacts/node_root/turn_02/main.py"
+            ]
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Child results have already come back to you. Use them to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\n\nSynthesis brief from the earlier child-creation step:\nCombine the greedy baseline with the local search refinement into a single main.py file. The final script should read the input, execute the greedy approach to find a strong initial state, apply the local search to optimize it, and then output the number of placements followed by the placement details in the required format.\n\nChild results already returned to you:\n[\n  {\n    \"node_id\": \"node_root_helper_01\",\n    \"summary\": \"FINAL_ANSWER: Python script provided below\\nJUSTIFICATION: Greedy algorithm with modulo arithmetic implemented.\"\n  },\n  {\n    \"node_id\": \"node_root_helper_02\",\n    \"summary\": \"FINAL_ANSWER: Implement hill climbing by iteratively applying add, remove, or swap operations to maximize board sum.\\nJUSTIFICATION: Local search optimizes greedy solutions via iterative neighborhood improvements.\"\n  }\n]\n\nQuestion:\nSolve this Super-Eywa coding benchmark.\nQuestion ID: coding-S5-ahc032-mod-stamp\nTitle: S5. AHC032 / Mod Stamp\n\nProblem:\n# AHC032 / Mod Stamp\n\nWrite `main.py`.\n\nYou are given a `9 x 9` board of integers and `M = 20` different `3 x 3` stamps.\nYou may place at most `K = 81` stamps.\n\n## Objective\n\n- Each placement chooses a stamp index `m` and a top-left board position `(i, j)`.\n- The chosen `3 x 3` stamp is added to the board modulo `998244353`.\n- The score is the sum of all final board entries.\n- Higher is better.\n\n## Input\n\n- Line 1: `N M K`\n- Next `N` lines: the initial board\n- Then for each stamp: `3` lines describing the stamp entries\n\n## Output\n\n- First line: `L`, the number of placements, with `0 <= L <= K`\n- Then `L` lines of `m i j`\n- `m` is the stamp index\n- `(i, j)` is the top-left placement position, with the full `3 x 3` stamp inside the board\n\n## Notes\n\n- This v1 packet uses the official AtCoder visualizer on three bundled public instances.\n\nSubmission contract:\n- Return a single Python submission file named main.py.\n- Read from stdin and write to stdout.\n- Put the full file content in the artifacts list of your execute_locally JSON response.\n- Use the response field only for a brief submission summary.\n- Do not wrap the code in markdown fences inside artifacts.\n\nCritical validity rules:\n- Your program is judged by the stdout it prints when run, not by the summary in your JSON response.\n- Print exactly the contestant output described in the Output section, and nothing else.\n- Do not print the objective score, estimated score, labels, explanations, or debug text unless the Output section explicitly requires them.\n- If the Output section requires a count/header on the first line, print that first line exactly.\n- Every printed index, count, and coordinate must stay within the allowed ranges.\n- Prefer a simple valid baseline solution over an ambitious but invalid one.\n- If the problem permits an empty or minimal valid plan, that is better than malformed output.\n\nGrading target:\nScore is the sum of final cell values modulo 998244353.\nHigher is better.\n\nPacket baseline hint:\nA fully valid baseline for this task is a program that prints exactly one line containing 0 and then exits. That means L = 0 placements, with no additional output lines."
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775547031-XReS0yRqDG5AoRqIezn9",
+              "object": "chat.completion",
+              "created": 1775547031,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Novita",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "length",
+                  "native_finish_reason": "length",
+                  "message": {
+                    "role": "assistant",
+                    "content": "```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"Synthesizing greedy baseline and local search refinement into a single main.py script.\",\n  \"response\": \"Final Python script combining greedy initialization and hill-climbing local search.\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"import sys\\nimport random\\nimport time\\n\\ndef solve():\\n    # Read N, M, K\\n    try:\\n        line1 = sys.stdin.readline().split()\\n        if not line1: return\\n        N, M, K = map(int, line1)\\n    except EOFError:\\n        return\\n\\n    MOD = 998244353\\n\\n    # Read initial board\\n    board = []\\n    for _ in range(N):\\n        board.append(list(map(int, sys.stdin.readline().split())))\\n\\n    # Read M stamps\\n    stamps = []\\n    for _ in range(M):\\n        stamp = []\\n        for _ in range(3):\\n            stamp.append(list(map(int, sys.stdin.readline().split())))\\n        stamps.append(stamp)\\n\\n    # Helper to calculate score change\\n    # Since we want to maximize sum(board), and board is updated modulo MOD,\\n    # we must track the actual values. However, the problem says \\\"The chosen 3x3 stamp is added to the board modulo 998244353\\\".\\n    # This implies: board[i][j] = (board[i][j] + stamp[di][dj]) % MOD.\\n    \\n    def get_score_delta(current_board, stamp_idx, r, c):\\n        delta = 0\\n        stamp = stamps[stamp_idx]\\n        for dr in range(3):\\n            for dc in range(3):\\n                old_val = current_board[r + dr][c + dc]\\n                new_val = (old_val + stamp[dr][dc]) % MOD\\n                delta += (new_val - old_val)\\n        return delta\\n\\n    def apply_stamp(current_board, stamp_idx, r, c):\\n        stamp = stamps[stamp_idx]\\n        for dr in range(3):\\n            for dc in range(3):\\n                current_board[r + dr][c + dc] = (current_board[r + dr][c + dc] + stamp[dr][dc]) % MOD\\n\\n    def remove_stamp(current_board, stamp_idx, r, c):\\n        stamp = stamps[stamp_idx]\\n        for dr in range(3):\\n            for dc in range(3):\\n                # To reverse (a + b) % MOD = c, we do (c - b) % MOD\\n                current_board[r + dr][c + dc] = (current_board[r + dr][c + dc] - stamp[dr][dc]) % MOD\\n\\n    # Greedy Phase\\n    current_board = [row[:] for row in board]\\n    placements = [] # list of (m, i, j)\\n    \\n    # We have K placements allowed.",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 987,
+                "completion_tokens": 800,
+                "total_tokens": 1787,
+                "cost": 0.00044831,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 128,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00044831,
+                  "upstream_inference_prompt_cost": 0.00012831,
+                  "upstream_inference_completions_cost": 0.00032
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"Synthesizing greedy baseline and local search refinement into a single main.py script.\",\n  \"response\": \"Final Python script combining greedy initialization and hill-climbing local search.\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"import sys\\nimport random\\nimport time\\n\\ndef solve():\\n    # Read N, M, K\\n    try:\\n        line1 = sys.stdin.readline().split()\\n        if not line1: return\\n        N, M, K = map(int, line1)\\n    except EOFError:\\n        return\\n\\n    MOD = 998244353\\n\\n    # Read initial board\\n    board = []\\n    for _ in range(N):\\n        board.append(list(map(int, sys.stdin.readline().split())))\\n\\n    # Read M stamps\\n    stamps = []\\n    for _ in range(M):\\n        stamp = []\\n        for _ in range(3):\\n            stamp.append(list(map(int, sys.stdin.readline().split())))\\n        stamps.append(stamp)\\n\\n    # Helper to calculate score change\\n    # Since we want to maximize sum(board), and board is updated modulo MOD,\\n    # we must track the actual values. However, the problem says \\\"The chosen 3x3 stamp is added to the board modulo 998244353\\\".\\n    # This implies: board[i][j] = (board[i][j] + stamp[di][dj]) % MOD.\\n    \\n    def get_score_delta(current_board, stamp_idx, r, c):\\n        delta = 0\\n        stamp = stamps[stamp_idx]\\n        for dr in range(3):\\n            for dc in range(3):\\n                old_val = current_board[r + dr][c + dc]\\n                new_val = (old_val + stamp[dr][dc]) % MOD\\n                delta += (new_val - old_val)\\n        return delta\\n\\n    def apply_stamp(current_board, stamp_idx, r, c):\\n        stamp = stamps[stamp_idx]\\n        for dr in range(3):\\n            for dc in range(3):\\n                current_board[r + dr][c + dc] = (current_board[r + dr][c + dc] + stamp[dr][dc]) % MOD\\n\\n    def remove_stamp(current_board, stamp_idx, r, c):\\n        stamp = stamps[stamp_idx]\\n        for dr in range(3):\\n            for dc in range(3):\\n                # To reverse (a + b) % MOD = c, we do (c - b) % MOD\\n                current_board[r + dr][c + dc] = (current_board[r + dr][c + dc] - stamp[dr][dc]) % MOD\\n\\n    # Greedy Phase\\n    current_board = [row[:] for row in board]\\n    placements = [] # list of (m, i, j)\\n    \\n    # We have K placements allowed.",
+            "parse_error": null,
+            "parsed_response": null
+          },
+          {
+            "phase": "json_repair",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": "You repair invalid Super-Eywa node responses into strict JSON. Return only valid JSON."
+                },
+                {
+                  "role": "user",
+                  "content": "Rewrite the following content as valid JSON only for the eywa_node_response v1 schema. Allowed orchestration_decision values for this turn: execute_locally. Use the exact top-level fields required by eywa_node_response v1. Do not wrap the object under another key. Use plain text strings only. Do not use markdown, code fences, or backslashes.\n\nOriginal content:\n```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"Synthesizing greedy baseline and local search refinement into a single main.py script.\",\n  \"response\": \"Final Python script combining greedy initialization and hill-climbing local search.\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"import sys\\nimport random\\nimport time\\n\\ndef solve():\\n    # Read N, M, K\\n    try:\\n        line1 = sys.stdin.readline().split()\\n        if not line1: return\\n        N, M, K = map(int, line1)\\n    except EOFError:\\n        return\\n\\n    MOD = 998244353\\n\\n    # Read initial board\\n    board = []\\n    for _ in range(N):\\n        board.append(list(map(int, sys.stdin.readline().split())))\\n\\n    # Read M stamps\\n    stamps = []\\n    for _ in range(M):\\n        stamp = []\\n        for _ in range(3):\\n            stamp.append(list(map(int, sys.stdin.readline().split())))\\n        stamps.append(stamp)\\n\\n    # Helper to calculate score change\\n    # Since we want to maximize sum(board), and board is updated modulo MOD,\\n    # we must track the actual values. However, the problem says \\\"The chosen 3x3 stamp is added to the board modulo 998244353\\\".\\n    # This implies: board[i][j] = (board[i][j] + stamp[di][dj]) % MOD.\\n    \\n    def get_score_delta(current_board, stamp_idx, r, c):\\n        delta = 0\\n        stamp = stamps[stamp_idx]\\n        for dr in range(3):\\n            for dc in range(3):\\n                old_val = current_board[r + dr][c + dc]\\n                new_val = (old_val + stamp[dr][dc]) % MOD\\n                delta += (new_val - old_val)\\n        return delta\\n\\n    def apply_stamp(current_board, stamp_idx, r, c):\\n        stamp = stamps[stamp_idx]\\n        for dr in range(3):\\n            for dc in range(3):\\n                current_board[r + dr][c + dc] = (current_board[r + dr][c + dc] + stamp[dr][dc]) % MOD\\n\\n    def remove_stamp(current_board, stamp_idx, r, c):\\n        stamp = stamps[stamp_idx]\\n        for dr in range(3):\\n            for dc in range(3):\\n                # To reverse (a + b) % MOD = c, we do (c - b) % MOD\\n                current_board[r + dr][c + dc] = (current_board[r + dr][c + dc] - stamp[dr][dc]) % MOD\\n\\n    # Greedy Phase\\n    current_board = [row[:] for row in board]\\n    placements = [] # list of (m, i, j)\\n    \\n    # We have K placements allowed."
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775547126-O3J5mDTmsz3QwCHBDGNR",
+              "object": "chat.completion",
+              "created": 1775547126,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Parasail",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n\"schema_name\": \"eywa_node_response\",\n\"schema_version\": \"v1\",\n\"orchestration_decision\": \"execute_locally\",\n\"decision_notes\": \"Synthesizing greedy baseline and local search refinement into a single main.py script.\",\n\"response\": \"Final Python script combining greedy initialization and hill-climbing local search.\",\n\"result_type\": \"code_submission\",\n\"artifacts\": [\n{\n\"path\": \"main.py\",\n\"content\": \"import sys\\nimport random\\nimport time\\n\\ndef solve():\\n    # Read N, M, K\\n    try:\\n        line1 = sys.stdin.readline().split()\\n        if not line1: return\\n        N, M, K = map(int, line1)\\n    except EOFError:\\n        return\\n\\n    MOD = 998244353\\n\\n    # Read initial board\\n    board = []\\n    for _ in range(N):\\n        board.append(list(map(int, sys.stdin.readline().split())))\\n\\n    # Read M stamps\\n    stamps = []\\n    for _ in range(M):\\n        stamp = []\\n        for _ in range(3):\\n            stamp.append(list(map(int, sys.stdin.readline().split())))\\n        stamps.append(stamp)\\n\\n    # Helper to calculate score change\\n    # Since we want to maximize sum(board), and board is updated modulo MOD,\\n    # we must track the actual values. However, the problem says \\\"The chosen 3x3 stamp is added to the board modulo 998244353\\\".\\n    # This implies: board[i][j] = (board[i][j] + stamp[di][dj]) % MOD.\\n    \\n    def get_score_delta(current_board, stamp_idx, r, c):\\n        delta = 0\\n        stamp = stamps[stamp_idx]\\n        for dr in range(3):\\n            for dc in range(3):\\n                old_val = current_board[r + dr][c + dc]\\n                new_val = (old_val + stamp[dr][dc]) % MOD\\n                delta += (new_val - old_val)\\n        return delta\\n\\n    def apply_stamp(current_board, stamp_idx, r, c):\\n        stamp = stamps[stamp_idx]\\n        for dr in range(3):\\n            for dc in range(3):\\n                current_board[r + dr][c + dc] = (current_board[r + dr][c + dc] + stamp[dr][dc]) % MOD\\n\\n    def remove_stamp(current_board, stamp_idx, r, c):\\n        stamp = stamps[stamp_idx]\\n        for dr in range(3):\\n            for dc in range(3):\\n                # To reverse (a + b) % MOD = c, we do (c - b) % MOD\\n                current_board[r + dr][c + dc] = (current_board[r + dr][c + dc] - stamp[dr][dc]) % MOD\\n\\n    # Greedy Phase\\n    current_board = [row[:] for row in board]\\n    placements = [] # list of (m, i, j)\\n    \\n    # We have K placements allowed.\"\n}\n]\n}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 932,
+                "completion_tokens": 794,
+                "total_tokens": 1726,
+                "cost": 0.00043876,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00043876,
+                  "upstream_inference_prompt_cost": 0.00012116,
+                  "upstream_inference_completions_cost": 0.0003176
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\n\"schema_name\": \"eywa_node_response\",\n\"schema_version\": \"v1\",\n\"orchestration_decision\": \"execute_locally\",\n\"decision_notes\": \"Synthesizing greedy baseline and local search refinement into a single main.py script.\",\n\"response\": \"Final Python script combining greedy initialization and hill-climbing local search.\",\n\"result_type\": \"code_submission\",\n\"artifacts\": [\n{\n\"path\": \"main.py\",\n\"content\": \"import sys\\nimport random\\nimport time\\n\\ndef solve():\\n    # Read N, M, K\\n    try:\\n        line1 = sys.stdin.readline().split()\\n        if not line1: return\\n        N, M, K = map(int, line1)\\n    except EOFError:\\n        return\\n\\n    MOD = 998244353\\n\\n    # Read initial board\\n    board = []\\n    for _ in range(N):\\n        board.append(list(map(int, sys.stdin.readline().split())))\\n\\n    # Read M stamps\\n    stamps = []\\n    for _ in range(M):\\n        stamp = []\\n        for _ in range(3):\\n            stamp.append(list(map(int, sys.stdin.readline().split())))\\n        stamps.append(stamp)\\n\\n    # Helper to calculate score change\\n    # Since we want to maximize sum(board), and board is updated modulo MOD,\\n    # we must track the actual values. However, the problem says \\\"The chosen 3x3 stamp is added to the board modulo 998244353\\\".\\n    # This implies: board[i][j] = (board[i][j] + stamp[di][dj]) % MOD.\\n    \\n    def get_score_delta(current_board, stamp_idx, r, c):\\n        delta = 0\\n        stamp = stamps[stamp_idx]\\n        for dr in range(3):\\n            for dc in range(3):\\n                old_val = current_board[r + dr][c + dc]\\n                new_val = (old_val + stamp[dr][dc]) % MOD\\n                delta += (new_val - old_val)\\n        return delta\\n\\n    def apply_stamp(current_board, stamp_idx, r, c):\\n        stamp = stamps[stamp_idx]\\n        for dr in range(3):\\n            for dc in range(3):\\n                current_board[r + dr][c + dc] = (current_board[r + dr][c + dc] + stamp[dr][dc]) % MOD\\n\\n    def remove_stamp(current_board, stamp_idx, r, c):\\n        stamp = stamps[stamp_idx]\\n        for dr in range(3):\\n            for dc in range(3):\\n                # To reverse (a + b) % MOD = c, we do (c - b) % MOD\\n                current_board[r + dr][c + dc] = (current_board[r + dr][c + dc] - stamp[dr][dc]) % MOD\\n\\n    # Greedy Phase\\n    current_board = [row[:] for row in board]\\n    placements = [] # list of (m, i, j)\\n    \\n    # We have K placements allowed.\"\n}\n]\n}",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "execute_locally",
+              "decision_notes": "Synthesizing greedy baseline and local search refinement into a single main.py script.",
+              "response": "Final Python script combining greedy initialization and hill-climbing local search.",
+              "result_type": "code_submission",
+              "artifacts": [
+                {
+                  "path": "main.py",
+                  "content": "import sys\nimport random\nimport time\n\ndef solve():\n    # Read N, M, K\n    try:\n        line1 = sys.stdin.readline().split()\n        if not line1: return\n        N, M, K = map(int, line1)\n    except EOFError:\n        return\n\n    MOD = 998244353\n\n    # Read initial board\n    board = []\n    for _ in range(N):\n        board.append(list(map(int, sys.stdin.readline().split())))\n\n    # Read M stamps\n    stamps = []\n    for _ in range(M):\n        stamp = []\n        for _ in range(3):\n            stamp.append(list(map(int, sys.stdin.readline().split())))\n        stamps.append(stamp)\n\n    # Helper to calculate score change\n    # Since we want to maximize sum(board), and board is updated modulo MOD,\n    # we must track the actual values. However, the problem says \"The chosen 3x3 stamp is added to the board modulo 998244353\".\n    # This implies: board[i][j] = (board[i][j] + stamp[di][dj]) % MOD.\n    \n    def get_score_delta(current_board, stamp_idx, r, c):\n        delta = 0\n        stamp = stamps[stamp_idx]\n        for dr in range(3):\n            for dc in range(3):\n                old_val = current_board[r + dr][c + dc]\n                new_val = (old_val + stamp[dr][dc]) % MOD\n                delta += (new_val - old_val)\n        return delta\n\n    def apply_stamp(current_board, stamp_idx, r, c):\n        stamp = stamps[stamp_idx]\n        for dr in range(3):\n            for dc in range(3):\n                current_board[r + dr][c + dc] = (current_board[r + dr][c + dc] + stamp[dr][dc]) % MOD\n\n    def remove_stamp(current_board, stamp_idx, r, c):\n        stamp = stamps[stamp_idx]\n        for dr in range(3):\n            for dc in range(3):\n                # To reverse (a + b) % MOD = c, we do (c - b) % MOD\n                current_board[r + dr][c + dc] = (current_board[r + dr][c + dc] - stamp[dr][dc]) % MOD\n\n    # Greedy Phase\n    current_board = [row[:] for row in board]\n    placements = [] # list of (m, i, j)\n    \n    # We have K placements allowed."
+                }
+              ]
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "execute_locally",
+          "decision_notes": "Synthesizing greedy baseline and local search refinement into a single main.py script.",
+          "response": "Final Python script combining greedy initialization and hill-climbing local search.",
+          "result_type": "code_submission",
+          "artifacts": [
+            {
+              "path": "main.py",
+              "content": "import sys\nimport random\nimport time\n\ndef solve():\n    # Read N, M, K\n    try:\n        line1 = sys.stdin.readline().split()\n        if not line1: return\n        N, M, K = map(int, line1)\n    except EOFError:\n        return\n\n    MOD = 998244353\n\n    # Read initial board\n    board = []\n    for _ in range(N):\n        board.append(list(map(int, sys.stdin.readline().split())))\n\n    # Read M stamps\n    stamps = []\n    for _ in range(M):\n        stamp = []\n        for _ in range(3):\n            stamp.append(list(map(int, sys.stdin.readline().split())))\n        stamps.append(stamp)\n\n    # Helper to calculate score change\n    # Since we want to maximize sum(board), and board is updated modulo MOD,\n    # we must track the actual values. However, the problem says \"The chosen 3x3 stamp is added to the board modulo 998244353\".\n    # This implies: board[i][j] = (board[i][j] + stamp[di][dj]) % MOD.\n    \n    def get_score_delta(current_board, stamp_idx, r, c):\n        delta = 0\n        stamp = stamps[stamp_idx]\n        for dr in range(3):\n            for dc in range(3):\n                old_val = current_board[r + dr][c + dc]\n                new_val = (old_val + stamp[dr][dc]) % MOD\n                delta += (new_val - old_val)\n        return delta\n\n    def apply_stamp(current_board, stamp_idx, r, c):\n        stamp = stamps[stamp_idx]\n        for dr in range(3):\n            for dc in range(3):\n                current_board[r + dr][c + dc] = (current_board[r + dr][c + dc] + stamp[dr][dc]) % MOD\n\n    def remove_stamp(current_board, stamp_idx, r, c):\n        stamp = stamps[stamp_idx]\n        for dr in range(3):\n            for dc in range(3):\n                # To reverse (a + b) % MOD = c, we do (c - b) % MOD\n                current_board[r + dr][c + dc] = (current_board[r + dr][c + dc] - stamp[dr][dc]) % MOD\n\n    # Greedy Phase\n    current_board = [row[:] for row in board]\n    placements = [] # list of (m, i, j)\n    \n    # We have K placements allowed."
+            }
+          ]
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1919,
+        "completion_tokens": 1594,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 128,
+        "total_tokens": 3513,
+        "cost_usd": 0.00088707,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775547031-XReS0yRqDG5AoRqIezn9",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00044831
+            },
+            {
+              "response_id": "gen-1775547126-O3J5mDTmsz3QwCHBDGNR",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00043876
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

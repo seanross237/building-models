@@ -38,6 +38,7 @@ PROMPT_FAMILIES = {
     "execute",
     "transmute",
     "delegate",
+    "review",
     "agent_chooses",
 }
 
@@ -57,6 +58,7 @@ def build_turn_prompt(
     allowed = [str(decision) for decision in allowed_decisions]
     child_review = bool(child_results)
     prompt_family = _resolved_prompt_family(resolved_variables, child_review=child_review)
+    submission_contract_type = str(resolved_variables.get("submission_contract_type", "") or "").strip()
     base_header_prompt = _resolved_base_header_prompt(resolved_variables, child_review=child_review)
     selected_prompt_text = _resolved_selected_prompt_text(
         resolved_variables,
@@ -69,6 +71,7 @@ def build_turn_prompt(
             prompt_family=prompt_family,
             allowed_decisions=allowed,
             child_review=child_review,
+            submission_contract_type=submission_contract_type,
         )
 
     additional_profile_names = _normalize_profile_names(
@@ -196,7 +199,7 @@ def _resolved_selected_prompt_text(
         if review_prompt_text:
             return review_prompt_text
 
-        if prompt_family in {"transmute", "delegate"} and allowed_decisions == ["execute_locally"]:
+        if prompt_family in {"transmute", "delegate", "review"} and allowed_decisions == ["execute_locally"]:
             return ""
 
     return str(resolved_variables.get("selected_prompt_text", "") or "").strip()
@@ -207,15 +210,25 @@ def _default_selected_prompt_text(
     prompt_family: str,
     allowed_decisions: List[str],
     child_review: bool,
+    submission_contract_type: str,
 ) -> str:
     if prompt_family == "none":
         return ""
 
     if prompt_family == "execute":
+        coding_suffix = ""
+        if submission_contract_type == "coding_single_file_python":
+            coding_suffix = (
+                "\nBefore you finalize the JSON, make sure your main.py writes only the required contestant stdout. "
+                "Do not print scores, explanations, or debug text. "
+                "If the task's Output section requires a leading count/header line, print it exactly. "
+                "A simple valid baseline solution is better than malformed output."
+            )
         return (
             "You are going to solve the following question yourself. "
             "Return exactly one JSON object in this format:\n"
-            f"{json.dumps(_execute_example(), indent=2)}"
+            f"{json.dumps(_execute_example(submission_contract_type=submission_contract_type), indent=2)}"
+            f"{coding_suffix}"
         )
 
     if prompt_family == "transmute":
@@ -224,7 +237,7 @@ def _default_selected_prompt_text(
                 "A child result has already come back to you. "
                 "Use that returned work to produce the final response yourself. "
                 "Return exactly one JSON object in this format:\n"
-                f"{json.dumps(_execute_example(), indent=2)}"
+                f"{json.dumps(_execute_example(submission_contract_type=submission_contract_type), indent=2)}"
             )
         return (
             "You are going to transmute the following question for another agent to solve. "
@@ -239,7 +252,7 @@ def _default_selected_prompt_text(
                 "Child results have already come back to you. "
                 "Use them to produce the final response yourself. "
                 "Return exactly one JSON object in this format:\n"
-                f"{json.dumps(_execute_example(), indent=2)}"
+                f"{json.dumps(_execute_example(submission_contract_type=submission_contract_type), indent=2)}"
             )
         return (
             "You are going to decompose the following question into useful subproblems for other agents. "
@@ -247,7 +260,22 @@ def _default_selected_prompt_text(
             f"{json.dumps(_delegate_example(), indent=2)}"
         )
 
-    choice_examples = _agent_choice_examples(allowed_decisions)
+    if prompt_family == "review":
+        if child_review:
+            return (
+                "A review child has already returned critique or an improved draft. "
+                "Use that returned work to produce the final response yourself. "
+                "Return exactly one JSON object in this format:\n"
+                f"{json.dumps(_execute_example(submission_contract_type=submission_contract_type), indent=2)}"
+            )
+        return (
+            "You are going to produce a draft plus a focused review request for one child reviewer. "
+            "Use exactly one helper. The helper should critique, verify, or improve your draft rather than solve an unrelated subproblem. "
+            "Return exactly one JSON object in this format:\n"
+            f"{json.dumps(_review_example(), indent=2)}"
+        )
+
+    choice_examples = _agent_choice_examples(allowed_decisions, submission_contract_type=submission_contract_type)
     return (
         "Choose how to proceed on this turn. "
         f"Valid orchestration decisions for this turn are: {', '.join(allowed_decisions)}. "
@@ -256,8 +284,8 @@ def _default_selected_prompt_text(
     )
 
 
-def _execute_example() -> Dict[str, Any]:
-    return {
+def _execute_example(*, submission_contract_type: str = "") -> Dict[str, Any]:
+    example = {
         "schema_name": "eywa_node_response",
         "schema_version": "v1",
         "orchestration_decision": "execute_locally",
@@ -265,6 +293,16 @@ def _execute_example() -> Dict[str, Any]:
         "response": "string",
         "result_type": "optional string",
     }
+    if submission_contract_type == "coding_single_file_python":
+        example["response"] = "brief submission summary"
+        example["result_type"] = "code_submission"
+        example["artifacts"] = [
+            {
+                "path": "main.py",
+                "content": "full Python file contents as one escaped string",
+            }
+        ]
+    return example
 
 
 def _transmute_example() -> Dict[str, Any]:
@@ -294,6 +332,17 @@ def _delegate_example() -> Dict[str, Any]:
     }
 
 
+def _review_example() -> Dict[str, Any]:
+    return {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "review",
+        "decision_notes": "optional string",
+        "draft_response": "plain-text best current draft answer",
+        "message_for_reviewer": "plain-text instructions telling the reviewer what to check, critique, or improve",
+    }
+
+
 def _report_problem_example() -> Dict[str, Any]:
     return {
         "schema_name": "eywa_node_response",
@@ -304,15 +353,19 @@ def _report_problem_example() -> Dict[str, Any]:
     }
 
 
-def _agent_choice_examples(allowed_decisions: Iterable[str]) -> Dict[str, Any]:
+def _agent_choice_examples(allowed_decisions: Iterable[str], *, submission_contract_type: str = "") -> Dict[str, Any]:
     examples: Dict[str, Any] = {}
     for decision in allowed_decisions:
         if decision == "execute_locally":
-            examples["execute_locally_example"] = _execute_example()
+            examples["execute_locally_example"] = _execute_example(
+                submission_contract_type=submission_contract_type
+            )
         elif decision == "transmute":
             examples["transmute_example"] = _transmute_example()
         elif decision == "delegate":
             examples["delegate_example"] = _delegate_example()
+        elif decision == "review":
+            examples["review_example"] = _review_example()
         elif decision == "report_problem":
             examples["report_problem_example"] = _report_problem_example()
     return examples

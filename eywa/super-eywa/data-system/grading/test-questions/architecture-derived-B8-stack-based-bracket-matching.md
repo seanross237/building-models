@@ -1,10 +1,12 @@
 # B8. Stack-Based Bracket Matching
 
-- Type: Architecture-derived
+- Family: architecture-derived
+- Entry Type: reasoning
 - Domain: Formal languages / stack-based reasoning
+- Grader Type: exact_numeric
 - Source: Architecture Exp, LOGIC-06
 
-## Question
+## Problem
 
 Given a sequence with mixed brackets (), [], {}, <>.
 Find the first mistake in the provided derivation steps.
@@ -24,4 +26,4 @@ Opus got 19.
 
 ## Notes
 
-- 
+-

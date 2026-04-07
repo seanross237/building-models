@@ -1,0 +1,85 @@
+{
+  "contract_name": "node_packet",
+  "contract_version": "v1",
+  "run_id": "coding-S4-ahc030-polyomino-mining__transmute__mx1_non_holdout_full_agent_v1_2026_04_06__transmute__14__run_2026_04_07_023943",
+  "node_id": "node_root_helper_01",
+  "created_at_utc": "2026-04-07T02:40:03Z",
+  "creation_parent_node_id": "node_root",
+  "input": {
+    "instructions": "Your objective is to design a search-and-prune algorithm to recover the exact set of oil-containing cells by managing a state space of candidate configurations. Follow this structured algorithmic strategy:\n\n1. **State-Space Representation**: \n   Represent the current state as a set $\\mathcal{S} = \\{C_1, C_2, \\dots, C_n\\}$, where each $C_i$ is a valid geometric configuration consisting of a specific placement of all known polyomino shapes on the grid. A configuration is a set of coordinates representing the union of all placed shapes.\n\n2. **Pruning via Aggregate Queries (Global Reduction)**: \n   Implement a mechanism to use noisy aggregate queries (e.g., 'how many oil cells are in region $R$?') to eliminate large subsets of $\\mathcal{S}$. \n   - For a query on region $R$ with result $V$, calculate the expected value $E[V|C_i]$ for each configuration $C_i \\in \\mathcal{S}$. \n   - Use a probabilistic threshold or a likelihood-based filter to prune configurations $C_i$ where $P(V|C_i)$ is significantly low. \n   - The goal is to select query regions $R$ that maximize the expected reduction in the cardinality of $\\mathcal{S}$ (Information Gain).\n\n3. **Ambiguity Resolution via Direct Drilling (Local Refinement)**: \n   When the set $\\mathcal{S}$ contains configurations that are highly similar but differ in specific high-probability cells, transition from aggregate queries to direct drilling.\n   - Identify 'critical cells' $x$ where the variance of presence across $\\mathcal{S}$ is high, or where the density of oil cells in $\\mathcal{S}$ is high.\n   - Use drilling to resolve the exact state of these cells, effectively splitting the remaining candidate set into disjoint subsets based on the binary outcome.\n\n4. **Optimization Objective**:\n   Develop a heuristic to balance the cost of aggregate queries (low cost, high uncertainty) against the cost of drilling (high cost, zero uncertainty). The algorithm should minimize the total cost $J = \\sum \\text{cost}(\\text{aggregate}) + \\sum \\text{cost}(\\text{drill})$ required to reduce $\\mathcal{S}$ to a single unique configuration (or a set of configurations that all yield the same oil-cell set).",
+    "provided_context_refs": [],
+    "attachment_refs": []
+  },
+  "variable_resolution": {
+    "run_level_defaults": {
+      "runtime_provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it",
+      "prompt_family": "transmute",
+      "selected_prompt_text": "Reformulate this problem into a structured algorithmic strategy focused on state-space reduction. Your reformulation should guide the next agent to develop a method for managing a set of candidate configurations (placements of the known shapes) and systematically pruning this set using the results of different query types. Specifically, describe how to: 1) Represent the current set of valid geometric configurations, 2) Use aggregate queries to eliminate subsets of configurations that are inconsistent with the noisy results, and 3) Use direct drilling to resolve ambiguity in high-probability regions. The goal is to provide a logical roadmap for a search-and-prune algorithm that minimizes total cost.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"transmute\",\n  \"decision_notes\": \"optional string\",\n  \"message_for_next_agent\": \"plain-text reformulation for the next agent\"\n}",
+      "base_header_prompt": "",
+      "review_prompt_family": "",
+      "review_selected_prompt_text": "",
+      "review_base_header_prompt": "",
+      "child_prompt_family": "execute",
+      "child_selected_prompt_text": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}",
+      "child_base_header_prompt": "",
+      "terminal_result_destination": "auto",
+      "child_terminal_result_destination": "",
+      "injected_prompt_profile": "agent_orchestration_basic_instruction_prompt",
+      "additional_instruction_prompt_profiles": [],
+      "context_policy": "minimal",
+      "workflow_structure": "sequential_parent_review",
+      "verification_policy": "light",
+      "tool_policy": "none",
+      "json_response_policy": "strict_required",
+      "orchestration_policy": "agent_decides",
+      "budget_policy": {
+        "max_depth": 1,
+        "max_helpers_per_node": 1,
+        "max_turns_per_node": 4
+      },
+      "routing_policy": "return_to_creator",
+      "recovery_policy": "report_problem"
+    },
+    "node_level_overrides": {
+      "prompt_family": "execute",
+      "selected_prompt_text": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}",
+      "terminal_result_destination": "final_output"
+    },
+    "resolved_variables": {
+      "runtime_provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it",
+      "prompt_family": "execute",
+      "selected_prompt_text": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}",
+      "base_header_prompt": "",
+      "review_prompt_family": "",
+      "review_selected_prompt_text": "",
+      "review_base_header_prompt": "",
+      "child_prompt_family": "execute",
+      "child_selected_prompt_text": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}",
+      "child_base_header_prompt": "",
+      "terminal_result_destination": "final_output",
+      "child_terminal_result_destination": "",
+      "injected_prompt_profile": "agent_orchestration_basic_instruction_prompt",
+      "additional_instruction_prompt_profiles": [],
+      "context_policy": "minimal",
+      "workflow_structure": "sequential_parent_review",
+      "verification_policy": "light",
+      "tool_policy": "none",
+      "json_response_policy": "strict_required",
+      "orchestration_policy": "agent_decides",
+      "budget_policy": {
+        "max_depth": 1,
+        "max_helpers_per_node": 1,
+        "max_turns_per_node": 4
+      },
+      "routing_policy": "return_to_creator",
+      "recovery_policy": "report_problem"
+    }
+  },
+  "node_setup": {
+    "created_by_action_type": "recruit_help",
+    "terminal_result_destination": "final_output",
+    "notes": []
+  }
+}

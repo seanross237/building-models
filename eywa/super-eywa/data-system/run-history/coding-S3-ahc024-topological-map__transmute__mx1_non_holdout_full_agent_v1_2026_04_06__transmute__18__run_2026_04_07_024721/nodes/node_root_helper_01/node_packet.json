@@ -1,0 +1,85 @@
+{
+  "contract_name": "node_packet",
+  "contract_version": "v1",
+  "run_id": "coding-S3-ahc024-topological-map__transmute__mx1_non_holdout_full_agent_v1_2026_04_06__transmute__18__run_2026_04_07_024721",
+  "node_id": "node_root_helper_01",
+  "created_at_utc": "2026-04-07T02:47:45Z",
+  "creation_parent_node_id": "node_root",
+  "input": {
+    "instructions": "Design a computational strategy for the 'Topological Map' problem. The goal is to map a colored city map onto a 50x50 grid to maximize empty cells (E) while preserving color-adjacency and connectivity. \n\n1. Core Challenges: The primary tension is between 'Topological Integrity' (ensuring all required adjacencies exist and connectivity is not broken by 'islands' or 'cuts') and 'Spatial Density' (minimizing the footprint to maximize E). The search space is discrete and highly constrained by the connectivity of the original map.\n\n2. Multi-Stage Approach:\n   - Stage 1: Graph-to-Skeleton Embedding. Convert the input map into a graph where nodes are color-regions and edges are adjacencies. Use a force-directed layout or a Steiner Tree-based approach to find a minimal 'skeleton' of cells that satisfies the graph topology.\n   - Stage 2: Initial Placement via Greedy Growth. Starting from a seed region, grow the map onto the 50x50 grid using a BFS-based expansion that prioritizes minimizing the bounding box area while checking adjacency constraints at every step.\n   - Stage 3: Iterative Refinement (Simulated Annealing). Use a local search where moves include: (a) Shifting a connected component, (b) Swapping two non-adjacent color cells, or (c) 'Contracting' a region by moving a boundary cell to an adjacent empty cell if it doesn't break connectivity or adjacency.\n\n3. Data Structures & Cost Functions:\n   - Data Structures: A 2D array (50x50) for the grid; an Adjacency List representing the required color-to-color relations; a Disjoint Set Union (DSU) to track connectivity of color regions during moves.\n   - Cost Function: J = -E + \u03bb1 * (Adjacency_Violations) + \u03bb2 * (Connectivity_Violations). Since we must strictly adhere to invariants, we treat violations as hard constraints (infinite penalty) or use a repair mechanism.\n\n4. Search Space Navigation: The algorithm will navigate the space of 'valid embeddings'. Instead of moving individual cells (which breaks topology), the algorithm will move 'boundary cells' or 'entire sub-graphs' to ensure the topological invariants are maintained as much as possible, using the DSU to validate every proposed move in O(\u03b1(N)) time.",
+    "provided_context_refs": [],
+    "attachment_refs": []
+  },
+  "variable_resolution": {
+    "run_level_defaults": {
+      "runtime_provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it",
+      "prompt_family": "transmute",
+      "selected_prompt_text": "Analyze the provided problem to design a sophisticated algorithmic solution. Instead of merely restating the constraints or providing a formal mathematical model, your goal is to develop a detailed computational strategy. You must: 1) Identify the core algorithmic challenges (e.g., the tension between connectivity and spatial density); 2) Propose a multi-stage approach (e.g., an initial placement heuristic followed by a refinement/optimization phase like simulated annealing or local search); 3) Specify the exact data structures and cost functions required to guide the optimization; and 4) Explain how the algorithm will navigate the search space to maximize the objective while strictly adhering to all topological invariants. The output should be a technical design document that provides the logical path to an optimal solution.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"transmute\",\n  \"decision_notes\": \"optional string\",\n  \"message_for_next_agent\": \"plain-text reformulation for the next agent\"\n}",
+      "base_header_prompt": "",
+      "review_prompt_family": "",
+      "review_selected_prompt_text": "",
+      "review_base_header_prompt": "",
+      "child_prompt_family": "execute",
+      "child_selected_prompt_text": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}",
+      "child_base_header_prompt": "",
+      "terminal_result_destination": "auto",
+      "child_terminal_result_destination": "",
+      "injected_prompt_profile": "agent_orchestration_basic_instruction_prompt",
+      "additional_instruction_prompt_profiles": [],
+      "context_policy": "minimal",
+      "workflow_structure": "sequential_parent_review",
+      "verification_policy": "light",
+      "tool_policy": "none",
+      "json_response_policy": "strict_required",
+      "orchestration_policy": "agent_decides",
+      "budget_policy": {
+        "max_depth": 1,
+        "max_helpers_per_node": 1,
+        "max_turns_per_node": 4
+      },
+      "routing_policy": "return_to_creator",
+      "recovery_policy": "report_problem"
+    },
+    "node_level_overrides": {
+      "prompt_family": "execute",
+      "selected_prompt_text": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}",
+      "terminal_result_destination": "final_output"
+    },
+    "resolved_variables": {
+      "runtime_provider": "openrouter",
+      "model": "google/gemma-4-26b-a4b-it",
+      "prompt_family": "execute",
+      "selected_prompt_text": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}",
+      "base_header_prompt": "",
+      "review_prompt_family": "",
+      "review_selected_prompt_text": "",
+      "review_base_header_prompt": "",
+      "child_prompt_family": "execute",
+      "child_selected_prompt_text": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}",
+      "child_base_header_prompt": "",
+      "terminal_result_destination": "final_output",
+      "child_terminal_result_destination": "",
+      "injected_prompt_profile": "agent_orchestration_basic_instruction_prompt",
+      "additional_instruction_prompt_profiles": [],
+      "context_policy": "minimal",
+      "workflow_structure": "sequential_parent_review",
+      "verification_policy": "light",
+      "tool_policy": "none",
+      "json_response_policy": "strict_required",
+      "orchestration_policy": "agent_decides",
+      "budget_policy": {
+        "max_depth": 1,
+        "max_helpers_per_node": 1,
+        "max_turns_per_node": 4
+      },
+      "routing_policy": "return_to_creator",
+      "recovery_policy": "report_problem"
+    }
+  },
+  "node_setup": {
+    "created_by_action_type": "recruit_help",
+    "terminal_result_destination": "final_output",
+    "notes": []
+  }
+}

@@ -1,0 +1,244 @@
+{
+  "provider": "openrouter",
+  "note": "Per-turn provider payloads, authored JSON, and compiled outputs are recorded here.",
+  "steps": [
+    {
+      "step": 1,
+      "note": "authored local execution deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 1\nNode depth: 0\nAllowed decisions: ['execute_locally']\nPrompt family: execute\nBase header prompt: ''\nSelected prompt text:\nSolve the question directly, prioritizing high-scoring algorithmic strategies.\n\nCRITICAL: Return ONLY a valid JSON object. Do NOT use markdown code fences (e.g., no ```json). Do NOT add any text before or after the JSON object.\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nYour main.py must read from stdin and print only the contestant output required by the problem. Do not print debug text, labels, or estimated scores.\n\nIn the response field, provide a brief submission summary. Do not include contestant stdout in the response field.\n\nKeep decision_notes extremely short (3 to 8 words).\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nThe response field should be only a brief submission summary. Do not put contestant stdout in the response field.\nYour main.py must read from stdin and print only the contestant output required by the problem.\nDo not print explanations, labels, debug text, or estimated scores.\nIf the Output section requires a leading count/header line, print it exactly.\nPrefer a simple valid baseline over malformed ambitious output.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nSolve the question directly, prioritizing high-scoring algorithmic strategies.\n\nCRITICAL: Return ONLY a valid JSON object. Do NOT use markdown code fences (e.g., no ```json). Do NOT add any text before or after the JSON object.\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nYour main.py must read from stdin and print only the contestant output required by the problem. Do not print debug text, labels, or estimated scores.\n\nIn the response field, provide a brief submission summary. Do not include contestant stdout in the response field.\n\nKeep decision_notes extremely short (3 to 8 words).\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nThe response field should be only a brief submission summary. Do not put contestant stdout in the response field.\nYour main.py must read from stdin and print only the contestant output required by the problem.\nDo not print explanations, labels, debug text, or estimated scores.\nIf the Output section requires a leading count/header line, print it exactly.\nPrefer a simple valid baseline over malformed ambitious output.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\n\nQuestion:\nSolve this Super-Eywa coding benchmark.\nQuestion ID: coding-S1-ahc001-atcoder-ad\nTitle: S1. AHC001 / AtCoder Ad\n\nProblem:\n# AHC001 / AtCoder Ad\n\nWrite `main.py`.\n\nYou are given `N` advertisers.\nAdvertiser `i` requests a point `(x_i, y_i)` and a target area `r_i` inside a `10000 x 10000` square.\nOutput one axis-aligned rectangle for each advertiser.\n\n## Objective\n\n- Every rectangle must stay inside the board.\n- Rectangle `i` must contain its requested point `(x_i, y_i)`.\n- Rectangles must not overlap.\n- The score rewards making each rectangle area close to `r_i`.\n\n## Input\n\n- Line 1: `N`\n- Next `N` lines: `x_i y_i r_i`\n\n## Output\n\n- Print exactly `N` lines.\n- Line `i` must be `x1 y1 x2 y2` for advertiser `i`.\n- The rectangle is `[x1, x2) x [y1, y2)`.\n\n## Notes\n\n- A rectangle with invalid bounds or one that misses its required point receives no benefit.\n- Overlapping rectangles make the score collapse to zero.\n- This v1 packet uses the official AtCoder visualizer on three bundled public instances.\n\nSubmission contract:\n- Return a single Python submission file named main.py.\n- Read from stdin and write to stdout.\n- Put the full file content in the artifacts list of your execute_locally JSON response.\n- Use the response field only for a brief submission summary.\n- Do not wrap the code in markdown fences inside artifacts.\n\nCritical validity rules:\n- Your program is judged by the stdout it prints when run, not by the summary in your JSON response.\n- Print exactly the contestant output described in the Output section, and nothing else.\n- Do not print the objective score, estimated score, labels, explanations, or debug text unless the Output section explicitly requires them.\n- If the Output section requires a count/header on the first line, print that first line exactly.\n- Every printed index, count, and coordinate must stay within the allowed ranges.\n- Prefer a simple valid baseline solution over an ambitious but invalid one.\n- If the problem permits an empty or minimal valid plan, that is better than malformed output.\n\nGrading target:\nContinuous score from advertiser satisfaction.\nHigher is better.",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "execute_locally",
+        "decision_notes": "Implementing greedy non-overlapping rectangles.",
+        "response": "Python script submitted for AHC001.",
+        "result_type": "code_submission",
+        "artifacts": [
+          {
+            "path": "main.py",
+            "content": "import sys\nimport math\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    N = int(input_data[0])\n    advertisers = []\n    idx = 1\n    for i in range(N):\n        x = float(input_data[idx])\n        y = float(input_data[idx+1])\n        r = float(input_data[idx+2])\n        advertisers.append({'id': i, 'x': x, 'y': y, 'r': r})\n        idx += 3\n\n    sorted_adv = sorted(advertisers, key=lambda a: a['r'], reverse=True)\n    \n    results = [None] * N\n    eps = 1e-7\n    \n    for adv in advertisers:\n        x, y = adv['x'], adv['y']\n        x1 = max(0.0, x - eps)\n        y1 = max(0.0, y - eps)\n        x2 = min(10000.0, x + eps)\n        y2 = min(10000.0, y + eps)\n        \n        if x1 == x2: x2 += eps\n        if y1 == y2: y2 += eps\n        \n        if x2 > 10000.0: \n            x2 = 10000.0\n            x1 = max(0.0, x2 - eps)\n"
+          }
+        ]
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "coding-S1-ahc001-atcoder-ad__execute__mx1_coding_non_holdout_v2_2026_04_07__execute__03__run_2026_04_07_072246",
+        "node_id": "node_root",
+        "action_type": "report_success",
+        "results": [
+          {
+            "result_type": "code_submission",
+            "content": "Python script submitted for AHC001.",
+            "attachment_refs": [
+              "artifacts/node_root/turn_01/main.py"
+            ]
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "success_report",
+            "target": {
+              "target_type": "final_output",
+              "target_ref": "run_final_output"
+            },
+            "message": "Python script submitted for AHC001.",
+            "attachment_refs": [
+              "artifacts/node_root/turn_01/main.py"
+            ]
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Solve the question directly, prioritizing high-scoring algorithmic strategies.\n\nCRITICAL: Return ONLY a valid JSON object. Do NOT use markdown code fences (e.g., no ```json). Do NOT add any text before or after the JSON object.\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nYour main.py must read from stdin and print only the contestant output required by the problem. Do not print debug text, labels, or estimated scores.\n\nIn the response field, provide a brief submission summary. Do not include contestant stdout in the response field.\n\nKeep decision_notes extremely short (3 to 8 words).\n\nWhen orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n- path: main.py\n- content: the full Python source code as one escaped string\n\nThe response field should be only a brief submission summary. Do not put contestant stdout in the response field.\nYour main.py must read from stdin and print only the contestant output required by the problem.\nDo not print explanations, labels, debug text, or estimated scores.\nIf the Output section requires a leading count/header line, print it exactly.\nPrefer a simple valid baseline over malformed ambitious output.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\n\nQuestion:\nSolve this Super-Eywa coding benchmark.\nQuestion ID: coding-S1-ahc001-atcoder-ad\nTitle: S1. AHC001 / AtCoder Ad\n\nProblem:\n# AHC001 / AtCoder Ad\n\nWrite `main.py`.\n\nYou are given `N` advertisers.\nAdvertiser `i` requests a point `(x_i, y_i)` and a target area `r_i` inside a `10000 x 10000` square.\nOutput one axis-aligned rectangle for each advertiser.\n\n## Objective\n\n- Every rectangle must stay inside the board.\n- Rectangle `i` must contain its requested point `(x_i, y_i)`.\n- Rectangles must not overlap.\n- The score rewards making each rectangle area close to `r_i`.\n\n## Input\n\n- Line 1: `N`\n- Next `N` lines: `x_i y_i r_i`\n\n## Output\n\n- Print exactly `N` lines.\n- Line `i` must be `x1 y1 x2 y2` for advertiser `i`.\n- The rectangle is `[x1, x2) x [y1, y2)`.\n\n## Notes\n\n- A rectangle with invalid bounds or one that misses its required point receives no benefit.\n- Overlapping rectangles make the score collapse to zero.\n- This v1 packet uses the official AtCoder visualizer on three bundled public instances.\n\nSubmission contract:\n- Return a single Python submission file named main.py.\n- Read from stdin and write to stdout.\n- Put the full file content in the artifacts list of your execute_locally JSON response.\n- Use the response field only for a brief submission summary.\n- Do not wrap the code in markdown fences inside artifacts.\n\nCritical validity rules:\n- Your program is judged by the stdout it prints when run, not by the summary in your JSON response.\n- Print exactly the contestant output described in the Output section, and nothing else.\n- Do not print the objective score, estimated score, labels, explanations, or debug text unless the Output section explicitly requires them.\n- If the Output section requires a count/header on the first line, print that first line exactly.\n- Every printed index, count, and coordinate must stay within the allowed ranges.\n- Prefer a simple valid baseline solution over an ambitious but invalid one.\n- If the problem permits an empty or minimal valid plan, that is better than malformed output.\n\nGrading target:\nContinuous score from advertiser satisfaction.\nHigher is better."
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775546566-Cj4WNcnugPg8cVpieBIB",
+              "object": "chat.completion",
+              "created": 1775546566,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Parasail",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "length",
+                  "native_finish_reason": "length",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"Implementing greedy non-overlapping rectangles.\",\n  \"response\": \"Python script submitted for AHC001.\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"import sys\\nimport math\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    N = int(input_data[0])\\n    advertisers = []\\n    idx = 1\\n    for i in range(N):\\n        x = float(input_data[idx])\\n        y = float(input_data[idx+1])\\n        r = float(input_data[idx+2])\\n        advertisers.append({'id': i, 'x': x, 'y': y, 'r': r})\\n        idx += 3\\n\\n    # Sort advertisers by area descending to place larger ones first\\n    # This is a simple heuristic to avoid fragmentation\\n    sorted_adv = sorted(advertisers, key=lambda a: a['r'], reverse=True)\\n    \\n    # We will use a very simple strategy: \\n    # Each rectangle is a tiny square around (x, y) to ensure no overlap.\\n    # Since the goal is to maximize area, we'll try to expand them slightly,\\n    # but to guarantee no overlap and stay within bounds, we'll use a tiny epsilon.\\n    # A more robust approach would be a grid or a quadtree, but for a baseline,\\n    # we'll output a very small rectangle that contains the point.\\n    \\n    # To improve score, let's try to make them slightly larger but keep them safe.\\n    # However, the simplest valid solution is a 1x1 or even 0.0001x0.0001 square.\\n    # Let's try to make them 1x1 squares centered at (x, y) if possible.\\n    \\n    results = [None] * N\\n    \\n    # For a baseline that is guaranteed not to overlap and stay in bounds:\\n    # We use a very small epsilon around the point.\\n    eps = 1e-7\\n    \\n    for adv in advertisers:\\n        x, y = adv['x'], adv['y']\\n        # Ensure bounds [0, 10000]\\n        x1 = max(0.0, x - eps)\\n        y1 = max(0.0, y - eps)\\n        x2 = min(10000.0, x + eps)\\n        y2 = min(10000.0, y + eps)\\n        \\n        # If x1 == x2 or y1 == y2, we need to nudge it to ensure it's a valid rectangle [x1, x2)\\n        if x1 == x2: x2 += eps\\n        if y1 == y2: y2 += eps\\n        \\n        # Re-check bounds after nudge\\n        if x2 > 10000.0: \\n            x2 = 10000.0\\n            x1 = max(0.0, x2 - eps)\\n",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 1015,
+                "completion_tokens": 800,
+                "total_tokens": 1815,
+                "cost": 0.00045195,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00045195,
+                  "upstream_inference_prompt_cost": 0.00013195,
+                  "upstream_inference_completions_cost": 0.00032
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"Implementing greedy non-overlapping rectangles.\",\n  \"response\": \"Python script submitted for AHC001.\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"import sys\\nimport math\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    N = int(input_data[0])\\n    advertisers = []\\n    idx = 1\\n    for i in range(N):\\n        x = float(input_data[idx])\\n        y = float(input_data[idx+1])\\n        r = float(input_data[idx+2])\\n        advertisers.append({'id': i, 'x': x, 'y': y, 'r': r})\\n        idx += 3\\n\\n    # Sort advertisers by area descending to place larger ones first\\n    # This is a simple heuristic to avoid fragmentation\\n    sorted_adv = sorted(advertisers, key=lambda a: a['r'], reverse=True)\\n    \\n    # We will use a very simple strategy: \\n    # Each rectangle is a tiny square around (x, y) to ensure no overlap.\\n    # Since the goal is to maximize area, we'll try to expand them slightly,\\n    # but to guarantee no overlap and stay within bounds, we'll use a tiny epsilon.\\n    # A more robust approach would be a grid or a quadtree, but for a baseline,\\n    # we'll output a very small rectangle that contains the point.\\n    \\n    # To improve score, let's try to make them slightly larger but keep them safe.\\n    # However, the simplest valid solution is a 1x1 or even 0.0001x0.0001 square.\\n    # Let's try to make them 1x1 squares centered at (x, y) if possible.\\n    \\n    results = [None] * N\\n    \\n    # For a baseline that is guaranteed not to overlap and stay in bounds:\\n    # We use a very small epsilon around the point.\\n    eps = 1e-7\\n    \\n    for adv in advertisers:\\n        x, y = adv['x'], adv['y']\\n        # Ensure bounds [0, 10000]\\n        x1 = max(0.0, x - eps)\\n        y1 = max(0.0, y - eps)\\n        x2 = min(10000.0, x + eps)\\n        y2 = min(10000.0, y + eps)\\n        \\n        # If x1 == x2 or y1 == y2, we need to nudge it to ensure it's a valid rectangle [x1, x2)\\n        if x1 == x2: x2 += eps\\n        if y1 == y2: y2 += eps\\n        \\n        # Re-check bounds after nudge\\n        if x2 > 10000.0: \\n            x2 = 10000.0\\n            x1 = max(0.0, x2 - eps)\\n",
+            "parse_error": null,
+            "parsed_response": null
+          },
+          {
+            "phase": "json_repair",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": "You repair invalid Super-Eywa node responses into strict JSON. Return only valid JSON."
+                },
+                {
+                  "role": "user",
+                  "content": "Rewrite the following content as valid JSON only for the eywa_node_response v1 schema. Allowed orchestration_decision values for this turn: execute_locally. Use the exact top-level fields required by eywa_node_response v1. Do not wrap the object under another key. Use plain text strings only. Do not use markdown, code fences, or backslashes.\n\nOriginal content:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"Implementing greedy non-overlapping rectangles.\",\n  \"response\": \"Python script submitted for AHC001.\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"import sys\\nimport math\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    N = int(input_data[0])\\n    advertisers = []\\n    idx = 1\\n    for i in range(N):\\n        x = float(input_data[idx])\\n        y = float(input_data[idx+1])\\n        r = float(input_data[idx+2])\\n        advertisers.append({'id': i, 'x': x, 'y': y, 'r': r})\\n        idx += 3\\n\\n    # Sort advertisers by area descending to place larger ones first\\n    # This is a simple heuristic to avoid fragmentation\\n    sorted_adv = sorted(advertisers, key=lambda a: a['r'], reverse=True)\\n    \\n    # We will use a very simple strategy: \\n    # Each rectangle is a tiny square around (x, y) to ensure no overlap.\\n    # Since the goal is to maximize area, we'll try to expand them slightly,\\n    # but to guarantee no overlap and stay within bounds, we'll use a tiny epsilon.\\n    # A more robust approach would be a grid or a quadtree, but for a baseline,\\n    # we'll output a very small rectangle that contains the point.\\n    \\n    # To improve score, let's try to make them slightly larger but keep them safe.\\n    # However, the simplest valid solution is a 1x1 or even 0.0001x0.0001 square.\\n    # Let's try to make them 1x1 squares centered at (x, y) if possible.\\n    \\n    results = [None] * N\\n    \\n    # For a baseline that is guaranteed not to overlap and stay in bounds:\\n    # We use a very small epsilon around the point.\\n    eps = 1e-7\\n    \\n    for adv in advertisers:\\n        x, y = adv['x'], adv['y']\\n        # Ensure bounds [0, 10000]\\n        x1 = max(0.0, x - eps)\\n        y1 = max(0.0, y - eps)\\n        x2 = min(10000.0, x + eps)\\n        y2 = min(10000.0, y + eps)\\n        \\n        # If x1 == x2 or y1 == y2, we need to nudge it to ensure it's a valid rectangle [x1, x2)\\n        if x1 == x2: x2 += eps\\n        if y1 == y2: y2 += eps\\n        \\n        # Re-check bounds after nudge\\n        if x2 > 10000.0: \\n            x2 = 10000.0\\n            x1 = max(0.0, x2 - eps)\\n"
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775546579-IRZzrumWsJ0l2WkigA9Z",
+              "object": "chat.completion",
+              "created": 1775546579,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Venice",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n\"schema_name\": \"eywa_node_response\",\n\"schema_version\": \"v1\",\n\"orchestration_decision\": \"execute_locally\",\n\"decision_notes\": \"Implementing greedy non-overlapping rectangles.\",\n\"response\": \"Python script submitted for AHC001.\",\n\"result_type\": \"code_submission\",\n\"artifacts\": [\n{\n\"path\": \"main.py\",\n\"content\": \"import sys\\nimport math\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    N = int(input_data[0])\\n    advertisers = []\\n    idx = 1\\n    for i in range(N):\\n        x = float(input_data[idx])\\n        y = float(input_data[idx+1])\\n        r = float(input_data[idx+2])\\n        advertisers.append({'id': i, 'x': x, 'y': y, 'r': r})\\n        idx += 3\\n\\n    sorted_adv = sorted(advertisers, key=lambda a: a['r'], reverse=True)\\n    \\n    results = [None] * N\\n    eps = 1e-7\\n    \\n    for adv in advertisers:\\n        x, y = adv['x'], adv['y']\\n        x1 = max(0.0, x - eps)\\n        y1 = max(0.0, y - eps)\\n        x2 = min(10000.0, x + eps)\\n        y2 = min(10000.0, y + eps)\\n        \\n        if x1 == x2: x2 += eps\\n        if y1 == y2: y2 += eps\\n        \\n        if x2 > 10000.0: \\n            x2 = 10000.0\\n            x1 = max(0.0, x2 - eps)\\n\"\n}\n]\n}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 932,
+                "completion_tokens": 483,
+                "total_tokens": 1415,
+                "cost": 0.00039295,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00039295,
+                  "upstream_inference_prompt_cost": 0.00015145,
+                  "upstream_inference_completions_cost": 0.0002415
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\n\"schema_name\": \"eywa_node_response\",\n\"schema_version\": \"v1\",\n\"orchestration_decision\": \"execute_locally\",\n\"decision_notes\": \"Implementing greedy non-overlapping rectangles.\",\n\"response\": \"Python script submitted for AHC001.\",\n\"result_type\": \"code_submission\",\n\"artifacts\": [\n{\n\"path\": \"main.py\",\n\"content\": \"import sys\\nimport math\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n    \\n    N = int(input_data[0])\\n    advertisers = []\\n    idx = 1\\n    for i in range(N):\\n        x = float(input_data[idx])\\n        y = float(input_data[idx+1])\\n        r = float(input_data[idx+2])\\n        advertisers.append({'id': i, 'x': x, 'y': y, 'r': r})\\n        idx += 3\\n\\n    sorted_adv = sorted(advertisers, key=lambda a: a['r'], reverse=True)\\n    \\n    results = [None] * N\\n    eps = 1e-7\\n    \\n    for adv in advertisers:\\n        x, y = adv['x'], adv['y']\\n        x1 = max(0.0, x - eps)\\n        y1 = max(0.0, y - eps)\\n        x2 = min(10000.0, x + eps)\\n        y2 = min(10000.0, y + eps)\\n        \\n        if x1 == x2: x2 += eps\\n        if y1 == y2: y2 += eps\\n        \\n        if x2 > 10000.0: \\n            x2 = 10000.0\\n            x1 = max(0.0, x2 - eps)\\n\"\n}\n]\n}",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "execute_locally",
+              "decision_notes": "Implementing greedy non-overlapping rectangles.",
+              "response": "Python script submitted for AHC001.",
+              "result_type": "code_submission",
+              "artifacts": [
+                {
+                  "path": "main.py",
+                  "content": "import sys\nimport math\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    N = int(input_data[0])\n    advertisers = []\n    idx = 1\n    for i in range(N):\n        x = float(input_data[idx])\n        y = float(input_data[idx+1])\n        r = float(input_data[idx+2])\n        advertisers.append({'id': i, 'x': x, 'y': y, 'r': r})\n        idx += 3\n\n    sorted_adv = sorted(advertisers, key=lambda a: a['r'], reverse=True)\n    \n    results = [None] * N\n    eps = 1e-7\n    \n    for adv in advertisers:\n        x, y = adv['x'], adv['y']\n        x1 = max(0.0, x - eps)\n        y1 = max(0.0, y - eps)\n        x2 = min(10000.0, x + eps)\n        y2 = min(10000.0, y + eps)\n        \n        if x1 == x2: x2 += eps\n        if y1 == y2: y2 += eps\n        \n        if x2 > 10000.0: \n            x2 = 10000.0\n            x1 = max(0.0, x2 - eps)\n"
+                }
+              ]
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "execute_locally",
+          "decision_notes": "Implementing greedy non-overlapping rectangles.",
+          "response": "Python script submitted for AHC001.",
+          "result_type": "code_submission",
+          "artifacts": [
+            {
+              "path": "main.py",
+              "content": "import sys\nimport math\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    \n    N = int(input_data[0])\n    advertisers = []\n    idx = 1\n    for i in range(N):\n        x = float(input_data[idx])\n        y = float(input_data[idx+1])\n        r = float(input_data[idx+2])\n        advertisers.append({'id': i, 'x': x, 'y': y, 'r': r})\n        idx += 3\n\n    sorted_adv = sorted(advertisers, key=lambda a: a['r'], reverse=True)\n    \n    results = [None] * N\n    eps = 1e-7\n    \n    for adv in advertisers:\n        x, y = adv['x'], adv['y']\n        x1 = max(0.0, x - eps)\n        y1 = max(0.0, y - eps)\n        x2 = min(10000.0, x + eps)\n        y2 = min(10000.0, y + eps)\n        \n        if x1 == x2: x2 += eps\n        if y1 == y2: y2 += eps\n        \n        if x2 > 10000.0: \n            x2 = 10000.0\n            x1 = max(0.0, x2 - eps)\n"
+            }
+          ]
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1947,
+        "completion_tokens": 1283,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 0,
+        "total_tokens": 3230,
+        "cost_usd": 0.0008449,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775546566-Cj4WNcnugPg8cVpieBIB",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00045195
+            },
+            {
+              "response_id": "gen-1775546579-IRZzrumWsJ0l2WkigA9Z",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00039295
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

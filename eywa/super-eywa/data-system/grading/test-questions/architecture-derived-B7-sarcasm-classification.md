@@ -1,10 +1,12 @@
 # B7. Sarcasm Classification
 
-- Type: Architecture-derived
+- Family: architecture-derived
+- Entry Type: reasoning
 - Domain: Natural language understanding / pragmatics
+- Grader Type: manual_exact
 - Source: Architecture Exp, LOGIC-14
 
-## Question
+## Problem
 
 Classify three Reddit replies as sarcastic (0) or non-sarcastic (1).
 Determine the 3-bit pattern.
@@ -24,4 +26,4 @@ Multi-perspective reasoning fixed it.
 
 ## Notes
 
-- 
+-

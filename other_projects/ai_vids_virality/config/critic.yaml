@@ -1,0 +1,38 @@
+# Phase 6 critic config.
+#
+# `shot_check.max_retries` is the cap on how many times the video
+# pipeline will regenerate a single beat clip before giving up. The
+# count is RETRIES, not total attempts: max_retries=2 means up to 3
+# total tries (initial + 2 regens).
+#
+# `routing.default` is the order critics are tried. The first one whose
+# `is_available()` returns True is used. The stub is the catch-all so
+# the pipeline always finishes.
+shot_check:
+  max_retries: 2
+  enabled: true
+
+full_sketch:
+  enabled: true
+
+routing:
+  default: [gemini-video, claude-frame, stub]
+
+adapters:
+  - id: gemini-video
+    enabled: true
+    adapter: critic.adapters.gemini_video.GeminiVideoCritic
+    config:
+      model: gemini-2.5-pro
+      timeout_sec: 120
+  - id: claude-frame
+    enabled: true
+    adapter: critic.adapters.claude_frame.ClaudeFrameCritic
+    config:
+      cli_model: claude-opus-4-6
+      timeout_sec: 120
+      n_frames_per_clip: 4
+  - id: stub
+    enabled: true
+    adapter: critic.adapters.stub_critic.StubCritic
+    config: {}

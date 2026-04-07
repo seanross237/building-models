@@ -1,10 +1,12 @@
 # A3. Black Hole Classicality Constants
 
-- Type: Atlas-derived
+- Family: atlas-derived
+- Entry Type: reasoning
 - Domain: Physics / black hole thermodynamics
+- Grader Type: exact_numeric
 - Source: Atlas Classicality Budget mission
 
-## Question
+## Problem
 
 What are the universal dimensionless constants governing single-photon Hawking radiation classicality?
 
@@ -22,4 +24,4 @@ Exact numerical match on all three values.
 
 ## Notes
 
-- 
+-

@@ -1,10 +1,12 @@
 # A8. Thermal Time Hypothesis Fails for Excited States
 
-- Type: Atlas-derived
+- Family: atlas-derived
+- Entry Type: reasoning
 - Domain: Physics / quantum foundations
+- Grader Type: binary_reasoning
 - Source: Atlas Thermal Time mission
 
-## Question
+## Problem
 
 Does modular flow generate correct time evolution for excited quantum states?
 
@@ -28,4 +30,4 @@ Binary:
 
 ## Notes
 
-- 
+-

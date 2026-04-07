@@ -20,6 +20,16 @@ create table if not exists public.graded_runs (
   label text not null,
   runtime_provider text not null,
   model text not null,
+  grader_provider text,
+  grader_model text,
+  grading_method text,
+  task_correct boolean,
+  task_score double precision,
+  submission_compliance text,
+  recovery_used boolean,
+  submission_source text,
+  recovery_notes text,
+  grading_trace_path text,
   reviewer_provider text,
   reviewer_model text,
   validation_status text,
@@ -35,6 +45,8 @@ create table if not exists public.graded_runs (
   final_result_excerpt text,
   final_result_node_id text,
   final_result_path text,
+  submission_artifact_refs jsonb not null default '[]'::jsonb,
+  coding_execution jsonb not null default '{}'::jsonb,
   run_dir text,
   grading_record_path text,
   review_record_path text,
@@ -69,10 +81,22 @@ create table if not exists public.graded_runs (
 alter table public.graded_runs add column if not exists total_tokens bigint;
 alter table public.graded_runs add column if not exists total_wall_time_ms bigint;
 alter table public.graded_runs add column if not exists total_cost_usd double precision;
+alter table public.graded_runs add column if not exists grader_provider text;
+alter table public.graded_runs add column if not exists grader_model text;
+alter table public.graded_runs add column if not exists grading_method text;
+alter table public.graded_runs add column if not exists task_correct boolean;
+alter table public.graded_runs add column if not exists task_score double precision;
+alter table public.graded_runs add column if not exists submission_compliance text;
+alter table public.graded_runs add column if not exists recovery_used boolean;
+alter table public.graded_runs add column if not exists submission_source text;
+alter table public.graded_runs add column if not exists recovery_notes text;
+alter table public.graded_runs add column if not exists grading_trace_path text;
 alter table public.graded_runs add column if not exists tutor_record_path text;
 alter table public.graded_runs add column if not exists final_result_excerpt text;
 alter table public.graded_runs add column if not exists final_result_node_id text;
 alter table public.graded_runs add column if not exists final_result_path text;
+alter table public.graded_runs add column if not exists submission_artifact_refs jsonb not null default '[]'::jsonb;
+alter table public.graded_runs add column if not exists coding_execution jsonb not null default '{}'::jsonb;
 alter table public.graded_runs add column if not exists tutor jsonb not null default '{}'::jsonb;
 alter table public.graded_runs add column if not exists mx1_loop_id text;
 alter table public.graded_runs add column if not exists mx1_family text;

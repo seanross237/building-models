@@ -1,0 +1,15 @@
+{
+  "contract_name": "final_output",
+  "contract_version": "v1",
+  "run_id": "coding-S4-ahc030-polyomino-mining__execute__mx1_non_holdout_full_agent_v1_2026_04_06__execute__17__run_2026_04_07_024110",
+  "created_at_utc": "2026-04-07T02:42:03Z",
+  "source_node_id": "node_root",
+  "source_node_record_ref": "nodes/node_root/node_record.json",
+  "action_type": "report_success",
+  "terminal_result_destination": "final_output",
+  "result": {
+    "result_type": "summary",
+    "content": "FINAL_ANSWER: import sys\nimport math\nimport random\nfrom collections import defaultdict\n\nclass InteractionHandler:\n    def __init__(self):\n        self.stdin = sys.stdin\n        self.stdout = sys.stdout\n\n    def query_aggregate(self, x, y):\n        self.stdout.write(f\"? {x} {y}\\n\")\n        self.stdout.flush()\n        return int(self.stdin.readline().strip())\n\n    def drill(self, x, y):\n        self.stdout.write(f\"D {x} {y}\\n\")\n        self.stdout.flush()\n        return int(self.stdin.readline().strip())\n\n    def submit_guess(self, cells):\n        cell_str = \" \".join([f\"{r} {c}\" for r, c in cells])\n        self.stdout.write(f\"! {cell_str}\\n\")\n        self.stdout.flush()\n\nclass StateModel:\n    def __init__(self, width, height, templates):\n        self.width = width\n        self.height = height\n        self.templates = templates\n        self.belief_grid = [[0.0 for _ in range(width)] for _ in range(height)]\n        self.possible_placements = []\n        self._initialize_placements()\n\n    def _initialize_placements(self):\n        for t_idx, template in enumerate(self.templates):\n            for r in range(self.height):\n                for c in range(self.width):\n                    if self._can_fit(template, r, c):\n                        self.possible_placements.append({\n                            'template_idx': t_idx,\n                            'r': r, 'c': c,\n                            'cells': self._get_cells(template, r, c)\n                        })\n\n    def _can_fit(self, template, r, c):\n        for dr, dc in template:\n            nr, nc = r + dr, c + dc\n            if not (0 <= nr < self.height and 0 <= nc < self.width):\n                return False\n        return True\n\n    def _get_cells(self, template, r, c):\n        return [(r + dr, c + dc) for dr, dc in template]\n\n    def update_belief(self, observed_cells, is_drill):\n        for p in self.possible_placements:\n            match_count = len(set(p['cells']) & set(observed_cells))\n            if is_drill:\n                weight = 1.0 if match_count == len(p['cells']) else 0.0\n            else:\n                weight = match_count / len(p['cells'])\n            for (pr, pc) in p['cells']:\n                self.belief_grid[pr][pc] += weight",
+    "attachment_refs": []
+  }
+}

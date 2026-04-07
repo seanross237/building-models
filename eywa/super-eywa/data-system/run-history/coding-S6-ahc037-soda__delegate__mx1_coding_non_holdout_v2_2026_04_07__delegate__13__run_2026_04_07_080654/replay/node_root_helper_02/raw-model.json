@@ -1,0 +1,149 @@
+{
+  "provider": "openrouter",
+  "note": "Per-turn provider payloads, authored JSON, and compiled outputs are recorded here.",
+  "steps": [
+    {
+      "step": 1,
+      "note": "authored local execution deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 1\nNode depth: 1\nAllowed decisions: ['execute_locally']\nPrompt family: execute\nBase header prompt: ''\nSelected prompt text:\nSolve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nSolve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}\n\nQuestion:\nWrite a complete main.py script based on the strategy provided by the algorithm designer. The script must: 1. Read N and the N target coordinates from stdin. 2. Implement the chosen algorithm to generate a sequence of operations (from_x, from_y, to_x, to_y). 3. Ensure the sequence is valid (the 'from' beverage must have been created previously or be the starting (0,0)). 4. Print the number of operations m, followed by m lines of the operations. 5. Ensure no extra text, markdown, or debug info is printed to stdout. Use a simple, robust approach like sorting targets by x and y and connecting each target to a previously created target that minimizes the Manhattan distance while satisfying the monotonicity constraint.",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "execute_locally",
+        "decision_notes": "Generating Python script for coordinate traversal.",
+        "response": "FINAL_ANSWER: import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    N = int(input_data[0])\n    targets = []\n    for i in range(N):\n        targets.append((int(input_data[1 + 2*i]), int(input_data[2 + 2*i])))\n    \n    targets.sort()\n    \n    ops = []\n    visited = [(0, 0)]\n    \n    for tx, ty in targets:\n        best_dist = float('inf')\n        best_prev = (0, 0)\n        \n        for vx, vy in visited:\n            if vx <= tx and vy <= ty:\n                dist = abs(tx - vx) + abs(ty - vy)\n                if dist < best_dist:\n                    best_dist = dist\n                    best_prev = (vx, vy)\n        \n        ops.append((best_prev[0], best_prev[1], tx, ty))\n        visited.append((tx, ty))\n    \n    print(len(ops))\n    for op in ops:\n        print(f\"{op[0]} {op[1]} {op[2]} {op[3]}\")\n\nif __name__ == \"__main__\":\n    solve()\n\nJUSTIFICATION: Script implements greedy Manhattan distance connection with monotonicity constraints.",
+        "result_type": "summary"
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "coding-S6-ahc037-soda__delegate__mx1_coding_non_holdout_v2_2026_04_07__delegate__13__run_2026_04_07_080654",
+        "node_id": "node_root_helper_02",
+        "action_type": "report_success",
+        "results": [
+          {
+            "result_type": "summary",
+            "content": "FINAL_ANSWER: import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    N = int(input_data[0])\n    targets = []\n    for i in range(N):\n        targets.append((int(input_data[1 + 2*i]), int(input_data[2 + 2*i])))\n    \n    targets.sort()\n    \n    ops = []\n    visited = [(0, 0)]\n    \n    for tx, ty in targets:\n        best_dist = float('inf')\n        best_prev = (0, 0)\n        \n        for vx, vy in visited:\n            if vx <= tx and vy <= ty:\n                dist = abs(tx - vx) + abs(ty - vy)\n                if dist < best_dist:\n                    best_dist = dist\n                    best_prev = (vx, vy)\n        \n        ops.append((best_prev[0], best_prev[1], tx, ty))\n        visited.append((tx, ty))\n    \n    print(len(ops))\n    for op in ops:\n        print(f\"{op[0]} {op[1]} {op[2]} {op[3]}\")\n\nif __name__ == \"__main__\":\n    solve()\n\nJUSTIFICATION: Script implements greedy Manhattan distance connection with monotonicity constraints.",
+            "attachment_refs": []
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "success_report",
+            "target": {
+              "target_type": "creating_parent",
+              "target_ref": "node_root"
+            },
+            "message": "FINAL_ANSWER: import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    N = int(input_data[0])\n    targets = []\n    for i in range(N):\n        targets.append((int(input_data[1 + 2*i]), int(input_data[2 + 2*i])))\n    \n    targets.sort()\n    \n    ops = []\n    visited = [(0, 0)]\n    \n    for tx, ty in targets:\n        best_dist = float('inf')\n        best_prev = (0, 0)\n        \n        for vx, vy in visited:\n            if vx <= tx and vy <= ty:\n                dist = abs(tx - vx) + abs(ty - vy)\n                if dist < best_dist:\n                    best_dist = dist\n                    best_prev = (vx, vy)\n        \n        ops.append((best_prev[0], best_prev[1], tx, ty))\n        visited.append((tx, ty))\n    \n    print(len(ops))\n    for op in ops:\n        print(f\"{op[0]} {op[1]} {op[2]} {op[3]}\")\n\nif __name__ == \"__main__\":\n    solve()\n\nJUSTIFICATION: Script implements greedy Manhattan distance connection with monotonicity constraints.",
+            "attachment_refs": []
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}\n\nQuestion:\nWrite a complete main.py script based on the strategy provided by the algorithm designer. The script must: 1. Read N and the N target coordinates from stdin. 2. Implement the chosen algorithm to generate a sequence of operations (from_x, from_y, to_x, to_y). 3. Ensure the sequence is valid (the 'from' beverage must have been created previously or be the starting (0,0)). 4. Print the number of operations m, followed by m lines of the operations. 5. Ensure no extra text, markdown, or debug info is printed to stdout. Use a simple, robust approach like sorting targets by x and y and connecting each target to a previously created target that minimizes the Manhattan distance while satisfying the monotonicity constraint."
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775549239-cuAMKze1gobloh4SxPLC",
+              "object": "chat.completion",
+              "created": 1775549239,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Novita",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\"schema_name\": \"eywa_node_response\", \"schema_version\": \"v1\", \"orchestration_decision\": \"execute_locally\", \"decision_notes\": \"Generating Python script for coordinate traversal.\", \"response\": \"FINAL_ANSWER: import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data: return\\n    N = int(input_data[0])\\n    targets = []\\n    for i in range(N):\\n        targets.append((int(input_data[1 + 2*i]), int(input_data[2 + 2*i])))\\n    \\n    targets.sort()\\n    \\n    ops = []\\n    visited = [(0, 0)]\\n    \\n    for tx, ty in targets:\\n        best_dist = float('inf')\\n        best_prev = (0, 0)\\n        \\n        for vx, vy in visited:\\n            if vx <= tx and vy <= ty:\\n                dist = abs(tx - vx) + abs(ty - vy)\\n                if dist < best_dist:\\n                    best_dist = dist\\n                    best_prev = (vx, vy)\\n        \\n        ops.append((best_prev[0], best_prev[1], tx, ty))\\n        visited.append((tx, ty))\\n    \\n    print(len(ops))\\n    for op in ops:\\n        print(f\\\"{op[0]} {op[1]} {op[2]} {op[3]}\\\")\\n\\nif __name__ == \\\"__main__\\\":\\n    solve()\\n\\nJUSTIFICATION: Script implements greedy Manhattan distance connection with monotonicity constraints.\" , \"result_type\": \"summary\"}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 419,
+                "completion_tokens": 404,
+                "total_tokens": 823,
+                "cost": 0.00021607,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 128,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00021607,
+                  "upstream_inference_prompt_cost": 5.447e-05,
+                  "upstream_inference_completions_cost": 0.0001616
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\"schema_name\": \"eywa_node_response\", \"schema_version\": \"v1\", \"orchestration_decision\": \"execute_locally\", \"decision_notes\": \"Generating Python script for coordinate traversal.\", \"response\": \"FINAL_ANSWER: import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data: return\\n    N = int(input_data[0])\\n    targets = []\\n    for i in range(N):\\n        targets.append((int(input_data[1 + 2*i]), int(input_data[2 + 2*i])))\\n    \\n    targets.sort()\\n    \\n    ops = []\\n    visited = [(0, 0)]\\n    \\n    for tx, ty in targets:\\n        best_dist = float('inf')\\n        best_prev = (0, 0)\\n        \\n        for vx, vy in visited:\\n            if vx <= tx and vy <= ty:\\n                dist = abs(tx - vx) + abs(ty - vy)\\n                if dist < best_dist:\\n                    best_dist = dist\\n                    best_prev = (vx, vy)\\n        \\n        ops.append((best_prev[0], best_prev[1], tx, ty))\\n        visited.append((tx, ty))\\n    \\n    print(len(ops))\\n    for op in ops:\\n        print(f\\\"{op[0]} {op[1]} {op[2]} {op[3]}\\\")\\n\\nif __name__ == \\\"__main__\\\":\\n    solve()\\n\\nJUSTIFICATION: Script implements greedy Manhattan distance connection with monotonicity constraints.\" , \"result_type\": \"summary\"}",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "execute_locally",
+              "decision_notes": "Generating Python script for coordinate traversal.",
+              "response": "FINAL_ANSWER: import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    N = int(input_data[0])\n    targets = []\n    for i in range(N):\n        targets.append((int(input_data[1 + 2*i]), int(input_data[2 + 2*i])))\n    \n    targets.sort()\n    \n    ops = []\n    visited = [(0, 0)]\n    \n    for tx, ty in targets:\n        best_dist = float('inf')\n        best_prev = (0, 0)\n        \n        for vx, vy in visited:\n            if vx <= tx and vy <= ty:\n                dist = abs(tx - vx) + abs(ty - vy)\n                if dist < best_dist:\n                    best_dist = dist\n                    best_prev = (vx, vy)\n        \n        ops.append((best_prev[0], best_prev[1], tx, ty))\n        visited.append((tx, ty))\n    \n    print(len(ops))\n    for op in ops:\n        print(f\"{op[0]} {op[1]} {op[2]} {op[3]}\")\n\nif __name__ == \"__main__\":\n    solve()\n\nJUSTIFICATION: Script implements greedy Manhattan distance connection with monotonicity constraints.",
+              "result_type": "summary"
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "execute_locally",
+          "decision_notes": "Generating Python script for coordinate traversal.",
+          "response": "FINAL_ANSWER: import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    N = int(input_data[0])\n    targets = []\n    for i in range(N):\n        targets.append((int(input_data[1 + 2*i]), int(input_data[2 + 2*i])))\n    \n    targets.sort()\n    \n    ops = []\n    visited = [(0, 0)]\n    \n    for tx, ty in targets:\n        best_dist = float('inf')\n        best_prev = (0, 0)\n        \n        for vx, vy in visited:\n            if vx <= tx and vy <= ty:\n                dist = abs(tx - vx) + abs(ty - vy)\n                if dist < best_dist:\n                    best_dist = dist\n                    best_prev = (vx, vy)\n        \n        ops.append((best_prev[0], best_prev[1], tx, ty))\n        visited.append((tx, ty))\n    \n    print(len(ops))\n    for op in ops:\n        print(f\"{op[0]} {op[1]} {op[2]} {op[3]}\")\n\nif __name__ == \"__main__\":\n    solve()\n\nJUSTIFICATION: Script implements greedy Manhattan distance connection with monotonicity constraints.",
+          "result_type": "summary"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 419,
+        "completion_tokens": 404,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 128,
+        "total_tokens": 823,
+        "cost_usd": 0.00021607,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775549239-cuAMKze1gobloh4SxPLC",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00021607
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

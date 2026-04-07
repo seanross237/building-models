@@ -1,0 +1,441 @@
+{
+  "provider": "openrouter",
+  "note": "Per-turn provider payloads, authored JSON, and compiled outputs are recorded here.",
+  "steps": [
+    {
+      "step": 1,
+      "note": "authored review decision deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 1\nNode depth: 0\nAllowed decisions: ['review']\nPrompt family: review\nBase header prompt: ''\nSelected prompt text:\nWrite a tentative answer and ask one reviewer child to act as a Technical Co-Author. The reviewer's sole task is to identify every high-level concept in the draft (e.g., 'Bayesian update', 'EIG', 'search strategy') and demand the explicit mathematical formulation, specific data structure, or step-by-step pseudocode required to implement it. The reviewer must not merely critique the strategy, but must actively provide the missing technical details to transform the draft into a complete, implementable technical specification.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"review\",\n  \"decision_notes\": \"optional string\",\n  \"draft_response\": \"plain-text draft answer\",\n  \"message_for_reviewer\": \"plain-text review request for the child\"\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nWrite a tentative answer and ask one reviewer child to act as a Technical Co-Author. The reviewer's sole task is to identify every high-level concept in the draft (e.g., 'Bayesian update', 'EIG', 'search strategy') and demand the explicit mathematical formulation, specific data structure, or step-by-step pseudocode required to implement it. The reviewer must not merely critique the strategy, but must actively provide the missing technical details to transform the draft into a complete, implementable technical specification.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"review\",\n  \"decision_notes\": \"optional string\",\n  \"draft_response\": \"plain-text draft answer\",\n  \"message_for_reviewer\": \"plain-text review request for the child\"\n}\n\nQuestion:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: coding-S4-ahc030-polyomino-mining\nTitle: S4. AHC030 / Polyomino Mining\n\nProblem:\nGiven known polyomino oil-field shapes but unknown placements, recover all oil-containing cells with as little probing cost as possible using drilling, noisy aggregate queries, and final guesses.\n\nGrading target:\nLower probing cost is better.\nContest score is derived from absolute and relative cost.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "review",
+        "decision_notes": "The draft provides a high-level algorithmic strategy. I am delegating the technical formalization to a Technical Co-Author to ensure the strategy is converted into a rigorous specification.",
+        "draft_response": "FINAL_ANSWER: To minimize probing cost, we implement a multi-stage Bayesian search strategy. 1. Initial Spatial Prior: We model the grid as a probability map P(c) where c is a cell. Since polyominoes are known but placements are unknown, we initialize P(c) based on the frequency of cell occupancy across all possible valid placements of the known polyomino shapes. 2. Active Probing (Information Gain Maximization): Instead of random drilling, we select probe locations x that maximize the Expected Information Gain (EIG). We use the noisy aggregate queries to update our belief state. For a query Q over a set of cells S, we use a Bayesian update: P(S|Q) proportional to P(Q|S)P(S). We prioritize probes that most significantly reduce the entropy of the spatial distribution. 3. Candidate Refinement: As probes return results, we perform a pattern-matching step. We filter the set of possible polyomino placements M to only those consistent with the observed drilling and aggregate data. 4. Final Guess: Once the entropy of the belief state falls below a threshold epsilon, we select the set of cells C that maximizes the likelihood of containing oil, given the current posterior distribution. JUSTIFICATION: This approach minimizes cost by treating the problem as an optimal experimental design task, using Bayesian inference to handle noise and EIG to minimize the number of probes required to reach a high-confidence state.",
+        "message_for_reviewer": "Act as a Technical Co-Author. Your sole task is to identify every high-level concept in the draft (e.g., 'Bayesian update', 'Expected Information Gain (EIG)', 'pattern-matching step', 'entropy threshold') and demand the explicit mathematical formulation, specific data structure, or step-by-step pseudocode required to implement it. Do not merely critique the strategy; you must actively provide the missing technical details (e.g., the specific likelihood function P(Q|S) for the noisy aggregate query, the exact entropy formula used, and the data structure for the spatial prior) to transform this draft into a complete, implementable technical specification.",
+        "next_node_overrides": {}
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "coding-S4-ahc030-polyomino-mining__review__mx1_non_holdout_full_agent_v1_2026_04_06__review__18__run_2026_04_07_025154",
+        "node_id": "node_root",
+        "action_type": "recruit_help",
+        "results": [
+          {
+            "result_type": "plan",
+            "content": "The draft provides a high-level algorithmic strategy. I am delegating the technical formalization to a Technical Co-Author to ensure the strategy is converted into a rigorous specification.\nnode_root_helper_01 (review_child): Review this draft answer carefully.\nFind flaws, missing reasoning, or corrections, then produce the strongest corrected answer you can.\n\nReview focus:\nAct as a Technical Co-Author. Your sole task is to identify every high-level concept in the draft (e.g., 'Bayesian update', 'Expected Information Gain (EIG)', 'pattern-matching step', 'entropy threshold') and demand the explicit mathematical formulation, specific data structure, or step-by-step pseudocode required to implement it. Do not merely critique the strategy; you must actively provide the missing technical details (e.g., the specific likelihood function P(Q|S) for the noisy aggregate query, the exact entropy formula used, and the data structure for the spatial prior) to transform this draft into a complete, implementable technical specification.\n\nOriginal question:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: coding-S4-ahc030-polyomino-mining\nTitle: S4. AHC030 / Polyomino Mining\n\nProblem:\nGiven known polyomino oil-field shapes but unknown placements, recover all oil-containing cells with as little probing cost as possible using drilling, noisy aggregate queries, and final guesses.\n\nGrading target:\nLower probing cost is better.\nContest score is derived from absolute and relative cost.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>\n\nDraft answer:\nFINAL_ANSWER: To minimize probing cost, we implement a multi-stage Bayesian search strategy. 1. Initial Spatial Prior: We model the grid as a probability map P(c) where c is a cell. Since polyominoes are known but placements are unknown, we initialize P(c) based on the frequency of cell occupancy across all possible valid placements of the known polyomino shapes. 2. Active Probing (Information Gain Maximization): Instead of random drilling, we select probe locations x that maximize the Expected Information Gain (EIG). We use the noisy aggregate queries to update our belief state. For a query Q over a set of cells S, we use a Bayesian update: P(S|Q) proportional to P(Q|S)P(S). We prioritize probes that most significantly reduce the entropy of the spatial distribution. 3. Candidate Refinement: As probes return results, we perform a pattern-matching step. We filter the set of possible polyomino placements M to only those consistent with the observed drilling and aggregate data. 4. Final Guess: Once the entropy of the belief state falls below a threshold epsilon, we select the set of cells C that maximizes the likelihood of containing oil, given the current posterior distribution. JUSTIFICATION: This approach minimizes cost by treating the problem as an optimal experimental design task, using Bayesian inference to handle noise and EIG to minimize the number of probes required to reach a high-confidence state.",
+            "attachment_refs": []
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "helper_assignment",
+            "target": {
+              "target_type": "new_helper",
+              "target_ref": "node_root_helper_01"
+            },
+            "message": "Review this draft answer carefully.\nFind flaws, missing reasoning, or corrections, then produce the strongest corrected answer you can.\n\nReview focus:\nAct as a Technical Co-Author. Your sole task is to identify every high-level concept in the draft (e.g., 'Bayesian update', 'Expected Information Gain (EIG)', 'pattern-matching step', 'entropy threshold') and demand the explicit mathematical formulation, specific data structure, or step-by-step pseudocode required to implement it. Do not merely critique the strategy; you must actively provide the missing technical details (e.g., the specific likelihood function P(Q|S) for the noisy aggregate query, the exact entropy formula used, and the data structure for the spatial prior) to transform this draft into a complete, implementable technical specification.\n\nOriginal question:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: coding-S4-ahc030-polyomino-mining\nTitle: S4. AHC030 / Polyomino Mining\n\nProblem:\nGiven known polyomino oil-field shapes but unknown placements, recover all oil-containing cells with as little probing cost as possible using drilling, noisy aggregate queries, and final guesses.\n\nGrading target:\nLower probing cost is better.\nContest score is derived from absolute and relative cost.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>\n\nDraft answer:\nFINAL_ANSWER: To minimize probing cost, we implement a multi-stage Bayesian search strategy. 1. Initial Spatial Prior: We model the grid as a probability map P(c) where c is a cell. Since polyominoes are known but placements are unknown, we initialize P(c) based on the frequency of cell occupancy across all possible valid placements of the known polyomino shapes. 2. Active Probing (Information Gain Maximization): Instead of random drilling, we select probe locations x that maximize the Expected Information Gain (EIG). We use the noisy aggregate queries to update our belief state. For a query Q over a set of cells S, we use a Bayesian update: P(S|Q) proportional to P(Q|S)P(S). We prioritize probes that most significantly reduce the entropy of the spatial distribution. 3. Candidate Refinement: As probes return results, we perform a pattern-matching step. We filter the set of possible polyomino placements M to only those consistent with the observed drilling and aggregate data. 4. Final Guess: Once the entropy of the belief state falls below a threshold epsilon, we select the set of cells C that maximizes the likelihood of containing oil, given the current posterior distribution. JUSTIFICATION: This approach minimizes cost by treating the problem as an optimal experimental design task, using Bayesian inference to handle noise and EIG to minimize the number of probes required to reach a high-confidence state.",
+            "attachment_refs": []
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Write a tentative answer and ask one reviewer child to act as a Technical Co-Author. The reviewer's sole task is to identify every high-level concept in the draft (e.g., 'Bayesian update', 'EIG', 'search strategy') and demand the explicit mathematical formulation, specific data structure, or step-by-step pseudocode required to implement it. The reviewer must not merely critique the strategy, but must actively provide the missing technical details to transform the draft into a complete, implementable technical specification.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"review\",\n  \"decision_notes\": \"optional string\",\n  \"draft_response\": \"plain-text draft answer\",\n  \"message_for_reviewer\": \"plain-text review request for the child\"\n}\n\nQuestion:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: coding-S4-ahc030-polyomino-mining\nTitle: S4. AHC030 / Polyomino Mining\n\nProblem:\nGiven known polyomino oil-field shapes but unknown placements, recover all oil-containing cells with as little probing cost as possible using drilling, noisy aggregate queries, and final guesses.\n\nGrading target:\nLower probing cost is better.\nContest score is derived from absolute and relative cost.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>"
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775530314-rvB3mb6kflWUNFhLGG0Q",
+              "object": "chat.completion",
+              "created": 1775530314,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Novita",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"review\",\n  \"decision_notes\": \"The draft provides a high-level algorithmic strategy. I am delegating the technical formalization to a Technical Co-Author to ensure the strategy is converted into a rigorous specification.\",\n  \"draft_response\": \"FINAL_ANSWER: To minimize probing cost, we implement a multi-stage Bayesian search strategy. \\n\\n1. **Initial Spatial Prior**: We model the grid as a probability map $P(c)$ where $c$ is a cell. Since polyominoes are known but placements are unknown, we initialize $P(c)$ based on the frequency of cell occupancy across all possible valid placements of the known polyomino shapes.\\n\\n2. **Active Probing (Information Gain Maximization)**: Instead of random drilling, we select probe locations $x$ that maximize the Expected Information Gain (EIG). We use the noisy aggregate queries to update our belief state. For a query $Q$ over a set of cells $S$, we use a Bayesian update: $P(S|Q) \\propto P(Q|S)P(S)$. We prioritize probes that most significantly reduce the entropy of the spatial distribution.\\n\\n3. **Candidate Refinement**: As probes return results, we perform a pattern-matching step. We filter the set of possible polyomino placements $\\mathcal{M}$ to only those consistent with the observed drilling and aggregate data.\\n\\n4. **Final Guess**: Once the entropy of the belief state falls below a threshold $\\epsilon$, we select the set of cells $C$ that maximizes the likelihood of containing oil, given the current posterior distribution.\\n\\nJUSTIFICATION: This approach minimizes cost by treating the problem as an optimal experimental design task, using Bayesian inference to handle noise and EIG to minimize the number of probes required to reach a high-confidence state.\",\n  \"message_for_reviewer\": \"Act as a Technical Co-Author. Your sole task is to identify every high-level concept in the draft (e.g., 'Bayesian update', 'Expected Information Gain (EIG)', 'pattern-matching step', 'entropy threshold') and demand the explicit mathematical formulation, specific data structure, or step-by-step pseudocode required to implement it. Do not merely critique the strategy; you must actively provide the missing technical details (e.g., the specific likelihood function $P(Q|S)$ for the noisy aggregate query, the exact entropy formula used, and the data structure for the spatial prior) to transform this draft into a complete, implementable technical specification.\"\n}\n```",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 369,
+                "completion_tokens": 580,
+                "total_tokens": 949,
+                "cost": 0.00027997,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00027997,
+                  "upstream_inference_prompt_cost": 4.797e-05,
+                  "upstream_inference_completions_cost": 0.000232
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"review\",\n  \"decision_notes\": \"The draft provides a high-level algorithmic strategy. I am delegating the technical formalization to a Technical Co-Author to ensure the strategy is converted into a rigorous specification.\",\n  \"draft_response\": \"FINAL_ANSWER: To minimize probing cost, we implement a multi-stage Bayesian search strategy. \\n\\n1. **Initial Spatial Prior**: We model the grid as a probability map $P(c)$ where $c$ is a cell. Since polyominoes are known but placements are unknown, we initialize $P(c)$ based on the frequency of cell occupancy across all possible valid placements of the known polyomino shapes.\\n\\n2. **Active Probing (Information Gain Maximization)**: Instead of random drilling, we select probe locations $x$ that maximize the Expected Information Gain (EIG). We use the noisy aggregate queries to update our belief state. For a query $Q$ over a set of cells $S$, we use a Bayesian update: $P(S|Q) \\propto P(Q|S)P(S)$. We prioritize probes that most significantly reduce the entropy of the spatial distribution.\\n\\n3. **Candidate Refinement**: As probes return results, we perform a pattern-matching step. We filter the set of possible polyomino placements $\\mathcal{M}$ to only those consistent with the observed drilling and aggregate data.\\n\\n4. **Final Guess**: Once the entropy of the belief state falls below a threshold $\\epsilon$, we select the set of cells $C$ that maximizes the likelihood of containing oil, given the current posterior distribution.\\n\\nJUSTIFICATION: This approach minimizes cost by treating the problem as an optimal experimental design task, using Bayesian inference to handle noise and EIG to minimize the number of probes required to reach a high-confidence state.\",\n  \"message_for_reviewer\": \"Act as a Technical Co-Author. Your sole task is to identify every high-level concept in the draft (e.g., 'Bayesian update', 'Expected Information Gain (EIG)', 'pattern-matching step', 'entropy threshold') and demand the explicit mathematical formulation, specific data structure, or step-by-step pseudocode required to implement it. Do not merely critique the strategy; you must actively provide the missing technical details (e.g., the specific likelihood function $P(Q|S)$ for the noisy aggregate query, the exact entropy formula used, and the data structure for the spatial prior) to transform this draft into a complete, implementable technical specification.\"\n}\n```",
+            "parse_error": null,
+            "parsed_response": null
+          },
+          {
+            "phase": "json_repair",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": "You repair invalid Super-Eywa node responses into strict JSON. Return only valid JSON."
+                },
+                {
+                  "role": "user",
+                  "content": "Rewrite the following content as valid JSON only for the eywa_node_response v1 schema. Allowed orchestration_decision values for this turn: review. Use the exact top-level fields required by eywa_node_response v1. Do not wrap the object under another key. Use plain text strings only. Do not use markdown, code fences, or backslashes.\n\nOriginal content:\n```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"review\",\n  \"decision_notes\": \"The draft provides a high-level algorithmic strategy. I am delegating the technical formalization to a Technical Co-Author to ensure the strategy is converted into a rigorous specification.\",\n  \"draft_response\": \"FINAL_ANSWER: To minimize probing cost, we implement a multi-stage Bayesian search strategy. \\n\\n1. **Initial Spatial Prior**: We model the grid as a probability map $P(c)$ where $c$ is a cell. Since polyominoes are known but placements are unknown, we initialize $P(c)$ based on the frequency of cell occupancy across all possible valid placements of the known polyomino shapes.\\n\\n2. **Active Probing (Information Gain Maximization)**: Instead of random drilling, we select probe locations $x$ that maximize the Expected Information Gain (EIG). We use the noisy aggregate queries to update our belief state. For a query $Q$ over a set of cells $S$, we use a Bayesian update: $P(S|Q) \\propto P(Q|S)P(S)$. We prioritize probes that most significantly reduce the entropy of the spatial distribution.\\n\\n3. **Candidate Refinement**: As probes return results, we perform a pattern-matching step. We filter the set of possible polyomino placements $\\mathcal{M}$ to only those consistent with the observed drilling and aggregate data.\\n\\n4. **Final Guess**: Once the entropy of the belief state falls below a threshold $\\epsilon$, we select the set of cells $C$ that maximizes the likelihood of containing oil, given the current posterior distribution.\\n\\nJUSTIFICATION: This approach minimizes cost by treating the problem as an optimal experimental design task, using Bayesian inference to handle noise and EIG to minimize the number of probes required to reach a high-confidence state.\",\n  \"message_for_reviewer\": \"Act as a Technical Co-Author. Your sole task is to identify every high-level concept in the draft (e.g., 'Bayesian update', 'Expected Information Gain (EIG)', 'pattern-matching step', 'entropy threshold') and demand the explicit mathematical formulation, specific data structure, or step-by-step pseudocode required to implement it. Do not merely critique the strategy; you must actively provide the missing technical details (e.g., the specific likelihood function $P(Q|S)$ for the noisy aggregate query, the exact entropy formula used, and the data structure for the spatial prior) to transform this draft into a complete, implementable technical specification.\"\n}\n```"
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775530323-T6EzrvRVlzsfCSdzF4xG",
+              "object": "chat.completion",
+              "created": 1775530323,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Novita",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n\"schema_name\": \"eywa_node_response\",\n\"schema_version\": \"v1\",\n\"orchestration_decision\": \"review\",\n\"decision_notes\": \"The draft provides a high-level algorithmic strategy. I am delegating the technical formalization to a Technical Co-Author to ensure the strategy is converted into a rigorous specification.\",\n\"draft_response\": \"FINAL_ANSWER: To minimize probing cost, we implement a multi-stage Bayesian search strategy. 1. Initial Spatial Prior: We model the grid as a probability map P(c) where c is a cell. Since polyominoes are known but placements are unknown, we initialize P(c) based on the frequency of cell occupancy across all possible valid placements of the known polyomino shapes. 2. Active Probing (Information Gain Maximization): Instead of random drilling, we select probe locations x that maximize the Expected Information Gain (EIG). We use the noisy aggregate queries to update our belief state. For a query Q over a set of cells S, we use a Bayesian update: P(S|Q) proportional to P(Q|S)P(S). We prioritize probes that most significantly reduce the entropy of the spatial distribution. 3. Candidate Refinement: As probes return results, we perform a pattern-matching step. We filter the set of possible polyomino placements M to only those consistent with the observed drilling and aggregate data. 4. Final Guess: Once the entropy of the belief state falls below a threshold epsilon, we select the set of cells C that maximizes the likelihood of containing oil, given the current posterior distribution. JUSTIFICATION: This approach minimizes cost by treating the problem as an optimal experimental design task, using Bayesian inference to handle noise and EIG to minimize the number of probes required to reach a high-confidence state.\",\n\"message_for_reviewer\": \"Act as a Technical Co-Author. Your sole task is to identify every high-level concept in the draft (e.g., 'Bayesian update', 'Expected Information Gain (EIG)', 'pattern-matching step', 'entropy threshold') and demand the explicit mathematical formulation, specific data structure, or step-by-step pseudocode required to implement it. Do not merely critique the strategy; you must actively provide the missing technical details (e.g., the specific likelihood function P(Q|S) for the noisy aggregate query, the exact entropy formula used, and the data structure for the spatial prior) to transform this draft into a complete, implementable technical specification.\"\n}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 709,
+                "completion_tokens": 534,
+                "total_tokens": 1243,
+                "cost": 0.00030577,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 128,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00030577,
+                  "upstream_inference_prompt_cost": 9.217e-05,
+                  "upstream_inference_completions_cost": 0.0002136
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\n\"schema_name\": \"eywa_node_response\",\n\"schema_version\": \"v1\",\n\"orchestration_decision\": \"review\",\n\"decision_notes\": \"The draft provides a high-level algorithmic strategy. I am delegating the technical formalization to a Technical Co-Author to ensure the strategy is converted into a rigorous specification.\",\n\"draft_response\": \"FINAL_ANSWER: To minimize probing cost, we implement a multi-stage Bayesian search strategy. 1. Initial Spatial Prior: We model the grid as a probability map P(c) where c is a cell. Since polyominoes are known but placements are unknown, we initialize P(c) based on the frequency of cell occupancy across all possible valid placements of the known polyomino shapes. 2. Active Probing (Information Gain Maximization): Instead of random drilling, we select probe locations x that maximize the Expected Information Gain (EIG). We use the noisy aggregate queries to update our belief state. For a query Q over a set of cells S, we use a Bayesian update: P(S|Q) proportional to P(Q|S)P(S). We prioritize probes that most significantly reduce the entropy of the spatial distribution. 3. Candidate Refinement: As probes return results, we perform a pattern-matching step. We filter the set of possible polyomino placements M to only those consistent with the observed drilling and aggregate data. 4. Final Guess: Once the entropy of the belief state falls below a threshold epsilon, we select the set of cells C that maximizes the likelihood of containing oil, given the current posterior distribution. JUSTIFICATION: This approach minimizes cost by treating the problem as an optimal experimental design task, using Bayesian inference to handle noise and EIG to minimize the number of probes required to reach a high-confidence state.\",\n\"message_for_reviewer\": \"Act as a Technical Co-Author. Your sole task is to identify every high-level concept in the draft (e.g., 'Bayesian update', 'Expected Information Gain (EIG)', 'pattern-matching step', 'entropy threshold') and demand the explicit mathematical formulation, specific data structure, or step-by-step pseudocode required to implement it. Do not merely critique the strategy; you must actively provide the missing technical details (e.g., the specific likelihood function P(Q|S) for the noisy aggregate query, the exact entropy formula used, and the data structure for the spatial prior) to transform this draft into a complete, implementable technical specification.\"\n}",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "review",
+              "decision_notes": "The draft provides a high-level algorithmic strategy. I am delegating the technical formalization to a Technical Co-Author to ensure the strategy is converted into a rigorous specification.",
+              "draft_response": "FINAL_ANSWER: To minimize probing cost, we implement a multi-stage Bayesian search strategy. 1. Initial Spatial Prior: We model the grid as a probability map P(c) where c is a cell. Since polyominoes are known but placements are unknown, we initialize P(c) based on the frequency of cell occupancy across all possible valid placements of the known polyomino shapes. 2. Active Probing (Information Gain Maximization): Instead of random drilling, we select probe locations x that maximize the Expected Information Gain (EIG). We use the noisy aggregate queries to update our belief state. For a query Q over a set of cells S, we use a Bayesian update: P(S|Q) proportional to P(Q|S)P(S). We prioritize probes that most significantly reduce the entropy of the spatial distribution. 3. Candidate Refinement: As probes return results, we perform a pattern-matching step. We filter the set of possible polyomino placements M to only those consistent with the observed drilling and aggregate data. 4. Final Guess: Once the entropy of the belief state falls below a threshold epsilon, we select the set of cells C that maximizes the likelihood of containing oil, given the current posterior distribution. JUSTIFICATION: This approach minimizes cost by treating the problem as an optimal experimental design task, using Bayesian inference to handle noise and EIG to minimize the number of probes required to reach a high-confidence state.",
+              "message_for_reviewer": "Act as a Technical Co-Author. Your sole task is to identify every high-level concept in the draft (e.g., 'Bayesian update', 'Expected Information Gain (EIG)', 'pattern-matching step', 'entropy threshold') and demand the explicit mathematical formulation, specific data structure, or step-by-step pseudocode required to implement it. Do not merely critique the strategy; you must actively provide the missing technical details (e.g., the specific likelihood function P(Q|S) for the noisy aggregate query, the exact entropy formula used, and the data structure for the spatial prior) to transform this draft into a complete, implementable technical specification.",
+              "next_node_overrides": {}
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "review",
+          "decision_notes": "The draft provides a high-level algorithmic strategy. I am delegating the technical formalization to a Technical Co-Author to ensure the strategy is converted into a rigorous specification.",
+          "draft_response": "FINAL_ANSWER: To minimize probing cost, we implement a multi-stage Bayesian search strategy. 1. Initial Spatial Prior: We model the grid as a probability map P(c) where c is a cell. Since polyominoes are known but placements are unknown, we initialize P(c) based on the frequency of cell occupancy across all possible valid placements of the known polyomino shapes. 2. Active Probing (Information Gain Maximization): Instead of random drilling, we select probe locations x that maximize the Expected Information Gain (EIG). We use the noisy aggregate queries to update our belief state. For a query Q over a set of cells S, we use a Bayesian update: P(S|Q) proportional to P(Q|S)P(S). We prioritize probes that most significantly reduce the entropy of the spatial distribution. 3. Candidate Refinement: As probes return results, we perform a pattern-matching step. We filter the set of possible polyomino placements M to only those consistent with the observed drilling and aggregate data. 4. Final Guess: Once the entropy of the belief state falls below a threshold epsilon, we select the set of cells C that maximizes the likelihood of containing oil, given the current posterior distribution. JUSTIFICATION: This approach minimizes cost by treating the problem as an optimal experimental design task, using Bayesian inference to handle noise and EIG to minimize the number of probes required to reach a high-confidence state.",
+          "message_for_reviewer": "Act as a Technical Co-Author. Your sole task is to identify every high-level concept in the draft (e.g., 'Bayesian update', 'Expected Information Gain (EIG)', 'pattern-matching step', 'entropy threshold') and demand the explicit mathematical formulation, specific data structure, or step-by-step pseudocode required to implement it. Do not merely critique the strategy; you must actively provide the missing technical details (e.g., the specific likelihood function P(Q|S) for the noisy aggregate query, the exact entropy formula used, and the data structure for the spatial prior) to transform this draft into a complete, implementable technical specification.",
+          "next_node_overrides": {}
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1078,
+        "completion_tokens": 1114,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 128,
+        "total_tokens": 2192,
+        "cost_usd": 0.00058574,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775530314-rvB3mb6kflWUNFhLGG0Q",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00027997
+            },
+            {
+              "response_id": "gen-1775530323-T6EzrvRVlzsfCSdzF4xG",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00030577
+            }
+          ]
+        }
+      }
+    },
+    {
+      "step": 2,
+      "note": "authored local execution after reviewing child results deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 2\nNode depth: 0\nAllowed decisions: ['execute_locally']\nPrompt family: review\nBase header prompt: ''\nSelected prompt text:\nA review child has already returned critique or an improved draft. Use that returned work to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"string\",\n  \"result_type\": \"optional string\"\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nA review child has already returned critique or an improved draft. Use that returned work to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"string\",\n  \"result_type\": \"optional string\"\n}\n\nChild results already returned to you:\n[\n  {\n    \"node_id\": \"node_root_helper_01\",\n    \"summary\": \"FINAL_ANSWER: Implement a Bayesian active learning framework: 1. Spatial Prior: Initialize P(c) = (1/N) * sum_{i,p} I(c in polyomino_i at position p), where N is total valid placements. 2. Likelihood Model: For aggregate query Q on set S, use P(Q|S) = Binomial(Q; |S_oil|, p_noise), where S_oil is the true oil count in S. 3. EIG Selection: Select probe S to maximize EIG(S) = H(P) - E[H(P|Q)], where H(P) = -sum P(c)logP(c). 4. Refinement: Maintain a set of consistent placements M = {m | m matches all drilling/aggregate results}. 5. Final Guess: Select cells C = {c | sum_{m in M} I(c in m) / |M| > threshold}. \\nJUSTIFICATION: Provides explicit mathematical formulations and implementation steps for the Bayesian strategy.\"\n  }\n]\n\nQuestion:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: coding-S4-ahc030-polyomino-mining\nTitle: S4. AHC030 / Polyomino Mining\n\nProblem:\nGiven known polyomino oil-field shapes but unknown placements, recover all oil-containing cells with as little probing cost as possible using drilling, noisy aggregate queries, and final guesses.\n\nGrading target:\nLower probing cost is better.\nContest score is derived from absolute and relative cost.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "execute_locally",
+        "decision_notes": "The child result provides a complete mathematical and algorithmic framework for solving the problem using Bayesian active learning, which is the optimal approach for minimizing probing costs in uncertain environments.",
+        "response": "FINAL_ANSWER: Implement a Bayesian active learning framework: 1. Spatial Prior: Initialize P(c) = 1/N * sum_{i,p} I(c in polyomino_i at position p), where N is the total number of valid placements. 2. Likelihood Model: For an aggregate query Q on a set of cells S, use P(Q|S) = Binomial(Q; |S_oil|, p_noise), where S_oil is the true number of oil cells in S. 3. EIG Selection: Select the next probe S to maximize Expected Information Gain (EIG): EIG(S) = H(P) - E[H(P|Q)], where H(P) = -sum P(c)log P(c) is the current entropy. 4. Refinement: Maintain a set of consistent placements M = {m | m matches all drilling and aggregate query results}. 5. Final Guess: After the budget is exhausted, select cells C = {c | (sum_{m in M} I(c in m))/|M| > threshold}. JUSTIFICATION: This strategy minimizes probing cost by using information theory (Entropy/EIG) to select queries that most significantly reduce uncertainty about the polyomino placements, while the Bayesian update handles the noise in aggregate queries.",
+        "result_type": "text"
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "coding-S4-ahc030-polyomino-mining__review__mx1_non_holdout_full_agent_v1_2026_04_06__review__18__run_2026_04_07_025154",
+        "node_id": "node_root",
+        "action_type": "report_success",
+        "results": [
+          {
+            "result_type": "text",
+            "content": "FINAL_ANSWER: Implement a Bayesian active learning framework: 1. Spatial Prior: Initialize P(c) = 1/N * sum_{i,p} I(c in polyomino_i at position p), where N is the total number of valid placements. 2. Likelihood Model: For an aggregate query Q on a set of cells S, use P(Q|S) = Binomial(Q; |S_oil|, p_noise), where S_oil is the true number of oil cells in S. 3. EIG Selection: Select the next probe S to maximize Expected Information Gain (EIG): EIG(S) = H(P) - E[H(P|Q)], where H(P) = -sum P(c)log P(c) is the current entropy. 4. Refinement: Maintain a set of consistent placements M = {m | m matches all drilling and aggregate query results}. 5. Final Guess: After the budget is exhausted, select cells C = {c | (sum_{m in M} I(c in m))/|M| > threshold}. JUSTIFICATION: This strategy minimizes probing cost by using information theory (Entropy/EIG) to select queries that most significantly reduce uncertainty about the polyomino placements, while the Bayesian update handles the noise in aggregate queries.",
+            "attachment_refs": []
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "success_report",
+            "target": {
+              "target_type": "final_output",
+              "target_ref": "run_final_output"
+            },
+            "message": "FINAL_ANSWER: Implement a Bayesian active learning framework: 1. Spatial Prior: Initialize P(c) = 1/N * sum_{i,p} I(c in polyomino_i at position p), where N is the total number of valid placements. 2. Likelihood Model: For an aggregate query Q on a set of cells S, use P(Q|S) = Binomial(Q; |S_oil|, p_noise), where S_oil is the true number of oil cells in S. 3. EIG Selection: Select the next probe S to maximize Expected Information Gain (EIG): EIG(S) = H(P) - E[H(P|Q)], where H(P) = -sum P(c)log P(c) is the current entropy. 4. Refinement: Maintain a set of consistent placements M = {m | m matches all drilling and aggregate query results}. 5. Final Guess: After the budget is exhausted, select cells C = {c | (sum_{m in M} I(c in m))/|M| > threshold}. JUSTIFICATION: This strategy minimizes probing cost by using information theory (Entropy/EIG) to select queries that most significantly reduce uncertainty about the polyomino placements, while the Bayesian update handles the noise in aggregate queries.",
+            "attachment_refs": []
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "A review child has already returned critique or an improved draft. Use that returned work to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"string\",\n  \"result_type\": \"optional string\"\n}\n\nChild results already returned to you:\n[\n  {\n    \"node_id\": \"node_root_helper_01\",\n    \"summary\": \"FINAL_ANSWER: Implement a Bayesian active learning framework: 1. Spatial Prior: Initialize P(c) = (1/N) * sum_{i,p} I(c in polyomino_i at position p), where N is total valid placements. 2. Likelihood Model: For aggregate query Q on set S, use P(Q|S) = Binomial(Q; |S_oil|, p_noise), where S_oil is the true oil count in S. 3. EIG Selection: Select probe S to maximize EIG(S) = H(P) - E[H(P|Q)], where H(P) = -sum P(c)logP(c). 4. Refinement: Maintain a set of consistent placements M = {m | m matches all drilling/aggregate results}. 5. Final Guess: Select cells C = {c | sum_{m in M} I(c in m) / |M| > threshold}. \\nJUSTIFICATION: Provides explicit mathematical formulations and implementation steps for the Bayesian strategy.\"\n  }\n]\n\nQuestion:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: coding-S4-ahc030-polyomino-mining\nTitle: S4. AHC030 / Polyomino Mining\n\nProblem:\nGiven known polyomino oil-field shapes but unknown placements, recover all oil-containing cells with as little probing cost as possible using drilling, noisy aggregate queries, and final guesses.\n\nGrading target:\nLower probing cost is better.\nContest score is derived from absolute and relative cost.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>"
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775530338-wFTAfKg8XUxb4Cv11eAF",
+              "object": "chat.completion",
+              "created": 1775530338,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Novita",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"The child result provides a complete mathematical and algorithmic framework for solving the problem using Bayesian active learning, which is the optimal approach for minimizing probing costs in uncertain environments.\",\n  \"response\": \"FINAL_ANSWER: Implement a Bayesian active learning framework: 1. Spatial Prior: Initialize $P(c) = \\\\frac{1}{N} \\\\sum_{i,p} \\\\mathbb{I}(c \\\\in \\\\text{polyomino}_i \\\\text{ at position } p)$, where $N$ is the total number of valid placements. 2. Likelihood Model: For an aggregate query $Q$ on a set of cells $S$, use $P(Q|S) = \\\\text{Binomial}(Q; |S_{\\\\text{oil}}|, p_{\\\\text{noise}})$, where $S_{\\\\text{oil}}$ is the true number of oil cells in $S$. 3. EIG Selection: Select the next probe $S$ to maximize Expected Information Gain (EIG): $\\\\text{EIG}(S) = H(P) - \\\\mathbb{E}[H(P|Q)]$, where $H(P) = -\\\\sum P(c)\\\\log P(c)$ is the current entropy. 4. Refinement: Maintain a set of consistent placements $M = \\\\{m \\\\mid m \\\\text{ matches all drilling and aggregate query results}\\}$. 5. Final Guess: After the budget is exhausted, select cells $C = \\\\{c \\\\mid \\\\frac{\\\\sum_{m \\\\in M} \\\\mathbb{I}(c \\\\in m)}{|M|} > \\\\text{threshold}\\\\}$. \\n\\nJUSTIFICATION: This strategy minimizes probing cost by using information theory (Entropy/EIG) to select queries that most significantly reduce uncertainty about the polyomino placements, while the Bayesian update handles the noise in aggregate queries.\",\n  \"result_type\": \"text\"\n}\n```",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 539,
+                "completion_tokens": 461,
+                "total_tokens": 1000,
+                "cost": 0.00025447,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00025447,
+                  "upstream_inference_prompt_cost": 7.007e-05,
+                  "upstream_inference_completions_cost": 0.0001844
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"The child result provides a complete mathematical and algorithmic framework for solving the problem using Bayesian active learning, which is the optimal approach for minimizing probing costs in uncertain environments.\",\n  \"response\": \"FINAL_ANSWER: Implement a Bayesian active learning framework: 1. Spatial Prior: Initialize $P(c) = \\\\frac{1}{N} \\\\sum_{i,p} \\\\mathbb{I}(c \\\\in \\\\text{polyomino}_i \\\\text{ at position } p)$, where $N$ is the total number of valid placements. 2. Likelihood Model: For an aggregate query $Q$ on a set of cells $S$, use $P(Q|S) = \\\\text{Binomial}(Q; |S_{\\\\text{oil}}|, p_{\\\\text{noise}})$, where $S_{\\\\text{oil}}$ is the true number of oil cells in $S$. 3. EIG Selection: Select the next probe $S$ to maximize Expected Information Gain (EIG): $\\\\text{EIG}(S) = H(P) - \\\\mathbb{E}[H(P|Q)]$, where $H(P) = -\\\\sum P(c)\\\\log P(c)$ is the current entropy. 4. Refinement: Maintain a set of consistent placements $M = \\\\{m \\\\mid m \\\\text{ matches all drilling and aggregate query results}\\}$. 5. Final Guess: After the budget is exhausted, select cells $C = \\\\{c \\\\mid \\\\frac{\\\\sum_{m \\\\in M} \\\\mathbb{I}(c \\\\in m)}{|M|} > \\\\text{threshold}\\\\}$. \\n\\nJUSTIFICATION: This strategy minimizes probing cost by using information theory (Entropy/EIG) to select queries that most significantly reduce uncertainty about the polyomino placements, while the Bayesian update handles the noise in aggregate queries.\",\n  \"result_type\": \"text\"\n}\n```",
+            "parse_error": null,
+            "parsed_response": null
+          },
+          {
+            "phase": "json_repair",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": "You repair invalid Super-Eywa node responses into strict JSON. Return only valid JSON."
+                },
+                {
+                  "role": "user",
+                  "content": "Rewrite the following content as valid JSON only for the eywa_node_response v1 schema. Allowed orchestration_decision values for this turn: execute_locally. Use the exact top-level fields required by eywa_node_response v1. Do not wrap the object under another key. Use plain text strings only. Do not use markdown, code fences, or backslashes.\n\nOriginal content:\n```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"The child result provides a complete mathematical and algorithmic framework for solving the problem using Bayesian active learning, which is the optimal approach for minimizing probing costs in uncertain environments.\",\n  \"response\": \"FINAL_ANSWER: Implement a Bayesian active learning framework: 1. Spatial Prior: Initialize $P(c) = \\\\frac{1}{N} \\\\sum_{i,p} \\\\mathbb{I}(c \\\\in \\\\text{polyomino}_i \\\\text{ at position } p)$, where $N$ is the total number of valid placements. 2. Likelihood Model: For an aggregate query $Q$ on a set of cells $S$, use $P(Q|S) = \\\\text{Binomial}(Q; |S_{\\\\text{oil}}|, p_{\\\\text{noise}})$, where $S_{\\\\text{oil}}$ is the true number of oil cells in $S$. 3. EIG Selection: Select the next probe $S$ to maximize Expected Information Gain (EIG): $\\\\text{EIG}(S) = H(P) - \\\\mathbb{E}[H(P|Q)]$, where $H(P) = -\\\\sum P(c)\\\\log P(c)$ is the current entropy. 4. Refinement: Maintain a set of consistent placements $M = \\\\{m \\\\mid m \\\\text{ matches all drilling and aggregate query results}\\}$. 5. Final Guess: After the budget is exhausted, select cells $C = \\\\{c \\\\mid \\\\frac{\\\\sum_{m \\\\in M} \\\\mathbb{I}(c \\\\in m)}{|M|} > \\\\text{threshold}\\\\}$. \\n\\nJUSTIFICATION: This strategy minimizes probing cost by using information theory (Entropy/EIG) to select queries that most significantly reduce uncertainty about the polyomino placements, while the Bayesian update handles the noise in aggregate queries.\",\n  \"result_type\": \"text\"\n}\n```"
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775530347-iNAUMZzcMDn66yv4OowT",
+              "object": "chat.completion",
+              "created": 1775530347,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Parasail",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n\"schema_name\": \"eywa_node_response\",\n\"schema_version\": \"v1\",\n\"orchestration_decision\": \"execute_locally\",\n\"decision_notes\": \"The child result provides a complete mathematical and algorithmic framework for solving the problem using Bayesian active learning, which is the optimal approach for minimizing probing costs in uncertain environments.\",\n\"response\": \"FINAL_ANSWER: Implement a Bayesian active learning framework: 1. Spatial Prior: Initialize P(c) = 1/N * sum_{i,p} I(c in polyomino_i at position p), where N is the total number of valid placements. 2. Likelihood Model: For an aggregate query Q on a set of cells S, use P(Q|S) = Binomial(Q; |S_oil|, p_noise), where S_oil is the true number of oil cells in S. 3. EIG Selection: Select the next probe S to maximize Expected Information Gain (EIG): EIG(S) = H(P) - E[H(P|Q)], where H(P) = -sum P(c)log P(c) is the current entropy. 4. Refinement: Maintain a set of consistent placements M = {m | m matches all drilling and aggregate query results}. 5. Final Guess: After the budget is exhausted, select cells C = {c | (sum_{m in M} I(c in m))/|M| > threshold}. JUSTIFICATION: This strategy minimizes probing cost by using information theory (Entropy/EIG) to select queries that most significantly reduce uncertainty about the polyomino placements, while the Bayesian update handles the noise in aggregate queries.\",\n\"result_type\": \"text\"\n}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 592,
+                "completion_tokens": 375,
+                "total_tokens": 967,
+                "cost": 0.00022696,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00022696,
+                  "upstream_inference_prompt_cost": 7.696e-05,
+                  "upstream_inference_completions_cost": 0.00015
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\n\"schema_name\": \"eywa_node_response\",\n\"schema_version\": \"v1\",\n\"orchestration_decision\": \"execute_locally\",\n\"decision_notes\": \"The child result provides a complete mathematical and algorithmic framework for solving the problem using Bayesian active learning, which is the optimal approach for minimizing probing costs in uncertain environments.\",\n\"response\": \"FINAL_ANSWER: Implement a Bayesian active learning framework: 1. Spatial Prior: Initialize P(c) = 1/N * sum_{i,p} I(c in polyomino_i at position p), where N is the total number of valid placements. 2. Likelihood Model: For an aggregate query Q on a set of cells S, use P(Q|S) = Binomial(Q; |S_oil|, p_noise), where S_oil is the true number of oil cells in S. 3. EIG Selection: Select the next probe S to maximize Expected Information Gain (EIG): EIG(S) = H(P) - E[H(P|Q)], where H(P) = -sum P(c)log P(c) is the current entropy. 4. Refinement: Maintain a set of consistent placements M = {m | m matches all drilling and aggregate query results}. 5. Final Guess: After the budget is exhausted, select cells C = {c | (sum_{m in M} I(c in m))/|M| > threshold}. JUSTIFICATION: This strategy minimizes probing cost by using information theory (Entropy/EIG) to select queries that most significantly reduce uncertainty about the polyomino placements, while the Bayesian update handles the noise in aggregate queries.\",\n\"result_type\": \"text\"\n}",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "execute_locally",
+              "decision_notes": "The child result provides a complete mathematical and algorithmic framework for solving the problem using Bayesian active learning, which is the optimal approach for minimizing probing costs in uncertain environments.",
+              "response": "FINAL_ANSWER: Implement a Bayesian active learning framework: 1. Spatial Prior: Initialize P(c) = 1/N * sum_{i,p} I(c in polyomino_i at position p), where N is the total number of valid placements. 2. Likelihood Model: For an aggregate query Q on a set of cells S, use P(Q|S) = Binomial(Q; |S_oil|, p_noise), where S_oil is the true number of oil cells in S. 3. EIG Selection: Select the next probe S to maximize Expected Information Gain (EIG): EIG(S) = H(P) - E[H(P|Q)], where H(P) = -sum P(c)log P(c) is the current entropy. 4. Refinement: Maintain a set of consistent placements M = {m | m matches all drilling and aggregate query results}. 5. Final Guess: After the budget is exhausted, select cells C = {c | (sum_{m in M} I(c in m))/|M| > threshold}. JUSTIFICATION: This strategy minimizes probing cost by using information theory (Entropy/EIG) to select queries that most significantly reduce uncertainty about the polyomino placements, while the Bayesian update handles the noise in aggregate queries.",
+              "result_type": "text"
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "execute_locally",
+          "decision_notes": "The child result provides a complete mathematical and algorithmic framework for solving the problem using Bayesian active learning, which is the optimal approach for minimizing probing costs in uncertain environments.",
+          "response": "FINAL_ANSWER: Implement a Bayesian active learning framework: 1. Spatial Prior: Initialize P(c) = 1/N * sum_{i,p} I(c in polyomino_i at position p), where N is the total number of valid placements. 2. Likelihood Model: For an aggregate query Q on a set of cells S, use P(Q|S) = Binomial(Q; |S_oil|, p_noise), where S_oil is the true number of oil cells in S. 3. EIG Selection: Select the next probe S to maximize Expected Information Gain (EIG): EIG(S) = H(P) - E[H(P|Q)], where H(P) = -sum P(c)log P(c) is the current entropy. 4. Refinement: Maintain a set of consistent placements M = {m | m matches all drilling and aggregate query results}. 5. Final Guess: After the budget is exhausted, select cells C = {c | (sum_{m in M} I(c in m))/|M| > threshold}. JUSTIFICATION: This strategy minimizes probing cost by using information theory (Entropy/EIG) to select queries that most significantly reduce uncertainty about the polyomino placements, while the Bayesian update handles the noise in aggregate queries.",
+          "result_type": "text"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1131,
+        "completion_tokens": 836,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 0,
+        "total_tokens": 1967,
+        "cost_usd": 0.00048143000000000003,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775530338-wFTAfKg8XUxb4Cv11eAF",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00025447
+            },
+            {
+              "response_id": "gen-1775530347-iNAUMZzcMDn66yv4OowT",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00022696
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

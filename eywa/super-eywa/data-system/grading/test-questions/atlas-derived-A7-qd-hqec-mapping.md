@@ -1,10 +1,12 @@
 # A7. QD-HQEC Mapping
 
-- Type: Atlas-derived
+- Family: atlas-derived
+- Entry Type: reasoning
 - Domain: Physics / quantum information
+- Grader Type: manual_exact
 - Source: Atlas Classicality Budget mission
 
-## Question
+## Problem
 
 Is there a formal relationship between quantum Darwinism and holographic quantum error correction?
 
@@ -26,4 +28,4 @@ Mapping correctness on the three correspondences plus citation-gap discovery.
 
 ## Notes
 
-- 
+-

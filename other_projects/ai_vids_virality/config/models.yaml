@@ -1,0 +1,56 @@
+# Phase 9 model roster — unified OpenRouter adapter.
+#
+# Each entry maps to a ModelAdapter implementation. `enabled: true` puts
+# the model in the rotation; the factory runs every enabled model on
+# every signal sequentially. Phase 3 had no smarter routing yet and
+# Phase 9 still doesn't — sequential rotation is fine at current volume.
+#
+# `claude-opus` is the only adapter that talks to a real model via a
+# local CLI. `gpt-5` and `gemini-2.5-pro` both point at the single
+# `OpenRouterAdapter` now — one key (`OPENROUTER_API_KEY`) unlocks both
+# (plus any other OpenRouter slug). The `id` field is what the
+# leaderboard uses, so keeping `gpt-5` and `gemini-2.5-pro` as the ids
+# means historical counts continue to accumulate against the same rows.
+#
+# The legacy per-vendor stub adapters are kept on disk for reference /
+# fallback and are listed below with `*-stub` ids and `enabled: false`.
+default_n_premises: 3
+models:
+  - id: claude-opus
+    enabled: true
+    adapter: idea_factory.adapters.claude_cli.ClaudeCLIAdapter
+    config:
+      cli_model: claude-opus-4-6
+      timeout_sec: 180
+      max_turns: 1
+
+  - id: gpt-5
+    enabled: true
+    adapter: idea_factory.adapters.openrouter.OpenRouterAdapter
+    config:
+      api_model: openai/gpt-5
+      timeout_sec: 120
+
+  - id: gemini-2.5-pro
+    enabled: true
+    adapter: idea_factory.adapters.openrouter.OpenRouterAdapter
+    config:
+      api_model: google/gemini-2.5-pro
+      timeout_sec: 120
+
+  # Legacy per-vendor stubs — kept on disk for fallback / reference,
+  # disabled by default. New ids so they don't shadow the leaderboard
+  # rows above.
+  - id: gpt-5-stub
+    enabled: false
+    adapter: idea_factory.adapters.openai_stub.OpenAIAdapter
+    config:
+      api_model: gpt-5
+      timeout_sec: 120
+
+  - id: gemini-2.5-pro-stub
+    enabled: false
+    adapter: idea_factory.adapters.gemini_stub.GeminiAdapter
+    config:
+      api_model: gemini-2.5-pro
+      timeout_sec: 120

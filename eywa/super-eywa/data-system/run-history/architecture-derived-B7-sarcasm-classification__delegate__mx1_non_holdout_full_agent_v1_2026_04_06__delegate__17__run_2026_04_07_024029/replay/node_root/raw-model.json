@@ -1,0 +1,334 @@
+{
+  "provider": "openrouter",
+  "note": "Per-turn provider payloads, authored JSON, and compiled outputs are recorded here.",
+  "steps": [
+    {
+      "step": 1,
+      "note": "authored delegate decision deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 1\nNode depth: 0\nAllowed decisions: ['delegate']\nPrompt family: delegate\nBase header prompt: ''\nSelected prompt text:\nDecompose the task into a maximum of 2 focused subproblems. If the task involves multiple items to analyze, you must group them so that the total number of helpers does not exceed 2. For each helper, you must explicitly include the specific text or data they need to evaluate within their instructions. The synthesis brief must explain how to combine these grouped evaluations into the final required format.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"optional string\",\n  \"helpers\": [\n    {\n      \"label\": \"helper_1\",\n      \"instructions\": \"plain-text subproblem for the first helper\"\n    }\n  ],\n  \"synthesis_brief\": \"how the parent should combine the child results\"\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nDecompose the task into a maximum of 2 focused subproblems. If the task involves multiple items to analyze, you must group them so that the total number of helpers does not exceed 2. For each helper, you must explicitly include the specific text or data they need to evaluate within their instructions. The synthesis brief must explain how to combine these grouped evaluations into the final required format.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"optional string\",\n  \"helpers\": [\n    {\n      \"label\": \"helper_1\",\n      \"instructions\": \"plain-text subproblem for the first helper\"\n    }\n  ],\n  \"synthesis_brief\": \"how the parent should combine the child results\"\n}\n\nQuestion:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: architecture-derived-B7-sarcasm-classification\nTitle: B7. Sarcasm Classification\n\nProblem:\nClassify three Reddit replies as sarcastic (0) or non-sarcastic (1).\nDetermine the 3-bit pattern.\n\nGrading target:\nExact match on the 3-bit string.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "delegate",
+        "decision_notes": "The task requires classifying three distinct Reddit replies. I will split the classification task into two helpers to ensure high accuracy and focus.",
+        "helpers": [
+          {
+            "label": "classifier_part_1",
+            "instructions": "Analyze the following two Reddit replies and classify each as sarcastic (0) or non-sarcastic (1). Provide the classification for each and a brief reason why.\n\nReply 1: [Insert text of Reddit reply 1 here]\nReply 2: [Insert text of Reddit reply 2 here]",
+            "variable_overrides": {}
+          },
+          {
+            "label": "classifier_part_2",
+            "instructions": "Analyze the following Reddit reply and classify it as sarcastic (0) or non-sarcastic (1). Provide the classification and a brief reason why.\n\nReply 3: [Insert text of Reddit reply 3 here]",
+            "variable_overrides": {}
+          }
+        ],
+        "synthesis_brief": "Combine the classifications from both helpers into a single 3-bit string (e.g., '010'). Format the final response as: FINAL_ANSWER: <3-bit string> followed by a JUSTIFICATION that summarizes the reasoning for each bit based on the helpers' evaluations."
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "architecture-derived-B7-sarcasm-classification__delegate__mx1_non_holdout_full_agent_v1_2026_04_06__delegate__17__run_2026_04_07_024029",
+        "node_id": "node_root",
+        "action_type": "recruit_help",
+        "results": [
+          {
+            "result_type": "plan",
+            "content": "The task requires classifying three distinct Reddit replies. I will split the classification task into two helpers to ensure high accuracy and focus.\nnode_root_helper_01 (classifier_part_1): Analyze the following two Reddit replies and classify each as sarcastic (0) or non-sarcastic (1). Provide the classification for each and a brief reason why.\n\nReply 1: [Insert text of Reddit reply 1 here]\nReply 2: [Insert text of Reddit reply 2 here]\nnode_root_helper_02 (classifier_part_2): Analyze the following Reddit reply and classify it as sarcastic (0) or non-sarcastic (1). Provide the classification and a brief reason why.\n\nReply 3: [Insert text of Reddit reply 3 here]",
+            "attachment_refs": []
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "helper_assignment",
+            "target": {
+              "target_type": "new_helper",
+              "target_ref": "node_root_helper_01"
+            },
+            "message": "Analyze the following two Reddit replies and classify each as sarcastic (0) or non-sarcastic (1). Provide the classification for each and a brief reason why.\n\nReply 1: [Insert text of Reddit reply 1 here]\nReply 2: [Insert text of Reddit reply 2 here]",
+            "attachment_refs": []
+          },
+          {
+            "message_type": "helper_assignment",
+            "target": {
+              "target_type": "new_helper",
+              "target_ref": "node_root_helper_02"
+            },
+            "message": "Analyze the following Reddit reply and classify it as sarcastic (0) or non-sarcastic (1). Provide the classification and a brief reason why.\n\nReply 3: [Insert text of Reddit reply 3 here]",
+            "attachment_refs": []
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Decompose the task into a maximum of 2 focused subproblems. If the task involves multiple items to analyze, you must group them so that the total number of helpers does not exceed 2. For each helper, you must explicitly include the specific text or data they need to evaluate within their instructions. The synthesis brief must explain how to combine these grouped evaluations into the final required format.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"optional string\",\n  \"helpers\": [\n    {\n      \"label\": \"helper_1\",\n      \"instructions\": \"plain-text subproblem for the first helper\"\n    }\n  ],\n  \"synthesis_brief\": \"how the parent should combine the child results\"\n}\n\nQuestion:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: architecture-derived-B7-sarcasm-classification\nTitle: B7. Sarcasm Classification\n\nProblem:\nClassify three Reddit replies as sarcastic (0) or non-sarcastic (1).\nDetermine the 3-bit pattern.\n\nGrading target:\nExact match on the 3-bit string.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>"
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775529629-AcnIwkTbIWh2PvmkRlgG",
+              "object": "chat.completion",
+              "created": 1775529629,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Parasail",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"The task requires classifying three distinct Reddit replies. I will split the classification task into two helpers to ensure high accuracy and focus.\",\n  \"helpers\": [\n    {\n      \"label\": \"classifier_part_1\",\n      \"instructions\": \"Analyze the following two Reddit replies and classify each as sarcastic (0) or non-sarcastic (1). Provide the classification for each and a brief reason why.\\n\\nReply 1: [Insert text of Reddit reply 1 here]\\nReply 2: [Insert text of Reddit reply 2 here]\"\n    },\n    {\n      \"label\": \"classifier_part_2\",\n      \"instructions\": \"Analyze the following Reddit reply and classify it as sarcastic (0) or non-sarcastic (1). Provide the classification and a brief reason why.\\n\\nReply 3: [Insert text of Reddit reply 3 here]\"\n    }\n  ],\n  \"synthesis_brief\": \"Combine the classifications from both helpers into a single 3-bit string (e.g., '010'). Format the final response as: FINAL_ANSWER: <3-bit string> followed by a JUSTIFICATION that summarizes the reasoning for each bit based on the helpers' evaluations.\"\n}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 339,
+                "completion_tokens": 313,
+                "total_tokens": 652,
+                "cost": 0.00016927,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00016927,
+                  "upstream_inference_prompt_cost": 4.407e-05,
+                  "upstream_inference_completions_cost": 0.0001252
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"The task requires classifying three distinct Reddit replies. I will split the classification task into two helpers to ensure high accuracy and focus.\",\n  \"helpers\": [\n    {\n      \"label\": \"classifier_part_1\",\n      \"instructions\": \"Analyze the following two Reddit replies and classify each as sarcastic (0) or non-sarcastic (1). Provide the classification for each and a brief reason why.\\n\\nReply 1: [Insert text of Reddit reply 1 here]\\nReply 2: [Insert text of Reddit reply 2 here]\"\n    },\n    {\n      \"label\": \"classifier_part_2\",\n      \"instructions\": \"Analyze the following Reddit reply and classify it as sarcastic (0) or non-sarcastic (1). Provide the classification and a brief reason why.\\n\\nReply 3: [Insert text of Reddit reply 3 here]\"\n    }\n  ],\n  \"synthesis_brief\": \"Combine the classifications from both helpers into a single 3-bit string (e.g., '010'). Format the final response as: FINAL_ANSWER: <3-bit string> followed by a JUSTIFICATION that summarizes the reasoning for each bit based on the helpers' evaluations.\"\n}",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "delegate",
+              "decision_notes": "The task requires classifying three distinct Reddit replies. I will split the classification task into two helpers to ensure high accuracy and focus.",
+              "helpers": [
+                {
+                  "label": "classifier_part_1",
+                  "instructions": "Analyze the following two Reddit replies and classify each as sarcastic (0) or non-sarcastic (1). Provide the classification for each and a brief reason why.\n\nReply 1: [Insert text of Reddit reply 1 here]\nReply 2: [Insert text of Reddit reply 2 here]",
+                  "variable_overrides": {}
+                },
+                {
+                  "label": "classifier_part_2",
+                  "instructions": "Analyze the following Reddit reply and classify it as sarcastic (0) or non-sarcastic (1). Provide the classification and a brief reason why.\n\nReply 3: [Insert text of Reddit reply 3 here]",
+                  "variable_overrides": {}
+                }
+              ],
+              "synthesis_brief": "Combine the classifications from both helpers into a single 3-bit string (e.g., '010'). Format the final response as: FINAL_ANSWER: <3-bit string> followed by a JUSTIFICATION that summarizes the reasoning for each bit based on the helpers' evaluations."
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "delegate",
+          "decision_notes": "The task requires classifying three distinct Reddit replies. I will split the classification task into two helpers to ensure high accuracy and focus.",
+          "helpers": [
+            {
+              "label": "classifier_part_1",
+              "instructions": "Analyze the following two Reddit replies and classify each as sarcastic (0) or non-sarcastic (1). Provide the classification for each and a brief reason why.\n\nReply 1: [Insert text of Reddit reply 1 here]\nReply 2: [Insert text of Reddit reply 2 here]",
+              "variable_overrides": {}
+            },
+            {
+              "label": "classifier_part_2",
+              "instructions": "Analyze the following Reddit reply and classify it as sarcastic (0) or non-sarcastic (1). Provide the classification and a brief reason why.\n\nReply 3: [Insert text of Reddit reply 3 here]",
+              "variable_overrides": {}
+            }
+          ],
+          "synthesis_brief": "Combine the classifications from both helpers into a single 3-bit string (e.g., '010'). Format the final response as: FINAL_ANSWER: <3-bit string> followed by a JUSTIFICATION that summarizes the reasoning for each bit based on the helpers' evaluations."
+        }
+      },
+      "usage": {
+        "prompt_tokens": 339,
+        "completion_tokens": 313,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 0,
+        "total_tokens": 652,
+        "cost_usd": 0.00016927,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775529629-AcnIwkTbIWh2PvmkRlgG",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00016927
+            }
+          ]
+        }
+      }
+    },
+    {
+      "step": 2,
+      "note": "authored local execution after reviewing child results deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 2\nNode depth: 0\nAllowed decisions: ['execute_locally']\nPrompt family: delegate\nBase header prompt: ''\nSelected prompt text:\nChild results have already come back to you. Use them to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"string\",\n  \"result_type\": \"optional string\"\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nChild results have already come back to you. Use them to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"string\",\n  \"result_type\": \"optional string\"\n}\n\nSynthesis brief from the earlier child-creation step:\nCombine the classifications from both helpers into a single 3-bit string (e.g., '010'). Format the final response as: FINAL_ANSWER: <3-bit string> followed by a JUSTIFICATION that summarizes the reasoning for each bit based on the helpers' evaluations.\n\nChild results already returned to you:\n[\n  {\n    \"node_id\": \"node_root_helper_01\",\n    \"summary\": \"FINAL_ANSWER: Cannot classify without input text.\\nJUSTIFICATION: No Reddit replies were provided for analysis.\"\n  },\n  {\n    \"node_id\": \"node_root_helper_02\",\n    \"summary\": \"FINAL_ANSWER: Error\\nJUSTIFICATION: No Reddit reply text was provided for analysis.\"\n  }\n]\n\nQuestion:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: architecture-derived-B7-sarcasm-classification\nTitle: B7. Sarcasm Classification\n\nProblem:\nClassify three Reddit replies as sarcastic (0) or non-sarcastic (1).\nDetermine the 3-bit pattern.\n\nGrading target:\nExact match on the 3-bit string.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "execute_locally",
+        "decision_notes": "The child helpers failed to provide a classification because the input text (the Reddit replies) was missing from the prompt. Since no data was provided to analyze, a 3-bit string cannot be determined.",
+        "response": "FINAL_ANSWER: N/A\nJUSTIFICATION: Both helper nodes reported that no Reddit replies were provided for analysis, making it impossible to classify the sarcasm for the three required bits.",
+        "result_type": "error"
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "architecture-derived-B7-sarcasm-classification__delegate__mx1_non_holdout_full_agent_v1_2026_04_06__delegate__17__run_2026_04_07_024029",
+        "node_id": "node_root",
+        "action_type": "report_success",
+        "results": [
+          {
+            "result_type": "error",
+            "content": "FINAL_ANSWER: N/A\nJUSTIFICATION: Both helper nodes reported that no Reddit replies were provided for analysis, making it impossible to classify the sarcasm for the three required bits.",
+            "attachment_refs": []
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "success_report",
+            "target": {
+              "target_type": "final_output",
+              "target_ref": "run_final_output"
+            },
+            "message": "FINAL_ANSWER: N/A\nJUSTIFICATION: Both helper nodes reported that no Reddit replies were provided for analysis, making it impossible to classify the sarcasm for the three required bits.",
+            "attachment_refs": []
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Child results have already come back to you. Use them to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"string\",\n  \"result_type\": \"optional string\"\n}\n\nSynthesis brief from the earlier child-creation step:\nCombine the classifications from both helpers into a single 3-bit string (e.g., '010'). Format the final response as: FINAL_ANSWER: <3-bit string> followed by a JUSTIFICATION that summarizes the reasoning for each bit based on the helpers' evaluations.\n\nChild results already returned to you:\n[\n  {\n    \"node_id\": \"node_root_helper_01\",\n    \"summary\": \"FINAL_ANSWER: Cannot classify without input text.\\nJUSTIFICATION: No Reddit replies were provided for analysis.\"\n  },\n  {\n    \"node_id\": \"node_root_helper_02\",\n    \"summary\": \"FINAL_ANSWER: Error\\nJUSTIFICATION: No Reddit reply text was provided for analysis.\"\n  }\n]\n\nQuestion:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: architecture-derived-B7-sarcasm-classification\nTitle: B7. Sarcasm Classification\n\nProblem:\nClassify three Reddit replies as sarcastic (0) or non-sarcastic (1).\nDetermine the 3-bit pattern.\n\nGrading target:\nExact match on the 3-bit string.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>"
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775529649-x2CufYY5JLxwbGFOo5Ss",
+              "object": "chat.completion",
+              "created": 1775529649,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Novita",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"The child helpers failed to provide a classification because the input text (the Reddit replies) was missing from the prompt. Since no data was provided to analyze, a 3-bit string cannot be determined.\",\n  \"response\": \"FINAL_ANSWER: N/A\\nJUSTIFICATION: Both helper nodes reported that no Reddit replies were provided for analysis, making it impossible to classify the sarcasm for the three required bits.\",\n  \"result_type\": \"error\"\n}\n```",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 422,
+                "completion_tokens": 151,
+                "total_tokens": 573,
+                "cost": 0.00011526,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 128,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00011526,
+                  "upstream_inference_prompt_cost": 5.486e-05,
+                  "upstream_inference_completions_cost": 6.04e-05
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"The child helpers failed to provide a classification because the input text (the Reddit replies) was missing from the prompt. Since no data was provided to analyze, a 3-bit string cannot be determined.\",\n  \"response\": \"FINAL_ANSWER: N/A\\nJUSTIFICATION: Both helper nodes reported that no Reddit replies were provided for analysis, making it impossible to classify the sarcasm for the three required bits.\",\n  \"result_type\": \"error\"\n}\n```",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "execute_locally",
+              "decision_notes": "The child helpers failed to provide a classification because the input text (the Reddit replies) was missing from the prompt. Since no data was provided to analyze, a 3-bit string cannot be determined.",
+              "response": "FINAL_ANSWER: N/A\nJUSTIFICATION: Both helper nodes reported that no Reddit replies were provided for analysis, making it impossible to classify the sarcasm for the three required bits.",
+              "result_type": "error"
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "execute_locally",
+          "decision_notes": "The child helpers failed to provide a classification because the input text (the Reddit replies) was missing from the prompt. Since no data was provided to analyze, a 3-bit string cannot be determined.",
+          "response": "FINAL_ANSWER: N/A\nJUSTIFICATION: Both helper nodes reported that no Reddit replies were provided for analysis, making it impossible to classify the sarcasm for the three required bits.",
+          "result_type": "error"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 422,
+        "completion_tokens": 151,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 128,
+        "total_tokens": 573,
+        "cost_usd": 0.00011526,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775529649-x2CufYY5JLxwbGFOo5Ss",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00011526
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

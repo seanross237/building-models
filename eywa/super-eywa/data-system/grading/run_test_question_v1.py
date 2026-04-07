@@ -19,11 +19,12 @@ if str(THIS_DIR) not in sys.path:
 from eywa_runtime.engine import EywaEngine  # noqa: E402
 from eywa_runtime.ids import make_run_id  # noqa: E402
 from eywa_runtime.validation import RunValidationError, validate_run_directory  # noqa: E402
+from grading_methods.agent_grade_v1 import grade_result as agent_grade_result  # noqa: E402
 from grading_methods.simple_grade_v1 import (  # noqa: E402
     build_task_prompt,
-    grade_result,
     parse_question_file,
 )
+from coding_repair_v1 import maybe_repair_invalid_coding_submission  # noqa: E402
 from sync_to_supabase_v1 import load_supabase_config, sync_grading_record, sync_question_bank  # noqa: E402
 
 
@@ -48,6 +49,22 @@ def build_parser() -> argparse.ArgumentParser:
         "--variables-json",
         help="Optional JSON object of extra run-level variable overrides.",
     )
+    parser.add_argument(
+        "--grading-provider",
+        default="same",
+        choices=["same", "deterministic", "openrouter"],
+        help="How grading is performed. 'same' follows the runtime provider.",
+    )
+    parser.add_argument(
+        "--grading-model",
+        help="Optional explicit grading model. Defaults to the run model for live runs.",
+    )
+    parser.add_argument(
+        "--coding-repair-attempts",
+        type=int,
+        default=2,
+        help="For coding tasks, bounded same-model repair attempts after invalid contestant output.",
+    )
     parser.add_argument("--sync-supabase", action="store_true")
     return parser
 
@@ -63,6 +80,9 @@ def run_question_case(
     max_depth: int | None,
     max_helpers: int,
     run_id: str | None,
+    grading_provider: str = "same",
+    grading_model: str | None = None,
+    coding_repair_attempts: int = 2,
     sync_supabase: bool = False,
     extra_variable_overrides: dict[str, object] | None = None,
 ) -> dict[str, object]:
@@ -82,6 +102,13 @@ def run_question_case(
             "max_helpers_per_node": max_helpers,
         },
     }
+    if question_case.entry_type == "coding":
+        variable_overrides.update(
+            {
+                "submission_contract_type": "coding_single_file_python",
+                "submission_entry_file": "main.py",
+            }
+        )
     if extra_variable_overrides:
         variable_overrides.update(extra_variable_overrides)
         budget_override = dict(variable_overrides.get("budget_policy") or {})
@@ -109,6 +136,7 @@ def run_question_case(
     root_record = json.loads((run_dir / "nodes" / result.root_node_id / "node_record.json").read_text(encoding="utf-8"))
     root_result_text = root_record["results"][0]["content"] if root_record["results"] else ""
     final_output_path = run_dir / "final-output.json"
+    final_output = None
     if final_output_path.exists():
         final_output = json.loads(final_output_path.read_text(encoding="utf-8"))
         result_payload = final_output.get("result") or {}
@@ -119,7 +147,52 @@ def run_question_case(
         result_text = root_record["results"][0]["content"] if root_record["results"] else ""
         final_result_node_id = result.root_node_id
         final_result_path = str(run_dir / "nodes" / result.root_node_id / "node_record.json")
-    grading = grade_result(question_case, result_text)
+
+    resolved_grading_provider = _resolve_grading_provider(grading_provider, runtime_provider)
+    resolved_grading_model = _resolve_grading_model(
+        grading_provider=resolved_grading_provider,
+        grading_model=grading_model,
+        runtime_model=model,
+    )
+    grading, grading_trace = agent_grade_result(
+        question_case,
+        result_text,
+        grading_provider=resolved_grading_provider,
+        grading_model=resolved_grading_model,
+        run_dir=run_dir,
+        final_output=final_output if final_output_path.exists() else None,
+    )
+    coding_repair_attempt_log: list[dict[str, object]] = []
+    repaired = maybe_repair_invalid_coding_submission(
+        question_case=question_case,
+        runtime_provider=runtime_provider,
+        model=model,
+        run_dir=run_dir,
+        grading=grading,
+        grading_trace=grading_trace,
+        max_attempts=coding_repair_attempts,
+    )
+    if repaired is not None:
+        grading, grading_trace = repaired
+        coding_repair_attempt_log = list(grading_trace.get("repair_attempts") or [])
+    grading_trace_path = _write_grading_trace(
+        grading_runs_root=grading_runs_root,
+        question_id=question_case.question_id,
+        label=label,
+        run_id=result.run_id,
+        trace_payload={
+            "schema_name": "eywa_grading_trace",
+            "schema_version": "v1",
+            "question_id": question_case.question_id,
+            "run_id": result.run_id,
+            "label": label,
+            "grader_provider": resolved_grading_provider,
+            "grader_model": resolved_grading_model,
+            "grading": grading,
+            "provider_payload": grading_trace,
+            "coding_repair_attempts": coding_repair_attempt_log,
+        },
+    )
 
     grading_record = {
         "question_id": question_case.question_id,
@@ -144,6 +217,23 @@ def run_question_case(
         "root_orchestration": root_record["orchestration"],
         "validation_status": validation_status,
         "validation_summary": validation_summary,
+        "grader_provider": resolved_grading_provider,
+        "grader_model": resolved_grading_model,
+        "grading_method": grading.get("grading_method"),
+        "task_correct": grading.get("task_correct"),
+        "task_score": grading.get("task_score"),
+        "submission_compliance": grading.get("submission_compliance"),
+        "recovery_used": grading.get("recovery_used"),
+        "submission_source": grading.get("submission_source"),
+        "recovery_notes": grading.get("recovery_notes"),
+        "grading_trace_path": str(grading_trace_path),
+        "submission_artifact_refs": (
+            list((grading_trace.get("submission") or {}).get("artifact_refs") or [])
+            if isinstance(grading_trace, dict)
+            else []
+        ),
+        "coding_execution": grading_trace.get("execution") if isinstance(grading_trace, dict) else None,
+        "coding_repair_attempts": coding_repair_attempt_log,
         "grading": grading,
         "review_record_path": None,
         "reviewer_provider": None,
@@ -180,6 +270,9 @@ def main() -> int:
         max_depth=args.max_depth,
         max_helpers=args.max_helpers,
         run_id=args.run_id,
+        grading_provider=args.grading_provider,
+        grading_model=args.grading_model,
+        coding_repair_attempts=args.coding_repair_attempts,
         sync_supabase=args.sync_supabase,
         extra_variable_overrides=extra_variable_overrides,
     )
@@ -194,10 +287,51 @@ def main() -> int:
     print(f"total_wall_time_ms={grading_record['total_wall_time_ms']}")
     print(f"total_cost_usd={grading_record['total_cost_usd']}")
     print(f"validation_status={grading_record['validation_status']}")
+    print(f"grader_provider={grading_record['grader_provider']}")
+    print(f"grader_model={grading_record['grader_model']}")
+    print(f"grading_method={grading_record['grading_method']}")
+    print(f"task_score={grading_record['task_score']}")
+    print(f"task_correct={grading_record['task_correct']}")
+    print(f"submission_compliance={grading_record['submission_compliance']}")
+    print(f"recovery_used={grading_record['recovery_used']}")
+    print(f"submission_source={grading_record['submission_source']}")
+    print(f"grading_trace={grading_record['grading_trace_path']}")
+    print(f"coding_repair_attempts={len(grading_record['coding_repair_attempts'])}")
     print(f"grading_status={grading_record['grading']['grading_status']}")
     print(f"correct={grading_record['grading']['correct']}")
     print(f"score={grading_record['grading']['score']}")
     return 0
+
+
+def _resolve_grading_provider(grading_provider: str, runtime_provider: str) -> str:
+    resolved = str(grading_provider or "same").strip()
+    if resolved == "same":
+        return "openrouter" if runtime_provider == "openrouter" else "deterministic"
+    return resolved
+
+
+def _resolve_grading_model(*, grading_provider: str, grading_model: str | None, runtime_model: str) -> str:
+    explicit = str(grading_model or "").strip()
+    if explicit:
+        return explicit
+    if grading_provider == "openrouter":
+        return runtime_model
+    return "deterministic-agent-grader-v1"
+
+
+def _write_grading_trace(
+    *,
+    grading_runs_root: Path,
+    question_id: str,
+    label: str,
+    run_id: str,
+    trace_payload: dict[str, object],
+) -> Path:
+    trace_root = grading_runs_root.resolve().parent / "grading-traces"
+    trace_path = trace_root / question_id / f"{label}__{run_id}.json"
+    trace_path.parent.mkdir(parents=True, exist_ok=True)
+    trace_path.write_text(json.dumps(trace_payload, indent=2), encoding="utf-8")
+    return trace_path
 
 
 if __name__ == "__main__":

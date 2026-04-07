@@ -1,0 +1,67 @@
+# Run Timeline
+
+1. [node_root] Run started for task: Solve this Super-Eywa grading-bank question.
+Question ID: architecture-derived-B2-sign-sensitive-derivation-exciton-rydberg-energy
+Title: B2. Sign-Sensitive Derivation (Exciton Rydberg Energy)
+
+Problem:
+Band gap 3 eV, screened Coulomb, 1s exciton peak at 1 eV.
+What is the Rydberg energy for n = 3?
+
+Grading target:
+Exact numerical match.
+The sign matters.
+
+Return format:
+FINAL_ANSWER: <your answer>
+JUSTIFICATION: <brief justification>
+2. [node_root] Node started: Solve this Super-Eywa grading-bank question.
+Question ID: architecture-derived-B2-sign-sensitive-derivation-exciton-rydberg-energy
+Title: B2. Sign-Sensitive Derivation (Exciton Rydberg Energy)
+
+Problem:
+Band gap 3 eV, screened Coulomb, 1s exciton peak at 1 eV.
+What is the Rydberg energy for n = 3?
+
+Grading target:
+Exact numerical match.
+The sign matters.
+
+Return format:
+FINAL_ANSWER: <your answer>
+JUSTIFICATION: <brief justification>
+3. [node_root] Node recruited 1 helper(s)
+4. [node_root_helper_01] Node started: Review this draft answer carefully.
+Find flaws, missing reasoning, or corrections, then produce the strongest corrected answer you can.
+
+Review focus:
+Please perform a sign-convention and physical-directionality audit on this response. 
+
+1. Identify the specific physical quantity requested: Is 'Rydberg energy for n=3' interpreted as the Binding Energy ($E_b > 0$) or the Energy Level relative to the conduction band edge ($E_n < 0$)? 
+2. Explicitly state the sign convention used in the context of exciton physics for this problem.
+3. Verify that the mathematical derivation (subtraction of peak from gap) and the final sign of the result are strictly consistent with that convention. Check specifically if the subtraction order ($E_g - E_{peak}$ vs $E_{peak} - E_g$) and the application of the $1/n^2$ scaling correctly reflect the chosen convention.
+
+Original question:
+Solve this Super-Eywa grading-bank question.
+Question ID: architecture-derived-B2-sign-sensitive-derivation-exciton-rydberg-energy
+Title: B2. Sign-Sensitive Derivation (Exciton Rydberg Energy)
+
+Problem:
+Band gap 3 eV, screened Coulomb, 1s exciton peak at 1 eV.
+What is the Rydberg energy for n = 3?
+
+Grading target:
+Exact numerical match.
+The sign matters.
+
+Return format:
+FINAL_ANSWER: <your answer>
+JUSTIFICATION: <brief justification>
+
+Draft answer:
+FINAL_ANSWER: 0.111 eV
+JUSTIFICATION: The 1s exciton binding energy ($E_b$) is given by the difference between the band gap ($E_g$) and the exciton peak energy ($E_{peak}$): $E_b = E_g - E_{peak} = 3\text{ eV} - 1\text{ eV} = 2\text{ eV}$. In a hydrogenic model, the binding energy follows the Rydberg formula $E_b(n) = E_b(1s) / n^2$. For $n=3$, $E_b(3) = 2\text{ eV} / 3^2 = 2/9\text{ eV} \approx 0.222\text{ eV}$. Wait, recalculating: $2/9 = 0.222...$ Let me re-evaluate the Rydberg energy definition. If the question asks for the Rydberg energy constant $R_y$ such that $E_n = -R_y/n^2$, then $R_y = 2\text{ eV}$. The energy for $n=3$ is $E_3 = -2/9\text{ eV}$. However, usually 'Rydberg energy for n=3' refers to the binding energy at that level. Let's provide the binding energy value: $2/9 \approx 0.222\text{ eV}$.
+5. [node_root_helper_01] Node completed with action report_success
+6. [node_root] Node completed with action report_success
+7. [node_root] Node wrote final output for run architecture-derived-B2-sign-sensitive-derivation-exciton-rydberg-energy__review__mx1_non_holdout_full_agent_v1_2026_04_06__review__16__run_2026_04_07_024617
+8. [node_root] Run completed with 2 node(s)

@@ -271,10 +271,11 @@ class EywaEngine:
 
             helper_specs = self._helper_specs_from_authored_response(
                 turn.authored_response,
+                original_instructions=instructions,
                 resolved_variables=resolved_variables,
             )
             helper_node_ids: List[str] | None = None
-            if turn.authored_response["orchestration_decision"] in {"delegate", "transmute"}:
+            if turn.authored_response["orchestration_decision"] in {"delegate", "transmute", "review"}:
                 helper_node_ids = [
                     make_helper_node_id(node_id, helper_counter + index + 1)
                     for index in range(len(helper_specs))
@@ -282,16 +283,18 @@ class EywaEngine:
 
             output = self._materialize_node_output(
                 run_id=run_id,
+                run_dir=run_dir,
                 node_id=node_id,
                 creation_parent_node_id=creation_parent_node_id,
                 terminal_result_destination=terminal_result_destination,
                 authored_response=turn.authored_response,
                 helper_specs=helper_specs,
                 helper_node_ids=helper_node_ids,
+                turn_index=turn_index,
             )
             replay_steps.append(self._replay_step(turn_index, turn, output))
 
-            if turn.authored_response["orchestration_decision"] not in {"delegate", "transmute"}:
+            if turn.authored_response["orchestration_decision"] not in {"delegate", "transmute", "review"}:
                 final_output = output
                 final_turn = turn
                 break
@@ -349,7 +352,7 @@ class EywaEngine:
                     final_output_path=final_output_path,
                 )
                 total_child_count += child_count
-                if turn.authored_response["orchestration_decision"] == "delegate":
+                if turn.authored_response["orchestration_decision"] in {"delegate", "review"}:
                     child_record = json.loads(
                         (nodes_dir / helper_node_id / "node_record.json").read_text(encoding="utf-8")
                     )
@@ -386,12 +389,14 @@ class EywaEngine:
             final_turn = fallback_turn
             final_output = self._materialize_node_output(
                 run_id=run_id,
+                run_dir=run_dir,
                 node_id=node_id,
                 creation_parent_node_id=creation_parent_node_id,
                 terminal_result_destination=terminal_result_destination,
                 authored_response=fallback_turn.authored_response,
                 helper_specs=[],
                 helper_node_ids=None,
+                turn_index=turn_index + 1,
             )
             replay_steps.append(self._replay_step(turn_index + 1, fallback_turn, final_output))
 
@@ -496,16 +501,24 @@ class EywaEngine:
         self,
         *,
         run_id: str,
+        run_dir: Path,
         node_id: str,
         creation_parent_node_id: Optional[str],
         terminal_result_destination: str,
         authored_response: Dict[str, Any],
         helper_specs: List[Dict[str, Any]],
         helper_node_ids: List[str] | None,
+        turn_index: int,
     ) -> Dict[str, Any]:
         decision = authored_response["orchestration_decision"]
+        attachment_refs = self._persist_authored_artifacts(
+            run_dir=run_dir,
+            node_id=node_id,
+            turn_index=turn_index,
+            authored_response=authored_response,
+        )
 
-        if decision in {"delegate", "transmute"}:
+        if decision in {"delegate", "transmute", "review"}:
             if helper_node_ids is None:
                 raise ValueError("helper_node_ids must be provided for child-spawning outputs")
             packets = []
@@ -555,7 +568,7 @@ class EywaEngine:
                             "target_ref": creation_parent_node_id,
                         },
                         "message": message,
-                        "attachment_refs": [],
+                        "attachment_refs": attachment_refs,
                     }
                 )
             elif terminal_result_destination == "final_output":
@@ -567,7 +580,7 @@ class EywaEngine:
                             "target_ref": "run_final_output",
                         },
                         "message": message,
-                        "attachment_refs": [],
+                        "attachment_refs": attachment_refs,
                     }
                 )
             payload = {
@@ -580,7 +593,7 @@ class EywaEngine:
                     {
                         "result_type": "failure_explanation",
                         "content": message,
-                        "attachment_refs": [],
+                        "attachment_refs": attachment_refs,
                     }
                 ],
                 "outgoing_packets": packets,
@@ -599,7 +612,7 @@ class EywaEngine:
                         "target_ref": creation_parent_node_id,
                     },
                     "message": response,
-                    "attachment_refs": [],
+                    "attachment_refs": attachment_refs,
                 }
             )
         elif terminal_result_destination == "final_output":
@@ -611,7 +624,7 @@ class EywaEngine:
                         "target_ref": "run_final_output",
                     },
                     "message": response,
-                    "attachment_refs": [],
+                    "attachment_refs": attachment_refs,
                 }
             )
         payload = {
@@ -624,13 +637,40 @@ class EywaEngine:
                 {
                     "result_type": str(authored_response.get("result_type") or "summary"),
                     "content": response,
-                    "attachment_refs": [],
+                    "attachment_refs": attachment_refs,
                 }
             ],
             "outgoing_packets": packets,
         }
         validate_node_output(payload)
         return payload
+
+    def _persist_authored_artifacts(
+        self,
+        *,
+        run_dir: Path,
+        node_id: str,
+        turn_index: int,
+        authored_response: Dict[str, Any],
+    ) -> List[str]:
+        artifacts = authored_response.get("artifacts")
+        if not isinstance(artifacts, list) or not artifacts:
+            return []
+
+        artifact_refs: List[str] = []
+        artifact_root = run_dir / "artifacts" / node_id / f"turn_{turn_index:02d}"
+        for raw_artifact in artifacts:
+            if not isinstance(raw_artifact, dict):
+                continue
+            raw_path = str(raw_artifact.get("path") or "").strip()
+            if not raw_path:
+                continue
+            safe_name = Path(raw_path).name
+            destination = artifact_root / safe_name
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_text(str(raw_artifact.get("content") or ""), encoding="utf-8")
+            artifact_refs.append(relative_ref(destination, run_dir))
+        return artifact_refs
 
     def _allowed_decisions(
         self,
@@ -668,6 +708,13 @@ class EywaEngine:
                 return ["delegate"]
             return ["report_problem"]
 
+        if prompt_family == "review":
+            if child_review:
+                return ["execute_locally"]
+            if can_spawn_child:
+                return ["review"]
+            return ["report_problem"]
+
         allowed = ["execute_locally", "report_problem"]
         if can_spawn_child:
             allowed.insert(1, "transmute")
@@ -701,6 +748,7 @@ class EywaEngine:
         self,
         authored_response: Dict[str, Any],
         *,
+        original_instructions: str,
         resolved_variables: Dict[str, Any],
     ) -> List[Dict[str, Any]]:
         child_defaults = self._default_child_node_overrides(resolved_variables)
@@ -719,6 +767,23 @@ class EywaEngine:
                 }
             ]
 
+        if decision == "review":
+            next_node_overrides = authored_response.get("next_node_overrides") or {}
+            merged_overrides = dict(child_defaults)
+            if isinstance(next_node_overrides, dict):
+                merged_overrides.update(next_node_overrides)
+            return [
+                {
+                    "label": "review_child",
+                    "instructions": self._build_review_child_instruction(
+                        original_instructions=original_instructions,
+                        draft_response=str(authored_response.get("draft_response", "")),
+                        reviewer_message=str(authored_response.get("message_for_reviewer", "")),
+                    ),
+                    "variable_overrides": merged_overrides,
+                }
+            ]
+
         helper_specs = []
         for helper in list(authored_response.get("helpers", [])):
             merged_overrides = dict(child_defaults)
@@ -733,6 +798,43 @@ class EywaEngine:
                 }
             )
         return helper_specs
+
+    @staticmethod
+    def _build_review_child_instruction(
+        *,
+        original_instructions: str,
+        draft_response: str,
+        reviewer_message: str,
+    ) -> str:
+        parts = [
+            "Review this draft answer carefully.",
+            "Find flaws, missing reasoning, or corrections, then produce the strongest corrected answer you can.",
+        ]
+        if reviewer_message.strip():
+            parts.extend(
+                [
+                    "",
+                    "Review focus:",
+                    reviewer_message.strip(),
+                ]
+            )
+        if original_instructions.strip():
+            parts.extend(
+                [
+                    "",
+                    "Original question:",
+                    original_instructions.strip(),
+                ]
+            )
+        if draft_response.strip():
+            parts.extend(
+                [
+                    "",
+                    "Draft answer:",
+                    draft_response.strip(),
+                ]
+            )
+        return "\n".join(parts).strip()
 
     @staticmethod
     def _default_child_node_overrides(resolved_variables: Dict[str, Any]) -> Dict[str, Any]:

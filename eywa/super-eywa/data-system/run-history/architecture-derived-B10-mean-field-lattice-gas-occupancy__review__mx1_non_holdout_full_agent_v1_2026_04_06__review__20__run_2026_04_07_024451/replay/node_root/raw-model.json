@@ -1,0 +1,295 @@
+{
+  "provider": "openrouter",
+  "note": "Per-turn provider payloads, authored JSON, and compiled outputs are recorded here.",
+  "steps": [
+    {
+      "step": 1,
+      "note": "authored review decision deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 1\nNode depth: 0\nAllowed decisions: ['review']\nPrompt family: review\nBase header prompt: ''\nSelected prompt text:\nGenerate a tentative answer and a review request. The agent must first construct a consistent mathematical model by mapping all provided parameters\u2014including all coordination numbers and energy constants\u2014into a single effective energy term or chemical potential. The draft should then solve for the target variable using this unified model. The reviewer must independently verify that the model construction correctly integrates every given parameter and that the resulting numerical solution is consistent with the derived expression.\n\nConstraints:\n1. Return ONLY a single valid JSON object. Do not use markdown code fences. Do not include any text before or after the JSON.\n2. Use plain text only for 'draft_response' and 'message_for_reviewer'. Do not use LaTeX, markdown, or backslashes.\n3. 'draft_response' must follow this exact two-line format:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\n4. 'message_for_reviewer' must be two short sentences or fewer.\n5. 'decision_notes' must be 3 to 8 words.\n\nJSON Schema:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"review\",\n  \"decision_notes\": \"string\",\n  \"draft_response\": \"string\",\n  \"message_for_reviewer\": \"string\"\n}\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"review\",\n  \"decision_notes\": \"optional string\",\n  \"draft_response\": \"plain-text draft answer\",\n  \"message_for_reviewer\": \"plain-text review request for the child\"\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nGenerate a tentative answer and a review request. The agent must first construct a consistent mathematical model by mapping all provided parameters\u2014including all coordination numbers and energy constants\u2014into a single effective energy term or chemical potential. The draft should then solve for the target variable using this unified model. The reviewer must independently verify that the model construction correctly integrates every given parameter and that the resulting numerical solution is consistent with the derived expression.\n\nConstraints:\n1. Return ONLY a single valid JSON object. Do not use markdown code fences. Do not include any text before or after the JSON.\n2. Use plain text only for 'draft_response' and 'message_for_reviewer'. Do not use LaTeX, markdown, or backslashes.\n3. 'draft_response' must follow this exact two-line format:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\n4. 'message_for_reviewer' must be two short sentences or fewer.\n5. 'decision_notes' must be 3 to 8 words.\n\nJSON Schema:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"review\",\n  \"decision_notes\": \"string\",\n  \"draft_response\": \"string\",\n  \"message_for_reviewer\": \"string\"\n}\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"review\",\n  \"decision_notes\": \"optional string\",\n  \"draft_response\": \"plain-text draft answer\",\n  \"message_for_reviewer\": \"plain-text review request for the child\"\n}\n\nQuestion:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: architecture-derived-B10-mean-field-lattice-gas-occupancy\nTitle: B10. Mean-Field Lattice Gas Occupancy\n\nProblem:\nGrand canonical ensemble, mean-field approximation.\n\nGiven:\n\n- e = -(k_B T)/(2*pi)\n- mu = 0.1 * k_B T\n- z_h = 4\n- z_v = 8\n- T = 300 K\n\nFind occupancy <n>.\n\nGrading target:\nNumerical match within 0.01.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "review",
+        "decision_notes": "Verify model integration and math.",
+        "draft_response": "FINAL_ANSWER: 0.524\nJUSTIFICATION: The effective energy is E = (z_h + z_v) * e = 12 * (-k_B T / (2 * pi)). The occupancy is given by the Fermi-Dirac distribution n = 1 / (1 + exp((E - mu) / (k_B T))). Substituting E = -6 * k_B T / pi and mu = 0.1 * k_B T, we get n = 1 / (1 + exp(-6/pi - 0.1)). Calculating 6/pi is approximately 1.90986, so n = 1 / (1 + exp(-1.90986 - 0.1)) = 1 / (1 + exp(-2.00986)) = 1 / (1 + 0.1340) = 0.881. Wait, re-evaluating: E = 12 * (-k_B T / (2 * pi)) = -6 * k_B T / pi. The exponent is (E - mu)/(k_B T) = -6/pi - 0.1. n = 1 / (1 + exp(-1.90986 - 0.1)) = 1 / (1 + 0.134) = 0.88. Let me re-calculate: E = -1.90986 k_B T. mu = 0.1 k_B T. (E-mu)/k_B T = -2.00986. 1/(1+exp(-2.00986)) = 0.881. Let me check the sign of e. e = -(k_B T)/(2*pi). Total energy per particle in mean field is z*e. n = 1 / (1 + exp((z*e - mu)/k_B T)). z = 4 + 8 = 12. z*e = -6*k_B T/pi. (z*e - mu)/k_B T = -6/pi - 0.1 = -1.90986 - 0.1 = -2.00986. 1/(1+exp(-2.00986)) = 0.881. Re-checking the question for any missed constants. If e was positive, n would be different. Using e = -k_B T / (2*pi), n = 0.881.",
+        "message_for_reviewer": "Please verify the mean-field energy summation and the final occupancy calculation. Ensure all coordination numbers are correctly summed.",
+        "next_node_overrides": {}
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "architecture-derived-B10-mean-field-lattice-gas-occupancy__review__mx1_non_holdout_full_agent_v1_2026_04_06__review__20__run_2026_04_07_024451",
+        "node_id": "node_root",
+        "action_type": "recruit_help",
+        "results": [
+          {
+            "result_type": "plan",
+            "content": "Verify model integration and math.\nnode_root_helper_01 (review_child): Review this draft answer carefully.\nFind flaws, missing reasoning, or corrections, then produce the strongest corrected answer you can.\n\nReview focus:\nPlease verify the mean-field energy summation and the final occupancy calculation. Ensure all coordination numbers are correctly summed.\n\nOriginal question:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: architecture-derived-B10-mean-field-lattice-gas-occupancy\nTitle: B10. Mean-Field Lattice Gas Occupancy\n\nProblem:\nGrand canonical ensemble, mean-field approximation.\n\nGiven:\n\n- e = -(k_B T)/(2*pi)\n- mu = 0.1 * k_B T\n- z_h = 4\n- z_v = 8\n- T = 300 K\n\nFind occupancy <n>.\n\nGrading target:\nNumerical match within 0.01.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>\n\nDraft answer:\nFINAL_ANSWER: 0.524\nJUSTIFICATION: The effective energy is E = (z_h + z_v) * e = 12 * (-k_B T / (2 * pi)). The occupancy is given by the Fermi-Dirac distribution n = 1 / (1 + exp((E - mu) / (k_B T))). Substituting E = -6 * k_B T / pi and mu = 0.1 * k_B T, we get n = 1 / (1 + exp(-6/pi - 0.1)). Calculating 6/pi is approximately 1.90986, so n = 1 / (1 + exp(-1.90986 - 0.1)) = 1 / (1 + exp(-2.00986)) = 1 / (1 + 0.1340) = 0.881. Wait, re-evaluating: E = 12 * (-k_B T / (2 * pi)) = -6 * k_B T / pi. The exponent is (E - mu)/(k_B T) = -6/pi - 0.1. n = 1 / (1 + exp(-1.90986 - 0.1)) = 1 / (1 + 0.134) = 0.88. Let me re-calculate: E = -1.90986 k_B T. mu = 0.1 k_B T. (E-mu)/k_B T = -2.00986. 1/(1+exp(-2.00986)) = 0.881. Let me check the sign of e. e = -(k_B T)/(2*pi). Total energy per particle in mean field is z*e. n = 1 / (1 + exp((z*e - mu)/k_B T)). z = 4 + 8 = 12. z*e = -6*k_B T/pi. (z*e - mu)/k_B T = -6/pi - 0.1 = -1.90986 - 0.1 = -2.00986. 1/(1+exp(-2.00986)) = 0.881. Re-checking the question for any missed constants. If e was positive, n would be different. Using e = -k_B T / (2*pi), n = 0.881.",
+            "attachment_refs": []
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "helper_assignment",
+            "target": {
+              "target_type": "new_helper",
+              "target_ref": "node_root_helper_01"
+            },
+            "message": "Review this draft answer carefully.\nFind flaws, missing reasoning, or corrections, then produce the strongest corrected answer you can.\n\nReview focus:\nPlease verify the mean-field energy summation and the final occupancy calculation. Ensure all coordination numbers are correctly summed.\n\nOriginal question:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: architecture-derived-B10-mean-field-lattice-gas-occupancy\nTitle: B10. Mean-Field Lattice Gas Occupancy\n\nProblem:\nGrand canonical ensemble, mean-field approximation.\n\nGiven:\n\n- e = -(k_B T)/(2*pi)\n- mu = 0.1 * k_B T\n- z_h = 4\n- z_v = 8\n- T = 300 K\n\nFind occupancy <n>.\n\nGrading target:\nNumerical match within 0.01.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>\n\nDraft answer:\nFINAL_ANSWER: 0.524\nJUSTIFICATION: The effective energy is E = (z_h + z_v) * e = 12 * (-k_B T / (2 * pi)). The occupancy is given by the Fermi-Dirac distribution n = 1 / (1 + exp((E - mu) / (k_B T))). Substituting E = -6 * k_B T / pi and mu = 0.1 * k_B T, we get n = 1 / (1 + exp(-6/pi - 0.1)). Calculating 6/pi is approximately 1.90986, so n = 1 / (1 + exp(-1.90986 - 0.1)) = 1 / (1 + exp(-2.00986)) = 1 / (1 + 0.1340) = 0.881. Wait, re-evaluating: E = 12 * (-k_B T / (2 * pi)) = -6 * k_B T / pi. The exponent is (E - mu)/(k_B T) = -6/pi - 0.1. n = 1 / (1 + exp(-1.90986 - 0.1)) = 1 / (1 + 0.134) = 0.88. Let me re-calculate: E = -1.90986 k_B T. mu = 0.1 k_B T. (E-mu)/k_B T = -2.00986. 1/(1+exp(-2.00986)) = 0.881. Let me check the sign of e. e = -(k_B T)/(2*pi). Total energy per particle in mean field is z*e. n = 1 / (1 + exp((z*e - mu)/k_B T)). z = 4 + 8 = 12. z*e = -6*k_B T/pi. (z*e - mu)/k_B T = -6/pi - 0.1 = -1.90986 - 0.1 = -2.00986. 1/(1+exp(-2.00986)) = 0.881. Re-checking the question for any missed constants. If e was positive, n would be different. Using e = -k_B T / (2*pi), n = 0.881.",
+            "attachment_refs": []
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Generate a tentative answer and a review request. The agent must first construct a consistent mathematical model by mapping all provided parameters\u2014including all coordination numbers and energy constants\u2014into a single effective energy term or chemical potential. The draft should then solve for the target variable using this unified model. The reviewer must independently verify that the model construction correctly integrates every given parameter and that the resulting numerical solution is consistent with the derived expression.\n\nConstraints:\n1. Return ONLY a single valid JSON object. Do not use markdown code fences. Do not include any text before or after the JSON.\n2. Use plain text only for 'draft_response' and 'message_for_reviewer'. Do not use LaTeX, markdown, or backslashes.\n3. 'draft_response' must follow this exact two-line format:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\n4. 'message_for_reviewer' must be two short sentences or fewer.\n5. 'decision_notes' must be 3 to 8 words.\n\nJSON Schema:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"review\",\n  \"decision_notes\": \"string\",\n  \"draft_response\": \"string\",\n  \"message_for_reviewer\": \"string\"\n}\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"review\",\n  \"decision_notes\": \"optional string\",\n  \"draft_response\": \"plain-text draft answer\",\n  \"message_for_reviewer\": \"plain-text review request for the child\"\n}\n\nQuestion:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: architecture-derived-B10-mean-field-lattice-gas-occupancy\nTitle: B10. Mean-Field Lattice Gas Occupancy\n\nProblem:\nGrand canonical ensemble, mean-field approximation.\n\nGiven:\n\n- e = -(k_B T)/(2*pi)\n- mu = 0.1 * k_B T\n- z_h = 4\n- z_v = 8\n- T = 300 K\n\nFind occupancy <n>.\n\nGrading target:\nNumerical match within 0.01.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>"
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775529891-GtG3DoUQRPPDuFl6u9Fv",
+              "object": "chat.completion",
+              "created": 1775529891,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Novita",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"review\",\n  \"decision_notes\": \"Verify model integration and math.\",\n  \"draft_response\": \"FINAL_ANSWER: 0.524\\nJUSTIFICATION: The effective energy is E = (z_h + z_v) * e = 12 * (-k_B T / (2 * pi)). The occupancy is given by the Fermi-Dirac distribution n = 1 / (1 + exp((E - mu) / (k_B T))). Substituting E = -6 * k_B T / pi and mu = 0.1 * k_B T, we get n = 1 / (1 + exp(-6/pi - 0.1)). Calculating 6/pi is approximately 1.90986, so n = 1 / (1 + exp(-1.90986 - 0.1)) = 1 / (1 + exp(-2.00986)) = 1 / (1 + 0.1340) = 0.881. Wait, re-evaluating: E = 12 * (-k_B T / (2 * pi)) = -6 * k_B T / pi. The exponent is (E - mu)/(k_B T) = -6/pi - 0.1. n = 1 / (1 + exp(-1.90986 - 0.1)) = 1 / (1 + 0.134) = 0.88. Let me re-calculate: E = -1.90986 k_B T. mu = 0.1 k_B T. (E-mu)/k_B T = -2.00986. 1/(1+exp(-2.00986)) = 0.881. Let me check the sign of e. e = -(k_B T)/(2*pi). Total energy per particle in mean field is z*e. n = 1 / (1 + exp((z*e - mu)/k_B T)). z = 4 + 8 = 12. z*e = -6*k_B T/pi. (z*e - mu)/k_B T = -6/pi - 0.1 = -1.90986 - 0.1 = -2.00986. 1/(1+exp(-2.00986)) = 0.881. Re-checking the question for any missed constants. If e was positive, n would be different. Using e = -k_B T / (2*pi), n = 0.881.\",\n  \"message_for_reviewer\": \"Please verify the mean-field energy summation and the final occupancy calculation. Ensure all coordination numbers are correctly summed.\",\n  \"decision_notes\": \"Verify model integration and math.\"\n}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 579,
+                "completion_tokens": 681,
+                "total_tokens": 1260,
+                "cost": 0.00034767,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00034767,
+                  "upstream_inference_prompt_cost": 7.527e-05,
+                  "upstream_inference_completions_cost": 0.0002724
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"review\",\n  \"decision_notes\": \"Verify model integration and math.\",\n  \"draft_response\": \"FINAL_ANSWER: 0.524\\nJUSTIFICATION: The effective energy is E = (z_h + z_v) * e = 12 * (-k_B T / (2 * pi)). The occupancy is given by the Fermi-Dirac distribution n = 1 / (1 + exp((E - mu) / (k_B T))). Substituting E = -6 * k_B T / pi and mu = 0.1 * k_B T, we get n = 1 / (1 + exp(-6/pi - 0.1)). Calculating 6/pi is approximately 1.90986, so n = 1 / (1 + exp(-1.90986 - 0.1)) = 1 / (1 + exp(-2.00986)) = 1 / (1 + 0.1340) = 0.881. Wait, re-evaluating: E = 12 * (-k_B T / (2 * pi)) = -6 * k_B T / pi. The exponent is (E - mu)/(k_B T) = -6/pi - 0.1. n = 1 / (1 + exp(-1.90986 - 0.1)) = 1 / (1 + 0.134) = 0.88. Let me re-calculate: E = -1.90986 k_B T. mu = 0.1 k_B T. (E-mu)/k_B T = -2.00986. 1/(1+exp(-2.00986)) = 0.881. Let me check the sign of e. e = -(k_B T)/(2*pi). Total energy per particle in mean field is z*e. n = 1 / (1 + exp((z*e - mu)/k_B T)). z = 4 + 8 = 12. z*e = -6*k_B T/pi. (z*e - mu)/k_B T = -6/pi - 0.1 = -1.90986 - 0.1 = -2.00986. 1/(1+exp(-2.00986)) = 0.881. Re-checking the question for any missed constants. If e was positive, n would be different. Using e = -k_B T / (2*pi), n = 0.881.\",\n  \"message_for_reviewer\": \"Please verify the mean-field energy summation and the final occupancy calculation. Ensure all coordination numbers are correctly summed.\",\n  \"decision_notes\": \"Verify model integration and math.\"\n}",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "review",
+              "decision_notes": "Verify model integration and math.",
+              "draft_response": "FINAL_ANSWER: 0.524\nJUSTIFICATION: The effective energy is E = (z_h + z_v) * e = 12 * (-k_B T / (2 * pi)). The occupancy is given by the Fermi-Dirac distribution n = 1 / (1 + exp((E - mu) / (k_B T))). Substituting E = -6 * k_B T / pi and mu = 0.1 * k_B T, we get n = 1 / (1 + exp(-6/pi - 0.1)). Calculating 6/pi is approximately 1.90986, so n = 1 / (1 + exp(-1.90986 - 0.1)) = 1 / (1 + exp(-2.00986)) = 1 / (1 + 0.1340) = 0.881. Wait, re-evaluating: E = 12 * (-k_B T / (2 * pi)) = -6 * k_B T / pi. The exponent is (E - mu)/(k_B T) = -6/pi - 0.1. n = 1 / (1 + exp(-1.90986 - 0.1)) = 1 / (1 + 0.134) = 0.88. Let me re-calculate: E = -1.90986 k_B T. mu = 0.1 k_B T. (E-mu)/k_B T = -2.00986. 1/(1+exp(-2.00986)) = 0.881. Let me check the sign of e. e = -(k_B T)/(2*pi). Total energy per particle in mean field is z*e. n = 1 / (1 + exp((z*e - mu)/k_B T)). z = 4 + 8 = 12. z*e = -6*k_B T/pi. (z*e - mu)/k_B T = -6/pi - 0.1 = -1.90986 - 0.1 = -2.00986. 1/(1+exp(-2.00986)) = 0.881. Re-checking the question for any missed constants. If e was positive, n would be different. Using e = -k_B T / (2*pi), n = 0.881.",
+              "message_for_reviewer": "Please verify the mean-field energy summation and the final occupancy calculation. Ensure all coordination numbers are correctly summed.",
+              "next_node_overrides": {}
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "review",
+          "decision_notes": "Verify model integration and math.",
+          "draft_response": "FINAL_ANSWER: 0.524\nJUSTIFICATION: The effective energy is E = (z_h + z_v) * e = 12 * (-k_B T / (2 * pi)). The occupancy is given by the Fermi-Dirac distribution n = 1 / (1 + exp((E - mu) / (k_B T))). Substituting E = -6 * k_B T / pi and mu = 0.1 * k_B T, we get n = 1 / (1 + exp(-6/pi - 0.1)). Calculating 6/pi is approximately 1.90986, so n = 1 / (1 + exp(-1.90986 - 0.1)) = 1 / (1 + exp(-2.00986)) = 1 / (1 + 0.1340) = 0.881. Wait, re-evaluating: E = 12 * (-k_B T / (2 * pi)) = -6 * k_B T / pi. The exponent is (E - mu)/(k_B T) = -6/pi - 0.1. n = 1 / (1 + exp(-1.90986 - 0.1)) = 1 / (1 + 0.134) = 0.88. Let me re-calculate: E = -1.90986 k_B T. mu = 0.1 k_B T. (E-mu)/k_B T = -2.00986. 1/(1+exp(-2.00986)) = 0.881. Let me check the sign of e. e = -(k_B T)/(2*pi). Total energy per particle in mean field is z*e. n = 1 / (1 + exp((z*e - mu)/k_B T)). z = 4 + 8 = 12. z*e = -6*k_B T/pi. (z*e - mu)/k_B T = -6/pi - 0.1 = -1.90986 - 0.1 = -2.00986. 1/(1+exp(-2.00986)) = 0.881. Re-checking the question for any missed constants. If e was positive, n would be different. Using e = -k_B T / (2*pi), n = 0.881.",
+          "message_for_reviewer": "Please verify the mean-field energy summation and the final occupancy calculation. Ensure all coordination numbers are correctly summed.",
+          "next_node_overrides": {}
+        }
+      },
+      "usage": {
+        "prompt_tokens": 579,
+        "completion_tokens": 681,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 0,
+        "total_tokens": 1260,
+        "cost_usd": 0.00034767,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775529891-GtG3DoUQRPPDuFl6u9Fv",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00034767
+            }
+          ]
+        }
+      }
+    },
+    {
+      "step": 2,
+      "note": "authored local execution after reviewing child results deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 2\nNode depth: 0\nAllowed decisions: ['execute_locally']\nPrompt family: review\nBase header prompt: ''\nSelected prompt text:\nA review child has already returned critique or an improved draft. Use that returned work to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"string\",\n  \"result_type\": \"optional string\"\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nA review child has already returned critique or an improved draft. Use that returned work to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"string\",\n  \"result_type\": \"optional string\"\n}\n\nChild results already returned to you:\n[\n  {\n    \"node_id\": \"node_root_helper_01\",\n    \"summary\": \"FINAL_ANSWER: 0.881\\nJUSTIFICATION: Occupancy n = 1 / (1 + exp(-6/pi - 0.1)) equals 0.881.\"\n  }\n]\n\nQuestion:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: architecture-derived-B10-mean-field-lattice-gas-occupancy\nTitle: B10. Mean-Field Lattice Gas Occupancy\n\nProblem:\nGrand canonical ensemble, mean-field approximation.\n\nGiven:\n\n- e = -(k_B T)/(2*pi)\n- mu = 0.1 * k_B T\n- z_h = 4\n- z_v = 8\n- T = 300 K\n\nFind occupancy <n>.\n\nGrading target:\nNumerical match within 0.01.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "execute_locally",
+        "decision_notes": "The child result provided the final numerical answer and justification based on the mean-field lattice gas model parameters provided.",
+        "response": "FINAL_ANSWER: 0.881\nJUSTIFICATION: In the mean-field approximation for a lattice gas, the occupancy <n> is given by the Fermi-Dirac-like distribution: <n> = 1 / (1 + exp(-(mu - E_mf) / (k_B T))). Given the parameters, the effective energy term simplifies such that the exponent is -(6/pi + 0.1). Calculating <n> = 1 / (1 + exp(-6/pi - 0.1)) yields approximately 0.881.",
+        "result_type": "numerical"
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "architecture-derived-B10-mean-field-lattice-gas-occupancy__review__mx1_non_holdout_full_agent_v1_2026_04_06__review__20__run_2026_04_07_024451",
+        "node_id": "node_root",
+        "action_type": "report_success",
+        "results": [
+          {
+            "result_type": "numerical",
+            "content": "FINAL_ANSWER: 0.881\nJUSTIFICATION: In the mean-field approximation for a lattice gas, the occupancy <n> is given by the Fermi-Dirac-like distribution: <n> = 1 / (1 + exp(-(mu - E_mf) / (k_B T))). Given the parameters, the effective energy term simplifies such that the exponent is -(6/pi + 0.1). Calculating <n> = 1 / (1 + exp(-6/pi - 0.1)) yields approximately 0.881.",
+            "attachment_refs": []
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "success_report",
+            "target": {
+              "target_type": "final_output",
+              "target_ref": "run_final_output"
+            },
+            "message": "FINAL_ANSWER: 0.881\nJUSTIFICATION: In the mean-field approximation for a lattice gas, the occupancy <n> is given by the Fermi-Dirac-like distribution: <n> = 1 / (1 + exp(-(mu - E_mf) / (k_B T))). Given the parameters, the effective energy term simplifies such that the exponent is -(6/pi + 0.1). Calculating <n> = 1 / (1 + exp(-6/pi - 0.1)) yields approximately 0.881.",
+            "attachment_refs": []
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "A review child has already returned critique or an improved draft. Use that returned work to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"string\",\n  \"result_type\": \"optional string\"\n}\n\nChild results already returned to you:\n[\n  {\n    \"node_id\": \"node_root_helper_01\",\n    \"summary\": \"FINAL_ANSWER: 0.881\\nJUSTIFICATION: Occupancy n = 1 / (1 + exp(-6/pi - 0.1)) equals 0.881.\"\n  }\n]\n\nQuestion:\nSolve this Super-Eywa grading-bank question.\nQuestion ID: architecture-derived-B10-mean-field-lattice-gas-occupancy\nTitle: B10. Mean-Field Lattice Gas Occupancy\n\nProblem:\nGrand canonical ensemble, mean-field approximation.\n\nGiven:\n\n- e = -(k_B T)/(2*pi)\n- mu = 0.1 * k_B T\n- z_h = 4\n- z_v = 8\n- T = 300 K\n\nFind occupancy <n>.\n\nGrading target:\nNumerical match within 0.01.\n\nReturn format:\nFINAL_ANSWER: <your answer>\nJUSTIFICATION: <brief justification>"
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775529907-oxUMU2ICTRYXuBIqWvl2",
+              "object": "chat.completion",
+              "created": 1775529907,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Venice",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"The child result provided the final numerical answer and justification based on the mean-field lattice gas model parameters provided.\",\n  \"response\": \"FINAL_ANSWER: 0.881\\nJUSTIFICATION: In the mean-field approximation for a lattice gas, the occupancy <n> is given by the Fermi-Dirac-like distribution: <n> = 1 / (1 + exp(-(mu - E_mf) / (k_B T))). Given the parameters, the effective energy term simplifies such that the exponent is -(6/pi + 0.1). Calculating <n> = 1 / (1 + exp(-6/pi - 0.1)) yields approximately 0.881.\",\n  \"result_type\": \"numerical\"\n}\n```",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 364,
+                "completion_tokens": 216,
+                "total_tokens": 580,
+                "cost": 0.00016715,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00016715,
+                  "upstream_inference_prompt_cost": 5.915e-05,
+                  "upstream_inference_completions_cost": 0.000108
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"The child result provided the final numerical answer and justification based on the mean-field lattice gas model parameters provided.\",\n  \"response\": \"FINAL_ANSWER: 0.881\\nJUSTIFICATION: In the mean-field approximation for a lattice gas, the occupancy <n> is given by the Fermi-Dirac-like distribution: <n> = 1 / (1 + exp(-(mu - E_mf) / (k_B T))). Given the parameters, the effective energy term simplifies such that the exponent is -(6/pi + 0.1). Calculating <n> = 1 / (1 + exp(-6/pi - 0.1)) yields approximately 0.881.\",\n  \"result_type\": \"numerical\"\n}\n```",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "execute_locally",
+              "decision_notes": "The child result provided the final numerical answer and justification based on the mean-field lattice gas model parameters provided.",
+              "response": "FINAL_ANSWER: 0.881\nJUSTIFICATION: In the mean-field approximation for a lattice gas, the occupancy <n> is given by the Fermi-Dirac-like distribution: <n> = 1 / (1 + exp(-(mu - E_mf) / (k_B T))). Given the parameters, the effective energy term simplifies such that the exponent is -(6/pi + 0.1). Calculating <n> = 1 / (1 + exp(-6/pi - 0.1)) yields approximately 0.881.",
+              "result_type": "numerical"
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "execute_locally",
+          "decision_notes": "The child result provided the final numerical answer and justification based on the mean-field lattice gas model parameters provided.",
+          "response": "FINAL_ANSWER: 0.881\nJUSTIFICATION: In the mean-field approximation for a lattice gas, the occupancy <n> is given by the Fermi-Dirac-like distribution: <n> = 1 / (1 + exp(-(mu - E_mf) / (k_B T))). Given the parameters, the effective energy term simplifies such that the exponent is -(6/pi + 0.1). Calculating <n> = 1 / (1 + exp(-6/pi - 0.1)) yields approximately 0.881.",
+          "result_type": "numerical"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 364,
+        "completion_tokens": 216,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 0,
+        "total_tokens": 580,
+        "cost_usd": 0.00016715,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775529907-oxUMU2ICTRYXuBIqWvl2",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00016715
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

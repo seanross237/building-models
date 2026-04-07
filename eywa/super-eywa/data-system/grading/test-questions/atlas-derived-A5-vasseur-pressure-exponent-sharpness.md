@@ -1,10 +1,12 @@
 # A5. Vasseur Pressure Exponent Sharpness
 
-- Type: Atlas-derived
+- Family: atlas-derived
+- Entry Type: reasoning
 - Domain: Mathematics / PDE regularity
+- Grader Type: binary_reasoning
 - Source: Atlas Vasseur Pressure mission
 
-## Question
+## Problem
 
 Can the De Giorgi recurrence exponent beta = 4/3 be improved for 3D Navier-Stokes?
 
@@ -25,4 +27,4 @@ Binary:
 
 ## Notes
 
-- 
+-

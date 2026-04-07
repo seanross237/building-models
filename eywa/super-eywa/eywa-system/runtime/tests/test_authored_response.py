@@ -44,6 +44,21 @@ class AuthoredResponseTests(unittest.TestCase):
         )
         self.assertEqual(normalized["helpers"][0]["label"], "helper_01")
 
+    def test_validate_review_requires_draft_and_message(self) -> None:
+        normalized = validate_authored_response(
+            {
+                "schema_name": "eywa_node_response",
+                "schema_version": "v1",
+                "orchestration_decision": "review",
+                "draft_response": "FINAL_ANSWER: 3\nJUSTIFICATION: draft",
+                "message_for_reviewer": "Check the proof and correct any mistakes.",
+            },
+            allowed_decisions=["review", "report_problem"],
+            max_helpers=1,
+        )
+        self.assertEqual(normalized["orchestration_decision"], "review")
+        self.assertIn("FINAL_ANSWER: 3", normalized["draft_response"])
+
     def test_validate_rejects_unknown_decision(self) -> None:
         with self.assertRaises(AuthoredResponseError):
             validate_authored_response(

@@ -1,0 +1,15 @@
+{
+  "contract_name": "final_output",
+  "contract_version": "v1",
+  "run_id": "coding-S4-ahc030-polyomino-mining__execute__mx1_non_holdout_full_agent_v1_2026_04_06__execute__18__run_2026_04_07_024226",
+  "created_at_utc": "2026-04-07T02:43:50Z",
+  "source_node_id": "node_root",
+  "source_node_record_ref": "nodes/node_root/node_record.json",
+  "action_type": "report_success",
+  "terminal_result_destination": "final_output",
+  "result": {
+    "result_type": "summary",
+    "content": "FINAL_ANSWER: import sys\nimport math\nimport random\n\ndef solve():\n    # Read initial grid dimensions and polyomino templates\n    line = sys.stdin.readline()\n    if not line: return\n    W, H, K = map(int, line.split())\n    \n    templates = []\n    for _ in range(K):\n        t_line = sys.stdin.readline().split()\n        size = int(t_line[0])\n        cells = []\n        for i in range(size):\n            cells.append(list(map(int, sys.stdin.readline().split())))\n        templates.append(cells)\n\n    # Probabilistic grid: P(cell is oil)\n    prob_grid = [[0.0 for _ in range(W)] for _ in range(H)]\n    # Possible placements for each polyomino\n    placements = []\n    for k in range(K):\n        p_list = []\n        for r in range(H):\n            for c in range(W):\n                valid = True\n                current_p = []\n                for dr, dc in templates[k]:\n                    nr, nc = r + dr, c + dc\n                    if 0 <= nr < H and 0 <= nc < W:\n                        current_p.append((nr, nc))\n                    else:\n                        valid = False\n                        break\n                if valid:\n                    p_list.append(current_p)\n        placements.append(p_list)\n\n    # Bayesian Update: We assume each polyomino is placed exactly once.\n    # For simplicity in this heuristic, we maintain a weight for each placement.\n    # weights[k][i] is the probability that polyomino k is at placement i.\n    weights = [[1.0 / len(p) if p else 0 for p in placements] for placements in placements]\n\n    def get_expected_oil(r, c):\n        # Expected value of cell (r,c) being oil\n        # P(oil) = 1 - P(not oil) = 1 - Product_{k} P(k does not cover r,c)\n        p_not_oil = 1.0\n        for k in range(K):\n            p_k_covers = 0.0\n            for i, p_cells in enumerate(placements[k]):\n                if (r, c) in p_cells:\n                    p_k_covers += weights[k][i]\n            p_not_oil *= (1.0 - p_k_covers)\n        return 1.0 - p_not_oil\n\n    def query_drill(r, c):\n        print(f\"DRILL {r} {c}\", flush=True)\n        res = sys.stdin.readline().strip()\n        if res == \"YES\": return 1\n        if res == \"NO\": return 0",
+    "attachment_refs": []
+  }
+}

@@ -1,10 +1,12 @@
 # S6. AHC037 / Soda
 
-- Type: Coding
+- Family: coding
+- Entry Type: coding
 - Subtype: Score-gradient task
+- Grader Type: continuous_score
 - Source: https://atcoder.jp/contests/ahc037/tasks/ahc037_a
 
-## Task
+## Problem
 
 Starting from beverage (0, 0), build a target set of 1000 beverages with desired sweetness and carbonation pairs using a sequence of monotone derivation operations with minimum total cost.
 
@@ -20,4 +22,4 @@ It rewards reuse, abstraction, and discovering shared intermediate states.
 
 ## Notes
 
-- 
+-

@@ -1,0 +1,82 @@
+{
+  "schema_name": "eywa_grading_trace",
+  "schema_version": "v1",
+  "question_id": "coding-S4-ahc030-polyomino-mining",
+  "run_id": "coding-S4-ahc030-polyomino-mining__execute__mx1_non_holdout_full_agent_v1_2026_04_06__execute__19__run_2026_04_07_024427",
+  "label": "mx1_execute_19",
+  "grader_provider": "openrouter",
+  "grader_model": "google/gemma-4-26b-a4b-it",
+  "grading": {
+    "grading_status": "ungraded",
+    "correct": null,
+    "score": null,
+    "expected": null,
+    "extracted_answer": null,
+    "normalized_answer": null,
+    "grading_notes": "The problem requires external execution to determine the score (continuous score based on probing cost). The authoritative reference indicates 'requires_external_execution: true' and 'has_authoritative_reference: false'. As a grading agent, I cannot execute the code or simulate the environment to calculate the cost-based score.",
+    "confidence": "high",
+    "grading_method": "agent_v1"
+  },
+  "provider_payload": {
+    "provider": "openrouter",
+    "model": "google/gemma-4-26b-a4b-it",
+    "request": [
+      {
+        "role": "system",
+        "content": "You are the grading agent for Super-Eywa benchmark questions. Judge whether the submitted answer should count as correct under the authoritative benchmark reference. Be tolerant of harmless formatting differences, extra prose, punctuation, and equivalent surface forms. If the benchmark lacks enough authoritative information or requires execution/hidden tests you cannot perform, set grading_status to 'ungraded' and set correct and score to null. Return only valid JSON. Do not use markdown fences."
+      },
+      {
+        "role": "user",
+        "content": "Return exactly one JSON object matching this shape:\n{\n  \"grading_status\": \"graded\",\n  \"correct\": false,\n  \"score\": 0.0,\n  \"expected\": null,\n  \"extracted_answer\": \"string\",\n  \"normalized_answer\": \"string or null\",\n  \"grading_notes\": \"string\",\n  \"confidence\": \"medium\"\n}\n\nQuestion ID: coding-S4-ahc030-polyomino-mining\nTitle: S4. AHC030 / Polyomino Mining\nFamily: coding\nEntry type: coding\nGrader type hint: continuous_score\nGrader config hint:\n{\n  \"grader_type\": \"continuous_score\"\n}\n\nProblem:\nGiven known polyomino oil-field shapes but unknown placements, recover all oil-containing cells with as little probing cost as possible using drilling, noisy aggregate queries, and final guesses.\n\nGrading target:\nLower probing cost is better.\nContest score is derived from absolute and relative cost.\n\nAuthoritative reference:\n{\n  \"correct_answer\": null,\n  \"expected\": null,\n  \"grader_type\": \"continuous_score\",\n  \"grader_config\": {\n    \"grader_type\": \"continuous_score\"\n  },\n  \"grading_target\": \"Lower probing cost is better.\\nContest score is derived from absolute and relative cost.\",\n  \"has_authoritative_reference\": false,\n  \"requires_external_execution\": true\n}\n\nSubmitted final result text:\nFINAL_ANSWER: import sys\nimport math\nimport collections\n\nclass StateModel:\n    def __init__(self, width, height, polyominoes):\n        self.width = width\n        self.height = height\n        self.polyominoes = polyominoes\n        self.prob_map = [[1.0 / (width * height) for _ in range(height)] for _ in range(width)]\n        self.visited = [[False for _ in range(height)] for _ in range(width)]\n        self.is_oil = [[False for _ in range(height)] for _ in range(width)]\n\n    def update_belief(self, x, y, observed_oil):\n        self.visited[x][y] = True\n        self.is_oil[x][y] = observed_oil\n        adjustment = 0.5 if observed_oil else -0.5\n        for dx in range(-2, 3):\n            for dy in range(-2, 3):\n                nx, ny = x + dx, y + dy\n                if 0 <= nx < self.width and 0 <= ny < self.height:\n                    self.prob_map[nx][ny] = max(0.01, min(0.99, self.prob_map[nx][ny] + adjustment * 0.1))\n\nclass HeuristicEngine:\n    def __init__(self, model):\n        self.model = model\n\n    def select_next_probe(self):\n        best_score = -1.0\n        best_cell = (0, 0)\n        for x in range(self.model.width):\n            for y in range(self.model.height):\n                if not self.model.visited[x][y]:\n                    score = self.model.prob_map[x][y] * (1.0 - self.model.prob_map[x][y])\n                    if score > best_score:\n                        best_score = score\n                        best_cell = (x, y)\n        return best_cell\n\n    def get_expected_information_gain(self, x, y):\n        return self.model.prob_map[x][y]\n\nclass InteractionHandler:\n    def __init__(self):\n        self.input_stream = sys.stdin\n        self.output_stream = sys.stdout\n\n    def query_probe(self, x, y):\n        print(f\"PROBE {x} {y}\", flush=True)\n        line = self.input_stream.readline().strip()\n        if not line: return False\n        return line == \"OIL\"\n\nJudge whether the submitted answer should count as correct. Do not penalize harmless formatting or extra explanation if the actual answer is clearly right. If the answer is wrong or the benchmark is not gradeable from the reference above, say so."
+      }
+    ],
+    "response": {
+      "id": "gen-1775529902-RZl1zgL4nqlAiQnleFJW",
+      "object": "chat.completion",
+      "created": 1775529902,
+      "model": "google/gemma-4-26b-a4b-it-20260403",
+      "provider": "Parasail",
+      "system_fingerprint": null,
+      "choices": [
+        {
+          "index": 0,
+          "logprobs": null,
+          "finish_reason": "stop",
+          "native_finish_reason": "stop",
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"grading_status\": \"ungraded\",\n  \"correct\": null,\n  \"score\": null,\n  \"expected\": null,\n  \"extracted_answer\": null,\n  \"normalized_answer\": null,\n  \"grading_notes\": \"The problem requires external execution to determine the score (continuous score based on probing cost). The authoritative reference indicates 'requires_external_execution: true' and 'has_authoritative_reference: false'. As a grading agent, I cannot execute the code or simulate the environment to calculate the cost-based score.\",\n  \"confidence\": \"high\"\n}",
+            "refusal": null,
+            "reasoning": null
+          }
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 1106,
+        "completion_tokens": 133,
+        "total_tokens": 1239,
+        "cost": 0.00019698,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 192,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00019698,
+          "upstream_inference_prompt_cost": 0.00014378,
+          "upstream_inference_completions_cost": 5.32e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "repair_response": null,
+    "parse_error": null,
+    "fallback_reason": null
+  }
+}

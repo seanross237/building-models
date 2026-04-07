@@ -1,0 +1,398 @@
+{
+  "provider": "openrouter",
+  "note": "Per-turn provider payloads, authored JSON, and compiled outputs are recorded here.",
+  "steps": [
+    {
+      "step": 1,
+      "note": "authored delegate decision deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 1\nNode depth: 0\nAllowed decisions: ['delegate']\nPrompt family: delegate\nBase header prompt: ''\nSelected prompt text:\nBreak the problem into a small number of genuinely useful subproblems for other agents.\nDo not restate the original question in multiple ways.\nEach helper should get one focused mathematical job that materially helps solve the original problem.\nChoose the number of helpers based on the task. Do not hardcode the same helper count every time.\nUse plain text only inside helper instructions. Do not use markdown, code fences, or LaTeX-style backslashes.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"optional string\",\n  \"helpers\": [\n    {\n      \"label\": \"helper_1\",\n      \"instructions\": \"plain-text subproblem for the first helper\"\n    }\n  ],\n  \"synthesis_brief\": \"how the parent should combine the child results\"\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nBreak the problem into a small number of genuinely useful subproblems for other agents.\nDo not restate the original question in multiple ways.\nEach helper should get one focused mathematical job that materially helps solve the original problem.\nChoose the number of helpers based on the task. Do not hardcode the same helper count every time.\nUse plain text only inside helper instructions. Do not use markdown, code fences, or LaTeX-style backslashes.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"optional string\",\n  \"helpers\": [\n    {\n      \"label\": \"helper_1\",\n      \"instructions\": \"plain-text subproblem for the first helper\"\n    }\n  ],\n  \"synthesis_brief\": \"how the parent should combine the child results\"\n}\n\nQuestion:\nSolve this Super-Eywa coding benchmark.\nQuestion ID: coding-B1-usaco-2024-us-open-platinum-identity-theft\nTitle: B1. USACO 2024 US Open Platinum / Identity Theft\n\nProblem:\n# Identity Theft\n\nWrite `main.py`.\n\nFarmer John has `N` cows, each with a bitstring ID.\nEach cow may report any prefix of its final ID, including the full string.\nIf a reported prefix is the full final ID of a different cow, Bessie thinks identity theft happened.\n\nYou may append bits to the end of each original ID.\nAppending one bit costs one second.\nFind the minimum total number of appended bits needed so that no cow can ever be mistaken for another.\n\n## Input\n\n- Line 1: `N`\n- Next `N` lines: the original bitstring IDs\n\n## Output\n\n- One integer: the minimum total appended-bit cost\n\n## Constraints\n\n- `1 <= N <= 10^5`\n- Every ID is non-empty\n- The total length of all IDs is at most `10^6`\n\n## Notes\n\n- This v1 packet grades only on bundled public samples.\n- Source problem: USACO 2024 US Open Platinum, Problem 1.\n\nSubmission contract:\n- Return a single Python submission file named main.py.\n- Read from stdin and write to stdout.\n- Put the full file content in the artifacts list of your execute_locally JSON response.\n- Use the response field only for a brief submission summary.\n- Do not wrap the code in markdown fences inside artifacts.\n\nCritical validity rules:\n- Your program is judged by the stdout it prints when run, not by the summary in your JSON response.\n- Print exactly the contestant output described in the Output section, and nothing else.\n- Do not print the objective score, estimated score, labels, explanations, or debug text unless the Output section explicitly requires them.\n- If the Output section requires a count/header on the first line, print that first line exactly.\n- Every printed index, count, and coordinate must stay within the allowed ranges.\n- Prefer a simple valid baseline solution over an ambitious but invalid one.\n- If the problem permits an empty or minimal valid plan, that is better than malformed output.\n\nGrading target:\nBinary hidden-test acceptance.",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "delegate",
+        "decision_notes": "The problem is a Trie-based optimization problem. To prevent identity theft, no cow's ID can be a prefix of another cow's ID. This is equivalent to ensuring that in a Trie containing all final IDs, no leaf node (representing a cow's ID) is an ancestor of another leaf node. We need to find the minimum number of bits to append to existing strings to satisfy this property.",
+        "helpers": [
+          {
+            "label": "trie_construction_and_analysis",
+            "instructions": "Construct a Trie from the given N bitstrings. For each node in the Trie, track if it is an end-of-string node for one or more cows. Identify the structure of the Trie, specifically focusing on paths where an end-of-string node is an ancestor of other nodes or where multiple strings share a prefix that leads to multiple branches.",
+            "variable_overrides": {}
+          },
+          {
+            "label": "greedy_optimization_logic",
+            "instructions": "Given the Trie structure where some nodes are marked as 'terminal' (representing an original ID), determine the minimum number of bits to append to each terminal node such that no terminal node is a prefix of another. This can be modeled as: for every terminal node that has descendants in the Trie, we must extend that terminal node's ID with enough bits to move it to a unique leaf position that does not block other paths. Calculate the cost for each such node.",
+            "variable_overrides": {}
+          }
+        ],
+        "synthesis_brief": "Combine the Trie structure and the cost calculation. The total cost is the sum of bits appended to each original ID. Specifically, for every node in the Trie that is marked as a cow's ID, if that node has descendants, we must append bits to make it a leaf. However, the problem asks for the minimum total bits. The optimal strategy involves ensuring that for every node that is a prefix of another, we extend the shorter one. The final answer is the sum of the required extensions."
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "coding-B1-usaco-2024-us-open-platinum-identity-theft__delegate__mx1_coding_non_holdout_v2_2026_04_07__delegate__12__run_2026_04_07_082703",
+        "node_id": "node_root",
+        "action_type": "recruit_help",
+        "results": [
+          {
+            "result_type": "plan",
+            "content": "The problem is a Trie-based optimization problem. To prevent identity theft, no cow's ID can be a prefix of another cow's ID. This is equivalent to ensuring that in a Trie containing all final IDs, no leaf node (representing a cow's ID) is an ancestor of another leaf node. We need to find the minimum number of bits to append to existing strings to satisfy this property.\nnode_root_helper_01 (trie_construction_and_analysis): Construct a Trie from the given N bitstrings. For each node in the Trie, track if it is an end-of-string node for one or more cows. Identify the structure of the Trie, specifically focusing on paths where an end-of-string node is an ancestor of other nodes or where multiple strings share a prefix that leads to multiple branches.\nnode_root_helper_02 (greedy_optimization_logic): Given the Trie structure where some nodes are marked as 'terminal' (representing an original ID), determine the minimum number of bits to append to each terminal node such that no terminal node is a prefix of another. This can be modeled as: for every terminal node that has descendants in the Trie, we must extend that terminal node's ID with enough bits to move it to a unique leaf position that does not block other paths. Calculate the cost for each such node.",
+            "attachment_refs": []
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "helper_assignment",
+            "target": {
+              "target_type": "new_helper",
+              "target_ref": "node_root_helper_01"
+            },
+            "message": "Construct a Trie from the given N bitstrings. For each node in the Trie, track if it is an end-of-string node for one or more cows. Identify the structure of the Trie, specifically focusing on paths where an end-of-string node is an ancestor of other nodes or where multiple strings share a prefix that leads to multiple branches.",
+            "attachment_refs": []
+          },
+          {
+            "message_type": "helper_assignment",
+            "target": {
+              "target_type": "new_helper",
+              "target_ref": "node_root_helper_02"
+            },
+            "message": "Given the Trie structure where some nodes are marked as 'terminal' (representing an original ID), determine the minimum number of bits to append to each terminal node such that no terminal node is a prefix of another. This can be modeled as: for every terminal node that has descendants in the Trie, we must extend that terminal node's ID with enough bits to move it to a unique leaf position that does not block other paths. Calculate the cost for each such node.",
+            "attachment_refs": []
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Break the problem into a small number of genuinely useful subproblems for other agents.\nDo not restate the original question in multiple ways.\nEach helper should get one focused mathematical job that materially helps solve the original problem.\nChoose the number of helpers based on the task. Do not hardcode the same helper count every time.\nUse plain text only inside helper instructions. Do not use markdown, code fences, or LaTeX-style backslashes.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"optional string\",\n  \"helpers\": [\n    {\n      \"label\": \"helper_1\",\n      \"instructions\": \"plain-text subproblem for the first helper\"\n    }\n  ],\n  \"synthesis_brief\": \"how the parent should combine the child results\"\n}\n\nQuestion:\nSolve this Super-Eywa coding benchmark.\nQuestion ID: coding-B1-usaco-2024-us-open-platinum-identity-theft\nTitle: B1. USACO 2024 US Open Platinum / Identity Theft\n\nProblem:\n# Identity Theft\n\nWrite `main.py`.\n\nFarmer John has `N` cows, each with a bitstring ID.\nEach cow may report any prefix of its final ID, including the full string.\nIf a reported prefix is the full final ID of a different cow, Bessie thinks identity theft happened.\n\nYou may append bits to the end of each original ID.\nAppending one bit costs one second.\nFind the minimum total number of appended bits needed so that no cow can ever be mistaken for another.\n\n## Input\n\n- Line 1: `N`\n- Next `N` lines: the original bitstring IDs\n\n## Output\n\n- One integer: the minimum total appended-bit cost\n\n## Constraints\n\n- `1 <= N <= 10^5`\n- Every ID is non-empty\n- The total length of all IDs is at most `10^6`\n\n## Notes\n\n- This v1 packet grades only on bundled public samples.\n- Source problem: USACO 2024 US Open Platinum, Problem 1.\n\nSubmission contract:\n- Return a single Python submission file named main.py.\n- Read from stdin and write to stdout.\n- Put the full file content in the artifacts list of your execute_locally JSON response.\n- Use the response field only for a brief submission summary.\n- Do not wrap the code in markdown fences inside artifacts.\n\nCritical validity rules:\n- Your program is judged by the stdout it prints when run, not by the summary in your JSON response.\n- Print exactly the contestant output described in the Output section, and nothing else.\n- Do not print the objective score, estimated score, labels, explanations, or debug text unless the Output section explicitly requires them.\n- If the Output section requires a count/header on the first line, print that first line exactly.\n- Every printed index, count, and coordinate must stay within the allowed ranges.\n- Prefer a simple valid baseline solution over an ambitious but invalid one.\n- If the problem permits an empty or minimal valid plan, that is better than malformed output.\n\nGrading target:\nBinary hidden-test acceptance."
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775550423-VKuK2IVdyJDnUeBMiDpq",
+              "object": "chat.completion",
+              "created": 1775550423,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Parasail",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"The problem is a Trie-based optimization problem. To prevent identity theft, no cow's ID can be a prefix of another cow's ID. This is equivalent to ensuring that in a Trie containing all final IDs, no leaf node (representing a cow's ID) is an ancestor of another leaf node. We need to find the minimum number of bits to append to existing strings to satisfy this property.\",\n  \"helpers\": [\n    {\n      \"label\": \"trie_construction_and_analysis\",\n      \"instructions\": \"Construct a Trie from the given N bitstrings. For each node in the Trie, track if it is an end-of-string node for one or more cows. Identify the structure of the Trie, specifically focusing on paths where an end-of-string node is an ancestor of other nodes or where multiple strings share a prefix that leads to multiple branches.\"\n    },\n    {\n      \"label\": \"greedy_optimization_logic\",\n      \"instructions\": \"Given the Trie structure where some nodes are marked as 'terminal' (representing an original ID), determine the minimum number of bits to append to each terminal node such that no terminal node is a prefix of another. This can be modeled as: for every terminal node that has descendants in the Trie, we must extend that terminal node's ID with enough bits to move it to a unique leaf position that does not block other paths. Calculate the cost for each such node.\"\n    }\n  ],\n  \"synthesis_brief\": \"Combine the Trie structure and the cost calculation. The total cost is the sum of bits appended to each original ID. Specifically, for every node in the Trie that is marked as a cow's ID, if that node has descendants, we must append bits to make it a leaf. However, the problem asks for the minimum total bits. The optimal strategy involves ensuring that for every node that is a prefix of another, we extend the shorter one. The final answer is the sum of the required extensions.\"\n}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 761,
+                "completion_tokens": 468,
+                "total_tokens": 1229,
+                "cost": 0.00028613,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00028613,
+                  "upstream_inference_prompt_cost": 9.893e-05,
+                  "upstream_inference_completions_cost": 0.0001872
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"The problem is a Trie-based optimization problem. To prevent identity theft, no cow's ID can be a prefix of another cow's ID. This is equivalent to ensuring that in a Trie containing all final IDs, no leaf node (representing a cow's ID) is an ancestor of another leaf node. We need to find the minimum number of bits to append to existing strings to satisfy this property.\",\n  \"helpers\": [\n    {\n      \"label\": \"trie_construction_and_analysis\",\n      \"instructions\": \"Construct a Trie from the given N bitstrings. For each node in the Trie, track if it is an end-of-string node for one or more cows. Identify the structure of the Trie, specifically focusing on paths where an end-of-string node is an ancestor of other nodes or where multiple strings share a prefix that leads to multiple branches.\"\n    },\n    {\n      \"label\": \"greedy_optimization_logic\",\n      \"instructions\": \"Given the Trie structure where some nodes are marked as 'terminal' (representing an original ID), determine the minimum number of bits to append to each terminal node such that no terminal node is a prefix of another. This can be modeled as: for every terminal node that has descendants in the Trie, we must extend that terminal node's ID with enough bits to move it to a unique leaf position that does not block other paths. Calculate the cost for each such node.\"\n    }\n  ],\n  \"synthesis_brief\": \"Combine the Trie structure and the cost calculation. The total cost is the sum of bits appended to each original ID. Specifically, for every node in the Trie that is marked as a cow's ID, if that node has descendants, we must append bits to make it a leaf. However, the problem asks for the minimum total bits. The optimal strategy involves ensuring that for every node that is a prefix of another, we extend the shorter one. The final answer is the sum of the required extensions.\"\n}",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "delegate",
+              "decision_notes": "The problem is a Trie-based optimization problem. To prevent identity theft, no cow's ID can be a prefix of another cow's ID. This is equivalent to ensuring that in a Trie containing all final IDs, no leaf node (representing a cow's ID) is an ancestor of another leaf node. We need to find the minimum number of bits to append to existing strings to satisfy this property.",
+              "helpers": [
+                {
+                  "label": "trie_construction_and_analysis",
+                  "instructions": "Construct a Trie from the given N bitstrings. For each node in the Trie, track if it is an end-of-string node for one or more cows. Identify the structure of the Trie, specifically focusing on paths where an end-of-string node is an ancestor of other nodes or where multiple strings share a prefix that leads to multiple branches.",
+                  "variable_overrides": {}
+                },
+                {
+                  "label": "greedy_optimization_logic",
+                  "instructions": "Given the Trie structure where some nodes are marked as 'terminal' (representing an original ID), determine the minimum number of bits to append to each terminal node such that no terminal node is a prefix of another. This can be modeled as: for every terminal node that has descendants in the Trie, we must extend that terminal node's ID with enough bits to move it to a unique leaf position that does not block other paths. Calculate the cost for each such node.",
+                  "variable_overrides": {}
+                }
+              ],
+              "synthesis_brief": "Combine the Trie structure and the cost calculation. The total cost is the sum of bits appended to each original ID. Specifically, for every node in the Trie that is marked as a cow's ID, if that node has descendants, we must append bits to make it a leaf. However, the problem asks for the minimum total bits. The optimal strategy involves ensuring that for every node that is a prefix of another, we extend the shorter one. The final answer is the sum of the required extensions."
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "delegate",
+          "decision_notes": "The problem is a Trie-based optimization problem. To prevent identity theft, no cow's ID can be a prefix of another cow's ID. This is equivalent to ensuring that in a Trie containing all final IDs, no leaf node (representing a cow's ID) is an ancestor of another leaf node. We need to find the minimum number of bits to append to existing strings to satisfy this property.",
+          "helpers": [
+            {
+              "label": "trie_construction_and_analysis",
+              "instructions": "Construct a Trie from the given N bitstrings. For each node in the Trie, track if it is an end-of-string node for one or more cows. Identify the structure of the Trie, specifically focusing on paths where an end-of-string node is an ancestor of other nodes or where multiple strings share a prefix that leads to multiple branches.",
+              "variable_overrides": {}
+            },
+            {
+              "label": "greedy_optimization_logic",
+              "instructions": "Given the Trie structure where some nodes are marked as 'terminal' (representing an original ID), determine the minimum number of bits to append to each terminal node such that no terminal node is a prefix of another. This can be modeled as: for every terminal node that has descendants in the Trie, we must extend that terminal node's ID with enough bits to move it to a unique leaf position that does not block other paths. Calculate the cost for each such node.",
+              "variable_overrides": {}
+            }
+          ],
+          "synthesis_brief": "Combine the Trie structure and the cost calculation. The total cost is the sum of bits appended to each original ID. Specifically, for every node in the Trie that is marked as a cow's ID, if that node has descendants, we must append bits to make it a leaf. However, the problem asks for the minimum total bits. The optimal strategy involves ensuring that for every node that is a prefix of another, we extend the shorter one. The final answer is the sum of the required extensions."
+        }
+      },
+      "usage": {
+        "prompt_tokens": 761,
+        "completion_tokens": 468,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 0,
+        "total_tokens": 1229,
+        "cost_usd": 0.00028613,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775550423-VKuK2IVdyJDnUeBMiDpq",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00028613
+            }
+          ]
+        }
+      }
+    },
+    {
+      "step": 2,
+      "note": "authored problem report deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 2\nNode depth: 0\nAllowed decisions: ['execute_locally']\nPrompt family: delegate\nBase header prompt: ''\nSelected prompt text:\nChild results have already come back to you. Use them to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nChild results have already come back to you. Use them to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\n\nSynthesis brief from the earlier child-creation step:\nCombine the Trie structure and the cost calculation. The total cost is the sum of bits appended to each original ID. Specifically, for every node in the Trie that is marked as a cow's ID, if that node has descendants, we must append bits to make it a leaf. However, the problem asks for the minimum total bits. The optimal strategy involves ensuring that for every node that is a prefix of another, we extend the shorter one. The final answer is the sum of the required extensions.\n\nChild results already returned to you:\n[\n  {\n    \"node_id\": \"node_root_helper_01\",\n    \"summary\": \"FINAL_ANSWER: Undefined\\nJUSTIFICATION: No bitstrings were provided to construct the Trie.\"\n  },\n  {\n    \"node_id\": \"node_root_helper_02\",\n    \"summary\": \"FINAL_ANSWER: Insufficient data provided\\nJUSTIFICATION: No Trie structure or terminal nodes provided.\"\n  }\n]\n\nQuestion:\nSolve this Super-Eywa coding benchmark.\nQuestion ID: coding-B1-usaco-2024-us-open-platinum-identity-theft\nTitle: B1. USACO 2024 US Open Platinum / Identity Theft\n\nProblem:\n# Identity Theft\n\nWrite `main.py`.\n\nFarmer John has `N` cows, each with a bitstring ID.\nEach cow may report any prefix of its final ID, including the full string.\nIf a reported prefix is the full final ID of a different cow, Bessie thinks identity theft happened.\n\nYou may append bits to the end of each original ID.\nAppending one bit costs one second.\nFind the minimum total number of appended bits needed so that no cow can ever be mistaken for another.\n\n## Input\n\n- Line 1: `N`\n- Next `N` lines: the original bitstring IDs\n\n## Output\n\n- One integer: the minimum total appended-bit cost\n\n## Constraints\n\n- `1 <= N <= 10^5`\n- Every ID is non-empty\n- The total length of all IDs is at most `10^6`\n\n## Notes\n\n- This v1 packet grades only on bundled public samples.\n- Source problem: USACO 2024 US Open Platinum, Problem 1.\n\nSubmission contract:\n- Return a single Python submission file named main.py.\n- Read from stdin and write to stdout.\n- Put the full file content in the artifacts list of your execute_locally JSON response.\n- Use the response field only for a brief submission summary.\n- Do not wrap the code in markdown fences inside artifacts.\n\nCritical validity rules:\n- Your program is judged by the stdout it prints when run, not by the summary in your JSON response.\n- Print exactly the contestant output described in the Output section, and nothing else.\n- Do not print the objective score, estimated score, labels, explanations, or debug text unless the Output section explicitly requires them.\n- If the Output section requires a count/header on the first line, print that first line exactly.\n- Every printed index, count, and coordinate must stay within the allowed ranges.\n- Prefer a simple valid baseline solution over an ambitious but invalid one.\n- If the problem permits an empty or minimal valid plan, that is better than malformed output.\n\nGrading target:\nBinary hidden-test acceptance.",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "report_problem",
+        "decision_notes": "Runtime converted an invalid authored response into a problem report.",
+        "response": "Invalid node-authored response: execute_locally response must be a non-empty string. Raw response excerpt: ```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"The problem asks for the minimum number of bits to append to a set of bitstrings such that no bitstring is a prefix of another. This is equivalent to ensuring that in a Trie containing all the final IDs, no terminal node (representing a cow's ID) is an ancestor of another terminal node. The optimal strategy is to process the Trie and, for every node that ..."
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "coding-B1-usaco-2024-us-open-platinum-identity-theft__delegate__mx1_coding_non_holdout_v2_2026_04_07__delegate__12__run_2026_04_07_082703",
+        "node_id": "node_root",
+        "action_type": "report_problem",
+        "results": [
+          {
+            "result_type": "failure_explanation",
+            "content": "Invalid node-authored response: execute_locally response must be a non-empty string. Raw response excerpt: ```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"The problem asks for the minimum number of bits to append to a set of bitstrings such that no bitstring is a prefix of another. This is equivalent to ensuring that in a Trie containing all the final IDs, no terminal node (representing a cow's ID) is an ancestor of another terminal node. The optimal strategy is to process the Trie and, for every node that ...",
+            "attachment_refs": []
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "problem_report",
+            "target": {
+              "target_type": "final_output",
+              "target_ref": "run_final_output"
+            },
+            "message": "Invalid node-authored response: execute_locally response must be a non-empty string. Raw response excerpt: ```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"The problem asks for the minimum number of bits to append to a set of bitstrings such that no bitstring is a prefix of another. This is equivalent to ensuring that in a Trie containing all the final IDs, no terminal node (representing a cow's ID) is an ancestor of another terminal node. The optimal strategy is to process the Trie and, for every node that ...",
+            "attachment_refs": []
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Child results have already come back to you. Use them to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\n\nSynthesis brief from the earlier child-creation step:\nCombine the Trie structure and the cost calculation. The total cost is the sum of bits appended to each original ID. Specifically, for every node in the Trie that is marked as a cow's ID, if that node has descendants, we must append bits to make it a leaf. However, the problem asks for the minimum total bits. The optimal strategy involves ensuring that for every node that is a prefix of another, we extend the shorter one. The final answer is the sum of the required extensions.\n\nChild results already returned to you:\n[\n  {\n    \"node_id\": \"node_root_helper_01\",\n    \"summary\": \"FINAL_ANSWER: Undefined\\nJUSTIFICATION: No bitstrings were provided to construct the Trie.\"\n  },\n  {\n    \"node_id\": \"node_root_helper_02\",\n    \"summary\": \"FINAL_ANSWER: Insufficient data provided\\nJUSTIFICATION: No Trie structure or terminal nodes provided.\"\n  }\n]\n\nQuestion:\nSolve this Super-Eywa coding benchmark.\nQuestion ID: coding-B1-usaco-2024-us-open-platinum-identity-theft\nTitle: B1. USACO 2024 US Open Platinum / Identity Theft\n\nProblem:\n# Identity Theft\n\nWrite `main.py`.\n\nFarmer John has `N` cows, each with a bitstring ID.\nEach cow may report any prefix of its final ID, including the full string.\nIf a reported prefix is the full final ID of a different cow, Bessie thinks identity theft happened.\n\nYou may append bits to the end of each original ID.\nAppending one bit costs one second.\nFind the minimum total number of appended bits needed so that no cow can ever be mistaken for another.\n\n## Input\n\n- Line 1: `N`\n- Next `N` lines: the original bitstring IDs\n\n## Output\n\n- One integer: the minimum total appended-bit cost\n\n## Constraints\n\n- `1 <= N <= 10^5`\n- Every ID is non-empty\n- The total length of all IDs is at most `10^6`\n\n## Notes\n\n- This v1 packet grades only on bundled public samples.\n- Source problem: USACO 2024 US Open Platinum, Problem 1.\n\nSubmission contract:\n- Return a single Python submission file named main.py.\n- Read from stdin and write to stdout.\n- Put the full file content in the artifacts list of your execute_locally JSON response.\n- Use the response field only for a brief submission summary.\n- Do not wrap the code in markdown fences inside artifacts.\n\nCritical validity rules:\n- Your program is judged by the stdout it prints when run, not by the summary in your JSON response.\n- Print exactly the contestant output described in the Output section, and nothing else.\n- Do not print the objective score, estimated score, labels, explanations, or debug text unless the Output section explicitly requires them.\n- If the Output section requires a count/header on the first line, print that first line exactly.\n- Every printed index, count, and coordinate must stay within the allowed ranges.\n- Prefer a simple valid baseline solution over an ambitious but invalid one.\n- If the problem permits an empty or minimal valid plan, that is better than malformed output.\n\nGrading target:\nBinary hidden-test acceptance."
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775550435-o2CbmM0z6ChhDfx6bM4f",
+              "object": "chat.completion",
+              "created": 1775550435,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Novita",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "length",
+                  "native_finish_reason": "length",
+                  "message": {
+                    "role": "assistant",
+                    "content": "```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"The problem asks for the minimum number of bits to append to a set of bitstrings such that no bitstring is a prefix of another. This is equivalent to ensuring that in a Trie containing all the final IDs, no terminal node (representing a cow's ID) is an ancestor of another terminal node. The optimal strategy is to process the Trie and, for every node that is a terminal node and has descendants, extend it to become a leaf. However, the problem is slightly more nuanced: we want to minimize the *total* bits added. This is equivalent to finding the minimum number of leaves needed to cover all paths. Actually, the problem is simpler: we need to ensure that for every original ID, it is not a prefix of another. If ID A is a prefix of ID B, we must append bits to A to make it not a prefix of B. The minimum bits to add to A to make it not a prefix of B is 1 (by adding a bit that deviates from the path to B). But we must do this for all such pairs. The correct approach is to build a Trie of all IDs. For any node that is a terminal node (an original ID) and has children, we must add bits to that terminal node to 'push' it down to a leaf. The cost is the number of bits added. Wait, the problem says 'no cow can ever be mistaken for another'. This means no ID can be a prefix of another. If we have IDs '0' and '01', '0' is a prefix of '01'. We must append bits to '0' to make it something like '011' or '00'. But we can't change '01' to '0'. We can only append to '0'. If we append '1' to '0', we get '01', which is still a prefix of '01' (if we consider the original '01' as a target). Actually, if we append '1' to '0', we get '01', which is the same as the other cow. We must append bits such that the new ID is not a prefix of any other and no other is a prefix of it. The most efficient way is to ensure every original ID ends at a leaf in the Trie. If an original ID is at a node that has descendants, we must add bits to it to make it a leaf. The cost is the number of bits added. However, we can't just add bits to '0' to make it '01' if '01' already exists. We must add bits to make it a unique path. The problem is equivalent to: given a Trie, for every node that is a terminal node and has children, we must add bits to make it a leaf. The minimum bits to add to a node at depth $d$ to make it a leaf that doesn't conflict with existing paths is to extend it to a depth where it can branch off. But the problem is simpler: we want to minimize $\\sum (depth\\_of\\_new\\_leaf - depth\\_of\\_original\\_node)$. This is solved by a greedy approach on the Trie: for each node that is a terminal node, if it has children, we must 'push' it down. The cost is the number of bits added. Actually, the problem is: we want to select a set of leaf nodes in the Trie such that every original ID is a prefix of exactly one selected leaf, and no selected leaf is a prefix of another. This is not quite right. Let's re-read: 'no",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 916,
+                "completion_tokens": 800,
+                "total_tokens": 1716,
+                "cost": 0.00043908,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00043908,
+                  "upstream_inference_prompt_cost": 0.00011908,
+                  "upstream_inference_completions_cost": 0.00032
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"The problem asks for the minimum number of bits to append to a set of bitstrings such that no bitstring is a prefix of another. This is equivalent to ensuring that in a Trie containing all the final IDs, no terminal node (representing a cow's ID) is an ancestor of another terminal node. The optimal strategy is to process the Trie and, for every node that is a terminal node and has descendants, extend it to become a leaf. However, the problem is slightly more nuanced: we want to minimize the *total* bits added. This is equivalent to finding the minimum number of leaves needed to cover all paths. Actually, the problem is simpler: we need to ensure that for every original ID, it is not a prefix of another. If ID A is a prefix of ID B, we must append bits to A to make it not a prefix of B. The minimum bits to add to A to make it not a prefix of B is 1 (by adding a bit that deviates from the path to B). But we must do this for all such pairs. The correct approach is to build a Trie of all IDs. For any node that is a terminal node (an original ID) and has children, we must add bits to that terminal node to 'push' it down to a leaf. The cost is the number of bits added. Wait, the problem says 'no cow can ever be mistaken for another'. This means no ID can be a prefix of another. If we have IDs '0' and '01', '0' is a prefix of '01'. We must append bits to '0' to make it something like '011' or '00'. But we can't change '01' to '0'. We can only append to '0'. If we append '1' to '0', we get '01', which is still a prefix of '01' (if we consider the original '01' as a target). Actually, if we append '1' to '0', we get '01', which is the same as the other cow. We must append bits such that the new ID is not a prefix of any other and no other is a prefix of it. The most efficient way is to ensure every original ID ends at a leaf in the Trie. If an original ID is at a node that has descendants, we must add bits to it to make it a leaf. The cost is the number of bits added. However, we can't just add bits to '0' to make it '01' if '01' already exists. We must add bits to make it a unique path. The problem is equivalent to: given a Trie, for every node that is a terminal node and has children, we must add bits to make it a leaf. The minimum bits to add to a node at depth $d$ to make it a leaf that doesn't conflict with existing paths is to extend it to a depth where it can branch off. But the problem is simpler: we want to minimize $\\sum (depth\\_of\\_new\\_leaf - depth\\_of\\_original\\_node)$. This is solved by a greedy approach on the Trie: for each node that is a terminal node, if it has children, we must 'push' it down. The cost is the number of bits added. Actually, the problem is: we want to select a set of leaf nodes in the Trie such that every original ID is a prefix of exactly one selected leaf, and no selected leaf is a prefix of another. This is not quite right. Let's re-read: 'no",
+            "parse_error": null,
+            "parsed_response": null
+          },
+          {
+            "phase": "json_repair",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": "You repair invalid Super-Eywa node responses into strict JSON. Return only valid JSON."
+                },
+                {
+                  "role": "user",
+                  "content": "Rewrite the following content as valid JSON only for the eywa_node_response v1 schema. Allowed orchestration_decision values for this turn: execute_locally. Use the exact top-level fields required by eywa_node_response v1. Do not wrap the object under another key. Use plain text strings only. Do not use markdown, code fences, or backslashes.\n\nOriginal content:\n```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"The problem asks for the minimum number of bits to append to a set of bitstrings such that no bitstring is a prefix of another. This is equivalent to ensuring that in a Trie containing all the final IDs, no terminal node (representing a cow's ID) is an ancestor of another terminal node. The optimal strategy is to process the Trie and, for every node that is a terminal node and has descendants, extend it to become a leaf. However, the problem is slightly more nuanced: we want to minimize the *total* bits added. This is equivalent to finding the minimum number of leaves needed to cover all paths. Actually, the problem is simpler: we need to ensure that for every original ID, it is not a prefix of another. If ID A is a prefix of ID B, we must append bits to A to make it not a prefix of B. The minimum bits to add to A to make it not a prefix of B is 1 (by adding a bit that deviates from the path to B). But we must do this for all such pairs. The correct approach is to build a Trie of all IDs. For any node that is a terminal node (an original ID) and has children, we must add bits to that terminal node to 'push' it down to a leaf. The cost is the number of bits added. Wait, the problem says 'no cow can ever be mistaken for another'. This means no ID can be a prefix of another. If we have IDs '0' and '01', '0' is a prefix of '01'. We must append bits to '0' to make it something like '011' or '00'. But we can't change '01' to '0'. We can only append to '0'. If we append '1' to '0', we get '01', which is still a prefix of '01' (if we consider the original '01' as a target). Actually, if we append '1' to '0', we get '01', which is the same as the other cow. We must append bits such that the new ID is not a prefix of any other and no other is a prefix of it. The most efficient way is to ensure every original ID ends at a leaf in the Trie. If an original ID is at a node that has descendants, we must add bits to it to make it a leaf. The cost is the number of bits added. However, we can't just add bits to '0' to make it '01' if '01' already exists. We must add bits to make it a unique path. The problem is equivalent to: given a Trie, for every node that is a terminal node and has children, we must add bits to make it a leaf. The minimum bits to add to a node at depth $d$ to make it a leaf that doesn't conflict with existing paths is to extend it to a depth where it can branch off. But the problem is simpler: we want to minimize $\\sum (depth\\_of\\_new\\_leaf - depth\\_of\\_original\\_node)$. This is solved by a greedy approach on the Trie: for each node that is a terminal node, if it has children, we must 'push' it down. The cost is the number of bits added. Actually, the problem is: we want to select a set of leaf nodes in the Trie such that every original ID is a prefix of exactly one selected leaf, and no selected leaf is a prefix of another. This is not quite right. Let's re-read: 'no"
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775550452-1vbLrVSpL6VxHyM3LElg",
+              "object": "chat.completion",
+              "created": 1775550452,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Parasail",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n\"schema_name\": \"eywa_node_response\",\n\"schema_version\": \"v1\",\n\"orchestration_decision\": \"execute_locally\",\n\"decision_notes\": \"The problem asks for the minimum number of bits to append to a set of bitstrings such that no bitstring is a prefix of another. This is equivalent to ensuring that in a Trie containing all the final IDs, no terminal node (representing a cow's ID) is an ancestor of another terminal node. The optimal strategy is to process the Trie and, for every node that is a terminal node and has descendants, extend it to become a leaf. However, the problem is slightly more nuanced: we want to minimize the total bits added. This is equivalent to finding the minimum number of leaves needed to cover all paths. Actually, the problem is simpler: we need to ensure that for every original ID, it is not a prefix of another. If ID A is a prefix of ID B, we must append bits to A to make it not a prefix of B. The minimum bits to add to A to make it not a prefix of B is 1 (by adding a bit that deviates from the path to B). But we must do this for all such pairs. The correct approach is to build a Trie of all IDs. For any node that is a terminal node (an original ID) and has children, we must add bits to that terminal node to push it down to a leaf. The cost is the number of bits added. Wait, the problem says no cow can ever be mistaken for another. This means no ID can be a prefix of another. If we have IDs 0 and 01, 0 is a prefix of 01. We must append bits to 0 to make it something like 011 or 00. But we can't change 01 to 0. We can only append to 0. If we append 1 to 0, we get 01, which is the same as the other cow. We must append bits such that the new ID is not a prefix of any other and no other is a prefix of it. The most efficient way is to ensure every original ID ends at a leaf in the Trie. If an original ID is at a node that has descendants, we must add bits to it to make it a leaf. The cost is the number of bits added. However, we can't just add bits to 0 to make it 01 if 01 already exists. We must add bits to make it a unique path. The problem is equivalent to: given a Trie, for every node that is a terminal node and has children, we must add bits to make it a leaf. The minimum bits to add to a node at depth d to make it a leaf that doesn't conflict with existing paths is to extend it to a depth where it can branch off. But the problem is simpler: we want to minimize the sum of (depth of new leaf - depth of original node). This is solved by a greedy approach on the Trie: for each node that is a terminal node, if it has children, we must push it down. The cost is the number of bits added. Actually, the problem is: we want to select a set of leaf nodes in the Trie such that every original ID is a prefix of exactly one selected leaf, and no selected leaf is a prefix of another.\"\n}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 932,
+                "completion_tokens": 716,
+                "total_tokens": 1648,
+                "cost": 0.00040756,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00040756,
+                  "upstream_inference_prompt_cost": 0.00012116,
+                  "upstream_inference_completions_cost": 0.0002864
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\n\"schema_name\": \"eywa_node_response\",\n\"schema_version\": \"v1\",\n\"orchestration_decision\": \"execute_locally\",\n\"decision_notes\": \"The problem asks for the minimum number of bits to append to a set of bitstrings such that no bitstring is a prefix of another. This is equivalent to ensuring that in a Trie containing all the final IDs, no terminal node (representing a cow's ID) is an ancestor of another terminal node. The optimal strategy is to process the Trie and, for every node that is a terminal node and has descendants, extend it to become a leaf. However, the problem is slightly more nuanced: we want to minimize the total bits added. This is equivalent to finding the minimum number of leaves needed to cover all paths. Actually, the problem is simpler: we need to ensure that for every original ID, it is not a prefix of another. If ID A is a prefix of ID B, we must append bits to A to make it not a prefix of B. The minimum bits to add to A to make it not a prefix of B is 1 (by adding a bit that deviates from the path to B). But we must do this for all such pairs. The correct approach is to build a Trie of all IDs. For any node that is a terminal node (an original ID) and has children, we must add bits to that terminal node to push it down to a leaf. The cost is the number of bits added. Wait, the problem says no cow can ever be mistaken for another. This means no ID can be a prefix of another. If we have IDs 0 and 01, 0 is a prefix of 01. We must append bits to 0 to make it something like 011 or 00. But we can't change 01 to 0. We can only append to 0. If we append 1 to 0, we get 01, which is the same as the other cow. We must append bits such that the new ID is not a prefix of any other and no other is a prefix of it. The most efficient way is to ensure every original ID ends at a leaf in the Trie. If an original ID is at a node that has descendants, we must add bits to it to make it a leaf. The cost is the number of bits added. However, we can't just add bits to 0 to make it 01 if 01 already exists. We must add bits to make it a unique path. The problem is equivalent to: given a Trie, for every node that is a terminal node and has children, we must add bits to make it a leaf. The minimum bits to add to a node at depth d to make it a leaf that doesn't conflict with existing paths is to extend it to a depth where it can branch off. But the problem is simpler: we want to minimize the sum of (depth of new leaf - depth of original node). This is solved by a greedy approach on the Trie: for each node that is a terminal node, if it has children, we must push it down. The cost is the number of bits added. Actually, the problem is: we want to select a set of leaf nodes in the Trie such that every original ID is a prefix of exactly one selected leaf, and no selected leaf is a prefix of another.\"\n}",
+            "parse_error": "execute_locally response must be a non-empty string",
+            "parsed_response": null
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "report_problem",
+          "decision_notes": "Runtime converted an invalid authored response into a problem report.",
+          "response": "Invalid node-authored response: execute_locally response must be a non-empty string. Raw response excerpt: ```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"The problem asks for the minimum number of bits to append to a set of bitstrings such that no bitstring is a prefix of another. This is equivalent to ensuring that in a Trie containing all the final IDs, no terminal node (representing a cow's ID) is an ancestor of another terminal node. The optimal strategy is to process the Trie and, for every node that ..."
+        }
+      },
+      "usage": {
+        "prompt_tokens": 1848,
+        "completion_tokens": 1516,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 0,
+        "total_tokens": 3364,
+        "cost_usd": 0.0008466400000000001,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775550435-o2CbmM0z6ChhDfx6bM4f",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00043908
+            },
+            {
+              "response_id": "gen-1775550452-1vbLrVSpL6VxHyM3LElg",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00040756
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

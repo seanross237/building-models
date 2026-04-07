@@ -38,6 +38,14 @@ EXECUTE_PROMPT_FILE = (
     / "mx1-pilot-v1"
     / "execute_prompt_v1.txt"
 )
+REVIEW_PROMPT_FILE = (
+    REPO_ROOT
+    / "data-system"
+    / "grading"
+    / "prompt-experiments"
+    / "mx1-pilot-v1"
+    / "starter_review_prompt_v1.txt"
+)
 
 
 def parse_stdout(stdout: str) -> dict[str, str]:
@@ -75,10 +83,41 @@ class MX1PilotV1Tests(unittest.TestCase):
             "}"
         )
 
-        normalized = run_mx1_tutor_v1._normalize_family_prompt_text(manifest, recommended)
+        normalized, normalization_reason = run_mx1_tutor_v1._normalize_family_prompt_text(manifest, recommended)
         self.assertIn('"orchestration_decision": "transmute"', normalized)
         self.assertNotIn('"orchestration_decision": "execute_locally"', normalized)
         self.assertTrue(normalized.startswith("new guidance"))
+        self.assertIsNone(normalization_reason)
+
+    def test_tutor_applied_prompt_coerces_question_specific_guidance_back_to_family_level(self) -> None:
+        import run_mx1_tutor_v1
+
+        manifest = {
+            "starter_prompt_text": (
+                "Decompose the problem into a small number of useful subproblems.\n\n"
+                "Return exactly one JSON object in this format:\n"
+                "{\n"
+                '  "schema_name": "eywa_node_response",\n'
+                '  "schema_version": "v1",\n'
+                '  "orchestration_decision": "delegate"\n'
+                "}"
+            )
+        }
+        recommended = (
+            "Break this specific problem into 2 parts.\n"
+            "Problem: determine whether 2023 divides 2^a + 2^b.\n\n"
+            "Return exactly one JSON object in this format:\n"
+            "{\n"
+            '  "schema_name": "eywa_node_response",\n'
+            '  "schema_version": "v1",\n'
+            '  "orchestration_decision": "delegate"\n'
+            "}"
+        )
+
+        normalized, normalization_reason = run_mx1_tutor_v1._normalize_family_prompt_text(manifest, recommended)
+        self.assertTrue(normalized.startswith("Decompose the problem into a small number of useful subproblems."))
+        self.assertNotIn("2023", normalized)
+        self.assertEqual(normalization_reason, "coerced_to_family_level_prompt")
 
     def test_current_prompt_path_does_not_fall_back_after_tutor_update(self) -> None:
         import run_mx1_pilot_v1
@@ -186,6 +225,42 @@ class MX1PilotV1Tests(unittest.TestCase):
             str(run_mx1_pilot_v1.DEFAULT_STARTER_PROMPT_FILE),
         )
         self.assertEqual(resolved, run_mx1_pilot_v1.DEFAULT_DELEGATE_PROMPT_FILE.resolve())
+
+    def test_review_family_uses_review_starter_prompt(self) -> None:
+        import run_mx1_pilot_v1
+
+        resolved = run_mx1_pilot_v1._resolve_starter_prompt_path(
+            "review",
+            str(run_mx1_pilot_v1.DEFAULT_STARTER_PROMPT_FILE),
+        )
+        self.assertEqual(resolved, run_mx1_pilot_v1.DEFAULT_REVIEW_PROMPT_FILE.resolve())
+
+    def test_execute_family_uses_execute_prompt_as_starter(self) -> None:
+        import run_mx1_pilot_v1
+
+        resolved = run_mx1_pilot_v1._resolve_starter_prompt_path(
+            "execute",
+            str(run_mx1_pilot_v1.DEFAULT_STARTER_PROMPT_FILE),
+        )
+        self.assertEqual(resolved, run_mx1_pilot_v1.DEFAULT_EXECUTE_PROMPT_FILE.resolve())
+
+    def test_review_family_uses_review_starter_prompt(self) -> None:
+        import run_mx1_pilot_v1
+
+        resolved = run_mx1_pilot_v1._resolve_starter_prompt_path(
+            "review",
+            str(run_mx1_pilot_v1.DEFAULT_STARTER_PROMPT_FILE),
+        )
+        self.assertEqual(resolved, run_mx1_pilot_v1.DEFAULT_REVIEW_PROMPT_FILE.resolve())
+
+    def test_execute_family_uses_execute_prompt_as_starter(self) -> None:
+        import run_mx1_pilot_v1
+
+        resolved = run_mx1_pilot_v1._resolve_starter_prompt_path(
+            "execute",
+            str(run_mx1_pilot_v1.DEFAULT_STARTER_PROMPT_FILE),
+        )
+        self.assertEqual(resolved, run_mx1_pilot_v1.DEFAULT_EXECUTE_PROMPT_FILE.resolve())
 
     def test_stepwise_pilot_and_tutor_flow_updates_manifest(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:

@@ -48,6 +48,13 @@ def test_reject_is_always_allowed_from_non_terminal(current: Status) -> None:
     assert can_transition(current, Status.REJECTED)
 
 
+def test_critic_review_can_send_back_to_video_pending() -> None:
+    """Phase 6 added the CRITIC_REVIEW -> VIDEO_PENDING edge for the
+    'send back for regen' UI button."""
+    assert can_transition(Status.CRITIC_REVIEW, Status.VIDEO_PENDING)
+    assert_transition(Status.CRITIC_REVIEW, Status.VIDEO_PENDING)
+
+
 def test_published_is_terminal() -> None:
     assert VALID_TRANSITIONS[Status.PUBLISHED] == set()
     for target in Status:

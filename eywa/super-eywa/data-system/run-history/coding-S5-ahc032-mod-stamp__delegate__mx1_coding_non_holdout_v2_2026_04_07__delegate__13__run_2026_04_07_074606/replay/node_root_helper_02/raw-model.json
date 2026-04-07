@@ -1,0 +1,149 @@
+{
+  "provider": "openrouter",
+  "note": "Per-turn provider payloads, authored JSON, and compiled outputs are recorded here.",
+  "steps": [
+    {
+      "step": 1,
+      "note": "authored local execution deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 1\nNode depth: 1\nAllowed decisions: ['execute_locally']\nPrompt family: execute\nBase header prompt: ''\nSelected prompt text:\nSolve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nSolve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}\n\nQuestion:\nWrite the Python code for main.py based on the greedy strategy. The code must: 1. Read N, M, K. 2. Read the initial 9x9 board. 3. Read the M 3x3 stamps. 4. Implement the iterative greedy selection: in each step, evaluate all possible (m, i, j) combinations, calculate the change in the total sum of the board after applying the stamp modulo 998244353, and pick the one that maximizes this change. 5. Ensure the loop runs at most K times and only adds placements that actually increase the sum. 6. Output the number of placements L, followed by L lines of 'm i j'. Ensure no extra text or markdown is printed.",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "execute_locally",
+        "decision_notes": "Writing Python code for greedy strategy.",
+        "response": "FINAL_ANSWER: import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    N, M, K = map(int, input_data[:3])\n    idx = 3\n    board = []\n    for _ in range(9):\n        board.append(list(map(int, input_data[idx:idx+9])))\n        idx += 9\n    stamps = []\n    for _ in range(M):\n        stamp = []\n        for _ in range(3):\n            stamp.append(list(map(int, input_data[idx:idx+3])))\n            idx += 3\n        stamps.append(stamp)\n    \n    MOD = 998244353\n    placements = []\n    \n    for _ in range(K):\n        best_gain = 0\n        best_move = None\n        \n        for m_idx in range(M):\n            stamp = stamps[m_idx]\n            for i in range(7):\n                for j in range(7):\n                    current_gain = 0\n                    for r in range(3):\n                        for c in range(3):\n                            old_val = board[i+r][j+c]\n                            new_val = (old_val + stamp[r][c]) % MOD\n                            current_gain += (new_val - old_val)\n                    \n                    if current_gain > best_gain:\n                        best_gain = current_gain\n                        best_move = (m_idx, i, j)\n        \n        if best_move:\n            m_idx, i, j = best_move\n            placements.append(f\"{m_idx} {i} {j}\")\n            stamp = stamps[m_idx]\n            for r in range(3):\n                for c in range(3):\n                    board[i+r][j+c] = (board[i+r][j+c] + stamp[r][c]) % MOD\n        else:\n            break\n            \n    print(len(placements))\n    for p in placements:\n        print(p)\n\nsolve()\n\nJUSTIFICATION: Python code implements greedy stamp placement maximizing sum increase.",
+        "result_type": "summary"
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "coding-S5-ahc032-mod-stamp__delegate__mx1_coding_non_holdout_v2_2026_04_07__delegate__13__run_2026_04_07_074606",
+        "node_id": "node_root_helper_02",
+        "action_type": "report_success",
+        "results": [
+          {
+            "result_type": "summary",
+            "content": "FINAL_ANSWER: import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    N, M, K = map(int, input_data[:3])\n    idx = 3\n    board = []\n    for _ in range(9):\n        board.append(list(map(int, input_data[idx:idx+9])))\n        idx += 9\n    stamps = []\n    for _ in range(M):\n        stamp = []\n        for _ in range(3):\n            stamp.append(list(map(int, input_data[idx:idx+3])))\n            idx += 3\n        stamps.append(stamp)\n    \n    MOD = 998244353\n    placements = []\n    \n    for _ in range(K):\n        best_gain = 0\n        best_move = None\n        \n        for m_idx in range(M):\n            stamp = stamps[m_idx]\n            for i in range(7):\n                for j in range(7):\n                    current_gain = 0\n                    for r in range(3):\n                        for c in range(3):\n                            old_val = board[i+r][j+c]\n                            new_val = (old_val + stamp[r][c]) % MOD\n                            current_gain += (new_val - old_val)\n                    \n                    if current_gain > best_gain:\n                        best_gain = current_gain\n                        best_move = (m_idx, i, j)\n        \n        if best_move:\n            m_idx, i, j = best_move\n            placements.append(f\"{m_idx} {i} {j}\")\n            stamp = stamps[m_idx]\n            for r in range(3):\n                for c in range(3):\n                    board[i+r][j+c] = (board[i+r][j+c] + stamp[r][c]) % MOD\n        else:\n            break\n            \n    print(len(placements))\n    for p in placements:\n        print(p)\n\nsolve()\n\nJUSTIFICATION: Python code implements greedy stamp placement maximizing sum increase.",
+            "attachment_refs": []
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "success_report",
+            "target": {
+              "target_type": "creating_parent",
+              "target_ref": "node_root"
+            },
+            "message": "FINAL_ANSWER: import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    N, M, K = map(int, input_data[:3])\n    idx = 3\n    board = []\n    for _ in range(9):\n        board.append(list(map(int, input_data[idx:idx+9])))\n        idx += 9\n    stamps = []\n    for _ in range(M):\n        stamp = []\n        for _ in range(3):\n            stamp.append(list(map(int, input_data[idx:idx+3])))\n            idx += 3\n        stamps.append(stamp)\n    \n    MOD = 998244353\n    placements = []\n    \n    for _ in range(K):\n        best_gain = 0\n        best_move = None\n        \n        for m_idx in range(M):\n            stamp = stamps[m_idx]\n            for i in range(7):\n                for j in range(7):\n                    current_gain = 0\n                    for r in range(3):\n                        for c in range(3):\n                            old_val = board[i+r][j+c]\n                            new_val = (old_val + stamp[r][c]) % MOD\n                            current_gain += (new_val - old_val)\n                    \n                    if current_gain > best_gain:\n                        best_gain = current_gain\n                        best_move = (m_idx, i, j)\n        \n        if best_move:\n            m_idx, i, j = best_move\n            placements.append(f\"{m_idx} {i} {j}\")\n            stamp = stamps[m_idx]\n            for r in range(3):\n                for c in range(3):\n                    board[i+r][j+c] = (board[i+r][j+c] + stamp[r][c]) % MOD\n        else:\n            break\n            \n    print(len(placements))\n    for p in placements:\n        print(p)\n\nsolve()\n\nJUSTIFICATION: Python code implements greedy stamp placement maximizing sum increase.",
+            "attachment_refs": []
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Solve the question directly.\nKeep the entire JSON compact.\nKeep decision_notes extremely short. Prefer 3 to 8 words.\nDo not narrate your reasoning outside the response field.\nIn the response field, use exactly two short lines encoded with \\n:\nFINAL_ANSWER: <answer>\nJUSTIFICATION: <brief justification>\nKeep the justification to 12 words or fewer.\nUse plain text only inside the response field. Do not use markdown formatting, code fences, or math-style backslashes such as \\equiv.\nDo not add any extra text before or after the JSON object.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"FINAL_ANSWER: <answer>\\nJUSTIFICATION: <brief justification>\",\n  \"result_type\": \"summary\"\n}\n\nQuestion:\nWrite the Python code for main.py based on the greedy strategy. The code must: 1. Read N, M, K. 2. Read the initial 9x9 board. 3. Read the M 3x3 stamps. 4. Implement the iterative greedy selection: in each step, evaluate all possible (m, i, j) combinations, calculate the change in the total sum of the board after applying the stamp modulo 998244353, and pick the one that maximizes this change. 5. Ensure the loop runs at most K times and only adds placements that actually increase the sum. 6. Output the number of placements L, followed by L lines of 'm i j'. Ensure no extra text or markdown is printed."
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775547993-JUTI74hdAzd3fiqJrbZ9",
+              "object": "chat.completion",
+              "created": 1775547993,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Parasail",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\"schema_name\": \"eywa_node_response\", \"schema_version\": \"v1\", \"orchestration_decision\": \"execute_locally\", \"decision_notes\": \"Writing Python code for greedy strategy.\", \"response\": \"FINAL_ANSWER: import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data: return\\n    N, M, K = map(int, input_data[:3])\\n    idx = 3\\n    board = []\\n    for _ in range(9):\\n        board.append(list(map(int, input_data[idx:idx+9])))\\n        idx += 9\\n    stamps = []\\n    for _ in range(M):\\n        stamp = []\\n        for _ in range(3):\\n            stamp.append(list(map(int, input_data[idx:idx+3])))\\n            idx += 3\\n        stamps.append(stamp)\\n    \\n    MOD = 998244353\\n    placements = []\\n    \\n    for _ in range(K):\\n        best_gain = 0\\n        best_move = None\\n        \\n        for m_idx in range(M):\\n            stamp = stamps[m_idx]\\n            for i in range(7):\\n                for j in range(7):\\n                    current_gain = 0\\n                    for r in range(3):\\n                        for c in range(3):\\n                            old_val = board[i+r][j+c]\\n                            new_val = (old_val + stamp[r][c]) % MOD\\n                            current_gain += (new_val - old_val)\\n                    \\n                    if current_gain > best_gain:\\n                        best_gain = current_gain\\n                        best_move = (m_idx, i, j)\\n        \\n        if best_move:\\n            m_idx, i, j = best_move\\n            placements.append(f\\\"{m_idx} {i} {j}\\\")\\n            stamp = stamps[m_idx]\\n            for r in range(3):\\n                for c in range(3):\\n                    board[i+r][j+c] = (board[i+r][j+c] + stamp[r][c]) % MOD\\n        else:\\n            break\\n            \\n    print(len(placements))\\n    for p in placements:\\n        print(p)\\n\\nsolve()\\n\\nJUSTIFICATION: Python code implements greedy stamp placement maximizing sum increase.\" , \"result_type\": \"summary\"}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 420,
+                "completion_tokens": 612,
+                "total_tokens": 1032,
+                "cost": 0.0002994,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.0002994,
+                  "upstream_inference_prompt_cost": 5.46e-05,
+                  "upstream_inference_completions_cost": 0.0002448
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\"schema_name\": \"eywa_node_response\", \"schema_version\": \"v1\", \"orchestration_decision\": \"execute_locally\", \"decision_notes\": \"Writing Python code for greedy strategy.\", \"response\": \"FINAL_ANSWER: import sys\\n\\ndef solve():\\n    input_data = sys.stdin.read().split()\\n    if not input_data: return\\n    N, M, K = map(int, input_data[:3])\\n    idx = 3\\n    board = []\\n    for _ in range(9):\\n        board.append(list(map(int, input_data[idx:idx+9])))\\n        idx += 9\\n    stamps = []\\n    for _ in range(M):\\n        stamp = []\\n        for _ in range(3):\\n            stamp.append(list(map(int, input_data[idx:idx+3])))\\n            idx += 3\\n        stamps.append(stamp)\\n    \\n    MOD = 998244353\\n    placements = []\\n    \\n    for _ in range(K):\\n        best_gain = 0\\n        best_move = None\\n        \\n        for m_idx in range(M):\\n            stamp = stamps[m_idx]\\n            for i in range(7):\\n                for j in range(7):\\n                    current_gain = 0\\n                    for r in range(3):\\n                        for c in range(3):\\n                            old_val = board[i+r][j+c]\\n                            new_val = (old_val + stamp[r][c]) % MOD\\n                            current_gain += (new_val - old_val)\\n                    \\n                    if current_gain > best_gain:\\n                        best_gain = current_gain\\n                        best_move = (m_idx, i, j)\\n        \\n        if best_move:\\n            m_idx, i, j = best_move\\n            placements.append(f\\\"{m_idx} {i} {j}\\\")\\n            stamp = stamps[m_idx]\\n            for r in range(3):\\n                for c in range(3):\\n                    board[i+r][j+c] = (board[i+r][j+c] + stamp[r][c]) % MOD\\n        else:\\n            break\\n            \\n    print(len(placements))\\n    for p in placements:\\n        print(p)\\n\\nsolve()\\n\\nJUSTIFICATION: Python code implements greedy stamp placement maximizing sum increase.\" , \"result_type\": \"summary\"}",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "execute_locally",
+              "decision_notes": "Writing Python code for greedy strategy.",
+              "response": "FINAL_ANSWER: import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    N, M, K = map(int, input_data[:3])\n    idx = 3\n    board = []\n    for _ in range(9):\n        board.append(list(map(int, input_data[idx:idx+9])))\n        idx += 9\n    stamps = []\n    for _ in range(M):\n        stamp = []\n        for _ in range(3):\n            stamp.append(list(map(int, input_data[idx:idx+3])))\n            idx += 3\n        stamps.append(stamp)\n    \n    MOD = 998244353\n    placements = []\n    \n    for _ in range(K):\n        best_gain = 0\n        best_move = None\n        \n        for m_idx in range(M):\n            stamp = stamps[m_idx]\n            for i in range(7):\n                for j in range(7):\n                    current_gain = 0\n                    for r in range(3):\n                        for c in range(3):\n                            old_val = board[i+r][j+c]\n                            new_val = (old_val + stamp[r][c]) % MOD\n                            current_gain += (new_val - old_val)\n                    \n                    if current_gain > best_gain:\n                        best_gain = current_gain\n                        best_move = (m_idx, i, j)\n        \n        if best_move:\n            m_idx, i, j = best_move\n            placements.append(f\"{m_idx} {i} {j}\")\n            stamp = stamps[m_idx]\n            for r in range(3):\n                for c in range(3):\n                    board[i+r][j+c] = (board[i+r][j+c] + stamp[r][c]) % MOD\n        else:\n            break\n            \n    print(len(placements))\n    for p in placements:\n        print(p)\n\nsolve()\n\nJUSTIFICATION: Python code implements greedy stamp placement maximizing sum increase.",
+              "result_type": "summary"
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "execute_locally",
+          "decision_notes": "Writing Python code for greedy strategy.",
+          "response": "FINAL_ANSWER: import sys\n\ndef solve():\n    input_data = sys.stdin.read().split()\n    if not input_data: return\n    N, M, K = map(int, input_data[:3])\n    idx = 3\n    board = []\n    for _ in range(9):\n        board.append(list(map(int, input_data[idx:idx+9])))\n        idx += 9\n    stamps = []\n    for _ in range(M):\n        stamp = []\n        for _ in range(3):\n            stamp.append(list(map(int, input_data[idx:idx+3])))\n            idx += 3\n        stamps.append(stamp)\n    \n    MOD = 998244353\n    placements = []\n    \n    for _ in range(K):\n        best_gain = 0\n        best_move = None\n        \n        for m_idx in range(M):\n            stamp = stamps[m_idx]\n            for i in range(7):\n                for j in range(7):\n                    current_gain = 0\n                    for r in range(3):\n                        for c in range(3):\n                            old_val = board[i+r][j+c]\n                            new_val = (old_val + stamp[r][c]) % MOD\n                            current_gain += (new_val - old_val)\n                    \n                    if current_gain > best_gain:\n                        best_gain = current_gain\n                        best_move = (m_idx, i, j)\n        \n        if best_move:\n            m_idx, i, j = best_move\n            placements.append(f\"{m_idx} {i} {j}\")\n            stamp = stamps[m_idx]\n            for r in range(3):\n                for c in range(3):\n                    board[i+r][j+c] = (board[i+r][j+c] + stamp[r][c]) % MOD\n        else:\n            break\n            \n    print(len(placements))\n    for p in placements:\n        print(p)\n\nsolve()\n\nJUSTIFICATION: Python code implements greedy stamp placement maximizing sum increase.",
+          "result_type": "summary"
+        }
+      },
+      "usage": {
+        "prompt_tokens": 420,
+        "completion_tokens": 612,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 0,
+        "total_tokens": 1032,
+        "cost_usd": 0.0002994,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775547993-JUTI74hdAzd3fiqJrbZ9",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.0002994
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

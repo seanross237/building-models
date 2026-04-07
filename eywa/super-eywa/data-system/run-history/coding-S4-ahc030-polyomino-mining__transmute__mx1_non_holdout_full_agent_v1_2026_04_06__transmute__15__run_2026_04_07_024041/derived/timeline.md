@@ -1,0 +1,36 @@
+# Run Timeline
+
+1. [node_root] Run started for task: Solve this Super-Eywa grading-bank question.
+Question ID: coding-S4-ahc030-polyomino-mining
+Title: S4. AHC030 / Polyomino Mining
+
+Problem:
+Given known polyomino oil-field shapes but unknown placements, recover all oil-containing cells with as little probing cost as possible using drilling, noisy aggregate queries, and final guesses.
+
+Grading target:
+Lower probing cost is better.
+Contest score is derived from absolute and relative cost.
+
+Return format:
+FINAL_ANSWER: <your answer>
+JUSTIFICATION: <brief justification>
+2. [node_root] Node started: Solve this Super-Eywa grading-bank question.
+Question ID: coding-S4-ahc030-polyomino-mining
+Title: S4. AHC030 / Polyomino Mining
+
+Problem:
+Given known polyomino oil-field shapes but unknown placements, recover all oil-containing cells with as little probing cost as possible using drilling, noisy aggregate queries, and final guesses.
+
+Grading target:
+Lower probing cost is better.
+Contest score is derived from absolute and relative cost.
+
+Return format:
+FINAL_ANSWER: <your answer>
+JUSTIFICATION: <brief justification>
+3. [node_root] Node recruited 1 helper(s)
+4. [node_root_helper_01] Node started: Task: Solve the Polyomino Mining problem by treating it as a sequential decision-making process under uncertainty. Follow this formal specification: 1. Configuration Space Definition (X): Let P = {p1, p2, ..., pk} be the set of known polyomino shapes. Define the configuration space X as the set of all valid placements of these polyominoes on the grid G such that: Each polyomino pi is placed at a position (xi, yi) and orientation oi. No two polyominoes overlap (geometric non-overlap constraint). All placements remain within the grid boundaries. A configuration x in X is a complete mapping of cells to 'oil' or 'empty' status based on the union of placed polyominoes. 2. Probabilistic Constraint Mapping: Treat the unknown configuration x* as a random variable. Drilling Queries: Provide deterministic constraints. A drill at (r, c) yields yr,c in {0, 1}, such that P(x in X | yr,c) = 1 if xr,c = yr,c and 0 otherwise. Aggregate Queries: Provide noisy probabilistic constraints. An aggregate query over region R yields a noisy sum YR = sum of xr,c for (r,c) in R + epsilon, where epsilon is a known noise distribution. Map these to a likelihood function L(x | YR) = P(YR | x). Posterior Update: Maintain a belief distribution P(x | D) over X given the history of observations D, updated via Bayes' Rule. 3. Decision Rule (Information-Theoretic Optimization): Select the next query a in A (where A is the set of possible drill locations or aggregate regions) to maximize the Expected Information Gain (EIG) per unit cost C(a): argmax a in A of (H(P(x | D)) - E[H(P(x | D, a, y))]) / C(a), where H(.) is the Shannon entropy of the configuration space. Goal: Minimize total cost sum of C(a) until the entropy H(P(x|D)) is sufficiently low to allow a high-confidence final guess of the oil-containing cells.
+5. [node_root_helper_01] Node completed with action report_success
+6. [node_root_helper_01] Node wrote final output for run coding-S4-ahc030-polyomino-mining__transmute__mx1_non_holdout_full_agent_v1_2026_04_06__transmute__15__run_2026_04_07_024041
+7. [node_root] Node completed with action recruit_help
+8. [node_root] Run completed with 2 node(s)

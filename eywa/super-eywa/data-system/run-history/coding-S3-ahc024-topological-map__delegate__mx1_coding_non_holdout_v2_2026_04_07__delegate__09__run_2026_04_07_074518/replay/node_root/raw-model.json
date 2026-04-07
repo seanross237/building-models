@@ -1,0 +1,356 @@
+{
+  "provider": "openrouter",
+  "note": "Per-turn provider payloads, authored JSON, and compiled outputs are recorded here.",
+  "steps": [
+    {
+      "step": 1,
+      "note": "authored delegate decision deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 1\nNode depth: 0\nAllowed decisions: ['delegate']\nPrompt family: delegate\nBase header prompt: ''\nSelected prompt text:\nBreak the problem into a small number of genuinely useful subproblems for other agents.\nDo not restate the original question in multiple ways.\nEach helper should get one focused mathematical job that materially helps solve the original problem.\nStrictly limit the number of helpers to a maximum of 2 to ensure valid orchestration.\nUse plain text only inside helper instructions. Do not use markdown, code fences, or LaTeX-style backslashes.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"optional string\",\n  \"helpers\": [\n    {\n      \"label\": \"helper_1\",\n      \"instructions\": \"plain-text subproblem for the first helper\"\n    }\n  ],\n  \"synthesis_brief\": \"how the parent should combine the child results\"\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nBreak the problem into a small number of genuinely useful subproblems for other agents.\nDo not restate the original question in multiple ways.\nEach helper should get one focused mathematical job that materially helps solve the original problem.\nStrictly limit the number of helpers to a maximum of 2 to ensure valid orchestration.\nUse plain text only inside helper instructions. Do not use markdown, code fences, or LaTeX-style backslashes.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"optional string\",\n  \"helpers\": [\n    {\n      \"label\": \"helper_1\",\n      \"instructions\": \"plain-text subproblem for the first helper\"\n    }\n  ],\n  \"synthesis_brief\": \"how the parent should combine the child results\"\n}\n\nQuestion:\nSolve this Super-Eywa coding benchmark.\nQuestion ID: coding-S3-ahc024-topological-map\nTitle: S3. AHC024 / Topological Map\n\nProblem:\n# AHC024 / Topological Map\n\nWrite `main.py`.\n\nYou are given a `50 x 50` colored map.\nColors `1..M` must preserve their connectivity and all color-adjacency relations.\nColor `0` represents empty cells.\n\n## Objective\n\n- Output a `50 x 50` grid using colors `0..M`.\n- Every nonzero color must remain connected.\n- Two colors must be adjacent in the output if and only if they were adjacent in the input.\n- The score is `E + 1`, where `E` is the number of `0` cells in the final grid.\n- Higher is better.\n\n## Input\n\n- The instance provides `N = 50`, `M`, and the original `50 x 50` color grid.\n\n## Output\n\n- Print `50` lines.\n- Each line must contain `50` integers in `0..M`.\n- The official tool accepts multiple candidate grids and scores the last one, but the simplest valid submission is one final `50 x 50` grid.\n\n## Notes\n\n- This v1 packet uses the official AtCoder visualizer on three bundled public instances.\n\nSubmission contract:\n- Return a single Python submission file named main.py.\n- Read from stdin and write to stdout.\n- Put the full file content in the artifacts list of your execute_locally JSON response.\n- Use the response field only for a brief submission summary.\n- Do not wrap the code in markdown fences inside artifacts.\n\nCritical validity rules:\n- Your program is judged by the stdout it prints when run, not by the summary in your JSON response.\n- Print exactly the contestant output described in the Output section, and nothing else.\n- Do not print the objective score, estimated score, labels, explanations, or debug text unless the Output section explicitly requires them.\n- If the Output section requires a count/header on the first line, print that first line exactly.\n- Every printed index, count, and coordinate must stay within the allowed ranges.\n- Prefer a simple valid baseline solution over an ambitious but invalid one.\n- If the problem permits an empty or minimal valid plan, that is better than malformed output.\n\nGrading target:\nE + 1, where E is the number of empty cells.\nHigher is better.",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "delegate",
+        "decision_notes": "The problem is a graph embedding/layout problem where colors are nodes and adjacencies are edges. To maximize empty cells, we need to find the smallest possible layout that preserves the adjacency graph and connectivity.",
+        "helpers": [
+          {
+            "label": "graph_analyzer",
+            "instructions": "Analyze the input 50x50 grid to extract the adjacency graph of the colors 1 to M. Identify which colors are adjacent to which other colors. Also, check if any color has internal connectivity constraints that require more than one cell (though the problem implies colors are sets of cells, the goal is to represent the color as a single connected component). Output a list of edges representing the color adjacency graph.",
+            "variable_overrides": {}
+          },
+          {
+            "label": "layout_optimizer",
+            "instructions": "Given a graph of M nodes and their adjacency requirements, find a way to embed these nodes into a 50x50 grid such that each node is represented by at least one cell, all nodes are connected to their neighbors, and the total number of cells used is minimized. The output should be a 50x50 grid where each cell contains the color ID or 0 for empty.",
+            "variable_overrides": {}
+          }
+        ],
+        "synthesis_brief": "Use the adjacency graph from the first helper to guide the second helper in creating a compact grid layout. The final output must be the 50x50 grid produced by the layout optimizer."
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "coding-S3-ahc024-topological-map__delegate__mx1_coding_non_holdout_v2_2026_04_07__delegate__09__run_2026_04_07_074518",
+        "node_id": "node_root",
+        "action_type": "recruit_help",
+        "results": [
+          {
+            "result_type": "plan",
+            "content": "The problem is a graph embedding/layout problem where colors are nodes and adjacencies are edges. To maximize empty cells, we need to find the smallest possible layout that preserves the adjacency graph and connectivity.\nnode_root_helper_01 (graph_analyzer): Analyze the input 50x50 grid to extract the adjacency graph of the colors 1 to M. Identify which colors are adjacent to which other colors. Also, check if any color has internal connectivity constraints that require more than one cell (though the problem implies colors are sets of cells, the goal is to represent the color as a single connected component). Output a list of edges representing the color adjacency graph.\nnode_root_helper_02 (layout_optimizer): Given a graph of M nodes and their adjacency requirements, find a way to embed these nodes into a 50x50 grid such that each node is represented by at least one cell, all nodes are connected to their neighbors, and the total number of cells used is minimized. The output should be a 50x50 grid where each cell contains the color ID or 0 for empty.",
+            "attachment_refs": []
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "helper_assignment",
+            "target": {
+              "target_type": "new_helper",
+              "target_ref": "node_root_helper_01"
+            },
+            "message": "Analyze the input 50x50 grid to extract the adjacency graph of the colors 1 to M. Identify which colors are adjacent to which other colors. Also, check if any color has internal connectivity constraints that require more than one cell (though the problem implies colors are sets of cells, the goal is to represent the color as a single connected component). Output a list of edges representing the color adjacency graph.",
+            "attachment_refs": []
+          },
+          {
+            "message_type": "helper_assignment",
+            "target": {
+              "target_type": "new_helper",
+              "target_ref": "node_root_helper_02"
+            },
+            "message": "Given a graph of M nodes and their adjacency requirements, find a way to embed these nodes into a 50x50 grid such that each node is represented by at least one cell, all nodes are connected to their neighbors, and the total number of cells used is minimized. The output should be a 50x50 grid where each cell contains the color ID or 0 for empty.",
+            "attachment_refs": []
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Break the problem into a small number of genuinely useful subproblems for other agents.\nDo not restate the original question in multiple ways.\nEach helper should get one focused mathematical job that materially helps solve the original problem.\nStrictly limit the number of helpers to a maximum of 2 to ensure valid orchestration.\nUse plain text only inside helper instructions. Do not use markdown, code fences, or LaTeX-style backslashes.\n\nReturn exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"optional string\",\n  \"helpers\": [\n    {\n      \"label\": \"helper_1\",\n      \"instructions\": \"plain-text subproblem for the first helper\"\n    }\n  ],\n  \"synthesis_brief\": \"how the parent should combine the child results\"\n}\n\nQuestion:\nSolve this Super-Eywa coding benchmark.\nQuestion ID: coding-S3-ahc024-topological-map\nTitle: S3. AHC024 / Topological Map\n\nProblem:\n# AHC024 / Topological Map\n\nWrite `main.py`.\n\nYou are given a `50 x 50` colored map.\nColors `1..M` must preserve their connectivity and all color-adjacency relations.\nColor `0` represents empty cells.\n\n## Objective\n\n- Output a `50 x 50` grid using colors `0..M`.\n- Every nonzero color must remain connected.\n- Two colors must be adjacent in the output if and only if they were adjacent in the input.\n- The score is `E + 1`, where `E` is the number of `0` cells in the final grid.\n- Higher is better.\n\n## Input\n\n- The instance provides `N = 50`, `M`, and the original `50 x 50` color grid.\n\n## Output\n\n- Print `50` lines.\n- Each line must contain `50` integers in `0..M`.\n- The official tool accepts multiple candidate grids and scores the last one, but the simplest valid submission is one final `50 x 50` grid.\n\n## Notes\n\n- This v1 packet uses the official AtCoder visualizer on three bundled public instances.\n\nSubmission contract:\n- Return a single Python submission file named main.py.\n- Read from stdin and write to stdout.\n- Put the full file content in the artifacts list of your execute_locally JSON response.\n- Use the response field only for a brief submission summary.\n- Do not wrap the code in markdown fences inside artifacts.\n\nCritical validity rules:\n- Your program is judged by the stdout it prints when run, not by the summary in your JSON response.\n- Print exactly the contestant output described in the Output section, and nothing else.\n- Do not print the objective score, estimated score, labels, explanations, or debug text unless the Output section explicitly requires them.\n- If the Output section requires a count/header on the first line, print that first line exactly.\n- Every printed index, count, and coordinate must stay within the allowed ranges.\n- Prefer a simple valid baseline solution over an ambitious but invalid one.\n- If the problem permits an empty or minimal valid plan, that is better than malformed output.\n\nGrading target:\nE + 1, where E is the number of empty cells.\nHigher is better."
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775547918-9q0ZDbPwFm9UZyfdHEW9",
+              "object": "chat.completion",
+              "created": 1775547918,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Venice",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"The problem is a graph embedding/layout problem where colors are nodes and adjacencies are edges. To maximize empty cells, we need to find the smallest possible layout that preserves the adjacency graph and connectivity.\",\n  \"helpers\": [\n    {\n      \"label\": \"graph_analyzer\",\n      \"instructions\": \"Analyze the input 50x50 grid to extract the adjacency graph of the colors 1 to M. Identify which colors are adjacent to which other colors. Also, check if any color has internal connectivity constraints that require more than one cell (though the problem implies colors are sets of cells, the goal is to represent the color as a single connected component). Output a list of edges representing the color adjacency graph.\"\n    },\n    {\n      \"label\": \"layout_optimizer\",\n      \"instructions\": \"Given a graph of M nodes and their adjacency requirements, find a way to embed these nodes into a 50x50 grid such that each node is represented by at least one cell, all nodes are connected to their neighbors, and the total number of cells used is minimized. The output should be a 50x50 grid where each cell contains the color ID or 0 for empty.\"\n    }\n  ],\n  \"synthesis_brief\": \"Use the adjacency graph from the first helper to guide the second helper in creating a compact grid layout. The final output must be the 50x50 grid produced by the layout optimizer.\"\n}",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 779,
+                "completion_tokens": 357,
+                "total_tokens": 1136,
+                "cost": 0.0003050875,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.0003050875,
+                  "upstream_inference_prompt_cost": 0.0001265875,
+                  "upstream_inference_completions_cost": 0.0001785
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"delegate\",\n  \"decision_notes\": \"The problem is a graph embedding/layout problem where colors are nodes and adjacencies are edges. To maximize empty cells, we need to find the smallest possible layout that preserves the adjacency graph and connectivity.\",\n  \"helpers\": [\n    {\n      \"label\": \"graph_analyzer\",\n      \"instructions\": \"Analyze the input 50x50 grid to extract the adjacency graph of the colors 1 to M. Identify which colors are adjacent to which other colors. Also, check if any color has internal connectivity constraints that require more than one cell (though the problem implies colors are sets of cells, the goal is to represent the color as a single connected component). Output a list of edges representing the color adjacency graph.\"\n    },\n    {\n      \"label\": \"layout_optimizer\",\n      \"instructions\": \"Given a graph of M nodes and their adjacency requirements, find a way to embed these nodes into a 50x50 grid such that each node is represented by at least one cell, all nodes are connected to their neighbors, and the total number of cells used is minimized. The output should be a 50x50 grid where each cell contains the color ID or 0 for empty.\"\n    }\n  ],\n  \"synthesis_brief\": \"Use the adjacency graph from the first helper to guide the second helper in creating a compact grid layout. The final output must be the 50x50 grid produced by the layout optimizer.\"\n}",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "delegate",
+              "decision_notes": "The problem is a graph embedding/layout problem where colors are nodes and adjacencies are edges. To maximize empty cells, we need to find the smallest possible layout that preserves the adjacency graph and connectivity.",
+              "helpers": [
+                {
+                  "label": "graph_analyzer",
+                  "instructions": "Analyze the input 50x50 grid to extract the adjacency graph of the colors 1 to M. Identify which colors are adjacent to which other colors. Also, check if any color has internal connectivity constraints that require more than one cell (though the problem implies colors are sets of cells, the goal is to represent the color as a single connected component). Output a list of edges representing the color adjacency graph.",
+                  "variable_overrides": {}
+                },
+                {
+                  "label": "layout_optimizer",
+                  "instructions": "Given a graph of M nodes and their adjacency requirements, find a way to embed these nodes into a 50x50 grid such that each node is represented by at least one cell, all nodes are connected to their neighbors, and the total number of cells used is minimized. The output should be a 50x50 grid where each cell contains the color ID or 0 for empty.",
+                  "variable_overrides": {}
+                }
+              ],
+              "synthesis_brief": "Use the adjacency graph from the first helper to guide the second helper in creating a compact grid layout. The final output must be the 50x50 grid produced by the layout optimizer."
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "delegate",
+          "decision_notes": "The problem is a graph embedding/layout problem where colors are nodes and adjacencies are edges. To maximize empty cells, we need to find the smallest possible layout that preserves the adjacency graph and connectivity.",
+          "helpers": [
+            {
+              "label": "graph_analyzer",
+              "instructions": "Analyze the input 50x50 grid to extract the adjacency graph of the colors 1 to M. Identify which colors are adjacent to which other colors. Also, check if any color has internal connectivity constraints that require more than one cell (though the problem implies colors are sets of cells, the goal is to represent the color as a single connected component). Output a list of edges representing the color adjacency graph.",
+              "variable_overrides": {}
+            },
+            {
+              "label": "layout_optimizer",
+              "instructions": "Given a graph of M nodes and their adjacency requirements, find a way to embed these nodes into a 50x50 grid such that each node is represented by at least one cell, all nodes are connected to their neighbors, and the total number of cells used is minimized. The output should be a 50x50 grid where each cell contains the color ID or 0 for empty.",
+              "variable_overrides": {}
+            }
+          ],
+          "synthesis_brief": "Use the adjacency graph from the first helper to guide the second helper in creating a compact grid layout. The final output must be the 50x50 grid produced by the layout optimizer."
+        }
+      },
+      "usage": {
+        "prompt_tokens": 779,
+        "completion_tokens": 357,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 0,
+        "total_tokens": 1136,
+        "cost_usd": 0.0003050875,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775547918-9q0ZDbPwFm9UZyfdHEW9",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.0003050875
+            }
+          ]
+        }
+      }
+    },
+    {
+      "step": 2,
+      "note": "authored local execution after reviewing child results deterministically",
+      "prompt_snapshot": "Super-Eywa v1 runtime prompt snapshot.\nTurn index: 2\nNode depth: 0\nAllowed decisions: ['execute_locally']\nPrompt family: delegate\nBase header prompt: ''\nSelected prompt text:\nChild results have already come back to you. Use them to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\nAdditional instruction prompt profiles: []\nSystem prompt:\n\n\nUser prompt:\nChild results have already come back to you. Use them to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\n\nSynthesis brief from the earlier child-creation step:\nUse the adjacency graph from the first helper to guide the second helper in creating a compact grid layout. The final output must be the 50x50 grid produced by the layout optimizer.\n\nChild results already returned to you:\n[\n  {\n    \"node_id\": \"node_root_helper_01\",\n    \"summary\": \"FINAL_ANSWER: Undefined\\nJUSTIFICATION: No input grid was provided for analysis.\"\n  },\n  {\n    \"node_id\": \"node_root_helper_02\",\n    \"summary\": \"FINAL_ANSWER: Undefined without specific graph data\\nJUSTIFICATION: Input lacks node count and adjacency list.\"\n  }\n]\n\nQuestion:\nSolve this Super-Eywa coding benchmark.\nQuestion ID: coding-S3-ahc024-topological-map\nTitle: S3. AHC024 / Topological Map\n\nProblem:\n# AHC024 / Topological Map\n\nWrite `main.py`.\n\nYou are given a `50 x 50` colored map.\nColors `1..M` must preserve their connectivity and all color-adjacency relations.\nColor `0` represents empty cells.\n\n## Objective\n\n- Output a `50 x 50` grid using colors `0..M`.\n- Every nonzero color must remain connected.\n- Two colors must be adjacent in the output if and only if they were adjacent in the input.\n- The score is `E + 1`, where `E` is the number of `0` cells in the final grid.\n- Higher is better.\n\n## Input\n\n- The instance provides `N = 50`, `M`, and the original `50 x 50` color grid.\n\n## Output\n\n- Print `50` lines.\n- Each line must contain `50` integers in `0..M`.\n- The official tool accepts multiple candidate grids and scores the last one, but the simplest valid submission is one final `50 x 50` grid.\n\n## Notes\n\n- This v1 packet uses the official AtCoder visualizer on three bundled public instances.\n\nSubmission contract:\n- Return a single Python submission file named main.py.\n- Read from stdin and write to stdout.\n- Put the full file content in the artifacts list of your execute_locally JSON response.\n- Use the response field only for a brief submission summary.\n- Do not wrap the code in markdown fences inside artifacts.\n\nCritical validity rules:\n- Your program is judged by the stdout it prints when run, not by the summary in your JSON response.\n- Print exactly the contestant output described in the Output section, and nothing else.\n- Do not print the objective score, estimated score, labels, explanations, or debug text unless the Output section explicitly requires them.\n- If the Output section requires a count/header on the first line, print that first line exactly.\n- Every printed index, count, and coordinate must stay within the allowed ranges.\n- Prefer a simple valid baseline solution over an ambitious but invalid one.\n- If the problem permits an empty or minimal valid plan, that is better than malformed output.\n\nGrading target:\nE + 1, where E is the number of empty cells.\nHigher is better.",
+      "authored_response": {
+        "schema_name": "eywa_node_response",
+        "schema_version": "v1",
+        "orchestration_decision": "execute_locally",
+        "decision_notes": "The child results indicated that no input grid was provided for analysis, making it impossible to derive a specific adjacency graph. However, the problem requires a valid 50x50 grid that preserves connectivity and adjacency of the input. Since the input is not provided in the prompt, I will provide a robust baseline script that reads the input according to the problem specification and outputs the original grid. This ensures that the connectivity and adjacency requirements are perfectly preserved (even if the score is not optimized), which is the safest valid submission strategy for an unknown input.",
+        "response": "Baseline submission that preserves the input grid to ensure validity.",
+        "result_type": "code_submission",
+        "artifacts": [
+          {
+            "path": "main.py",
+            "content": "import sys\n\ndef solve():\n    # Read N, M from the first line\n    # The problem states N=50 is given, but we read it to be safe.\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n\n    try:\n        N = int(input_data[0])\n        M = int(input_data[1])\n        \n        # The grid starts from index 2\n        grid_elements = input_data[2:]\n        \n        # We expect N*N elements for the grid\n        # We reconstruct the grid and print it exactly as it was.\n        # This guarantees that connectivity and adjacency are preserved.\n        # While not optimizing for E (empty cells), it is a 100% valid solution.\n        \n        grid = []\n        for i in range(N):\n            row = grid_elements[i*N : (i+1)*N]\n            grid.append(row)\n            \n        for row in grid:\n            print(\" \".join(row))\n            \n    except Exception:\n        # Fallback: if input parsing fails, print a 50x50 grid of zeros\n        # to avoid crashing, though this is unlikely to be the intended behavior.\n        for _ in range(50):\n            print(\" \".join([\"0\"] * 50))\n\nif __name__ == \"__main__\":\n    solve()"
+          }
+        ]
+      },
+      "output": {
+        "contract_name": "node_output",
+        "contract_version": "v1",
+        "run_id": "coding-S3-ahc024-topological-map__delegate__mx1_coding_non_holdout_v2_2026_04_07__delegate__09__run_2026_04_07_074518",
+        "node_id": "node_root",
+        "action_type": "report_success",
+        "results": [
+          {
+            "result_type": "code_submission",
+            "content": "Baseline submission that preserves the input grid to ensure validity.",
+            "attachment_refs": [
+              "artifacts/node_root/turn_02/main.py"
+            ]
+          }
+        ],
+        "outgoing_packets": [
+          {
+            "message_type": "success_report",
+            "target": {
+              "target_type": "final_output",
+              "target_ref": "run_final_output"
+            },
+            "message": "Baseline submission that preserves the input grid to ensure validity.",
+            "attachment_refs": [
+              "artifacts/node_root/turn_02/main.py"
+            ]
+          }
+        ]
+      },
+      "provider_payload": {
+        "provider": "openrouter",
+        "attempts": [
+          {
+            "phase": "initial_generation",
+            "request": {
+              "model": "google/gemma-4-26b-a4b-it",
+              "messages": [
+                {
+                  "role": "system",
+                  "content": ""
+                },
+                {
+                  "role": "user",
+                  "content": "Child results have already come back to you. Use them to produce the final response yourself. Return exactly one JSON object in this format:\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"optional string\",\n  \"response\": \"brief submission summary\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"full Python file contents as one escaped string\"\n    }\n  ]\n}\n\nSynthesis brief from the earlier child-creation step:\nUse the adjacency graph from the first helper to guide the second helper in creating a compact grid layout. The final output must be the 50x50 grid produced by the layout optimizer.\n\nChild results already returned to you:\n[\n  {\n    \"node_id\": \"node_root_helper_01\",\n    \"summary\": \"FINAL_ANSWER: Undefined\\nJUSTIFICATION: No input grid was provided for analysis.\"\n  },\n  {\n    \"node_id\": \"node_root_helper_02\",\n    \"summary\": \"FINAL_ANSWER: Undefined without specific graph data\\nJUSTIFICATION: Input lacks node count and adjacency list.\"\n  }\n]\n\nQuestion:\nSolve this Super-Eywa coding benchmark.\nQuestion ID: coding-S3-ahc024-topological-map\nTitle: S3. AHC024 / Topological Map\n\nProblem:\n# AHC024 / Topological Map\n\nWrite `main.py`.\n\nYou are given a `50 x 50` colored map.\nColors `1..M` must preserve their connectivity and all color-adjacency relations.\nColor `0` represents empty cells.\n\n## Objective\n\n- Output a `50 x 50` grid using colors `0..M`.\n- Every nonzero color must remain connected.\n- Two colors must be adjacent in the output if and only if they were adjacent in the input.\n- The score is `E + 1`, where `E` is the number of `0` cells in the final grid.\n- Higher is better.\n\n## Input\n\n- The instance provides `N = 50`, `M`, and the original `50 x 50` color grid.\n\n## Output\n\n- Print `50` lines.\n- Each line must contain `50` integers in `0..M`.\n- The official tool accepts multiple candidate grids and scores the last one, but the simplest valid submission is one final `50 x 50` grid.\n\n## Notes\n\n- This v1 packet uses the official AtCoder visualizer on three bundled public instances.\n\nSubmission contract:\n- Return a single Python submission file named main.py.\n- Read from stdin and write to stdout.\n- Put the full file content in the artifacts list of your execute_locally JSON response.\n- Use the response field only for a brief submission summary.\n- Do not wrap the code in markdown fences inside artifacts.\n\nCritical validity rules:\n- Your program is judged by the stdout it prints when run, not by the summary in your JSON response.\n- Print exactly the contestant output described in the Output section, and nothing else.\n- Do not print the objective score, estimated score, labels, explanations, or debug text unless the Output section explicitly requires them.\n- If the Output section requires a count/header on the first line, print that first line exactly.\n- Every printed index, count, and coordinate must stay within the allowed ranges.\n- Prefer a simple valid baseline solution over an ambitious but invalid one.\n- If the problem permits an empty or minimal valid plan, that is better than malformed output.\n\nGrading target:\nE + 1, where E is the number of empty cells.\nHigher is better."
+                }
+              ],
+              "stream": false,
+              "max_tokens": 800,
+              "temperature": 0.2
+            },
+            "response": {
+              "id": "gen-1775547946-D1gMnNYD1hYt7usxeMGo",
+              "object": "chat.completion",
+              "created": 1775547946,
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "provider": "Parasail",
+              "system_fingerprint": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"The child results indicated that no input grid was provided for analysis, making it impossible to derive a specific adjacency graph. However, the problem requires a valid 50x50 grid that preserves connectivity and adjacency of the input. Since the input is not provided in the prompt, I will provide a robust baseline script that reads the input according to the problem specification and outputs the original grid. This ensures that the connectivity and adjacency requirements are perfectly preserved (even if the score is not optimized), which is the safest valid submission strategy for an unknown input.\",\n  \"response\": \"Baseline submission that preserves the input grid to ensure validity.\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"import sys\\n\\ndef solve():\\n    # Read N, M from the first line\\n    # The problem states N=50 is given, but we read it to be safe.\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n\\n    try:\\n        N = int(input_data[0])\\n        M = int(input_data[1])\\n        \\n        # The grid starts from index 2\\n        grid_elements = input_data[2:]\\n        \\n        # We expect N*N elements for the grid\\n        # We reconstruct the grid and print it exactly as it was.\\n        # This guarantees that connectivity and adjacency are preserved.\\n        # While not optimizing for E (empty cells), it is a 100% valid solution.\\n        \\n        grid = []\\n        for i in range(N):\\n            row = grid_elements[i*N : (i+1)*N]\\n            grid.append(row)\\n            \\n        for row in grid:\\n            print(\\\" \\\".join(row))\\n            \\n    except Exception:\\n        # Fallback: if input parsing fails, print a 50x50 grid of zeros\\n        # to avoid crashing, though this is unlikely to be the intended behavior.\\n        for _ in range(50):\\n            print(\\\" \\\".join([\\\"0\\\"] * 50))\\n\\nif __name__ == \\\"__main__\\\":\\n    solve()\"\n    }\n  ]\n}\n```",
+                    "refusal": null,
+                    "reasoning": null
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 892,
+                "completion_tokens": 578,
+                "total_tokens": 1470,
+                "cost": 0.00034716,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00034716,
+                  "upstream_inference_prompt_cost": 0.00011596,
+                  "upstream_inference_completions_cost": 0.0002312
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            },
+            "raw_content": "```json\n{\n  \"schema_name\": \"eywa_node_response\",\n  \"schema_version\": \"v1\",\n  \"orchestration_decision\": \"execute_locally\",\n  \"decision_notes\": \"The child results indicated that no input grid was provided for analysis, making it impossible to derive a specific adjacency graph. However, the problem requires a valid 50x50 grid that preserves connectivity and adjacency of the input. Since the input is not provided in the prompt, I will provide a robust baseline script that reads the input according to the problem specification and outputs the original grid. This ensures that the connectivity and adjacency requirements are perfectly preserved (even if the score is not optimized), which is the safest valid submission strategy for an unknown input.\",\n  \"response\": \"Baseline submission that preserves the input grid to ensure validity.\",\n  \"result_type\": \"code_submission\",\n  \"artifacts\": [\n    {\n      \"path\": \"main.py\",\n      \"content\": \"import sys\\n\\ndef solve():\\n    # Read N, M from the first line\\n    # The problem states N=50 is given, but we read it to be safe.\\n    input_data = sys.stdin.read().split()\\n    if not input_data:\\n        return\\n\\n    try:\\n        N = int(input_data[0])\\n        M = int(input_data[1])\\n        \\n        # The grid starts from index 2\\n        grid_elements = input_data[2:]\\n        \\n        # We expect N*N elements for the grid\\n        # We reconstruct the grid and print it exactly as it was.\\n        # This guarantees that connectivity and adjacency are preserved.\\n        # While not optimizing for E (empty cells), it is a 100% valid solution.\\n        \\n        grid = []\\n        for i in range(N):\\n            row = grid_elements[i*N : (i+1)*N]\\n            grid.append(row)\\n            \\n        for row in grid:\\n            print(\\\" \\\".join(row))\\n            \\n    except Exception:\\n        # Fallback: if input parsing fails, print a 50x50 grid of zeros\\n        # to avoid crashing, though this is unlikely to be the intended behavior.\\n        for _ in range(50):\\n            print(\\\" \\\".join([\\\"0\\\"] * 50))\\n\\nif __name__ == \\\"__main__\\\":\\n    solve()\"\n    }\n  ]\n}\n```",
+            "parse_error": null,
+            "parsed_response": {
+              "schema_name": "eywa_node_response",
+              "schema_version": "v1",
+              "orchestration_decision": "execute_locally",
+              "decision_notes": "The child results indicated that no input grid was provided for analysis, making it impossible to derive a specific adjacency graph. However, the problem requires a valid 50x50 grid that preserves connectivity and adjacency of the input. Since the input is not provided in the prompt, I will provide a robust baseline script that reads the input according to the problem specification and outputs the original grid. This ensures that the connectivity and adjacency requirements are perfectly preserved (even if the score is not optimized), which is the safest valid submission strategy for an unknown input.",
+              "response": "Baseline submission that preserves the input grid to ensure validity.",
+              "result_type": "code_submission",
+              "artifacts": [
+                {
+                  "path": "main.py",
+                  "content": "import sys\n\ndef solve():\n    # Read N, M from the first line\n    # The problem states N=50 is given, but we read it to be safe.\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n\n    try:\n        N = int(input_data[0])\n        M = int(input_data[1])\n        \n        # The grid starts from index 2\n        grid_elements = input_data[2:]\n        \n        # We expect N*N elements for the grid\n        # We reconstruct the grid and print it exactly as it was.\n        # This guarantees that connectivity and adjacency are preserved.\n        # While not optimizing for E (empty cells), it is a 100% valid solution.\n        \n        grid = []\n        for i in range(N):\n            row = grid_elements[i*N : (i+1)*N]\n            grid.append(row)\n            \n        for row in grid:\n            print(\" \".join(row))\n            \n    except Exception:\n        # Fallback: if input parsing fails, print a 50x50 grid of zeros\n        # to avoid crashing, though this is unlikely to be the intended behavior.\n        for _ in range(50):\n            print(\" \".join([\"0\"] * 50))\n\nif __name__ == \"__main__\":\n    solve()"
+                }
+              ]
+            }
+          }
+        ],
+        "final_authored_response": {
+          "schema_name": "eywa_node_response",
+          "schema_version": "v1",
+          "orchestration_decision": "execute_locally",
+          "decision_notes": "The child results indicated that no input grid was provided for analysis, making it impossible to derive a specific adjacency graph. However, the problem requires a valid 50x50 grid that preserves connectivity and adjacency of the input. Since the input is not provided in the prompt, I will provide a robust baseline script that reads the input according to the problem specification and outputs the original grid. This ensures that the connectivity and adjacency requirements are perfectly preserved (even if the score is not optimized), which is the safest valid submission strategy for an unknown input.",
+          "response": "Baseline submission that preserves the input grid to ensure validity.",
+          "result_type": "code_submission",
+          "artifacts": [
+            {
+              "path": "main.py",
+              "content": "import sys\n\ndef solve():\n    # Read N, M from the first line\n    # The problem states N=50 is given, but we read it to be safe.\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n\n    try:\n        N = int(input_data[0])\n        M = int(input_data[1])\n        \n        # The grid starts from index 2\n        grid_elements = input_data[2:]\n        \n        # We expect N*N elements for the grid\n        # We reconstruct the grid and print it exactly as it was.\n        # This guarantees that connectivity and adjacency are preserved.\n        # While not optimizing for E (empty cells), it is a 100% valid solution.\n        \n        grid = []\n        for i in range(N):\n            row = grid_elements[i*N : (i+1)*N]\n            grid.append(row)\n            \n        for row in grid:\n            print(\" \".join(row))\n            \n    except Exception:\n        # Fallback: if input parsing fails, print a 50x50 grid of zeros\n        # to avoid crashing, though this is unlikely to be the intended behavior.\n        for _ in range(50):\n            print(\" \".join([\"0\"] * 50))\n\nif __name__ == \"__main__\":\n    solve()"
+            }
+          ]
+        }
+      },
+      "usage": {
+        "prompt_tokens": 892,
+        "completion_tokens": 578,
+        "reasoning_tokens": 0,
+        "cached_prompt_tokens": 0,
+        "total_tokens": 1470,
+        "cost_usd": 0.00034716,
+        "provider_details": {
+          "responses": [
+            {
+              "response_id": "gen-1775547946-D1gMnNYD1hYt7usxeMGo",
+              "model": "google/gemma-4-26b-a4b-it-20260403",
+              "usage_from": "chat_completions",
+              "response_cost_usd": 0.00034716
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

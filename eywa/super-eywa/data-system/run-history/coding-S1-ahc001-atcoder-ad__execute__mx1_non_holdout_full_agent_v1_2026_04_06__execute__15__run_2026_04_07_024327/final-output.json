@@ -1,0 +1,15 @@
+{
+  "contract_name": "final_output",
+  "contract_version": "v1",
+  "run_id": "coding-S1-ahc001-atcoder-ad__execute__mx1_non_holdout_full_agent_v1_2026_04_06__execute__15__run_2026_04_07_024327",
+  "created_at_utc": "2026-04-07T02:43:42Z",
+  "source_node_id": "node_root",
+  "source_node_record_ref": "nodes/node_root/node_record.json",
+  "action_type": "report_success",
+  "terminal_result_destination": "final_output",
+  "result": {
+    "result_type": "summary",
+    "content": "FINAL_ANSWER: import sys\nimport math\n\ndef s():\n    try:\n        l = sys.stdin.read().split()\n        if not l: return\n        n = int(l[0])\n        p = []\n        for i in range(n):\n            p.append({'x': int(l[1+i*3]), 'y': int(l[2+i*3]), 'a': int(l[3+i*3]), 'id': i})\n    except:\n        return\n\n    p.sort(key=lambda x: x['a'], reverse=True)\n    r = []\n    \n    def c(x1, y1, x2, y2):\n        for rx1, ry1, rx2, ry2 in r:\n            if not (x2 <= rx1 or x1 >= rx2 or y2 <= ry1 or y1 >= ry2):\n                return False\n        return 0 <= x1 < 10000 and 0 <= y1 < 10000 and 0 <= x2 <= 10000 and 0 <= y2 <= 10000\n\n    for i in range(n):\n        px, py, pa = p[i]['x'], p[i]['y'], p[i]['a']\n        s_side = math.sqrt(pa)\n        found = False\n        for dx in [0, -1, 1]:\n            for dy in [0, -1, 1]:\n                x1, y1 = px + dx*0.1, py + dy*0.1\n                x2, y2 = x1 + s_side, y1 + s_side\n                if c(x1, y1, x2, y2):\n                    r.append((x1, y1, x2, y2))\n                    p[i]['res'] = (x1, y1, x2, y2)\n                    found = True\n                    break\n            if found: break\n        if not found:\n            p[i]['res'] = (px, py, px, py)\n\n    for i in range(n):\n        res = p[i]['res']\n        print(f\"{p[i]['id']} {res[0]} {res[1]} {res[2]} {res[3]}\")\n\ns()\nJUSTIFICATION: A greedy approach that sorts advertisers by target area and attempts to place rectangles around their requested points without overlapping previously placed rectangles. This ensures a valid, non-overlapping set of rectangles within the 10000x10000 grid.",
+    "attachment_refs": []
+  }
+}

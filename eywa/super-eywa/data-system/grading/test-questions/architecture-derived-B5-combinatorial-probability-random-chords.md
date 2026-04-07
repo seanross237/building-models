@@ -1,10 +1,12 @@
 # B5. Combinatorial Probability (Random Chords)
 
-- Type: Architecture-derived
+- Family: architecture-derived
+- Entry Type: reasoning
 - Domain: Combinatorics / probability
+- Grader Type: exact_numeric
 - Source: Architecture Exp, MATH-08
 
-## Question
+## Problem
 
 Disk divided into 4 quadrants.
 Add 25 random chords with endpoints in different quadrants.
@@ -25,4 +27,4 @@ Opus got 204.
 
 ## Notes
 
-- 
+-

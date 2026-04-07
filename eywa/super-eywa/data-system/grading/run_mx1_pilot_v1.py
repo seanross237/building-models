@@ -35,6 +35,7 @@ from sync_to_supabase_v1 import load_supabase_config, sync_grading_record  # noq
 
 DEFAULT_STARTER_PROMPT_FILE = THIS_DIR / "prompt-experiments" / "mx1-pilot-v1" / "starter_transmute_prompt_v1.txt"
 DEFAULT_DELEGATE_PROMPT_FILE = THIS_DIR / "prompt-experiments" / "mx1-pilot-v1" / "starter_delegate_prompt_v1.txt"
+DEFAULT_REVIEW_PROMPT_FILE = THIS_DIR / "prompt-experiments" / "mx1-pilot-v1" / "starter_review_prompt_v1.txt"
 DEFAULT_EXECUTE_PROMPT_FILE = THIS_DIR / "prompt-experiments" / "mx1-pilot-v1" / "execute_prompt_v1.txt"
 DEFAULT_LOOPS_ROOT = THIS_DIR / "mx1-loops"
 
@@ -150,7 +151,11 @@ def _load_or_create_manifest(
     exploration_iterations: int,
 ) -> dict[str, Any]:
     if manifest_path.exists():
-        return load_json(manifest_path)
+        manifest = load_json(manifest_path)
+        manifest["iterations_target"] = iterations_target
+        manifest["exploration_iterations"] = exploration_iterations
+        _save_manifest(manifest_path, manifest)
+        return manifest
 
     manifest = create_manifest(
         question_id=question_case.question_id,
@@ -242,13 +247,24 @@ def _run_family_iteration(
     execute_prompt_path: Path,
 ) -> dict[str, Any]:
     family = str(manifest.get("family") or args.family or "transmute").strip()
-    if family not in {"transmute", "delegate"}:
+    if family not in {"execute", "transmute", "delegate", "review"}:
         raise ValueError(f"Unsupported MX1 family: {family}")
 
     iteration_index = int(args.iteration_index or manifest.get("next_iteration_index") or 1)
     prompt_text = str(args.prompt_text or manifest.get("current_prompt_text") or manifest.get("starter_prompt_text") or "").strip()
     if not prompt_text:
         raise ValueError(f"No starter prompt text is available for family={family}.")
+    is_coding = str(getattr(question_case, "entry_type", "") or "").strip() == "coding"
+    effective_prompt_text = _effective_family_prompt_text(
+        family=family,
+        prompt_text=prompt_text,
+        is_coding=is_coding,
+    )
+    effective_execute_prompt_text = _effective_child_execute_prompt_text(
+        family=family,
+        execute_prompt_text=execute_prompt_text,
+        is_coding=is_coding,
+    )
 
     family_config = _family_iteration_config(family)
 
@@ -265,19 +281,12 @@ def _run_family_iteration(
         max_helpers=family_config["max_helpers"],
         run_id=run_id,
         sync_supabase=False,
-        extra_variable_overrides={
-            "prompt_family": family,
-            "selected_prompt_text": prompt_text,
-            "base_header_prompt": "",
-            "child_prompt_family": "execute",
-            "child_selected_prompt_text": execute_prompt_text,
-            "child_base_header_prompt": "",
-            "budget_policy": {
-                "max_depth": family_config["max_depth"],
-                "max_helpers_per_node": family_config["max_helpers"],
-                "max_turns_per_node": family_config["max_turns_per_node"],
-            },
-        },
+        extra_variable_overrides=_family_variable_overrides(
+            family=family,
+            prompt_text=effective_prompt_text,
+            execute_prompt_text=effective_execute_prompt_text,
+            family_config=family_config,
+        ),
     )
     return _record_attempt(
         args=args,
@@ -289,10 +298,10 @@ def _run_family_iteration(
         kind=family,
         iteration_index=iteration_index,
         label=label,
-        prompt_text=prompt_text,
+        prompt_text=effective_prompt_text,
         prompt_file=None if args.prompt_text else _current_prompt_path(manifest),
         prompt_family=family,
-        child_prompt_text=execute_prompt_text,
+        child_prompt_text=effective_execute_prompt_text,
         child_prompt_family="execute",
         max_depth=family_config["max_depth"],
         max_helpers=family_config["max_helpers"],
@@ -377,21 +386,44 @@ def _current_prompt_path(manifest: dict[str, Any]) -> str | None:
 
 
 def _resolve_starter_prompt_path(family: str, starter_prompt_file: str) -> Path:
-    candidate = Path(starter_prompt_file)
-    default_transmute = DEFAULT_STARTER_PROMPT_FILE.resolve()
-    if str(candidate).strip() and candidate.resolve() != default_transmute:
-        return candidate.resolve()
     family_name = str(family or "transmute").strip()
+    if str(starter_prompt_file or "").strip():
+        candidate = Path(starter_prompt_file).resolve()
+        default_map = {
+            "execute": DEFAULT_EXECUTE_PROMPT_FILE.resolve(),
+            "delegate": DEFAULT_DELEGATE_PROMPT_FILE.resolve(),
+            "review": DEFAULT_REVIEW_PROMPT_FILE.resolve(),
+            "transmute": DEFAULT_STARTER_PROMPT_FILE.resolve(),
+        }
+        default_path = default_map.get(family_name, DEFAULT_STARTER_PROMPT_FILE.resolve())
+        if candidate == default_path or candidate not in set(default_map.values()):
+            return candidate
     if family_name == "delegate":
         return DEFAULT_DELEGATE_PROMPT_FILE.resolve()
-    return default_transmute
+    if family_name == "review":
+        return DEFAULT_REVIEW_PROMPT_FILE.resolve()
+    if family_name == "execute":
+        return DEFAULT_EXECUTE_PROMPT_FILE.resolve()
+    return DEFAULT_STARTER_PROMPT_FILE.resolve()
 
 
 def _family_iteration_config(family: str) -> dict[str, int]:
+    if family == "execute":
+        return {
+            "max_depth": 0,
+            "max_helpers": 0,
+            "max_turns_per_node": 1,
+        }
     if family == "delegate":
         return {
             "max_depth": 1,
             "max_helpers": 2,
+            "max_turns_per_node": 4,
+        }
+    if family == "review":
+        return {
+            "max_depth": 1,
+            "max_helpers": 1,
             "max_turns_per_node": 4,
         }
     return {
@@ -399,6 +431,86 @@ def _family_iteration_config(family: str) -> dict[str, int]:
         "max_helpers": 1,
         "max_turns_per_node": 4,
     }
+
+
+def _family_variable_overrides(
+    *,
+    family: str,
+    prompt_text: str,
+    execute_prompt_text: str,
+    family_config: dict[str, int],
+    ) -> dict[str, Any]:
+    return {
+        "prompt_family": family,
+        "selected_prompt_text": prompt_text,
+        "base_header_prompt": "",
+        "child_prompt_family": "execute",
+        "child_selected_prompt_text": execute_prompt_text,
+        "child_base_header_prompt": "",
+        "review_prompt_family": "",
+        "review_selected_prompt_text": "",
+        "review_base_header_prompt": "",
+        "budget_policy": {
+            "max_depth": family_config["max_depth"],
+            "max_helpers_per_node": family_config["max_helpers"],
+            "max_turns_per_node": family_config["max_turns_per_node"],
+        },
+    }
+
+
+def _effective_family_prompt_text(*, family: str, prompt_text: str, is_coding: bool) -> str:
+    if not is_coding:
+        return prompt_text
+    if family == "execute":
+        return _coding_execute_prompt_text(prompt_text)
+    return prompt_text
+
+
+def _effective_child_execute_prompt_text(*, family: str, execute_prompt_text: str, is_coding: bool) -> str:
+    if not is_coding:
+        return execute_prompt_text
+    if family == "transmute":
+        return _coding_execute_prompt_text(execute_prompt_text)
+    return execute_prompt_text
+
+
+def _coding_execute_prompt_text(prompt_text: str) -> str:
+    guidance = _strip_json_scaffold(prompt_text).strip()
+    if not guidance:
+        guidance = "Solve the coding problem and maximize the objective score while preserving output validity."
+    return (
+        f"{guidance}\n\n"
+        "When orchestration_decision is 'execute_locally', you MUST submit exactly one Python file in the artifacts list:\n"
+        "- path: main.py\n"
+        "- content: the full Python source code as one escaped string\n\n"
+        "The response field should be only a brief submission summary. Do not put contestant stdout in the response field.\n"
+        "Your main.py must read from stdin and print only the contestant output required by the problem.\n"
+        "Do not print explanations, labels, debug text, or estimated scores.\n"
+        "If the Output section requires a leading count/header line, print it exactly.\n"
+        "Prefer a simple valid baseline over malformed ambitious output.\n\n"
+        "Return exactly one JSON object in this format:\n"
+        "{\n"
+        '  "schema_name": "eywa_node_response",\n'
+        '  "schema_version": "v1",\n'
+        '  "orchestration_decision": "execute_locally",\n'
+        '  "decision_notes": "optional string",\n'
+        '  "response": "brief submission summary",\n'
+        '  "result_type": "code_submission",\n'
+        '  "artifacts": [\n'
+        "    {\n"
+        '      "path": "main.py",\n'
+        '      "content": "full Python file contents as one escaped string"\n'
+        "    }\n"
+        "  ]\n"
+        "}"
+    )
+
+
+def _strip_json_scaffold(prompt_text: str) -> str:
+    marker = "Return exactly one JSON object in this format:"
+    if marker not in prompt_text:
+        return prompt_text
+    return prompt_text.split(marker, 1)[0].rstrip()
 
 
 def _find_attempt(manifest: dict[str, Any], run_id: str, iteration_index: int, kind: str) -> dict[str, Any]:

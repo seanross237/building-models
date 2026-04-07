@@ -86,6 +86,20 @@ def validate_authored_response(
                 result_type = nested_result_type
         if result_type is not None:
             normalized["result_type"] = str(result_type).strip()
+        artifacts = payload.get("artifacts")
+        if isinstance(artifacts, list):
+            normalized_artifacts = []
+            for artifact in artifacts:
+                if not isinstance(artifact, dict):
+                    continue
+                normalized_artifacts.append(
+                    {
+                        "path": str(artifact.get("path") or "").strip(),
+                        "content": str(artifact.get("content") or ""),
+                    }
+                )
+            if normalized_artifacts:
+                normalized["artifacts"] = normalized_artifacts
     elif normalized["orchestration_decision"] == "report_problem":
         response = payload.get("response", "")
         if not isinstance(response, str) or not response.strip():
@@ -103,6 +117,19 @@ def validate_authored_response(
             message_for_next_agent = _render_transmute_payload(payload["payload"])
         normalized["message_for_next_agent"] = (
             message_for_next_agent.strip() if isinstance(message_for_next_agent, str) else ""
+        )
+        next_node_overrides = payload.get("next_node_overrides") or {}
+        normalized["next_node_overrides"] = next_node_overrides if isinstance(next_node_overrides, dict) else next_node_overrides
+    elif normalized["orchestration_decision"] == "review":
+        draft_response = payload.get("draft_response", "")
+        if not isinstance(draft_response, str) or not draft_response.strip():
+            draft_response = _coerce_response_text(draft_response)
+        normalized["draft_response"] = draft_response.strip() if isinstance(draft_response, str) else ""
+        message_for_reviewer = payload.get("message_for_reviewer", "")
+        if not isinstance(message_for_reviewer, str) or not message_for_reviewer.strip():
+            message_for_reviewer = _coerce_response_text(message_for_reviewer)
+        normalized["message_for_reviewer"] = (
+            message_for_reviewer.strip() if isinstance(message_for_reviewer, str) else ""
         )
         next_node_overrides = payload.get("next_node_overrides") or {}
         normalized["next_node_overrides"] = next_node_overrides if isinstance(next_node_overrides, dict) else next_node_overrides
