@@ -39,6 +39,29 @@ ATOM_NS = {
 }
 ARXIV_DATETIME_FORMAT = "%Y-%m-%dT%H:%M:%SZ"
 
+# arXiv's published rate limit is one request every 3 seconds. We use 3.5s
+# to give a small safety margin. The previous unthrottled implementation
+# slammed ~234 sequential requests per nightly run and ~half got 429'd
+# (silently dropped 19/39 topics).
+_ARXIV_MIN_REQUEST_INTERVAL = 3.5
+# Sentinel: None means "no prior request from this process". We can't use
+# 0.0 because time.monotonic() on macOS returns ~0 at process start, which
+# would make the first call see "now - 0.0 ≈ 0" and sleep spuriously.
+_arxiv_last_request_time: float | None = None
+
+
+def _arxiv_throttle() -> None:
+    """Block until at least _ARXIV_MIN_REQUEST_INTERVAL has elapsed since
+    the last arXiv request from this process. Updates the last-request
+    timestamp on return."""
+    global _arxiv_last_request_time
+    if _arxiv_last_request_time is not None:
+        now = time.monotonic()
+        wait = _ARXIV_MIN_REQUEST_INTERVAL - (now - _arxiv_last_request_time)
+        if wait > 0:
+            time.sleep(wait)
+    _arxiv_last_request_time = time.monotonic()
+
 
 class ArxivRateLimitError(RuntimeError):
     pass
@@ -217,7 +240,13 @@ def request_feed(url: str) -> bytes:
     request = urllib.request.Request(url, headers={"User-Agent": "research-radar/0.1"})
     last_error: Exception | None = None
 
-    for attempt in range(2):
+    # 5 attempts with exponential backoff on 429 / transient errors. The
+    # global throttle (_arxiv_throttle) handles steady-state pacing; this
+    # backoff handles bursts where arXiv tells us to slow down anyway.
+    backoff_schedule = [5, 15, 45, 90]  # seconds to wait BEFORE retries 2..5
+
+    for attempt in range(5):
+        _arxiv_throttle()
         buffer = bytearray()
         try:
             with urllib.request.urlopen(request, timeout=15) as response:
@@ -235,16 +264,34 @@ def request_feed(url: str) -> bytes:
             return payload.split(b"</feed>", 1)[0] + b"</feed>"
         except HTTPError as exc:
             last_error = exc
-            if exc.code == 429 and attempt == 0:
-                time.sleep(5)
+            if exc.code == 429 and attempt < len(backoff_schedule):
+                # Honor Retry-After header if arXiv sends one, otherwise
+                # use our exponential schedule.
+                retry_after_header = exc.headers.get("Retry-After") if exc.headers else None
+                try:
+                    wait = int(retry_after_header) if retry_after_header else backoff_schedule[attempt]
+                except (TypeError, ValueError):
+                    wait = backoff_schedule[attempt]
+                print(
+                    f"[collect-papers] arXiv 429 on attempt {attempt + 1}, "
+                    f"backing off {wait}s",
+                    file=sys.stderr,
+                )
+                time.sleep(wait)
                 continue
             if exc.code == 429:
-                raise ArxivRateLimitError("arXiv HTTP error 429") from exc
+                raise ArxivRateLimitError("arXiv HTTP error 429 after retries") from exc
             raise RuntimeError(f"arXiv HTTP error {exc.code}") from exc
         except (URLError, TimeoutError, RuntimeError) as exc:
             last_error = exc
-            if attempt == 0:
-                time.sleep(3)
+            if attempt < len(backoff_schedule):
+                wait = backoff_schedule[attempt]
+                print(
+                    f"[collect-papers] arXiv transient error on attempt {attempt + 1}, "
+                    f"backing off {wait}s: {exc}",
+                    file=sys.stderr,
+                )
+                time.sleep(wait)
                 continue
             raise ArxivTransientError(f"arXiv request failed: {exc}") from exc
 
@@ -740,6 +787,8 @@ def main() -> int:
                 print(f"[collect-papers] targeted area={area} failed: {exc}", file=sys.stderr)
 
     all_failures = failures + targeted_failures
+    all_soft_failures = soft_failures + targeted_soft_failures
+    total_units = len(topics) + len(targeted_areas)
     print(
         f"[collect-papers] completed topics={len(topics)} total_new_papers={total} failures={failures} transient_skips={soft_failures}"
     )
@@ -748,6 +797,19 @@ def main() -> int:
             f"[collect-papers] targeted areas={len(targeted_areas)} targeted_new_papers={targeted_total} "
             f"targeted_failures={targeted_failures} targeted_transient_skips={targeted_soft_failures}"
         )
+
+    # Promote chronic transient-skip rates to a real failure so the
+    # nightly wrapper actually notices when arXiv throttles us into the
+    # ground. Threshold: more than a quarter of all topics+areas dropped.
+    soft_failure_threshold = max(1, total_units // 4)
+    if all_soft_failures > soft_failure_threshold:
+        print(
+            f"[collect-papers] FAIL: {all_soft_failures} transient skips exceeds "
+            f"threshold {soft_failure_threshold} ({total_units // 4} = total/4); "
+            f"escalating to hard failure",
+            file=sys.stderr,
+        )
+        return 1
     return 1 if all_failures else 0
 
 

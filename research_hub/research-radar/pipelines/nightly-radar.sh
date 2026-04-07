@@ -73,10 +73,18 @@ run_step analyze-items bash "$ROOT/pipelines/analyze-items.sh" "${analyze_args[@
 run_step build-presentations bash "$ROOT/pipelines/build-presentations.sh"
 
 # --- Daily aggregation and analysis ---
-run_step aggregate-daily bash "$ROOT/pipelines/aggregate-daily.sh"
-run_step analyze-daily bash "$ROOT/pipelines/analyze-daily.sh"
+# NOTE: aggregate-daily.sh and analyze-daily.sh were referenced here by
+# commit 1e57476ce ("add daily aggregate + analysis steps to nightly
+# pipeline") but the scripts themselves were never committed. They
+# silently failed with exit 127 every night until 2026-04-07. Disabled
+# until the actual scripts exist. Re-enable by uncommenting both lines.
+# run_step aggregate-daily bash "$ROOT/pipelines/aggregate-daily.sh"
+# run_step analyze-daily bash "$ROOT/pipelines/analyze-daily.sh"
 
 echo "[research-radar] finished nightly radar run at $(date -u '+%Y-%m-%dT%H:%M:%SZ') failures=$failures successes=$successes"
-if [ "$successes" -eq 0 ]; then
+# Exit non-zero on ANY step failure so ~/scripts/nightly-radar.sh fires
+# notify-failure.sh. The previous "successes==0" check meant partial
+# failures were silently swallowed.
+if [ "$failures" -gt 0 ]; then
   exit 1
 fi
