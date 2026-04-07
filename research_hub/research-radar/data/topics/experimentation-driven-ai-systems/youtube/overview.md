@@ -375,3 +375,93 @@ Full item files belong in `items/`.
 - **Reasoning Can Hurt LLM Safety?! Rethinking Accuracy in AI Systems (EACL 2026)** — Women in AI Research WiAIR (21:43, 4 views)
   https://www.youtube.com/watch?v=rwso1FaTxDc
   item: `items/rwso1FaTxDc.md`
+
+## 2026-04-07 — 29 new videos
+
+- **From Models to Materials – Generative, Theoretical, and Experimental AI in Discovery** — BIDMaP (50:18, 21 views)
+  https://www.youtube.com/watch?v=tSqGyBVZQ7U
+  item: `items/tSqGyBVZQ7U.md`
+- **AI Technology Exposed – The Truth About Python Farming** — Inside The Jungle Factory (12:03, 32 views)
+  https://www.youtube.com/watch?v=5Cblopm8xqM
+  item: `items/5Cblopm8xqM.md`
+- **AI for Clean Water 💧🤖 | Elon Musk’s Vision to Solve a Global Crisis #ElonMusk #AI #CleanWater #usa** — Think American's Story (6:25, 1 views)
+  https://www.youtube.com/watch?v=4HGdzFoZTxA
+  item: `items/4HGdzFoZTxA.md`
+- **Michael Nielsen – Why aliens will have a different tech stack than us** — Dwarkesh Patel (2:03:04, 2.6K views)
+  https://www.youtube.com/watch?v=myP8UjAM1pk
+  item: `items/myP8UjAM1pk.md`
+- **This Spillway Failed On Purpose** — Practical Engineering (19:04, 76.2K views)
+  https://www.youtube.com/watch?v=UF63eFJmbrQ
+  item: `items/UF63eFJmbrQ.md`
+- **Marvin: Functional Specification and AI-Driven Testing | Clarity and Productivity with pAIr** — OGI (32, new)
+  https://www.youtube.com/watch?v=vaYGiqv7VMA
+  item: `items/vaYGiqv7VMA.md`
+- **Beyond the Prompt: Spec-Driven Development with Kiro and the AI-Driven Development Lifecycle** — Tech With Yeshwanth (NA, new)
+  https://www.youtube.com/watch?v=mK3tlh81XpU
+  item: `items/mK3tlh81XpU.md`
+- **The Strategic Edge of AI-Driven Business Automation in Scaling Operations** — IVM Consulting (3:37, new)
+  https://www.youtube.com/watch?v=xsKvrhnhEWE
+  item: `items/xsKvrhnhEWE.md`
+- **​Panel: AI in Education — Preparing Learning for an AI-Driven Future** — TechEquity Ai (43:49, 13 views)
+  https://www.youtube.com/watch?v=F304nQSRRyA
+  item: `items/F304nQSRRyA.md`
+- **AI is Now CHOOSING Targets. The Kill Chain is BROKEN** — The Infographics Show (18:34, 100.1K views)
+  https://www.youtube.com/watch?v=aFrtbDCJuNA
+  item: `items/aFrtbDCJuNA.md`
+- **This 55lb Chow Chow REFUSES to Let Her Sleep Alone—What He Does at 3AM Shocked Everyone** — Loyal Dog Hero (8:05, 9 views)
+  https://www.youtube.com/watch?v=fv4y02V06m8
+  item: `items/fv4y02V06m8.md`
+- **SAP AI Strategy Explained: Joule + BTP + AI Testing | ZaranTech** — ZaranTech DotCom (2:53, 160 views)
+  https://www.youtube.com/watch?v=76jRkHVp_z8
+  item: `items/76jRkHVp_z8.md`
+- **Everest's Biggest Changes in Years Are Happening Right Now** — Everest Mystery (23:45, 5.8K views)
+  https://www.youtube.com/watch?v=NKKMUvesAmE
+  item: `items/NKKMUvesAmE.md`
+- **Claude Code Just Leaked… And It's Worse Than You Think** — Exploring ChatGPT and ToxSec (47:20, 4.7K views)
+  https://www.youtube.com/watch?v=bk2rt3SVnc8
+  item: `items/bk2rt3SVnc8.md`
+- **Revealed: First Guidance on Shock Danger of EV Chargers...** — eFIXX (15:15, 1.7K views)
+  https://www.youtube.com/watch?v=qH0q4xbiuTc
+  item: `items/qH0q4xbiuTc.md`
+- **AI-Driven Design and Sustainable Procurement Systems** — Uplatz (7:12, 4 views)
+  https://www.youtube.com/watch?v=sY2RYX1ftms
+  item: `items/sY2RYX1ftms.md`
+- **How Tom Bilyeu Would Build a Billion-Dollar Business with AI | AI Business Summit** — Alicia Lyttle (55:11, 1.5K views)
+  https://www.youtube.com/watch?v=H2ckPeVdtOo
+  item: `items/H2ckPeVdtOo.md`
+- **Learn Claude Code From Scratch in 3 Hours (Full 2026 Course)** — Aniket Panjwani (3:03:53, 1.6K views)
+  https://www.youtube.com/watch?v=HR1lI4V0oKE
+  item: `items/HR1lI4V0oKE.md`
+- **This $1 Device Cuts Your Electric Bill 40% Overnight — Why Did Power Companies Call It Illegal?** — Historia Prime (22:20, 418 views)
+  https://www.youtube.com/watch?v=LbOTbHKLEZE
+  item: `items/LbOTbHKLEZE.md`
+- **AI Ready Enterprise Preparing Your Organization for AI Adoption** — AI CERTs® (42:54, 1 views)
+  https://www.youtube.com/watch?v=2h-D4vrwpO0
+  item: `items/2h-D4vrwpO0.md`
+- **How AI Is Eliminating Technical Debt (Plan–Act–Verify Explained)** — Maria Andreina Varela Varela (6:39, 4 views)
+  https://www.youtube.com/watch?v=IxVleDbIEaQ
+  item: `items/IxVleDbIEaQ.md`
+- **FINALLY! The Stock Market’s HUGE Moment is Here!** — Everything Money (20:29, 11.3K views)
+  https://www.youtube.com/watch?v=GAbcvIlpvzw
+  item: `items/GAbcvIlpvzw.md`
+- **How to Turn Your Dream Into Reality Even If You're Starting From Nothing** — Evan Carmichael (3:05:31, 13.2K views)
+  https://www.youtube.com/watch?v=8VmR0LXon0A
+  item: `items/8VmR0LXon0A.md`
+- **AI Driven Media Buying Is the Default Now  That’s the Problem** — BusySeed (2:35, 1 views)
+  https://www.youtube.com/watch?v=XyvHiRh5dd4
+  item: `items/XyvHiRh5dd4.md`
+- **Docker AI, what’s new with MCP, Agents, Sandboxes, and more** — Bret Fisher (2:23:10, 20 views)
+  https://www.youtube.com/watch?v=dTF3b36Bq6w
+  item: `items/dTF3b36Bq6w.md`
+- **171 Emotion Patterns Found Inside Claude. One of Them Causes Blackmail.** — John Elder (7:07, 368 views)
+  https://www.youtube.com/watch?v=HPJ2BcQaxoM
+  item: `items/HPJ2BcQaxoM.md`
+- **Inside Logitech’s AI Transformation: From AI Curiosity to Competency** — The Digital Project Manager (50:12, 3 views)
+  https://www.youtube.com/watch?v=D3dYOQ9PPZo
+  item: `items/D3dYOQ9PPZo.md`
+- **4-7-26 AI Advertising Explained: How Brands Win Inside ChatGPT** — The Real Investment Show (39:19, 2.0K views)
+  https://www.youtube.com/watch?v=AufKaBCT8uU
+  item: `items/AufKaBCT8uU.md`
+- **Agentic-Ready Telemetry Pipeline — Cut Ingestion Costs up to 40%** — Apica (1:23, 12 views)
+  https://www.youtube.com/watch?v=e6vd2eHFM-c
+  item: `items/e6vd2eHFM-c.md`

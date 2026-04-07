@@ -72,3 +72,30 @@ Full item files belong in `items/`.
 - **💥ENG SUB💥【五百年一梦，我自仙界归来】Returned from the Immortal Realm #热血 #玄幻 #都市 #重生 #穿越 #anime** — 超有钱动漫 Anime Club (8:02:04, 471 views)
   https://www.youtube.com/watch?v=k1tWtAvoTUU
   item: `items/k1tWtAvoTUU.md`
+
+## 2026-04-07 — 8 new videos
+
+- **【精彩刑偵探案劇】暗流風暴 04🌪️孤身潛入境外間諜組織，國安幹警在刀尖上獲取核心情報，層層破局，將內鬼間諜一網打盡#中國電視劇 #張若昀 #林永健 #萬茜** — 迷雾回廊Cdrama (1:22:17, 4 views)
+  https://www.youtube.com/watch?v=NL3q6k2iEx0
+  item: `items/NL3q6k2iEx0.md`
+- **Giant Beast World: He Activated a 10,000x Amplification System and Built a Powerful Mechanical Army!** — Panda Fantasy Chronicles (27:38:52, 587 views)
+  https://www.youtube.com/watch?v=YVU3yHhBtWQ
+  item: `items/YVU3yHhBtWQ.md`
+- **His Twin Brother Was Murdered... So He Became Him | The Ember Knight Part 1** — Animated Manhwa (8:04:43, 4 views)
+  https://www.youtube.com/watch?v=ENqHpcsanAU
+  item: `items/ENqHpcsanAU.md`
+- **The Truth Finally Comes Out... And It Changes Everything | The Ember Knight Part 3** — Animated Manhwa (7:55:49, 3 views)
+  https://www.youtube.com/watch?v=sKYRC2k6Zcc
+  item: `items/sKYRC2k6Zcc.md`
+- **The Fake Knight Becomes Stronger Than The Real One | The Ember Knight Part 2** — Animated Manhwa (8:02:59, 5 views)
+  https://www.youtube.com/watch?v=4Ph1NonHrxw
+  item: `items/4Ph1NonHrxw.md`
+- **FOX54 Midday News Update | 4.7.2026** — FOX54 News Huntsville (31:41, 5 views)
+  https://www.youtube.com/watch?v=66GVcrtp7yU
+  item: `items/66GVcrtp7yU.md`
+- **Board of Supervisors - 3/24/26** — County of Sacramento (4:26:53, 23 views)
+  https://www.youtube.com/watch?v=H3jylCHHWKk
+  item: `items/H3jylCHHWKk.md`
+- **PoorBoy Unlock 10000x Upgrade System,Upgrades Job Offer into Chairman Letter,Becomes Powerful Tycoon** — Mania Comics Legends (7:57:44, 187 views)
+  https://www.youtube.com/watch?v=sZwuET7ZHG0
+  item: `items/sZwuET7ZHG0.md`

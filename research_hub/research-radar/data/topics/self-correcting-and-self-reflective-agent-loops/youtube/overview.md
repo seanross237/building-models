@@ -216,3 +216,39 @@ Full item files belong in `items/`.
 - **Pregnant Wife Unaware She Inherited Billions Billionaire Husband Divorces Her to Marry Her Closest F** — Betrayed Stories (1:46:15, 10 views)
   https://www.youtube.com/watch?v=Ec-di3dGqSk
   item: `items/Ec-di3dGqSk.md`
+
+## 2026-04-07 — 11 new videos
+
+- **Brainstorm: AI Crossing the Disciplines with Ellie Pavlick and Junehyuk Jung - hosted by the JNBC** — Brown University (56:00, 20 views)
+  https://www.youtube.com/watch?v=kUhxbE1LJ0c
+  item: `items/kUhxbE1LJ0c.md`
+- **THE COST OF IGNORING | Your Subconscious Mind | Full Audiobook** — The Sovereign Path (2:46:41, 2 views)
+  https://www.youtube.com/watch?v=79CTunR7mRc
+  item: `items/79CTunR7mRc.md`
+- **"Absolute AI Maximalist" Adam Jacob on Building Software That Builds Software** — RedMonk (50:15, 64 views)
+  https://www.youtube.com/watch?v=l0F9thZG3dI
+  item: `items/l0F9thZG3dI.md`
+- **Warren Buffett: Why Your Biggest Advantage Is The Ability To Wait** — Warren Buffett Mindset (20:35, 18 views)
+  https://www.youtube.com/watch?v=4KyOmYfiuz0
+  item: `items/4KyOmYfiuz0.md`
+- **How Farrukh stopped putting his life on hold for sleep** — Insomnia Coach (54:26, 28 views)
+  https://www.youtube.com/watch?v=3V5yW0plRk4
+  item: `items/3V5yW0plRk4.md`
+- **My Daughter-In-Law Threw My Gift Away And Said “Cheap Junk”—What I Did Next Made Her Regret It** — Revenge Room (1:31:48, 2.3K views)
+  https://www.youtube.com/watch?v=aQsEm5W9R1g
+  item: `items/aQsEm5W9R1g.md`
+- **Java Application Support Engineer (Part 2/2): How to Answer a “Bad Decision” Interview Question !!** — Ace Interviews (6:05:39, 2 views)
+  https://www.youtube.com/watch?v=c9RDnlQgyjI
+  item: `items/c9RDnlQgyjI.md`
+- **Daily AI News: The $5 Billion AI Crisis. We Can’t Unplug It. AI Just Refused Shutdown #skynet** — Useful AI Hacks (32:00, 5 views)
+  https://www.youtube.com/watch?v=eXcAaLdu8bU
+  item: `items/eXcAaLdu8bU.md`
+- **This Conversation Could Save You Thousands of Dollars** — Mel Robbins Story (1:13:43, 1 views)
+  https://www.youtube.com/watch?v=7IpExGv0hM0
+  item: `items/7IpExGv0hM0.md`
+- **Why are you afraid of success? This first step will change your life forever!** — Barwy Zdrowia - Janusz Dąbrowski (1:28:35, 36 views)
+  https://www.youtube.com/watch?v=yxOYm2LU7A0
+  item: `items/yxOYm2LU7A0.md`
+- **Why Love Robots are Perfectly Imperfect?** — Wooden Slate (13:50, 84 views)
+  https://www.youtube.com/watch?v=o5gGpy8QOtQ
+  item: `items/o5gGpy8QOtQ.md`

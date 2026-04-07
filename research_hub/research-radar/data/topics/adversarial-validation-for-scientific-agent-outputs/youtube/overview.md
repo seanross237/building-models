@@ -21,3 +21,9 @@ Full item files belong in `items/`.
 - **Aaron Stannard: Software 2.0 using AI - Episode 396** — AI DevOps Podcast (50:52, 8 views)
   https://www.youtube.com/watch?v=dlkDgeiP3eU
   item: `items/dlkDgeiP3eU.md`
+
+## 2026-04-07 — 1 new videos
+
+- **THE COST OF IGNORING | Your Subconscious Mind | Full Audiobook** — The Sovereign Path (2:46:41, 2 views)
+  https://www.youtube.com/watch?v=79CTunR7mRc
+  item: `items/79CTunR7mRc.md`

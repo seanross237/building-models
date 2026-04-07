@@ -1,0 +1,26 @@
+# Warren Buffett: Why Your Biggest Advantage Is The Ability To Wait
+
+- Topic: `self-correcting and self-reflective agent loops`
+- Priority: `relevant`
+- Source context: `eywa`
+- Type: `youtube`
+- Video ID: `4KyOmYfiuz0`
+- Channel: `Warren Buffett Mindset`
+- Duration: `20:35`
+- Views: `18 views`
+- Upload date: `NA`
+- URL: https://www.youtube.com/watch?v=4KyOmYfiuz0
+- Collected at UTC: `2026-04-07T18:15:30Z`
+- Transcript status: `pending`
+
+## Summary
+
+Not analyzed yet.
+
+## Transcript
+
+Transcript not collected yet.
+
+## Notes
+
+- Freshly collected by Research Radar.

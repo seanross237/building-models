@@ -372,3 +372,96 @@ Full item files belong in `items/`.
 - **【ENG SUB】養女替姐姐嫁給人人嫌棄的殘暴少爺，殊不知少爺早已沉淪于她，不近女色只願寵她一人！#逆袭爽剧#drama（hzhj）** — 甜心爽剧Drama (2:20:53, 8.8K views)
   https://www.youtube.com/watch?v=t9adgpSQg3A
   item: `items/t9adgpSQg3A.md`
+
+## 2026-04-07 — 30 new videos
+
+- **ЗОЛОТУХІН: Мир з Путіним ЗІРВАЛО ВБИВСТВО ТЕЩІ Міндіча. Зеленський НЕ ПРОБАЧИВ. Її ПРИБРАЛА ФСБ** — Борислав Береза (22:38, 8.6K views)
+  https://www.youtube.com/watch?v=xk0-WqQpldU
+  item: `items/xk0-WqQpldU.md`
+- **The history and future of AI at Google, with Sundar Pichai** — Stripe (1:09:33, 10.7K views)
+  https://www.youtube.com/watch?v=bTA8sjgvA4c
+  item: `items/bTA8sjgvA4c.md`
+- **靳深闖入她生活的那天，就為她定下了無數規矩——不準談戀愛、不準晚歸、不準離開我的視線，喬百合不懂，為什麼這個未來姐夫，比父母管得還要寬？直到那晚醉酒他奪走她的初夜，低聲告白「我接近你姐姐，是為了你」** — 追爽劇 (2:33:03, 42.9K views)
+  https://www.youtube.com/watch?v=kKw9I4zN2Vw
+  item: `items/kKw9I4zN2Vw.md`
+- **C.AI Alternative Without Filter: How To Use SillyTavern (Tutorial)** — Emil AI (4:18, 14 views)
+  https://www.youtube.com/watch?v=LWp097azRHM
+  item: `items/LWp097azRHM.md`
+- **How AI Eliminates Data Silos in Support Teams** — Fast Slow Motion (24:02, new)
+  https://www.youtube.com/watch?v=KHfPIrNu4xs
+  item: `items/KHfPIrNu4xs.md`
+- **An incredible mystery thriller: Brace for Impact (2016) (HD)** — CrimeStar (1:27:31, 430 views)
+  https://www.youtube.com/watch?v=Kz9j9AJ_gEI
+  item: `items/Kz9j9AJ_gEI.md`
+- **Shadows & Secrets Deep Dive - Lisa Unger's Close Your Eyes and Count to 10** — ShadowsandSecrets (55:23, 1 views)
+  https://www.youtube.com/watch?v=aRDiwJc4j-k
+  item: `items/aRDiwJc4j-k.md`
+- **These Chinese Streaming Boxes Could Be the Trojan Horse That Takes Down the U.S. 📺 Ep 172: SuperBox** — Jack Rhysider (1:27:52, 7.7K views)
+  https://www.youtube.com/watch?v=dS6PkuZuxJ4
+  item: `items/dS6PkuZuxJ4.md`
+- **她好心遞了一杯水，總裁當場一見鍾情，強勢闖入她的生活將她占有，所有人都說她是他的掌中雀，遲早被玩膩扔掉，但他的愛並非牢籠，而是這世上最拿得出手的深情#黄靖洲#郇依心** — 追劇鴨 (2:33:33, 160.8K views)
+  https://www.youtube.com/watch?v=KB7RC28eoGg
+  item: `items/KB7RC28eoGg.md`
+- **Steve Fisk (Pigeonhed, Producer) - EP214 - The Creative Asylum** — The Creative Asylum (1:02:46, 36 views)
+  https://www.youtube.com/watch?v=N4En6tVQJvo
+  item: `items/N4En6tVQJvo.md`
+- **窮小子為救美女總裁挺身而出反被混混羞辱，殊不知他有掌控時間的能力！彈指間所有人便無法行動，輕鬆解決幾百人擄獲美女總裁芳心！ #掌控時間** — 林深短剧NO1CoolMovie (1:38:06, 5.1K views)
+  https://www.youtube.com/watch?v=45LMvCfkHTc
+  item: `items/45LMvCfkHTc.md`
+- **Building a Brokerage in Dubai: Blueprint vs Reality (Part 1 of 2)** — GOLDEN NUGGETS (1:18:54, 299 views)
+  https://www.youtube.com/watch?v=6YDlYkXQHHM
+  item: `items/6YDlYkXQHHM.md`
+- **Good Morning America Full Broadcast - Tuesday, April 7, 2026** — ABC News (1:10:03, 3.2K views)
+  https://www.youtube.com/watch?v=eAzmePbaHZ0
+  item: `items/eAzmePbaHZ0.md`
+- **Modern Weapons vs. Ancient Legends - ECHOES OF THUNDER EP1-8** — Skele Adventure (15:26, 2.5K views)
+  https://www.youtube.com/watch?v=eFy0l5mj1Uw
+  item: `items/eFy0l5mj1Uw.md`
+- **Ordinary girl kindly gave stranger water, unaware he was billionaire, he fell in love at first sight** — Nana Drama (2:33:25, 34.8K views)
+  https://www.youtube.com/watch?v=p8lmchy_G4k
+  item: `items/p8lmchy_G4k.md`
+- **🔥After Traveling 2000 Years Back, He Unlocked Shop System and Married 3 Wives with 2 Pounds of Meat!** — Bella's Comic Chronicles (24:43:36, 575 views)
+  https://www.youtube.com/watch?v=VfVepfwdDy0
+  item: `items/VfVepfwdDy0.md`
+- **The $7 Million Vanishing Act: How These Bank Robbers Left the FBI Clueless.** — Deep Drive and axntw (1:22:04, 542 views)
+  https://www.youtube.com/watch?v=b-OJxclz5uQ
+  item: `items/b-OJxclz5uQ.md`
+- **Pretend to Be My Grandson,” She Told the SEAL — What a Female FBI and K9 Did Next Shocked Everyone** — Whisper K9 Hope (1:04:43, 4 views)
+  https://www.youtube.com/watch?v=r8FgqmflO_E
+  item: `items/r8FgqmflO_E.md`
+- **窮小夥被全公司當出氣筒，誤打誤撞進了個神秘群！下一秒女總裁親自帶著房產證上門求婚，原來物價暴跌千萬倍，他手上的鋼鏵直接買下整個城市！#短劇 #多語種 #反轉** — 橙果劇場No1Drama (1:31:15, 4.6K views)
+  https://www.youtube.com/watch?v=ZlD1FtgRMvw
+  item: `items/ZlD1FtgRMvw.md`
+- **💔Reborn as an unloved wife, I want a divorce, but  CEO hears my inner thoughts!#chinesedrama** — Revenge Movie (2:19:20, 57.1K views)
+  https://www.youtube.com/watch?v=n3Fe_sHGbPQ
+  item: `items/n3Fe_sHGbPQ.md`
+- **Aku memberi CEO yang sakit segelas air,ternyata dia yandere, posesif,jatuh cinta gila padaku!** — C-Minidrama (2:33:33, 61.9K views)
+  https://www.youtube.com/watch?v=MfET-mjFWRc
+  item: `items/MfET-mjFWRc.md`
+- **Reborn, to escape a scumbag, she marries a comatose CEO and becomes the whole family’s beloved!** — Nana Drama (1:44:23, 4.6K views)
+  https://www.youtube.com/watch?v=n2Crkcc3gS0
+  item: `items/n2Crkcc3gS0.md`
+- **MULTISUB📢新番上线《异世之君：我的异世兽夫》第1~64集丨穿越蛮荒兽世沦为弱小小兔女，靠现代技能逆袭，携手蛇王兽人血战强敌守护家园！#漫剧 #兽世 #破晓动漫社** — 破晓动漫社 Dawn Anime Club (1:52:09, 15.2K views)
+  https://www.youtube.com/watch?v=Pg6ijS7RCk8
+  item: `items/Pg6ijS7RCk8.md`
+- **Frank Garza on Luka's Celtics Breakout, Work Ethic & Championship Ceiling** — The Celtics Chronicle (38:06, 269 views)
+  https://www.youtube.com/watch?v=_conH5HecDQ
+  item: `items/_conH5HecDQ.md`
+- **意外撞破女上司裸睡被當場開除！ 落魄時誤入神仙拍賣群1元秒殺十億江景樓王，隔天直接買下整間公司！深夜她黑絲勾破露出大片雪白，紅著眼求當我秘書！#短劇#窮小子逆襲#爽文#林襄#返現#系統#穿越#多音軌** — 雷凌短劇社No1Drama (1:31:15, 2.1K views)
+  https://www.youtube.com/watch?v=xrG6bxpWmFc
+  item: `items/xrG6bxpWmFc.md`
+- **MindPower Session - Campus to Corporate - HR Interviews** — MindMatrixEd (1:14:36, 1.3K views)
+  https://www.youtube.com/watch?v=thO3--rdgdw
+  item: `items/thO3--rdgdw.md`
+- **Morning News NOW Full Episode – April 7** — NBC News (1:36:28, 6.2K views)
+  https://www.youtube.com/watch?v=CImM7voRE9w
+  item: `items/CImM7voRE9w.md`
+- **I was a useless husband. Reborn as a supreme doctor, I'll save my dying son and shock the world!** — ถนอม แก้วธรรม (10:13:56, 38 views)
+  https://www.youtube.com/watch?v=vb-StiZSKIk
+  item: `items/vb-StiZSKIk.md`
+- **🌟【新番上线|ENG SUB】《异世之君：我的异世兽夫》废柴兔雌觉醒黑石王族血脉，现代知识碾压兽世，逆袭成最强女王！ 一口气看完 #漫剧 #热血 #玄幻 #战斗 #苍穹动漫** — Dragon Animation Club (1:52:08, 1.2K views)
+  https://www.youtube.com/watch?v=Ul1wA_dX1w4
+  item: `items/Ul1wA_dX1w4.md`
+- **【全集】她穿成侯府嫡女历劫，却惨遭未婚夫与妹妹杀害！重返人间后她反手绑定神秘男人，共同追查被杀真相，步步为营将渣男贱女送上绝路！#爽劇 #短剧** — 芙芙剧场 (2:33:09, 5.5K views)
+  https://www.youtube.com/watch?v=XRR4zKkrYBg
+  item: `items/XRR4zKkrYBg.md`

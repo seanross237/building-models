@@ -189,3 +189,63 @@ Full item files belong in `items/`.
 - **After Transmigration, He Gains Ability to See Anyone’s Fate and Conquers Beautiful Senior Sisters!** — Panda Fantasy Chronicles (27:32:28, 173 views)
   https://www.youtube.com/watch?v=NhOdiw_OBKk
   item: `items/NhOdiw_OBKk.md`
+
+## 2026-04-07 — 19 new videos
+
+- **【Multi Sub】He Built the Weakest Peak Into a Holy Land by Raising the Strongest Disciples** — StardustTV - Movies & Dramas (2:32:51, 28.8K views)
+  https://www.youtube.com/watch?v=bCr7ocF8IY0
+  item: `items/bCr7ocF8IY0.md`
+- **Vision IAS Current Affairs Magazine January 2026 in Hindi & English** — NoName IAS (6:00:51, 26 views)
+  https://www.youtube.com/watch?v=Pn08r45-ImA
+  item: `items/Pn08r45-ImA.md`
+- **Island Survival: I Unlocked the Power of Evolution—Every Time I Get a Beauty Pregnant, I Evolve!** — Revel Manga Chronicles (17:58:42, 1.2K views)
+  https://www.youtube.com/watch?v=E_vJluOk8ls
+  item: `items/E_vJluOk8ls.md`
+- **🔥He Started by Summoning Infinite Divine Female Demons and Eventually Became the Demoness Lord！** — Blue Whale Comics Review (31:28:16, 329 views)
+  https://www.youtube.com/watch?v=_t50kAxlzk8
+  item: `items/_t50kAxlzk8.md`
+- **Madeleine McCann - The New Evidence | Rain Sounds for Sleep** — The Folklore Case Files (1:33:14, 5 views)
+  https://www.youtube.com/watch?v=LVursbjyHTY
+  item: `items/LVursbjyHTY.md`
+- **The Last Exodus | A World Left Behind! Book 1** — Echoes of Tomorrow Audiobooks (59:48, 5 views)
+  https://www.youtube.com/watch?v=qcjzdqoydsI
+  item: `items/qcjzdqoydsI.md`
+- **THE COST OF IGNORING | Your Subconscious Mind | Full Audiobook** — The Sovereign Path (2:46:41, 2 views)
+  https://www.youtube.com/watch?v=79CTunR7mRc
+  item: `items/79CTunR7mRc.md`
+- **🍂 Multi Sub【暮暮朝朝梨花落】幫太子黑化完成任務身死，他竟毀了世界逼我重生！再歸來我成了他掌心傀儡郡主！#短劇#短劇推薦#短劇全集#drama#小言推文#古風#宮鬥#王雲雲#何善凱** — 小言推文 (2:44:21, 2.4K views)
+  https://www.youtube.com/watch?v=3BYDZbblTBQ
+  item: `items/3BYDZbblTBQ.md`
+- **The best global health ideas we’ve heard on the show (from 17 experts)** — 80,000 Hours (4:06:51, 61 views)
+  https://www.youtube.com/watch?v=HN-vP88rDEE
+  item: `items/HN-vP88rDEE.md`
+- **🌟【新番上线|ENG SUB】《凡将入仙，神魔为敌》凡夫成仙遭神女未婚夫碾压诬陷，坠井涅槃归来揭露仙界虚伪阴谋！ 一口气看完 #漫剧 #热血 #玄幻 #战斗 #苍穹动漫** — Dragon Animation Club (1:01:08, 233 views)
+  https://www.youtube.com/watch?v=StaOwsXG-eU
+  item: `items/StaOwsXG-eU.md`
+- **Java Application Support Engineer (Part 2/2): How to Answer a “Bad Decision” Interview Question !!** — Ace Interviews (6:05:39, 2 views)
+  https://www.youtube.com/watch?v=c9RDnlQgyjI
+  item: `items/c9RDnlQgyjI.md`
+- **MTSS for Teachers: How to Support Staff Through Grading Reform** — ForwardEd Network (55:43, 12 views)
+  https://www.youtube.com/watch?v=2iqAz09dStc
+  item: `items/2iqAz09dStc.md`
+- **Assessment Appeals Board Meeting - April 6, 2026** — County of Ventura Government (8:28:00, 140 views)
+  https://www.youtube.com/watch?v=6mlNZn6_Lhw
+  item: `items/6mlNZn6_Lhw.md`
+- **Part 4 | Chapters 30–38 | Governor to Lok Adalat | Laxmikanth Polity Tamil Full Course | APLearnX3D** — AP LearnX 3D (1:28:51, 3 views)
+  https://www.youtube.com/watch?v=yotpA9T2CJ8
+  item: `items/yotpA9T2CJ8.md`
+- **Part 8 |Chapters 56–72 | NITI Aayog - Delimitation Commission | Laxmikanth Polity Tamil | APLearnX3D** — AP LearnX 3D (2:26:35, 1 views)
+  https://www.youtube.com/watch?v=NigRKQ549YQ
+  item: `items/NigRKQ549YQ.md`
+- **Part 7 | Chapters 43–55 | Election Commission -Constitutional Bodies | Laxmikanth Tamil | APLearnX3D** — AP LearnX 3D (1:47:56, 5 views)
+  https://www.youtube.com/watch?v=5etfB0jtpNU
+  item: `items/5etfB0jtpNU.md`
+- **The Untold Origins of The Indian Air Force (1915 - 1932)** — The Air Force Journal (48:35, 11 views)
+  https://www.youtube.com/watch?v=yXwbCkjLWOY
+  item: `items/yXwbCkjLWOY.md`
+- **【Serie Completa】 He's been faking weakness for millennia, but now his master's at the cave entrance** — 疾風劇場 (2:25:57, 282 views)
+  https://www.youtube.com/watch?v=lSMYOqQ3644
+  item: `items/lSMYOqQ3644.md`
+- **🔥【FULL一口氣看完】蝦仁穿越秦朝只想躺平擺爛、喝酒聽曲，沒想到秦始皇竟能聽到他的心聲！強行升官，千古一帝非要我當大秦首輔！** — Hot 沙雕剧场 (2:15:25, 459 views)
+  https://www.youtube.com/watch?v=UgcP1F_k2N8
+  item: `items/UgcP1F_k2N8.md`

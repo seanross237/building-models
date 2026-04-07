@@ -372,3 +372,96 @@ Full item files belong in `items/`.
 - **The $233B Market Replacing IPOs | CFO Explains Secondaries** — Run the Numbers with CJ Gustafson (38:05, 35 views)
   https://www.youtube.com/watch?v=pENvBuXhGuk
   item: `items/pENvBuXhGuk.md`
+
+## 2026-04-07 — 30 new videos
+
+- **Solve for x in this nice exponential equation | Math Olympiad Mathematics** — HkLogics (3:36, 9 views)
+  https://www.youtube.com/watch?v=5OqIs7URnPU
+  item: `items/5OqIs7URnPU.md`
+- **Math Olympiad Mathematics | Find the Value of x in this nice exponential equation | Can you solve?** — HkLogics (5:26, 25 views)
+  https://www.youtube.com/watch?v=2Aq-UtpgmNw
+  item: `items/2Aq-UtpgmNw.md`
+- **A Mind-Blowing Algebra mathematics    Equation | Olympiad  Question | can you solve ?  | x=?** — Mathematics & Statistics Guru (11:30, 167 views)
+  https://www.youtube.com/watch?v=SCpgaqCd7t8
+  item: `items/SCpgaqCd7t8.md`
+- **SuperIntelligence: Why the Future of AI is a File System (CORAL)** — Discover AI (33:06, 981 views)
+  https://www.youtube.com/watch?v=7n5EVMtYA4I
+  item: `items/7n5EVMtYA4I.md`
+- **Is Trump's relentless bombardment just a "money game"?!** — 寶傑點兵／寶傑怎麼說 (48:43, 8.6K views)
+  https://www.youtube.com/watch?v=jEIohMuZ-SU
+  item: `items/jEIohMuZ-SU.md`
+- **Can you solve this popular entry exam?** — HkLogics (4:01, 26 views)
+  https://www.youtube.com/watch?v=WLad3KGxRd0
+  item: `items/WLad3KGxRd0.md`
+- **Michael Nielsen – Why aliens will have a different tech stack than us** — Dwarkesh Patel (2:03:04, 2.6K views)
+  https://www.youtube.com/watch?v=myP8UjAM1pk
+  item: `items/myP8UjAM1pk.md`
+- **Jim Simons' Last Interview Before He Died** — Moon Dev (14:12, 302 views)
+  https://www.youtube.com/watch?v=uG-fJZqmq6A
+  item: `items/uG-fJZqmq6A.md`
+- **The Performance Paradox: How AI Is Secretly Eroding Your Expertise** — Nature of Selection (45:18, 9 views)
+  https://www.youtube.com/watch?v=lAfkfrdV_pg
+  item: `items/lAfkfrdV_pg.md`
+- **Hard #sat Advanced Math : #desmos Backsolving to Avoid Algebra w/ Bluebook 8 Harder Module 2 Q 14** — MyGuru Tutoring (1:15, 1 views)
+  https://www.youtube.com/watch?v=3HLyOdYksFo
+  item: `items/3HLyOdYksFo.md`
+- **W1D2 - Coding 1st Spring Boot App -Maven- IDE- Github Copilot- Devtool-Lombok- Slf4j Logback [7Apr]** — Tausief S (4:18:11, 3.6K views)
+  https://www.youtube.com/watch?v=llfckjWQf1o
+  item: `items/llfckjWQf1o.md`
+- **How to Turn Your Dream Into Reality Even If You're Starting From Nothing** — Evan Carmichael (3:05:31, 13.2K views)
+  https://www.youtube.com/watch?v=8VmR0LXon0A
+  item: `items/8VmR0LXon0A.md`
+- **《家事法庭》Hold a Court Now EP10｜继子以骨灰胁继母交遗产 赡养案开庭｜ENG SUB** — 腾讯视频 - Get the WeTV APP (45:31, 2.8K views)
+  https://www.youtube.com/watch?v=xDTV2cjuapM
+  item: `items/xDTV2cjuapM.md`
+- **Calculus | Part 01 || VVI || Class 12 Maths | Mission NEB 2083** — EduNex Nepal (2:15:20, 5.2K views)
+  https://www.youtube.com/watch?v=DApn9X81v_8
+  item: `items/DApn9X81v_8.md`
+- **Brainstorm: AI Crossing the Disciplines with Ellie Pavlick and Junehyuk Jung - hosted by the JNBC** — Brown University (56:00, 20 views)
+  https://www.youtube.com/watch?v=kUhxbE1LJ0c
+  item: `items/kUhxbE1LJ0c.md`
+- **Why Healthcare Can't Fix Its Supply Chain (Part 1 of 3)** — the Crysler Club (46:27, 2 views)
+  https://www.youtube.com/watch?v=Dhymnt6Z02Y
+  item: `items/Dhymnt6Z02Y.md`
+- **Dumped poor guy wishes for a new GF;when he opens eyes,a CEO says:Marry me,get $50B—or don’t leave!** — Silver Wolf Drama (3:53:38, 584 views)
+  https://www.youtube.com/watch?v=uztf9Z2qhsU
+  item: `items/uztf9Z2qhsU.md`
+- **OpenAI Pushes for Policies to Offset AI’s Impact | Bloomberg Tech 4/6/2026** — Bloomberg Technology (46:39, 6.5K views)
+  https://www.youtube.com/watch?v=1O5Qo3qi3iM
+  item: `items/1O5Qo3qi3iM.md`
+- **Warren Buffett: The Evening Habits That Quietly Change Your Future (Most People Ignore)** — Legend Investor Mindset (43:40, 1.5K views)
+  https://www.youtube.com/watch?v=iJF-5zvhl38
+  item: `items/iJF-5zvhl38.md`
+- **SSC CGL Advanced Maths Class 2026 | Quadratic Equations Practice Set 1 | Crash Course 2.0 Demo Class** — SSC Railways Coaching [English Medium] (54:35, 65 views)
+  https://www.youtube.com/watch?v=knw95Xi4Efk
+  item: `items/knw95Xi4Efk.md`
+- **Artificial Intelligence Investigated the Spiritual Reason Why Calm Helps Attract Your Desires** — The Axiom (35:52, new)
+  https://www.youtube.com/watch?v=2k-Qs9D5fW4
+  item: `items/2k-Qs9D5fW4.md`
+- **Cleaning the Broadway Emporium in The Division - Devs Playing | Episode 5** — Massive Entertainment - A Ubisoft Studio (19:20, 1.3K views)
+  https://www.youtube.com/watch?v=1iOtu1pWHYM
+  item: `items/1iOtu1pWHYM.md`
+- **I was a useless husband. Reborn as a supreme doctor, I'll save my dying son and shock the world!** — ถนอม แก้วธรรม (10:13:56, 38 views)
+  https://www.youtube.com/watch?v=vb-StiZSKIk
+  item: `items/vb-StiZSKIk.md`
+- **AI Won’t Replace Estimators — It Will Make Them Worth More** — Human Side of Construction (50:19, 12 views)
+  https://www.youtube.com/watch?v=UdS7gINzJkw
+  item: `items/UdS7gINzJkw.md`
+- **JEE Main 2026 (April Attempt) | Mathematics Paper Analysis & Solutions | 5th April | RWA** — IIT JEE RWA (1:55:36, 622 views)
+  https://www.youtube.com/watch?v=Ws-wrLcoli4
+  item: `items/Ws-wrLcoli4.md`
+- **SSC CGL Tier 1 Maths Mock Test 2026 | 6 April LIVE Solution & Questions | SSC CGL Maths | Oliveboard** — SSC Railways Coaching [English Medium] (44:49, 235 views)
+  https://www.youtube.com/watch?v=XvdLAJcvveE
+  item: `items/XvdLAJcvveE.md`
+- **Intelligent Kubernetes Load Balancing, with Rohit Agrawal | KubeFM** — KubeFM (30:18, 48 views)
+  https://www.youtube.com/watch?v=4VLA9ie9rVc
+  item: `items/4VLA9ie9rVc.md`
+- **Steve Fisk (Pigeonhed, Producer) - EP214 - The Creative Asylum** — The Creative Asylum (1:02:46, 36 views)
+  https://www.youtube.com/watch?v=N4En6tVQJvo
+  item: `items/N4En6tVQJvo.md`
+- **Building Tools Nobody Notices (But Everyone Needs)** — TRXL Podcast (1:52:49, 18 views)
+  https://www.youtube.com/watch?v=h-bfbqijtIQ
+  item: `items/h-bfbqijtIQ.md`
+- **小混混穿越成被賣妹換糧的災荒敗類，靠震驚繫統逆襲成救世主頓頓吃肉，無數嬌娘主動投懷送抱伴左右！#短劇 #系统 #爽劇** — PROF DRAMA (1:56:24, 3.2K views)
+  https://www.youtube.com/watch?v=KOFUBgWRwz8
+  item: `items/KOFUBgWRwz8.md`

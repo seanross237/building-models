@@ -375,3 +375,96 @@ Full item files belong in `items/`.
 - **自进化多智能体蜂群：74个AI Agent在Mac Mini上自主进化** — LocalKinAI (7:06, new)
   https://www.youtube.com/watch?v=oBEAUUEc2NQ
   item: `items/oBEAUUEc2NQ.md`
+
+## 2026-04-07 — 30 new videos
+
+- **Hermes Agent The 24/7 Self-Evolving AI Agent!** — WorldofAI (9:15, 9.1K views)
+  https://www.youtube.com/watch?v=cu2fgknmemA
+  item: `items/cu2fgknmemA.md`
+- **I Built Self-Evolving Claude Code Memory w/ Karpathy's LLM Knowledge Bases** — Cole Medin (19:24, 29.0K views)
+  https://www.youtube.com/watch?v=7huCP6RkcY4
+  item: `items/7huCP6RkcY4.md`
+- **Extreme Harness Engineering for the 1B token/day Dark Factory — Ryan Lopopolo, OpenAI Frontier** — Latent Space (1:17:54, 378 views)
+  https://www.youtube.com/watch?v=CeOXx-XTYek
+  item: `items/CeOXx-XTYek.md`
+- **On .NET Live - AI offers benefits, but at what cost?** — dotnet (1:04:24, 2.1K views)
+  https://www.youtube.com/watch?v=yO_TH3R8KMw
+  item: `items/yO_TH3R8KMw.md`
+- **The Era of Self Evolution... MiniMax M2.7** — Tech With Tim (15:21, 1.8K views)
+  https://www.youtube.com/watch?v=w-X3HV2OTfM
+  item: `items/w-X3HV2OTfM.md`
+- **The Ultimate Local AI: Gemma 4 meets Hermes Agent 🧠💻** — AINexLayer (7:01, 19 views)
+  https://www.youtube.com/watch?v=z52KozUyrXU
+  item: `items/z52KozUyrXU.md`
+- **The SW Engineering Trap Most AI Developers Fall Into | #NEWIT** — GilliLab Logic Salt (38:47, 1 views)
+  https://www.youtube.com/watch?v=1mPtaB1ySxk
+  item: `items/1mPtaB1ySxk.md`
+- **Andrej Karpathy Just Revealed His AI System (This Changes Everything)** — Ahamed Fofana (11:09, 92 views)
+  https://www.youtube.com/watch?v=57s7agKEXuU
+  item: `items/57s7agKEXuU.md`
+- **7 Open Source LLMs That Actually Work With AI Agents in 2026** — Panda Making Money (28:20, 46 views)
+  https://www.youtube.com/watch?v=w41j0BAGn70
+  item: `items/w41j0BAGn70.md`
+- **Using AI agents for the tasks that you never have time for** — Vincent Pradeilles (20:25, 203 views)
+  https://www.youtube.com/watch?v=wWhcM_zBPLI
+  item: `items/wWhcM_zBPLI.md`
+- **Is Trump's relentless bombardment just a "money game"?!** — 寶傑點兵／寶傑怎麼說 (48:43, 8.6K views)
+  https://www.youtube.com/watch?v=jEIohMuZ-SU
+  item: `items/jEIohMuZ-SU.md`
+- **Why Agents (And Automations) Help You Hyper-Scale** — Sam Woods (18:12, 2 views)
+  https://www.youtube.com/watch?v=QWD7bW_gXO0
+  item: `items/QWD7bW_gXO0.md`
+- **What senses do agents need to act?** — Microsoft Azure (25:06, 108 views)
+  https://www.youtube.com/watch?v=cdbnM28JHiw
+  item: `items/cdbnM28JHiw.md`
+- **Docker AI, what’s new with MCP, Agents, Sandboxes, and more** — Bret Fisher (2:23:10, 18 views)
+  https://www.youtube.com/watch?v=dTF3b36Bq6w
+  item: `items/dTF3b36Bq6w.md`
+- **How Smart Agents Are Using AI to Grow Faster in 2026** — Neil Mathweg | Agent Rise (41:49, 8 views)
+  https://www.youtube.com/watch?v=htXjBrwc7-8
+  item: `items/htXjBrwc7-8.md`
+- **Omni-SimpleMem: Autoresearch-Guided Discovery of Lifelong Multimodal Agent Memory** — Emergent Mind (3:27, 3 views)
+  https://www.youtube.com/watch?v=1h7D3Bw_Nvw
+  item: `items/1h7D3Bw_Nvw.md`
+- **AI Coding Agents** — Techs Wala (2:41, new)
+  https://www.youtube.com/watch?v=Due-_Nxi58Q
+  item: `items/Due-_Nxi58Q.md`
+- **Claude Code Just Leaked… And It's Worse Than You Think** — Exploring ChatGPT and ToxSec (47:20, 4.7K views)
+  https://www.youtube.com/watch?v=bk2rt3SVnc8
+  item: `items/bk2rt3SVnc8.md`
+- **AI Agent Evals: The 4 Layers Most Teams Skip** — Damian Galarza (8:12, 130 views)
+  https://www.youtube.com/watch?v=Kleu3ROhpvY
+  item: `items/Kleu3ROhpvY.md`
+- **Agentic AI & Multi-Agent Orchestration: Eindhoven's Enterprise Guide** — Aetherlink (20:32, 1 views)
+  https://www.youtube.com/watch?v=4gtvqOhSFkA
+  item: `items/4gtvqOhSFkA.md`
+- **This 55lb Chow Chow REFUSES to Let Her Sleep Alone—What He Does at 3AM Shocked Everyone** — Loyal Dog Hero (8:05, 9 views)
+  https://www.youtube.com/watch?v=fv4y02V06m8
+  item: `items/fv4y02V06m8.md`
+- **How to improve your E-Commerce using AI | Talk Data To Me EP12 with Amr & Toni** — applydata (13:49, 13 views)
+  https://www.youtube.com/watch?v=E7YfaM6ZJTA
+  item: `items/E7YfaM6ZJTA.md`
+- **Microsoft Copilot Studio Masterclass: Future of AI Agents** — NetCom Learning (2:02:53, 33 views)
+  https://www.youtube.com/watch?v=8cVjZrbP7lE
+  item: `items/8cVjZrbP7lE.md`
+- **Pour a Concrete Slab in 1 Hour!** — Michael Builds (9:14, 9.0K views)
+  https://www.youtube.com/watch?v=VsLtnLdNpGc
+  item: `items/VsLtnLdNpGc.md`
+- **3 Weeks to Your First AI PM Role: A No-BS Roadmap | Real Hiring Signals from Big Tech** — Agentic AI Institute (36:14, 160 views)
+  https://www.youtube.com/watch?v=uGCMX-1RXS8
+  item: `items/uGCMX-1RXS8.md`
+- **5 AI Agent Use Cases I Actually Use to Run My Business** — Agentic AI with Nolan Grout (12:59, 20 views)
+  https://www.youtube.com/watch?v=3CAPk41xk4U
+  item: `items/3CAPk41xk4U.md`
+- **EP93. After the Claude Code Source Code Leak (ft. Noah Ko, Sionic CEO)** — 노정석 (1:03:38, 5.3K views)
+  https://www.youtube.com/watch?v=jH3IzdDamcM
+  item: `items/jH3IzdDamcM.md`
+- **What Is Claude Code? The Only Explainer You Need** — Pragati Kunwer | Claude Code (12:57, 9 views)
+  https://www.youtube.com/watch?v=dQAxMucQlNQ
+  item: `items/dQAxMucQlNQ.md`
+- **Chase McWhorter: Jessi Flowers, Kissing Everyone & Mormon Wives Drama?!** — Boyfriend Material with Harry Jowsey (57:30, 10.8K views)
+  https://www.youtube.com/watch?v=oKJ0VYrcxyg
+  item: `items/oKJ0VYrcxyg.md`
+- **Why Your AI Assistant is Blind (and How to Give it Eyes)** — New Relic (1:46, 21 views)
+  https://www.youtube.com/watch?v=KsK6LDqXIwo
+  item: `items/KsK6LDqXIwo.md`

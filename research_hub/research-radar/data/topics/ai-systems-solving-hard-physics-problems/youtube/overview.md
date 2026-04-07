@@ -375,3 +375,96 @@ Full item files belong in `items/`.
 - **THE MISSILE THAT THINKS — Why AI is our Only Hope (And Our Biggest Risk)** — Strategic Forecaster (17:40, 12 views)
   https://www.youtube.com/watch?v=u33KDTjnJyM
   item: `items/u33KDTjnJyM.md`
+
+## 2026-04-07 — 30 new videos
+
+- **SuperIntelligence: Why the Future of AI is a File System (CORAL)** — Discover AI (33:06, 981 views)
+  https://www.youtube.com/watch?v=7n5EVMtYA4I
+  item: `items/7n5EVMtYA4I.md`
+- **Michael Nielsen – Why aliens will have a different tech stack than us** — Dwarkesh Patel (2:03:04, 2.6K views)
+  https://www.youtube.com/watch?v=myP8UjAM1pk
+  item: `items/myP8UjAM1pk.md`
+- **【Multi Sub】He Had to Be Executed 10 Times to Go Home—But the Emperor Refused to Kill Him** — StardustTV - Movies & Dramas (3:02:14, 3.4K views)
+  https://www.youtube.com/watch?v=0UK6RUgkhrY
+  item: `items/0UK6RUgkhrY.md`
+- **“人生的三根承重柱：和誰在一起，把時間投入到什麼事情上，在哪里安放你的生活”納瓦爾 Nava** — 納瓦爾思想 (22:01, 6.0K views)
+  https://www.youtube.com/watch?v=yLpFvpISb6o
+  item: `items/yLpFvpISb6o.md`
+- **Solve for x in this nice exponential equation | Math Olympiad Mathematics** — HkLogics (3:36, 9 views)
+  https://www.youtube.com/watch?v=5OqIs7URnPU
+  item: `items/5OqIs7URnPU.md`
+- **Brainstorm: AI Crossing the Disciplines with Ellie Pavlick and Junehyuk Jung - hosted by the JNBC** — Brown University (56:00, 20 views)
+  https://www.youtube.com/watch?v=kUhxbE1LJ0c
+  item: `items/kUhxbE1LJ0c.md`
+- **The ONLY Graphic Design Psychology Video You’ll Ever Need!** — Satori Graphics (56:45, 2.3K views)
+  https://www.youtube.com/watch?v=wBaTNvs8enw
+  item: `items/wBaTNvs8enw.md`
+- **Math Olympiad Mathematics | Find the Value of x in this nice exponential equation | Can you solve?** — HkLogics (5:26, 25 views)
+  https://www.youtube.com/watch?v=2Aq-UtpgmNw
+  item: `items/2Aq-UtpgmNw.md`
+- **How Did 3 Engines Fall Off a Boeing 707 in Midair — And 4 Men Still Survived?** — Black Box Stories (26:07, 1 views)
+  https://www.youtube.com/watch?v=lO-KTttonNE
+  item: `items/lO-KTttonNE.md`
+- **Human-AI Relationships: Trust, Companionship, and the Future of Everyday AI | The Tech Between Us** — Mouser Electronics (25:33, 9 views)
+  https://www.youtube.com/watch?v=y1DdbbM94BY
+  item: `items/y1DdbbM94BY.md`
+- **Building Tools Nobody Notices (But Everyone Needs)** — TRXL Podcast (1:52:49, 18 views)
+  https://www.youtube.com/watch?v=h-bfbqijtIQ
+  item: `items/h-bfbqijtIQ.md`
+- **【Multi Sub】He Built the Weakest Peak Into a Holy Land by Raising the Strongest Disciples** — StardustTV - Movies & Dramas (2:32:51, 28.8K views)
+  https://www.youtube.com/watch?v=bCr7ocF8IY0
+  item: `items/bCr7ocF8IY0.md`
+- **Building the “Brain” for Machines | Rafayel Ghasabyan, founder at TACTUN | Bend Reality #8** — Bend Reality (1:01:53, 43 views)
+  https://www.youtube.com/watch?v=R2iQoiXQTJw
+  item: `items/R2iQoiXQTJw.md`
+- **The Terror of Room | Reality than the one we understood** — True Horror Narration (1:17:04, new)
+  https://www.youtube.com/watch?v=w-afKVtx_ME
+  item: `items/w-afKVtx_ME.md`
+- **Cleaning the Broadway Emporium in The Division - Devs Playing | Episode 5** — Massive Entertainment - A Ubisoft Studio (19:20, 1.3K views)
+  https://www.youtube.com/watch?v=1iOtu1pWHYM
+  item: `items/1iOtu1pWHYM.md`
+- **AI Is a Revenue Multiplier. So Why the Obsession with Cost Cuts? | Ai++ Ep. 9** — AI-plus-plus (17:56, 37 views)
+  https://www.youtube.com/watch?v=QB30mL3cORI
+  item: `items/QB30mL3cORI.md`
+- **Trump's Iran Deadline Looms Over Markets | Open Interest 4/7/2026** — Bloomberg Television (1:27:05, 980 views)
+  https://www.youtube.com/watch?v=I4LuCMa54iw
+  item: `items/I4LuCMa54iw.md`
+- **I Reincarnated as a Side Character… So I Quit the CEO Job Immediately 💼💀 #reincarnation** — Romance Crave Stories (43:23, 10 views)
+  https://www.youtube.com/watch?v=WG-CXqxg0yw
+  item: `items/WG-CXqxg0yw.md`
+- **The best global health ideas we’ve heard on the show (from 17 experts)** — 80,000 Hours (4:06:51, 61 views)
+  https://www.youtube.com/watch?v=HN-vP88rDEE
+  item: `items/HN-vP88rDEE.md`
+- **Resource Crisis? The "Invisible Man" Protocol of 1945 and Real Solutions! | The Commissioner** — Der Kommissar (17:41, 991 views)
+  https://www.youtube.com/watch?v=LAeOGA0NWt0
+  item: `items/LAeOGA0NWt0.md`
+- **Hany Farid on the erosion of shared reality in the age of deepfakes** — UC Berkeley (51:04, 61 views)
+  https://www.youtube.com/watch?v=AOJ0-u_IH2g
+  item: `items/AOJ0-u_IH2g.md`
+- **The Next Trillion | 2026 From Billions to Trillions Summit** — Nicholas Institute (27:34, 17 views)
+  https://www.youtube.com/watch?v=iRdcCnTIoJg
+  item: `items/iRdcCnTIoJg.md`
+- **From DARPA RACER to the Battlefield** — The Road to Autonomy (41:12, 16 views)
+  https://www.youtube.com/watch?v=20P_KMcXcm4
+  item: `items/20P_KMcXcm4.md`
+- **「BeiJing Dialogues Heywhite」: Raising a 2e Child in America — More Than Scores…** — 「北靜 不靜音」BeiJing Talking (1:02:47, 368 views)
+  https://www.youtube.com/watch?v=DIO0GNtUF44
+  item: `items/DIO0GNtUF44.md`
+- **Artemis II Lunar Flyby, Dark Matter & The Atomic Future | Artificially Informed** — Artificially Informed (1:07:47, 13 views)
+  https://www.youtube.com/watch?v=BmClIPacWM8
+  item: `items/BmClIPacWM8.md`
+- **全集 | 深情Boss空降成上司追爱多年暗恋的白月光，一见钟情步步深陷！| 骄阳似我 Shine On Me | #宋威龙 #赵今麦 （排名不分先后，以姓氏首字母排序）** — 西嘻影业官方频道 XiXi Pictures Official Channel (15:12:54, 6.4K views)
+  https://www.youtube.com/watch?v=ItB6aWt7yHE
+  item: `items/ItB6aWt7yHE.md`
+- **Learned Hand’s Shlomo Klapper on Why Courts Are the Next Frontier for Legal AI** — LawNext (1:02:56, 26 views)
+  https://www.youtube.com/watch?v=Px5V7Iz4ruQ
+  item: `items/Px5V7Iz4ruQ.md`
+- **5 утерянных Древних технологий,  Которые Невозможно Объяснить** — Портал Секретов (23:10, 9 views)
+  https://www.youtube.com/watch?v=f1XNc4nSOeQ
+  item: `items/f1XNc4nSOeQ.md`
+- **MULTI SUB《孝子賢孫都跪下，我是你們的太奶奶》意外離世的她重生在數十年後，容顏依舊年輕，輩分卻成了家族最高的太奶奶。子孫不成器、家族陷困，且看她重振家風！ #AI #漫劇 #動漫 #無盡動漫社** — 无尽动漫社 | AI Anime (2:10:30, 606 views)
+  https://www.youtube.com/watch?v=JSRyhrqG0K8
+  item: `items/JSRyhrqG0K8.md`
+- **“Artificial Intelligence में करियर कैसे बनाएं? (Full Guide)”** — MIXED TOPICS (19:11, 7 views)
+  https://www.youtube.com/watch?v=hICYW7Mdokg
+  item: `items/hICYW7Mdokg.md`

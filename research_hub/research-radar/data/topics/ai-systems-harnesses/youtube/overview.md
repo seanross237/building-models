@@ -375,3 +375,96 @@ Full item files belong in `items/`.
 - **Legionnaires Forever - History & Army Documentary, Immersion in the heart of the French Foreign L...** — DOCS Histoire & Culture - FranceTV Distribution (52:00, 2 views)
   https://www.youtube.com/watch?v=TyZ1TZLTQh8
   item: `items/TyZ1TZLTQh8.md`
+
+## 2026-04-07 — 30 new videos
+
+- **Hermes Agent The 24/7 Self-Evolving AI Agent!** — WorldofAI (9:15, 9.1K views)
+  https://www.youtube.com/watch?v=cu2fgknmemA
+  item: `items/cu2fgknmemA.md`
+- **We're Not Ready For AI Glasses** — Logically Answered (15:18, 34.6K views)
+  https://www.youtube.com/watch?v=PrkwfI9-maM
+  item: `items/PrkwfI9-maM.md`
+- **AGI Isn't a Product. It’s an Infrastructure.** — Digital Spaceport (11:51, 4.3K views)
+  https://www.youtube.com/watch?v=QMzQF8XpcJw
+  item: `items/QMzQF8XpcJw.md`
+- **Best & cheapest AI for OpenClaw** — The Next New Thing (20:41, 5.8K views)
+  https://www.youtube.com/watch?v=T7uNP7Nrb98
+  item: `items/T7uNP7Nrb98.md`
+- **The history and future of AI at Google, with Sundar Pichai** — Stripe (1:09:33, 10.7K views)
+  https://www.youtube.com/watch?v=bTA8sjgvA4c
+  item: `items/bTA8sjgvA4c.md`
+- **AI Agents That Discover Hidden Truths About the World** — Eugene Vyborov (44:59, 19 views)
+  https://www.youtube.com/watch?v=0g0Udo6EKh8
+  item: `items/0g0Udo6EKh8.md`
+- **OpenAI Frontier, Symphony, and Harness Engineering — Ryan Lopopolo, OpenAI** — Latent Space (1:17:54, 378 views)
+  https://www.youtube.com/watch?v=CeOXx-XTYek
+  item: `items/CeOXx-XTYek.md`
+- **The Symbiotic AI Blueprint - A NotebookLM and Google Gemini Research Project** — Mr. Mark (3:59, 2 views)
+  https://www.youtube.com/watch?v=uLeMtvzON50
+  item: `items/uLeMtvzON50.md`
+- **No More Bills: This Two Energy Devices That Power Your Home For Free Forever !** — The Forge Empire (17:48, 3.8K views)
+  https://www.youtube.com/watch?v=JG8iCoX_Pjw
+  item: `items/JG8iCoX_Pjw.md`
+- **50x Cheaper Than Claude - But Can It Actually Code?** — Tech With Tim (15:21, 1.8K views)
+  https://www.youtube.com/watch?v=w-X3HV2OTfM
+  item: `items/w-X3HV2OTfM.md`
+- **AI is Now CHOOSING Targets. The Kill Chain is BROKEN** — The Infographics Show (18:34, 100.1K views)
+  https://www.youtube.com/watch?v=aFrtbDCJuNA
+  item: `items/aFrtbDCJuNA.md`
+- **Future of Data and AI: Agentic AI Conference - Day 1** — Data Science Dojo (6:20:46, 11.8K views)
+  https://www.youtube.com/watch?v=avJMaNrRcvI
+  item: `items/avJMaNrRcvI.md`
+- **Microslop Say Copilot is Just For Fun! (Insane AI Defense)** — Stylosa (21:36, 10.4K views)
+  https://www.youtube.com/watch?v=1sCjpfYYOmY
+  item: `items/1sCjpfYYOmY.md`
+- **Your CarPlay is Missing This… (AI Upgrade)** — HotshotTek (8:11, 11.0K views)
+  https://www.youtube.com/watch?v=X-erWhhBNK0
+  item: `items/X-erWhhBNK0.md`
+- **Leaders Are Choosing Office Attendance Over AI ROI—Here's Why That's Failing** — Life Skills TTP (5:08, 5 views)
+  https://www.youtube.com/watch?v=3ai-kl2CeQA
+  item: `items/3ai-kl2CeQA.md`
+- **NEOCONDA | A Glimpse Into the Future of AI Assisted Hacking Gadgets** — GhostStrats (3:06, 1.3K views)
+  https://www.youtube.com/watch?v=m8UtoKTcPlc
+  item: `items/m8UtoKTcPlc.md`
+- **Claude Code Just Leaked… And It's Worse Than You Think** — Exploring ChatGPT and ToxSec (47:20, 4.7K views)
+  https://www.youtube.com/watch?v=bk2rt3SVnc8
+  item: `items/bk2rt3SVnc8.md`
+- **Harness Engineering in 2026: Agent Frameworks & Production Scale (Claude Code Edition)** — Xiaol.x (23:41, 61 views)
+  https://www.youtube.com/watch?v=kOVglXGpRNA
+  item: `items/kOVglXGpRNA.md`
+- **Ptah — One VS Code Extension to Run Every AI Coding Agent | Open Source** — AI Code Hive (8:09, 34 views)
+  https://www.youtube.com/watch?v=vKk4yiydOkw
+  item: `items/vKk4yiydOkw.md`
+- **Claude's Rate Limits Are BROKEN Right Now** — Eric Michaud (6:42, 1.2K views)
+  https://www.youtube.com/watch?v=CRXNwyGOJPE
+  item: `items/CRXNwyGOJPE.md`
+- **EP93. After the Claude Code Source Code Leak (ft. Noah Ko, Sionic CEO)** — 노정석 (1:03:38, 5.3K views)
+  https://www.youtube.com/watch?v=jH3IzdDamcM
+  item: `items/jH3IzdDamcM.md`
+- **Mercedes Rear Accident Pulling** — CELETTE (1:00, 889 views)
+  https://www.youtube.com/watch?v=Pmb5XEC7k48
+  item: `items/Pmb5XEC7k48.md`
+- **V85 AI Boy – Automating trotting betting on ATG.SE #Claude #Cowork** — AI VINCI - Automation with AI (9:33, new)
+  https://www.youtube.com/watch?v=QYs1T7_zL8o
+  item: `items/QYs1T7_zL8o.md`
+- **AI Is a Revenue Multiplier. So Why the Obsession with Cost Cuts? | Ai++ Ep. 9** — AI-plus-plus (17:56, 37 views)
+  https://www.youtube.com/watch?v=QB30mL3cORI
+  item: `items/QB30mL3cORI.md`
+- **People in AI - Arafat Tehsin** — AI in C# (Rasmus Wulff Jensen) (54:03, 130 views)
+  https://www.youtube.com/watch?v=A_wmdQxa_IY
+  item: `items/A_wmdQxa_IY.md`
+- **Claude + Karpathy's Second Brain is INSANE** — Corey Ganim and Nick Spisak (22:21, 111 views)
+  https://www.youtube.com/watch?v=5FiHjotg2zU
+  item: `items/5FiHjotg2zU.md`
+- **How to Use Grok AI on Android (X Premium Access & Grok-3 Model Setup!)** — App Ultra (51, 10 views)
+  https://www.youtube.com/watch?v=QdIQbOmL3eU
+  item: `items/QdIQbOmL3eU.md`
+- **Git Can't Handle AI Agents—Yet** — My Weird Prompts (21:29, 4 views)
+  https://www.youtube.com/watch?v=dR_yI08soQA
+  item: `items/dR_yI08soQA.md`
+- **The key to AI utilization is shifting from the era of "prompts" and "context" to the era of "harn...** — KEITO【AI&WEB ch】 (24:30, 4.3K views)
+  https://www.youtube.com/watch?v=Ryd-W6pfUAs
+  item: `items/Ryd-W6pfUAs.md`
+- **AI 时代的缰绳—5 分钟搞懂 Harness 是什么** — AI带路党Pro (6:25, 8 views)
+  https://www.youtube.com/watch?v=2BHdymheoSI
+  item: `items/2BHdymheoSI.md`

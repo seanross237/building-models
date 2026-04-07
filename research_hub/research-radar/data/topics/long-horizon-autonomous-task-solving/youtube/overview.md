@@ -126,3 +126,21 @@ Full item files belong in `items/`.
 - **IMD Professor: Why 90% of Companies Get Sustainability Wrong - Goutam Challagalla | 58** — Builders & Doers (43:16, 5 views)
   https://www.youtube.com/watch?v=g7tjw2iIFJQ
   item: `items/g7tjw2iIFJQ.md`
+
+## 2026-04-07 — 5 new videos
+
+- **20 COOLEST CAR INVENTIONS THAT WILL SURPRISE YOU** — TechNew (25:03, 2.1K views)
+  https://www.youtube.com/watch?v=Mstu4ZAAmGk
+  item: `items/Mstu4ZAAmGk.md`
+- **BRSL Webinar: Algorithmic Warfare in Iran and Beyond: What Possibilities Exist for Governance?** — Berkeley Risk and Security Lab (1:01:51, 10 views)
+  https://www.youtube.com/watch?v=t4DznjQKzpM
+  item: `items/t4DznjQKzpM.md`
+- **Why Staying Comfortable Keeps Your Business From Growing | Ep 86** — HighLevel Experience Podcast (1:02:39, 4 views)
+  https://www.youtube.com/watch?v=-wfvmmEQbh8
+  item: `items/-wfvmmEQbh8.md`
+- **Clancy Wilmott - Adventures at the Limits of Spatial Data from the Pixel to the Pacific** — UC Berkeley EECS (52:42, 26 views)
+  https://www.youtube.com/watch?v=obRb8huq7pI
+  item: `items/obRb8huq7pI.md`
+- **Artemis II Lunar Flyby, Dark Matter & The Atomic Future | Artificially Informed** — Artificially Informed (1:07:47, 13 views)
+  https://www.youtube.com/watch?v=BmClIPacWM8
+  item: `items/BmClIPacWM8.md`

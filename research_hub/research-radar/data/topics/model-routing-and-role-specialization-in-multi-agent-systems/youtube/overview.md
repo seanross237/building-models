@@ -357,3 +357,96 @@ Full item files belong in `items/`.
 - **【2026战争剧】东方红END｜毛泽东东渡黄河，1948解放战争大决战！** — 战神剧场 (2:55:23, 60 views)
   https://www.youtube.com/watch?v=bvuQGIxWCsw
   item: `items/bvuQGIxWCsw.md`
+
+## 2026-04-07 — 30 new videos
+
+- **Resurrecting Humanity in the Age of AGI** — Mindplex (1:21:32, 168 views)
+  https://www.youtube.com/watch?v=XYa3byqTkX8
+  item: `items/XYa3byqTkX8.md`
+- **The Only 6 AI Agent Patterns You’ll Ever Need** — Learn AI with LocalM™ Tuts (9:15, 52 views)
+  https://www.youtube.com/watch?v=IOrkQeqvNbk
+  item: `items/IOrkQeqvNbk.md`
+- **THEY "PROGRAMMED" US FOR ADDICTION!** — George Buhnici (45:15, 3.5K views)
+  https://www.youtube.com/watch?v=7WQ_4eNKpUU
+  item: `items/7WQ_4eNKpUU.md`
+- **Amazon's Healthcare Takeover: AI Agent, Free Visits, and Why Hospitals Should Be Worried** — RocketToolsTV (5:25, 8 views)
+  https://www.youtube.com/watch?v=OhHrxHEnSA0
+  item: `items/OhHrxHEnSA0.md`
+- **These Chinese Streaming Boxes Could Be the Trojan Horse That Takes Down the U.S. 📺 Ep 172: SuperBox** — Jack Rhysider (1:27:52, 7.7K views)
+  https://www.youtube.com/watch?v=dS6PkuZuxJ4
+  item: `items/dS6PkuZuxJ4.md`
+- **Azure Incident Retrospective: AOAI availability degradation, Mar 2026 (ID: 8GCS-858)** — Microsoft Reactor (33:17, 147 views)
+  https://www.youtube.com/watch?v=2eW7K3kWvPg
+  item: `items/2eW7K3kWvPg.md`
+- **Building Bulletproof Systems: Warren Parad on Software Engineering for High Availability** — Overcommitted (49:54, 3 views)
+  https://www.youtube.com/watch?v=-l4py6_6SGk
+  item: `items/-l4py6_6SGk.md`
+- **Docker AI, what’s new with MCP, Agents, Sandboxes, and more** — Bret Fisher (2:23:10, 20 views)
+  https://www.youtube.com/watch?v=dTF3b36Bq6w
+  item: `items/dTF3b36Bq6w.md`
+- **Java Application Support Engineer (Part 2/2): How to Answer a “Bad Decision” Interview Question !!** — Ace Interviews (6:05:39, 2 views)
+  https://www.youtube.com/watch?v=c9RDnlQgyjI
+  item: `items/c9RDnlQgyjI.md`
+- **From Google Guaranteed to Google Verified: How to Build Trust and Win More Leads in 2026** — Scorpion (45:20, 187 views)
+  https://www.youtube.com/watch?v=hHvAD_q8HeM
+  item: `items/hHvAD_q8HeM.md`
+- **Safety concerns over rubble from hotel fire | CTV News Edmonton at Six for April 6, 2026** — CTV News (43:43, 945 views)
+  https://www.youtube.com/watch?v=hcGgOobzCuk
+  item: `items/hcGgOobzCuk.md`
+- **High Performers Burn Out Faster. Thailand's Wim Hof Advanced Instructor Explains Why.** — Made it in Thailand 🇹🇭 (1:30:57, 63 views)
+  https://www.youtube.com/watch?v=T-mu0aAnprM
+  item: `items/T-mu0aAnprM.md`
+- **🔥【New】【Multi Sub】Arcane Sovereign: I Am The Law EP 1-68 #anime #animation** — Joyland-Animation and Quartic element Anime (5:06:25, 972 views)
+  https://www.youtube.com/watch?v=euMUbjTa0OU
+  item: `items/euMUbjTa0OU.md`
+- **A modern tycoon becomes emperor, seeks death but ends up a legend.#chinesedrama #timetravel** — Dreamer Short Play​ (2:57:40, 393 views)
+  https://www.youtube.com/watch?v=c-Eb0lldxS0
+  item: `items/c-Eb0lldxS0.md`
+- **嫌她穷酸逼她离婚，结果媳妇家千亿！婆婆一秒下跪道歉！[MULTI SUB | FULL] 💘 #chinese television dramas #逆袭 #爽剧 #豪门 #shortdramas** — 橘子TV剧场 Tangerine TV Drama (1:37:11, 3.3K views)
+  https://www.youtube.com/watch?v=2hx9QeW8D-k
+  item: `items/2hx9QeW8D-k.md`
+- **Vet trains for Double Unicorn, Female Firefighter Day, Autism Awareness Month** — 13WHAM ABC News (1:59:43, 149 views)
+  https://www.youtube.com/watch?v=i8ozVNLudb0
+  item: `items/i8ozVNLudb0.md`
+- **Cinderella stands in for her friend on a blind date and fails spectacularly** — 蜜糖短剧 (2:19:02, 718 views)
+  https://www.youtube.com/watch?v=C0YNl2FA0sQ
+  item: `items/C0YNl2FA0sQ.md`
+- **Rollover on Crowchild Trail | CTV Your Morning Calgary for April 6, 2026** — CTV News (2:14:08, 1.6K views)
+  https://www.youtube.com/watch?v=nM_U2hGoL4g
+  item: `items/nM_U2hGoL4g.md`
+- **Fake girlfriend fled after a one-night stand! 5 years later, CEO pampered her and his mini-me!** — 唯爱独播 (2:25:08, 102 views)
+  https://www.youtube.com/watch?v=52jxeoFCcYo
+  item: `items/52jxeoFCcYo.md`
+- **A dying boy awakens a supernatural system** — 蜜糖短剧 (1:34:32, 106 views)
+  https://www.youtube.com/watch?v=4p7QxOJfa7I
+  item: `items/4p7QxOJfa7I.md`
+- **How to Rob a Home Run | DLS** — LeBatardShow (2:43:22, 3.0K views)
+  https://www.youtube.com/watch?v=Ej6j75MHHok
+  item: `items/Ej6j75MHHok.md`
+- **Multi sub（完结新番）💥💥💥开局合成满级丧尸：带上校花横推末世！捣毁“天堂岛”生化基地，我看谁敢动我妹妹一下？《末日合成大师 第2季》#次元动漫  #破界 #動漫** — 破界动漫局 Anime Club (2:09:00, 2.1K views)
+  https://www.youtube.com/watch?v=dIXXKuE6qok
+  item: `items/dIXXKuE6qok.md`
+- **Bitcoin Yield Without Custody Risk: Inside Lightning's Payment Infrastructure** — Fintech Confidential (48:30, 1 views)
+  https://www.youtube.com/watch?v=LxplleMBBAU
+  item: `items/LxplleMBBAU.md`
+- **Multi sub（完结新番）💥💥💥开局觉醒顶级异能“寸止”：我在废土世界当救世主！假冒“寒蝉”的那个，准备好迎接千年后的降维打击了吗？《救命！这个救世主太老六了》#次元动漫  #破界 #動漫** — 破界动漫局 Anime Club (2:11:43, 507 views)
+  https://www.youtube.com/watch?v=w9gappI0zh8
+  item: `items/w9gappI0zh8.md`
+- **🎉【Multi Sub】Destiny system  EP 1-80 #anime  #animation #donghua** — Quartic element Anime (5:34:47, 479 views)
+  https://www.youtube.com/watch?v=psw0F0DmbZA
+  item: `items/psw0F0DmbZA.md`
+- **💗💕【Multi Sub】 I Became a Billionaire EP 1-190#anime  #animation #donghua** — Quartic element Anime (7:03:16, 122 views)
+  https://www.youtube.com/watch?v=XJq3wIR0RTE
+  item: `items/XJq3wIR0RTE.md`
+- **【FULL】01 She woke up to find the person beside her was...| The Quirky and The Charming 我的差评女友** — KUKAN Drama Romance (2:38:58, 350 views)
+  https://www.youtube.com/watch?v=WtpHLJRDHew
+  item: `items/WtpHLJRDHew.md`
+- **【Multi Sub】Ancient Ten Calamities: My Beast Girls Harem EP 1-141#anime #animation** — Quartic element Anime (8:53:47, 168 views)
+  https://www.youtube.com/watch?v=FQKYvHq10k0
+  item: `items/FQKYvHq10k0.md`
+- **MULTI SUB《我的養成系老婆竟然是SSS級》重生歸來的末世老兵蘇良，覺醒神秘獸能轉化能力，可吸收獸晶無限提升實力。他精准投資被霸淩的少女竟是未來的朱雀女帝！ #AI #漫劇 #動漫 #無盡動漫社** — 无尽动漫社 | AI Anime (2:14:39, 3.6K views)
+  https://www.youtube.com/watch?v=d5h7dS7QEoI
+  item: `items/d5h7dS7QEoI.md`
+- **【Multi sub】Reborn Poor? From Zero to Trillionaire EP 1-138 #anime #animation #donghua** — Quartic element Anime (9:30:34, 690 views)
+  https://www.youtube.com/watch?v=im9UQH3C8Bk
+  item: `items/im9UQH3C8Bk.md`

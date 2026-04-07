@@ -186,3 +186,36 @@ Full item files belong in `items/`.
 - **I Canceled GPT and Switched to Free Claude — Saved ₩526,800 with Superior Performance** — AI경제패턴 (24:55, 16 views)
   https://www.youtube.com/watch?v=iHQlU5M6dRA
   item: `items/iHQlU5M6dRA.md`
+
+## 2026-04-07 — 10 new videos
+
+- **🔥After Traveling 2000 Years Back, He Unlocked Shop System and Married 3 Wives with 2 Pounds of Meat!** — Bella's Comic Chronicles (24:43:36, 575 views)
+  https://www.youtube.com/watch?v=VfVepfwdDy0
+  item: `items/VfVepfwdDy0.md`
+- **The 5 Quiet Costs of Looking Successful (Most People Never Notice) | Warren Buffett** — Buffett's Boardroom (48:23, new)
+  https://www.youtube.com/watch?v=BpXj4xu9j-Q
+  item: `items/BpXj4xu9j-Q.md`
+- **From Soldier to Investigator: Patrick Grayson's Journey Across Borders and Cases** — The Intelligence Advantage (1:17:01, 8 views)
+  https://www.youtube.com/watch?v=lME38lSjdJ0
+  item: `items/lME38lSjdJ0.md`
+- **Oropouche Virus: More Than a Smidge Worrisome  | This Podcast Will Kill You 206** — Exactly Right Media (1:09:59, 184 views)
+  https://www.youtube.com/watch?v=Ryw525uoxzg
+  item: `items/Ryw525uoxzg.md`
+- **Madeleine McCann - The New Evidence | Rain Sounds for Sleep** — The Folklore Case Files (1:33:14, 5 views)
+  https://www.youtube.com/watch?v=LVursbjyHTY
+  item: `items/LVursbjyHTY.md`
+- **🔥【爽漫】【Eng Sub】《全球災變：我解鎖唯一SSS職業》重生回到末世降臨前三天，他氪金十億覺醒SSS隱藏職業，橫掃末日清算背叛者！第1-104集 #都市 #熱血 #anime #重生** — 八虎动漫剧场 (7:42:54, 2.1K views)
+  https://www.youtube.com/watch?v=MxpDrHqiDEg
+  item: `items/MxpDrHqiDEg.md`
+- **Giant Beast World: He Activated a 10,000x Amplification System and Built a Powerful Mechanical Army!** — Panda Fantasy Chronicles (27:38:52, 587 views)
+  https://www.youtube.com/watch?v=YVU3yHhBtWQ
+  item: `items/YVU3yHhBtWQ.md`
+- **Studies in Literature by John Morley - Full Audiobook** — Supreme Audiobooks (6:46:26, 27 views)
+  https://www.youtube.com/watch?v=SOiGf4X2LCE
+  item: `items/SOiGf4X2LCE.md`
+- **04/06/2026 10:02 NYCC 250 8 3 260406 100215** — NYC Council Videos (unofficial) (3:19:08, 2 views)
+  https://www.youtube.com/watch?v=k09Bu2IAeus
+  item: `items/k09Bu2IAeus.md`
+- **💥ENG SUB💥【重生末世：我氪金十亿称霸全球】Apocalyptic World: Spend Billions to Dominate the Globe 第1-104集 #都市 #逆袭** — 超有钱动漫 Anime Club (7:42:54, 154 views)
+  https://www.youtube.com/watch?v=0jLScYuXGzM
+  item: `items/0jLScYuXGzM.md`

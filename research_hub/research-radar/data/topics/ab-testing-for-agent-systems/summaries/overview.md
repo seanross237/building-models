@@ -213,3 +213,73 @@ Full item files belong in `items/`.
   source: https://www.youtube.com/watch?v=J1YbyhD6Z9Q
   summary file: `items/youtube--J1YbyhD6Z9Q.md`
   presentation candidate: `false`
+
+## 2026-04-07 — youtube score 5
+
+- **Figma MCP Skills in Claude | Deep Dive for Best Results!**
+  source: https://www.youtube.com/watch?v=KUbHHFtM7Js
+  summary file: `items/youtube--KUbHHFtM7Js.md`
+  presentation candidate: `false`
+
+## 2026-04-07 — youtube score 6
+
+- **All His Efforts Got Betrayal;She Cried In Vain As He Married Anothe,She Cried In Deep Regret**
+  source: https://www.youtube.com/watch?v=LzGbkiDV1vg
+  summary file: `items/youtube--LzGbkiDV1vg.md`
+  presentation candidate: `false`
+
+## 2026-04-07 — youtube score 6
+
+- **Five Dominos. One AI Loop. Your Listings Never Stop Testing.**
+  source: https://www.youtube.com/watch?v=M6dzBZPHA_k
+  summary file: `items/youtube--M6dzBZPHA_k.md`
+  presentation candidate: `false`
+
+## 2026-04-07 — youtube score 5
+
+- **Should I Confront My Father About His Infidelity?**
+  source: https://www.youtube.com/watch?v=MUX70r4D7kA
+  summary file: `items/youtube--MUX70r4D7kA.md`
+  presentation candidate: `false`
+
+## 2026-04-07 — youtube score 5
+
+- **Iavor Bojinov on AI Adoption, Trust, and Decision-Making**
+  source: https://www.youtube.com/watch?v=MXg70r-9524
+  summary file: `items/youtube--MXg70r-9524.md`
+  presentation candidate: `false`
+
+## 2026-04-07 — youtube score 6
+
+- **Session 4   Introduction to Natural Language Processing**
+  source: https://www.youtube.com/watch?v=N08DO_akl-w
+  summary file: `items/youtube--N08DO_akl-w.md`
+  presentation candidate: `false`
+
+## 2026-04-07 — youtube score 6
+
+- **WiDS Cambridge 2026 LightningTalks**
+  source: https://www.youtube.com/watch?v=NExPDSBTgCw
+  summary file: `items/youtube--NExPDSBTgCw.md`
+  presentation candidate: `false`
+
+## 2026-04-07 — youtube score 6
+
+- **DIY HydroElectric. Building A Custom Dynamometer For Testing Turbines.**
+  source: https://www.youtube.com/watch?v=O02XeCgUYaQ
+  summary file: `items/youtube--O02XeCgUYaQ.md`
+  presentation candidate: `false`
+
+## 2026-04-07 — youtube score 6
+
+- **Measuring Agentic Success: 10 Benchmarks Every Architect Needs (Q191–Q200)**
+  source: https://www.youtube.com/watch?v=OvVGe62QMC8
+  summary file: `items/youtube--OvVGe62QMC8.md`
+  presentation candidate: `false`
+
+## 2026-04-07 — youtube score 6
+
+- **Forced to bark like a dog, she’s heartbroken, returns as a rich heiress, he regrets too late**
+  source: https://www.youtube.com/watch?v=P8DoHPQ59Qo
+  summary file: `items/youtube--P8DoHPQ59Qo.md`
+  presentation candidate: `false`

@@ -390,3 +390,93 @@ Full item files belong in `items/`.
 - **自进化多智能体蜂群：74个AI Agent在Mac Mini上自主进化** — LocalKinAI (7:06, new)
   https://www.youtube.com/watch?v=oBEAUUEc2NQ
   item: `items/oBEAUUEc2NQ.md`
+
+## 2026-04-07 — 29 new videos
+
+- **Hermes Agent The 24/7 Self-Evolving AI Agent!** — WorldofAI (9:15, 9.1K views)
+  https://www.youtube.com/watch?v=cu2fgknmemA
+  item: `items/cu2fgknmemA.md`
+- **I Built Self-Evolving Claude Code Memory w/ Karpathy's LLM Knowledge Bases** — Cole Medin (19:24, 29.0K views)
+  https://www.youtube.com/watch?v=7huCP6RkcY4
+  item: `items/7huCP6RkcY4.md`
+- **MiniMax M2.7 Is Here...** — Tech With Tim (15:21, 1.8K views)
+  https://www.youtube.com/watch?v=w-X3HV2OTfM
+  item: `items/w-X3HV2OTfM.md`
+- **Why AI Should Be Grown, Not Trained** — Eye on AI (1:00:43, 163 views)
+  https://www.youtube.com/watch?v=pPpDxB4N_mE
+  item: `items/pPpDxB4N_mE.md`
+- **Tier 2 Global Shifts & Revolutions 2110: 5 Future Trends to Watch #GlobalShifts #Revo2110 #Tier2** — Timeframe Explained (3:05, new)
+  https://www.youtube.com/watch?v=jWwfCa_NZLo
+  item: `items/jWwfCa_NZLo.md`
+- **AI is Now CHOOSING Targets. The Kill Chain is BROKEN** — The Infographics Show (18:34, 100.1K views)
+  https://www.youtube.com/watch?v=aFrtbDCJuNA
+  item: `items/aFrtbDCJuNA.md`
+- **Beyond Human Instinct: A Pathfinding & Neural Vision in The Wolf** — Rapty (9, 16 views)
+  https://www.youtube.com/watch?v=fE-Z8jX0WyA
+  item: `items/fE-Z8jX0WyA.md`
+- **Hardware vs. Software: The Real Engine Behind Digital Intelligence** — Gary Lyon Otto (6:31, new)
+  https://www.youtube.com/watch?v=odlSKBPnG2A
+  item: `items/odlSKBPnG2A.md`
+- **Wiki LLM & LLM Knowledge Bases Without RAG** — Alex Hitt, The Great Discovery Pro (6:11, 10 views)
+  https://www.youtube.com/watch?v=uU5-OObcvyY
+  item: `items/uU5-OObcvyY.md`
+- **How To Become A Cloud Engineer | Cloud Engineer Roadmap 2026 | Cloud Engineer Skills | Simplilearn** — Simplilearn (10:43, 64 views)
+  https://www.youtube.com/watch?v=NMGo-7IoLqg
+  item: `items/NMGo-7IoLqg.md`
+- **AI Ready Enterprise Preparing Your Organization for AI Adoption** — AI CERTs® (42:54, 1 views)
+  https://www.youtube.com/watch?v=2h-D4vrwpO0
+  item: `items/2h-D4vrwpO0.md`
+- **The Light Gate- Project Gravitaur. S-4: The Bob Lazar Story.-Luigi Vendittelli** — Preston Dennett (1:49:24, 1.7K views)
+  https://www.youtube.com/watch?v=sVWCgTKRB_c
+  item: `items/sVWCgTKRB_c.md`
+- **Architecting Agent Security  Building the ClawKeeper Framework** — MLSlops (8:14, 4 views)
+  https://www.youtube.com/watch?v=RNx-GA-BU4g
+  item: `items/RNx-GA-BU4g.md`
+- **Scaling Energy for AI Demand | 2026 From Billions to Trillions Summit** — Nicholas Institute (44:39, 6 views)
+  https://www.youtube.com/watch?v=4kyb4WERLNE
+  item: `items/4kyb4WERLNE.md`
+- **How Smart Agents Are Using AI to Grow Faster in 2026** — Neil Mathweg | Agent Rise (41:49, 9 views)
+  https://www.youtube.com/watch?v=htXjBrwc7-8
+  item: `items/htXjBrwc7-8.md`
+- **Resurrecting Humanity in the Age of AGI** — Mindplex (1:21:32, 168 views)
+  https://www.youtube.com/watch?v=XYa3byqTkX8
+  item: `items/XYa3byqTkX8.md`
+- **Showcase: Two Months with OpenClaw: Real-World Lessons for Enterprises** — GAI Insights: Daily AI News & Learning Lab (46:16, 20 views)
+  https://www.youtube.com/watch?v=lpMf3iYxe-k
+  item: `items/lpMf3iYxe-k.md`
+- **Genevieve Smith - What Gets Encoded: AI, Inequity, and Alternative Technological Futures** — UC Berkeley EECS (46:57, 19 views)
+  https://www.youtube.com/watch?v=HY0CYPWTPyQ
+  item: `items/HY0CYPWTPyQ.md`
+- **Beyond Prompting: An Autonomous Framework for Systematic Factor Investing via Agentic AI** — Nosa Capital (18:16, 4 views)
+  https://www.youtube.com/watch?v=nwKY3i2Rjp0
+  item: `items/nwKY3i2Rjp0.md`
+- **Stop Trying to Move Forward** — Edited With Intention (17:06, 22 views)
+  https://www.youtube.com/watch?v=qV0IPaUB-GQ
+  item: `items/qV0IPaUB-GQ.md`
+- **Texas AI Awareness Training FY 25-26** — Texas Department of Information Resources (32:43, 24 views)
+  https://www.youtube.com/watch?v=q_sVb2LZiXs
+  item: `items/q_sVb2LZiXs.md`
+- **While my past keeps rearranging itself** — Lightbringer Yiroon (28:10, 24 views)
+  https://www.youtube.com/watch?v=r4hWMq4vwb0
+  item: `items/r4hWMq4vwb0.md`
+- **Trump Amps Up Threats as Market Hits Standstill | The Close 4/6/2026** — Bloomberg Television (1:30:03, 6.4K views)
+  https://www.youtube.com/watch?v=6Wua_toUiQw
+  item: `items/6Wua_toUiQw.md`
+- **What Keeps Designers Relevant as Technology Evolves - Justin Dauer, S7, Ep. 5** — UX Banter (35:03, 20 views)
+  https://www.youtube.com/watch?v=Os-Z6UQ34ng
+  item: `items/Os-Z6UQ34ng.md`
+- **Justice, Policing & Knowing Your Rights** — The VOICEBOX Podcast (28:43, 1 views)
+  https://www.youtube.com/watch?v=OaSfW3QnqBA
+  item: `items/OaSfW3QnqBA.md`
+- **🔥Parker's prediction actually "matched the celestial phenomena"! This time it's not a coincidence...** — HIBY新聞 (2:10:29, 4.4K views)
+  https://www.youtube.com/watch?v=Tx7U9xm9Soc
+  item: `items/Tx7U9xm9Soc.md`
+- **2025 Digital Accessibility Legal Update: What You Need to Know Right Now** — 3Play Media (57:22, 4 views)
+  https://www.youtube.com/watch?v=681453_uxbM
+  item: `items/681453_uxbM.md`
+- **Agent Hermes: The self-evolving AI agent available 24/7** — Kilian Párraga (20:40, 34 views)
+  https://www.youtube.com/watch?v=xIVt634LS80
+  item: `items/xIVt634LS80.md`
+- **Iran War: Trump Escalates Iran Threats Ahead of Tuesday Deadline | Daybreak Europe 4/7/2026** — Bloomberg Television (46:53, 34.9K views)
+  https://www.youtube.com/watch?v=Sn1DBB1v9Gs
+  item: `items/Sn1DBB1v9Gs.md`

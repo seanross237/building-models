@@ -75,3 +75,24 @@ Full item files belong in `items/`.
 - **Aaron Stannard: Software 2.0 using AI - Episode 396** — AI DevOps Podcast (50:52, 8 views)
   https://www.youtube.com/watch?v=dlkDgeiP3eU
   item: `items/dlkDgeiP3eU.md`
+
+## 2026-04-07 — 6 new videos
+
+- **The SW Engineering Trap Most AI Developers Fall Into | #NEWIT** — GilliLab Logic Salt (38:47, 1 views)
+  https://www.youtube.com/watch?v=1mPtaB1ySxk
+  item: `items/1mPtaB1ySxk.md`
+- **The Only 6 AI Agent Patterns You’ll Ever Need** — Learn AI with LocalM™ Tuts (9:15, 52 views)
+  https://www.youtube.com/watch?v=IOrkQeqvNbk
+  item: `items/IOrkQeqvNbk.md`
+- **Docker AI, what’s new with MCP, Agents, Sandboxes, and more** — Bret Fisher (2:23:10, 20 views)
+  https://www.youtube.com/watch?v=dTF3b36Bq6w
+  item: `items/dTF3b36Bq6w.md`
+- **Beyond Vibe Coding: Zero Vector and the Disruption of Service Design with Erika Flowers** — Disruptor Confessions (59:28, 9 views)
+  https://www.youtube.com/watch?v=gkWQCEjl7y8
+  item: `items/gkWQCEjl7y8.md`
+- **Bitcoin Yield Without Custody Risk: Inside Lightning's Payment Infrastructure** — Fintech Confidential (48:30, 1 views)
+  https://www.youtube.com/watch?v=LxplleMBBAU
+  item: `items/LxplleMBBAU.md`
+- **💥【新番上线】穿越足球世界，点满传球天赋，从德丙一路逆袭，制霸足坛成世界第一中场！《满级传球，称霸欧洲》全集Multi SUB #热血 #漫剧 #动漫魔女** — 动漫魔女 (2:00:38, 226 views)
+  https://www.youtube.com/watch?v=UQrjRylc6OE
+  item: `items/UQrjRylc6OE.md`

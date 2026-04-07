@@ -372,3 +372,93 @@ Full item files belong in `items/`.
 - **AI Phone System: Never Lose a Call & Boost Leads 391%** — Changescape (3:51, new)
   https://www.youtube.com/watch?v=ufNpFxGaANE
   item: `items/ufNpFxGaANE.md`
+
+## 2026-04-07 — 29 new videos
+
+- **Why AI Fails at Control** — Applied AI Systems (10:53, 5 views)
+  https://www.youtube.com/watch?v=XxZ42czPgoM
+  item: `items/XxZ42czPgoM.md`
+- **Robots Learn to Improvise - TCR 04/07/26** — Shared Sapience (18:07, new)
+  https://www.youtube.com/watch?v=C2LUr7BLyDI
+  item: `items/C2LUr7BLyDI.md`
+- **AI vs Machine Learning Engineers:  Will AI Replace  its Creators?!** — Infinity AI TV (2:40, 2 views)
+  https://www.youtube.com/watch?v=Zjq4lQ1VsVA
+  item: `items/Zjq4lQ1VsVA.md`
+- **Future of Data and AI: Agentic AI Conference - Day 1** — Data Science Dojo (6:20:46, 11.8K views)
+  https://www.youtube.com/watch?v=avJMaNrRcvI
+  item: `items/avJMaNrRcvI.md`
+- **The Logic Trap: Why Machines Had to Learn | Rule-Based Systems Explained** — TheWhyExplained (6:01, new)
+  https://www.youtube.com/watch?v=oBU1ZTAu2ao
+  item: `items/oBU1ZTAu2ao.md`
+- **Michael Nielsen – Why aliens will have a different tech stack than us** — Dwarkesh Patel (2:03:04, 2.6K views)
+  https://www.youtube.com/watch?v=myP8UjAM1pk
+  item: `items/myP8UjAM1pk.md`
+- **Hermes Agent The 24/7 Self-Evolving AI Agent!** — WorldofAI (9:15, 9.1K views)
+  https://www.youtube.com/watch?v=cu2fgknmemA
+  item: `items/cu2fgknmemA.md`
+- **Your AI "Tech Debt" is Exploding. Here’s Why.** — Learn AI with LocalM™ Tuts (4:52, 2 views)
+  https://www.youtube.com/watch?v=V74YBIFpM6U
+  item: `items/V74YBIFpM6U.md`
+- **Grok AI Just Analyzed the Oldest Human Language** — Optic Expedition (26:38, 11.1K views)
+  https://www.youtube.com/watch?v=ZoiQGzkMEdw
+  item: `items/ZoiQGzkMEdw.md`
+- **My Complete Claude Code Chief of Staff System** — Ev Chapman (35:01, 554 views)
+  https://www.youtube.com/watch?v=96CaG3sAWqg
+  item: `items/96CaG3sAWqg.md`
+- **Brainstorm: AI Crossing the Disciplines with Ellie Pavlick and Junehyuk Jung - hosted by the JNBC** — Brown University (56:00, 20 views)
+  https://www.youtube.com/watch?v=kUhxbE1LJ0c
+  item: `items/kUhxbE1LJ0c.md`
+- **AI Ready Enterprise Preparing Your Organization for AI Adoption** — AI CERTs® (42:54, 1 views)
+  https://www.youtube.com/watch?v=2h-D4vrwpO0
+  item: `items/2h-D4vrwpO0.md`
+- **The Evil Digital Twins of AI Natives | Dr. Ben D. Sawyer | CSI #88** — Cognitive Security Institute (54:16, 36 views)
+  https://www.youtube.com/watch?v=OMlCxTSxgM4
+  item: `items/OMlCxTSxgM4.md`
+- **GB300 GPU: Worth the Hype? #nvidia #tech #review** — Dealmaker Diaries (7, 1 views)
+  https://www.youtube.com/watch?v=qAtD-3CA39w
+  item: `items/qAtD-3CA39w.md`
+- **OpenAI Frontier, Symphony, and Harness Engineering — Ryan Lopopolo, OpenAI** — Latent Space (1:17:54, 378 views)
+  https://www.youtube.com/watch?v=CeOXx-XTYek
+  item: `items/CeOXx-XTYek.md`
+- **How Bigleaf Uses Machine Learning for Real-Time Decisions** — Bigleaf Networks (1:21, 5 views)
+  https://www.youtube.com/watch?v=OU6r5TLVHl4
+  item: `items/OU6r5TLVHl4.md`
+- **The Secret to Designing AI That Doesn't Feel Like Garbage** — Design Unhinged (9:45, 5 views)
+  https://www.youtube.com/watch?v=vdg9bzOJMog
+  item: `items/vdg9bzOJMog.md`
+- **The Death of OpenClaw? NVIDIA’s Blueprint for Secure AI Agents** — Dubov Software (8:04, 2 views)
+  https://www.youtube.com/watch?v=TqUza-YopDo
+  item: `items/TqUza-YopDo.md`
+- **How AI Is Changing Education, Ethics, and the Future of Work [Tina Austin] #26** — The AI Lyceum®️ (50:53, 5 views)
+  https://www.youtube.com/watch?v=c9JEfuLL_v4
+  item: `items/c9JEfuLL_v4.md`
+- **THE AI FINANCIAL SINGULARITY** — Charles ( Secret Analyst) (13:16, 1 views)
+  https://www.youtube.com/watch?v=xay_nfADV88
+  item: `items/xay_nfADV88.md`
+- **Learning to Fail Fast and Recover like a Ninja** — Hustlers Kung Fu  Open Topic (22:54, 291 views)
+  https://www.youtube.com/watch?v=HVj_BVMisRE
+  item: `items/HVj_BVMisRE.md`
+- **[ಕನ್ನಡ] 5 AI Engineering Projects to get Hired in 2026 | Microdegree** — MicroDegree ಕನ್ನಡ (11:01, 660 views)
+  https://www.youtube.com/watch?v=M3-VTEvlbe4
+  item: `items/M3-VTEvlbe4.md`
+- **Claude Code Just Leaked… And It's Worse Than You Think** — Exploring ChatGPT and ToxSec (47:20, 4.7K views)
+  https://www.youtube.com/watch?v=bk2rt3SVnc8
+  item: `items/bk2rt3SVnc8.md`
+- **Best & cheapest AI for OpenClaw** — The Next New Thing (20:41, 5.8K views)
+  https://www.youtube.com/watch?v=T7uNP7Nrb98
+  item: `items/T7uNP7Nrb98.md`
+- **Akiflow vs Motion vs Sunsama - (2026) I Tried Them All… Which Wins** — Daniel | Tech & Data (9:58, 3.8K views)
+  https://www.youtube.com/watch?v=lF6viCTZsTw
+  item: `items/lF6viCTZsTw.md`
+- **How to Turn Your Dream Into Reality Even If You're Starting From Nothing** — Evan Carmichael (3:05:31, 13.2K views)
+  https://www.youtube.com/watch?v=8VmR0LXon0A
+  item: `items/8VmR0LXon0A.md`
+- **Day 7 of 21 Days of Futures Fit Learning - Adaptive Leadership** — Charlotte Kemp (2:32, 5 views)
+  https://www.youtube.com/watch?v=DTeeqIkzHXk
+  item: `items/DTeeqIkzHXk.md`
+- **We're Not Ready For AI Glasses** — Logically Answered (15:18, 34.6K views)
+  https://www.youtube.com/watch?v=PrkwfI9-maM
+  item: `items/PrkwfI9-maM.md`
+- **Panel Discussion: Operationalising DPDP Compliance in AI Systems** — nasscom AI (41:58, 7 views)
+  https://www.youtube.com/watch?v=71hDB4yz0Uo
+  item: `items/71hDB4yz0Uo.md`

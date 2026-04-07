@@ -1,0 +1,26 @@
+# Why Are Businesses Paying $750–$1,200 Month For This Simple AI
+
+- Topic: `feedback-loop-driven agent systems`
+- Priority: `super_relevant`
+- Source context: `eywa`
+- Type: `youtube`
+- Video ID: `hf7ypenBgy0`
+- Channel: `GHL Wizard`
+- Duration: `16:31`
+- Views: `185 views`
+- Upload date: `NA`
+- URL: https://www.youtube.com/watch?v=hf7ypenBgy0
+- Collected at UTC: `2026-04-07T18:15:08Z`
+- Transcript status: `pending`
+
+## Summary
+
+Not analyzed yet.
+
+## Transcript
+
+Transcript not collected yet.
+
+## Notes
+
+- Freshly collected by Research Radar.
