@@ -72,13 +72,13 @@ run_step analyze-items bash "$ROOT/pipelines/analyze-items.sh" "${analyze_args[@
 
 run_step build-presentations bash "$ROOT/pipelines/build-presentations.sh"
 
-# --- Daily aggregation and analysis ---
-# NOTE: aggregate-daily.sh and analyze-daily.sh were referenced here by
-# commit 1e57476ce ("add daily aggregate + analysis steps to nightly
-# pipeline") but the scripts themselves were never committed. They
-# silently failed with exit 127 every night until 2026-04-07. Disabled
-# until the actual scripts exist. Re-enable by uncommenting both lines.
-# run_step aggregate-daily bash "$ROOT/pipelines/aggregate-daily.sh"
+# Daily aggregation and analysis. Recovered from 8d18acb82 in 2026-04-07
+# after they were accidentally deleted in the e5bc66e48 reorg.
+# - aggregate-daily is pure Python data collation, safe to run.
+# - analyze-daily shells out to the `claude` CLI which is NOT yet
+#   authenticated on the dev box. Uncomment after running `claude login`
+#   on the box, otherwise the step will fail every nightly run.
+run_step aggregate-daily bash "$ROOT/pipelines/aggregate-daily.sh"
 # run_step analyze-daily bash "$ROOT/pipelines/analyze-daily.sh"
 
 echo "[research-radar] finished nightly radar run at $(date -u '+%Y-%m-%dT%H:%M:%SZ') failures=$failures successes=$successes"
