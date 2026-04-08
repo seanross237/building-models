@@ -468,3 +468,96 @@ Full item files belong in `items/`.
 - **How Consultants Can Drive Revenue by Fixing HR & HCM Strategy With Stephen Butcher** — Guillaume Jouvencel (NA, new)
   https://www.youtube.com/watch?v=AZGjHa_nmGU
   item: `items/AZGjHa_nmGU.md`
+
+## 2026-04-08 — 30 new videos
+
+- **Video 15. Performance Evaluation and Improvement** — Transform AcademyHub-01 (2:02, new)
+  https://www.youtube.com/watch?v=nY6j34uUF14
+  item: `items/nY6j34uUF14.md`
+- **It Learned To Want Its Own Projects Dario Amodei AI Biology** — Mad Sci Clips (7:08, new)
+  https://www.youtube.com/watch?v=sqHeu2oBJOc
+  item: `items/sqHeu2oBJOc.md`
+- **Developing games for over 20 years.** — Rodrigo Banzato - Desenvolvedor de Games (16:42, 3 views)
+  https://www.youtube.com/watch?v=H3K6LM2IGPU
+  item: `items/H3K6LM2IGPU.md`
+- **The 63,668 Foot Plane That No One Would Acknowledge** — Dark Skies (26:05, 71.0K views)
+  https://www.youtube.com/watch?v=85HXDomYQWg
+  item: `items/85HXDomYQWg.md`
+- **Bluepoint Games: Sony's Biggest Mistake** — LorD of Nerds (47:02, 344 views)
+  https://www.youtube.com/watch?v=nLR6UTctKWA
+  item: `items/nLR6UTctKWA.md`
+- **House Capital Investment Committee 4/7/26** — MNHouseInfo (1:35:44, 61 views)
+  https://www.youtube.com/watch?v=EhQSJV5OuZM
+  item: `items/EhQSJV5OuZM.md`
+- **How to build a retail growth engine in 2026** — Google Ads (40:21, 308 views)
+  https://www.youtube.com/watch?v=oZVTJEwjtQU
+  item: `items/oZVTJEwjtQU.md`
+- **NASA Artemis II Briefing** — C-SPAN (48:56, 3.8K views)
+  https://www.youtube.com/watch?v=hF8_aiqFQUA
+  item: `items/hF8_aiqFQUA.md`
+- **Practical AI-Enabled Observability for Agents and LLMs** — Datadog (27:09, 74 views)
+  https://www.youtube.com/watch?v=Xe60gkyDtGw
+  item: `items/Xe60gkyDtGw.md`
+- **NASA’s Artemis II Daily News Conference (April 7, 2026)** — NASA (1:09:21, 600.6K views)
+  https://www.youtube.com/watch?v=5YWATA3d5dU
+  item: `items/5YWATA3d5dU.md`
+- **🎬 Indie Film Distribution: How to Submit Your Film to Angel Studios | Jared Geesey Interview** — Phil Cooke (30:12, 4 views)
+  https://www.youtube.com/watch?v=a0mXGACUhoo
+  item: `items/a0mXGACUhoo.md`
+- **HR Management System** — SAMALA (1:20, 3 views)
+  https://www.youtube.com/watch?v=hjBVm2eINVs
+  item: `items/hjBVm2eINVs.md`
+- **Decentralized Drive Systems: Saving Costs and Boosting Industrial Uptime** — Control Design (34:55, 3 views)
+  https://www.youtube.com/watch?v=g23ykXVmKbo
+  item: `items/g23ykXVmKbo.md`
+- **DRCOG Board of Directors| March 18, 2026** — DRCOG1 (2:18:40, 1 views)
+  https://www.youtube.com/watch?v=WYcJ8RYZY-g
+  item: `items/WYcJ8RYZY-g.md`
+- **Gemini 3: The Multimodal AI That's Reshaping Development** — Great Learning (26:01, 226 views)
+  https://www.youtube.com/watch?v=6gvlfEcNhDo
+  item: `items/6gvlfEcNhDo.md`
+- **From Pain to Performance: Ryan’s Story | Chiropractor Highlands Ranch** — Vitality Chiropractic-Highlands Ranch Chiropractor (1:00, 3 views)
+  https://www.youtube.com/watch?v=M-YgkYRI0yQ
+  item: `items/M-YgkYRI0yQ.md`
+- **Marin Wildfire Executive Committee Meeting - April 2, 2026** — Marin Wildfire Prevention Authority (1:38:56, new)
+  https://www.youtube.com/watch?v=nSTasBo5J70
+  item: `items/nSTasBo5J70.md`
+- **Stop Letting Your Feelings Run Your Ambitions | Jim Rohn Motivation** — Jim Rohn Motivation (55:32, 145 views)
+  https://www.youtube.com/watch?v=tsi82zsQdtU
+  item: `items/tsi82zsQdtU.md`
+- **2026 KGM Torres EVX Alpha | Dışı Seni Yakar İçi Beni | PaylaşıYorum** — PaylaşıYorum (40:40, 1.8K views)
+  https://www.youtube.com/watch?v=NWjqBnD1YWQ
+  item: `items/NWjqBnD1YWQ.md`
+- **We Upgraded Our Comping Tool — This Changes Everything** — Land Insights (11:45, 7 views)
+  https://www.youtube.com/watch?v=kBYlO_9oioA
+  item: `items/kBYlO_9oioA.md`
+- **Alberta clipper brings return of snow | CTV News Saskatchewan Your Morning for April 8, 2026** — CTV News (2:17:26, 16 views)
+  https://www.youtube.com/watch?v=B41sn_wOy5w
+  item: `items/B41sn_wOy5w.md`
+- **Iran Deadline Looms Over Markets | The Close 4/7/2026** — Bloomberg Television (1:32:13, 7.7K views)
+  https://www.youtube.com/watch?v=D3HZYF10Hdk
+  item: `items/D3HZYF10Hdk.md`
+- **Driving optical innovation through European research projects** — Adtran (4:28, 11 views)
+  https://www.youtube.com/watch?v=mU_GE9LuhaU
+  item: `items/mU_GE9LuhaU.md`
+- **4/7 Transportation & Street Activity Permits Committee – 2026** — Manhattan Community Board 1 (1:24:58, 2 views)
+  https://www.youtube.com/watch?v=ufWHo2CzUAw
+  item: `items/ufWHo2CzUAw.md`
+- **What Is Your Business Really Worth and How to Increase It Before You Exit (Ep. 28 | Pt. 4)** — Avery Wealth, Inc (34:15, new)
+  https://www.youtube.com/watch?v=IlBXkmqkVqw
+  item: `items/IlBXkmqkVqw.md`
+- **ERCOT BESS: When & How to Upgrade for Max Profit & IRR | Storlytics V4.1 Training Case Study** — Storlytics Energy Storage (42:35, 11 views)
+  https://www.youtube.com/watch?v=SnZ3dJUlNLY
+  item: `items/SnZ3dJUlNLY.md`
+- **This Direct Drive Wheel Is Cheaper Than It Should Be – PXN V10 Ultra** — Top 5 Trey (5:07, 8 views)
+  https://www.youtube.com/watch?v=GQNtDJuTXZQ
+  item: `items/GQNtDJuTXZQ.md`
+- **ОМЕЛЯН: Ми йдемо шляхом ПОЛЬЩІ. Антикорупціонерів ЛІКВІДУЮТЬ. Зайнялися ПОЛІТИКОЮ. Дійшло до АБСУРДУ** — Борислав Береза (8:10, 2.7K views)
+  https://www.youtube.com/watch?v=SPw7p-6G-Os
+  item: `items/SPw7p-6G-Os.md`
+- **How to Lead Complex Projects When Everything Goes Wrong | ft. Tushar Trived** — Industry Magnates (27:02, 5 views)
+  https://www.youtube.com/watch?v=Vre6KCYOcOk
+  item: `items/Vre6KCYOcOk.md`
+- **Episode 9: Introduction — Getting to Know JAR Consulting Group** — JAR Consulting Group (13:52, 1 views)
+  https://www.youtube.com/watch?v=tYfpOlsdLy8
+  item: `items/tYfpOlsdLy8.md`

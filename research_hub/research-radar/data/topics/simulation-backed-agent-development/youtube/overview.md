@@ -330,3 +330,72 @@ Full item files belong in `items/`.
 - **04/06/2026 13:11 NYCC 250 8 1 260406 131112** — NYC Council Videos (unofficial) (1:49:59, 1 views)
   https://www.youtube.com/watch?v=3WFviKm2AZ4
   item: `items/3WFviKm2AZ4.md`
+
+## 2026-04-08 — 22 new videos
+
+- **Gemini 3: The Multimodal AI That's Reshaping Development** — Great Learning (26:01, 226 views)
+  https://www.youtube.com/watch?v=6gvlfEcNhDo
+  item: `items/6gvlfEcNhDo.md`
+- **How Cops Became Soldiers - SOME MORE NEWS** — Some More News (1:15:36, 9.4K views)
+  https://www.youtube.com/watch?v=zo4TnUxHnWs
+  item: `items/zo4TnUxHnWs.md`
+- **Why Nothing in the Universe Can Ever Truly Stand Still** — Science for Deep Sleep (3:38:41, 12 views)
+  https://www.youtube.com/watch?v=SNmPNaAatuw
+  item: `items/SNmPNaAatuw.md`
+- **#155 Probabilistic Programming for the Real World, with Andreas Munk** — Learning Bayesian Statistics (1:54:07, 28 views)
+  https://www.youtube.com/watch?v=gKQzb2sIESw
+  item: `items/gKQzb2sIESw.md`
+- **9 Steps to Simplify Your Portfolio - Rick Walker** — Rick Walker (45:28, 28 views)
+  https://www.youtube.com/watch?v=hx7uYPyQjtA
+  item: `items/hx7uYPyQjtA.md`
+- **He Spent All His Money Feeding A Small Monster Until It Became A World-Level God-Tier Monster** — Recap Manga (12:11:57, 330 views)
+  https://www.youtube.com/watch?v=lFPvXFX1GUw
+  item: `items/lFPvXFX1GUw.md`
+- **🔥Richer than Taiwan despite having no oil? What makes Israel's economy so strong?** — HIBY新聞 (38:48, 77 views)
+  https://www.youtube.com/watch?v=JQu_BTK8Ds0
+  item: `items/JQu_BTK8Ds0.md`
+- **【Multi Sub】外送小哥闖進男模比賽現場，當場撞破女友劈腿！他脫掉工作服全場女評審瞬間淪陷！#短劇 #熱門短劇 #短劇推薦#爽劇#男模#男模** — 乐享轻剧 (2:02:17, 7 views)
+  https://www.youtube.com/watch?v=9llPb4Q4_Qs
+  item: `items/9llPb4Q4_Qs.md`
+- **The Casting Call | Shared Context Podcast** — Shared Context Podcast (39:08, 4 views)
+  https://www.youtube.com/watch?v=FkDNNktKUu8
+  item: `items/FkDNNktKUu8.md`
+- **末日被渣男和他小情人趕出門，絕望之際獲得包租婆系統和500平別墅安全屋，4位SSS級異能男租客唯她是從，拿刀殺人的手乖乖給她削蘋果、擦地板，渣男跪在門外求收留，她摟著4個熱乎男人冷笑「老娘不回收垃圾」** — 追劇鴨 (1:41:37, 10.5K views)
+  https://www.youtube.com/watch?v=N-Ly7Sr1j94
+  item: `items/N-Ly7Sr1j94.md`
+- **Floodplain Violations and Enforcement** — Minnesota Department of Natural Resources (54:21, 12 views)
+  https://www.youtube.com/watch?v=OZUt9L5Rc_8
+  item: `items/OZUt9L5Rc_8.md`
+- **[MULTI SUB] Transcendent Evolution EP1-14** — Anime Verse Official (2:33:16, 22 views)
+  https://www.youtube.com/watch?v=kHTpgOixlqU
+  item: `items/kHTpgOixlqU.md`
+- **Board of Education Meeting 4/7/26@7pm** — Gilpin County School District RE-1 (2:43:01, 18 views)
+  https://www.youtube.com/watch?v=l21fiN1sXI4
+  item: `items/l21fiN1sXI4.md`
+- **St. Johns County BCC Meeting Livestream** — St. Johns County (3:13:56, 134 views)
+  https://www.youtube.com/watch?v=4mFQCEjdR74
+  item: `items/4mFQCEjdR74.md`
+- **City Council Regular Meeting - 04/07/2026** — Littleton Channel 8 (2:06:45, 53 views)
+  https://www.youtube.com/watch?v=p873vikHX2U
+  item: `items/p873vikHX2U.md`
+- **ENG SUB 🔥【全網首發】《末日包租婆系统，我的S级房客们》被渣男抛弃后，她竟激活包租婆系统，收留末世四大强者逆袭！#热血#末世#漫剧#末世生存#赛博剧场** — 赛博剧场 (1:41:33, 6.2K views)
+  https://www.youtube.com/watch?v=8mV1DrqcgY4
+  item: `items/8mV1DrqcgY4.md`
+- **中國高能懸疑劇！暗夜追行EP7💥！機密洩漏在即，楊冪聯手張彬彬黑夜追蹤幕後黑手！ #連載 #電影 #懸疑 #電視劇#一口氣看完系列##刑事偵查電視劇#全集** — 高燃精彩瞬间 (1:53:19, 223 views)
+  https://www.youtube.com/watch?v=yoCZ4qt2bO4
+  item: `items/yoCZ4qt2bO4.md`
+- **Cinderella gets plastic surgery and infiltrates a wealthy family to uncover truth** — 蜜糖短剧 (1:42:33, 345 views)
+  https://www.youtube.com/watch?v=T9kB0WmExKI
+  item: `items/T9kB0WmExKI.md`
+- **GenX Adulting Podcast - Episode 62 - GenX Speaks Series: Amy Scruggs - Nashville Recording Artist** — genxadulting and Amy Scruggs Music (2:39:19, 28 views)
+  https://www.youtube.com/watch?v=8Tg1AAEblMM
+  item: `items/8Tg1AAEblMM.md`
+- **灰姑娘付出一切卻被賭鬼丈夫陷害，這一世她重生高考前，毅然接受首富少爺的求婚，考入名校打造百億商業帝國，狂虐渣夫毫不手軟！#霸總 #爱情 #逆襲 #甜寵 #瑪麗蘇** — 番石榴短劇TOPSHORT (1:27:10, 28 views)
+  https://www.youtube.com/watch?v=5NxSCurj2M8
+  item: `items/5NxSCurj2M8.md`
+- **Trying to yap in Yapyap | Mar 4 2026** — Nachi Kuranashi VODs (7:03:41, 25 views)
+  https://www.youtube.com/watch?v=NQVruua2OGA
+  item: `items/NQVruua2OGA.md`
+- **🔥【最新合集】《太古十凶：别人御兽我御兽娘》EP1~144：成功六转！| Multi SUB #热血 #玄幻 #逆袭 #战斗 #动漫魔女** — 动漫魔女 (9:05:39, 607 views)
+  https://www.youtube.com/watch?v=elGTlb1NGAg
+  item: `items/elGTlb1NGAg.md`

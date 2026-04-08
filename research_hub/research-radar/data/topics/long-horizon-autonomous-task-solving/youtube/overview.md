@@ -144,3 +144,60 @@ Full item files belong in `items/`.
 - **Artemis II Lunar Flyby, Dark Matter & The Atomic Future | Artificially Informed** — Artificially Informed (1:07:47, 13 views)
   https://www.youtube.com/watch?v=BmClIPacWM8
   item: `items/BmClIPacWM8.md`
+
+## 2026-04-08 — 18 new videos
+
+- **Asynchronous AI Agents** — Vinh Nguyen (5:51, 1 views)
+  https://www.youtube.com/watch?v=0cjy8fLnr7w
+  item: `items/0cjy8fLnr7w.md`
+- **[Podcast] Asynchronous AI Agents** — Vinh Nguyen (41:58, 3 views)
+  https://www.youtube.com/watch?v=fxJqesppGkQ
+  item: `items/fxJqesppGkQ.md`
+- **Claude Mythos Preview Will Change The World! Deepseek V4 Demos, & GLM 5.1! AI NEWS!** — WorldofAI (11:39, 16.3K views)
+  https://www.youtube.com/watch?v=G7WIFq8jnOA
+  item: `items/G7WIFq8jnOA.md`
+- **⁠Supercharge your dev ability with Coding agents** — Dubov Software (7:57, new)
+  https://www.youtube.com/watch?v=j8saYf-iio4
+  item: `items/j8saYf-iio4.md`
+- **Forget Lovable, Nanocorp creates autonomous businesses 🏭!** — Comptoir IA (1:01:12, 408 views)
+  https://www.youtube.com/watch?v=nUgE0Cq7paQ
+  item: `items/nUgE0Cq7paQ.md`
+- **Leading Transformation w Vik Chaudhry | Buzz and Beyond** — Buzz Solutions, Inc. (26:12, 5 views)
+  https://www.youtube.com/watch?v=bJmx1H4nUq0
+  item: `items/bJmx1H4nUq0.md`
+- **Deep Work Focus Music – Background music for Work & Study | Concentration, Productivity & Flow State** — DEEP WORK FOCUS (2:07:14, 2 views)
+  https://www.youtube.com/watch?v=CaEkpPvQlL0
+  item: `items/CaEkpPvQlL0.md`
+- **[Trump's Next Target] Will Oil Prices Not Fall? / Tariff Policies No Longer Work / A Repeat of Le...** — インサイダ　by ビジネスインサイダージャパン (28:21, 3.3K views)
+  https://www.youtube.com/watch?v=prEqrVikzxk
+  item: `items/prEqrVikzxk.md`
+- **Sri Lanka Renewable Energy Future 2026 | Windforce PLC | Battery Storage, Solar, Wind | Market Pulse** — Softlogic Stockbrokers (19:11, 286 views)
+  https://www.youtube.com/watch?v=kbkmp1IHpHY
+  item: `items/kbkmp1IHpHY.md`
+- **Atteindre l'Excellence - Robert Greene | Mastery - Robert Greene, with subtitles + Free PDF** — Kelly, la prof de français (1:13:07, 35 views)
+  https://www.youtube.com/watch?v=wjKLEUAQGnU
+  item: `items/wjKLEUAQGnU.md`
+- **Inside Cambridge Analytica: Facebook's Role in Data Manipulation** — Beautiful Lies Society (3:07:36, 35 views)
+  https://www.youtube.com/watch?v=bxcb13GPxWY
+  item: `items/bxcb13GPxWY.md`
+- **EP146: How InfiAgent solves the AI memory bottleneck** — Bookworm (21:15, 1 views)
+  https://www.youtube.com/watch?v=yQbWCwZ8Bk0
+  item: `items/yQbWCwZ8Bk0.md`
+- **Mixed-integer methods for robots motion planning and decision making | TU Delft DCSC Colloquium #01** — DCSC TU Delft (34:54, 27 views)
+  https://www.youtube.com/watch?v=pmq7d9mcaik
+  item: `items/pmq7d9mcaik.md`
+- **AGI Dreams Podcast – April 08, 2026** — Robert E. Lee (18:40, 1 views)
+  https://www.youtube.com/watch?v=kDcNFmJNAD8
+  item: `items/kDcNFmJNAD8.md`
+- **𝗙𝗼𝗰𝘂𝘀 𝗠𝘂𝘀𝗶𝗰 | Focus Oasis I Deep Work, Calm Mind & Endless Flow** — 𝗗𝗲𝗲𝗽 𝗖𝗵𝗶𝗹𝗹 𝗪𝗼𝗿𝗸 (1:09:49, 5 views)
+  https://www.youtube.com/watch?v=HTyIaSSjK8Y
+  item: `items/HTyIaSSjK8Y.md`
+- **4,000 Hiroshima Bombs: The Terrifying Power of a 14-Day Warning** — Tech Horizon (5:38, new)
+  https://www.youtube.com/watch?v=RY62xKRh-pA
+  item: `items/RY62xKRh-pA.md`
+- **The Incomplete Proof Mathematical Archive That Left One Question Unanswered ➗ 2‑Hour Cosmic Logic** — Quantum Drift (2:40:22, 7 views)
+  https://www.youtube.com/watch?v=TydyJhqT2yo
+  item: `items/TydyJhqT2yo.md`
+- **Zero Distraction Brain Power Beats | The Complete Deep Work Soundtrack Binaural | focus 🧠** — Apollo Focus (2:02:35, 1 views)
+  https://www.youtube.com/watch?v=6dy-3knByqg
+  item: `items/6dy-3knByqg.md`

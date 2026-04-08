@@ -96,3 +96,12 @@ Full item files belong in `items/`.
 - **💥【新番上线】穿越足球世界，点满传球天赋，从德丙一路逆袭，制霸足坛成世界第一中场！《满级传球，称霸欧洲》全集Multi SUB #热血 #漫剧 #动漫魔女** — 动漫魔女 (2:00:38, 226 views)
   https://www.youtube.com/watch?v=UQrjRylc6OE
   item: `items/UQrjRylc6OE.md`
+
+## 2026-04-08 — 2 new videos
+
+- **AI Governance and Why Legal Bottlenecks Start Upstream with Rachel Harris of Suzy** — CZ and Friends (45:58, 2 views)
+  https://www.youtube.com/watch?v=lz9ATAip7rY
+  item: `items/lz9ATAip7rY.md`
+- **Client Zero | Inside Cognizant’s AI Transformation Journey | Cognizant** — Cognizant (30:51, 32 views)
+  https://www.youtube.com/watch?v=RYe6CSx__ig
+  item: `items/RYe6CSx__ig.md`

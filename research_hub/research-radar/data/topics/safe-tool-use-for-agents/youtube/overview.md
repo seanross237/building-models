@@ -468,3 +468,96 @@ Full item files belong in `items/`.
 - **Claude Code Just Leaked… And It's Worse Than You Think** — Exploring ChatGPT and ToxSec (47:20, 4.7K views)
   https://www.youtube.com/watch?v=bk2rt3SVnc8
   item: `items/bk2rt3SVnc8.md`
+
+## 2026-04-08 — 30 new videos
+
+- **CRAZY FREE AI Agents: Easiest WAY to CREATE AI Agents w/ OPUS 4.6 for FREE!** — AICodeKing (8:57, 1.6K views)
+  https://www.youtube.com/watch?v=v29oxgbv_l4
+  item: `items/v29oxgbv_l4.md`
+- **NEW Genspark Workspace 4.0 AI Agent Update is INSANE!** — Julian Goldie SEO (9:18, 1.6K views)
+  https://www.youtube.com/watch?v=7B10uySdEFA
+  item: `items/7B10uySdEFA.md`
+- **Anthropic Leaked Their Own AI. Engineers Rebuilt It in 24 Hours.** — ByteMonk (8:44, 23.4K views)
+  https://www.youtube.com/watch?v=szaszUEmjfU
+  item: `items/szaszUEmjfU.md`
+- **Hermes AI Agent: Automate ANYTHING!** — Julian Goldie SEO (7:43, 2.8K views)
+  https://www.youtube.com/watch?v=YtfROZK1BDM
+  item: `items/YtfROZK1BDM.md`
+- **Platforms for Humans and Machines: Engineering for the Age of Agents — Juan Herreros Elorza** — AI Engineer (21:15, 676 views)
+  https://www.youtube.com/watch?v=cCRO3ChaYhM
+  item: `items/cCRO3ChaYhM.md`
+- **Diving into the AI Iceberg: Building Durable, Scalable & Secure AI Agents** — Temporal (47:44, 24 views)
+  https://www.youtube.com/watch?v=djOqNzJ5PPM
+  item: `items/djOqNzJ5PPM.md`
+- **PydanticAI Agents in Python: Type-Safe Tools and Structured Outputs** — Professor Py: AI Engineering (8:16, 1 views)
+  https://www.youtube.com/watch?v=FRyTq2bZGlY
+  item: `items/FRyTq2bZGlY.md`
+- **This New AI Platform Combines Claude + OpenClaw Into One Workspace | MiniMax Agent Review** — Jon Law (16:31, 25.2K views)
+  https://www.youtube.com/watch?v=6Cckjqs6H-E
+  item: `items/6Cckjqs6H-E.md`
+- **Build a Custom AI Agent for Instagram using Python (100% FREE Manychat Alternative)** — Java Goat (21:07, 384 views)
+  https://www.youtube.com/watch?v=_9hRRTuJ1j4
+  item: `items/_9hRRTuJ1j4.md`
+- **7 Jobs AI Replaces by 2027 (How to Survive)** — Finance Focus (9:32, 99 views)
+  https://www.youtube.com/watch?v=ERax9kL2mBA
+  item: `items/ERax9kL2mBA.md`
+- **How to Make Hermes Agent 100X Better in 1 Click** — Julian Goldie SEO (7:48, 2.7K views)
+  https://www.youtube.com/watch?v=zmSeuS0XjTc
+  item: `items/zmSeuS0XjTc.md`
+- **AI Agents Don’t Need Better Prompts. They Need Guardrails** — Code & bird (4:29, 11 views)
+  https://www.youtube.com/watch?v=20pL7M0OUSM
+  item: `items/20pL7M0OUSM.md`
+- **OpenClaw Is Dead And No One Talks About It** — AI LINA (22:54, 11 views)
+  https://www.youtube.com/watch?v=4xeTnqi1-ek
+  item: `items/4xeTnqi1-ek.md`
+- **Wes McKinney on AI Agents, The Mythical Agent Month, and His Wild AI Coding Setup** — Joe Reis (1:02:03, 1.3K views)
+  https://www.youtube.com/watch?v=uC6g8L8zquE
+  item: `items/uC6g8L8zquE.md`
+- **How Claude Code Works Internally | Explained using claw-code | fastest repo to surpass 100K stars** — AI Depth School (27:27, 6 views)
+  https://www.youtube.com/watch?v=RE8ChEO66RQ
+  item: `items/RE8ChEO66RQ.md`
+- **Anthropic Claude Mythos Preview: अब तक का सबसे Powerful AI Tool, आम लोगों के लिए मना!** — Khabargaon (6:12, 1.2K views)
+  https://www.youtube.com/watch?v=qEMNNfbsMz8
+  item: `items/qEMNNfbsMz8.md`
+- **Deploying open source AI agents on OpenShift using OpenClaw** — Red Hat Developer (5:03, 53 views)
+  https://www.youtube.com/watch?v=PkXXLdZFDTs
+  item: `items/PkXXLdZFDTs.md`
+- **137 - Is AI Safe for Non-Profits? What You Must Know Before You Start** — Non-Profit Digital Success (9:57, 1 views)
+  https://www.youtube.com/watch?v=ZKCXxzBkU7Y
+  item: `items/ZKCXxzBkU7Y.md`
+- **Build Your First AI Agent: Autonomous Systems Guide** — Master of Machines (6:13, 2 views)
+  https://www.youtube.com/watch?v=mGJGRC1GYsM
+  item: `items/mGJGRC1GYsM.md`
+- **The Claude Code source code leak: Takeaways for cybersecurity pros** — IBM Technology (41:31, 1.4K views)
+  https://www.youtube.com/watch?v=qtFtECYOzZE
+  item: `items/qtFtECYOzZE.md`
+- **Trump Blinks on Iran - Ceasefire Proves the Threats Were Empty** — Peter Schiff (1:04:03, 56.0K views)
+  https://www.youtube.com/watch?v=Cs79hgFANu8
+  item: `items/Cs79hgFANu8.md`
+- **Building Production AI Agents** — Future Careers Plugin (9:30, new)
+  https://www.youtube.com/watch?v=Rn09Ov3N0NI
+  item: `items/Rn09Ov3N0NI.md`
+- **RL-Inspired Pairwise Trajectory Selection for Multi-Agent Navigation** — Robotics by Joon (4:06, 3 views)
+  https://www.youtube.com/watch?v=02t-KA8U_uM
+  item: `items/02t-KA8U_uM.md`
+- **Use Case Committee 4/7/2026 - Newsletters, Service Desk Agents, and Vibe Coding Demos** — GovAI Coalition (57:57, 5 views)
+  https://www.youtube.com/watch?v=UDcTjqH9IdQ
+  item: `items/UDcTjqH9IdQ.md`
+- **ClawKeeper: Comprehensive Safety Protection for OpenClaw Agents Through Skills** — Praveen Govindaraj (5:44, 1 views)
+  https://www.youtube.com/watch?v=d49L3s3GDRI
+  item: `items/d49L3s3GDRI.md`
+- **Openclaw in the enterprise: use for software modernization, the sandboxing and real-world use cases** — Eli5 Product Studio (21:11, 4 views)
+  https://www.youtube.com/watch?v=gns0zteRT20
+  item: `items/gns0zteRT20.md`
+- **Marin Wildfire Executive Committee Meeting - April 2, 2026** — Marin Wildfire Prevention Authority (1:38:56, new)
+  https://www.youtube.com/watch?v=nSTasBo5J70
+  item: `items/nSTasBo5J70.md`
+- **We Discovered a Filthy Overgrown Sidewalk in Agent Orange Resettlement — Heartwarming Cleanup!** — Clean up Mowing sawing trees 86 (27:48, 1.6K views)
+  https://www.youtube.com/watch?v=Crk0H1qj-Sk
+  item: `items/Crk0H1qj-Sk.md`
+- **Why ChatGPT Isn’t Enough for Real Business Automation - with Ethan Ouyang** — 🤖 Beginner's Guide to AI and Atoms (48:12, 8 views)
+  https://www.youtube.com/watch?v=LU8jVHed630
+  item: `items/LU8jVHed630.md`
+- **After 10 Years Of Hard Work For His Family, He Was Chosen By A God To Rule The Entire World** — Tanjiro Recap (13:31:29, 608 views)
+  https://www.youtube.com/watch?v=hnd0sMkr6dk
+  item: `items/hnd0sMkr6dk.md`

@@ -384,3 +384,96 @@ Full item files belong in `items/`.
 - **Studies in Literature by John Morley - Full Audiobook** — Supreme Audiobooks (6:46:26, 27 views)
   https://www.youtube.com/watch?v=SOiGf4X2LCE
   item: `items/SOiGf4X2LCE.md`
+
+## 2026-04-08 — 30 new videos
+
+- **Claude Code Unstoppable? How Replit Agent 4's Parallel Agents Could Supercharge Your Frameworks** — Eric Tech (7:13, 248 views)
+  https://www.youtube.com/watch?v=TdJwBiv3zS0
+  item: `items/TdJwBiv3zS0.md`
+- **NEW Genspark Workspace 4.0 AI Agent Update is INSANE!** — Julian Goldie SEO (9:18, 1.6K views)
+  https://www.youtube.com/watch?v=7B10uySdEFA
+  item: `items/7B10uySdEFA.md`
+- **Inside Claude: The Complete System Design That Powers AI Agents** — ByteMonk (8:44, 23.4K views)
+  https://www.youtube.com/watch?v=szaszUEmjfU
+  item: `items/szaszUEmjfU.md`
+- **How to Make Hermes Agent 100X Better in 1 Click** — Julian Goldie SEO (7:48, 2.7K views)
+  https://www.youtube.com/watch?v=zmSeuS0XjTc
+  item: `items/zmSeuS0XjTc.md`
+- **I Tested ALL 5 Claude Code Workflows — Here's Which One 10x'd My Output** — Hyperautomation Labs (9:26, 33 views)
+  https://www.youtube.com/watch?v=JJ7YF2RwGQs
+  item: `items/JJ7YF2RwGQs.md`
+- **How to Change Review Policies in Google Antigravity IDE: Agent Automation & Security Guide 2026** — ProgrammingKnowledge2 (1:48, 25 views)
+  https://www.youtube.com/watch?v=FnN2V61Rnh4
+  item: `items/FnN2V61Rnh4.md`
+- **Agentic Patterns with LangChain4j** — Microsoft for Java Developers (24:05, 3 views)
+  https://www.youtube.com/watch?v=mZh5P5ayiro
+  item: `items/mZh5P5ayiro.md`
+- **Hermes AI Agent: Automate ANYTHING!** — Julian Goldie SEO (7:43, 2.8K views)
+  https://www.youtube.com/watch?v=YtfROZK1BDM
+  item: `items/YtfROZK1BDM.md`
+- **What's New in Cursor 3: Agents Write Code for You | Full Update Overview** — Yevgeniy Kovalenko (8:00, 390 views)
+  https://www.youtube.com/watch?v=hRU1yVqGFaE
+  item: `items/hRU1yVqGFaE.md`
+- **⁠Supercharge your dev ability with Coding agents** — Dubov Software (7:57, new)
+  https://www.youtube.com/watch?v=j8saYf-iio4
+  item: `items/j8saYf-iio4.md`
+- **BearQ Agentic AI Changes Quality Assurance Forever** — Inside STLC (6:48, 12 views)
+  https://www.youtube.com/watch?v=yyFBWdJYzx8
+  item: `items/yyFBWdJYzx8.md`
+- **While Everyone Debated AI Agents, Pinterest Quietly Ran 66,000 MCP Calls a Month** — Shreesozo (13:01, 87 views)
+  https://www.youtube.com/watch?v=5upJrD0EfOs
+  item: `items/5upJrD0EfOs.md`
+- **Parag Agrawal (Parallel): What Does the AWS of Tomorrow Look Like?** — Daytona (21:10, 16 views)
+  https://www.youtube.com/watch?v=ffFFT8KBDc4
+  item: `items/ffFFT8KBDc4.md`
+- **OpenClaw Is Dead And No One Talks About It** — AI LINA (22:54, 11 views)
+  https://www.youtube.com/watch?v=4xeTnqi1-ek
+  item: `items/4xeTnqi1-ek.md`
+- **The Agent-Driven Economy: How Tech Giants are Deploying Digital Workers | KYC AI Labs** — KYC AI LABS (6:05, 3 views)
+  https://www.youtube.com/watch?v=s0AXtAwAAbY
+  item: `items/s0AXtAwAAbY.md`
+- **Ethical Hacking Agent Told "Test XML-RPC" Maps Hidden Internal Network in 14 Min | RedAmon SRF-H9SDB** — The Gradient Path (14:58, 10 views)
+  https://www.youtube.com/watch?v=Izr91Y88-9k
+  item: `items/Izr91Y88-9k.md`
+- **AI Agents, Crypto & Robotics with Weekee: The Rise of Agent Economies & On-Chain Commerce** — 21shares (43:41, 55 views)
+  https://www.youtube.com/watch?v=JwYbaUG9yno
+  item: `items/JwYbaUG9yno.md`
+- **让实验室拥有“自动驾驶”大脑：格拉斯哥大学利用大语言模型驱动 Chemputation，开启化学发现的算力接管时代** — Agent 创世纪 (8:45, 10 views)
+  https://www.youtube.com/watch?v=F8eQBFd55Is
+  item: `items/F8eQBFd55Is.md`
+- **🔥He awakened a Beast System and gained 10,000+ power overnight, becoming unstoppable!** — Bella's Comic Chronicles (33:55:35, 315 views)
+  https://www.youtube.com/watch?v=ffsPz1Lu-CU
+  item: `items/ffsPz1Lu-CU.md`
+- **Intel Joins Musk’s Terafab Project With Tesla, SpaceX, xAI | Bloomberg Tech 4/7/2026** — Bloomberg Technology (44:05, 5.6K views)
+  https://www.youtube.com/watch?v=J3uiHbOIsnk
+  item: `items/J3uiHbOIsnk.md`
+- **How Do Banks Secure Customer Portal File Uploads? | Multi-Layered Scanning Explained** — OPSWAT (1:11:16, 66.9K views)
+  https://www.youtube.com/watch?v=3pSDaPHlsy8
+  item: `items/3pSDaPHlsy8.md`
+- **Your Monolithic Prompts Are Obsolete #ClaudeCode #AI** — The AI How (36, 3 views)
+  https://www.youtube.com/watch?v=G9CY7EIGdZM
+  item: `items/G9CY7EIGdZM.md`
+- **"These are Green Flags for Your Code" | The Bike Shed** — thoughtbot (50:57, 3 views)
+  https://www.youtube.com/watch?v=2vtB6Zi_Eys
+  item: `items/2vtB6Zi_Eys.md`
+- **Getting Started with Cosmos DB Components - KingswaySoft** — KingswaySoft (24:54, 4 views)
+  https://www.youtube.com/watch?v=0dTwE2ampkU
+  item: `items/0dTwE2ampkU.md`
+- **EP17: Alex Dunegan - CEO at Lumint  |  Currency Management** — The Fund AI Pod (45:11, 4 views)
+  https://www.youtube.com/watch?v=7Um6A7IzN9M
+  item: `items/7Um6A7IzN9M.md`
+- **The Most Dangerous Angel In The Bible — And It's Not Lucifer** — Eternal Prophecy Films (1:01:20, 3.4K views)
+  https://www.youtube.com/watch?v=ON0HkIkwWwA
+  item: `items/ON0HkIkwWwA.md`
+- **My Daughter-in-Law Gave Me a Nursing Home Placement Form — My Son Clapped. Now They Beg Me Back** — Revenge Room (1:35:37, 532 views)
+  https://www.youtube.com/watch?v=_InEjtZXDf0
+  item: `items/_InEjtZXDf0.md`
+- **How I Built an AI Trading Agent | BTC 5 min strategy polymarket Full guide!** — Sparalee (1:44, 143 views)
+  https://www.youtube.com/watch?v=drRFU522__s
+  item: `items/drRFU522__s.md`
+- **Inference Engines | CareFlow | GenAI Academy APAC Edition Hackathon Submission** — Vedant Chaudhari (3:01, 6 views)
+  https://www.youtube.com/watch?v=jn-dIMSrUts
+  item: `items/jn-dIMSrUts.md`
+- **dirtybob or freakbob fo today 🗣️🔥 🔈🔉🔊🔊 | VERY FIRST D3 STREAM :D** — Faust Stream VODs (4:44:51, 24 views)
+  https://www.youtube.com/watch?v=cd6aaXg3XJ4
+  item: `items/cd6aaXg3XJ4.md`

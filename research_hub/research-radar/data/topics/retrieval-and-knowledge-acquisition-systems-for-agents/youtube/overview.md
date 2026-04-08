@@ -219,3 +219,51 @@ Full item files belong in `items/`.
 - **💥ENG SUB💥【重生末世：我氪金十亿称霸全球】Apocalyptic World: Spend Billions to Dominate the Globe 第1-104集 #都市 #逆袭** — 超有钱动漫 Anime Club (7:42:54, 154 views)
   https://www.youtube.com/watch?v=0jLScYuXGzM
   item: `items/0jLScYuXGzM.md`
+
+## 2026-04-08 — 15 new videos
+
+- **The Nicomachean Ethics by Aristotle | Complete (Human-Read) Audiobook with Text** — Chillbooks (9:23:28, 507 views)
+  https://www.youtube.com/watch?v=mBphR2jnC_E
+  item: `items/mBphR2jnC_E.md`
+- **引入现代Hopfield能量检索机制：RwF通过单步联想检索，在严苛的在线学习场景下刷新性能上限** — Agent 创世纪 (9:45, 2 views)
+  https://www.youtube.com/watch?v=Oe6tkaesbio
+  item: `items/Oe6tkaesbio.md`
+- **MULTI SUB《心動消費續命法則》25歲絕症青年陳啟意外綁定續命系統，只要他人為自己“心動消費”即可獲得高額返現與壽命獎勵… #AI #漫劇 #動漫 #無盡動漫社** — 无尽动漫社 | AI Anime (2:00:03, 3.4K views)
+  https://www.youtube.com/watch?v=_4GoQWEpqn0
+  item: `items/_4GoQWEpqn0.md`
+- **I got a hundredfold return on my money when I spent it on my mom, became the richest woman** — 劇好追 (1:55:24, 12.2K views)
+  https://www.youtube.com/watch?v=729FSB8S2SU
+  item: `items/729FSB8S2SU.md`
+- **家族聯姻她被迫嫁給大她12歲的老大叔，誰料他竟是整個京海最有權勢的總裁，本以為是契約婚姻，卻發現他早已暗戀她已久！#短劇 #短劇全集 #短劇推薦 #逆襲 #甜寵 #愛情 #王晨鵬 #包金妮** — 朝朝短剧 (2:44:14, 1.1K views)
+  https://www.youtube.com/watch?v=2YFUH_7kPo4
+  item: `items/2YFUH_7kPo4.md`
+- **Couple wrongfully accused at airport | CTV Your Morning Winnipeg for Tuesday April 7th, 2026** — CTV News (2:19:47, 916 views)
+  https://www.youtube.com/watch?v=0uhDS3U2bWU
+  item: `items/0uhDS3U2bWU.md`
+- **中國高能懸疑劇！暗夜追行EP7💥！機密洩漏在即，楊冪聯手張彬彬黑夜追蹤幕後黑手！ #連載 #電影 #懸疑 #電視劇#一口氣看完系列##刑事偵查電視劇#全集** — 高燃精彩瞬间 (1:53:19, 223 views)
+  https://www.youtube.com/watch?v=yoCZ4qt2bO4
+  item: `items/yoCZ4qt2bO4.md`
+- **Retired Navy SEAL on Faith, Manhood & Mentorship | Warriors Rise North Idaho** — North Idaho Experience (1:46:20, 307 views)
+  https://www.youtube.com/watch?v=ENwVFxFK-_E
+  item: `items/ENwVFxFK-_E.md`
+- **🔥Fired & Misunderstood, I Awakened The Life Winner System！** — DramaByte (1:58:02, 1.7K views)
+  https://www.youtube.com/watch?v=OUPgRxZjj3E
+  item: `items/OUPgRxZjj3E.md`
+- **The Strategic Communication Hub Spring Forum 2026** — umnhsjmc (1:39:00, 10 views)
+  https://www.youtube.com/watch?v=Fp8aRsKrD-c
+  item: `items/Fp8aRsKrD-c.md`
+- **The Mafia Boss Blocked Her Exit And Ordered, “Dinner. Tomorrow at 8PM. Stubborn Girl.”** — Mafia Midnight Stories (1:42:39, 1 views)
+  https://www.youtube.com/watch?v=RWmiDBsnzUU
+  item: `items/RWmiDBsnzUU.md`
+- **【Multi Sub】🔥 開局一個破攤位，我卻成了遊戲首富  Starting with a shabby stall EP1-120 #热血 #anime #爽文#男频** — Qixiang-Animation (10:12:39, 951 views)
+  https://www.youtube.com/watch?v=MtNzcP01_es
+  item: `items/MtNzcP01_es.md`
+- **【Multi Sub】【超长火漫】🔥神醫下山，誰人敢攔？EP1-150 成为医仙的我，让美女大小姐直接倒贴？深夜扰民是吧，老子让你叫破喉咙！！笑 #神醫 #热血** — Qixiang-Animation (10:34:51, 457 views)
+  https://www.youtube.com/watch?v=5K1G7eZpSg8
+  item: `items/5K1G7eZpSg8.md`
+- **Thought a brat, he was time-travel stock god. Back to 90s, $100,50x leverage,earned big,saved family** — 宙斯短劇DramaKing (2:08:42, 1.1K views)
+  https://www.youtube.com/watch?v=0HOxxcMRAjE
+  item: `items/0HOxxcMRAjE.md`
+- **Iran Just SHOCKED the U.S. Air Force—F-15 Intercepted Over Hormuz as Western Media Stays Silent** — Athena Reports (17:50, 2 views)
+  https://www.youtube.com/watch?v=FL-UFa4t9tI
+  item: `items/FL-UFa4t9tI.md`

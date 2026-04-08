@@ -66,3 +66,12 @@ Full item files belong in `items/`.
 - **【Multi Sub】My master is so cute S2 #anime  #animation #donghua** — Quartic element Anime (10:48:08, 569 views)
   https://www.youtube.com/watch?v=qQOZa5ZyHtg
   item: `items/qQOZa5ZyHtg.md`
+
+## 2026-04-08 — 2 new videos
+
+- **🔥【最新合集】《神的欲望游戏》EP1~129：你的信仰我来守护！| Multi SUB #热血 #玄幻 #逆袭 #战斗 #动漫魔女** — 动漫魔女 (8:20:02, 836 views)
+  https://www.youtube.com/watch?v=EPI0Y0p5i80
+  item: `items/EPI0Y0p5i80.md`
+- **After female cashback system,he is forced live off women,tenfold cashback yields over $100M cash** — Mania Comics Legends (27:42:58, 132 views)
+  https://www.youtube.com/watch?v=PWquZTLes1M
+  item: `items/PWquZTLes1M.md`

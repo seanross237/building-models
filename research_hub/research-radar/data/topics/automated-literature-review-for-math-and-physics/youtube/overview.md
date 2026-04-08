@@ -15,3 +15,9 @@ Full item files belong in `items/`.
 - **Brainstorm: AI Crossing the Disciplines with Ellie Pavlick and Junehyuk Jung - hosted by the JNBC** — Brown University (56:00, 20 views)
   https://www.youtube.com/watch?v=kUhxbE1LJ0c
   item: `items/kUhxbE1LJ0c.md`
+
+## 2026-04-08 — 1 new videos
+
+- **🍪 CFD cookie 2 - More on turbulence modeling - SSG Reynolds Stress Model - Part 26** — Wolf Dynamics World - WDW (28:47, 92 views)
+  https://www.youtube.com/watch?v=z_CH0d5ryZ0
+  item: `items/z_CH0d5ryZ0.md`

@@ -186,3 +186,24 @@ Full item files belong in `items/`.
 - **SEO Blog Post Written, Formatted and Published to Agility CMS in 30 Seconds Using Claude** — Dotfusion Digital Agency (5:17, 1 views)
   https://www.youtube.com/watch?v=h3JkXLQmMPg
   item: `items/h3JkXLQmMPg.md`
+
+## 2026-04-08 — 6 new videos
+
+- **🎮 MIKS BHAUU AALA !!! [ ROAD TO 10K SUBSCRIBERS ] | EMJAY 27** — EMJAY 27 (NA, new)
+  https://www.youtube.com/watch?v=FulOGt1nblU
+  item: `items/FulOGt1nblU.md`
+- **From Prompt Engineer to AI System Architect: The New Frontier** — Money Machine AI (11:46, 3 views)
+  https://www.youtube.com/watch?v=VOUrw-kHl24
+  item: `items/VOUrw-kHl24.md`
+- **#AutoAgent 01 to 02 to 01  or 12.21.12 Mayan Codex. Recursion is here for #pAtifacts 0102** — Move2Japan (1:13:22, 841 views)
+  https://www.youtube.com/watch?v=st6p6XLEsYA
+  item: `items/st6p6XLEsYA.md`
+- **Only 5% Ship Enterprise AI | Noelle Russell|E74** — Subrata Kar (59:01, 20 views)
+  https://www.youtube.com/watch?v=_dQb417CXaY
+  item: `items/_dQb417CXaY.md`
+- **Fixing Your Law Firm’s Leaky Funnel with Daniel Steinberg** — Legal Late Night (1:00:49, 10 views)
+  https://www.youtube.com/watch?v=cyChrC5JblY
+  item: `items/cyChrC5JblY.md`
+- **Beyond Ischemia: The Case for CT-First Strategy in ChestPain Evaluation - Riaz Mahmood** — NGHS Continuing Medical Education (57:34, 9 views)
+  https://www.youtube.com/watch?v=EK8LV2j0nD8
+  item: `items/EK8LV2j0nD8.md`

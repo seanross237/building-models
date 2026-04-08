@@ -468,3 +468,93 @@ Full item files belong in `items/`.
 - **AI 时代的缰绳—5 分钟搞懂 Harness 是什么** — AI带路党Pro (6:25, 8 views)
   https://www.youtube.com/watch?v=2BHdymheoSI
   item: `items/2BHdymheoSI.md`
+
+## 2026-04-08 — 29 new videos
+
+- **Any Model. Any App. Build Your AI OS to Work Everywhere.** — Linking Your Thinking with Nick Milo (14:20, 3.4K views)
+  https://www.youtube.com/watch?v=jbHB-rzKBAs
+  item: `items/jbHB-rzKBAs.md`
+- **Gemma 4   Google just made AI free forever** — The Tech Girl (8:27, 28.3K views)
+  https://www.youtube.com/watch?v=hk6go5jioTk
+  item: `items/hk6go5jioTk.md`
+- **Mortal Computation: AI May Need A Lifespan For Intelligence** — Gabriel Torch (3:03, 1.7K views)
+  https://www.youtube.com/watch?v=aXk-8CNG1ZA
+  item: `items/aXk-8CNG1ZA.md`
+- **Hermes AI Agent: Automate ANYTHING!** — Julian Goldie SEO (7:43, 2.8K views)
+  https://www.youtube.com/watch?v=YtfROZK1BDM
+  item: `items/YtfROZK1BDM.md`
+- **Sam Altman on Building the Future of AI** — OpenAI (46:11, 21.7K views)
+  https://www.youtube.com/watch?v=ZpUKNYcgM-E
+  item: `items/ZpUKNYcgM-E.md`
+- **Inside Claude: The Complete System Design That Powers AI Agents** — ByteMonk (8:44, 23.4K views)
+  https://www.youtube.com/watch?v=szaszUEmjfU
+  item: `items/szaszUEmjfU.md`
+- **Agentic Engineering: Working With AI, Not Just Using It — Brendan O'Leary** — AI Engineer (27:03, 8.7K views)
+  https://www.youtube.com/watch?v=BEKc4P87XKo
+  item: `items/BEKc4P87XKo.md`
+- **LIVESTREAM - Accessibility NYC Meetup - Apr 7 2026** — Accessibility NYC (58:05, 98 views)
+  https://www.youtube.com/watch?v=FItqPVW2774
+  item: `items/FItqPVW2774.md`
+- **Future of Data and AI: Agentic AI Conference - Day 2** — Data Science Dojo (6:06:30, 6.1K views)
+  https://www.youtube.com/watch?v=wTuyMfp1glI
+  item: `items/wTuyMfp1glI.md`
+- **Prompt vs Context vs Harness #Engineering #SoftwareArchitecture #GenerativeAI #LLM #AIArchitecture** — Future Architect (11:39, new)
+  https://www.youtube.com/watch?v=nG54qQvoObg
+  item: `items/nG54qQvoObg.md`
+- **What Is an AI Agent? A Plain-English Guide for Founders** — Early Adoptr (1:01:16, new)
+  https://www.youtube.com/watch?v=r4ttuiyQYzA
+  item: `items/r4ttuiyQYzA.md`
+- **Building enterprise agentic systems that scale** — Voxel51 (27:09, 19 views)
+  https://www.youtube.com/watch?v=tGUR_S52MB4
+  item: `items/tGUR_S52MB4.md`
+- **How a Simple NPM Error Leaked the Future of AI (The KAIROS Secret)** — GenAI Learning (48:33, 2 views)
+  https://www.youtube.com/watch?v=G-O_w7QtrjE
+  item: `items/G-O_w7QtrjE.md`
+- **The Most Capable AI Ever Built Is too GOOD to be released. Here's What It Can Do.** — Agentic AI with Nolan Grout (10:15, 27 views)
+  https://www.youtube.com/watch?v=_5RVz1Z2WNI
+  item: `items/_5RVz1Z2WNI.md`
+- **Can an AI System Win Big on Small Bets?** — Desert Degens (1:07:48, 5.9K views)
+  https://www.youtube.com/watch?v=VGLmcjG9taA
+  item: `items/VGLmcjG9taA.md`
+- **5 Ways to Fix Your AI Marketing (From Claude's Engineers)** — Matt Kenyon (20:36, 36 views)
+  https://www.youtube.com/watch?v=ky2b8AWSy1c
+  item: `items/ky2b8AWSy1c.md`
+- **How AI Engineering Has Changed Over the Past 4 Years | Why Harness Engineering Is Important** — 개발동생 (18:32, 1.5K views)
+  https://www.youtube.com/watch?v=ryyEm2MKwtg
+  item: `items/ryyEm2MKwtg.md`
+- **Docker AI, what’s new with MCP, Agents, Sandboxes, and more** — Bret Fisher (2:23:10, 651 views)
+  https://www.youtube.com/watch?v=dTF3b36Bq6w
+  item: `items/dTF3b36Bq6w.md`
+- **AI, DevOps, and Financial Services: Bridging Innovation and Regulation with Allie Holland** — Selector (43:37, 5 views)
+  https://www.youtube.com/watch?v=2kKbc6FuDIQ
+  item: `items/2kKbc6FuDIQ.md`
+- **🔴 Let it Cook x AspiriFridays - Give your agents eyes with Aspire** — Visual Studio Code (NA, new)
+  https://www.youtube.com/watch?v=0s64lPsr6oM
+  item: `items/0s64lPsr6oM.md`
+- **AI and the Octopus Organization: Autonomy, Distributed Intelligence, and Faster Decision Making** — The Innovation Show with Aidan McCullen (44:29, 19 views)
+  https://www.youtube.com/watch?v=7qAalz7tOmA
+  item: `items/7qAalz7tOmA.md`
+- **Let it Cook x AspiriFridays - Give your agents eyes with Aspire** — Aspire (NA, new)
+  https://www.youtube.com/watch?v=PUL7oKLmxbg
+  item: `items/PUL7oKLmxbg.md`
+- **Trump 47 Iran and Passover Collision Course You Need to Hear** — Ark Of Grace Ministries (1:35:11, 63.3K views)
+  https://www.youtube.com/watch?v=eRfJfXdfMa0
+  item: `items/eRfJfXdfMa0.md`
+- **Building The Next Web with Corey Moen from Anthropic** — Edgar Allan (1:07:09, 22 views)
+  https://www.youtube.com/watch?v=Jp_4odzGglU
+  item: `items/Jp_4odzGglU.md`
+- **EP 551 | April 7 | Harvey Demonstrates Agents Self-Improvement Impact in Legal | Daily AI News** — GAI Insights: Daily AI News & Learning Lab (31:22, 54 views)
+  https://www.youtube.com/watch?v=CD5-mmRrKBM
+  item: `items/CD5-mmRrKBM.md`
+- **Tesla Elon Musk on Addressing Robotaxi challenges - Remote RC** — Autonomy Institute (1:23, 1 views)
+  https://www.youtube.com/watch?v=qpkyBX80CJI
+  item: `items/qpkyBX80CJI.md`
+- **#AutoAgent 01 to 02 to 01  or 12.21.12 Mayan Codex. Recursion is here for #pAtifacts 0102** — Move2Japan (1:13:22, 841 views)
+  https://www.youtube.com/watch?v=st6p6XLEsYA
+  item: `items/st6p6XLEsYA.md`
+- **What Mythos & Glasswing by Anthropic mean for devs** — Maximilian Schwarzmüller (18:15, 15.3K views)
+  https://www.youtube.com/watch?v=DNhjITZy7cQ
+  item: `items/DNhjITZy7cQ.md`
+- **How AI is Transforming Group Communication with David Petrou** — Wisdom Partners (31:54, new)
+  https://www.youtube.com/watch?v=WVy0uiKVHkA
+  item: `items/WVy0uiKVHkA.md`

@@ -63,3 +63,18 @@ Full item files belong in `items/`.
 - **The End of the LLM and What's Next** — 3reate Podcast (1:02:54, 48 views)
   https://www.youtube.com/watch?v=Rd0SpOb5gMo
   item: `items/Rd0SpOb5gMo.md`
+
+## 2026-04-08 — 4 new videos
+
+- **AI is rewriting engineering careers, and here's how to stay ahead** — Proxify (57:51, 4 views)
+  https://www.youtube.com/watch?v=TuJNTDxbv6Q
+  item: `items/TuJNTDxbv6Q.md`
+- **"These are Green Flags for Your Code" | The Bike Shed** — thoughtbot (50:57, 3 views)
+  https://www.youtube.com/watch?v=2vtB6Zi_Eys
+  item: `items/2vtB6Zi_Eys.md`
+- **🌟【New Anime Release | ENG SUB】"The Goddess of Score Control": She controls scores like a pro, tur...** — Dragon Animation Club (51:26, 1.8K views)
+  https://www.youtube.com/watch?v=w3bqLQQKZqc
+  item: `items/w3bqLQQKZqc.md`
+- **倪海廈：4月10號甲寅日必看！3生肖穿白色，5種人穿紅色，保你2026馬年翻天覆地#倪海廈 #黃帝內經 #養生 #國學 #易經 #清明 #開運 #招財 #補財庫 #中醫 #風水 #2026運勢 #農曆** — 漢唐健康 (1:25:29, 2.9K views)
+  https://www.youtube.com/watch?v=pNf_u5RCxpE
+  item: `items/pNf_u5RCxpE.md`

@@ -465,3 +465,93 @@ Full item files belong in `items/`.
 - **What If Earth Had a Civilization Before Humans? | The Silurian Hypothesis Mystery** — AXOR – Galactic Observatory (2:17:30, 1 views)
   https://www.youtube.com/watch?v=irBrj41N98c
   item: `items/irBrj41N98c.md`
+
+## 2026-04-08 — 29 new videos
+
+- **AI and the Octopus Organization: Autonomy, Distributed Intelligence, and Faster Decision Making** — The Innovation Show with Aidan McCullen (44:29, 19 views)
+  https://www.youtube.com/watch?v=7qAalz7tOmA
+  item: `items/7qAalz7tOmA.md`
+- **Every Story on This Channel Has the Same Structure. Here's Why.** — Terra Obscura (16:06, 8 views)
+  https://www.youtube.com/watch?v=GjauQbl4kDo
+  item: `items/GjauQbl4kDo.md`
+- **Learning to Search from Demonstration Sequences | Dixant Mittal** — Centaur AI Institute | Neuro-Symbolic AI Community (1:02:49, 58 views)
+  https://www.youtube.com/watch?v=5Y2BRKyb4qM
+  item: `items/5Y2BRKyb4qM.md`
+- **Lecture 1: Introduction to China's History** — MIT OpenCourseWare (1:20:21, 18.4K views)
+  https://www.youtube.com/watch?v=3dT8Wm5oI_o
+  item: `items/3dT8Wm5oI_o.md`
+- **Did Nvidia's CEO Jensen Huang Just Lie About AGI to the World?** — The Fat Cat Report (14:09, 764 views)
+  https://www.youtube.com/watch?v=IUdfuTlfpkc
+  item: `items/IUdfuTlfpkc.md`
+- **Jacqueline Le Moigne | Smart Cities Conference 2026** — UM SoA (1:55:51, 3 views)
+  https://www.youtube.com/watch?v=fQnfBZK8RbQ
+  item: `items/fQnfBZK8RbQ.md`
+- **Humanoid Robots Are Here. But Not for You!** — The Glass Archive (7:07, 1 views)
+  https://www.youtube.com/watch?v=JOeKv8-S0X4
+  item: `items/JOeKv8-S0X4.md`
+- **BI 235 Romain Brette: The Brain, in Theory** — Brain Inspired (2:11:00, 272 views)
+  https://www.youtube.com/watch?v=T3zErsyZMo8
+  item: `items/T3zErsyZMo8.md`
+- **The AI Edge: Prototype Real, Ship Smarter** — UXDX (1:03:10, 60 views)
+  https://www.youtube.com/watch?v=jjT-_t8ybOY
+  item: `items/jjT-_t8ybOY.md`
+- **Future Transportation That Already Exists in 2026!** — TechTrends (21:02, 402 views)
+  https://www.youtube.com/watch?v=__FxW9zfifI
+  item: `items/__FxW9zfifI.md`
+- **Leading Transformation w Vik Chaudhry | Buzz and Beyond** — Buzz Solutions, Inc. (26:12, 5 views)
+  https://www.youtube.com/watch?v=bJmx1H4nUq0
+  item: `items/bJmx1H4nUq0.md`
+- **This Plant Doubles Your Protein in 48 Hours (NASA Studied It)** — Buried Knowledge (24:48, 297 views)
+  https://www.youtube.com/watch?v=Lvmz8gF-9xI
+  item: `items/Lvmz8gF-9xI.md`
+- **让实验室拥有“自动驾驶”大脑：格拉斯哥大学利用大语言模型驱动 Chemputation，开启化学发现的算力接管时代** — Agent 创世纪 (8:45, 10 views)
+  https://www.youtube.com/watch?v=F8eQBFd55Is
+  item: `items/F8eQBFd55Is.md`
+- **Marin Wildfire Executive Committee Meeting - April 2, 2026** — Marin Wildfire Prevention Authority (1:38:56, new)
+  https://www.youtube.com/watch?v=nSTasBo5J70
+  item: `items/nSTasBo5J70.md`
+- **The Shoggoth Is Eating the Middle Class | Nobody Is Talking About It** — The BlackVeil Files (23:50, 281 views)
+  https://www.youtube.com/watch?v=Fn5EOYDgXu4
+  item: `items/Fn5EOYDgXu4.md`
+- **This $1 Powder STOPS Tire Flat FOREVER. No Spare. No Shop. Michelin SUPPRESSED This Since 1974** — Forbidden Vault (14:26, 664 views)
+  https://www.youtube.com/watch?v=ifGfds-i8W0
+  item: `items/ifGfds-i8W0.md`
+- **The Agent-Driven Economy: How Tech Giants are Deploying Digital Workers | KYC AI Labs** — KYC AI LABS (6:05, 3 views)
+  https://www.youtube.com/watch?v=s0AXtAwAAbY
+  item: `items/s0AXtAwAAbY.md`
+- **SCOR Social Justice Symposium** — University of Michigan (1:33:39, 6 views)
+  https://www.youtube.com/watch?v=_cKbO9A06nE
+  item: `items/_cKbO9A06nE.md`
+- **⁠Supercharge your dev ability with Coding agents** — Dubov Software (7:57, new)
+  https://www.youtube.com/watch?v=j8saYf-iio4
+  item: `items/j8saYf-iio4.md`
+- **The $400 Weapon Air Defense Can't Stop** — Null Inertia (11:25, 8 views)
+  https://www.youtube.com/watch?v=qv5I2-4DVfI
+  item: `items/qv5I2-4DVfI.md`
+- **Consider This: What Democracy Needs with Hélène Landemore** — Oregon Humanities (1:40:18, 90 views)
+  https://www.youtube.com/watch?v=gIXvE00eFQk
+  item: `items/gIXvE00eFQk.md`
+- **Inside KRYOS Hypercube: James Scott’s Quantum Leap for Global Impact** — EmbassyRowProject (5:33, 11 views)
+  https://www.youtube.com/watch?v=PF7y4H8OQMY
+  item: `items/PF7y4H8OQMY.md`
+- **Forget Collagen Peptides. This Herb Makes Your Body Build Its Own. Grows Like A Weed.** — Secrets Beneath Nature with Dan (30:19, 1.6K views)
+  https://www.youtube.com/watch?v=NHoD8jhNHLg
+  item: `items/NHoD8jhNHLg.md`
+- **Inside Cambridge Analytica: Facebook's Role in Data Manipulation** — Beautiful Lies Society (3:07:36, 35 views)
+  https://www.youtube.com/watch?v=bxcb13GPxWY
+  item: `items/bxcb13GPxWY.md`
+- **Code, Conflict & Sanctions: North Korea's Open-Source Cyber Warfare | Artificially Informed** — Artificially Informed (1:00:19, 8 views)
+  https://www.youtube.com/watch?v=XAscMpMmVsM
+  item: `items/XAscMpMmVsM.md`
+- **Munich🥨NLP March Online Meetup: Ahmet Üstün from Cohere** — Munich 🥨 NLP (55:21, 9 views)
+  https://www.youtube.com/watch?v=F1wVVFPIrnE
+  item: `items/F1wVVFPIrnE.md`
+- **AI and Leadership: Preparing for the Future of Work** — Extended Campus (53:56, 1 views)
+  https://www.youtube.com/watch?v=pPY_6pDiPWY
+  item: `items/pPY_6pDiPWY.md`
+- **7 Ancient Mexican Technologies We Still Don't Understand...** — Misterios de Civilizaciones (21:45, 151 views)
+  https://www.youtube.com/watch?v=A_6YQas_Jhk
+  item: `items/A_6YQas_Jhk.md`
+- **I Chose Not to Have Kids & I Have Zero Regrets at 67 | Childfree Elder: Esther's Story** — Zoë and James | We are Childfree (1:24:24, 13 views)
+  https://www.youtube.com/watch?v=GfUW10OIwys
+  item: `items/GfUW10OIwys.md`

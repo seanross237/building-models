@@ -99,3 +99,21 @@ Full item files belong in `items/`.
 - **PoorBoy Unlock 10000x Upgrade System,Upgrades Job Offer into Chairman Letter,Becomes Powerful Tycoon** — Mania Comics Legends (7:57:44, 187 views)
   https://www.youtube.com/watch?v=sZwuET7ZHG0
   item: `items/sZwuET7ZHG0.md`
+
+## 2026-04-08 — 5 new videos
+
+- **🔥He awakened a Beast System and gained 10,000+ power overnight, becoming unstoppable!** — Bella's Comic Chronicles (33:55:35, 315 views)
+  https://www.youtube.com/watch?v=ffsPz1Lu-CU
+  item: `items/ffsPz1Lu-CU.md`
+- **January 2026 Vibration Plate Crash Course and Open Q & A** — Lifepro | Wellness, Fitness, Recovery (1:12:40, 90 views)
+  https://www.youtube.com/watch?v=Z0bzrmw2rb8
+  item: `items/Z0bzrmw2rb8.md`
+- **He saved his MISTRESS over me! Reborn as a HEIRESS, I'll make him regret everything!** — Tears of Promise (1:38:00, 20 views)
+  https://www.youtube.com/watch?v=xT5uukHLQ5M
+  item: `items/xT5uukHLQ5M.md`
+- **🔥【最新合集】《神豪之天降系统》EP1~135：股市博弈！| Multi SUB #热血 #玄幻 #逆袭 #战斗 #动漫魔女** — 动漫魔女 (12:20:47, 248 views)
+  https://www.youtube.com/watch?v=M-By_tDzCH8
+  item: `items/M-By_tDzCH8.md`
+- **After female cashback system,he is forced live off women,tenfold cashback yields over $100M cash** — Mania Comics Legends (27:42:58, 132 views)
+  https://www.youtube.com/watch?v=PWquZTLes1M
+  item: `items/PWquZTLes1M.md`

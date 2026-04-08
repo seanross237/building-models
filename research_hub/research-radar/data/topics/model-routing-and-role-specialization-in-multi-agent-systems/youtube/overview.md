@@ -450,3 +450,93 @@ Full item files belong in `items/`.
 - **【Multi sub】Reborn Poor? From Zero to Trillionaire EP 1-138 #anime #animation #donghua** — Quartic element Anime (9:30:34, 690 views)
   https://www.youtube.com/watch?v=im9UQH3C8Bk
   item: `items/im9UQH3C8Bk.md`
+
+## 2026-04-08 — 29 new videos
+
+- **OpenClaw Full Tutorial: Zero to Ready in 1 Hour** — Openclaw Labs (1:04:57, 693 views)
+  https://www.youtube.com/watch?v=F4ywVA4UgQk
+  item: `items/F4ywVA4UgQk.md`
+- **NODES AI 2026: Agentic GraphRAG: Autonomous Knowledge Graph Construction and Adaptive Retrieval** — Neo4j (NA, new)
+  https://www.youtube.com/watch?v=ASP8L2vMAbQ
+  item: `items/ASP8L2vMAbQ.md`
+- **OpenClaw Is Dead And No One Talks About It** — AI LINA (22:54, 11 views)
+  https://www.youtube.com/watch?v=4xeTnqi1-ek
+  item: `items/4xeTnqi1-ek.md`
+- **Build Secure, Observable, Production-ready Agents with a Control Plane** — Microsoft for Java Developers (19:56, 4 views)
+  https://www.youtube.com/watch?v=CERMEZSBA9k
+  item: `items/CERMEZSBA9k.md`
+- **How Smart Organizations Are Building AI Agents & Copilots** — Readynez (1:09:48, 377 views)
+  https://www.youtube.com/watch?v=E1SOE1uAmok
+  item: `items/E1SOE1uAmok.md`
+- **Why AI Chips Made In The U.S. Are Being Sent To Taiwan — Creating A Major Bottleneck** — CNBC (15:19, 21.2K views)
+  https://www.youtube.com/watch?v=a0uQ1ZxfxfQ
+  item: `items/a0uQ1ZxfxfQ.md`
+- **Claude's Newest AI Escaped Containment... Claude Mythos** — Ahamed Fofana (7:56, 1.5K views)
+  https://www.youtube.com/watch?v=v5uNtBpJZS0
+  item: `items/v5uNtBpJZS0.md`
+- **Yes, And... AI: How Agents Join Your Team.** — NetHopeOrg (1:01:37, 8 views)
+  https://www.youtube.com/watch?v=rEK17c3GF1g
+  item: `items/rEK17c3GF1g.md`
+- **Inside the Agentic Loop – Episode 2 | How MCP is Transforming SOC with AI Agents** — Stellar Cyber (23:35, 11 views)
+  https://www.youtube.com/watch?v=q-OLKxiLoaY
+  item: `items/q-OLKxiLoaY.md`
+- **One AI Tool Can Build a Full Game?! | ChatForce CEO Explains — The Mesh Up Podcast Ep 7** — TheMeshUpPodcast (1:04:36, 34 views)
+  https://www.youtube.com/watch?v=QnBQMYdP1zE
+  item: `items/QnBQMYdP1zE.md`
+- **AI and the Octopus Organization: Autonomy, Distributed Intelligence, and Faster Decision Making** — The Innovation Show with Aidan McCullen (44:29, 19 views)
+  https://www.youtube.com/watch?v=7qAalz7tOmA
+  item: `items/7qAalz7tOmA.md`
+- **INSIDE: The $19.7 Million Everest Helicopter Rescue Fraud** — SHADOW DOSSIER (18:44, 2 views)
+  https://www.youtube.com/watch?v=GIXhHRmsucA
+  item: `items/GIXhHRmsucA.md`
+- **AI is rewriting engineering careers, and here's how to stay ahead** — Proxify (57:51, 4 views)
+  https://www.youtube.com/watch?v=TuJNTDxbv6Q
+  item: `items/TuJNTDxbv6Q.md`
+- **How Cops Became Soldiers - SOME MORE NEWS** — Some More News (1:15:36, 9.4K views)
+  https://www.youtube.com/watch?v=zo4TnUxHnWs
+  item: `items/zo4TnUxHnWs.md`
+- **How AI is Transforming Group Communication with David Petrou** — Wisdom Partners (31:54, new)
+  https://www.youtube.com/watch?v=WVy0uiKVHkA
+  item: `items/WVy0uiKVHkA.md`
+- **Ask a Headhunter Live S2 #13 Bee Pioneer Demo** — The Recruiter Roundtable (2:02:15, 13 views)
+  https://www.youtube.com/watch?v=_b_O-_VXR_Y
+  item: `items/_b_O-_VXR_Y.md`
+- **DAREDEVIL: BORN AGAIN SEASON 2 EPISODE 4 REACTION – BULLSEYE & THAT ENDING ARE CRAZY!  – REVIEW** — Reel Rejects and Coy Jandreau (56:55, 67.9K views)
+  https://www.youtube.com/watch?v=JWYh3gar3Z4
+  item: `items/JWYh3gar3Z4.md`
+- **Boy hides in coffin to survive, was teaches medical eyes, 18 later he changes his life** — 烈焰爽劇SHORT (1:58:14, 6.3K views)
+  https://www.youtube.com/watch?v=L-wWicyK8Sg
+  item: `items/L-wWicyK8Sg.md`
+- **CTV Your Morning Ottawa for Tuesday April 7, 2026** — CTV News (2:12:01, 149 views)
+  https://www.youtube.com/watch?v=utZLsyUtcm8
+  item: `items/utZLsyUtcm8.md`
+- **Wolves threatening Manitoba farmers | CTV Your Morning Winnipeg for Wednesday April 8th, 2026** — CTV News (2:19:46, 31 views)
+  https://www.youtube.com/watch?v=ozD1HM_peH0
+  item: `items/ozD1HM_peH0.md`
+- **Betrayed poor man gains divine medical skill. He dominates city! Women chase him!** — 蓝星短剧SHORT (2:13:24, 102 views)
+  https://www.youtube.com/watch?v=1ipim-Fcdgk
+  item: `items/1ipim-Fcdgk.md`
+- **dirtybob or freakbob fo today 🗣️🔥 🔈🔉🔊🔊 | VERY FIRST D3 STREAM :D** — Faust Stream VODs (4:44:51, 24 views)
+  https://www.youtube.com/watch?v=cd6aaXg3XJ4
+  item: `items/cd6aaXg3XJ4.md`
+- **They Ruined My Life. Reborn With A Deadly Skill, I’Ll Destroy Them All In 7 Days!** — King's Manhwa Recap2 (9:03:59, 68 views)
+  https://www.youtube.com/watch?v=mBqhnbuVXP0
+  item: `items/mBqhnbuVXP0.md`
+- **💥【New】【Multi sub】Ancient Fierce: My Beast Command EP1-91 #anime #animation** — Joyland-Animation (3:15:24, 1.4K views)
+  https://www.youtube.com/watch?v=MMaMMi-gKjQ
+  item: `items/MMaMMi-gKjQ.md`
+- **PDSA- Quiz 2 Revision(Week 5 & 6)** — PDSA (2:58:11, 197 views)
+  https://www.youtube.com/watch?v=_BGgenALCjQ
+  item: `items/_BGgenALCjQ.md`
+- **GenX Adulting Podcast - Episode 62 - GenX Speaks Series: Amy Scruggs - Nashville Recording Artist** — genxadulting and Amy Scruggs Music (2:39:19, 28 views)
+  https://www.youtube.com/watch?v=8Tg1AAEblMM
+  item: `items/8Tg1AAEblMM.md`
+- **I got a hundredfold return on my money when I spent it on my mom, became the richest woman** — 劇好追 (1:55:24, 12.2K views)
+  https://www.youtube.com/watch?v=729FSB8S2SU
+  item: `items/729FSB8S2SU.md`
+- **Portland City Council Community & Public Safety Committee 04/07/26** — eGov PDX (2:29:25, 389 views)
+  https://www.youtube.com/watch?v=4BkzAhgCiVE
+  item: `items/4BkzAhgCiVE.md`
+- **Cinderella gets plastic surgery and infiltrates a wealthy family to uncover truth** — 蜜糖短剧 (1:42:33, 345 views)
+  https://www.youtube.com/watch?v=T9kB0WmExKI
+  item: `items/T9kB0WmExKI.md`

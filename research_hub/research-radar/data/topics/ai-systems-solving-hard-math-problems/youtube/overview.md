@@ -465,3 +465,96 @@ Full item files belong in `items/`.
 - **小混混穿越成被賣妹換糧的災荒敗類，靠震驚繫統逆襲成救世主頓頓吃肉，無數嬌娘主動投懷送抱伴左右！#短劇 #系统 #爽劇** — PROF DRAMA (1:56:24, 3.2K views)
   https://www.youtube.com/watch?v=KOFUBgWRwz8
   item: `items/KOFUBgWRwz8.md`
+
+## 2026-04-08 — 30 new videos
+
+- **USA| Olympiad Math Problem| Tricky Math Question| Can you solve this?** — Shorif Sir (10:45, 496 views)
+  https://www.youtube.com/watch?v=iAE2LiV37RE
+  item: `items/iAE2LiV37RE.md`
+- **Germany | Math Olympiad question  | can you solve this system of equations without this trick! | x=?** — Mathematics & Statistics Guru (11:21, 46 views)
+  https://www.youtube.com/watch?v=oiIIM_F8AWY
+  item: `items/oiIIM_F8AWY.md`
+- **【全集FULL】《说好当昏君，怎么成千古一帝了》| ENG SUB | #薄荷听书 #cdrama #latest #热门短剧 #都市 #重生 #逆袭 #现代 #甜宠** — 薄荷聽書 (2:25:17, 3.0K views)
+  https://www.youtube.com/watch?v=gZdIuWJud8w
+  item: `items/gZdIuWJud8w.md`
+- **Solve for x in this nice exponential equation | Math Olympiad Mathematics** — HkLogics (6:29, 7 views)
+  https://www.youtube.com/watch?v=-lkVjPRRRyU
+  item: `items/-lkVjPRRRyU.md`
+- **A nice exponential equation | Math Olympiad Mathematics** — HkLogics (2:28, 4 views)
+  https://www.youtube.com/watch?v=E2TUc00qJjI
+  item: `items/E2TUc00qJjI.md`
+- **Solving a 'Harvard' University entrance exam question** — HkLogics (6:52, 9 views)
+  https://www.youtube.com/watch?v=MIz58w8n-2A
+  item: `items/MIz58w8n-2A.md`
+- **A Nice Algebra Problem | Math Olympiad x = ?** — SALogic (10:03, 565 views)
+  https://www.youtube.com/watch?v=Ixv7Mp82wrY
+  item: `items/Ixv7Mp82wrY.md`
+- **A  awesome algebra mathematics problem | Olympiad Question | rational problem | x=?** — Mathematics & Statistics Guru (10:15, 165 views)
+  https://www.youtube.com/watch?v=LEGOeMnKVDU
+  item: `items/LEGOeMnKVDU.md`
+- **[MULTI SUB] 「说好当昏君，怎么成千古一帝了」#短剧 #爱情 #虐恋 #精彩短劇#最新短劇全集#精彩短劇推薦** — 牛牛短剧 (2:25:15, 364 views)
+  https://www.youtube.com/watch?v=LVxirJP0VyU
+  item: `items/LVxirJP0VyU.md`
+- **Karen MIL Used AI To CLONE My Voice! I Got her Channel TERMINATED! r/EntitledPeople** — r/mr redder (3:58:39, 1.3K views)
+  https://www.youtube.com/watch?v=D79PuBl0uqo
+  item: `items/D79PuBl0uqo.md`
+- **婚禮當天，乞丐小孩攔車喊我媽，全場等我笑話。我收留他後，家族破產，他竟用金手指3天讓公司市值翻倍！全城首富跪著求我收下他當幹兒子！#短劇#窮小子逆襲#男頻#爽文#多音軌** — 有料短劇NO1Drama (2:20:27, 180 views)
+  https://www.youtube.com/watch?v=tPvgO6jA27Q
+  item: `items/tPvgO6jA27Q.md`
+- **Systems of Linear Equations | Algebra & Functions Practice (6 Questions + Answers)** — Markyfbaby (50:42, 38 views)
+  https://www.youtube.com/watch?v=Ue8k3G7e6Ak
+  item: `items/Ue8k3G7e6Ak.md`
+- **📕My wife went on TV as a family of 3 with her ex and my son—she panicked when I left one thing** — Meow's Cafe (47:15, 11.8K views)
+  https://www.youtube.com/watch?v=a4jQ7lxB07U
+  item: `items/a4jQ7lxB07U.md`
+- **Chinh was startled when Doctor Tap suddenly grabbed her hand, leaving her bewildered** — Ha Ms (40:14, 67.1K views)
+  https://www.youtube.com/watch?v=2U1CrmJHa4g
+  item: `items/2U1CrmJHa4g.md`
+- **Claude Code Built Me 4 Trading Bots in One Day — I'm Done Hand Trading** — Moon Dev (2:13:03, 1.4K views)
+  https://www.youtube.com/watch?v=vfjRUBcz-48
+  item: `items/vfjRUBcz-48.md`
+- **【FULL】The Dark Romance EP10 | iQIYICDrama** — 爱奇艺华语剧场 - Get the iQIYI APP (45:41, 2.4K views)
+  https://www.youtube.com/watch?v=ad8twOTy45E
+  item: `items/ad8twOTy45E.md`
+- **A street beggar mocked by all is taken home by a CEO, he brings luck and saves her family in 3 days!** — 傲心短劇No1Drama (2:20:27, 1.1K views)
+  https://www.youtube.com/watch?v=i7fyPeEY5CA
+  item: `items/i7fyPeEY5CA.md`
+- **Brave 18yo tames the hottest handsome bad boy on campus,unaware he fell her at first sight!** — Zesty Drama (2:03:41, 4.8K views)
+  https://www.youtube.com/watch?v=dnh8Jm8DMZk
+  item: `items/dnh8Jm8DMZk.md`
+- **#155 Probabilistic Programming for the Real World, with Andreas Munk** — Learning Bayesian Statistics (1:54:07, 28 views)
+  https://www.youtube.com/watch?v=gKQzb2sIESw
+  item: `items/gKQzb2sIESw.md`
+- **I got a hundredfold return on my money when I spent it on my mom, became the richest woman** — 劇好追 (1:55:24, 12.2K views)
+  https://www.youtube.com/watch?v=729FSB8S2SU
+  item: `items/729FSB8S2SU.md`
+- **The Science of Happiness That Never Lasts** — TheObservationDeck (11:28, 4 views)
+  https://www.youtube.com/watch?v=Zhk5wBh80nA
+  item: `items/Zhk5wBh80nA.md`
+- **Project Based Learning and Interactive classroom with Game Mode and CPA** — Classcipe (3:44, 3 views)
+  https://www.youtube.com/watch?v=cHHLWAe782g
+  item: `items/cHHLWAe782g.md`
+- **9 + 1 × 9 + 1 = ? 🤯 Only 1% Get It Right! #live #livechannel #livenow** — Rise To Success 200M (1:12:09, 26 views)
+  https://www.youtube.com/watch?v=iE0eiAs1-W4
+  item: `items/iE0eiAs1-W4.md`
+- **Candidate 101 - So, You Want to Run for Council Information Session** — City of Peterborough (1:43:49, 24 views)
+  https://www.youtube.com/watch?v=VwwVFIPTYlc
+  item: `items/VwwVFIPTYlc.md`
+- **FM MAY 2026 DIET - CAPM , CAPITAL STRUCTURE AND FINANCE FOR MSME - FINAL PART OF COST OF CAPITAL** — Apex Professional Associates (2:02:07, 353 views)
+  https://www.youtube.com/watch?v=QcjY6CTxhDA
+  item: `items/QcjY6CTxhDA.md`
+- **Why the F-15E Can’t Survive Modern Air Defense Systems** — War Eye Analysis (11:52, 206 views)
+  https://www.youtube.com/watch?v=gxjGi1UgWm4
+  item: `items/gxjGi1UgWm4.md`
+- **Bloomberg Surveillance 4/8/2026** — Bloomberg Television (2:26:11, 2.3K views)
+  https://www.youtube.com/watch?v=V5pWDaDM1Ss
+  item: `items/V5pWDaDM1Ss.md`
+- **Private credit: Looking beyond the headlines** — Future Standard (1:05:12, 28 views)
+  https://www.youtube.com/watch?v=x3MjEnF20p4
+  item: `items/x3MjEnF20p4.md`
+- **Answer the Damn Phone: The Simple Secret to a 50% ROI Boost** — HMA Mortgage (27:58, 2 views)
+  https://www.youtube.com/watch?v=V-FMdZz_4KE
+  item: `items/V-FMdZz_4KE.md`
+- **My Husband Charged Me Rent For 4 Years - Until I Found His $1.8M Tax Return In Our Home** — Drama Stories Today (42:18, 3 views)
+  https://www.youtube.com/watch?v=I1inuwOFxkY
+  item: `items/I1inuwOFxkY.md`

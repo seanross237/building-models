@@ -480,3 +480,93 @@ Full item files belong in `items/`.
 - **Iran War: Trump Escalates Iran Threats Ahead of Tuesday Deadline | Daybreak Europe 4/7/2026** — Bloomberg Television (46:53, 34.9K views)
   https://www.youtube.com/watch?v=Sn1DBB1v9Gs
   item: `items/Sn1DBB1v9Gs.md`
+
+## 2026-04-08 — 29 new videos
+
+- **I Built a Self-Evolving AI Operating System (ZERO OS)** — Nexus The AI Singularity (1:07, 4 views)
+  https://www.youtube.com/watch?v=Ej9QWD_WG0s
+  item: `items/Ej9QWD_WG0s.md`
+- **2.The Architecture of Autonomy: A 5-Level Taxonomy of AI Agents** — AI Academy (9:51, 1 views)
+  https://www.youtube.com/watch?v=TqdU4ZQH2rs
+  item: `items/TqdU4ZQH2rs.md`
+- **The End of Human Coding? CORAL AI Smashes Industry Benchmarks** — The Hidden Layer: Decoding Artificial Intelligence (7:07, 3 views)
+  https://www.youtube.com/watch?v=Of3r80DWuQ4
+  item: `items/Of3r80DWuQ4.md`
+- **2.بنية الأنظمة المستقلة: التصنيف الخماسي لوكلاء الذكاء الاصطناعي (AI Agents)** — Learn AI Fast (9:58, 1 views)
+  https://www.youtube.com/watch?v=KmgwBq9BwrA
+  item: `items/KmgwBq9BwrA.md`
+- **The Grid Doesn't Need More Power Plants (It Needs This)** — Undecided with Matt Ferrell (17:04, 58.5K views)
+  https://www.youtube.com/watch?v=pLIatO-RA1c
+  item: `items/pLIatO-RA1c.md`
+- **LangChain vs LangGraph vs LangSmith vs LangFuse: Which One Should You Use?** — Analytics Vidhya (12:31, 49 views)
+  https://www.youtube.com/watch?v=6DqCfh46oRk
+  item: `items/6DqCfh46oRk.md`
+- **Are humans alone in the universe?** — The Map Reading Company (37:31, 845 views)
+  https://www.youtube.com/watch?v=Ml1cLYlJcik
+  item: `items/Ml1cLYlJcik.md`
+- **Hermes Agent - A self-evolving AI agent** — 01Coder (12:44, 6.4K views)
+  https://www.youtube.com/watch?v=bPMCvFYxcxk
+  item: `items/bPMCvFYxcxk.md`
+- **They Came From Orion - And They Never Left Earth / Reptilian & Anunnaki Origins Pt. 1** — Eluña (29:42, 1.9K views)
+  https://www.youtube.com/watch?v=fw91PM33jcU
+  item: `items/fw91PM33jcU.md`
+- **EP 551 | April 7 | Harvey Demonstrates Agents Self-Improvement Impact in Legal | Daily AI News** — GAI Insights: Daily AI News & Learning Lab (31:22, 54 views)
+  https://www.youtube.com/watch?v=CD5-mmRrKBM
+  item: `items/CD5-mmRrKBM.md`
+- **10 Emerging Tech Skills to Future-Proof Your Career** — Coursera (4:23, 86 views)
+  https://www.youtube.com/watch?v=sunG2AjFUM4
+  item: `items/sunG2AjFUM4.md`
+- **Bluepoint Games: Sony's Biggest Mistake** — LorD of Nerds (47:02, 344 views)
+  https://www.youtube.com/watch?v=nLR6UTctKWA
+  item: `items/nLR6UTctKWA.md`
+- **Intel Joins Musk’s Terafab Project With Tesla, SpaceX, xAI | Bloomberg Tech 4/7/2026** — Bloomberg Technology (44:05, 5.6K views)
+  https://www.youtube.com/watch?v=J3uiHbOIsnk
+  item: `items/J3uiHbOIsnk.md`
+- **The Pharma Supply Chain Evolution: From Analytics to Autonomous Agents** — Jayant Joshi (12:59, 6 views)
+  https://www.youtube.com/watch?v=8ffzdhmGi6M
+  item: `items/8ffzdhmGi6M.md`
+- **Gemini 3: The Multimodal AI That's Reshaping Development** — Great Learning (26:01, 226 views)
+  https://www.youtube.com/watch?v=6gvlfEcNhDo
+  item: `items/6gvlfEcNhDo.md`
+- **.Sigma BankAI & the future of DeFi: The Operating System of Neobanking** — K9 Investment Partners, LLP. (8:08, 2 views)
+  https://www.youtube.com/watch?v=69bKpmi3ySw
+  item: `items/69bKpmi3ySw.md`
+- **Inside the Agentic Loop – Episode 2 | How MCP is Transforming SOC with AI Agents** — Stellar Cyber (23:35, 11 views)
+  https://www.youtube.com/watch?v=q-OLKxiLoaY
+  item: `items/q-OLKxiLoaY.md`
+- **The Pharma Supply Chain Evolution  From Analytics to Autonomous Agents** — Jayant Joshi (7:57, 5 views)
+  https://www.youtube.com/watch?v=Q1LK2NG8lko
+  item: `items/Q1LK2NG8lko.md`
+- **Keynote Analysis | Nutanix .NEXT 2026** — SiliconANGLE theCUBE (19:41, 147 views)
+  https://www.youtube.com/watch?v=gv_sdQ49-e8
+  item: `items/gv_sdQ49-e8.md`
+- **Finance CEO: AI + $112T in Personal Finance Power Going to Women. So What Happens Next?-Anita Knotts** — Futurecaster with Kimberly Bates (39:59, 16 views)
+  https://www.youtube.com/watch?v=bAlMH3IANUw
+  item: `items/bAlMH3IANUw.md`
+- **ClawKeeper: Comprehensive Safety Protection for OpenClaw Agents Through Skills** — Praveen Govindaraj (5:44, 1 views)
+  https://www.youtube.com/watch?v=d49L3s3GDRI
+  item: `items/d49L3s3GDRI.md`
+- **Watched Without Knowing: Surveillance at Home & Work** — Statistically Speaking with Dr. E (15:30, 5 views)
+  https://www.youtube.com/watch?v=f2p7T8relfo
+  item: `items/f2p7T8relfo.md`
+- **"The Rise of AI-Native Telcos: Reimagining Networks, Control..." Dr. Ali Tizghadam (MODELSWARD 2026)** — YoutubeINSTICC (3:01, new)
+  https://www.youtube.com/watch?v=y_HYb4wDf0w
+  item: `items/y_HYb4wDf0w.md`
+- **AI and Leadership: Preparing for the Future of Work** — Extended Campus (53:56, 1 views)
+  https://www.youtube.com/watch?v=pPY_6pDiPWY
+  item: `items/pPY_6pDiPWY.md`
+- **Agentic Data Management - Founder's Voice** — AIM Media House (54:20, 3 views)
+  https://www.youtube.com/watch?v=zcKi7uId0QU
+  item: `items/zcKi7uId0QU.md`
+- **EV testing, real-time emulation, and simulation** — AVL (29:43, 8 views)
+  https://www.youtube.com/watch?v=MoL3Y_gQQMU
+  item: `items/MoL3Y_gQQMU.md`
+- **Former CIA agent criticizes Trump over disclosures | West Coast Wrap** — KTVU FOX 2 San Francisco (23:30, 534 views)
+  https://www.youtube.com/watch?v=Zf1z8DpAyvc
+  item: `items/Zf1z8DpAyvc.md`
+- **The Brain Behind Autonomous Driving** — The Road to Autonomy (2:30, 99 views)
+  https://www.youtube.com/watch?v=k09Ab9TYA7c
+  item: `items/k09Ab9TYA7c.md`
+- **AI for CEOs | How to scale without burning cash or culture | Dr. Frumi Rachel Barr** — Bee Formless™ (34:53, 1 views)
+  https://www.youtube.com/watch?v=LvBIN-CxUy8
+  item: `items/LvBIN-CxUy8.md`

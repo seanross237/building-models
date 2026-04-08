@@ -462,3 +462,93 @@ Full item files belong in `items/`.
 - **Panel Discussion: Operationalising DPDP Compliance in AI Systems** — nasscom AI (41:58, 7 views)
   https://www.youtube.com/watch?v=71hDB4yz0Uo
   item: `items/71hDB4yz0Uo.md`
+
+## 2026-04-08 — 29 new videos
+
+- **After This, 16GB Feels Different** — Alex Ziskind (12:35, 42.8K views)
+  https://www.youtube.com/watch?v=XLlQDfhyBjc
+  item: `items/XLlQDfhyBjc.md`
+- **Cognitive Exhaust Fumes, or: Read-Only AI Is Underrated — Šimon Podhajský, Head of AI, Waypoint** — AI Engineer (11:31, 399 views)
+  https://www.youtube.com/watch?v=u0TOSBbAw7c
+  item: `items/u0TOSBbAw7c.md`
+- **It Learned To Want Its Own Projects Dario Amodei AI Biology** — Mad Sci Clips (7:08, new)
+  https://www.youtube.com/watch?v=sqHeu2oBJOc
+  item: `items/sqHeu2oBJOc.md`
+- **AI Maintenance Costs Never Stop** — AI ECONOMICS (10:21, 7 views)
+  https://www.youtube.com/watch?v=4he_3619mr4
+  item: `items/4he_3619mr4.md`
+- **15 New AI Breakthroughs Scientists Can't Explain** — AI Uncovered (11:15, 3.4K views)
+  https://www.youtube.com/watch?v=a18whsKY_rw
+  item: `items/a18whsKY_rw.md`
+- **Future of Data and AI: Agentic AI Conference - Day 2** — Data Science Dojo (6:06:30, 6.1K views)
+  https://www.youtube.com/watch?v=wTuyMfp1glI
+  item: `items/wTuyMfp1glI.md`
+- **AI Will Replace You? Not Really. But Someone Using AI Will | Harvard, Oxford, LBS Expert** — The Unfolding Career with KP (31:03, 9 views)
+  https://www.youtube.com/watch?v=j7e6Vmcm1Xg
+  item: `items/j7e6Vmcm1Xg.md`
+- **The Grid Doesn't Need More Power Plants (It Needs This)** — Undecided with Matt Ferrell (17:04, 58.5K views)
+  https://www.youtube.com/watch?v=pLIatO-RA1c
+  item: `items/pLIatO-RA1c.md`
+- **From Noise to Unknown Problems** — InsightFinder AI (1:03, new)
+  https://www.youtube.com/watch?v=ScMmT8IN7Uc
+  item: `items/ScMmT8IN7Uc.md`
+- **They Told You It Was AI... It Wasn’t (AI Washing Explained)** — Empire Implosions (13:05, 34 views)
+  https://www.youtube.com/watch?v=rzvtrFuDUWQ
+  item: `items/rzvtrFuDUWQ.md`
+- **AI Foundations Deep Dive | How AI Really Works (Beyond the Hype)** — iZenBridge Consultancy Pvt Ltd. (32:19, 52 views)
+  https://www.youtube.com/watch?v=Zi3jRrSmVts
+  item: `items/Zi3jRrSmVts.md`
+- **From Chaos to Choreography: Multi-Agent Orchestration Patterns That Actually Work — Sandipan Bhaumik** — AI Engineer (26:29, 2.1K views)
+  https://www.youtube.com/watch?v=2czYyrTzILg
+  item: `items/2czYyrTzILg.md`
+- **Leading Transformation w Vik Chaudhry | Buzz and Beyond** — Buzz Solutions, Inc. (26:12, 5 views)
+  https://www.youtube.com/watch?v=bJmx1H4nUq0
+  item: `items/bJmx1H4nUq0.md`
+- **Models Are Smart. Data Is Everything. Building Context-Rich AI Systems with Unstructured.** — OpenRAG (51:52, 55 views)
+  https://www.youtube.com/watch?v=KFMKx7Cumy8
+  item: `items/KFMKx7Cumy8.md`
+- **The AI Safety Gap No One Talks About | André Rossbach | SPEAKERx** — The Public Speaking Channel (10:10, 22 views)
+  https://www.youtube.com/watch?v=40qjU8hzMmo
+  item: `items/40qjU8hzMmo.md`
+- **Robert 'RSnake' Hansen: What A Personal Tragedy Taught Me About The Risks Facing AI** — ReversingLabs (6:55, new)
+  https://www.youtube.com/watch?v=yxuG1sGMO8Q
+  item: `items/yxuG1sGMO8Q.md`
+- **Build Custom Large-Scale Generative AI Models | NVIDIA GTC** — NVIDIA Developer (39:02, 204 views)
+  https://www.youtube.com/watch?v=npQMSpCA4Lo
+  item: `items/npQMSpCA4Lo.md`
+- **What is religion?** — Fiction Beast (2:19:09, 596 views)
+  https://www.youtube.com/watch?v=HpPZl7Tt2Lc
+  item: `items/HpPZl7Tt2Lc.md`
+- **AI Trillion Gap** — Cyber Simplicity (16:20, 21 views)
+  https://www.youtube.com/watch?v=DfniP3uFEho
+  item: `items/DfniP3uFEho.md`
+- **Tuesday Focus : Look Ma, No Hands! Media Production Automation Secrets with mimoLive** — Office Hours Global (1:01:34, 338 views)
+  https://www.youtube.com/watch?v=lbSyNWiIEuM
+  item: `items/lbSyNWiIEuM.md`
+- **This OpenDevin Open Source AI Coding CLI Agent is INSANE Builds Full Stack Apps in Terminal** — Coding Shiksha (4:00, 14 views)
+  https://www.youtube.com/watch?v=NHHNIKU_DvU
+  item: `items/NHHNIKU_DvU.md`
+- **AI Infrastructure Is Breaking Cloud-Native Models | AppDevANGLE** — SiliconANGLE theCUBE (17:20, 8 views)
+  https://www.youtube.com/watch?v=c3HhHoqbRas
+  item: `items/c3HhHoqbRas.md`
+- **⁠Supercharge your dev ability with Coding agents** — Dubov Software (7:57, new)
+  https://www.youtube.com/watch?v=j8saYf-iio4
+  item: `items/j8saYf-iio4.md`
+- **How a Simple NPM Error Leaked the Future of AI (The KAIROS Secret)** — GenAI Learning (48:33, 2 views)
+  https://www.youtube.com/watch?v=G-O_w7QtrjE
+  item: `items/G-O_w7QtrjE.md`
+- **[ISO/PAS 8800 #11] AI Safety Requirements Derivation Workflow** — AutoSysEng TV: System Architecture & Safety (8:40, new)
+  https://www.youtube.com/watch?v=3-rcXp1qClk
+  item: `items/3-rcXp1qClk.md`
+- **Are Your Data Pipelines Ready for AI Coding Agents?** — AI Council (3:18, 32 views)
+  https://www.youtube.com/watch?v=3XQ-FWqY9YY
+  item: `items/3XQ-FWqY9YY.md`
+- **Let’s Build LIVE: Get started with AI in Airtable** — Airtable (1:00:11, 134 views)
+  https://www.youtube.com/watch?v=JKDwm6bVpNY
+  item: `items/JKDwm6bVpNY.md`
+- **AI Dropshipping Automation (Doba Pilot Full Tutorial)** — Money4Life (7:03, 179 views)
+  https://www.youtube.com/watch?v=iW0Wodg5-Gw
+  item: `items/iW0Wodg5-Gw.md`
+- **Beyond the Algorithm: Why Behavioral Science is the Secret to Profitable AI in Banking** — 10X AI with Julius Neil (46:43, new)
+  https://www.youtube.com/watch?v=O0PPW_OY_Is
+  item: `items/O0PPW_OY_Is.md`

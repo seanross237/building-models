@@ -465,3 +465,93 @@ Full item files belong in `items/`.
 - **How to Set Up AI Agents that Talk to Customers and Take Action — Part 2 (LIVE Q&A)** — Respond.io (1:02:11, 9 views)
   https://www.youtube.com/watch?v=75zg3ymjNjY
   item: `items/75zg3ymjNjY.md`
+
+## 2026-04-08 — 29 new videos
+
+- **AI Agent Sets Up Workflows** — Dalton Anderson (3:31, 3 views)
+  https://www.youtube.com/watch?v=tc4Y_dLyWbI
+  item: `items/tc4Y_dLyWbI.md`
+- **Using Agentic Workflows in Claude Code to Automate Thumbnails & Trend Research** — Lukas Margerie (17:43, 149 views)
+  https://www.youtube.com/watch?v=2tZ0DQ0s9HQ
+  item: `items/2tZ0DQ0s9HQ.md`
+- **Building AI workflows that actually work with micro1** — Box (27:59, 8 views)
+  https://www.youtube.com/watch?v=giDpAwnxwx4
+  item: `items/giDpAwnxwx4.md`
+- **How to Add Custom Workflows in Google Antigravity IDE: The Ultimate AI Agent Automation Guide 2026** — ProgrammingKnowledge2 (1:37, 49 views)
+  https://www.youtube.com/watch?v=HaXJs4Jihb0
+  item: `items/HaXJs4Jihb0.md`
+- **OPENCLAW MULTI AGENT TEAMS FULL COURSE (2026)** — Yashica Jain (50:24, 142 views)
+  https://www.youtube.com/watch?v=cBugcUYlKOo
+  item: `items/cBugcUYlKOo.md`
+- **Hermes AI Agent: Automate ANYTHING!** — Julian Goldie SEO (7:43, 2.8K views)
+  https://www.youtube.com/watch?v=YtfROZK1BDM
+  item: `items/YtfROZK1BDM.md`
+- **CRAZY FREE AI Agents: Easiest WAY to CREATE AI Agents w/ OPUS 4.6 for FREE!** — AICodeKing (8:57, 1.6K views)
+  https://www.youtube.com/watch?v=v29oxgbv_l4
+  item: `items/v29oxgbv_l4.md`
+- **DHH’s new way of writing code** — The Pragmatic Engineer (1:47:21, 1.9K views)
+  https://www.youtube.com/watch?v=JiWgKRgdgpI
+  item: `items/JiWgKRgdgpI.md`
+- **FOXXCON April 2026 Highlights| Utpal & Sanket | AI Agents & Offensive Workflow** — Redfox Security (1:02, 7 views)
+  https://www.youtube.com/watch?v=4aHW5lDD9rU
+  item: `items/4aHW5lDD9rU.md`
+- **This NEW AI Tool Just Destroyed n8n & Make (Twin AI)** — Damian Malliaros (26:05, 267 views)
+  https://www.youtube.com/watch?v=7zuwJJb0HBc
+  item: `items/7zuwJJb0HBc.md`
+- **AI Agents Are Better Than Workflows** — Workload (3:06, 3 views)
+  https://www.youtube.com/watch?v=9m-7Z8Hs9HI
+  item: `items/9m-7Z8Hs9HI.md`
+- **Every AI Agent Builder Explained (in 7 Minutes)** — Neil Napier (6:25, 12 views)
+  https://www.youtube.com/watch?v=0AWDvvHhM3o
+  item: `items/0AWDvvHhM3o.md`
+- **Playwright CLI vs MCP Explained | AI-Driven Testing with Playwright Agents** — Testrig Technologies (2:19, new)
+  https://www.youtube.com/watch?v=NtxNdIfOHsw
+  item: `items/NtxNdIfOHsw.md`
+- **Wes McKinney on AI Agents, The Mythical Agent Month, and His Wild AI Coding Setup** — Joe Reis (1:02:03, 1.3K views)
+  https://www.youtube.com/watch?v=uC6g8L8zquE
+  item: `items/uC6g8L8zquE.md`
+- **Swarms and Streams : Ai-Powered QA Testing workflow** — Learn Like An Adult (8:08, new)
+  https://www.youtube.com/watch?v=p3RZ3fCsIgM
+  item: `items/p3RZ3fCsIgM.md`
+- **Predicting Your Agent's Cost** — AWS Developers (22:40, 323 views)
+  https://www.youtube.com/watch?v=tGQlowf5L-Q
+  item: `items/tGQlowf5L-Q.md`
+- **AI Agents for Your Workforce** — DronaHQ (7:09, 1 views)
+  https://www.youtube.com/watch?v=UDhJYHs-mY4
+  item: `items/UDhJYHs-mY4.md`
+- **OpenClaw Is Dead And No One Talks About It** — AI LINA (22:54, 11 views)
+  https://www.youtube.com/watch?v=4xeTnqi1-ek
+  item: `items/4xeTnqi1-ek.md`
+- **AI Skills | Copilot Cowork** — The Right Click (14:50, 163 views)
+  https://www.youtube.com/watch?v=R_0-_Lc6ulg
+  item: `items/R_0-_Lc6ulg.md`
+- **Build a Custom AI Agent for Instagram using Python (100% FREE Manychat Alternative)** — Java Goat (21:07, 384 views)
+  https://www.youtube.com/watch?v=_9hRRTuJ1j4
+  item: `items/_9hRRTuJ1j4.md`
+- **Let’s Build LIVE: Get started with AI in Airtable** — Airtable (1:00:11, 133 views)
+  https://www.youtube.com/watch?v=JKDwm6bVpNY
+  item: `items/JKDwm6bVpNY.md`
+- **Simplifier MC 26-04: Test Agent, Workzone Integration & AI Flatrate** — Simplifier (4:32, 15 views)
+  https://www.youtube.com/watch?v=_bsoRNr-RH4
+  item: `items/_bsoRNr-RH4.md`
+- **One AI Tool Can Build a Full Game?! | ChatForce CEO Explains — The Mesh Up Podcast Ep 7** — TheMeshUpPodcast (1:04:36, 34 views)
+  https://www.youtube.com/watch?v=QnBQMYdP1zE
+  item: `items/QnBQMYdP1zE.md`
+- **15 മിനിറ്റിൽ Claude Code Agent Teams പഠിക്കാം [Full Demo]** — GALTech Learning Hub (15:02, 4 views)
+  https://www.youtube.com/watch?v=4fnZ2Nwt4LI
+  item: `items/4fnZ2Nwt4LI.md`
+- **Gemini 3: The Multimodal AI That's Reshaping Development** — Great Learning (26:01, 226 views)
+  https://www.youtube.com/watch?v=6gvlfEcNhDo
+  item: `items/6gvlfEcNhDo.md`
+- **BearQ Agentic AI Changes Quality Assurance Forever** — Inside STLC (6:48, 12 views)
+  https://www.youtube.com/watch?v=yyFBWdJYzx8
+  item: `items/yyFBWdJYzx8.md`
+- **HighLevel Agent Studio - Complete Tutorial** — Ray O'Daniel (58:26, 4 views)
+  https://www.youtube.com/watch?v=HLvPVx6NDt0
+  item: `items/HLvPVx6NDt0.md`
+- **How to Deploy OpenClaw on Vultr (AI Assistant Setup Guide)** — AyunNet (2:30, 4 views)
+  https://www.youtube.com/watch?v=_I2vSfb033g
+  item: `items/_I2vSfb033g.md`
+- **How to Change Review Policies in Google Antigravity IDE: Agent Automation & Security Guide 2026** — ProgrammingKnowledge2 (1:48, 25 views)
+  https://www.youtube.com/watch?v=FnN2V61Rnh4
+  item: `items/FnN2V61Rnh4.md`

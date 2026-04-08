@@ -465,3 +465,96 @@ Full item files belong in `items/`.
 - **Agentic-Ready Telemetry Pipeline — Cut Ingestion Costs up to 40%** — Apica (1:23, 12 views)
   https://www.youtube.com/watch?v=e6vd2eHFM-c
   item: `items/e6vd2eHFM-c.md`
+
+## 2026-04-08 — 30 new videos
+
+- **Data Talks 14: AI in Local Housing Departments** — Housing Solutions Lab (44:30, new)
+  https://www.youtube.com/watch?v=RoomSuNobGQ
+  item: `items/RoomSuNobGQ.md`
+- **From Models to Machines: Building AI That Actually Delivers with Ash Saxena** — The Machine Minds Show (50:56, 3 views)
+  https://www.youtube.com/watch?v=89t5s5oBtR0
+  item: `items/89t5s5oBtR0.md`
+- **Agentic Engineering: Working With AI, Not Just Using It — Brendan O'Leary** — AI Engineer (27:03, 8.7K views)
+  https://www.youtube.com/watch?v=BEKc4P87XKo
+  item: `items/BEKc4P87XKo.md`
+- **Gemini 3: The Multimodal AI That's Reshaping Development** — Great Learning (26:01, 226 views)
+  https://www.youtube.com/watch?v=6gvlfEcNhDo
+  item: `items/6gvlfEcNhDo.md`
+- **It Learned To Want Its Own Projects Dario Amodei AI Biology** — Mad Sci Clips (7:08, new)
+  https://www.youtube.com/watch?v=sqHeu2oBJOc
+  item: `items/sqHeu2oBJOc.md`
+- **April 8, 2026** — Beyond Ai Solutions (6:57, 11 views)
+  https://www.youtube.com/watch?v=JL42SY-z9f4
+  item: `items/JL42SY-z9f4.md`
+- **Why Most AI Projects Fail Before They Start | AI Values Podcast Ep. 2 ft. Jon Cooke** — The AI Values Podcast (37:17, 11 views)
+  https://www.youtube.com/watch?v=TKBEA6-HGP4
+  item: `items/TKBEA6-HGP4.md`
+- **Anthropic's New Model is so Powerful They Can't Release It (Claude Mythos)** — Limitless Podcast (26:06, 243 views)
+  https://www.youtube.com/watch?v=AAm_VuXDoVw
+  item: `items/AAm_VuXDoVw.md`
+- **Claude Code + Milla Jovovich = Ultimate Memory System?!** — Mansel Scheffel (20:49, 6.5K views)
+  https://www.youtube.com/watch?v=4RHgCJVcdQM
+  item: `items/4RHgCJVcdQM.md`
+- **Playwright CLI vs MCP Explained | AI-Driven Testing with Playwright Agents** — Testrig Technologies (2:19, new)
+  https://www.youtube.com/watch?v=NtxNdIfOHsw
+  item: `items/NtxNdIfOHsw.md`
+- **Deep Learning for Speaker Recognition 🔥 | Build Smart Voice AI Systems Easily!** — Takeoff Edu Group (2:32, new)
+  https://www.youtube.com/watch?v=wfgrNDRN40Q
+  item: `items/wfgrNDRN40Q.md`
+- **Testing AI Products Is Not About Accuracy Anymore** — TestFort - Testing & Quality Assurance (1:00, 40 views)
+  https://www.youtube.com/watch?v=h867N7pj5yM
+  item: `items/h867N7pj5yM.md`
+- **Build Custom Large-Scale Generative AI Models | NVIDIA GTC** — NVIDIA Developer (39:02, 204 views)
+  https://www.youtube.com/watch?v=npQMSpCA4Lo
+  item: `items/npQMSpCA4Lo.md`
+- **10X Growth with Data-Driven Marketing** — The Growth Shift Podcast (30:09, 1 views)
+  https://www.youtube.com/watch?v=mmQ_dIkBJx0
+  item: `items/mmQ_dIkBJx0.md`
+- **Future Transportation That Already Exists in 2026!** — TechTrends (21:02, 402 views)
+  https://www.youtube.com/watch?v=__FxW9zfifI
+  item: `items/__FxW9zfifI.md`
+- **Want to learn how to create hyper-realistic videos using AI?** — AI Smart Ventures (5, new)
+  https://www.youtube.com/watch?v=xZ7OgZbf7b8
+  item: `items/xZ7OgZbf7b8.md`
+- **AI Will Replace You? Not Really. But Someone Using AI Will | Harvard, Oxford, LBS Expert** — The Unfolding Career with KP (31:03, 9 views)
+  https://www.youtube.com/watch?v=j7e6Vmcm1Xg
+  item: `items/j7e6Vmcm1Xg.md`
+- **The Dark Side of AI: When ChatGPT Reinforces False Beliefs** — Moon or Dust Media (4:57, 829 views)
+  https://www.youtube.com/watch?v=0kBkYrfmNDY
+  item: `items/0kBkYrfmNDY.md`
+- **Conflict Resolution in AI Systems Explained   How Multi Agent AI Handles Disagreements** — Yajentio Training  Academy Official (4:27, new)
+  https://www.youtube.com/watch?v=Q6vSrq2gFIU
+  item: `items/Q6vSrq2gFIU.md`
+- **AI Chatbot Voice Agents & Multimodal Customer Service 2026** — Aetherlink (8:39, 1 views)
+  https://www.youtube.com/watch?v=Vwr2nAWsAKA
+  item: `items/Vwr2nAWsAKA.md`
+- **Microsoft JUST Admitted Something About Windows That Is FAR WORSE Than You Think!** — Silicon Brief (13:03, 2 views)
+  https://www.youtube.com/watch?v=XXuwP2tx72k
+  item: `items/XXuwP2tx72k.md`
+- **AI Builders Meetup - San Francisco** — Arize AI (54:29, 29 views)
+  https://www.youtube.com/watch?v=ku9uMkU1Xzk
+  item: `items/ku9uMkU1Xzk.md`
+- **The Claude Code source code leak: Takeaways for cybersecurity pros** — IBM Technology (41:31, 1.4K views)
+  https://www.youtube.com/watch?v=qtFtECYOzZE
+  item: `items/qtFtECYOzZE.md`
+- **Top Microsoft Advisor: "Coding Is Cheap, Software Is Expensive." You're Focused on the Wrong Thing** — Beyond Coding (46:07, 1.8K views)
+  https://www.youtube.com/watch?v=s7aNuultC_E
+  item: `items/s7aNuultC_E.md`
+- **Two Humanoid Robots Just Fought in a Real Boxing Ring** — FUTURE ADS 2050 (25, 1.4K views)
+  https://www.youtube.com/watch?v=GHIG21t_Rxo
+  item: `items/GHIG21t_Rxo.md`
+- **How did AI‑powered NPCs change tabletop RPG storytelling?** — Unboxd Origins (12:24, new)
+  https://www.youtube.com/watch?v=Dtr8W-NxV4U
+  item: `items/Dtr8W-NxV4U.md`
+- **What it means to trust and govern AI systems you don’t fully control** — Kyndryl (24:43, 24 views)
+  https://www.youtube.com/watch?v=gSFMQZHDs1Y
+  item: `items/gSFMQZHDs1Y.md`
+- **AI4WavePSMViewer** — Innovations Foresight (3:37, 29 views)
+  https://www.youtube.com/watch?v=md87AbLSNFo
+  item: `items/md87AbLSNFo.md`
+- **Srujan Linga, Kandou Ai | theCUBE + NYSE Wired: AI Factories - Data Centers of the Future** — SiliconANGLE theCUBE (19:30, 306 views)
+  https://www.youtube.com/watch?v=8ooFtTGbefo
+  item: `items/8ooFtTGbefo.md`
+- **LIVESTREAM - Accessibility NYC Meetup - Apr 7 2026** — Accessibility NYC (58:05, 98 views)
+  https://www.youtube.com/watch?v=FItqPVW2774
+  item: `items/FItqPVW2774.md`

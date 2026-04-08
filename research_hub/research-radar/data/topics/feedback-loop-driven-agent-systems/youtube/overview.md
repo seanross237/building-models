@@ -465,3 +465,93 @@ Full item files belong in `items/`.
 - **Episode 3 - The 4 pillars of AI GTM Transformation - Abe Smith** — The AI-Enabled GTM (16:49, 5 views)
   https://www.youtube.com/watch?v=tr5wyimZYws
   item: `items/tr5wyimZYws.md`
+
+## 2026-04-08 — 29 new videos
+
+- **The Agent-Driven Economy: How Tech Giants are Deploying Digital Workers | KYC AI Labs** — KYC AI LABS (6:05, 3 views)
+  https://www.youtube.com/watch?v=s0AXtAwAAbY
+  item: `items/s0AXtAwAAbY.md`
+- **Comedian Trolls Clueless ICE Agents to Their Faces, Their Reactions Say it All** — TYT Sports (8:51, 6.1K views)
+  https://www.youtube.com/watch?v=INlQu_bC8LY
+  item: `items/INlQu_bC8LY.md`
+- **Meet Golden Analytics, an AI-Native BI tool: With Francois Ajenstat** — Just Tim (48:15, 143 views)
+  https://www.youtube.com/watch?v=Qgxu4UTUG6g
+  item: `items/Qgxu4UTUG6g.md`
+- **The Claude Code source code leak: Takeaways for cybersecurity pros** — IBM Technology (41:31, 1.4K views)
+  https://www.youtube.com/watch?v=qtFtECYOzZE
+  item: `items/qtFtECYOzZE.md`
+- **Former CIA agent criticizes Trump over disclosures | West Coast Wrap** — KTVU FOX 2 San Francisco (23:30, 534 views)
+  https://www.youtube.com/watch?v=Zf1z8DpAyvc
+  item: `items/Zf1z8DpAyvc.md`
+- **Agentic Patterns with LangChain4j** — Microsoft for Java Developers (24:05, 3 views)
+  https://www.youtube.com/watch?v=mZh5P5ayiro
+  item: `items/mZh5P5ayiro.md`
+- **Top Microsoft Advisor: "Coding Is Cheap, Software Is Expensive." You're Focused on the Wrong Thing** — Beyond Coding (46:07, 1.8K views)
+  https://www.youtube.com/watch?v=s7aNuultC_E
+  item: `items/s7aNuultC_E.md`
+- **Inside the Agentic Loop – Episode 2 | How MCP is Transforming SOC with AI Agents** — Stellar Cyber (23:35, 11 views)
+  https://www.youtube.com/watch?v=q-OLKxiLoaY
+  item: `items/q-OLKxiLoaY.md`
+- **Corporate Loyalty is Dead in 2026** — Dr. HR (14:29, 7 views)
+  https://www.youtube.com/watch?v=u2x0c_CdoOI
+  item: `items/u2x0c_CdoOI.md`
+- **MEDISCHE UPDATE NA VAL UIT DE TRUCK - TERUG NAAR NEDERLAND  - EXPEDITION TRUCK - DWVLOGT #367** — DWvlogt (26:07, 3.5K views)
+  https://www.youtube.com/watch?v=sI_xRElw11c
+  item: `items/sI_xRElw11c.md`
+- **Cisco's 2026 State of Industrial AI Report** — Cisco (43:41, 949 views)
+  https://www.youtube.com/watch?v=SQ9AOAQsHvc
+  item: `items/SQ9AOAQsHvc.md`
+- **Gemini 3: The Multimodal AI That's Reshaping Development** — Great Learning (26:01, 226 views)
+  https://www.youtube.com/watch?v=6gvlfEcNhDo
+  item: `items/6gvlfEcNhDo.md`
+- **all-new Mercedes CLA Shooting Brake driving REVIEW (2027) with CLA EQ (EV)** — Autogefühl (29:39, 15.3K views)
+  https://www.youtube.com/watch?v=0ySCuMwsqKU
+  item: `items/0ySCuMwsqKU.md`
+- **How to build a retail growth engine in 2026** — Google Ads (40:21, 308 views)
+  https://www.youtube.com/watch?v=oZVTJEwjtQU
+  item: `items/oZVTJEwjtQU.md`
+- **How Do Banks Secure Customer Portal File Uploads? | Multi-Layered Scanning Explained** — OPSWAT (1:11:16, 66.9K views)
+  https://www.youtube.com/watch?v=3pSDaPHlsy8
+  item: `items/3pSDaPHlsy8.md`
+- **Claude will handle it. Local. In one folder. (No Obsidian Needed)** — ICOR with Tom | AI Productivity (32:31, 11.2K views)
+  https://www.youtube.com/watch?v=gY95g6DMaeY
+  item: `items/gY95g6DMaeY.md`
+- **The Pharma Supply Chain Evolution  From Analytics to Autonomous Agents** — Jayant Joshi (7:57, 5 views)
+  https://www.youtube.com/watch?v=Q1LK2NG8lko
+  item: `items/Q1LK2NG8lko.md`
+- **HighLevel Agent Studio - Complete Tutorial** — Ray O'Daniel (58:26, 4 views)
+  https://www.youtube.com/watch?v=HLvPVx6NDt0
+  item: `items/HLvPVx6NDt0.md`
+- **AI is rewriting engineering careers, and here's how to stay ahead** — Proxify (57:51, 4 views)
+  https://www.youtube.com/watch?v=TuJNTDxbv6Q
+  item: `items/TuJNTDxbv6Q.md`
+- **The Secret History of Akhenaten (Full Documentary)** — Fading Lore (1:46:33, 1.0K views)
+  https://www.youtube.com/watch?v=bBafb0NZji4
+  item: `items/bBafb0NZji4.md`
+- **DAREDEVIL: BORN AGAIN Season 2 Episode 4 Reaction! This Changes Everything - Review** — Heroes Reforged (34:12, 13.5K views)
+  https://www.youtube.com/watch?v=HudcbddNfEY
+  item: `items/HudcbddNfEY.md`
+- **Is AI Search Optimization a Thing?** — Lunch Hour Legal Marketing (50:14, 8 views)
+  https://www.youtube.com/watch?v=Opoh_HYhe3I
+  item: `items/Opoh_HYhe3I.md`
+- **How One Agent Built 586 Agents in 15 Months (Real Estate Training Breakdown)** — The Freedom Team (58:10, 34 views)
+  https://www.youtube.com/watch?v=15HoDA0l2Mw
+  item: `items/15HoDA0l2Mw.md`
+- **Microsoft Places Deep Dive with Microsoft - Customer Feedback, Deployment, Licensing | Insider Live** — EmpoweringCloud (36:17, 6 views)
+  https://www.youtube.com/watch?v=O-BxgvF5MOI
+  item: `items/O-BxgvF5MOI.md`
+- **Deep Diving into Java Ecosystem Security with Open Source and DevSecOps** — Microsoft for Java Developers (20:49, 3 views)
+  https://www.youtube.com/watch?v=qya3sLSg9es
+  item: `items/qya3sLSg9es.md`
+- **DAREDEVIL: BORN AGAIN SEASON 2 EPISODE 4 REACTION – BULLSEYE & THAT ENDING ARE CRAZY!  – REVIEW** — Reel Rejects and Coy Jandreau (56:55, 67.9K views)
+  https://www.youtube.com/watch?v=JWYh3gar3Z4
+  item: `items/JWYh3gar3Z4.md`
+- **Only 5% Ship Enterprise AI | Noelle Russell|E74** — Subrata Kar (59:01, 20 views)
+  https://www.youtube.com/watch?v=_dQb417CXaY
+  item: `items/_dQb417CXaY.md`
+- **Karen MIL Used AI To CLONE My Voice! I Got her Channel TERMINATED! r/EntitledPeople** — r/mr redder (3:58:39, 1.3K views)
+  https://www.youtube.com/watch?v=D79PuBl0uqo
+  item: `items/D79PuBl0uqo.md`
+- **Modern Agent Reborn: 8th Prince Conquers North with Guns & System!【SmartMate】** — Blaze Drama (2:34:24, 461 views)
+  https://www.youtube.com/watch?v=QfIc_gVJJkY
+  item: `items/QfIc_gVJJkY.md`

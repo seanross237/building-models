@@ -21,3 +21,9 @@ Full item files belong in `items/`.
 - **Building Bulletproof Systems: Warren Parad on Software Engineering for High Availability** — Overcommitted (49:54, 3 views)
   https://www.youtube.com/watch?v=-l4py6_6SGk
   item: `items/-l4py6_6SGk.md`
+
+## 2026-04-08 — 1 new videos
+
+- **Scope it out with Maia Plan Scope Refinement - Mendix 11.9 Release Video** — Mendix Community (15:06, 44 views)
+  https://www.youtube.com/watch?v=-SNEJadtf0g
+  item: `items/-SNEJadtf0g.md`

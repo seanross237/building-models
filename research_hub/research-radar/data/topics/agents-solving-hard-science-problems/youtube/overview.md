@@ -468,3 +468,96 @@ Full item files belong in `items/`.
 - **JEE Main 2026 (April Attempt) | Mathematics Paper Analysis & Solutions | 5th April | RWA** — IIT JEE RWA (1:55:36, 622 views)
   https://www.youtube.com/watch?v=Ws-wrLcoli4
   item: `items/Ws-wrLcoli4.md`
+
+## 2026-04-08 — 30 new videos
+
+- **There Is No Nuclear Waste Problem** — Dr Tim Gregory (15:18, 37 views)
+  https://www.youtube.com/watch?v=We_qUTxBtgU
+  item: `items/We_qUTxBtgU.md`
+- **John Heilemann on How Information Bubbles Impede Progress** — Washington Speakers Bureau (2:32, 11 views)
+  https://www.youtube.com/watch?v=I8hxiagxoyg
+  item: `items/I8hxiagxoyg.md`
+- **I FIRED two real estate Assistants, then realized I was the problem.** — Realtor180 (48:25, 27 views)
+  https://www.youtube.com/watch?v=Nufifc-7KDA
+  item: `items/Nufifc-7KDA.md`
+- **Inside Meta's Future: Mark Zuckerberg on Orion Glasses, AI Agents & What's Next** — USA Latest Podcast (21:25, 8 views)
+  https://www.youtube.com/watch?v=sKprqZALVcg
+  item: `items/sKprqZALVcg.md`
+- **Why NASA's Artemis II is the Most Dangerous Space Mission in 50 Years** — Boring Science (2:17:17, 1.3K views)
+  https://www.youtube.com/watch?v=KRbKAg9t5qg
+  item: `items/KRbKAg9t5qg.md`
+- **This Passage Reveals the BEST Way to Solve Problems (2 Samuel 19-21)** — Bible Discovery TV (28:22, 700 views)
+  https://www.youtube.com/watch?v=kFcJLIq0mNY
+  item: `items/kFcJLIq0mNY.md`
+- **The Nicomachean Ethics by Aristotle | Complete (Human-Read) Audiobook with Text** — Chillbooks (9:23:28, 507 views)
+  https://www.youtube.com/watch?v=mBphR2jnC_E
+  item: `items/mBphR2jnC_E.md`
+- **What Grok AI Revealed About Google's Quantum Chip Will Shock You** — Luminox (25:50, 6.4K views)
+  https://www.youtube.com/watch?v=9in0NpvBoqY
+  item: `items/9in0NpvBoqY.md`
+- **🔥He awakened a Beast System and gained 10,000+ power overnight, becoming unstoppable!** — Bella's Comic Chronicles (33:55:35, 315 views)
+  https://www.youtube.com/watch?v=ffsPz1Lu-CU
+  item: `items/ffsPz1Lu-CU.md`
+- **House Fraud Prevention and State Agency Oversight Policy Committee 4/7/26** — MNHouseInfo (1:47:48, 188 views)
+  https://www.youtube.com/watch?v=Bfs6cT5e8V4
+  item: `items/Bfs6cT5e8V4.md`
+- **What is religion?** — Fiction Beast (2:19:09, 596 views)
+  https://www.youtube.com/watch?v=HpPZl7Tt2Lc
+  item: `items/HpPZl7Tt2Lc.md`
+- **Lanai AI @ Work | Open Garage | We're Repeating the Outsourcing Mistake | Ralph Loura, Veteran CIO** — Lanai (13:56, 5 views)
+  https://www.youtube.com/watch?v=zmIByA1_v_g
+  item: `items/zmIByA1_v_g.md`
+- **AI is rewriting engineering careers, and here's how to stay ahead** — Proxify (57:51, 4 views)
+  https://www.youtube.com/watch?v=TuJNTDxbv6Q
+  item: `items/TuJNTDxbv6Q.md`
+- **They Ruined My Life. Reborn With A Deadly Skill, I’Ll Destroy Them All In 7 Days!** — King's Manhwa Recap2 (9:03:59, 68 views)
+  https://www.youtube.com/watch?v=mBqhnbuVXP0
+  item: `items/mBqhnbuVXP0.md`
+- **If I Started From 0 Subscribers in 2026, This Is What I Would Do to Get 1 Million** — Evan Carmichael (1:00:40, 18.4K views)
+  https://www.youtube.com/watch?v=pmqTgyPZdto
+  item: `items/pmqTgyPZdto.md`
+- **Sacramento County Board of Supervisors - April 7, 2026** — Metro Cable 14 (4:39:32, 2 views)
+  https://www.youtube.com/watch?v=lA-AMjlIsKI
+  item: `items/lA-AMjlIsKI.md`
+- **Only 5% Ship Enterprise AI | Noelle Russell|E74** — Subrata Kar (59:01, 20 views)
+  https://www.youtube.com/watch?v=_dQb417CXaY
+  item: `items/_dQb417CXaY.md`
+- **The Grid Doesn't Need More Power Plants (It Needs This)** — Undecided with Matt Ferrell (17:04, 58.5K views)
+  https://www.youtube.com/watch?v=pLIatO-RA1c
+  item: `items/pLIatO-RA1c.md`
+- **A Bad Case of Stripes, Senior Scams, Full Circle Home** — 13WHAM ABC News (1:58:00, 248 views)
+  https://www.youtube.com/watch?v=exCg3SuYvN0
+  item: `items/exCg3SuYvN0.md`
+- **Wolves threatening Manitoba farmers | CTV Your Morning Winnipeg for Wednesday April 8th, 2026** — CTV News (2:19:46, 30 views)
+  https://www.youtube.com/watch?v=ozD1HM_peH0
+  item: `items/ozD1HM_peH0.md`
+- **Redox Reactions Intro** — Dr. Nanette Hartley (2:25:23, 1 views)
+  https://www.youtube.com/watch?v=YZcHIbtPO-w
+  item: `items/YZcHIbtPO-w.md`
+- **Regenerative approaches to Victoria’s nature** — parliamentofvictoria (41:22, 26 views)
+  https://www.youtube.com/watch?v=8fM6zXEDWy4
+  item: `items/8fM6zXEDWy4.md`
+- **Committee on Environment, Climate and Legacy - 04/07/26** — Minnesota Senate Media Services (2:33:01, 643 views)
+  https://www.youtube.com/watch?v=6M_YnAEvk9w
+  item: `items/6M_YnAEvk9w.md`
+- **Enceladus' Ocean Is Perfect For Life** — Astrum (21:29, 8.9K views)
+  https://www.youtube.com/watch?v=QAj9DANPZHU
+  item: `items/QAj9DANPZHU.md`
+- **Three Strikes Project - The Price of Mercy** — Stanford Law School (1:09:42, 41 views)
+  https://www.youtube.com/watch?v=oJkM66SpbEI
+  item: `items/oJkM66SpbEI.md`
+- **April 7th, 2026 - City Council Meeting** — City of Sammamish (4:05:42, 117 views)
+  https://www.youtube.com/watch?v=3pu2xsp7NME
+  item: `items/3pu2xsp7NME.md`
+- **Two More Weeks | DeProgram with Ted Rall and Jamarl Thomas** — DeProgram Show with Ted Rall and Jamarl Thomas (59:30, 449 views)
+  https://www.youtube.com/watch?v=hFMVgjCfkV8
+  item: `items/hFMVgjCfkV8.md`
+- **Marin Wildfire Executive Committee Meeting - April 2, 2026** — Marin Wildfire Prevention Authority (1:38:56, new)
+  https://www.youtube.com/watch?v=nSTasBo5J70
+  item: `items/nSTasBo5J70.md`
+- **Karen MIL Used AI To CLONE My Voice! I Got her Channel TERMINATED! r/EntitledPeople** — r/mr redder (3:58:39, 1.3K views)
+  https://www.youtube.com/watch?v=D79PuBl0uqo
+  item: `items/D79PuBl0uqo.md`
+- **Morning News NOW Full Episode – April 8** — NBC News (1:48:34, 6.9K views)
+  https://www.youtube.com/watch?v=ntlWBenOUuA
+  item: `items/ntlWBenOUuA.md`

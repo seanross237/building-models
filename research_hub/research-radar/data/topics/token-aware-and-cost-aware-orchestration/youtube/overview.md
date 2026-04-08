@@ -147,3 +147,45 @@ Full item files belong in `items/`.
 - **【Movie】Genius architect Cinderella seeks revenge only to be trapped by a blind CEO | Kill Lover 假面迷情** — KUKAN Drama Romance (2:33:39, 365 views)
   https://www.youtube.com/watch?v=9YlAnnr4VxU
   item: `items/9YlAnnr4VxU.md`
+
+## 2026-04-08 — 13 new videos
+
+- **一口氣看完【墨染鳳冠燼江山】重生嫡女攜鳳冠歸來🔥 不復前世悲劇，只搞事業與被寵！帝王專寵無上限，墨染鳳冠燃盡江山，只為予她一世安穩💞 權謀＋甜寵雙在线，每集都在瘋狂撒糖，越看越上頭✨** — 戀愛觀察日記 (2:03:02, 30 views)
+  https://www.youtube.com/watch?v=DbUntBz8kdY
+  item: `items/DbUntBz8kdY.md`
+- **🔥He awakened a Beast System and gained 10,000+ power overnight, becoming unstoppable!** — Bella's Comic Chronicles (33:55:35, 315 views)
+  https://www.youtube.com/watch?v=ffsPz1Lu-CU
+  item: `items/ffsPz1Lu-CU.md`
+- **🔥Lord Era, All His Underlings Are God-Level Units, Dominating All Lord Continents From the Beginning** — Blue Whale Comics Review (26:39:02, 989 views)
+  https://www.youtube.com/watch?v=H-MU8J2ZcvY
+  item: `items/H-MU8J2ZcvY.md`
+- **A Single Talisman Turns the Tide，The Heiress Reveals Her True Power!** — Hit short series (2:24:23, 34 views)
+  https://www.youtube.com/watch?v=wwXDZxXAJOE
+  item: `items/wwXDZxXAJOE.md`
+- **Crippled for 3 years in the wasteland, a night with a goddess awakened my invincible system!** — ถนอม แก้วธรรม (11:24:12, 38 views)
+  https://www.youtube.com/watch?v=mnzXNkQ8BsU
+  item: `items/mnzXNkQ8BsU.md`
+- **They didn’t kill me! The love of my life handed me over to death,but I came back for revenge!#movie** — Badada-drama (1:31:30, 3 views)
+  https://www.youtube.com/watch?v=iB4FQ8aU6Ac
+  item: `items/iB4FQ8aU6Ac.md`
+- **于龙＆杨咩咩|穿进古早霸总文，她是恶毒女配的小跟班！原主结局凄惨，她绑定系统：纠正女配恋爱脑，打渣男、搞事业，顺便抱紧大小姐大腿[MULTI SUB | FULL]#MiniDrama #精彩大陆短剧** — 心跳月光短劇社 (2:42:48, 3.9K views)
+  https://www.youtube.com/watch?v=Svx5TYc8UiM
+  item: `items/Svx5TYc8UiM.md`
+- **He practiced arts of Celestial Master,sought revenge after release** — 反轉劇場 (1:56:04, 48 views)
+  https://www.youtube.com/watch?v=SRvzwUxeJ34
+  item: `items/SRvzwUxeJ34.md`
+- **Even if humiliated, I will strike back with my talent!** — Drama Note JP (4:22:02, 510 views)
+  https://www.youtube.com/watch?v=dmxZXa5PFgM
+  item: `items/dmxZXa5PFgM.md`
+- **她通過夢境預知未來，提前知曉自己慘死的悲慘結局，她拼命抗爭避寵自保，與皇后聯手破局，然而她錯信帝王深情，她被帝王的冷血算計後宮的陰狠毒辣裹挾，走上既定的命運，只留怨魂待來世清算罪孽！#古装言情** — 青鸾枕夢劇 (2:11:55, 4.3K views)
+  https://www.youtube.com/watch?v=KE_wsEwQY_I
+  item: `items/KE_wsEwQY_I.md`
+- **【全集】她救下太子反被全家冒领功劳，武功被废沦为傻子惨死！重生后，她要亲手撕碎抢功妹妹、毒妇继母和亲爹，把前世欠的血债，连本带利讨回来！#爽劇 #短剧** — 芙芙剧场 (3:10:21, 270 views)
+  https://www.youtube.com/watch?v=Q4xpYdS6Pgo
+  item: `items/Q4xpYdS6Pgo.md`
+- **一朝穿越成女尊女王，手握權柄執掌生殺，清剿朝堂奸佞，手撕各路白蓮花與野心男寵！《成女王后我疯狂斩渣男》#短劇 #古裝 #shortdrama** — 短劇上頭社 (2:45:12, 74 views)
+  https://www.youtube.com/watch?v=ILFD-ONu3Us
+  item: `items/ILFD-ONu3Us.md`
+- **🔥【最新合集】《神的欲望游戏》EP1~129：你的信仰我来守护！| Multi SUB #热血 #玄幻 #逆袭 #战斗 #动漫魔女** — 动漫魔女 (8:20:02, 836 views)
+  https://www.youtube.com/watch?v=EPI0Y0p5i80
+  item: `items/EPI0Y0p5i80.md`

@@ -465,3 +465,96 @@ Full item files belong in `items/`.
 - **【全集】她穿成侯府嫡女历劫，却惨遭未婚夫与妹妹杀害！重返人间后她反手绑定神秘男人，共同追查被杀真相，步步为营将渣男贱女送上绝路！#爽劇 #短剧** — 芙芙剧场 (2:33:09, 5.5K views)
   https://www.youtube.com/watch?v=XRR4zKkrYBg
   item: `items/XRR4zKkrYBg.md`
+
+## 2026-04-08 — 30 new videos
+
+- **Epstein Files Prove what the Kardashians did to Britney Spears** — ECHO tv (10:41, 5.6K views)
+  https://www.youtube.com/watch?v=Xi4aove2CT4
+  item: `items/Xi4aove2CT4.md`
+- **How to Change Review Policies in Google Antigravity IDE: Agent Automation & Security Guide 2026** — ProgrammingKnowledge2 (1:48, 25 views)
+  https://www.youtube.com/watch?v=FnN2V61Rnh4
+  item: `items/FnN2V61Rnh4.md`
+- **How to Allow Gitignore Access to Antigravity Agent: Complete IDE Configuration & Setup Guide 2026** — ProgrammingKnowledge2 (1:31, 52 views)
+  https://www.youtube.com/watch?v=iP0ubbxqrls
+  item: `items/iP0ubbxqrls.md`
+- **OpenClaw: What I Learned Running the World's Most Talked-About AI Agent** — AI for the Boardroom (24:40, 2 views)
+  https://www.youtube.com/watch?v=HaUBERjX3f0
+  item: `items/HaUBERjX3f0.md`
+- **🕵️‍♂️南宋第一臥底｜任務完成瞬間穿越南宋🔥從失業捕快逆襲神探⚔️現代刑偵血洗古代懸案🔍指紋血跡犯罪側寫全上陣🧠破奇案、賺家產、抱美人🏮縣令跪服全城轟動｜《南宋第一臥底》全集 #爽劇 #短劇 #奇幻** — 王者短劇堂 King’s Drama Hub (2:54:14, 22.2K views)
+  https://www.youtube.com/watch?v=dq0HslxIIZw
+  item: `items/dq0HslxIIZw.md`
+- **LangChain 1.0 – Turn MCP Servers into Code and Skills for AI Agents** — GrabDuck! (15:28, 94 views)
+  https://www.youtube.com/watch?v=gMQbfvrMDWk
+  item: `items/gMQbfvrMDWk.md`
+- **Nvidia Cornered a Crucial Chip Process, Creating a Bottleneck For AI Chips** — CNBC (15:19, 21.2K views)
+  https://www.youtube.com/watch?v=a0uQ1ZxfxfQ
+  item: `items/a0uQ1ZxfxfQ.md`
+- **Enceladus' Ocean Is Perfect For Life** — Astrum (21:29, 9.0K views)
+  https://www.youtube.com/watch?v=QAj9DANPZHU
+  item: `items/QAj9DANPZHU.md`
+- **The Mystery of Alien Travel Through History | Ancient Aliens** — HISTORY (40:21, 221.2K views)
+  https://www.youtube.com/watch?v=IzSfHV4dJ3c
+  item: `items/IzSfHV4dJ3c.md`
+- **Data Talks 14: AI in Local Housing Departments** — Housing Solutions Lab (44:30, new)
+  https://www.youtube.com/watch?v=RoomSuNobGQ
+  item: `items/RoomSuNobGQ.md`
+- **Top undercover wakes in ancient times—solves crimes to rise, 4 beauties fight to marry him** — 逆鱗劇場Nirlin Studio (2:52:30, 18.8K views)
+  https://www.youtube.com/watch?v=alREM4PlBHM
+  item: `items/alREM4PlBHM.md`
+- **The 4 Phases Every Real Estate Agent Goes Through (And Why Most Quit)** — Stefanie Lugo - Real Estate Business Coach (8:32, 248 views)
+  https://www.youtube.com/watch?v=c0xsVGmGyRY
+  item: `items/c0xsVGmGyRY.md`
+- **Bloomberg Surveillance 4/8/2026** — Bloomberg Television (2:26:11, 2.3K views)
+  https://www.youtube.com/watch?v=V5pWDaDM1Ss
+  item: `items/V5pWDaDM1Ss.md`
+- **Is The WORST Valorant Meta Finally Over?** — Cloud9 VALORANT and Cloud9 (28:35, 6.4K views)
+  https://www.youtube.com/watch?v=iAVu1hplnpA
+  item: `items/iAVu1hplnpA.md`
+- **【FULL】Cold CEO Becomes Student,Secretly Protects His Lost Daughter!#minidrama** — RushMiniDrama (1:57:42, 3.1K views)
+  https://www.youtube.com/watch?v=bGFQN2tdOjo
+  item: `items/bGFQN2tdOjo.md`
+- **MULTISUB📢新番上线《墨轩归来》第1~90集丨卧底合欢宗沦为鼎器三年，濒死觉醒混沌鼎，逆袭复仇肃清全宗！#漫剧 #破晓动漫社** — 破晓动漫社 Dawn Anime Club (1:54:22, 6.4K views)
+  https://www.youtube.com/watch?v=cFP_j8IzuOQ
+  item: `items/cFP_j8IzuOQ.md`
+- **💔Reborn! I dumped the scumbag, heard CEO’s inner thoughts#chinesedrama** — Revenge Movie (1:34:55, 10.3K views)
+  https://www.youtube.com/watch?v=B3ilM5hxlhQ
+  item: `items/B3ilM5hxlhQ.md`
+- **He Hid His Power as Her Submissive Brother—Now He Destroys Her Betraying Fiancé and Shields Her** — Binge Drama (2:11:32, 1.8K views)
+  https://www.youtube.com/watch?v=EIMZsRUYnC8
+  item: `items/EIMZsRUYnC8.md`
+- **Betrayed by a scumbag in my past life, I return only to protect this exiled young general! #drama** — Seraph Dramas (2:19:56, 1.0K views)
+  https://www.youtube.com/watch?v=Ks2GPBfAVfc
+  item: `items/Ks2GPBfAVfc.md`
+- **He Cheated on the Wife Who Lost Her Legs Saving Him—Then Returned as His Company’s Top Shareholder** — Cocoa Daily Drama (2:21:01, 820 views)
+  https://www.youtube.com/watch?v=UznQ-nSEkI4
+  item: `items/UznQ-nSEkI4.md`
+- **AI Replacing Sales Pro's  -  Don't be fooled, do better** — Sister Pants Systems (13:53, 1 views)
+  https://www.youtube.com/watch?v=RN5Ylb4jLLg
+  item: `items/RN5Ylb4jLLg.md`
+- **10-year relationship. She caught him cheating o. She faked death at wedding—he regrets deeply.** — Power Drama (1:36:08, 706 views)
+  https://www.youtube.com/watch?v=w0oWNaYJ8ew
+  item: `items/w0oWNaYJ8ew.md`
+- **【MULTI SUB】一口气看完《墨轩归来》1-90集：卧底合欢宗沦为鼎器三年，濒死觉醒混沌鼎，逆袭复仇肃清全宗！** — 趣说漫世界 (1:54:22, 1.1K views)
+  https://www.youtube.com/watch?v=86v3ZOx1HQ4
+  item: `items/86v3ZOx1HQ4.md`
+- **Karen MIL Used AI To CLONE My Voice! I Got her Channel TERMINATED! r/EntitledPeople** — r/mr redder (3:58:39, 1.3K views)
+  https://www.youtube.com/watch?v=D79PuBl0uqo
+  item: `items/D79PuBl0uqo.md`
+- **女孩電車上救下被追殺的黑衣男子，為戶口與其閃婚，以為他是個一無所有的窮小子，殊不知竟是黑幫老大，一句話讓整座城低頭，女孩成為所有人不敢輕視的存在！#精彩短劇 #短劇全集 #甜寵** — 砂糖劇滿屋 (2:16:44, 42.0K views)
+  https://www.youtube.com/watch?v=D49bRxF8FUI
+  item: `items/D49bRxF8FUI.md`
+- **Reunited Husbands, First Thing Was a Skin-to-Skin Kiss That Spiraled Out of Control！🌈bl/LGBT** — Candy Space (1:49:09, 2.0K views)
+  https://www.youtube.com/watch?v=Dt-CEXXnhVc
+  item: `items/Dt-CEXXnhVc.md`
+- **🚨Urgent Warning! Psychic reveals war will shift to China in 2026! Iran's fate already...** — HIBY新聞 (2:29:39, 1.6K views)
+  https://www.youtube.com/watch?v=l425-pfbTk0
+  item: `items/l425-pfbTk0.md`
+- **Thugs harass a beauty! Plainclothes cop steps in to smash them!** — Chinese Movie Storm (1:35:42, 411 views)
+  https://www.youtube.com/watch?v=Oc49c8cojQw
+  item: `items/Oc49c8cojQw.md`
+- **96 hours of nail-biting pursuit of Ly Tieu Ngoc's kidnapper: What sentence awaits such a cruel act?** — Tiểu Ngọc Newlife (42:52, 766 views)
+  https://www.youtube.com/watch?v=mQdCoXevAQ8
+  item: `items/mQdCoXevAQ8.md`
+- **INSIDE A MASSIVE LUXURY HOME IN TEXAS ON 2 ACRES!** — NavaRealtyGroup (21:32, 925 views)
+  https://www.youtube.com/watch?v=deEPvCkTDZc
+  item: `items/deEPvCkTDZc.md`

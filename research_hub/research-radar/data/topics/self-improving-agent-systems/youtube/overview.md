@@ -468,3 +468,90 @@ Full item files belong in `items/`.
 - **Why Your AI Assistant is Blind (and How to Give it Eyes)** — New Relic (1:46, 21 views)
   https://www.youtube.com/watch?v=KsK6LDqXIwo
   item: `items/KsK6LDqXIwo.md`
+
+## 2026-04-08 — 28 new videos
+
+- **Gemini 3: The Multimodal AI That's Reshaping Development** — Great Learning (26:01, 226 views)
+  https://www.youtube.com/watch?v=6gvlfEcNhDo
+  item: `items/6gvlfEcNhDo.md`
+- **Claude Inside Obsidian: The Setup Nobody Shows** — ICOR with Tom | AI Productivity (24:54, 240 views)
+  https://www.youtube.com/watch?v=B35SWx_4BNM
+  item: `items/B35SWx_4BNM.md`
+- **OpenClaw vs Claude Code: Which AI Agent Should You Use?** — AI Academy (6:26, 12 views)
+  https://www.youtube.com/watch?v=apr587TXaC8
+  item: `items/apr587TXaC8.md`
+- **We canceled a $200/ month SEO tool and build it for $5/month with #claudecode** — Too long for a call (30:23, 10 views)
+  https://www.youtube.com/watch?v=NvEb4R3wIqY
+  item: `items/NvEb4R3wIqY.md`
+- **EP 551 | April 7 | Harvey Demonstrates Agents Self-Improvement Impact in Legal | Daily AI News** — GAI Insights: Daily AI News & Learning Lab (31:22, 54 views)
+  https://www.youtube.com/watch?v=CD5-mmRrKBM
+  item: `items/CD5-mmRrKBM.md`
+- **How ElevenLabs Use AI to Improve Candidate Experience** — PromptMates (58:59, 449 views)
+  https://www.youtube.com/watch?v=7BX6NC1PekE
+  item: `items/7BX6NC1PekE.md`
+- **Build Multi Agent Teams within OpenClaw!** — Yashica Jain (50:24, 142 views)
+  https://www.youtube.com/watch?v=cBugcUYlKOo
+  item: `items/cBugcUYlKOo.md`
+- **The Claude Code source code leak: Takeaways for cybersecurity pros** — IBM Technology (41:31, 1.4K views)
+  https://www.youtube.com/watch?v=qtFtECYOzZE
+  item: `items/qtFtECYOzZE.md`
+- **The End of Human Coding? CORAL AI Smashes Industry Benchmarks** — The Hidden Layer: Decoding Artificial Intelligence (7:07, 3 views)
+  https://www.youtube.com/watch?v=Of3r80DWuQ4
+  item: `items/Of3r80DWuQ4.md`
+- **The AI Bubble is Better Than You Think** — TimeToBeRich (9:03, 6 views)
+  https://www.youtube.com/watch?v=6504tBCqJHo
+  item: `items/6504tBCqJHo.md`
+- **Beyond Prompting: Context Engineering with LangChain4J** — Microsoft for Java Developers (33:22, 3 views)
+  https://www.youtube.com/watch?v=cqNUaA-YDwM
+  item: `items/cqNUaA-YDwM.md`
+- **How this PM Used Claude Code to Support 20 People** — Aakash Gupta (1:10:10, 2.5K views)
+  https://www.youtube.com/watch?v=0UArKLQ6bXA
+  item: `items/0UArKLQ6bXA.md`
+- **Former CIA agent criticizes Trump over disclosures | West Coast Wrap** — KTVU FOX 2 San Francisco (23:30, 534 views)
+  https://www.youtube.com/watch?v=Zf1z8DpAyvc
+  item: `items/Zf1z8DpAyvc.md`
+- **Did Nvidia's CEO Jensen Huang Just Lie About AGI to the World?** — The Fat Cat Report (14:09, 760 views)
+  https://www.youtube.com/watch?v=IUdfuTlfpkc
+  item: `items/IUdfuTlfpkc.md`
+- **You’ve Been Lied To About Capitalism… With Dr. Carlos L. Garrido** — Mr Fong and Midwestern Marx (1:21:40, 436 views)
+  https://www.youtube.com/watch?v=JccdnCoq0C4
+  item: `items/JccdnCoq0C4.md`
+- **#AutoAgent 01 to 02 to 01  or 12.21.12 Mayan Codex. Recursion is here for #pAtifacts 0102** — Move2Japan (1:13:22, 841 views)
+  https://www.youtube.com/watch?v=st6p6XLEsYA
+  item: `items/st6p6XLEsYA.md`
+- **Former Fixed Income Analyst: STRC Is The Best Savings Product Ever Created** — Bitcoin Treasuries and 2 more (1:05:06, 864 views)
+  https://www.youtube.com/watch?v=20C4b89DVNg
+  item: `items/20C4b89DVNg.md`
+- **Ep 33 - Top 5 Content Mistakes Costing You Conversions (and How to Fix Them)** — Drake Strategic (45:08, 4 views)
+  https://www.youtube.com/watch?v=LzwF82w6bZA
+  item: `items/LzwF82w6bZA.md`
+- **AI is rewriting engineering careers, and here's how to stay ahead** — Proxify (57:51, 4 views)
+  https://www.youtube.com/watch?v=TuJNTDxbv6Q
+  item: `items/TuJNTDxbv6Q.md`
+- **Green Flags to look for in your for Code | The Bike Shed** — thoughtbot (50:57, 3 views)
+  https://www.youtube.com/watch?v=2vtB6Zi_Eys
+  item: `items/2vtB6Zi_Eys.md`
+- **Look Ma! No Browser! Managing Airflow from the Terminal** — Dataminded (23:58, 17 views)
+  https://www.youtube.com/watch?v=KyO5oXboRtI
+  item: `items/KyO5oXboRtI.md`
+- **[Full Episode] "After 99 Blind Dates, I Awaken My First System" | ENG SUB | #MintAudiobooks #cdra...** — 薄荷聽書 (1:24:13, 8.2K views)
+  https://www.youtube.com/watch?v=v2yBvs3Ytf4
+  item: `items/v2yBvs3Ytf4.md`
+- **Can Your Kid Really Train in Barcelona? What Spain Exposes in U.S. Soccer | Nil Congost** — Chasing the Game - Youth Soccer in America (57:02, 393 views)
+  https://www.youtube.com/watch?v=WkXSVad7dbQ
+  item: `items/WkXSVad7dbQ.md`
+- **Trump's Iran Deadline, Private Credit Worries | Bloomberg Businessweek Daily 4/07/2026** — Bloomberg Podcasts (42:29, 428 views)
+  https://www.youtube.com/watch?v=Pju383z6XeM
+  item: `items/Pju383z6XeM.md`
+- **🔥He awakened a Beast System and gained 10,000+ power overnight, becoming unstoppable!** — Bella's Comic Chronicles (33:55:35, 307 views)
+  https://www.youtube.com/watch?v=ffsPz1Lu-CU
+  item: `items/ffsPz1Lu-CU.md`
+- **Good Morning America Full Broadcast - Wednesday, April 8, 2026** — ABC News (1:10:09, 2.5K views)
+  https://www.youtube.com/watch?v=t-_TT1ms6Qo
+  item: `items/t-_TT1ms6Qo.md`
+- **BEYOND WILLPOWER  |  The Apocrypha of the Absolute Self  | Full audiobook** — The Sovereign Path (2:46:20, 1 views)
+  https://www.youtube.com/watch?v=pAIeHT18WeA
+  item: `items/pAIeHT18WeA.md`
+- **AI Agents, Crypto & Robotics with Weekee: The Rise of Agent Economies & On-Chain Commerce** — 21shares (43:41, 55 views)
+  https://www.youtube.com/watch?v=JwYbaUG9yno
+  item: `items/JwYbaUG9yno.md`

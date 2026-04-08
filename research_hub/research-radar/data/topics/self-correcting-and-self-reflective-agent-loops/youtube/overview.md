@@ -252,3 +252,57 @@ Full item files belong in `items/`.
 - **Why Love Robots are Perfectly Imperfect?** — Wooden Slate (13:50, 84 views)
   https://www.youtube.com/watch?v=o5gGpy8QOtQ
   item: `items/o5gGpy8QOtQ.md`
+
+## 2026-04-08 — 17 new videos
+
+- **E 28 – Receiving Without Guilt** — The Road Back Podcast (50:01, 6 views)
+  https://www.youtube.com/watch?v=LNT4Z0-oevw
+  item: `items/LNT4Z0-oevw.md`
+- **【全集】卑微社畜穿越古代竟成了大貪官之女，未來還會被抄家滅門！爲逆天改命她激活敗家系統，高價買陳米修爛路反成惠民工程，助北疆大勝，最終反封成縣主！#穿越 #逆襲 #短剧** — 笑笑看剧 (2:24:19, 477 views)
+  https://www.youtube.com/watch?v=Hi6CFDlNsbo
+  item: `items/Hi6CFDlNsbo.md`
+- **🔥He awakened a Beast System and gained 10,000+ power overnight, becoming unstoppable!** — Bella's Comic Chronicles (33:55:35, 315 views)
+  https://www.youtube.com/watch?v=ffsPz1Lu-CU
+  item: `items/ffsPz1Lu-CU.md`
+- **🔥【强推】【Eng Sub】《全球驚悚：我開啟外掛自選商城》詭域全面降臨，人類十不存一；楚生每入詭域便可自選外掛，在他人九死一生中橫推主世界，讓恐怖匍匐在腳下。第1-78集 #热血 #玄幻 #逆袭** — 八虎动漫剧场 (5:57:53, 302 views)
+  https://www.youtube.com/watch?v=MfR8IJOkHuM
+  item: `items/MfR8IJOkHuM.md`
+- **BEYOND WILLPOWER  |  The Apocrypha of the Absolute Self  | Full audiobook** — The Sovereign Path (2:46:20, 1 views)
+  https://www.youtube.com/watch?v=pAIeHT18WeA
+  item: `items/pAIeHT18WeA.md`
+- **The Uncomfortable Truth About Accountability and Healing from Sexual Abuse | Sage Williams E0055** — Let's Get Real with Stephen Jones and Scripture Central (1:43:43, 3.1K views)
+  https://www.youtube.com/watch?v=kkuU5kEDMuQ
+  item: `items/kkuU5kEDMuQ.md`
+- **Inside the Epstein Files | All About Women 2026** — Sydney Opera House (1:02:28, 184 views)
+  https://www.youtube.com/watch?v=inRP712Hxxw
+  item: `items/inRP712Hxxw.md`
+- **The Terror of the Scene | I found a strange kind of peace** — True Horror Narration (1:01:30, 21 views)
+  https://www.youtube.com/watch?v=-5BTyMIofqk
+  item: `items/-5BTyMIofqk.md`
+- **🌟【New Anime Release | ENG SUB】"The Goddess of Score Control": She controls scores like a pro, tur...** — Dragon Animation Club (51:26, 1.8K views)
+  https://www.youtube.com/watch?v=w3bqLQQKZqc
+  item: `items/w3bqLQQKZqc.md`
+- **Crippled for 3 years in the wasteland, a night with a goddess awakened my invincible system!** — ถนอม แก้วธรรม (11:24:12, 38 views)
+  https://www.youtube.com/watch?v=mnzXNkQ8BsU
+  item: `items/mnzXNkQ8BsU.md`
+- **Dostoevsky's Notes from Underground: A Journey into the Mind of a Spiteful Man (Full Audiobook)** — AI Eternal Chapters (4:25:31, 46 views)
+  https://www.youtube.com/watch?v=jhXTyZDj2c4
+  item: `items/jhXTyZDj2c4.md`
+- **Striving for Equality in the Buckeye State: A Conversation on Faith and LGBTQ+ Advocacy** — The Interfaith Center at Miami University (1:31:58, 3 views)
+  https://www.youtube.com/watch?v=XQPw08bahyE
+  item: `items/XQPw08bahyE.md`
+- **Inside Cambridge Analytica: Facebook's Role in Data Manipulation** — Beautiful Lies Society (3:07:36, 35 views)
+  https://www.youtube.com/watch?v=bxcb13GPxWY
+  item: `items/bxcb13GPxWY.md`
+- **Atteindre l'Excellence - Robert Greene | Mastery - Robert Greene, with subtitles + Free PDF** — Kelly, la prof de français (1:13:07, 35 views)
+  https://www.youtube.com/watch?v=wjKLEUAQGnU
+  item: `items/wjKLEUAQGnU.md`
+- **Susan Powell: Desert Surveys and Insurance Clock Memory** — The Apex Mind (14:28, new)
+  https://www.youtube.com/watch?v=bBB_Z6i5X9I
+  item: `items/bBB_Z6i5X9I.md`
+- **After female cashback system,he is forced live off women,tenfold cashback yields over $100M cash** — Mania Comics Legends (27:42:58, 132 views)
+  https://www.youtube.com/watch?v=PWquZTLes1M
+  item: `items/PWquZTLes1M.md`
+- **She Got Reincarnated As The Villainess... And Chose To Stay Evil | Full Manhwa Recap** — Animated Manhwa (9:25:58, 10 views)
+  https://www.youtube.com/watch?v=YrEbxLryUBw
+  item: `items/YrEbxLryUBw.md`

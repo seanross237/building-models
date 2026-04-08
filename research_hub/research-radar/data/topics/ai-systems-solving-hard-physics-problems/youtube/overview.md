@@ -468,3 +468,96 @@ Full item files belong in `items/`.
 - **“Artificial Intelligence में करियर कैसे बनाएं? (Full Guide)”** — MIXED TOPICS (19:11, 7 views)
   https://www.youtube.com/watch?v=hICYW7Mdokg
   item: `items/hICYW7Mdokg.md`
+
+## 2026-04-08 — 30 new videos
+
+- **What Grok AI Revealed About Google's Quantum Chip Will Shock You** — Luminox (25:50, 6.5K views)
+  https://www.youtube.com/watch?v=9in0NpvBoqY
+  item: `items/9in0NpvBoqY.md`
+- **Germany | Math Olympiad question  | can you solve this system of equations without this trick! | x=?** — Mathematics & Statistics Guru (11:21, 46 views)
+  https://www.youtube.com/watch?v=oiIIM_F8AWY
+  item: `items/oiIIM_F8AWY.md`
+- **Solve for x in this nice exponential equation | Math Olympiad Mathematics** — HkLogics (6:29, 7 views)
+  https://www.youtube.com/watch?v=-lkVjPRRRyU
+  item: `items/-lkVjPRRRyU.md`
+- **A nice exponential equation | Math Olympiad Mathematics** — HkLogics (2:28, 4 views)
+  https://www.youtube.com/watch?v=E2TUc00qJjI
+  item: `items/E2TUc00qJjI.md`
+- **“From ‘42’ to SpaceX: The Reading List That Created Elon Musk”** — MUSKVERSE (7:01, 4 views)
+  https://www.youtube.com/watch?v=OrJnr90hUbY
+  item: `items/OrJnr90hUbY.md`
+- **Sodium Ion Manufacturing Challenges // Not a Solved Problem** — The Limiting Factor (19:25, 1.5K views)
+  https://www.youtube.com/watch?v=qvCAwdNB6Aw
+  item: `items/qvCAwdNB6Aw.md`
+- **Solving a 'Harvard' University entrance exam question** — HkLogics (6:52, 9 views)
+  https://www.youtube.com/watch?v=MIz58w8n-2A
+  item: `items/MIz58w8n-2A.md`
+- **倪海廈：4月10號甲寅日必看！3生肖穿白色，5種人穿紅色，保你2026馬年翻天覆地#倪海廈 #黃帝內經 #養生 #國學 #易經 #清明 #開運 #招財 #補財庫 #中醫 #風水 #2026運勢 #農曆** — 漢唐健康 (1:25:29, 2.9K views)
+  https://www.youtube.com/watch?v=pNf_u5RCxpE
+  item: `items/pNf_u5RCxpE.md`
+- **Bluepoint Games: Sony's Biggest Mistake** — LorD of Nerds (47:02, 346 views)
+  https://www.youtube.com/watch?v=nLR6UTctKWA
+  item: `items/nLR6UTctKWA.md`
+- **I used my X-ray eyes to find hidden treasures, pick winning stocks, and CRUSH the stock market!** — Drama Rise Studio (2:14:54, 23 views)
+  https://www.youtube.com/watch?v=xYKA_sh4bBQ
+  item: `items/xYKA_sh4bBQ.md`
+- **Are World Models the Next Big Thing? | Merve Noyan** — Hugging Face (7:13, 1.7K views)
+  https://www.youtube.com/watch?v=WXiNBS1GkIU
+  item: `items/WXiNBS1GkIU.md`
+- **Srujan Linga, Kandou Ai | theCUBE + NYSE Wired: AI Factories - Data Centers of the Future** — SiliconANGLE theCUBE (19:30, 306 views)
+  https://www.youtube.com/watch?v=8ooFtTGbefo
+  item: `items/8ooFtTGbefo.md`
+- **#155 Probabilistic Programming for the Real World, with Andreas Munk** — Learning Bayesian Statistics (1:54:07, 28 views)
+  https://www.youtube.com/watch?v=gKQzb2sIESw
+  item: `items/gKQzb2sIESw.md`
+- **What is religion?** — Fiction Beast (2:19:09, 596 views)
+  https://www.youtube.com/watch?v=HpPZl7Tt2Lc
+  item: `items/HpPZl7Tt2Lc.md`
+- **CG VFX NEWS March 2026** — Alex AndRiEL (29:44, 739 views)
+  https://www.youtube.com/watch?v=Umuyjlb2uzw
+  item: `items/Umuyjlb2uzw.md`
+- **為救重病父親求職受挫，意外激活家傳玉佩，獲得透視神眼——買彩票中獎、挖黃金，輕輕鬆鬆暴富！** — 疯狂短剧 (2:14:54, 66 views)
+  https://www.youtube.com/watch?v=Ahya1ew9r_g
+  item: `items/Ahya1ew9r_g.md`
+- **Buried alive by mom & fake daughter! Scientist revives. Revenge, takes fortune, kicks mom.** — 霸霸追爽劇ShortTV (1:12:55, 983 views)
+  https://www.youtube.com/watch?v=fa9k_hQUlRA
+  item: `items/fa9k_hQUlRA.md`
+- **[MULTI SUB] [💕新剧]落魄女孩在华丽晚宴上被霸道总裁一眼看中！展开疯狂追求，公开示爱！她却因身份差距连夜辞职逃跑！总裁董事会现场宣布非她不娶！【歸於溫柔 】** — 甜剧热播 (3:22:11, 3.2K views)
+  https://www.youtube.com/watch?v=Rtai7Iq8I2I
+  item: `items/Rtai7Iq8I2I.md`
+- **Unlocking Quantum Frontiers: Bill Wisotsky | TBCY** — The Brand Called You (1:00:24, 10 views)
+  https://www.youtube.com/watch?v=JXE8viRtvFc
+  item: `items/JXE8viRtvFc.md`
+- **鄉下真千金剛回歸豪門就遭假千金陷害，全家嫌棄甚至不准她上桌吃飯，她看透人心當場斷親，隔天拿下高考狀元狠狠打臉所有人，全家後悔也晚了！#狀元真千金 #短劇 #drama #霸總 #愛情  #熱門短劇** — BlessedBits (1:05:19, 577 views)
+  https://www.youtube.com/watch?v=PjJgXmuBKPQ
+  item: `items/PjJgXmuBKPQ.md`
+- **Rescale, Microsoft & NVIDIA: Accelerating Digital Engineering in Manufacturing and Automotive** — Microsoft Deutschland (23:17, 12 views)
+  https://www.youtube.com/watch?v=m5Y0E3Bx5XE
+  item: `items/m5Y0E3Bx5XE.md`
+- **🌟【新番上线|ENG SUB】《焊天者》废柴觉醒家传秘法，以身为焊料铸就镇国重器，碾压鹰酱登顶世界！ 一口气看完 #漫剧 #热血 #玄幻 #战斗 #苍穹动漫** — Dragon Animation Club (1:37:02, 4.9K views)
+  https://www.youtube.com/watch?v=vj8l1oz5j08
+  item: `items/vj8l1oz5j08.md`
+- **Issue 23: Egg freezing, Australian refugee policy and ASML** — Works in Progress (1:05:42, 74 views)
+  https://www.youtube.com/watch?v=nywiBjZmnPE
+  item: `items/nywiBjZmnPE.md`
+- **The Terror of the Scene | I found a strange kind of peace** — True Horror Narration (1:01:30, 21 views)
+  https://www.youtube.com/watch?v=-5BTyMIofqk
+  item: `items/-5BTyMIofqk.md`
+- **I got a hundredfold return on my money when I spent it on my mom, became the richest woman** — 劇好追 (1:55:24, 12.2K views)
+  https://www.youtube.com/watch?v=729FSB8S2SU
+  item: `items/729FSB8S2SU.md`
+- **攻克十万级节点预测难题：SIGN框架通过方程推断实现超大规模复杂系统动力学的秒级算力飞跃** — Agent 创世纪 (9:17, 6 views)
+  https://www.youtube.com/watch?v=YBZCezR9Kow
+  item: `items/YBZCezR9Kow.md`
+- **💖I Was Supposed to Marry Playboy. Instead, I  Married His Cold CEO Uncle Who Loved Me For Years.** — NobleHeart Drama (1:07:14, 108 views)
+  https://www.youtube.com/watch?v=2upbnn4Dfa4
+  item: `items/2upbnn4Dfa4.md`
+- **Physical Therapy Education Is Broken — Here’s the Solution (PTA Perspective)** — PTA+ Podcast | For Physical Therapist Assistants (17:48, 4 views)
+  https://www.youtube.com/watch?v=A7-QHAQl7KY
+  item: `items/A7-QHAQl7KY.md`
+- **How to Actually Improve Your Literacy** — Simon's Book Club (28:00, 8 views)
+  https://www.youtube.com/watch?v=g2L8WP9AUkU
+  item: `items/g2L8WP9AUkU.md`
+- **意外穿越成不受寵王妃，開局便被下葬，性情大變的我引得帥氣王爺青睞，他每天換著花樣寵我上天！ #錯嫁乞丐竟是皇帝 #古裝 #短劇 #minidrama #甜寵劇爽** — 長安戲說 (2:33:15, 269 views)
+  https://www.youtube.com/watch?v=IEVbjC-yDzo
+  item: `items/IEVbjC-yDzo.md`

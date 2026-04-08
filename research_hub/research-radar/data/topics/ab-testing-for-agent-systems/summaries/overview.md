@@ -283,3 +283,73 @@ Full item files belong in `items/`.
   source: https://www.youtube.com/watch?v=P8DoHPQ59Qo
   summary file: `items/youtube--P8DoHPQ59Qo.md`
   presentation candidate: `false`
+
+## 2026-04-08 — youtube score 6
+
+- **The Family Pattern That Keeps You Stuck | Back to the Future Psychology**
+  source: https://www.youtube.com/watch?v=P_heMOn0ySc
+  summary file: `items/youtube--P_heMOn0ySc.md`
+  presentation candidate: `false`
+
+## 2026-04-08 — youtube score 6
+
+- **Coding My First SAP CAP AI App & Decoding the "Trial Trap" Errors! 🚀 | Agentic SAP**
+  source: https://www.youtube.com/watch?v=PnrcOPEyW7E
+  summary file: `items/youtube--PnrcOPEyW7E.md`
+  presentation candidate: `false`
+
+## 2026-04-08 — youtube score 5
+
+- **Claude Code Is Completely Different Now - Full 2026 Crash Course**
+  source: https://www.youtube.com/watch?v=Q0bsphUTLtw
+  summary file: `items/youtube--Q0bsphUTLtw.md`
+  presentation candidate: `false`
+
+## 2026-04-08 — youtube score 6
+
+- **How FAANG Companies Deploy LLMs in Production — KServe + Triton Full Setup**
+  source: https://www.youtube.com/watch?v=Q6N3fSPeBzg
+  summary file: `items/youtube--Q6N3fSPeBzg.md`
+  presentation candidate: `false`
+
+## 2026-04-08 — youtube score 6
+
+- **Claude Code Just Cracked Kalshi**
+  source: https://www.youtube.com/watch?v=Q8Pf1Ppe1-8
+  summary file: `items/youtube--Q8Pf1Ppe1-8.md`
+  presentation candidate: `false`
+
+## 2026-04-08 — youtube score 6
+
+- **🔥Сколько СТОИТ РЕМОНТ в 2026? | Из убитой ХРУЩЕВКИ сделали конфетку!**
+  source: https://www.youtube.com/watch?v=QyWfovpbXhc
+  summary file: `items/youtube--QyWfovpbXhc.md`
+  presentation candidate: `false`
+
+## 2026-04-08 — youtube score 5
+
+- **U.S. Supreme Court Oral Argument on Trump Restricting Birthright Citizenship**
+  source: https://www.youtube.com/watch?v=RYecNCgwSfE
+  summary file: `items/youtube--RYecNCgwSfE.md`
+  presentation candidate: `false`
+
+## 2026-04-08 — youtube score 5
+
+- **OpenAI Tops $850 Billion Valuation | Bloomberg Tech 4/1/2026**
+  source: https://www.youtube.com/watch?v=RiOKUg-JAPU
+  summary file: `items/youtube--RiOKUg-JAPU.md`
+  presentation candidate: `false`
+
+## 2026-04-08 — youtube score 6
+
+- **Discussing FIFA Agent Exam 2026: International Transfer of Players**
+  source: https://www.youtube.com/watch?v=RnrwYlLtS7w
+  summary file: `items/youtube--RnrwYlLtS7w.md`
+  presentation candidate: `false`
+
+## 2026-04-08 — youtube score 6
+
+- **Self Improving Agents in 5 Minutes**
+  source: https://www.youtube.com/watch?v=RoaPvj9Ovug
+  summary file: `items/youtube--RoaPvj9Ovug.md`
+  presentation candidate: `false`

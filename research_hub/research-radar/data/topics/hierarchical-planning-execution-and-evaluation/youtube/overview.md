@@ -249,3 +249,90 @@ Full item files belong in `items/`.
 - **🔥【FULL一口氣看完】蝦仁穿越秦朝只想躺平擺爛、喝酒聽曲，沒想到秦始皇竟能聽到他的心聲！強行升官，千古一帝非要我當大秦首輔！** — Hot 沙雕剧场 (2:15:25, 459 views)
   https://www.youtube.com/watch?v=UgcP1F_k2N8
   item: `items/UgcP1F_k2N8.md`
+
+## 2026-04-08 — 28 new videos
+
+- **SkillX: Automated Hierarchical Skill Learning for LLM Agents** — Research Paper Review (7:01, 15 views)
+  https://www.youtube.com/watch?v=5C6A2SJuJ5U
+  item: `items/5C6A2SJuJ5U.md`
+- **MULTISUB📢新番上线《破金勤王》第1~52集丨穿越高武获梦行诸天能力，梦中修炼反哺现实，遭猜忌后掀翻江山横推诸天！#漫剧 #破晓动漫社** — 破晓动漫社 Dawn Anime Club (1:07:30, 1.2K views)
+  https://www.youtube.com/watch?v=2HOZ-2TvWFM
+  item: `items/2HOZ-2TvWFM.md`
+- **Inside the Mind of a Monster: How Ivan IV’s Paranoia Changed History** — Исторически разкази (36:20, 76 views)
+  https://www.youtube.com/watch?v=DpLg2yufImo
+  item: `items/DpLg2yufImo.md`
+- **小女孩重生後竟成了全家的人形警報器！心裡一嘀咕，麻煩全繞道！#重生 #一口气看完 #精彩影视 #短剧 #逆袭 #热门短剧** — 剧有引力 (1:50:41, 95 views)
+  https://www.youtube.com/watch?v=DVGSTptzCoQ
+  item: `items/DVGSTptzCoQ.md`
+- **Why Vanishing Is the Most Powerful Social Move You Can Make** — Absolute Power (10:47, 4 views)
+  https://www.youtube.com/watch?v=bj0iwH2Lzzk
+  item: `items/bj0iwH2Lzzk.md`
+- **After 10 Years Of Hard Work For His Family, He Was Chosen By A God To Rule The Entire World** — Tanjiro Recap (13:31:29, 608 views)
+  https://www.youtube.com/watch?v=hnd0sMkr6dk
+  item: `items/hnd0sMkr6dk.md`
+- **Agentic AI: Gemini CLI. The Open Source AI Agent #machinelearning #datascience #mlops #agenticai** — The Machine Learning Engineer (1:30:20, 20 views)
+  https://www.youtube.com/watch?v=3-Fmpy3-kGc
+  item: `items/3-Fmpy3-kGc.md`
+- **Multi sub（完结新番）💥💥💥人人都能成神，我却开局满手垃圾眷族？觉醒“生命献祭”：只要献祭够狠，我就是诸天最强的神上神！《开局废材献祭成神》#次元动漫  #破界 #動漫** — 破界动漫局 Anime Club (1:24:38, 350 views)
+  https://www.youtube.com/watch?v=hdzT418OwPA
+  item: `items/hdzT418OwPA.md`
+- **【全集】她救下太子反被全家冒领功劳，武功被废沦为傻子惨死！重生后，她要亲手撕碎抢功妹妹、毒妇继母和亲爹，把前世欠的血债，连本带利讨回来！#爽劇 #短剧** — 芙芙剧场 (3:10:21, 270 views)
+  https://www.youtube.com/watch?v=Q4xpYdS6Pgo
+  item: `items/Q4xpYdS6Pgo.md`
+- **SCOR Social Justice Symposium** — University of Michigan (1:33:39, 6 views)
+  https://www.youtube.com/watch?v=_cKbO9A06nE
+  item: `items/_cKbO9A06nE.md`
+- **He Made Me a Copper Ring at 10... He Returned an Alpha King for His Rejected Mate (Full Story)** — Moonlit Romance Stories (1:19:57, 36 views)
+  https://www.youtube.com/watch?v=npe_lmA3h-g
+  item: `items/npe_lmA3h-g.md`
+- **SHFC Meeting 1/8/26** — Strategic Housing Finance Corporation (1:34:50, 1 views)
+  https://www.youtube.com/watch?v=2kur4uqOwfM
+  item: `items/2kur4uqOwfM.md`
+- **Resilient Minds: Understanding Resilience in Children and Adolescents Through Behavior** — KVCkids (1:26:16, 5 views)
+  https://www.youtube.com/watch?v=bwXnaHUvQsQ
+  item: `items/bwXnaHUvQsQ.md`
+- **CCNP ENCOR Lecture-1: Enterprise Network Design Explained | 2-Tier, 3-Tier, Fabric & Cloud Models** — GuiNet (1:43:44, new)
+  https://www.youtube.com/watch?v=iIS87_SvASc
+  item: `items/iIS87_SvASc.md`
+- **💥ENG SUB💥【原罪游戏：从氪金开始统御全服】Sin Game: Dominate the Server by Pay-to-Win #玄幻 #热血 #逆袭 #动漫** — 超有钱动漫 Anime Club (9:08:59, 120 views)
+  https://www.youtube.com/watch?v=QPWbFMJNtB8
+  item: `items/QPWbFMJNtB8.md`
+- **Inside Cambridge Analytica: Facebook's Role in Data Manipulation** — Beautiful Lies Society (3:07:36, 35 views)
+  https://www.youtube.com/watch?v=bxcb13GPxWY
+  item: `items/bxcb13GPxWY.md`
+- **APR 7, 2026 |  City Council** — City of San Jose, CA (2:23:06, 258 views)
+  https://www.youtube.com/watch?v=ZewD8SmA1wM
+  item: `items/ZewD8SmA1wM.md`
+- **Committee on Environment, Climate and Legacy - 04/07/26** — Minnesota Senate Media Services (2:33:01, 643 views)
+  https://www.youtube.com/watch?v=6M_YnAEvk9w
+  item: `items/6M_YnAEvk9w.md`
+- **ENG SUB 🔥【全網首發】《和闺蜜一起穿书把反派宠上天》闺蜜误将男主当反派栽赃，却撩到真反派联手撕碎白莲Boss！#热血#末世#漫剧#末世生存#赛博剧场** — 赛博剧场 (1:45:21, 319 views)
+  https://www.youtube.com/watch?v=Gd3lVEphvjw
+  item: `items/Gd3lVEphvjw.md`
+- **💭 Sleep Story | The Mastermind Who Controlled Three Kingdoms: Sima Yi’s Cold Strategy** — Sleepless Orient (2:19:57, 5 views)
+  https://www.youtube.com/watch?v=DnzBz4_YBV8
+  item: `items/DnzBz4_YBV8.md`
+- **The young man was seriously injured,but the princess disregarded worldly conventions just to see him** — 梦华剧阁 (1:07:31, 121 views)
+  https://www.youtube.com/watch?v=4y3qLcbXcxE
+  item: `items/4y3qLcbXcxE.md`
+- **China's Nuclear Dominance vs. The West's Paralysis** — Deep Dive Global (22:17, 49 views)
+  https://www.youtube.com/watch?v=OQzxtEQow_0
+  item: `items/OQzxtEQow_0.md`
+- **Women in Cocoa Spotlight Conversation: Learning from the Landscape with Sarah Bharath** — Argante and Delft Cocoa Plantations (1:37:55, 33 views)
+  https://www.youtube.com/watch?v=92xgyEPtYTQ
+  item: `items/92xgyEPtYTQ.md`
+- **The Mafia Boss Blocked Her Exit And Ordered, “Dinner. Tomorrow at 8PM. Stubborn Girl.”** — Mafia Midnight Stories (1:42:39, 1 views)
+  https://www.youtube.com/watch?v=RWmiDBsnzUU
+  item: `items/RWmiDBsnzUU.md`
+- **【FULL】Transmigrator Jiang Chen awakens the "Sect Investment System," casually recruiting disciples t** — StardustTV-華語短劇 (2:32:51, 4.3K views)
+  https://www.youtube.com/watch?v=NhI_Pbo7Lto
+  item: `items/NhI_Pbo7Lto.md`
+- **🔥【最新合集】《太古十凶：别人御兽我御兽娘》EP1~144：成功六转！| Multi SUB #热血 #玄幻 #逆袭 #战斗 #动漫魔女** — 动漫魔女 (9:05:39, 607 views)
+  https://www.youtube.com/watch?v=elGTlb1NGAg
+  item: `items/elGTlb1NGAg.md`
+- **【2026熱話題股債配長期投資策略，傳授「耍廢投資心法」！#美股 #台股 #中東局勢 #油價 #通膨 #美債收益率 #加息預期 #融資餘額 #投資策略 #全球經濟** — 阿然紀實錄 (31:13, new)
+  https://www.youtube.com/watch?v=beauVTWaZT4
+  item: `items/beauVTWaZT4.md`
+- **After female cashback system,he is forced live off women,tenfold cashback yields over $100M cash** — Mania Comics Legends (27:42:58, 132 views)
+  https://www.youtube.com/watch?v=PWquZTLes1M
+  item: `items/PWquZTLes1M.md`

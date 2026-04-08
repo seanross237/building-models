@@ -168,3 +168,21 @@ Full item files belong in `items/`.
 - **PoorBoy Unlock 10000x Upgrade System,Upgrades Job Offer into Chairman Letter,Becomes Powerful Tycoon** — Mania Comics Legends (7:57:44, 187 views)
   https://www.youtube.com/watch?v=sZwuET7ZHG0
   item: `items/sZwuET7ZHG0.md`
+
+## 2026-04-08 — 5 new videos
+
+- **Intel Joins Musk’s Terafab Project With Tesla, SpaceX, xAI | Bloomberg Tech 4/7/2026** — Bloomberg Technology (44:05, 5.6K views)
+  https://www.youtube.com/watch?v=J3uiHbOIsnk
+  item: `items/J3uiHbOIsnk.md`
+- **Only 5% Ship Enterprise AI | Noelle Russell|E74** — Subrata Kar (59:01, 20 views)
+  https://www.youtube.com/watch?v=_dQb417CXaY
+  item: `items/_dQb417CXaY.md`
+- **How Robust Is Your Self-Driving AI? | AI with a Human Touch Ep. 1** — Computer Vision with Prof. Schön (14:33, 3 views)
+  https://www.youtube.com/watch?v=ZD4K5SzI6hk
+  item: `items/ZD4K5SzI6hk.md`
+- **County of Santa Clara Public Safety and Justice Committee April 7, 2026** — SCCgov chambers (1:44:30, 141 views)
+  https://www.youtube.com/watch?v=HRe7NNEUWsI
+  item: `items/HRe7NNEUWsI.md`
+- **Housing Market CRASH: Are You Buying At The Wrong Time?** — Hope to Wealth (38:40, new)
+  https://www.youtube.com/watch?v=0MN4dIZV2PM
+  item: `items/0MN4dIZV2PM.md`

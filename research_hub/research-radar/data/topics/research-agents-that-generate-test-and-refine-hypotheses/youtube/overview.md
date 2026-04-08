@@ -81,3 +81,21 @@ Full item files belong in `items/`.
 - **Man’s Search for Meaning – Viktor E. Frankl (Full Book Summary Explained)** — The Reading Pages (1:22:35, 13 views)
   https://www.youtube.com/watch?v=OAue-E7ATzk
   item: `items/OAue-E7ATzk.md`
+
+## 2026-04-08 — 5 new videos
+
+- **BEYOND WILLPOWER  |  The Apocrypha of the Absolute Self  | Full audiobook** — The Sovereign Path (2:46:20, 1 views)
+  https://www.youtube.com/watch?v=pAIeHT18WeA
+  item: `items/pAIeHT18WeA.md`
+- **🚨Urgent Warning! Psychic reveals war will shift to China in 2026! Iran's fate already...** — HIBY新聞 (2:29:39, 1.6K views)
+  https://www.youtube.com/watch?v=l425-pfbTk0
+  item: `items/l425-pfbTk0.md`
+- **Inside Cambridge Analytica: Facebook's Role in Data Manipulation** — Beautiful Lies Society (3:07:36, 35 views)
+  https://www.youtube.com/watch?v=bxcb13GPxWY
+  item: `items/bxcb13GPxWY.md`
+- **After 10 Years Of Hard Work For His Family, He Was Chosen By A God To Rule The Entire World** — Tanjiro Recap (13:31:29, 608 views)
+  https://www.youtube.com/watch?v=hnd0sMkr6dk
+  item: `items/hnd0sMkr6dk.md`
+- **【Multi Sub】🔥 開局一個破攤位，我卻成了遊戲首富  Starting with a shabby stall EP1-120 #热血 #anime #爽文#男频** — Qixiang-Animation (10:12:39, 951 views)
+  https://www.youtube.com/watch?v=MtNzcP01_es
+  item: `items/MtNzcP01_es.md`
