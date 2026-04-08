@@ -48,3 +48,18 @@ Full item files belong in `items/`.
 - **MULTISUB💥最新合集💥《全民诡异：开局掌握零元购》第1~175集丨诡异末世降临，陈木携万亿诡币重生，开局化身“天使投资人”，买下各种诡异场景，化身规则制定者！#破晓动漫社** — 破晓动漫社 Dawn Anime Club (14:03:11, 2.0K views)
   https://www.youtube.com/watch?v=WxLPwX7VOAc
   item: `items/WxLPwX7VOAc.md`
+
+## 2026-04-07 — 4 new videos
+
+- **Claude Code Just Leaked… And It's Worse Than You Think** — Exploring ChatGPT and ToxSec (47:20, 4.7K views)
+  https://www.youtube.com/watch?v=bk2rt3SVnc8
+  item: `items/bk2rt3SVnc8.md`
+- **Optimizing AI: Strategy, Collaboration & Real-World Impact | With Lauren Goerz** — Conversation Design Institute (57:29, 2 views)
+  https://www.youtube.com/watch?v=B3NWyXMRr88
+  item: `items/B3NWyXMRr88.md`
+- **AGI Dreams Podcast – April 07, 2026** — Robert E. Lee (19:35, 1 views)
+  https://www.youtube.com/watch?v=KDDEHc8Zoho
+  item: `items/KDDEHc8Zoho.md`
+- **The End of the LLM and What's Next** — 3reate Podcast (1:02:54, 48 views)
+  https://www.youtube.com/watch?v=Rd0SpOb5gMo
+  item: `items/Rd0SpOb5gMo.md`

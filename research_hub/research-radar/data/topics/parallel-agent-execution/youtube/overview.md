@@ -291,3 +291,96 @@ Full item files belong in `items/`.
 - **A HOUSE STORY** — UNIFY Marriage Ministry (2:33:36, 23 views)
   https://www.youtube.com/watch?v=ueY6TBfg8rg
   item: `items/ueY6TBfg8rg.md`
+
+## 2026-04-07 — 30 new videos
+
+- **Dylan Patel (SemiAnalysis): The Datacenter in 2026: CPUs, RL Environments & Agent-Driven Workloads** — Daytona and SemiAnalysis (25:05, 32 views)
+  https://www.youtube.com/watch?v=c88l8daXiv4
+  item: `items/c88l8daXiv4.md`
+- **7 Best Open Source AI Models to Power Your AI Agent in 2026 (Free & Insane)** — Panda Making Money (28:20, 46 views)
+  https://www.youtube.com/watch?v=w41j0BAGn70
+  item: `items/w41j0BAGn70.md`
+- **The SW Engineering Trap Most AI Developers Fall Into | #NEWIT** — GilliLab Logic Salt (38:47, 1 views)
+  https://www.youtube.com/watch?v=1mPtaB1ySxk
+  item: `items/1mPtaB1ySxk.md`
+- **Git Can't Handle AI Agents—Yet** — My Weird Prompts (21:29, 4 views)
+  https://www.youtube.com/watch?v=dR_yI08soQA
+  item: `items/dR_yI08soQA.md`
+- **How to Learn AI Agents - Who to Watch & Where to Start** — Rod Miller (21:55, 1.0K views)
+  https://www.youtube.com/watch?v=z86FLEsfxhk
+  item: `items/z86FLEsfxhk.md`
+- **The Only 6 AI Agent Patterns You’ll Ever Need** — Learn AI with LocalM™ Tuts (9:15, 52 views)
+  https://www.youtube.com/watch?v=IOrkQeqvNbk
+  item: `items/IOrkQeqvNbk.md`
+- **Ptah — One VS Code Extension to Run Every AI Coding Agent | Open Source** — AI Code Hive (8:09, 34 views)
+  https://www.youtube.com/watch?v=vKk4yiydOkw
+  item: `items/vKk4yiydOkw.md`
+- **Why Your AI Agent System Will Fail in Production** — FreddyDubon (8:35, 9 views)
+  https://www.youtube.com/watch?v=N8u--PNAtAU
+  item: `items/N8u--PNAtAU.md`
+- **Claude Code Ultra Plan — 4 AI Agents Plan Together, 3x Faster Than Local | MR_5PM** — 오후다섯씨 (15:43, 60 views)
+  https://www.youtube.com/watch?v=dfQxsDEIMS0
+  item: `items/dfQxsDEIMS0.md`
+- **I Replaced My Entire Creative Design Workflow with AI Agents… This Changed Everything** — AI Money Maniac 🤑 (15:44, 15 views)
+  https://www.youtube.com/watch?v=mB3-aNy9Z8M
+  item: `items/mB3-aNy9Z8M.md`
+- **Multi-Agent Systems & Coordinator Patterns Explained | Claude Certified Architect Ep 02** — Peace Of Code (32:36, 42 views)
+  https://www.youtube.com/watch?v=ejPWvBcc_DU
+  item: `items/ejPWvBcc_DU.md`
+- **AI Agent Told "Find NoSQL Injection" bcrypt Blocks It, So It Hacks the Username | RedAmon NQL-ZBIKC** — The Gradient Path (22:10, 14 views)
+  https://www.youtube.com/watch?v=hfPjpzsITQk
+  item: `items/hfPjpzsITQk.md`
+- **提速50倍的软硬协同验证：FireBridge通过原生x86执行打破仿真瓶颈，实现秒级调试闭环** — Agent 创世纪 (8:12, 5 views)
+  https://www.youtube.com/watch?v=gLMk6-6yYTY
+  item: `items/gLMk6-6yYTY.md`
+- **W1D2 - Coding 1st Spring Boot App -Maven- IDE- Github Copilot- Devtool-Lombok- Slf4j Logback [7Apr]** — Tausief S (4:18:11, 3.6K views)
+  https://www.youtube.com/watch?v=llfckjWQf1o
+  item: `items/llfckjWQf1o.md`
+- **Beyond Vibe Coding: Zero Vector and the Disruption of Service Design with Erika Flowers** — Disruptor Confessions (59:28, 9 views)
+  https://www.youtube.com/watch?v=gkWQCEjl7y8
+  item: `items/gkWQCEjl7y8.md`
+- **C++ raw coding, chatting & ranting about AI** — Mitko Nikov (4:32:26, 262 views)
+  https://www.youtube.com/watch?v=HwE3svIrBPY
+  item: `items/HwE3svIrBPY.md`
+- **Is the Era of Writing Applications by Typing Prompts Over? (Zenflow Review)** — Ömer Göçmen | Yapay Zeka & Otomasyon (13:44, 273 views)
+  https://www.youtube.com/watch?v=XX5L1OkAKtY
+  item: `items/XX5L1OkAKtY.md`
+- **Java Application Support Engineer (Part 2/2): How to Answer a “Bad Decision” Interview Question !!** — Ace Interviews (6:05:39, 2 views)
+  https://www.youtube.com/watch?v=c9RDnlQgyjI
+  item: `items/c9RDnlQgyjI.md`
+- **窮小子為救美女總裁挺身而出反被混混羞辱，殊不知他有掌控時間的能力！彈指間所有人便無法行動，輕鬆解決幾百人擄獲美女總裁芳心！ #掌控時間** — 林深短剧NO1CoolMovie (1:38:06, 5.1K views)
+  https://www.youtube.com/watch?v=45LMvCfkHTc
+  item: `items/45LMvCfkHTc.md`
+- **THE COST OF IGNORING | Your Subconscious Mind | Full Audiobook** — The Sovereign Path (2:46:41, 2 views)
+  https://www.youtube.com/watch?v=79CTunR7mRc
+  item: `items/79CTunR7mRc.md`
+- **Episode 24 with Big A: New Horizons, High-Tech Torquing, and the Local 502 Legacy** — UAsk502 (23:43, 23 views)
+  https://www.youtube.com/watch?v=q2HO-_ENMa4
+  item: `items/q2HO-_ENMa4.md`
+- **I Made 5 AI Agents Work at the Same Time — Claude Code Multi-Agent** — Rick Ren | Builds AI (7:33, 4 views)
+  https://www.youtube.com/watch?v=SaOVvcNZ2p4
+  item: `items/SaOVvcNZ2p4.md`
+- **Lunaris Demo: Multi-Agent Hotel Automation with Auth0 & OpenClaw** — Arisha (3:14, 2 views)
+  https://www.youtube.com/watch?v=oBnVjZJq6UM
+  item: `items/oBnVjZJq6UM.md`
+- **Hermes AI Agent can Automate EVERYTHING for FREE! 😲#aiagents #hermes #automation** — Affiliate Marketing With Dewan (3:55, 4 views)
+  https://www.youtube.com/watch?v=LpUsq3LEgGQ
+  item: `items/LpUsq3LEgGQ.md`
+- **Agent Can’t Do That | Execution-Time Authorization for AI Agents (Auth0)** — Code & Cortex (2:31, 3 views)
+  https://www.youtube.com/watch?v=C6rvLo8j3BE
+  item: `items/C6rvLo8j3BE.md`
+- **AI Agent GenAI Learning (The "How")** — AI_Learning (6:09, 2 views)
+  https://www.youtube.com/watch?v=xvxj2d1k_UU
+  item: `items/xvxj2d1k_UU.md`
+- **What is MagOneAI? Enterprise AI Agents — Build, Deploy, Manage & Govern on Your Infrastructure** — Magure (1:15, 2 views)
+  https://www.youtube.com/watch?v=gGm74K1Xe0k
+  item: `items/gGm74K1Xe0k.md`
+- **How I Manage 45+ Projects with AI Agents Using Festival Methodology** — LKRBuilds (42:04, 3 views)
+  https://www.youtube.com/watch?v=v7LhrRRG_RU
+  item: `items/v7LhrRRG_RU.md`
+- **地頭蛇竟敢強挖我女兒眼角膜？南域龍帥抗命歸來，十萬大軍瞬間封鎖江北，看戰神如何霸氣反擊，用實力守護妻女！《無銜元帥》#短劇 #一字並肩王 #龍帥 #戰神歸來 #護妻狂魔 #逆襲 #復仇** — 阿妹追剧 (2:20:12, 92 views)
+  https://www.youtube.com/watch?v=R0aqrjLKm3k
+  item: `items/R0aqrjLKm3k.md`
+- **Studies in Literature by John Morley - Full Audiobook** — Supreme Audiobooks (6:46:26, 27 views)
+  https://www.youtube.com/watch?v=SOiGf4X2LCE
+  item: `items/SOiGf4X2LCE.md`

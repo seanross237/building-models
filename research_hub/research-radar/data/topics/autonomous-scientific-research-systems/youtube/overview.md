@@ -375,3 +375,93 @@ Full item files belong in `items/`.
 - **Symposium—Iba Ndiaye: Between Latitude and Longitude** — The Met (4:18:06, 126 views)
   https://www.youtube.com/watch?v=nfbGoajjdVI
   item: `items/nfbGoajjdVI.md`
+
+## 2026-04-07 — 29 new videos
+
+- **Exploring Auto-Research Infrastructure with Francesco Pappone from Paradigma** — Deep Learning with Yacine (1:58:19, 224 views)
+  https://www.youtube.com/watch?v=qY8C-AhKb44
+  item: `items/qY8C-AhKb44.md`
+- **AI-Powered Labs: Lila Sciences Transform Drug Discovery** — HealthTech Explorers (3:16, 7 views)
+  https://www.youtube.com/watch?v=Sm2lbPktf0Y
+  item: `items/Sm2lbPktf0Y.md`
+- **Zhijing Jin | Emergent AI safety risks in multi-agent LLMs** — Schwartz Reisman Institute (1:26:46, 5 views)
+  https://www.youtube.com/watch?v=1MxpYJJHeik
+  item: `items/1MxpYJJHeik.md`
+- **Resurrecting Humanity in the Age of AGI** — Mindplex (1:21:32, 168 views)
+  https://www.youtube.com/watch?v=XYa3byqTkX8
+  item: `items/XYa3byqTkX8.md`
+- **Your Brain Wasn't Built for This: The Amygdala Problem** — Tom Talks Mind (25:37, 8 views)
+  https://www.youtube.com/watch?v=tTLalbBTXvM
+  item: `items/tTLalbBTXvM.md`
+- **From DARPA RACER to the Battlefield** — The Road to Autonomy (41:12, 16 views)
+  https://www.youtube.com/watch?v=20P_KMcXcm4
+  item: `items/20P_KMcXcm4.md`
+- **15 Machines That Defy Reality!** — BIG MOVE (12:47, 156 views)
+  https://www.youtube.com/watch?v=AOoSrurZMqw
+  item: `items/AOoSrurZMqw.md`
+- **Clancy Wilmott - Adventures at the Limits of Spatial Data from the Pixel to the Pacific** — UC Berkeley EECS (52:42, 26 views)
+  https://www.youtube.com/watch?v=obRb8huq7pI
+  item: `items/obRb8huq7pI.md`
+- **🇨🇴💥 Colombia's Next VP Just Said What No Politician Dares To** — Colombia One (48:13, 14 views)
+  https://www.youtube.com/watch?v=3m0fuu99Qec
+  item: `items/3m0fuu99Qec.md`
+- **From Models to Materials – Generative, Theoretical, and Experimental AI in Discovery** — BIDMaP (50:18, 21 views)
+  https://www.youtube.com/watch?v=tSqGyBVZQ7U
+  item: `items/tSqGyBVZQ7U.md`
+- **Why the Modern World Is at War with Human Nature - Carl Trueman and Michael Horton** — Sola Media (58:07, 873 views)
+  https://www.youtube.com/watch?v=7VfUtOD0RU4
+  item: `items/7VfUtOD0RU4.md`
+- **You Can Now Give Orders to AI** — Talk Tender (13:03, 2 views)
+  https://www.youtube.com/watch?v=x7wEnM91Wwg
+  item: `items/x7wEnM91Wwg.md`
+- **Is Science Broken? Fraud, Data Tweaking, and the Credibility Crisis** — Breaking Math (38:52, 16 views)
+  https://www.youtube.com/watch?v=DqJNkRznN5Q
+  item: `items/DqJNkRznN5Q.md`
+- **The Evil Digital Twins of AI Natives | Dr. Ben D. Sawyer | CSI #88** — Cognitive Security Institute (54:16, 36 views)
+  https://www.youtube.com/watch?v=OMlCxTSxgM4
+  item: `items/OMlCxTSxgM4.md`
+- **10 Ancient Roman Survival Tricks So Advanced Scientists Now Call Them Genius** — Ancient Rome Comes to Life (18:08, 10 views)
+  https://www.youtube.com/watch?v=SXwULRMeMhg
+  item: `items/SXwULRMeMhg.md`
+- **The best global health ideas we’ve heard on the show (from 17 experts)** — 80,000 Hours (4:06:51, 61 views)
+  https://www.youtube.com/watch?v=HN-vP88rDEE
+  item: `items/HN-vP88rDEE.md`
+- **How Uploaded Fly Brains And Space Combat Are Secretly Running Reality** — Vocal Technologist (18:42, new)
+  https://www.youtube.com/watch?v=BGsaEDfHnYg
+  item: `items/BGsaEDfHnYg.md`
+- **Project 1: Project Description: Lecture 2 by Rahul Roy, Hideki Tanemura and Masato Takei** — International Centre for Theoretical Sciences (1:41:56, 176 views)
+  https://www.youtube.com/watch?v=hu4Ua4iEVHA
+  item: `items/hu4Ua4iEVHA.md`
+- **The Moon Demanded More From Artemis Than Apollo Ever Gave** — Space Science Documentary (1:53:18, 89 views)
+  https://www.youtube.com/watch?v=MdRsJF_gyuE
+  item: `items/MdRsJF_gyuE.md`
+- **Daily AI News: AI Shutdown Failures, $5B Scams & Agentic AI. Why You Can’t Turn AI Off Anymore. #ai** — Useful AI Hacks (32:00, 5 views)
+  https://www.youtube.com/watch?v=eXcAaLdu8bU
+  item: `items/eXcAaLdu8bU.md`
+- **Can Alberta Protect the Environment Better on Its Own? | Reading The Value of Freedom** — Talking To Albertans (28:34, 770 views)
+  https://www.youtube.com/watch?v=fJlEPg8HyN4
+  item: `items/fJlEPg8HyN4.md`
+- **Episode 21: The Science of Reading, Straight from the Source Part 1 with Dr  Reid Lyon** — Grit & Grace (51:14, 6 views)
+  https://www.youtube.com/watch?v=O6qLI_HREJo
+  item: `items/O6qLI_HREJo.md`
+- **Artemis II communication blackout | CTV News Montreal at Five for Monday, April 6, 2026** — CTV News (22:13, 387 views)
+  https://www.youtube.com/watch?v=0HotYZ5nPFk
+  item: `items/0HotYZ5nPFk.md`
+- **B.E. COMPUTER SCIENCE AND BUSINESS SYSTEM  படிக்கணுமா?அதுக்கு முன்னாடி இத தெரிஞ்சுக்குங்க.** — Kalvishakthi Education News (5:28, 2 views)
+  https://www.youtube.com/watch?v=Nwp8jbYtDDc
+  item: `items/Nwp8jbYtDDc.md`
+- **Artemis II rounds the moon | CTV News Montreal at Six for Monday, April 6, 2026** — CTV News (44:25, 376 views)
+  https://www.youtube.com/watch?v=Ud4X0cTBVnI
+  item: `items/Ud4X0cTBVnI.md`
+- **5 Key Secrets of Dark Psychology Used to Control Your Mind** — Benno (5:30, 1 views)
+  https://www.youtube.com/watch?v=L_2CW43sSI0
+  item: `items/L_2CW43sSI0.md`
+- **The Real Reason Women Get Worse Healthcare (And How To Fit It Now) w/ Priya Bathija** — Dr. Somi Javaid (57:45, 7 views)
+  https://www.youtube.com/watch?v=KcHOKvZtMpI
+  item: `items/KcHOKvZtMpI.md`
+- **Most Popular AI Languages in 2026 (Developers Must Know)** — AI with Ruchi (6:07, 11 views)
+  https://www.youtube.com/watch?v=q0AGAlhoLPM
+  item: `items/q0AGAlhoLPM.md`
+- **What If Earth Had a Civilization Before Humans? | The Silurian Hypothesis Mystery** — AXOR – Galactic Observatory (2:17:30, 1 views)
+  https://www.youtube.com/watch?v=irBrj41N98c
+  item: `items/irBrj41N98c.md`

@@ -375,3 +375,96 @@ Full item files belong in `items/`.
 - **What if social media didn’t make you miserable | BBC Global** — BBC Global (11:16, 1.3K views)
   https://www.youtube.com/watch?v=Meu3wi5UVWk
   item: `items/Meu3wi5UVWk.md`
+
+## 2026-04-07 — 30 new videos
+
+- **Hermes Agent The 24/7 Self-Evolving AI Agent!** — WorldofAI (9:15, 9.1K views)
+  https://www.youtube.com/watch?v=cu2fgknmemA
+  item: `items/cu2fgknmemA.md`
+- **Bash is bad for agents** — Theo - t3․gg (32:23, 39.2K views)
+  https://www.youtube.com/watch?v=TilDSWeiAlw
+  item: `items/TilDSWeiAlw.md`
+- **NEW Google AI Agent DESTROYS OpenClaw?** — Julian Goldie SEO (8:07, 10.6K views)
+  https://www.youtube.com/watch?v=umjdfyLkIjg
+  item: `items/umjdfyLkIjg.md`
+- **Zanie Blue Do developer tools matter to agents? - PyAI Conf 2026** — Pydantic and Prefect (21:50, 65 views)
+  https://www.youtube.com/watch?v=DuCwaXTHtZo
+  item: `items/DuCwaXTHtZo.md`
+- **He Makes $60,000/Month With Voice AI Agents (Full Breakdown)** — Zubair Trabzada | AI Workshop (34:31, 283 views)
+  https://www.youtube.com/watch?v=IXV9wln6j54
+  item: `items/IXV9wln6j54.md`
+- **Somatic Healing Explained - How to Release Stored Trauma with Liz Tenuto** — A Really Good Cry with Radhi Devlukia (37:33, 626 views)
+  https://www.youtube.com/watch?v=suh-6bh_umI
+  item: `items/suh-6bh_umI.md`
+- **NEW Liquid AI AGENT is INSANE! 🤯** — Julian Goldie SEO (8:01, 2.3K views)
+  https://www.youtube.com/watch?v=VXUEfTHR7wQ
+  item: `items/VXUEfTHR7wQ.md`
+- **How to STAY SAFE as a real estate agent!!** — Frank Driscoll (10:05, 6 views)
+  https://www.youtube.com/watch?v=7MrYHNibMNI
+  item: `items/7MrYHNibMNI.md`
+- **Everyone is Deploying AI Agents. Almost Nobody Knows What They're Doing** — Salt Security (52:35, 54 views)
+  https://www.youtube.com/watch?v=YCXu-m2bA7k
+  item: `items/YCXu-m2bA7k.md`
+- **3 AI Agents That Actually Replaced Human Jobs | E2272** — This Week in Startups (1:18:26, 5.5K views)
+  https://www.youtube.com/watch?v=g5LxEPGLDsc
+  item: `items/g5LxEPGLDsc.md`
+- **Scaling AI Without Losing Control** — JetBrains (43:40, 462 views)
+  https://www.youtube.com/watch?v=TzhEcdHa-g4
+  item: `items/TzhEcdHa-g4.md`
+- **OpenClaw 4.5 Just Changed AI Agents Forever...** — AI News Today | Julian Goldie Podcast (8:44, 2.0K views)
+  https://www.youtube.com/watch?v=AvMGrfruAJM
+  item: `items/AvMGrfruAJM.md`
+- **The SW Engineering Trap Most AI Developers Fall Into | #NEWIT** — GilliLab Logic Salt (38:47, 1 views)
+  https://www.youtube.com/watch?v=1mPtaB1ySxk
+  item: `items/1mPtaB1ySxk.md`
+- **How to Use Agentic AI for Business with Gemini Enterprise | Lesson 6** — Google Workspace (8:32, 954 views)
+  https://www.youtube.com/watch?v=uDr0xdA_E_A
+  item: `items/uDr0xdA_E_A.md`
+- **Last Window For Peace Shut? | America To Launch Final Assault On Iran Tonight? | Akash Banerjee** — The Deshbhakt (17:02, 311.7K views)
+  https://www.youtube.com/watch?v=-nUjIMLLUo0
+  item: `items/-nUjIMLLUo0.md`
+- **Using AI agents for the tasks that you never have time for** — Vincent Pradeilles (20:25, 203 views)
+  https://www.youtube.com/watch?v=wWhcM_zBPLI
+  item: `items/wWhcM_zBPLI.md`
+- **AI Agents with OpenAI Agents SDK: Build Real-World AI Agents** — AppMillers by Elshad Karimov (1:08:45, 1 views)
+  https://www.youtube.com/watch?v=eisgVlEsmCM
+  item: `items/eisgVlEsmCM.md`
+- **Don’t Miss This Line, or Recovery Agents Could Visit Your Home | Recovery से बचना है? ये ज़रूर कहें** — Recovery Agent Ki Bajao (21:51, 726 views)
+  https://www.youtube.com/watch?v=EpMct8sABOo
+  item: `items/EpMct8sABOo.md`
+- **The Death of OpenClaw? NVIDIA’s Blueprint for Secure AI Agents** — Dubov Software (8:04, 2 views)
+  https://www.youtube.com/watch?v=TqUza-YopDo
+  item: `items/TqUza-YopDo.md`
+- **Docker AI, what’s new with MCP, Agents, Sandboxes, and more** — Bret Fisher (2:23:10, 21 views)
+  https://www.youtube.com/watch?v=dTF3b36Bq6w
+  item: `items/dTF3b36Bq6w.md`
+- **Claude vs ChatGPT For Real Estate Agents - Which One ACTUALLY Wins** — Dustin Brohm - Massive Agent (9:57, 29 views)
+  https://www.youtube.com/watch?v=l3SXW-2vR4U
+  item: `items/l3SXW-2vR4U.md`
+- **I Know What All the Tech Bros Want from Trump | The Daily Beast Podcast** — The Daily Beast (41:58, 27.4K views)
+  https://www.youtube.com/watch?v=fWIgvHCX7Vo
+  item: `items/fWIgvHCX7Vo.md`
+- **AI Coding Agents** — Techs Wala (2:41, new)
+  https://www.youtube.com/watch?v=Due-_Nxi58Q
+  item: `items/Due-_Nxi58Q.md`
+- **Big Change! Anthropic Ends Claude Support for Third-Party Tools Explained** — Cyberverse Explored (10:47, 3 views)
+  https://www.youtube.com/watch?v=-rqgNc5aIBw
+  item: `items/-rqgNc5aIBw.md`
+- **18年前被掉包的真千金回來啦！假千金四處設局等她中招，殊不知她可是頂尖特工，綠茶伎倆一眼看穿，反手把假千金虐到哭著喊媽，憑實力成為全家最崇拜的存在#爽文** — 追劇鴨 (2:15:26, 34.4K views)
+  https://www.youtube.com/watch?v=HQxFSDHhtlo
+  item: `items/HQxFSDHhtlo.md`
+- **Ordinary girl kindly gave stranger water, unaware he was billionaire, he fell in love at first sight** — Nana Drama (2:33:25, 34.8K views)
+  https://www.youtube.com/watch?v=p8lmchy_G4k
+  item: `items/p8lmchy_G4k.md`
+- **Bitcoin For Freedom:  When Digital Money Becomes a Tool for Lifeline | Anaïse Kanimba** — Bitcoin Chiang Mai (15:16, 4 views)
+  https://www.youtube.com/watch?v=Il_9t_ReOtQ
+  item: `items/Il_9t_ReOtQ.md`
+- **Anthropic Tops $30 Billion Run Rate, Seals Broadcom Deal** — Bloomberg Podcasts (5:30, 298 views)
+  https://www.youtube.com/watch?v=s2-qBQ0615o
+  item: `items/s2-qBQ0615o.md`
+- **Would you let Gemini tell you where to go? | The Vergecast** — The Verge (1:16:52, 3.2K views)
+  https://www.youtube.com/watch?v=9GyxhZ3MLW0
+  item: `items/9GyxhZ3MLW0.md`
+- **Claude Code Just Leaked… And It's Worse Than You Think** — Exploring ChatGPT and ToxSec (47:20, 4.7K views)
+  https://www.youtube.com/watch?v=bk2rt3SVnc8
+  item: `items/bk2rt3SVnc8.md`

@@ -267,3 +267,66 @@ Full item files belong in `items/`.
 - **Gabriela Machado☑️: The Explosive Rise of a Latin American Modeling and Social Media Sensation!** — Gorgeous Models (16:02, 494 views)
   https://www.youtube.com/watch?v=d82UOTffWcI
   item: `items/d82UOTffWcI.md`
+
+## 2026-04-07 — 20 new videos
+
+- **MULTISUB📢新番上线《号召始皇帝争天下》第2季丨外卖员穿越秦朝被始皇押杀！误拨110打通跨时空通话，联动未来送良种献妙计，助嬴政平奸佞改大秦国运！#漫剧 #破晓动漫社** — 破晓动漫社 Dawn Anime Club (2:21:24, 2.1K views)
+  https://www.youtube.com/watch?v=q6yLviGvmIs
+  item: `items/q6yLviGvmIs.md`
+- **ENG SUB 🔥【全網首發】《末世老公把唯一血清送白月光》末世觉醒！继承逆天科研遗产，手撕渣男白月光，开启最强方舟碾压！#热血#末世#漫剧#末世生存#赛博剧场** — 赛博剧场 (1:02:57, 478 views)
+  https://www.youtube.com/watch?v=_cZHzcKs4Z0
+  item: `items/_cZHzcKs4Z0.md`
+- **The history and future of AI at Google, with Sundar Pichai** — Stripe (1:09:33, 10.7K views)
+  https://www.youtube.com/watch?v=bTA8sjgvA4c
+  item: `items/bTA8sjgvA4c.md`
+- **His last bow by Arthur Conan Doyle | Sherlock Holmes Final Cases & Spy Mystery 🔎🕵️‍♂️📖🎧** — Golden Fiction Tales (7:15:07, 18 views)
+  https://www.youtube.com/watch?v=NnkQHYFMH-w
+  item: `items/NnkQHYFMH-w.md`
+- **【Multi sub】Reborn Poor? From Zero to Trillionaire EP 1-138 #anime #animation #donghua** — Quartic element Anime (9:30:34, 690 views)
+  https://www.youtube.com/watch?v=im9UQH3C8Bk
+  item: `items/im9UQH3C8Bk.md`
+- **High Performers Burn Out Faster. Thailand's Wim Hof Advanced Instructor Explains Why.** — Made it in Thailand 🇹🇭 (1:30:57, 63 views)
+  https://www.youtube.com/watch?v=T-mu0aAnprM
+  item: `items/T-mu0aAnprM.md`
+- **The Moon Demanded More From Artemis Than Apollo Ever Gave** — Space Science Documentary (1:53:18, 89 views)
+  https://www.youtube.com/watch?v=MdRsJF_gyuE
+  item: `items/MdRsJF_gyuE.md`
+- **He Looks Like A Jobless Loser, But His Passive Skills Have No Cooldown.** — Nice Recap (16:04:10, 218 views)
+  https://www.youtube.com/watch?v=5b-XWaGpHHE
+  item: `items/5b-XWaGpHHE.md`
+- **She Swapped a Child and Paid with Her Life… Turkey’s Most Shocking Case | True crime documentary** — Creepy WEG (1:17:40, 686 views)
+  https://www.youtube.com/watch?v=c9FUr7oLacE
+  item: `items/c9FUr7oLacE.md`
+- **The best global health ideas we’ve heard on the show (from 17 experts)** — 80,000 Hours (4:06:51, 61 views)
+  https://www.youtube.com/watch?v=HN-vP88rDEE
+  item: `items/HN-vP88rDEE.md`
+- **【Multi Sub】Ancient Ten Calamities: My Beast Girls Harem EP 1-141#anime #animation** — Quartic element Anime (8:53:47, 168 views)
+  https://www.youtube.com/watch?v=FQKYvHq10k0
+  item: `items/FQKYvHq10k0.md`
+- **Multi sub（完结新番）💥💥💥当满级修仙大佬重返现代：不装逼、不打脸，只为守护最初的温暖！看叶枫如何搭建跨界平台，谱写治愈传奇！《离谱！在修仙界觉醒商界大佬系统？》#次元动漫  #破界 #動漫** — 破界动漫局 Anime Club (2:09:57, 1.2K views)
+  https://www.youtube.com/watch?v=TeRCFuIwsmc
+  item: `items/TeRCFuIwsmc.md`
+- **The Cash Flow MRI: Diagnose & Cure Your Contractor Cash Problems** — Contractor Success Network | Carpenter CPAs and 2 more (23:25, 29 views)
+  https://www.youtube.com/watch?v=LLMU5WjdQhs
+  item: `items/LLMU5WjdQhs.md`
+- **The End of the LLM and What's Next** — 3reate Podcast (1:02:54, 48 views)
+  https://www.youtube.com/watch?v=Rd0SpOb5gMo
+  item: `items/Rd0SpOb5gMo.md`
+- **Giant Beast World: He Activated a 10,000x Amplification System and Built a Powerful Mechanical Army!** — Panda Fantasy Chronicles (27:38:52, 587 views)
+  https://www.youtube.com/watch?v=YVU3yHhBtWQ
+  item: `items/YVU3yHhBtWQ.md`
+- **04/06/2026 10:02 NYCC 250 8 3 260406 100215** — NYC Council Videos (unofficial) (3:19:08, 2 views)
+  https://www.youtube.com/watch?v=k09Bu2IAeus
+  item: `items/k09Bu2IAeus.md`
+- **[Manufacturer] Every Detail of Sourcing Toilet Seats for Pro Buyers** — Manufacturer (2:17:57, 4 views)
+  https://www.youtube.com/watch?v=_ykuCk-Ku1k
+  item: `items/_ykuCk-Ku1k.md`
+- **#stellaris  | UNITED CONGLOMERATES OF EARTH | Episode 017 | A Spark Before the Fire** — Operator 214 Merchant Marine [VTuber] (2:00:41, 1 views)
+  https://www.youtube.com/watch?v=zhrth81SDPM
+  item: `items/zhrth81SDPM.md`
+- **Commitment to Community | Dimitrie Stefanescu, CEO @ Speckle** — Foundamental University (53:20, 15 views)
+  https://www.youtube.com/watch?v=0mh393-IkGU
+  item: `items/0mh393-IkGU.md`
+- **04/06/2026 13:11 NYCC 250 8 1 260406 131112** — NYC Council Videos (unofficial) (1:49:59, 1 views)
+  https://www.youtube.com/watch?v=3WFviKm2AZ4
+  item: `items/3WFviKm2AZ4.md`

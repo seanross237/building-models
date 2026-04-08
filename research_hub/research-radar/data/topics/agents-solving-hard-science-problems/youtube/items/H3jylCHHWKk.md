@@ -1,0 +1,26 @@
+# Board of Supervisors - 3/24/26
+
+- Topic: `agents solving hard science problems`
+- Priority: `super_relevant`
+- Source context: `eywa, atlas`
+- Type: `youtube`
+- Video ID: `H3jylCHHWKk`
+- Channel: `County of Sacramento`
+- Duration: `4:26:53`
+- Views: `23 views`
+- Upload date: `NA`
+- URL: https://www.youtube.com/watch?v=H3jylCHHWKk
+- Collected at UTC: `2026-04-07T18:15:18Z`
+- Transcript status: `pending`
+
+## Summary
+
+Not analyzed yet.
+
+## Transcript
+
+Transcript not collected yet.
+
+## Notes
+
+- Freshly collected by Research Radar.

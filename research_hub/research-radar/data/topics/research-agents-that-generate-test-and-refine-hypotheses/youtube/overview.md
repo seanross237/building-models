@@ -66,3 +66,18 @@ Full item files belong in `items/`.
 - **MULTISUB💥最新合集💥《全民诡异：开局掌握零元购》第1~175集丨诡异末世降临，陈木携万亿诡币重生，开局化身“天使投资人”，买下各种诡异场景，化身规则制定者！#破晓动漫社** — 破晓动漫社 Dawn Anime Club (14:03:11, 2.0K views)
   https://www.youtube.com/watch?v=WxLPwX7VOAc
   item: `items/WxLPwX7VOAc.md`
+
+## 2026-04-07 — 4 new videos
+
+- **The Vela Incident: Why the US Covered Up a Nuclear Blast** — Obscure Science Files (1:12:01, new)
+  https://www.youtube.com/watch?v=Oj3_sVcHlvk
+  item: `items/Oj3_sVcHlvk.md`
+- **The best global health ideas we’ve heard on the show (from 17 experts)** — 80,000 Hours (4:06:51, 61 views)
+  https://www.youtube.com/watch?v=HN-vP88rDEE
+  item: `items/HN-vP88rDEE.md`
+- **🔥Parker's prediction actually "matched the celestial phenomena"! This time it's not a coincidence...** — HIBY新聞 (2:10:29, 4.4K views)
+  https://www.youtube.com/watch?v=Tx7U9xm9Soc
+  item: `items/Tx7U9xm9Soc.md`
+- **Man’s Search for Meaning – Viktor E. Frankl (Full Book Summary Explained)** — The Reading Pages (1:22:35, 13 views)
+  https://www.youtube.com/watch?v=OAue-E7ATzk
+  item: `items/OAue-E7ATzk.md`

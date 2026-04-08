@@ -375,3 +375,93 @@ Full item files belong in `items/`.
 - **Claude AI Explained: Friendly, Fast, and Incredibly Smart  #claude** — Topictrick (12:12, 25 views)
   https://www.youtube.com/watch?v=MuLtPyWWB3w
   item: `items/MuLtPyWWB3w.md`
+
+## 2026-04-07 — 29 new videos
+
+- **The SW Engineering Trap Most AI Developers Fall Into | #NEWIT** — GilliLab Logic Salt (38:47, 1 views)
+  https://www.youtube.com/watch?v=1mPtaB1ySxk
+  item: `items/1mPtaB1ySxk.md`
+- **Artemis II rounds the moon | CTV News Montreal at Six for Monday, April 6, 2026** — CTV News (44:25, 376 views)
+  https://www.youtube.com/watch?v=Ud4X0cTBVnI
+  item: `items/Ud4X0cTBVnI.md`
+- **OpenAI vs Anthropic: The War That's About to Shock Everyone** — Limitless Podcast (20:21, 2.1K views)
+  https://www.youtube.com/watch?v=7LfZl0PzUvw
+  item: `items/7LfZl0PzUvw.md`
+- **The Multipolar World Order - Where it's 1984 every day!** — corbettreport (52:11, 13.3K views)
+  https://www.youtube.com/watch?v=EFfIlpEgKdo
+  item: `items/EFfIlpEgKdo.md`
+- **The “MacBook Air Killer” Just Got Better… (2026 ASUS Zenbook A14)** — Jon Valiagas (11:56, 284 views)
+  https://www.youtube.com/watch?v=05BCfCEavUQ
+  item: `items/05BCfCEavUQ.md`
+- **How Airbnb & Lonely Planet Changed Travel Forever | Ahead of Their Time** — Show Me the World (47:48, 359 views)
+  https://www.youtube.com/watch?v=TdRCb29eIJw
+  item: `items/TdRCb29eIJw.md`
+- **THEY "PROGRAMMED" US FOR ADDICTION!** — George Buhnici (45:15, 3.5K views)
+  https://www.youtube.com/watch?v=7WQ_4eNKpUU
+  item: `items/7WQ_4eNKpUU.md`
+- **Iron Man vs Iron Giant: The AI Agent Strategy Every Business Leader Needs** — Celine Xu (6:54, 2 views)
+  https://www.youtube.com/watch?v=CWBHONUr4gU
+  item: `items/CWBHONUr4gU.md`
+- **Claude Code Just Leaked… And It's Worse Than You Think** — Exploring ChatGPT and ToxSec (47:20, 4.7K views)
+  https://www.youtube.com/watch?v=bk2rt3SVnc8
+  item: `items/bk2rt3SVnc8.md`
+- **Building Bulletproof Systems: Warren Parad on Software Engineering for High Availability** — Overcommitted (49:54, 3 views)
+  https://www.youtube.com/watch?v=-l4py6_6SGk
+  item: `items/-l4py6_6SGk.md`
+- **Why Are Businesses Paying $750–$1,200 Month For This Simple AI** — GHL Wizard (16:31, 185 views)
+  https://www.youtube.com/watch?v=hf7ypenBgy0
+  item: `items/hf7ypenBgy0.md`
+- **AI Orchestration: The Power of Building Agentic Workflows** — Web3 Wise Guys (7:19, 45 views)
+  https://www.youtube.com/watch?v=NcBkN0WFtNk
+  item: `items/NcBkN0WFtNk.md`
+- **Docker AI, what’s new with MCP, Agents, Sandboxes, and more** — Bret Fisher (2:23:10, 20 views)
+  https://www.youtube.com/watch?v=dTF3b36Bq6w
+  item: `items/dTF3b36Bq6w.md`
+- **The Close for Monday, April 6, 2026** — BNN Bloomberg (1:09:34, 21 views)
+  https://www.youtube.com/watch?v=a6jaFXvNQRE
+  item: `items/a6jaFXvNQRE.md`
+- **Trump Amps Up Threats as Market Hits Standstill | The Close 4/6/2026** — Bloomberg Television (1:30:03, 6.4K views)
+  https://www.youtube.com/watch?v=6Wua_toUiQw
+  item: `items/6Wua_toUiQw.md`
+- **打造 AI 的高能效“插件大脑”：SkillReducer 引入关注点分离原则，通过渐进式呈现重构技能调用的极简主义范式** — Agent 创世纪 (9:09, 8 views)
+  https://www.youtube.com/watch?v=GPwXq2zu2nA
+  item: `items/GPwXq2zu2nA.md`
+- **Savannah STR Caps: How the 20% Ward Rule Works** — Julie Gates | Savannah Real Estate Investing (3:59, 7 views)
+  https://www.youtube.com/watch?v=FQi-8daVNB0
+  item: `items/FQi-8daVNB0.md`
+- **This 55lb Chow Chow REFUSES to Let Her Sleep Alone—What He Does at 3AM Shocked Everyone** — Loyal Dog Hero (8:05, 9 views)
+  https://www.youtube.com/watch?v=fv4y02V06m8
+  item: `items/fv4y02V06m8.md`
+- **From Google Guaranteed to Google Verified: How to Build Trust and Win More Leads in 2026** — Scorpion (45:20, 187 views)
+  https://www.youtube.com/watch?v=hHvAD_q8HeM
+  item: `items/hHvAD_q8HeM.md`
+- **The best global health ideas we’ve heard on the show (from 17 experts)** — 80,000 Hours (4:06:51, 61 views)
+  https://www.youtube.com/watch?v=HN-vP88rDEE
+  item: `items/HN-vP88rDEE.md`
+- **#278 - RSAC Takeaways: AI SOC, Agent Security, and What Cyber Marketing Gets Wrong** — CISO Tradecraft® (45:11, 75 views)
+  https://www.youtube.com/watch?v=6wjqTP4XDHc
+  item: `items/6wjqTP4XDHc.md`
+- **Why More Leads Aren’t Always the Answer for Your Agency | Ep 86** — HighLevel Experience Podcast (1:02:39, 4 views)
+  https://www.youtube.com/watch?v=-wfvmmEQbh8
+  item: `items/-wfvmmEQbh8.md`
+- **Brainstorm: AI Crossing the Disciplines with Ellie Pavlick and Junehyuk Jung - hosted by the JNBC** — Brown University (56:00, 20 views)
+  https://www.youtube.com/watch?v=kUhxbE1LJ0c
+  item: `items/kUhxbE1LJ0c.md`
+- **A Pro Auhor Reveals Ten Essential Scrivener Folders** — Bradley P. Beaulieu — A Novel Approach (34:14, 69 views)
+  https://www.youtube.com/watch?v=4wW6qugREzE
+  item: `items/4wW6qugREzE.md`
+- **Scaling Energy for AI Demand | 2026 From Billions to Trillions Summit** — Nicholas Institute (44:39, 6 views)
+  https://www.youtube.com/watch?v=4kyb4WERLNE
+  item: `items/4kyb4WERLNE.md`
+- **Optimizing AI: Strategy, Collaboration & Real-World Impact | With Lauren Goerz** — Conversation Design Institute (57:29, 2 views)
+  https://www.youtube.com/watch?v=B3NWyXMRr88
+  item: `items/B3NWyXMRr88.md`
+- **Safety concerns over rubble from hotel fire | CTV News Edmonton at Six for April 6, 2026** — CTV News (43:43, 945 views)
+  https://www.youtube.com/watch?v=hcGgOobzCuk
+  item: `items/hcGgOobzCuk.md`
+- **Gemini Enterprise Tutorial - Build an Automated Employee Onboarding Agent** — Cloudasta (9:33, 11 views)
+  https://www.youtube.com/watch?v=HPZyX8yrOqU
+  item: `items/HPZyX8yrOqU.md`
+- **Episode 3 - The 4 pillars of AI GTM Transformation - Abe Smith** — The AI-Enabled GTM (16:49, 5 views)
+  https://www.youtube.com/watch?v=tr5wyimZYws
+  item: `items/tr5wyimZYws.md`

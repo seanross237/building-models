@@ -120,3 +120,30 @@ Full item files belong in `items/`.
 - **💥【新番上线】重生回90年代，携前世记忆纵横商海，逆袭登顶世界首富！《重生九零之野性时代 1~2季》全集Multi SUB #热血 #漫剧 #动漫魔女** — 动漫魔女 (4:38:19, 1.7K views)
   https://www.youtube.com/watch?v=i-x5pHvEMOQ
   item: `items/i-x5pHvEMOQ.md`
+
+## 2026-04-07 — 8 new videos
+
+- **The history and future of AI at Google, with Sundar Pichai** — Stripe (1:09:33, 10.7K views)
+  https://www.youtube.com/watch?v=bTA8sjgvA4c
+  item: `items/bTA8sjgvA4c.md`
+- **Giant Beast World: He Activated a 10,000x Amplification System and Built a Powerful Mechanical Army!** — Panda Fantasy Chronicles (27:38:52, 587 views)
+  https://www.youtube.com/watch?v=YVU3yHhBtWQ
+  item: `items/YVU3yHhBtWQ.md`
+- **🔥After Traveling 2000 Years Back, He Unlocked Shop System and Married 3 Wives with 2 Pounds of Meat!** — Bella's Comic Chronicles (24:43:36, 575 views)
+  https://www.youtube.com/watch?v=VfVepfwdDy0
+  item: `items/VfVepfwdDy0.md`
+- **I was a useless husband. Reborn as a supreme doctor, I'll save my dying son and shock the world!** — ถนอม แก้วธรรม (10:13:56, 38 views)
+  https://www.youtube.com/watch?v=vb-StiZSKIk
+  item: `items/vb-StiZSKIk.md`
+- **Stealing The Heroine's Fate, The Forgotten Fiancée Becomes The Emperor’s Savior.** — Hajime Recap (2:42:26, 65 views)
+  https://www.youtube.com/watch?v=I6Zm2bmnUZ0
+  item: `items/I6Zm2bmnUZ0.md`
+- **The Fake Knight Becomes Stronger Than The Real One | The Ember Knight Part 2** — Animated Manhwa (8:02:59, 5 views)
+  https://www.youtube.com/watch?v=4Ph1NonHrxw
+  item: `items/4Ph1NonHrxw.md`
+- **I can see other people's opportunities; the Empress's people and treasures are all mine! EP1** — 小七听漫—爽文lounge (9:26:18, 399 views)
+  https://www.youtube.com/watch?v=bZNfWSd0nZc
+  item: `items/bZNfWSd0nZc.md`
+- **【Movie】Genius architect Cinderella seeks revenge only to be trapped by a blind CEO | Kill Lover 假面迷情** — KUKAN Drama Romance (2:33:39, 365 views)
+  https://www.youtube.com/watch?v=9YlAnnr4VxU
+  item: `items/9YlAnnr4VxU.md`

@@ -102,3 +102,69 @@ Full item files belong in `items/`.
 - **Why Every CISO Must Use AI Now and How to Do It Without Losing Control with Greg McCord - Ep 203** — Cyber Business Podcast (37:33, new)
   https://www.youtube.com/watch?v=AMgpCH9jyus
   item: `items/AMgpCH9jyus.md`
+
+## 2026-04-07 — 21 new videos
+
+- **The SW Engineering Trap Most AI Developers Fall Into | #NEWIT** — GilliLab Logic Salt (38:47, 1 views)
+  https://www.youtube.com/watch?v=1mPtaB1ySxk
+  item: `items/1mPtaB1ySxk.md`
+- **177,000 AI Agent Tools Are WIDE OPEN — Here's the Fix Nobody's Talking About** — The Bearded AI Guy (8:18, 2 views)
+  https://www.youtube.com/watch?v=kCX4wrAIvIM
+  item: `items/kCX4wrAIvIM.md`
+- **Claude Code Just Leaked… And It's Worse Than You Think** — Exploring ChatGPT and ToxSec (47:20, 4.7K views)
+  https://www.youtube.com/watch?v=bk2rt3SVnc8
+  item: `items/bk2rt3SVnc8.md`
+- **GrandCode: LLM Beats Pro Grandmaster Coders** — AI Research Roundup (4:44, 16 views)
+  https://www.youtube.com/watch?v=IvEBUxxJbTQ
+  item: `items/IvEBUxxJbTQ.md`
+- **The Only 6 AI Agent Patterns You’ll Ever Need** — Learn AI with LocalM™ Tuts (9:15, 52 views)
+  https://www.youtube.com/watch?v=IOrkQeqvNbk
+  item: `items/IOrkQeqvNbk.md`
+- **Multi-Agent Systems & Coordinator Patterns Explained | Claude Certified Architect Ep 02** — Peace Of Code (32:36, 42 views)
+  https://www.youtube.com/watch?v=ejPWvBcc_DU
+  item: `items/ejPWvBcc_DU.md`
+- **7 BEST Free Open Source AI Models for OpenClaw, Hermes-Agent & More** — Panda Making Money (28:20, 46 views)
+  https://www.youtube.com/watch?v=w41j0BAGn70
+  item: `items/w41j0BAGn70.md`
+- **Architecting Agent Security  Building the ClawKeeper Framework** — MLSlops (8:14, 4 views)
+  https://www.youtube.com/watch?v=RNx-GA-BU4g
+  item: `items/RNx-GA-BU4g.md`
+- **打造 AI 的高能效“插件大脑”：SkillReducer 引入关注点分离原则，通过渐进式呈现重构技能调用的极简主义范式** — Agent 创世纪 (9:09, 8 views)
+  https://www.youtube.com/watch?v=GPwXq2zu2nA
+  item: `items/GPwXq2zu2nA.md`
+- **Resurrecting Humanity in the Age of AGI** — Mindplex (1:21:32, 168 views)
+  https://www.youtube.com/watch?v=XYa3byqTkX8
+  item: `items/XYa3byqTkX8.md`
+- **借鉴哺乳动物多巴胺门控机制：D-MEM 通过 RPE 路由彻底终结大模型长记忆的计算灾难** — Agent 创世纪 (8:58, 3 views)
+  https://www.youtube.com/watch?v=BvF8lrGSkyY
+  item: `items/BvF8lrGSkyY.md`
+- **Model Context Protocol (MCP) Explained | Rynaut — Architecting Automation** — Rynaut — Architecting Automation (6:57, 1 views)
+  https://www.youtube.com/watch?v=79FDFdI_k6E
+  item: `items/79FDFdI_k6E.md`
+- **4-7-26 AI Advertising Explained: How Brands Win Inside ChatGPT** — The Real Investment Show (39:19, 2.0K views)
+  https://www.youtube.com/watch?v=AufKaBCT8uU
+  item: `items/AufKaBCT8uU.md`
+- **Day 159 – Vibe Coding an App Until I Make $1,000,000 | ARR: $69,455** — BridgeMind (7:05:49, 19.1K views)
+  https://www.youtube.com/watch?v=yJUN-cH_m54
+  item: `items/yJUN-cH_m54.md`
+- **From DARPA RACER to the Battlefield** — The Road to Autonomy (41:12, 16 views)
+  https://www.youtube.com/watch?v=20P_KMcXcm4
+  item: `items/20P_KMcXcm4.md`
+- **5 Harmful Products Women Should Avoid | Health & Hormone Safety | Safe Living Tips | Dr Hansaji** — The Yoga Institute (10:16, 5.2K views)
+  https://www.youtube.com/watch?v=pjj583jHT0E
+  item: `items/pjj583jHT0E.md`
+- **Daily AI News: The $5 Billion AI Crisis Nobody Saw Coming. AI Sabotaging Its Own Shutdown #skynet** — Useful AI Hacks (32:00, 5 views)
+  https://www.youtube.com/watch?v=eXcAaLdu8bU
+  item: `items/eXcAaLdu8bU.md`
+- **THE COST OF IGNORING | Your Subconscious Mind | Full Audiobook** — The Sovereign Path (2:46:41, 2 views)
+  https://www.youtube.com/watch?v=79CTunR7mRc
+  item: `items/79CTunR7mRc.md`
+- **Hippo Gives AI Agents Human Memory (Including Forgetting)** — Deployed-AI (5:29, new)
+  https://www.youtube.com/watch?v=51rDFZnfkOQ
+  item: `items/51rDFZnfkOQ.md`
+- **CORRUPTION EXPOSED: Madlanga Commission Catches TMPD Leadership Harboring Unvetted Officers!** — OH Allegedly Podcast (31:25, 4.2K views)
+  https://www.youtube.com/watch?v=QELLUIKk26Y
+  item: `items/QELLUIKk26Y.md`
+- **PoorBoy Unlock 10000x Upgrade System,Upgrades Job Offer into Chairman Letter,Becomes Powerful Tycoon** — Mania Comics Legends (7:57:44, 187 views)
+  https://www.youtube.com/watch?v=sZwuET7ZHG0
+  item: `items/sZwuET7ZHG0.md`

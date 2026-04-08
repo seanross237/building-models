@@ -375,3 +375,96 @@ Full item files belong in `items/`.
 - **Symposium—Iba Ndiaye: Between Latitude and Longitude** — The Met (4:18:06, 126 views)
   https://www.youtube.com/watch?v=nfbGoajjdVI
   item: `items/nfbGoajjdVI.md`
+
+## 2026-04-07 — 30 new videos
+
+- **Best Antivirus for 2026 | Don't Buy an Antivirus Before YOU Watch This!** — VPNpro (8:43, 580 views)
+  https://www.youtube.com/watch?v=j2a4E2XDRps
+  item: `items/j2a4E2XDRps.md`
+- **OpenAI Has Been Losing to Anthropic. But Not For Long** — Limitless Podcast (20:21, 2.1K views)
+  https://www.youtube.com/watch?v=7LfZl0PzUvw
+  item: `items/7LfZl0PzUvw.md`
+- **The history and future of AI at Google, with Sundar Pichai** — Stripe (1:09:33, 10.7K views)
+  https://www.youtube.com/watch?v=bTA8sjgvA4c
+  item: `items/bTA8sjgvA4c.md`
+- **Leveling Improvement, Adventurer's Peak, and Skill Adjustments — Unofficial Toram Clip** — Aida Shin (8:53, 1.4K views)
+  https://www.youtube.com/watch?v=dac-8qlt7KU
+  item: `items/dac-8qlt7KU.md`
+- **Power Automate + AI: The Workflow Upgrade You Didn’t Know You Needed** — Koenig Solutions (NA, new)
+  https://www.youtube.com/watch?v=jhMdhbRkfdg
+  item: `items/jhMdhbRkfdg.md`
+- **How to Turn Your Dream Into Reality Even If You're Starting From Nothing** — Evan Carmichael (3:05:31, 13.2K views)
+  https://www.youtube.com/watch?v=8VmR0LXon0A
+  item: `items/8VmR0LXon0A.md`
+- **Your Organization Isn’t Innovating—It’s Just Moving Faster Without Learning** — Kirkpatrick Partners (23:30, 6 views)
+  https://www.youtube.com/watch?v=2Wr-lGD01z8
+  item: `items/2Wr-lGD01z8.md`
+- **STOP Preparing the Wrong Way for Placements - Use AI Hacks!** — Love Babbar (13:06, 2.7K views)
+  https://www.youtube.com/watch?v=6ZuCOVrX94c
+  item: `items/6ZuCOVrX94c.md`
+- **Bloomberg Surveillance 4/7/2026** — Bloomberg Television (2:24:18, 1.4K views)
+  https://www.youtube.com/watch?v=mo0HGmOROJY
+  item: `items/mo0HGmOROJY.md`
+- **He Looks Like A Jobless Loser, But His Passive Skills Have No Cooldown.** — Nice Recap (16:04:10, 218 views)
+  https://www.youtube.com/watch?v=5b-XWaGpHHE
+  item: `items/5b-XWaGpHHE.md`
+- **Pro Integration Future Asia (PIFA) 2025 - Ideal Systems Booth** — IdealSystemsTV (6:25, 7 views)
+  https://www.youtube.com/watch?v=-gOzqByToIg
+  item: `items/-gOzqByToIg.md`
+- **Why Are Businesses Paying $750–$1,200 Month For This Simple AI** — GHL Wizard (16:31, 185 views)
+  https://www.youtube.com/watch?v=hf7ypenBgy0
+  item: `items/hf7ypenBgy0.md`
+- **Pi Network Update: Real Progress vs. Community Hype** — J COIN (17:27, 666 views)
+  https://www.youtube.com/watch?v=Xp1oHyMM9MA
+  item: `items/Xp1oHyMM9MA.md`
+- **You’re Leaving CRA Credit on the Table** — CRA Today (4:10, 5 views)
+  https://www.youtube.com/watch?v=fOYYte7PoUU
+  item: `items/fOYYte7PoUU.md`
+- **AI Ready Enterprise Preparing Your Organization for AI Adoption** — AI CERTs® (42:54, 1 views)
+  https://www.youtube.com/watch?v=2h-D4vrwpO0
+  item: `items/2h-D4vrwpO0.md`
+- **🔥He Started by Summoning Infinite Divine Female Demons and Eventually Became the Demoness Lord！** — Blue Whale Comics Review (31:28:16, 329 views)
+  https://www.youtube.com/watch?v=_t50kAxlzk8
+  item: `items/_t50kAxlzk8.md`
+- **The best global health ideas we’ve heard on the show (from 17 experts)** — 80,000 Hours (4:06:51, 61 views)
+  https://www.youtube.com/watch?v=HN-vP88rDEE
+  item: `items/HN-vP88rDEE.md`
+- **Your CarPlay is Missing This… (AI Upgrade)** — HotshotTek (8:11, 11.0K views)
+  https://www.youtube.com/watch?v=X-erWhhBNK0
+  item: `items/X-erWhhBNK0.md`
+- **The Close for Monday, April 6, 2026** — BNN Bloomberg (1:09:34, 21 views)
+  https://www.youtube.com/watch?v=a6jaFXvNQRE
+  item: `items/a6jaFXvNQRE.md`
+- **🚨 Donald J. Trump ka SHOCKING Statement on Iran | “A Whole Civilization Will Die?** — CONCEPT DECODER (2:42, 24 views)
+  https://www.youtube.com/watch?v=Hn6Vm4oLYzg
+  item: `items/Hn6Vm4oLYzg.md`
+- **The power of system | Life Changing Motivation| Influential Audiobook | Book Summary** — Influential Audiobook (12:21, 8 views)
+  https://www.youtube.com/watch?v=M-PwxKzmXqk
+  item: `items/M-PwxKzmXqk.md`
+- **How AI can Strengthen Data Security & System Resilience in SAP Environments | NextLabs Expert Series** — NextLabs (17:38, 4 views)
+  https://www.youtube.com/watch?v=1CSsdlTmgSQ
+  item: `items/1CSsdlTmgSQ.md`
+- **Java Application Support Engineer (Part 2/2): How to Answer a “Bad Decision” Interview Question !!** — Ace Interviews (6:05:39, 2 views)
+  https://www.youtube.com/watch?v=c9RDnlQgyjI
+  item: `items/c9RDnlQgyjI.md`
+- **Hard Truths About EV Charging ROI: Rohan Puri on Making Sites Profitable** — Field Frequency (39:20, 4 views)
+  https://www.youtube.com/watch?v=b40Z5KTX_2Q
+  item: `items/b40Z5KTX_2Q.md`
+- **Oil Gains as Trump Amps Up Threats Before Iran Deadline | The Asia Trade 4/7/2026** — Bloomberg Television (1:35:02, 4.8K views)
+  https://www.youtube.com/watch?v=LzKi721F3VE
+  item: `items/LzKi721F3VE.md`
+- **This AI Robot Mower Mapped My Yard in Minutes  - Luba 3 AWD** — Family DIY tv (11:40, 266 views)
+  https://www.youtube.com/watch?v=ncSaAlRwCDg
+  item: `items/ncSaAlRwCDg.md`
+- **10 Mysterious Artifacts Discovered That Terrified Scientists** — The Lazy Detective (42:09, 3.2K views)
+  https://www.youtube.com/watch?v=eCiHC_y8Wzc
+  item: `items/eCiHC_y8Wzc.md`
+- **How Bankruptcy Attorneys Can Build Their Own Lead Follow Up System** — 720 System Strategies (29:57, new)
+  https://www.youtube.com/watch?v=VXrqG-zeF6o
+  item: `items/VXrqG-zeF6o.md`
+- **Board Exam 2026: अब AI करेगा कॉपियों की चेकिंग! हैंडराइटिंग से नंबर देने तक, जानें Digital' तकनीक!** — Jagran Josh (4:51, 963 views)
+  https://www.youtube.com/watch?v=_gcAXOUbyUY
+  item: `items/_gcAXOUbyUY.md`
+- **How Consultants Can Drive Revenue by Fixing HR & HCM Strategy With Stephen Butcher** — Guillaume Jouvencel (NA, new)
+  https://www.youtube.com/watch?v=AZGjHa_nmGU
+  item: `items/AZGjHa_nmGU.md`

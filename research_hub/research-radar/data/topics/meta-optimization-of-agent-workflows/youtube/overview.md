@@ -150,3 +150,39 @@ Full item files belong in `items/`.
 - **Ep.65—Claude Knows Kung Fu. Midjourney's Still in the Dojo (+V8.1?)** — Midjourney Fast Hours (1:23:41, 1.5K views)
   https://www.youtube.com/watch?v=Dl64zUCJniU
   item: `items/Dl64zUCJniU.md`
+
+## 2026-04-07 — 11 new videos
+
+- **How to Run OpenClaw FREE Forever!** — Julian Goldie SEO (8:12, 2.0K views)
+  https://www.youtube.com/watch?v=-Pn3FBOjkgM
+  item: `items/-Pn3FBOjkgM.md`
+- **Settyl Lasya Enterprise AI |Multimodal AI Agents for Procurement,Logistics,EXIM & Finance Automation** — Settyl (3:31, 18 views)
+  https://www.youtube.com/watch?v=ifZJmKIvLZA
+  item: `items/ifZJmKIvLZA.md`
+- **Agentic AI & Multi-Agent Orchestration: Eindhoven's Enterprise Guide** — Aetherlink (20:32, 1 views)
+  https://www.youtube.com/watch?v=4gtvqOhSFkA
+  item: `items/4gtvqOhSFkA.md`
+- **Supply-chain breach hits AI labs & Cisco bets on Ethernet AI fabrics - AI News (Apr 7, 2026)** — The Automated Daily (11:19, new)
+  https://www.youtube.com/watch?v=a527w6nc7u0
+  item: `items/a527w6nc7u0.md`
+- **AI Demo Trap: Client Loved It, Then Ghosted - Why This Keeps Happening** — AI to Go I Real Talk on Enterprise AI (42:13, 4 views)
+  https://www.youtube.com/watch?v=szpctnuKSQA
+  item: `items/szpctnuKSQA.md`
+- **Why Agents (And Automations) Help You Hyper-Scale** — Sam Woods (18:12, 2 views)
+  https://www.youtube.com/watch?v=QWD7bW_gXO0
+  item: `items/QWD7bW_gXO0.md`
+- **Anthropic expands partnership with Google and Broadcom | Next in AI | Astha La Vista** — Next in AI: Astha La Vista (6:26, 10 views)
+  https://www.youtube.com/watch?v=Wgpr7dntOFs
+  item: `items/Wgpr7dntOFs.md`
+- **Daily AI News: The $5 Billion AI Crisis. We Can’t Unplug It. AI Just Refused Shutdown #skynet** — Useful AI Hacks (32:00, 5 views)
+  https://www.youtube.com/watch?v=eXcAaLdu8bU
+  item: `items/eXcAaLdu8bU.md`
+- **CRM Confessions: What Every Loan Officer Gets Wrong (And How to Fix It)** — TLOP (52:44, 144 views)
+  https://www.youtube.com/watch?v=6VJYhnIrWPY
+  item: `items/6VJYhnIrWPY.md`
+- **AI Agents: Hype vs. Reality** — Mustafa Assaf (6:27, 6 views)
+  https://www.youtube.com/watch?v=vd55Vx_gvxA
+  item: `items/vd55Vx_gvxA.md`
+- **SEO Blog Post Written, Formatted and Published to Agility CMS in 30 Seconds Using Claude** — Dotfusion Digital Agency (5:17, 1 views)
+  https://www.youtube.com/watch?v=h3JkXLQmMPg
+  item: `items/h3JkXLQmMPg.md`

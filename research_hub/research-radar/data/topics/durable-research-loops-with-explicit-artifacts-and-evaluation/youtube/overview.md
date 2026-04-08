@@ -51,3 +51,18 @@ Full item files belong in `items/`.
 - **【Multi Sub】🧨逃學五年，我成了全村的希望Skipped School 5 Years, Became Village Hope第二季 #男频 #动漫 #热血** — Qixiang-Animation (5:17:05, 242 views)
   https://www.youtube.com/watch?v=tRW7EdQ8jWM
   item: `items/tRW7EdQ8jWM.md`
+
+## 2026-04-07 — 4 new videos
+
+- **🔥He Started by Summoning Infinite Divine Female Demons and Eventually Became the Demoness Lord！** — Blue Whale Comics Review (31:28:16, 329 views)
+  https://www.youtube.com/watch?v=_t50kAxlzk8
+  item: `items/_t50kAxlzk8.md`
+- **THE COST OF IGNORING | Your Subconscious Mind | Full Audiobook** — The Sovereign Path (2:46:41, 2 views)
+  https://www.youtube.com/watch?v=79CTunR7mRc
+  item: `items/79CTunR7mRc.md`
+- **【MULTI SUB】一口气看爽韩漫《勇者早不干了》** — 韩漫潮映馆 (3:12:01, 891 views)
+  https://www.youtube.com/watch?v=eI0_eIcY6Qw
+  item: `items/eI0_eIcY6Qw.md`
+- **【Multi Sub】My master is so cute S2 #anime  #animation #donghua** — Quartic element Anime (10:48:08, 569 views)
+  https://www.youtube.com/watch?v=qQOZa5ZyHtg
+  item: `items/qQOZa5ZyHtg.md`

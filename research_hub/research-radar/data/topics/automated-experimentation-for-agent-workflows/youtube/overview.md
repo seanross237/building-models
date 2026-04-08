@@ -375,3 +375,93 @@ Full item files belong in `items/`.
 - **✨AI UI Generator for Java: Build UI from Text with Jmix!** — Jmix (12:09, 30 views)
   https://www.youtube.com/watch?v=iHoqS-hzHHM
   item: `items/iHoqS-hzHHM.md`
+
+## 2026-04-07 — 29 new videos
+
+- **NEW Google AI Agent DESTROYS OpenClaw?** — Julian Goldie SEO (8:07, 10.6K views)
+  https://www.youtube.com/watch?v=umjdfyLkIjg
+  item: `items/umjdfyLkIjg.md`
+- **Custom Agents + MCP: 5 Ways to Automate Work Across Your Tools** — Notion (4:40, 2.7K views)
+  https://www.youtube.com/watch?v=vKkNzyD9d_E
+  item: `items/vKkNzyD9d_E.md`
+- **Real AI in ITSM | #ai #itsm** — EasyVista (37, 3.2K views)
+  https://www.youtube.com/watch?v=Gon3NwQPvQQ
+  item: `items/Gon3NwQPvQQ.md`
+- **What senses do agents need to act?** — Microsoft Azure (25:06, 108 views)
+  https://www.youtube.com/watch?v=cdbnM28JHiw
+  item: `items/cdbnM28JHiw.md`
+- **This New AI Agent Runs 24/7 — No Server, No Surprise Costs** — Yashica Jain (18:59, 947 views)
+  https://www.youtube.com/watch?v=eWYHzkDpxdw
+  item: `items/eWYHzkDpxdw.md`
+- **NEW Liquid AI AGENT is INSANE! 🤯** — Julian Goldie SEO (8:01, 2.3K views)
+  https://www.youtube.com/watch?v=VXUEfTHR7wQ
+  item: `items/VXUEfTHR7wQ.md`
+- **AI Orchestration: The Power of Building Agentic Workflows** — Web3 Social Network (7:19, 1.3K views)
+  https://www.youtube.com/watch?v=_I8v7HGIBjU
+  item: `items/_I8v7HGIBjU.md`
+- **How to Run OpenClaw FREE Forever!** — Julian Goldie SEO (8:12, 2.0K views)
+  https://www.youtube.com/watch?v=-Pn3FBOjkgM
+  item: `items/-Pn3FBOjkgM.md`
+- **TinyAgents V2 Tutorial | Build Action-Based AI Agents** — TinyCommand (5:27, 17 views)
+  https://www.youtube.com/watch?v=UocpCqgVR_4
+  item: `items/UocpCqgVR_4.md`
+- **Best & cheapest AI for OpenClaw** — The Next New Thing (20:41, 5.8K views)
+  https://www.youtube.com/watch?v=T7uNP7Nrb98
+  item: `items/T7uNP7Nrb98.md`
+- **How to Set Up AI Agents that Talk to Customers and Take Action — Part 1** — Respond.io (59:38, 9 views)
+  https://www.youtube.com/watch?v=407nykg1wpc
+  item: `items/407nykg1wpc.md`
+- **Your FREE Personal AI Assistant for Your PC (Omni-Orca)** — Naqash Afzal (18:06, 29 views)
+  https://www.youtube.com/watch?v=RvlfjbRLQJU
+  item: `items/RvlfjbRLQJU.md`
+- **Watch Claude Code build your Etsy Pinterest posting workflow automatically** — Handmade & Beyond (18:53, 652 views)
+  https://www.youtube.com/watch?v=OXzJ-M5IozU
+  item: `items/OXzJ-M5IozU.md`
+- **The SW Engineering Trap Most AI Developers Fall Into | #NEWIT** — GilliLab Logic Salt (38:47, 1 views)
+  https://www.youtube.com/watch?v=1mPtaB1ySxk
+  item: `items/1mPtaB1ySxk.md`
+- **Microsoft Copilot Studio Masterclass: Future of AI Agents** — NetCom Learning (2:02:53, 34 views)
+  https://www.youtube.com/watch?v=8cVjZrbP7lE
+  item: `items/8cVjZrbP7lE.md`
+- **(Podcast) Building AI Swarms with ClawTeam and Multi Agent Automation** — Eddy Says Hi #EddySaysHi (20:57, 13 views)
+  https://www.youtube.com/watch?v=5ko02DmDeok
+  item: `items/5ko02DmDeok.md`
+- **This NEW AI Tool Just Destroyed Openclaw (Denchclaw)** — Damian Malliaros (31:02, 320 views)
+  https://www.youtube.com/watch?v=icv-LYyvJOI
+  item: `items/icv-LYyvJOI.md`
+- **What's New in Revit for Everyone** — Autodesk Building Solutions (6:01, 405 views)
+  https://www.youtube.com/watch?v=N0DoNruHBg4
+  item: `items/N0DoNruHBg4.md`
+- **Pop Goes the Stack | OpenClaw: Multi-agent autonomy, secrets, and blast radius | AI** — F5, Inc. (26:34, 20 views)
+  https://www.youtube.com/watch?v=20p8WteCm_4
+  item: `items/20p8WteCm_4.md`
+- **Why Agents (And Automations) Help You Hyper-Scale** — Sam Woods (18:12, 2 views)
+  https://www.youtube.com/watch?v=QWD7bW_gXO0
+  item: `items/QWD7bW_gXO0.md`
+- **Is the Era of Writing Applications by Typing Prompts Over? (Zenflow Review)** — Ömer Göçmen | Yapay Zeka & Otomasyon (13:44, 271 views)
+  https://www.youtube.com/watch?v=XX5L1OkAKtY
+  item: `items/XX5L1OkAKtY.md`
+- **Marvin: Functional Specification and AI-Driven Testing | Clarity and Productivity with pAIr** — OGI (32, new)
+  https://www.youtube.com/watch?v=vaYGiqv7VMA
+  item: `items/vaYGiqv7VMA.md`
+- **Linux 7.0 Nears Release: Arch, KDE & Steam at 5%** — Ton Does Linux and More! (8:30, 1.2K views)
+  https://www.youtube.com/watch?v=4MgfkL69_RI
+  item: `items/4MgfkL69_RI.md`
+- **This New Ask AI GoHighLevel Feature Runs Your CRM For You** — Nuno Tavares | Automated Marketer (13:11, 100 views)
+  https://www.youtube.com/watch?v=YgFiKoHsOms
+  item: `items/YgFiKoHsOms.md`
+- **Stop Prompting. Start Delegating. AI Workflows for Real Estate | The AI Breakthrough Ep. 2** — Thomas Heimann | AI Authority (7:42, 1 views)
+  https://www.youtube.com/watch?v=HqVyMDL7Wbw
+  item: `items/HqVyMDL7Wbw.md`
+- **AI Ready Enterprise Preparing Your Organization for AI Adoption** — AI CERTs® (42:54, 1 views)
+  https://www.youtube.com/watch?v=2h-D4vrwpO0
+  item: `items/2h-D4vrwpO0.md`
+- **Microsoft AI Decision Guide | Microsoft Doesn't Want You to Miss Out!** — Valto Microsoft Specialists (55:35, 16 views)
+  https://www.youtube.com/watch?v=1v1oZcyyYr0
+  item: `items/1v1oZcyyYr0.md`
+- **AI Agent Evals: The 4 Layers Most Teams Skip** — Damian Galarza (8:12, 130 views)
+  https://www.youtube.com/watch?v=Kleu3ROhpvY
+  item: `items/Kleu3ROhpvY.md`
+- **How to Set Up AI Agents that Talk to Customers and Take Action — Part 2 (LIVE Q&A)** — Respond.io (1:02:11, 9 views)
+  https://www.youtube.com/watch?v=75zg3ymjNjY
+  item: `items/75zg3ymjNjY.md`

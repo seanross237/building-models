@@ -30,3 +30,15 @@ Full item files belong in `items/`.
 - **D1Part2 - Getting Started - Project Overview - Microservice - Framework - RestAPIs [6Apr]** — Tausief S (2:41:06, 2.8K views)
   https://www.youtube.com/watch?v=s9HQONq7rD4
   item: `items/s9HQONq7rD4.md`
+
+## 2026-04-07 — 3 new videos
+
+- **Paper 35 - Proving Watson-Band Rigidity** — Agent Ocho (9:06, 3 views)
+  https://www.youtube.com/watch?v=8MkSGTn-K3o
+  item: `items/8MkSGTn-K3o.md`
+- **[ENG SUB]✨She Fled Across The Ocean To Escape His Cage–Three Years Later, He Begs On His Knees#drama** — Twilight Drama Dreams💫 (2:33:33, 1.9K views)
+  https://www.youtube.com/watch?v=aP5wk2TdhNU
+  item: `items/aP5wk2TdhNU.md`
+- **Brainstorm: AI Crossing the Disciplines with Ellie Pavlick and Junehyuk Jung - hosted by the JNBC** — Brown University (56:00, 20 views)
+  https://www.youtube.com/watch?v=kUhxbE1LJ0c
+  item: `items/kUhxbE1LJ0c.md`

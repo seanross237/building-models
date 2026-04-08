@@ -375,3 +375,96 @@ Full item files belong in `items/`.
 - **THE ZERO THRESHOLD | Architecting Your Reality from the Void | Full Audiobook** — The Sovereign Path (2:55:36, new)
   https://www.youtube.com/watch?v=vCzhBK2vEyU
   item: `items/vCzhBK2vEyU.md`
+
+## 2026-04-07 — 30 new videos
+
+- **IMSU Physics 101 Exam 2026 🔥 Most Expected Questions Solved | 100L Intensive Revision** — EMI-BRAIN TUTOR (2:46:54, 384 views)
+  https://www.youtube.com/watch?v=izaMxWCYsc4
+  item: `items/izaMxWCYsc4.md`
+- **A Mind-Blowing Algebra mathematics    Equation | Olympiad  Question | can you solve ?  | x=?** — Mathematics & Statistics Guru (11:30, 167 views)
+  https://www.youtube.com/watch?v=SCpgaqCd7t8
+  item: `items/SCpgaqCd7t8.md`
+- **Solving Exam Questions- Paper 01 - Computer Science AQA GCSE- Part 1** — Sonal Pawar (17:04, 10 views)
+  https://www.youtube.com/watch?v=TxQPNk-myT0
+  item: `items/TxQPNk-myT0.md`
+- **How Smart Agents Are Using AI to Grow Faster in 2026** — Neil Mathweg | Agent Rise (41:49, 20 views)
+  https://www.youtube.com/watch?v=htXjBrwc7-8
+  item: `items/htXjBrwc7-8.md`
+- **Germany | Can you solve this? | Math Olympiad** — Master D Maths TV (6:12, 1.3K views)
+  https://www.youtube.com/watch?v=b0i6G-4JYNs
+  item: `items/b0i6G-4JYNs.md`
+- **Problem solve based on Some basic concept of chemistry | by Manoj sir** — Thrive EduTec (47:51, 71 views)
+  https://www.youtube.com/watch?v=Z7kDpkD8D24
+  item: `items/Z7kDpkD8D24.md`
+- **Agency Valuations, M&A, & Growth with Mike Mensch | Episode 119** — Bricks & Risk Podcast and AgencyBrokerage (47:39, 12 views)
+  https://www.youtube.com/watch?v=GJ0IVkz_jWk
+  item: `items/GJ0IVkz_jWk.md`
+- **The best global health ideas we’ve heard on the show (from 17 experts)** — 80,000 Hours (4:06:51, 61 views)
+  https://www.youtube.com/watch?v=HN-vP88rDEE
+  item: `items/HN-vP88rDEE.md`
+- **How NASA Will Build the Artemis Moon Base (Before China Does)** — The Sleepless Curiosity (1:42:20, 786 views)
+  https://www.youtube.com/watch?v=GsbVRIUb-FQ
+  item: `items/GsbVRIUb-FQ.md`
+- **Episode 130: Agentic AI Workflows Explained | The Future of Dermatology Podcast** — The Future of Dermatology (22:02, new)
+  https://www.youtube.com/watch?v=u6OwNAr3kls
+  item: `items/u6OwNAr3kls.md`
+- **The Moon Demanded More From Artemis Than Apollo Ever Gave** — Space Science Documentary (1:53:18, 89 views)
+  https://www.youtube.com/watch?v=MdRsJF_gyuE
+  item: `items/MdRsJF_gyuE.md`
+- **Aging Well: Challenges and Innovations in Caregiving** — UVA Engagement (57:09, 10 views)
+  https://www.youtube.com/watch?v=mh1u0e1i9hE
+  item: `items/mh1u0e1i9hE.md`
+- **2025 Koch Institute Annual Symposium: Greg Thurber** — KochInstituteMIT (31:54, 214 views)
+  https://www.youtube.com/watch?v=wggeWDuvg6U
+  item: `items/wggeWDuvg6U.md`
+- **Genevieve Smith - What Gets Encoded: AI, Inequity, and Alternative Technological Futures** — UC Berkeley EECS (46:57, 19 views)
+  https://www.youtube.com/watch?v=HY0CYPWTPyQ
+  item: `items/HY0CYPWTPyQ.md`
+- **Ep 48: Brain Science & Self-Care for Management with Lisa Riegel** — Diana Alt (56:39, 7 views)
+  https://www.youtube.com/watch?v=PGBL6NMCaJw
+  item: `items/PGBL6NMCaJw.md`
+- **Social Science Careers in Climate Action** — UCTVInsight (1:11:02, 9 views)
+  https://www.youtube.com/watch?v=1fjte5QAca0
+  item: `items/1fjte5QAca0.md`
+- **Congressional Award Lunch & Learn with Keiva Rodriques** — The Congressional Award (45:17, 1 views)
+  https://www.youtube.com/watch?v=migW1pOXxJ0
+  item: `items/migW1pOXxJ0.md`
+- **2025 Koch Institute Annual Symposium: Carolyn Bertozzi** — KochInstituteMIT (59:25, 442 views)
+  https://www.youtube.com/watch?v=hj28cg5I414
+  item: `items/hj28cg5I414.md`
+- **Hany Farid on the erosion of shared reality in the age of deepfakes** — UC Berkeley (51:04, 61 views)
+  https://www.youtube.com/watch?v=AOJ0-u_IH2g
+  item: `items/AOJ0-u_IH2g.md`
+- **Panel | Perspectives from Europe and North America - Future of Arts, Culture & Technology Symposium** — ACMI – Your museum of screen culture (1:06:36, 8 views)
+  https://www.youtube.com/watch?v=0p_XIvGkj3M
+  item: `items/0p_XIvGkj3M.md`
+- **The Case Against the Bay Area Air District Natural Gas Appliance Ban** — AVCA San Jose (1:36:20, 5 views)
+  https://www.youtube.com/watch?v=t1D0a089PPE
+  item: `items/t1D0a089PPE.md`
+- **Board of Supervisors - 3/24/26** — County of Sacramento (4:26:53, 23 views)
+  https://www.youtube.com/watch?v=H3jylCHHWKk
+  item: `items/H3jylCHHWKk.md`
+- **Distinguished Colloquium: Maria Klawe, March 31, 2026** — Princeton University Computer Science (1:04:00, 4 views)
+  https://www.youtube.com/watch?v=4eh_L4xyOU4
+  item: `items/4eh_L4xyOU4.md`
+- **The Next Trillion | 2026 From Billions to Trillions Summit** — Nicholas Institute (27:34, 17 views)
+  https://www.youtube.com/watch?v=iRdcCnTIoJg
+  item: `items/iRdcCnTIoJg.md`
+- **Sherlock Holmes A Study in Scarlet by Arthur Conan Doyle Chapters 1- 2** — Books Audiobooks by Classic Literary Masters (36:49, 5 views)
+  https://www.youtube.com/watch?v=JSEGn-Q4rts
+  item: `items/JSEGn-Q4rts.md`
+- **Melissa Valentine on Assembling Your ‘Avengers’: Flash Teams in the Age of AI** — UC Berkeley Haas (24:14, 6 views)
+  https://www.youtube.com/watch?v=_NnS9E0cRXk
+  item: `items/_NnS9E0cRXk.md`
+- **He Looks Like A Jobless Loser, But His Passive Skills Have No Cooldown.** — Nice Recap (16:04:10, 218 views)
+  https://www.youtube.com/watch?v=5b-XWaGpHHE
+  item: `items/5b-XWaGpHHE.md`
+- **Beyond Vibe Coding: Zero Vector and the Disruption of Service Design with Erika Flowers** — Disruptor Confessions (59:28, 9 views)
+  https://www.youtube.com/watch?v=gkWQCEjl7y8
+  item: `items/gkWQCEjl7y8.md`
+- **Building Bulletproof Systems: Warren Parad on Software Engineering for High Availability** — Overcommitted (49:54, 3 views)
+  https://www.youtube.com/watch?v=-l4py6_6SGk
+  item: `items/-l4py6_6SGk.md`
+- **JEE Main 2026 (April Attempt) | Mathematics Paper Analysis & Solutions | 5th April | RWA** — IIT JEE RWA (1:55:36, 622 views)
+  https://www.youtube.com/watch?v=Ws-wrLcoli4
+  item: `items/Ws-wrLcoli4.md`

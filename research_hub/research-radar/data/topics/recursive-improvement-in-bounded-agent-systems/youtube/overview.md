@@ -18,3 +18,12 @@ Full item files belong in `items/`.
 - **THE ZERO THRESHOLD | Architecting Your Reality from the Void | Full Audiobook** — The Sovereign Path (2:55:36, new)
   https://www.youtube.com/watch?v=vCzhBK2vEyU
   item: `items/vCzhBK2vEyU.md`
+
+## 2026-04-07 — 2 new videos
+
+- **THE COST OF IGNORING | Your Subconscious Mind | Full Audiobook** — The Sovereign Path (2:46:41, 2 views)
+  https://www.youtube.com/watch?v=79CTunR7mRc
+  item: `items/79CTunR7mRc.md`
+- **Java Application Support Engineer (Part 2/2): How to Answer a “Bad Decision” Interview Question !!** — Ace Interviews (6:05:39, 2 views)
+  https://www.youtube.com/watch?v=c9RDnlQgyjI
+  item: `items/c9RDnlQgyjI.md`
