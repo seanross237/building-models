@@ -477,3 +477,87 @@ Full item files belong in `items/`.
 - **dirtybob or freakbob fo today 🗣️🔥 🔈🔉🔊🔊 | VERY FIRST D3 STREAM :D** — Faust Stream VODs (4:44:51, 24 views)
   https://www.youtube.com/watch?v=cd6aaXg3XJ4
   item: `items/cd6aaXg3XJ4.md`
+
+## 2026-04-09 — 27 new videos
+
+- **Effective Strategies for Asynchronous Software Engineering Agents** — CosmoX (7:46, 2 views)
+  https://www.youtube.com/watch?v=EEyP3Zwh0Ug
+  item: `items/EEyP3Zwh0Ug.md`
+- **Delegate Complex Projects to an Agent Team | Cortex Code CLI** — Snowflake Developers (2:22, 1 views)
+  https://www.youtube.com/watch?v=eS3I8bpV4a0
+  item: `items/eS3I8bpV4a0.md`
+- **(All in English) Build an AI team without writing code! AI agents are evolving so much that desig...** — Kelly Tsai (18:34, 5.1K views)
+  https://www.youtube.com/watch?v=GMTLG_O_IFA
+  item: `items/GMTLG_O_IFA.md`
+- **Factory Desktop App — Native AI Agent Interface for Software Development** — TechWealth Hub (5:40, 14 views)
+  https://www.youtube.com/watch?v=z7f1mqDkC5U
+  item: `items/z7f1mqDkC5U.md`
+- **The Future of DevOps: AI, Agents, and the "Impossible" Workflow** — Elias Khnaser (53:26, 303 views)
+  https://www.youtube.com/watch?v=21_Ol_p-UGk
+  item: `items/21_Ol_p-UGk.md`
+- **Run Community-Designed AI Agent Patterns Locally | FlowDot Recipes Tutorial** — FlowDot (3:43, 1 views)
+  https://www.youtube.com/watch?v=TstW9ivZoZs
+  item: `items/TstW9ivZoZs.md`
+- **AI Podcast 29 Hermes Agent Vs OpenClaw** — Innovator Coffee (20:55, 3 views)
+  https://www.youtube.com/watch?v=DOLHe7VPvt4
+  item: `items/DOLHe7VPvt4.md`
+- **[Claude Code Intro E15] Agentic Loop: Tool Execution & Context Window** — neosarchizo (13:09, 9 views)
+  https://www.youtube.com/watch?v=6fiMMnrbfuY
+  item: `items/6fiMMnrbfuY.md`
+- **The Next Layer After Prompt Engineering — Archon V3 Explained! 🚀** — DIY Smart Code (12:20, 1.4K views)
+  https://www.youtube.com/watch?v=Ys3OPLKJHuw
+  item: `items/Ys3OPLKJHuw.md`
+- **I stopped using n8n… and built 4 Arabic automations in half an hour because of it! | Twin AI 🚀** — ePreneurs حسام الدين حسن (1:43, 2.7K views)
+  https://www.youtube.com/watch?v=906a_3726L4
+  item: `items/906a_3726L4.md`
+- **Hacktics and Telemetry, E3: Claude Leaks, Supply Chain Attacks, and the Magic Smoke of IoT** — Rapid7 (47:41, 12 views)
+  https://www.youtube.com/watch?v=dPYH5OfHTfQ
+  item: `items/dPYH5OfHTfQ.md`
+- **From IC to VP: Engineering Leadership at Every Level, with Box's Tamar Bercovici** — Cortex | Engineering Operations Platform (47:56, 15 views)
+  https://www.youtube.com/watch?v=I3TI4fUUQWw
+  item: `items/I3TI4fUUQWw.md`
+- **SAP SD: ECC to S/4HANA Migration Failures (Part 3 - Vol 1) | Testing & Cutover Incidents (142–180)!** — Ace Interviews (7:03:10, 7 views)
+  https://www.youtube.com/watch?v=pE_0zn4fBoE
+  item: `items/pE_0zn4fBoE.md`
+- **[Hermes Agent] Hermes Agent: A Complete Analysis of Self-Evolving Next-Generation AI Infrastructu...** — 지투지 - 지식에서 지혜로 (20:50, 110 views)
+  https://www.youtube.com/watch?v=WLNsnooehtQ
+  item: `items/WLNsnooehtQ.md`
+- **Why The Matrix Works (And Most Movies Fail at This) #thematrix #screenwriting #film** — FADE IN: (18:43, 9 views)
+  https://www.youtube.com/watch?v=NYUw6PWkB3k
+  item: `items/NYUw6PWkB3k.md`
+- **Meta AI's superintelligence 'Muse Spark' is incredibly smart, so we'll give you a thorough explan...** — AI共創イノベーション (16:46, 86 views)
+  https://www.youtube.com/watch?v=76biclrOcGk
+  item: `items/76biclrOcGk.md`
+- **Tech Stocks Rally on the Back of US-Iran Ceasefire Deal | Bloomberg Tech 4/8/2026** — Bloomberg Technology (44:03, 5.1K views)
+  https://www.youtube.com/watch?v=J1M-DDS0VcE
+  item: `items/J1M-DDS0VcE.md`
+- **Claude сам посоветовал себе замену: Paperclip + Hermes + Zai — архитектура автономного агента (2026)** — Будни_Вайбкод_Блогера USA (24:37, 27 views)
+  https://www.youtube.com/watch?v=D1TDXlHBYds
+  item: `items/D1TDXlHBYds.md`
+- **仿真速度飙升10万倍：DeepStack挑战千万亿级配置空间，精准定义下一代3D芯片架构** — Agent 创世纪 (11:14, 5 views)
+  https://www.youtube.com/watch?v=N_tHoKYgkL8
+  item: `items/N_tHoKYgkL8.md`
+- **After Inheriting a Territory, I Unlocked Mechanical System & Can Summon an Infinite Army of Machines** — Revel Manga Chronicles (9:49:13, 536 views)
+  https://www.youtube.com/watch?v=RQzWqtsmPu0
+  item: `items/RQzWqtsmPu0.md`
+- **50 Years a Detective: The Complete Files (Vol. 1) | 5-Hour Mystery Omnibus** — MicroPulse and Night Shift Chronicles - Stay Awake With Us (5:01:22, 23 views)
+  https://www.youtube.com/watch?v=dOcNlMkMc2I
+  item: `items/dOcNlMkMc2I.md`
+- **#415 Max: Cloud-Powered Architecture – Mastering Claude Ultraplan (2026)** — AI Fire (14:08, 2 views)
+  https://www.youtube.com/watch?v=qRHEi6aYUT4
+  item: `items/qRHEi6aYUT4.md`
+- **Husband & His 5 Mistress Friends Assault Pregnant Wife—Her 7 Navy SEAL Brothers Discover Her in ICU** — Charlotte Reed Tells and Penthouse Lies (1:54:46, 18 views)
+  https://www.youtube.com/watch?v=DqB5pad1Pk4
+  item: `items/DqB5pad1Pk4.md`
+- **Five Weeks in a Balloon by Jules Verne | African Exploration & Aerial Adventure 🌍🎈📖🎧** — Golden Fiction Tales (11:46:48, 33 views)
+  https://www.youtube.com/watch?v=kO9SvONhO8Q
+  item: `items/kO9SvONhO8Q.md`
+- **Unaware I Inherited $500 Billion Empire, My Stepmother Slapped Me at My Father’s Funeral Only for He** — Mrs.Daniel Steel (1:13:16, new)
+  https://www.youtube.com/watch?v=eLhM4ikbcKY
+  item: `items/eLhM4ikbcKY.md`
+- **LA RIVAL QUE QUEBRÓ EL HIELO — Enemies to Lovers | Historia GL narrada sin cortes! FreenBecky** — Story Hunter GL (6:35:42, 1.0K views)
+  https://www.youtube.com/watch?v=RT8PmKmAHk4
+  item: `items/RT8PmKmAHk4.md`
+- **Claude Managed Agents 完整解析：企业 AI 智能体基础设施，Anthropic 全包了** — 爱副业AI (5:32, 1 views)
+  https://www.youtube.com/watch?v=4CQzh9gimfM
+  item: `items/4CQzh9gimfM.md`

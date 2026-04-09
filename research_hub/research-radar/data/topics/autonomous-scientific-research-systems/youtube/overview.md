@@ -555,3 +555,93 @@ Full item files belong in `items/`.
 - **I Chose Not to Have Kids & I Have Zero Regrets at 67 | Childfree Elder: Esther's Story** — Zoë and James | We are Childfree (1:24:24, 13 views)
   https://www.youtube.com/watch?v=GfUW10OIwys
   item: `items/GfUW10OIwys.md`
+
+## 2026-04-09 — 29 new videos
+
+- **🎧 AI-Powered Fluidic Labs #news #science #ai #chemistry** — National Science Foundation News (1:30, 31 views)
+  https://www.youtube.com/watch?v=32bM56ZRYyo
+  item: `items/32bM56ZRYyo.md`
+- **Why the best scientific discoveries are happening in massive groups now** — RUBIN'S MIND LAB (4:41, new)
+  https://www.youtube.com/watch?v=eMeXQvZFAvE
+  item: `items/eMeXQvZFAvE.md`
+- **ARS: Financial Guarantees for Autonomous Agents** — AI Research Roundup (4:04, 2 views)
+  https://www.youtube.com/watch?v=byx3TqFqqcA
+  item: `items/byx3TqFqqcA.md`
+- **NotebookLM is Absolutely Insane For This** — Nova Tech (28, 2 views)
+  https://www.youtube.com/watch?v=Qc4FiWJsM_U
+  item: `items/Qc4FiWJsM_U.md`
+- **AI Is Learning on Its Own… Here’s What Happens Next ,** — BrainSnacks 🧠 (6:02, 1 views)
+  https://www.youtube.com/watch?v=SlWewTHTGmM
+  item: `items/SlWewTHTGmM.md`
+- **Self-Driving Cars on the Moon Before New York City?** — The Road to Autonomy (1:24:17, 18 views)
+  https://www.youtube.com/watch?v=zLx8rY2utPU
+  item: `items/zLx8rY2utPU.md`
+- **The Amish Have Never Paid an Energy Bill — This Is the Exact System They Use** — Historia Prime (23:47, 628 views)
+  https://www.youtube.com/watch?v=zbZjICJMrFw
+  item: `items/zbZjICJMrFw.md`
+- **Anthropic's New Model is Too Dangerous for the Public. (Claude Mythos)** — AI with Arun Show (10:28, 129 views)
+  https://www.youtube.com/watch?v=xUUKxrhHWkc
+  item: `items/xUUKxrhHWkc.md`
+- **CrowdStrike vs SentinelOne vs Palo Alto: Which One Actually Wins? (2026)** — Tinkr (3:01, 5 views)
+  https://www.youtube.com/watch?v=davOBJuf25c
+  item: `items/davOBJuf25c.md`
+- **Do we need deep sea mining? With Seas At Risk** — Shaken Not Burned (37:24, 3 views)
+  https://www.youtube.com/watch?v=-FNoqi7JFTQ
+  item: `items/-FNoqi7JFTQ.md`
+- **Anthropic Built an AI So Powerful It Scared Itself** — Vivek Mishra (15:42, 1.7K views)
+  https://www.youtube.com/watch?v=B4HpkbFVszI
+  item: `items/B4HpkbFVszI.md`
+- **Deepfakes, AI Hallucinations: Can We Trace Fake Images Back to the Creator? | Generation AI** — Arizona’s Family (3TV / CBS 5)  and Derek Staahl (26:00, 151 views)
+  https://www.youtube.com/watch?v=P5s21EguUxc
+  item: `items/P5s21EguUxc.md`
+- **30 ദിവസത്തെ ആയുസ്സ് 1004 ആക്കിയ മാജിക്‌ കോപ്റ്റർ | Inguinity Explained** — JR STUDIO Sci-Talk Malayalam (18:44, 1.0K views)
+  https://www.youtube.com/watch?v=yzMT389ee70
+  item: `items/yzMT389ee70.md`
+- **Carmen Amo Alonso: Controllable AI, Artificial Intelligence meets Control Theory** — Machine Learning and Dynamical Systems Seminar (1:00:33, new)
+  https://www.youtube.com/watch?v=9iq9sSjGwiM
+  item: `items/9iq9sSjGwiM.md`
+- **The Orion Survival Trap: Why Artemis Astronauts Risk Total Isolation in Deep Space** — Insane Curiosity (23:02, 919 views)
+  https://www.youtube.com/watch?v=CA8LaKDfQDY
+  item: `items/CA8LaKDfQDY.md`
+- **AI Just Crossed a Dangerous Line (Claude Mythos, AI Hacking & the Future of Work)** — AI x Higher Ed Podcast (42:37, 25 views)
+  https://www.youtube.com/watch?v=gxa8oFQ97QU
+  item: `items/gxa8oFQ97QU.md`
+- **The New Group of Women Helping Reshape Republican Politics | WSJ** — The Wall Street Journal (19:58, 903 views)
+  https://www.youtube.com/watch?v=55iBtTob8Xs
+  item: `items/55iBtTob8Xs.md`
+- **The Next Generation of Surgery: From Automated Surgery to Humanoid Robot Surgical Teams** — Distinctive Voices (44:55, 8 views)
+  https://www.youtube.com/watch?v=dtXLdE2y3q8
+  item: `items/dtXLdE2y3q8.md`
+- **Why Some People Can't Start Work Without Coffee** — PsychOwlogy (8:23, new)
+  https://www.youtube.com/watch?v=a1KUkWnJD0I
+  item: `items/a1KUkWnJD0I.md`
+- **Faculty Insights with Mario Berges** — College of Engineering, Carnegie Mellon University (49:37, 6 views)
+  https://www.youtube.com/watch?v=ygP1KJ_Wcuw
+  item: `items/ygP1KJ_Wcuw.md`
+- **Administrative Control of Science in India | Prof Gautam Desiraju & Anand Venkatraman MD** — Atharva Forum (51, 87 views)
+  https://www.youtube.com/watch?v=_56JCexcLfU
+  item: `items/_56JCexcLfU.md`
+- **Koncz Balázs and Attila Foris** — Magyar Business Podcast (2:21:26, 26 views)
+  https://www.youtube.com/watch?v=drSYjJ1pzuU
+  item: `items/drSYjJ1pzuU.md`
+- **The City That Fired Its Traffic Lights** — The Quantum Leap (14:38, 10 views)
+  https://www.youtube.com/watch?v=_ZLg8y8Vsa4
+  item: `items/_ZLg8y8Vsa4.md`
+- **The Most Dangerous 16 Minutes of Artemis Mission (Riding a Fireball)** — Sky Secrets (10:02, 6 views)
+  https://www.youtube.com/watch?v=M90uJuzw8GE
+  item: `items/M90uJuzw8GE.md`
+- **THE HIDDEN TRAPS OF OTT PLATFORMS: Too Many Shows, Zero Satisfaction? Here's Why | PODCAST** — acreativepathshala (18:39, 4 views)
+  https://www.youtube.com/watch?v=b6c57drSfhI
+  item: `items/b6c57drSfhI.md`
+- **🔥中國真的要裂了？帕克震撼預言：上海獨立、兩廣建國倒數中！ 2000 年歷史鐵律揭秘！** — 麒麟片 (21:57, 1 views)
+  https://www.youtube.com/watch?v=fW4xhSYLt9E
+  item: `items/fW4xhSYLt9E.md`
+- **清华发布催化研究智能体：人工智能迈向自主研究，实现从灵感到论文的科研全链路闭环** — Agent 创世纪 (10:39, 4 views)
+  https://www.youtube.com/watch?v=BdeK0c6lCi8
+  item: `items/BdeK0c6lCi8.md`
+- **Dawkins : Islam is the Greatest Force for Evil in the World Today!** — الفكر الحر (16:13, 28 views)
+  https://www.youtube.com/watch?v=NuzxoUMNDtA
+  item: `items/NuzxoUMNDtA.md`
+- **Research in Focus - Nadimul Haque** — Australian Cobotics Centre (1:22, new)
+  https://www.youtube.com/watch?v=ofTfv3QCufs
+  item: `items/ofTfv3QCufs.md`

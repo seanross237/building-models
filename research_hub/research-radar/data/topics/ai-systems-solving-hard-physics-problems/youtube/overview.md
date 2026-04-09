@@ -561,3 +561,96 @@ Full item files belong in `items/`.
 - **意外穿越成不受寵王妃，開局便被下葬，性情大變的我引得帥氣王爺青睞，他每天換著花樣寵我上天！ #錯嫁乞丐竟是皇帝 #古裝 #短劇 #minidrama #甜寵劇爽** — 長安戲說 (2:33:15, 269 views)
   https://www.youtube.com/watch?v=IEVbjC-yDzo
   item: `items/IEVbjC-yDzo.md`
+
+## 2026-04-09 — 30 new videos
+
+- **Robert Lawrence Kuhn: Closer to Truth on Consciousness, Nonduality, and the Nature of Existence** — Buddha at the Gas Pump® (2:13:07, 240 views)
+  https://www.youtube.com/watch?v=Kcy1SLTXl6A
+  item: `items/Kcy1SLTXl6A.md`
+- **Why AI Fails on Hard Calculus Exam Questions (Real Understanding vs Recognition)** — jason The Mathematician (23:36, 3 views)
+  https://www.youtube.com/watch?v=IpFWV9iawfQ
+  item: `items/IpFWV9iawfQ.md`
+- **Sam Altman: Am intrat deja în singularitate! 🤖 Viitorul inteligenței artificiale** — Cristian Presură - Fizica Povestită (10:10, 1.4K views)
+  https://www.youtube.com/watch?v=pT_l-cNOxoM
+  item: `items/pT_l-cNOxoM.md`
+- **30 ദിവസത്തെ ആയുസ്സ് 1004 ആക്കിയ മാജിക്‌ കോപ്റ്റർ | Inguinity Explained** — JR STUDIO Sci-Talk Malayalam (18:44, 1.0K views)
+  https://www.youtube.com/watch?v=yzMT389ee70
+  item: `items/yzMT389ee70.md`
+- **United States | Can you solve this? | Math Olympiad Mathematics** — HkLogics (9:42, 11 views)
+  https://www.youtube.com/watch?v=wKn7MicuH54
+  item: `items/wKn7MicuH54.md`
+- **How AI agents & Claude skills work (Clearly Explained)** — Greg Isenberg (35:26, 28.1K views)
+  https://www.youtube.com/watch?v=S_oN3vlzpMw
+  item: `items/S_oN3vlzpMw.md`
+- **Can You Solve This In 60 Seconds? | Math Olympiad Mathematics** — HkLogics (4:30, 16 views)
+  https://www.youtube.com/watch?v=YlMffLMXkcw
+  item: `items/YlMffLMXkcw.md`
+- **Claude Managed Agents Just Killed Openclaw** — Moon Dev (55:22, 630 views)
+  https://www.youtube.com/watch?v=h3CXw-vHsW8
+  item: `items/h3CXw-vHsW8.md`
+- **Quantum Innovation & The Digital Future: A Conversation with Dr. Pete Shadbolt** — Columbia Business School (58:44, 51 views)
+  https://www.youtube.com/watch?v=rITo8nWU4TM
+  item: `items/rITo8nWU4TM.md`
+- **Harvard University Entrance Question | Math Olympiad Mathematics** — HkLogics (8:10, 16 views)
+  https://www.youtube.com/watch?v=KdLCCDdy6G8
+  item: `items/KdLCCDdy6G8.md`
+- **Czy Chiny Zaatakują Taiwan?** — Wiem że nic nie wiem (34:38, 7 views)
+  https://www.youtube.com/watch?v=58to7igJZRQ
+  item: `items/58to7igJZRQ.md`
+- **Ali Ansari, Micro1 | theCUBE + NYSE Wired: Mixture of Experts** — SiliconANGLE theCUBE (15:18, 3.8K views)
+  https://www.youtube.com/watch?v=545nswb_SBE
+  item: `items/545nswb_SBE.md`
+- **EP 20 Knowing Enough AI to Stop Fearing It** — Bridging Skills (32:38, 7 views)
+  https://www.youtube.com/watch?v=J5d8UXIA1pk
+  item: `items/J5d8UXIA1pk.md`
+- **Shen Wanjun reveals how Taiwan's one-day supply chain dominates the global AI lifeline!** — 寶傑點兵／寶傑怎麼說 (1:02:57, 24.6K views)
+  https://www.youtube.com/watch?v=Hyouo5cuXfs
+  item: `items/Hyouo5cuXfs.md`
+- **The Hydration Mistake Destroying Your Heart After 50** — Japan D+ (12:23, 3.1K views)
+  https://www.youtube.com/watch?v=zuppg0N_b7Y
+  item: `items/zuppg0N_b7Y.md`
+- **« Le traitement du cancer arrive, tout le reste va s’effondrer à ce moment-là » – Laurent Schwartz** — Epoch Times France (1:13:57, 448 views)
+  https://www.youtube.com/watch?v=jlU7bhdN-XY
+  item: `items/jlU7bhdN-XY.md`
+- **AI assisted software engineering need leaders not coders** — Coding Chats (49:54, 18 views)
+  https://www.youtube.com/watch?v=E-VM_9UkaLo
+  item: `items/E-VM_9UkaLo.md`
+- **The Chip Powering Robots, Self-Driving Cars, and Physical AI: Sony Semiconductor CMOS Image Sensors** — Chip Stock Investor (34:20, 1.4K views)
+  https://www.youtube.com/watch?v=DUXimcBMte0
+  item: `items/DUXimcBMte0.md`
+- **desire conspire** — bsidejunkie (1:36:20, 14 views)
+  https://www.youtube.com/watch?v=aBEe4Ul7wNg
+  item: `items/aBEe4Ul7wNg.md`
+- **Complexity Leadership: Leadership and Followership Development for a Complex World** — UGA Mary Frances Early College of Education (1:29:14, 3 views)
+  https://www.youtube.com/watch?v=u4q3FEy3doM
+  item: `items/u4q3FEy3doM.md`
+- **Proton Highways, AI Cyber Shields & The Historic Artemis Lunar Flyby | Artificially Informed** — Artificially Informed (1:05:44, 4 views)
+  https://www.youtube.com/watch?v=H_gyq4Wr_NE
+  item: `items/H_gyq4Wr_NE.md`
+- **🔥Seen as a witch by the cold prince, she still stole his heart and kept him restless every night.** — 古短剧场 Ancient Short Drama (2:49:16, 762 views)
+  https://www.youtube.com/watch?v=K_JuGk5FYYA
+  item: `items/K_JuGk5FYYA.md`
+- **[Multi-SUB] He Was Rejected and Humiliated—Then Became the Genius Who Saved the Empire** — Black Cat Drama (1:44:36, 184 views)
+  https://www.youtube.com/watch?v=-YVgmqCa1vY
+  item: `items/-YVgmqCa1vY.md`
+- **How David Kingham is Championing Fusion - Inside Tokamak Energy's 100M Degree Breakthrough** — Fifty Years (20:18, 55 views)
+  https://www.youtube.com/watch?v=o2unNmCYQxw
+  item: `items/o2unNmCYQxw.md`
+- **MULTISUB📢新番上线《开局两界倒卖，我反手开启万亿工业革命》第1~60集丨诸神十年后要灭蓝星？他觉醒双向传送外挂，搬空祖国物资横推异世界！身价亿万倍爆发，无敌打脸众神！💥✨#漫剧 #星启漫剧社** — 星启漫剧社 (2:18:26, 180 views)
+  https://www.youtube.com/watch?v=JC6L0k2HjIk
+  item: `items/JC6L0k2HjIk.md`
+- **Ann Arbor Board of Education Meeting 4/8/26** — CTN Ann Arbor (3:35:36, 35 views)
+  https://www.youtube.com/watch?v=J1l2Kuoq7e0
+  item: `items/J1l2Kuoq7e0.md`
+- **Autoscaling in Production: When It Works and When It Doesn't with Zaigham Sarfaraz and Šimon Bučko** — Queue-it (35:43, 22 views)
+  https://www.youtube.com/watch?v=CBHWUKFhoOM
+  item: `items/CBHWUKFhoOM.md`
+- **Is bullying of Russian-speaking children in Israel now the norm?** — Alexey Shenker (1:00:23, 4.7K views)
+  https://www.youtube.com/watch?v=Kig4m-DG0ao
+  item: `items/Kig4m-DG0ao.md`
+- **Apollo 8, Apollo 13: NASA’s Most Historic Missions | Documentary - EM** — World View – Science (52:00, 34 views)
+  https://www.youtube.com/watch?v=_dQ-LMNb9Po
+  item: `items/_dQ-LMNb9Po.md`
+- **(Part 2)They Threw Him Into The Ocean… Now 43 Girls Depend On Him To Survive** — Top Comic Recap (21:01:28, 52 views)
+  https://www.youtube.com/watch?v=LJeX0_ILP1c
+  item: `items/LJeX0_ILP1c.md`

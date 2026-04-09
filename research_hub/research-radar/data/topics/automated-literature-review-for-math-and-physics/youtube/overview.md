@@ -21,3 +21,9 @@ Full item files belong in `items/`.
 - **🍪 CFD cookie 2 - More on turbulence modeling - SSG Reynolds Stress Model - Part 26** — Wolf Dynamics World - WDW (28:47, 92 views)
   https://www.youtube.com/watch?v=z_CH0d5ryZ0
   item: `items/z_CH0d5ryZ0.md`
+
+## 2026-04-09 — 1 new videos
+
+- **2026, April 8 - Montana State Library Commission Meeting** — Montana State Library (2:47:59, 31 views)
+  https://www.youtube.com/watch?v=lVQeCqR3pb0
+  item: `items/lVQeCqR3pb0.md`

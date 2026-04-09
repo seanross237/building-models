@@ -561,3 +561,93 @@ Full item files belong in `items/`.
 - **Episode 9: Introduction — Getting to Know JAR Consulting Group** — JAR Consulting Group (13:52, 1 views)
   https://www.youtube.com/watch?v=tYfpOlsdLy8
   item: `items/tYfpOlsdLy8.md`
+
+## 2026-04-09 — 29 new videos
+
+- **Stock Rally Stalls, Oil Rebounds Ahead of US-Iran Talks, Ceasefire Doubts | Bloomberg Brief 4/9/2026** — Bloomberg Television (43:26, 5.8K views)
+  https://www.youtube.com/watch?v=SpfTSY5ygIU
+  item: `items/SpfTSY5ygIU.md`
+- **Self-Driving Cars on the Moon Before New York City?** — The Road to Autonomy (1:24:17, 18 views)
+  https://www.youtube.com/watch?v=zLx8rY2utPU
+  item: `items/zLx8rY2utPU.md`
+- **Webinar -  Privileged remote access: The blind spot in PAM** — Devolutions (43:25, 12 views)
+  https://www.youtube.com/watch?v=AaPlr7ag5Zw
+  item: `items/AaPlr7ag5Zw.md`
+- **MLOps 101: Platforms and Processes for Building AI | NVIDIA GTC** — NVIDIA Developer (38:57, 315 views)
+  https://www.youtube.com/watch?v=K9X-8aS8BxA
+  item: `items/K9X-8aS8BxA.md`
+- **This contractor generated $1,000,000 referrals in 12 months** — Bill Brown - ServiceTitan Hacks (37:39, 4 views)
+  https://www.youtube.com/watch?v=y47fh_aDK0w
+  item: `items/y47fh_aDK0w.md`
+- **DOES CHAIKIN ANALYTICS WORK? (THE TRUTH!) CHAIKIN ANALYTICS REVIEWS - POWER GAUGE REPORT** — tivs14 (3:24, 229 views)
+  https://www.youtube.com/watch?v=9V4DJpT8nNM
+  item: `items/9V4DJpT8nNM.md`
+- **Bloomberg Surveillance 4/9/2026** — Bloomberg Television (2:24:13, 2.3K views)
+  https://www.youtube.com/watch?v=QjKxnvYG45Y
+  item: `items/QjKxnvYG45Y.md`
+- **Why Sales And Marketing Should Be Separate** — Scott Beebe (6:43, 2 views)
+  https://www.youtube.com/watch?v=dklidSz9W00
+  item: `items/dklidSz9W00.md`
+- **Stop Reacting, Start Designing: The ADDIE Model for Business Teams** — GGT Creative | Training and Performance Insights (4:27, new)
+  https://www.youtube.com/watch?v=EbxKQA0YDYU
+  item: `items/EbxKQA0YDYU.md`
+- **JNJ 62% Surge! Johnson & Johnson to 285! JNJ Stock Analysis** — Smart Wealth With Joshua (19:43, new)
+  https://www.youtube.com/watch?v=rTIMDPP63i8
+  item: `items/rTIMDPP63i8.md`
+- **Why Enterprises Need Partners, Not Vendors** — Sunil Dhawan Consulting (29, 113 views)
+  https://www.youtube.com/watch?v=qf7RDtJ6wCA
+  item: `items/qf7RDtJ6wCA.md`
+- **【完整版下集】鄭麗文：證明不是我一廂情願　鄭習將談和平兩岸和解必走大路？20260409｜#戴瑋姍 #蘭萱 #賴士葆 #王鴻薇 #唐湘龍** — 少康戰情室 TVBS Situation Room (44:43, 29.9K views)
+  https://www.youtube.com/watch?v=q5WtqRLCnSA
+  item: `items/q5WtqRLCnSA.md`
+- **NASA’s Artemis II Daily News Conference (April 8, 2026)** — NASA (1:01:40, 253.4K views)
+  https://www.youtube.com/watch?v=8ZFM9ywOpl0
+  item: `items/8ZFM9ywOpl0.md`
+- **NASA Artemis II Briefing** — C-SPAN (58:21, 4.2K views)
+  https://www.youtube.com/watch?v=Xz3888RPCYg
+  item: `items/Xz3888RPCYg.md`
+- **【深度推演】中日衝突的終極引爆點在哪裡？中日明天就開戰的話，俄羅斯、朝鮮、巴基斯坦會幫助中國嗎？** — 焦點深鏡 (53:03, 8.4K views)
+  https://www.youtube.com/watch?v=EFJab8Uch6Y
+  item: `items/EFJab8Uch6Y.md`
+- **House Legacy Finance Committee 4/8/26** — MNHouseInfo (1:48:19, 60 views)
+  https://www.youtube.com/watch?v=f7BuaaOoNzY
+  item: `items/f7BuaaOoNzY.md`
+- **READYRX SERMORELIN (ATTENTION! ) READYRX REVIEWS - Is READYRX Legit? READYRX** — tivs14 (3:23, 1.2K views)
+  https://www.youtube.com/watch?v=opuK7eM6sxE
+  item: `items/opuK7eM6sxE.md`
+- **Innovation in AI and Data Science: Driving Professional Growth in the Digital Era** — Strategies for Professional Growth (SPG) (12:46, 9 views)
+  https://www.youtube.com/watch?v=FRjjtwsGINY
+  item: `items/FRjjtwsGINY.md`
+- **ICSE & ISC 2026 Result Date & Liberal Marking Scheme: Latest CISCE Board Update on Copy Correction 😱** — Tuition ICSE Online (4:37, 893 views)
+  https://www.youtube.com/watch?v=JGvHstLC7bQ
+  item: `items/JGvHstLC7bQ.md`
+- **💀 Lord Era: Infinite Creation —🔥 Weakest Skeleton Army to World Domination! 👑#anime #ai #manhwa #dub** — Zenthara Anime (2:30:29, 1.4K views)
+  https://www.youtube.com/watch?v=czf-sGKRlzs
+  item: `items/czf-sGKRlzs.md`
+- **Market Call: Brian Madden's outlook on North American Equities (April 8, 2026)** — BNN Bloomberg (44:48, 4.6K views)
+  https://www.youtube.com/watch?v=pfMxPhYjUBI
+  item: `items/pfMxPhYjUBI.md`
+- **SE02E20 Marketing Using First Principles | Ben Scandlen** — Colin Davis (51:34, new)
+  https://www.youtube.com/watch?v=Dq65_E2GSZI
+  item: `items/Dq65_E2GSZI.md`
+- **A Mortal's Journey 352 - Han Li Walked Into a Trap… Then Turned the Swamp Into a Graveyard** — Recap and Explained (1:58:25, 316 views)
+  https://www.youtube.com/watch?v=zi2_J9JS0dw
+  item: `items/zi2_J9JS0dw.md`
+- **HFM: Beyond the Garage | Molex** — Molex (4:23, 9 views)
+  https://www.youtube.com/watch?v=6_Cm_bm7cdM
+  item: `items/6_Cm_bm7cdM.md`
+- **Navigating Change Conversation Series - Building Resilience: Strategies for Sustainable Impact** — NCURA1959 (57:55, 7 views)
+  https://www.youtube.com/watch?v=HKXUH0jtVnQ
+  item: `items/HKXUH0jtVnQ.md`
+- **Global slaughter—my F-level talent upgraded to SSS-level!#manga** — Sk Manhwa Recap (11:56:58, 147 views)
+  https://www.youtube.com/watch?v=JWHhBUK4YtQ
+  item: `items/JWHhBUK4YtQ.md`
+- **Mist Survival:Man Awakens SSS Talent Deep Sea Blessing,Builds Sea Monster Army,Becoming Sea Lord！** — Mania Comics Legends (27:07:16, 434 views)
+  https://www.youtube.com/watch?v=1PWUzdeKnxs
+  item: `items/1PWUzdeKnxs.md`
+- **Tesla FSD Just Changed: AI Now Thinks Like Humans (TSLA)** — Life in the Future: Tesla & the World Ahead (9:59, 117 views)
+  https://www.youtube.com/watch?v=n_R1k5-fdTw
+  item: `items/n_R1k5-fdTw.md`
+- **Tesla Model 2 2026 Update! $20K Price, 800+ Mile Range, AWD Power & Smart Suspension** — NATION EV (18:29, 278 views)
+  https://www.youtube.com/watch?v=qryl_p4RaVQ
+  item: `items/qryl_p4RaVQ.md`

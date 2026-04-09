@@ -75,3 +75,18 @@ Full item files belong in `items/`.
 - **After female cashback system,he is forced live off women,tenfold cashback yields over $100M cash** — Mania Comics Legends (27:42:58, 132 views)
   https://www.youtube.com/watch?v=PWquZTLes1M
   item: `items/PWquZTLes1M.md`
+
+## 2026-04-09 — 4 new videos
+
+- **Mafia Boss Broke Into the Storage at Midnight — A Crying Baby Changed Everything** — Mafia Midnight Stories (1:59:49, new)
+  https://www.youtube.com/watch?v=CTIZzpCGkAI
+  item: `items/CTIZzpCGkAI.md`
+- **Her Husband Killed Her... So She Went Back And Chose His Enemy | Full Manhwa Recap** — Animated Manhwa (7:47:15, 1 views)
+  https://www.youtube.com/watch?v=oiAncaNKTfU
+  item: `items/oiAncaNKTfU.md`
+- **Global slaughter—my F-level talent upgraded to SSS-level!#manga** — Sk Manhwa Recap (11:56:58, 147 views)
+  https://www.youtube.com/watch?v=JWHhBUK4YtQ
+  item: `items/JWHhBUK4YtQ.md`
+- **(Part 2)They Threw Him Into The Ocean… Now 43 Girls Depend On Him To Survive** — Top Comic Recap (21:01:28, 52 views)
+  https://www.youtube.com/watch?v=LJeX0_ILP1c
+  item: `items/LJeX0_ILP1c.md`

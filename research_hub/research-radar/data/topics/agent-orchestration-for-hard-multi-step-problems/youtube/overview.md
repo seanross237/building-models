@@ -105,3 +105,21 @@ Full item files belong in `items/`.
 - **Client Zero | Inside Cognizant’s AI Transformation Journey | Cognizant** — Cognizant (30:51, 32 views)
   https://www.youtube.com/watch?v=RYe6CSx__ig
   item: `items/RYe6CSx__ig.md`
+
+## 2026-04-09 — 5 new videos
+
+- **He Can't Code but His AI Agents Make Him $5K/Month** — Chris Koerner on The Koerner Office Podcast (44:20, 23.3K views)
+  https://www.youtube.com/watch?v=JHz6mikOPWw
+  item: `items/JHz6mikOPWw.md`
+- **The Future of DevOps: AI, Agents, and the "Impossible" Workflow** — Elias Khnaser (53:26, 303 views)
+  https://www.youtube.com/watch?v=21_Ol_p-UGk
+  item: `items/21_Ol_p-UGk.md`
+- **AI MULTIAGENT DEBATOR** — akshata vyas (57, new)
+  https://www.youtube.com/watch?v=HLJKZpAW1xg
+  item: `items/HLJKZpAW1xg.md`
+- **SAP SD: ECC to S/4HANA Migration Failures (Part 3 - Vol 1) | Testing & Cutover Incidents (142–180)!** — Ace Interviews (7:03:10, 7 views)
+  https://www.youtube.com/watch?v=pE_0zn4fBoE
+  item: `items/pE_0zn4fBoE.md`
+- **Anindo Sengupta & Dan Ciruli, Nutanix | Nutanix .NEXT 2026** — SiliconANGLE theCUBE (19:56, 24 views)
+  https://www.youtube.com/watch?v=hhrXur6VLCA
+  item: `items/hhrXur6VLCA.md`

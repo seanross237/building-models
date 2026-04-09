@@ -306,3 +306,60 @@ Full item files belong in `items/`.
 - **She Got Reincarnated As The Villainess... And Chose To Stay Evil | Full Manhwa Recap** — Animated Manhwa (9:25:58, 10 views)
   https://www.youtube.com/watch?v=YrEbxLryUBw
   item: `items/YrEbxLryUBw.md`
+
+## 2026-04-09 — 18 new videos
+
+- **Unaware I Inherited $500 Billion Empire, My Stepmother Slapped Me at My Dad’s Funeral Just for He** — Sweet Trap (1:08:33, new)
+  https://www.youtube.com/watch?v=CRH5xaLrp4I
+  item: `items/CRH5xaLrp4I.md`
+- **SAP SD: ECC to S/4HANA Migration Failures (Part 3 - Vol 1) | Testing & Cutover Incidents (142–180)!** — Ace Interviews (7:03:10, 7 views)
+  https://www.youtube.com/watch?v=pE_0zn4fBoE
+  item: `items/pE_0zn4fBoE.md`
+- **After Inheriting a Territory, I Unlocked Mechanical System & Can Summon an Infinite Army of Machines** — Revel Manga Chronicles (9:49:13, 536 views)
+  https://www.youtube.com/watch?v=RQzWqtsmPu0
+  item: `items/RQzWqtsmPu0.md`
+- **Morning News NOW Full Episode – April 9** — NBC News (1:35:14, 4.2K views)
+  https://www.youtube.com/watch?v=gekDNc3omwg
+  item: `items/gekDNc3omwg.md`
+- **Mind Brain Research Day 2026** — Brown University (1:27:21, 36 views)
+  https://www.youtube.com/watch?v=ysKPix-LMJQ
+  item: `items/ysKPix-LMJQ.md`
+- **From Apprehension to Advancement: A Strategic Framework for Future-Ready AI Pedagogy** — eLearning Consortium of Colorado (50:22, 4 views)
+  https://www.youtube.com/watch?v=08ekVg2qHb4
+  item: `items/08ekVg2qHb4.md`
+- **💥ENG SUB💥【全球诡异：我的商城自动开挂】Global Horror: My Auto-Cheating Mall 第1-78集 #热血 #玄幻 #anime** — 超有钱动漫 Anime Club (5:57:53, 100 views)
+  https://www.youtube.com/watch?v=gDYCdQmJ9W0
+  item: `items/gDYCdQmJ9W0.md`
+- **SongXiaobao tricked by Shen Teng & Ma Li in Telecom Scam! Mahua Crew laughs#MahuaComedy #SongXiaobao** — 娱乐八卦社 (1:49:17, 47 views)
+  https://www.youtube.com/watch?v=p1AxEirVgPc
+  item: `items/p1AxEirVgPc.md`
+- **Diary of a Degen Z (90 day debut album documentary)** — James Laurent (7:15:12, 38 views)
+  https://www.youtube.com/watch?v=sBySRvhgHk8
+  item: `items/sBySRvhgHk8.md`
+- **【2026 AI Careers】AI Agent Interview: 12 Core Questions - You MUST Know to Get Hired !** — 人機對話-TALK2AI (15:15, 1 views)
+  https://www.youtube.com/watch?v=_Wsc8hOH21w
+  item: `items/_Wsc8hOH21w.md`
+- **Stop Wasting Your Time: The Scientific Way to Stop Procrastination and Get Control of Your Day** — Mel Robbins Story (1:21:40, new)
+  https://www.youtube.com/watch?v=wBxz0a2HKGw
+  item: `items/wBxz0a2HKGw.md`
+- **Can You Walk Me Home? He’s Following Me”—The Mafia Boss Swore to Handle It Forever** — Noir Mafia Hearts (1:30:27, 1 views)
+  https://www.youtube.com/watch?v=AQwFShYescg
+  item: `items/AQwFShYescg.md`
+- **Mafia Boss Broke Into the Storage at Midnight — A Crying Baby Changed Everything** — Mafia Midnight Stories (1:59:49, new)
+  https://www.youtube.com/watch?v=CTIZzpCGkAI
+  item: `items/CTIZzpCGkAI.md`
+- **Unaware I Inherited $500 Billion Empire, My Stepmother Slapped Me at My Father’s Funeral Only for He** — Mrs.Daniel Steel (1:13:16, new)
+  https://www.youtube.com/watch?v=eLhM4ikbcKY
+  item: `items/eLhM4ikbcKY.md`
+- **A Starving Puppy Collapsed at a Mafia Boss’s Feet — What He Did Next No One Expected** — Mafia Dangerous Love (1:24:05, 1 views)
+  https://www.youtube.com/watch?v=j75EdZ8d-SE
+  item: `items/j75EdZ8d-SE.md`
+- **Don’t Answer the Second Question | Midnight Whispers Horror Podcast** — Midnight Whispers (36:22, 1 views)
+  https://www.youtube.com/watch?v=f4UG6flRcns
+  item: `items/f4UG6flRcns.md`
+- **【Multi Sub】《重生異獸覺醒核能血脈，我替人類守國門》極致進化配核能血脈，我一獸當關萬獸退#漫劇 #動態漫 #AI漫劇 #動漫 #動畫** — 神馬動漫 (1:54:30, 1.0K views)
+  https://www.youtube.com/watch?v=0UearNQ0oh8
+  item: `items/0UearNQ0oh8.md`
+- **【Multi Sub】🔥 生活職業？我打造了抗魔聯軍！Life Class? I Built the Anti-Demon Alliance! EP1-50 #男频 #热血 #爽文** — Qixiang-Animation (4:04:26, 160 views)
+  https://www.youtube.com/watch?v=vqlOUKJS4iw
+  item: `items/vqlOUKJS4iw.md`

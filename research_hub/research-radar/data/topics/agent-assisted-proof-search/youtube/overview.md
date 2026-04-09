@@ -558,3 +558,96 @@ Full item files belong in `items/`.
 - **INSIDE A MASSIVE LUXURY HOME IN TEXAS ON 2 ACRES!** — NavaRealtyGroup (21:32, 925 views)
   https://www.youtube.com/watch?v=deEPvCkTDZc
   item: `items/deEPvCkTDZc.md`
+
+## 2026-04-09 — 30 new videos
+
+- **What Happens When Two Guys Go to Sookmyung Women's Univ. [School of Media] | Jeongwaja ep.117** — ootb STUDIO (28:21, 170.3K views)
+  https://www.youtube.com/watch?v=L7v_InUL_yI
+  item: `items/L7v_InUL_yI.md`
+- **She Got X-Ray Vision from a Magic Stone, Crushed Bosses & Became Jewelry Queen 💎👀** — LunaDrama (1:39:58, 603 views)
+  https://www.youtube.com/watch?v=70_JB2hhNIE
+  item: `items/70_JB2hhNIE.md`
+- **Nancy Guthrie: Was This the Same Car That Took Her? Tommaso & Evans Linked?** — The Crime Vault (30:05, 66 views)
+  https://www.youtube.com/watch?v=l-lAK2V-L34
+  item: `items/l-lAK2V-L34.md`
+- **How to Find Your WHY!! (And Finally Start Winning)** — Frank Driscoll (9:30, 28 views)
+  https://www.youtube.com/watch?v=JE3YFQgN2Qw
+  item: `items/JE3YFQgN2Qw.md`
+- **Everything Wrong With The Rip In 24 Minutes Or Less** — CinemaSins (25:12, 2.1K views)
+  https://www.youtube.com/watch?v=pT-pnLsldAo
+  item: `items/pT-pnLsldAo.md`
+- **Юра слышал- родителей убивают и знал, что его тоже убьют. Хладнокровное убийство семьи Приходченко.** — Истории без сахара. Погребижская. (1:16:29, 222.6K views)
+  https://www.youtube.com/watch?v=0zjaMHeYl5U
+  item: `items/0zjaMHeYl5U.md`
+- **I Found His Secret...🤫So I Welcome Pregnant Mistress Home, Filed Divorce, and Exposed The Secret!** — CEOLOVERS (2:08:22, 8.2K views)
+  https://www.youtube.com/watch?v=ABGkaenO68Q
+  item: `items/ABGkaenO68Q.md`
+- **她是廠里技術一姐，工作6年兢兢業業工資卻一直6000，可剛入職的實習生第一個月就1萬2，徹底不伺候了，她直接辭職跳槽對手公司，後來機器癱瘓沒一個人會修，廠子面臨破產，領導悔瘋！** — 劇抓馬 (2:10:41, 13.6K views)
+  https://www.youtube.com/watch?v=eTotiF510v4
+  item: `items/eTotiF510v4.md`
+- **Gunned Down While Running for Her Life — A Lone Cowboy Was the Only One Who Stopped** — WesternOdyssey (1:42:49, 391 views)
+  https://www.youtube.com/watch?v=PWkPq6tC3Gk
+  item: `items/PWkPq6tC3Gk.md`
+- **Police officer Luyen arrived at the scene when Hoa's husband vandalized the workshop.** — Triệu Hoa (49:08, 2.8K views)
+  https://www.youtube.com/watch?v=45ebnjEptuI
+  item: `items/45ebnjEptuI.md`
+- **ENG SUB 【沙雕動畫 】🔥《团购小风波》我组织小区团购，每单赚五毛组织费，老板娘竟眼红索要五万！还联合周边断供涨价？#爽文#打脸爽剧#ScreenRewind声影漫游** — Screen Rewind ​声影漫游 (41:08, 1.1K views)
+  https://www.youtube.com/watch?v=Y3gJy2rztIc
+  item: `items/Y3gJy2rztIc.md`
+- **Female Agent Infiltrates Japanese Camp, Trapped—Accidental Explosion Turns Tables!** — 经典影院 (1:33:04, 93 views)
+  https://www.youtube.com/watch?v=al-RFMhN8_w
+  item: `items/al-RFMhN8_w.md`
+- **Gods' middleman! Immortal WeChat helps poor youth counterattack tycoons, dual realms rule!** — Instant Drama (1:33:09, 1.4K views)
+  https://www.youtube.com/watch?v=kEVdCxEGJhU
+  item: `items/kEVdCxEGJhU.md`
+- **5 HORRIFYING Tragedies on EVEREST** — CATASTROPHIYA (2:10:56, 120 views)
+  https://www.youtube.com/watch?v=xanxxdtWsKM
+  item: `items/xanxxdtWsKM.md`
+- **Ex Shows Up With Mistress To Shame Her—She Panics,Grabs a Hot Guy as Her “BF”…a CEO Who Falls Hard…** — Tender Trap Drama (1:53:35, 20 views)
+  https://www.youtube.com/watch?v=NLt-k3nnxvE
+  item: `items/NLt-k3nnxvE.md`
+- **Countries That REFUSE to Bow to ISLAM** — Fall of Nations (2:45:58, 3.0K views)
+  https://www.youtube.com/watch?v=ozYvNiA86fo
+  item: `items/ozYvNiA86fo.md`
+- **An agent in a princess’s body! She uses modern tricks to win over the Prince and the Queen.** — Peerless Plot (2:46:10, 2.7K views)
+  https://www.youtube.com/watch?v=9jb74yYmAEQ
+  item: `items/9jb74yYmAEQ.md`
+- **🌟【新番上线|ENG SUB】《墨轩归来》废柴鼎器觉醒逆袭，吞噬神功碾压仙宗，暗处危机悄然降临！ 一口气看完 #漫剧 #热血 #玄幻 #战斗 #苍穹动漫** — Dragon Animation Club (1:54:21, 10.1K views)
+  https://www.youtube.com/watch?v=bUkETLLeAvM
+  item: `items/bUkETLLeAvM.md`
+- **黑幫總裁極度厭女，卻當眾被女大學生強吻，保鑣以為她必死無疑，誰料天雷勾地火，總裁愛上她柔軟的雙唇，從此成他唯一例外 #灰姑娘霸總 #瑪麗蘇 #甜寵 黑幫大佬愛上純情女學生** — 木未剧场NO1LoveDrama (1:53:34, 3.4K views)
+  https://www.youtube.com/watch?v=bKIgwNojj9g
+  item: `items/bKIgwNojj9g.md`
+- **Ceasefire deal a ‘delicate tightrope walk’ after Iran accuses U.S. and Israel of violating agreement** — NBC News (31:55, 30.1K views)
+  https://www.youtube.com/watch?v=CqcdCxM9DTk
+  item: `items/CqcdCxM9DTk.md`
+- **補辦結婚證才知2年婚姻全是騙局，渣男和學姐領證5年，騙她流產養私生子，她差點崩潰卻意外得知自己是首富繼承人，手握巨額遺產設局反殺，渣男跪地求饒，她挽著新歡冷笑「你算計的那點家產，不夠我買一個包」** — 追劇鴨 (2:41:26, 3.5K views)
+  https://www.youtube.com/watch?v=JzXYsZe-69U
+  item: `items/JzXYsZe-69U.md`
+- **From Conspiracies to Faith… What Happens When You Go Too Deep with Jamie Hanshaw | Ep 251 HTBITY** — Jamie Kennedy (1:50:59, 7.0K views)
+  https://www.youtube.com/watch?v=Lgoi3kEfwTY
+  item: `items/Lgoi3kEfwTY.md`
+- **🔥🔥My girlfriend was swayed by another man—I cut ties at once and took down all my rivals.** — 爽劇追蹤 Cool Drama Tracking (2:27:49, 6.3K views)
+  https://www.youtube.com/watch?v=txHL0YK4MNo
+  item: `items/txHL0YK4MNo.md`
+- **ENG SUB 【沙雕動畫 】🔥《合伙争端》十年闺蜜情，年赚450万给我50万，还说我占便宜？我拿 50 万在对面开新店，开业爆火让她气急败坏！#爽文#打脸爽剧#ScreenRewind声影漫游** — Screen Rewind ​声影漫游 (40:01, 4.9K views)
+  https://www.youtube.com/watch?v=JmXkCarbEBs
+  item: `items/JmXkCarbEBs.md`
+- **Trump Vows To Keep Troops In Place Before Iran Talks | The Opening Trade 4/9/2026** — Bloomberg Television (1:36:12, 6.8K views)
+  https://www.youtube.com/watch?v=RdvLusd8Rqg
+  item: `items/RdvLusd8Rqg.md`
+- **I Married a Broke Chef… Turns Out He Owns a Billion-Dollar Empire 💰** — VibeDrama (1:45:28, 11 views)
+  https://www.youtube.com/watch?v=zAw0qcnkZWU
+  item: `items/zAw0qcnkZWU.md`
+- **結婚2年發現結婚證是假的，就連養了5年的兒子也是他和白月光的！一顆真心餵了狗，她毅然離婚！後來她嫁給門當戶對的總裁人生煥然一新，渣男死纏爛打求復合卻換來她冷笑一聲「吃過好的，誰還惦記餿飯啊？」** — 追爽劇 (2:41:26, 4.2K views)
+  https://www.youtube.com/watch?v=2dNwGEA7yd8
+  item: `items/2dNwGEA7yd8.md`
+- **灰姑娘救下重傷黑道大佬，卻被他強行佔有意外懷孕，本想從此陌路，沒​​想到他竟強勢登門強娶，看似霸道狠戾的愛裡全是深藏的溫柔！ #短劇 #短劇全集 #短劇推薦 #drama** — 槍神小魚 (1:42:51, 8.2K views)
+  https://www.youtube.com/watch?v=0I-FvGrgHto
+  item: `items/0I-FvGrgHto.md`
+- **[Multi SUB] （全集）穿成炮灰反派，我用读者视角吊打男主！夏流？玩死他！魏云？揭穿他！夏三鹿？让他社死！从必死局逆袭成终极赢家！#最火短剧推荐 #短剧全集 #精彩大陆短剧** — 逆天剧场 (2:27:27, 2.1K views)
+  https://www.youtube.com/watch?v=xzawUKVi4EQ
+  item: `items/xzawUKVi4EQ.md`
+- **Meet the Press NOW – April 8** — NBC News (49:52, 106.7K views)
+  https://www.youtube.com/watch?v=pYXtE2b1BP0
+  item: `items/pYXtE2b1BP0.md`

@@ -33,3 +33,9 @@ Full item files belong in `items/`.
 - **BEYOND WILLPOWER  |  The Apocrypha of the Absolute Self  | Full audiobook** — The Sovereign Path (2:46:20, 1 views)
   https://www.youtube.com/watch?v=pAIeHT18WeA
   item: `items/pAIeHT18WeA.md`
+
+## 2026-04-09 — 1 new videos
+
+- **SAP SD: ECC to S/4HANA Migration Failures (Part 3 - Vol 1) | Testing & Cutover Incidents (142–180)!** — Ace Interviews (7:03:10, 7 views)
+  https://www.youtube.com/watch?v=pE_0zn4fBoE
+  item: `items/pE_0zn4fBoE.md`

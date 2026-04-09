@@ -186,3 +186,15 @@ Full item files belong in `items/`.
 - **Housing Market CRASH: Are You Buying At The Wrong Time?** — Hope to Wealth (38:40, new)
   https://www.youtube.com/watch?v=0MN4dIZV2PM
   item: `items/0MN4dIZV2PM.md`
+
+## 2026-04-09 — 3 new videos
+
+- **Claude Code + Codex Workflow Explained (Best AI Coding Setup 2026)** — Nick Puru | AI Automation (17:39, 215 views)
+  https://www.youtube.com/watch?v=8lLKnkvH56U
+  item: `items/8lLKnkvH56U.md`
+- **Oct 2022: Random Words Can Break Every AI Safety Filter. No Exceptions. | Prompt Injection History** — AI Archive (10:13, 4 views)
+  https://www.youtube.com/watch?v=EwjZl7SSlMw
+  item: `items/EwjZl7SSlMw.md`
+- **Brew #63: Skanowanie Mózgu przez Metę, Mistral i Europejska Suwerenność LLM, 4 Zawody Przyszłości** — CTO Morning Coffee (1:23:22, 158 views)
+  https://www.youtube.com/watch?v=-7qtCgFjVjM
+  item: `items/-7qtCgFjVjM.md`

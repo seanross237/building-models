@@ -558,3 +558,96 @@ Full item files belong in `items/`.
 - **How AI is Transforming Group Communication with David Petrou** — Wisdom Partners (31:54, new)
   https://www.youtube.com/watch?v=WVy0uiKVHkA
   item: `items/WVy0uiKVHkA.md`
+
+## 2026-04-09 — 30 new videos
+
+- **The Next Evolution of AI Coding Is Harnesses - Here's How to Build Them** — Cole Medin (30:48, 11.6K views)
+  https://www.youtube.com/watch?v=qMnClynCAmM
+  item: `items/qMnClynCAmM.md`
+- **This NotebookLM + Gemini AI Workflow Changed How I Create Images! You Can Have It** — Craig Does AI (25:22, 3.7K views)
+  https://www.youtube.com/watch?v=U7YLR_0X6rc
+  item: `items/U7YLR_0X6rc.md`
+- **W&L QUANTUM PHYSICIST  UuP115 Nellis AFB - AI FUN VIDEO** — The Truth Sets You Free (3:46, 2 views)
+  https://www.youtube.com/watch?v=d2CzFlK8uh0
+  item: `items/d2CzFlK8uh0.md`
+- **AIE Europe Day 1: Keynotes & OpenClaw/Personal Agents ft Google Deepmind, OpenAI, Vercel, & more** — AI Engineer (9:11:01, 8.0K views)
+  https://www.youtube.com/watch?v=O_IMsEg91g8
+  item: `items/O_IMsEg91g8.md`
+- **The Junior Developer CRISIS: How to Build a Team When AI Does the Entry-Level Work** — Modern Software Engineering (11:53, 4.4K views)
+  https://www.youtube.com/watch?v=fHfkJRh2veg
+  item: `items/fHfkJRh2veg.md`
+- **Meta AI Muse Spark Is HERE – Testing Meta’s New Frontier Model!** — Bijan Bowen (42:07, 23.2K views)
+  https://www.youtube.com/watch?v=cfxRAdmxjOo
+  item: `items/cfxRAdmxjOo.md`
+- **Scientists Used New AI 3D Scans on Stonehenge— The Results Are More Disturbing Than Anyone Expected!** — The Lost Mystery (25:49, 30.4K views)
+  https://www.youtube.com/watch?v=5Tlu-O_UcmI
+  item: `items/5Tlu-O_UcmI.md`
+- **These 5 Website Types Build Almost Everything (Free AI Prompt)** — Robert’s Tech Toolbox (11:59, 1.2K views)
+  https://www.youtube.com/watch?v=5oCLS8Be9lg
+  item: `items/5oCLS8Be9lg.md`
+- **Production AI needs Quantum Error Codes (QECC)?** — Discover AI (19:50, 234 views)
+  https://www.youtube.com/watch?v=ASyJgzGE2aw
+  item: `items/ASyJgzGE2aw.md`
+- **50x More Powerful! Why Tesla & SpaceX Just Partnered With Intel** — The Electric Viking (9:07, 4.0K views)
+  https://www.youtube.com/watch?v=KNZ-1pHjY10
+  item: `items/KNZ-1pHjY10.md`
+- **GLM 5.1 - Coding, Quants, Apps & Maths TESTED | #1 Local AI Got Smarter 🤯** — xCreate (20:01, 11.9K views)
+  https://www.youtube.com/watch?v=T-eBZIMc_sY
+  item: `items/T-eBZIMc_sY.md`
+- **How AI agents & Claude skills work (Clearly Explained)** — Greg Isenberg (35:26, 28.1K views)
+  https://www.youtube.com/watch?v=S_oN3vlzpMw
+  item: `items/S_oN3vlzpMw.md`
+- **Pi's Advantage Over Claude Code Is Insane** — Eric Michaud (13:04, 1.0K views)
+  https://www.youtube.com/watch?v=Mnvk9gK4e9A
+  item: `items/Mnvk9gK4e9A.md`
+- **The Truth About AI Agents: Why Your "Vibe Code" is a Ticking Time Bomb** — Rynaut — Architecting Automation (8:19, 1 views)
+  https://www.youtube.com/watch?v=ppwGr-e_Kg0
+  item: `items/ppwGr-e_Kg0.md`
+- **How Hex Builds AI Agents: Making Agents Reason Like Human Data Analysts | Izzy Miller, AI Engineer** — LangChain (1:08:21, 280 views)
+  https://www.youtube.com/watch?v=Xyh1EqcjGME
+  item: `items/Xyh1EqcjGME.md`
+- **OpenAI is Flailing, Anthropic’s Mythos AI is Too Powerful, Are Vertical Tabs Good?** — Primary Technology (1:15:51, 90 views)
+  https://www.youtube.com/watch?v=9oVRoMtEa70
+  item: `items/9oVRoMtEa70.md`
+- **The Future of DevOps: AI, Agents, and the "Impossible" Workflow** — Elias Khnaser (53:26, 303 views)
+  https://www.youtube.com/watch?v=21_Ol_p-UGk
+  item: `items/21_Ol_p-UGk.md`
+- **Meta AI Models, Google Upgrades, THIS IS BULLISH | Market Monitor** — Future Investing (1:25:36, 6.9K views)
+  https://www.youtube.com/watch?v=X4pj369sAlU
+  item: `items/X4pj369sAlU.md`
+- **Post-Mortem of Anthropic's Claude Code Leak** — Practical AI (43:25, 6 views)
+  https://www.youtube.com/watch?v=3bEnnyfuIjI
+  item: `items/3bEnnyfuIjI.md`
+- **AI Daily: SpaceX Orbital Data Centers, Claude Sonnet 4.5, SWE Agents, Meta-Harness** — CosmoX (27:39, 4 views)
+  https://www.youtube.com/watch?v=AganIs9Lplg
+  item: `items/AganIs9Lplg.md`
+- **Tokenomics: Why Your $120 AI Plan Is About to Break | Episode 11** — AI Operators Podcast (1:06:06, 2 views)
+  https://www.youtube.com/watch?v=eMmCcx5FrxI
+  item: `items/eMmCcx5FrxI.md`
+- **Meta's NEW Llama Replacement - Muse Spark** — Sam Witteveen (16:30, 9.1K views)
+  https://www.youtube.com/watch?v=7vkybiVRSm0
+  item: `items/7vkybiVRSm0.md`
+- **How a Simple NPM Error Leaked the Future of AI (The KAIROS Secret)** — GenAI Learning (7:29, 2 views)
+  https://www.youtube.com/watch?v=v3HVZvIfRIM
+  item: `items/v3HVZvIfRIM.md`
+- **Why Most AI in Trading Fails — and How to Constrain Its Power Effectively** — The Down Lo Show (31:56, 11 views)
+  https://www.youtube.com/watch?v=pKUWvot_F8I
+  item: `items/pKUWvot_F8I.md`
+- **Strait of Hormuz and Lebanon Questions, "Terrifying" New AI, Missing Mom in Bahamas: AM Update 4/9** — Megyn Kelly (19:36, 35.1K views)
+  https://www.youtube.com/watch?v=gJK5zJok8rs
+  item: `items/gJK5zJok8rs.md`
+- **Anthropic Just Dropped Claude Managed Agents** — Aniket Panjwani (14:40, 387 views)
+  https://www.youtube.com/watch?v=4Bh0HGFiP7k
+  item: `items/4Bh0HGFiP7k.md`
+- **AI Daily: SpaceX 우주 데이터센터, Claude Sonnet 4.5, SWE 에이전트, Meta-Harness** — CosmoX (7:34, new)
+  https://www.youtube.com/watch?v=b4DfJ_lowCk
+  item: `items/b4DfJ_lowCk.md`
+- **Claude Managed Agents: Braucht man N8N, Zapier & Make noch?** — Noah Lutz (7:29, 30 views)
+  https://www.youtube.com/watch?v=aNxl-WM-juU
+  item: `items/aNxl-WM-juU.md`
+- **Sam Altman: Am intrat deja în singularitate! 🤖 Viitorul inteligenței artificiale** — Cristian Presură - Fizica Povestită (10:10, 1.4K views)
+  https://www.youtube.com/watch?v=pT_l-cNOxoM
+  item: `items/pT_l-cNOxoM.md`
+- **Generative AI vs Agentic AI Explained Simply** — Blockchain Council (36, 807 views)
+  https://www.youtube.com/watch?v=BxeUx_dSLkA
+  item: `items/BxeUx_dSLkA.md`

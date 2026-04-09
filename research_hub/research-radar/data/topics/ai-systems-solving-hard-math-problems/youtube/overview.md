@@ -558,3 +558,96 @@ Full item files belong in `items/`.
 - **My Husband Charged Me Rent For 4 Years - Until I Found His $1.8M Tax Return In Our Home** — Drama Stories Today (42:18, 3 views)
   https://www.youtube.com/watch?v=I1inuwOFxkY
   item: `items/I1inuwOFxkY.md`
+
+## 2026-04-09 — 30 new videos
+
+- **Can You Solve This In 60 Seconds? | Math Olympiad Mathematics** — HkLogics (4:30, 16 views)
+  https://www.youtube.com/watch?v=YlMffLMXkcw
+  item: `items/YlMffLMXkcw.md`
+- **United States | Can you solve this? | Math Olympiad Mathematics** — HkLogics (9:42, 11 views)
+  https://www.youtube.com/watch?v=wKn7MicuH54
+  item: `items/wKn7MicuH54.md`
+- **Harvard University Entrance Question | Math Olympiad Mathematics** — HkLogics (8:10, 16 views)
+  https://www.youtube.com/watch?v=KdLCCDdy6G8
+  item: `items/KdLCCDdy6G8.md`
+- **鄭麗文參訪大陸哭到哽咽！喊話兩岸中國人種下和平種子，兩岸統一將對台灣帶來驚天紅利？ #中国 #台海局勢 #時事評論 #鄭麗文 #九二共识 #两岸统一** — 小魚洞察 (32:27, 3.2K views)
+  https://www.youtube.com/watch?v=VckknwnbdoM
+  item: `items/VckknwnbdoM.md`
+- **I Found a $1.5 Trillion Dollar Glitch in Amazon's Valuation** — Moon Dev (16:56, new)
+  https://www.youtube.com/watch?v=bmXhpeQmIDs
+  item: `items/bmXhpeQmIDs.md`
+- **How To Solve A Hard Geometry Problem That Stumps Many #geometrypuzzle #geometry** — Online Maths Expo (10:48, 553 views)
+  https://www.youtube.com/watch?v=Hc0Oeukk29k
+  item: `items/Hc0Oeukk29k.md`
+- **How To Train Your Brain To Learn Anything like Elon Musk** — Evan Carmichael (35:22, 44.2K views)
+  https://www.youtube.com/watch?v=qV4QdDtiGoQ
+  item: `items/qV4QdDtiGoQ.md`
+- **The Claude "429" Secret: STOP Scaling Claude Until You Watch This!** — AskeyGeek (4:47, 4 views)
+  https://www.youtube.com/watch?v=_in0DI0yoMk
+  item: `items/_in0DI0yoMk.md`
+- **OpenAI is Flailing, Anthropic’s Mythos AI is Too Powerful, Are Vertical Tabs Good?** — Primary Technology (1:15:51, 90 views)
+  https://www.youtube.com/watch?v=9oVRoMtEa70
+  item: `items/9oVRoMtEa70.md`
+- **Claude Managed Agents Just Killed Openclaw** — Moon Dev (55:22, 630 views)
+  https://www.youtube.com/watch?v=h3CXw-vHsW8
+  item: `items/h3CXw-vHsW8.md`
+- **Claude Mythos: The AI That Knew It Was Cheating** — FuturMinds (10:06, 129 views)
+  https://www.youtube.com/watch?v=MV8-X4z1VzI
+  item: `items/MV8-X4z1VzI.md`
+- **Quantum Innovation & The Digital Future: A Conversation with Dr. Pete Shadbolt** — Columbia Business School (58:44, 51 views)
+  https://www.youtube.com/watch?v=rITo8nWU4TM
+  item: `items/rITo8nWU4TM.md`
+- **Countries That REFUSE to Bow to ISLAM** — Fall of Nations (2:45:58, 3.0K views)
+  https://www.youtube.com/watch?v=ozYvNiA86fo
+  item: `items/ozYvNiA86fo.md`
+- **EP 20 Knowing Enough AI to Stop Fearing It** — Bridging Skills (32:38, 7 views)
+  https://www.youtube.com/watch?v=J5d8UXIA1pk
+  item: `items/J5d8UXIA1pk.md`
+- **2026/01 - Learning Efficiently in a Hierarchy** — Thousand Brains Project (1:57:20, 22 views)
+  https://www.youtube.com/watch?v=ti_zsduCoIM
+  item: `items/ti_zsduCoIM.md`
+- **Life Insurance, AI, and Distribution Innovation | Dennis Li** — Five[Minutes] (19:02, new)
+  https://www.youtube.com/watch?v=zBcpynOa9Ac
+  item: `items/zBcpynOa9Ac.md`
+- **Everyone Thought He Went To School To Study, But His Real Goal Was To Become The Ruler** — Tanjiro Recap (8:42:42, 401 views)
+  https://www.youtube.com/watch?v=e8PGtk6z8j8
+  item: `items/e8PGtk6z8j8.md`
+- **He Hid His Mistress in a Doll Every Night—That Night, She Threw Him Out Penniless** — Cocoa Daily Drama (1:30:37, 999 views)
+  https://www.youtube.com/watch?v=Lhmq91P6-wg
+  item: `items/Lhmq91P6-wg.md`
+- **everything i wish i knew when i got started trading** — Moon Dev (9:55, 299 views)
+  https://www.youtube.com/watch?v=0PK89S97MTc
+  item: `items/0PK89S97MTc.md`
+- **Global slaughter—my F-level talent upgraded to SSS-level!#manga** — Sk Manhwa Recap (11:56:58, 147 views)
+  https://www.youtube.com/watch?v=JWHhBUK4YtQ
+  item: `items/JWHhBUK4YtQ.md`
+- **Why Klarna Brought Back Humans After Replacing 700 With AI** — Savvy Business Profits (12:07, 8 views)
+  https://www.youtube.com/watch?v=GxEe_lMUBVc
+  item: `items/GxEe_lMUBVc.md`
+- **Ann Arbor Board of Education Meeting 4/8/26** — CTN Ann Arbor (3:35:36, 35 views)
+  https://www.youtube.com/watch?v=J1l2Kuoq7e0
+  item: `items/J1l2Kuoq7e0.md`
+- **Your Body Is Storing Fat to PROTECT You... But From What?** — The Road to Health - Keto & Carnivore Done Right (25:45, 236 views)
+  https://www.youtube.com/watch?v=Z0G03BLnGyE
+  item: `items/Z0G03BLnGyE.md`
+- **Dear Load-Bearing (The Tracer and The Room With Two Chairs)** — Shared Context Podcast (34:58, 4 views)
+  https://www.youtube.com/watch?v=rL1vmnflAZE
+  item: `items/rL1vmnflAZE.md`
+- **窮小子重回被欺辱的瞬間，前世含恨而終受儘屈辱，重生後亮出頂級豪門身份，化身校園闊少，狠狠收拾囂張噁少與勢利前任！#重生 #短劇 #movie** — PROF DRAMA (1:32:44, 252 views)
+  https://www.youtube.com/watch?v=pD2vDDWmpI4
+  item: `items/pD2vDDWmpI4.md`
+- **Landing an Internship BEFORE Declaring a Major? | UNHIREABLE** — gesture (33:17, 16 views)
+  https://www.youtube.com/watch?v=gfNqSehnumY
+  item: `items/gfNqSehnumY.md`
+- **The Paper Millionaire: The Tech Elite's Secret to Spending Stock Without Selling It** — Wealth Mindset Blueprint (28:05, 6 views)
+  https://www.youtube.com/watch?v=bNnIOg8vlxg
+  item: `items/bNnIOg8vlxg.md`
+- **Virtual Assistant Training (Free Virtual Assistance Course!)** — The Virtual Savvy (1:25:12, 381 views)
+  https://www.youtube.com/watch?v=xpBMMerJQlQ
+  item: `items/xpBMMerJQlQ.md`
+- **How Strategic CFOs Get It Wrong** — Run the Numbers with CJ Gustafson (52:46, 42 views)
+  https://www.youtube.com/watch?v=a4lEdrgFW5E
+  item: `items/a4lEdrgFW5E.md`
+- **After 30, You Can't Play Fair (The Truth About Getting Rich) | Machiavelli** — The Unseen Game (34:28, 138 views)
+  https://www.youtube.com/watch?v=iUR2DiCYk5w
+  item: `items/iUR2DiCYk5w.md`

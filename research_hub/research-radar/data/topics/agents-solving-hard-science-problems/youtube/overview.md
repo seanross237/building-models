@@ -561,3 +561,96 @@ Full item files belong in `items/`.
 - **Morning News NOW Full Episode – April 8** — NBC News (1:48:34, 6.9K views)
   https://www.youtube.com/watch?v=ntlWBenOUuA
   item: `items/ntlWBenOUuA.md`
+
+## 2026-04-09 — 30 new videos
+
+- **Beyond the IT Headlines | Inside the AI Data Factory: How Enterprise AI Gets Built** — Everpure (25:13, 92 views)
+  https://www.youtube.com/watch?v=t-eiddzxDNY
+  item: `items/t-eiddzxDNY.md`
+- **Ideas: Steering AI toward the work future we want** — Microsoft Research (54:26, 56 views)
+  https://www.youtube.com/watch?v=f_xltAMa2ik
+  item: `items/f_xltAMa2ik.md`
+- **Google Just Made Their AI Free, Private, and Yours (Gemma 4)** — Limitless Podcast (25:26, 4.3K views)
+  https://www.youtube.com/watch?v=vUfRufToiHg
+  item: `items/vUfRufToiHg.md`
+- **RECORDED: Gov. Sanders State of the State Address** — K8 News (1:00:34, 7 views)
+  https://www.youtube.com/watch?v=5Uv2huyYaR4
+  item: `items/5Uv2huyYaR4.md`
+- **Quantum Mechanics Is Real, But "Consciousness Creating Reality" Is A Myth** — Sleepy Joe Space (2:25:08, 180 views)
+  https://www.youtube.com/watch?v=VcoSrfCgrxc
+  item: `items/VcoSrfCgrxc.md`
+- **Intro to Geology: Crash Course Geology #1** — CrashCourse (9:06, 2.7K views)
+  https://www.youtube.com/watch?v=ypH6dR7YGfU
+  item: `items/ypH6dR7YGfU.md`
+- **Nick Wright Demands An Apology From Mike Ryan | DLS** — LeBatardShow and DraftKings (2:36:51, 2.7K views)
+  https://www.youtube.com/watch?v=g9EWbCYonUY
+  item: `items/g9EWbCYonUY.md`
+- **Stop Buying AI Tools and Do This Instead - Thermo Fisher’s Director** — Turing College (23:22, 12 views)
+  https://www.youtube.com/watch?v=xiEgrZxpdBw
+  item: `items/xiEgrZxpdBw.md`
+- **Mind Brain Research Day 2026** — Brown University (1:27:21, 36 views)
+  https://www.youtube.com/watch?v=ysKPix-LMJQ
+  item: `items/ysKPix-LMJQ.md`
+- **AI assisted software engineering need leaders not coders** — Coding Chats (49:54, 18 views)
+  https://www.youtube.com/watch?v=E-VM_9UkaLo
+  item: `items/E-VM_9UkaLo.md`
+- **Maths 2 | Quiz 2 Revision (Week 5 and 6)** — Mathematics for Data Science II (2:07:36, 284 views)
+  https://www.youtube.com/watch?v=3Ht79yaz-KU
+  item: `items/3Ht79yaz-KU.md`
+- **Five Weeks in a Balloon by Jules Verne | African Exploration & Aerial Adventure 🌍🎈📖🎧** — Golden Fiction Tales (11:46:48, 33 views)
+  https://www.youtube.com/watch?v=kO9SvONhO8Q
+  item: `items/kO9SvONhO8Q.md`
+- **Deepfakes, AI Hallucinations: Can We Trace Fake Images Back to the Creator? | Generation AI** — Arizona’s Family (3TV / CBS 5)  and Derek Staahl (26:00, 151 views)
+  https://www.youtube.com/watch?v=P5s21EguUxc
+  item: `items/P5s21EguUxc.md`
+- **Apr 8, 2026 - Council Public Hearing (1:30PM)** — MoCoCouncilMD (2:37:47, 294 views)
+  https://www.youtube.com/watch?v=oQ_ChmADex0
+  item: `items/oQ_ChmADex0.md`
+- **Local SEO Training Q&A - Hump Day Hangouts - Episode 592** — Semantic Mastery (1:08:31, 68 views)
+  https://www.youtube.com/watch?v=HYzXTSJWZNA
+  item: `items/HYzXTSJWZNA.md`
+- **Bruce Friedrich: Why Plant-Based Meat Is Harder Than You Think** — Our Hen House (10:04, 19 views)
+  https://www.youtube.com/watch?v=NTreWIt2-X0
+  item: `items/NTreWIt2-X0.md`
+- **Meghan Markle’s “Best Life” Retreat Is Falling Apart… Something Isn't Right Here** — Beebs Kelley (37:13, 79.9K views)
+  https://www.youtube.com/watch?v=3TLBVrV7D4U
+  item: `items/3TLBVrV7D4U.md`
+- **From IC to VP: Engineering Leadership at Every Level, with Box's Tamar Bercovici** — Cortex | Engineering Operations Platform (47:56, 12 views)
+  https://www.youtube.com/watch?v=I3TI4fUUQWw
+  item: `items/I3TI4fUUQWw.md`
+- **Hallie Jackson NOW - April 8 | NBC News NOW** — NBC News (1:41:53, 19.6K views)
+  https://www.youtube.com/watch?v=_PeohhijkK0
+  item: `items/_PeohhijkK0.md`
+- **Committee on Health and Human Services - 04/08/26** — Minnesota Senate Media Services (2:33:10, 869 views)
+  https://www.youtube.com/watch?v=RLpiSJURvPU
+  item: `items/RLpiSJURvPU.md`
+- **Project Songbird - Spooky cabin solves writer's block.** — Ezekiel III (6:41:01, 66 views)
+  https://www.youtube.com/watch?v=wLwZHFgp-nc
+  item: `items/wLwZHFgp-nc.md`
+- **2026 4 8 Council on Aging** — Mendon Video (1:45:54, 14 views)
+  https://www.youtube.com/watch?v=vRk2fiPvJ5o
+  item: `items/vRk2fiPvJ5o.md`
+- **Gilgo Beach serial killer Rex Heuermann admits to murdering 8 women | Team coverage** — CBS New York (37:59, 13.5K views)
+  https://www.youtube.com/watch?v=Z6I6diAh6aI
+  item: `items/Z6I6diAh6aI.md`
+- **Your Problem with AI is Really a Problem with Capitalism | The Blockchain Socialist** — Is This The New Internet? and The Blockchain Socialist (1:10:31, 4 views)
+  https://www.youtube.com/watch?v=Z-S1SSrcies
+  item: `items/Z-S1SSrcies.md`
+- **Why You’re Not Closing Sales And What Your Clients Actually Want** — Tish Times (24:36, 1 views)
+  https://www.youtube.com/watch?v=swpCDz09syA
+  item: `items/swpCDz09syA.md`
+- **Betrayed By The Gods, This F-Rank Player Reincarnated To Turn A Trash Tribe Into God-Slayers.** — Nice Recap (10:34:43, 115 views)
+  https://www.youtube.com/watch?v=pWvhkHQUn8s
+  item: `items/pWvhkHQUn8s.md`
+- **What Do You Do When the Engine Stops? | Here's Your Sign Episode 1** — Silicon Signs (32:51, new)
+  https://www.youtube.com/watch?v=0MHBebT0D0o
+  item: `items/0MHBebT0D0o.md`
+- **Author Interview with Linsey Miller** — The Scribbler's Den (1:10:16, 6 views)
+  https://www.youtube.com/watch?v=A1MHx1w-jZo
+  item: `items/A1MHx1w-jZo.md`
+- **First Nations rally against Alberta separatism | CTV News Edmonton at Five for April 8, 2026** — CTV News (22:52, 3.0K views)
+  https://www.youtube.com/watch?v=jHwLnQ7dP_0
+  item: `items/jHwLnQ7dP_0.md`
+- **Alberta clipper brings return of snow | CTV News Saskatchewan Your Morning for April 8, 2026** — CTV News (2:17:26, 2.0K views)
+  https://www.youtube.com/watch?v=B41sn_wOy5w
+  item: `items/B41sn_wOy5w.md`

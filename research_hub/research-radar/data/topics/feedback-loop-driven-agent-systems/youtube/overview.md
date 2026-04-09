@@ -555,3 +555,96 @@ Full item files belong in `items/`.
 - **Modern Agent Reborn: 8th Prince Conquers North with Guns & System!【SmartMate】** — Blaze Drama (2:34:24, 461 views)
   https://www.youtube.com/watch?v=QfIc_gVJJkY
   item: `items/QfIc_gVJJkY.md`
+
+## 2026-04-09 — 30 new videos
+
+- **How AI Agents Will Transform the Financial System with Circle Co-Founder and CEO Jeremy Allaire** — No Priors: AI, Machine Learning, Tech, & Startups (44:01, 1.0K views)
+  https://www.youtube.com/watch?v=eyobeqMdbeI
+  item: `items/eyobeqMdbeI.md`
+- **The Future of DevOps: AI, Agents, and the "Impossible" Workflow** — Elias Khnaser (53:26, 303 views)
+  https://www.youtube.com/watch?v=21_Ol_p-UGk
+  item: `items/21_Ol_p-UGk.md`
+- **Observability for the Age of Generative AI** — Microsoft Azure (2:18, 128 views)
+  https://www.youtube.com/watch?v=zU5KmOcKsto
+  item: `items/zU5KmOcKsto.md`
+- **Dead Internet Theory proven true?** — Redacted Intelligence (6:53, new)
+  https://www.youtube.com/watch?v=W7iPV71d-PY
+  item: `items/W7iPV71d-PY.md`
+- **Five Reasons Why Nigerians Can't Run a Country** — BantuCityDiaries (13:14, 31.6K views)
+  https://www.youtube.com/watch?v=qX8wRsEDJc4
+  item: `items/qX8wRsEDJc4.md`
+- **MLOps 101: Platforms and Processes for Building AI | NVIDIA GTC** — NVIDIA Developer (38:57, 315 views)
+  https://www.youtube.com/watch?v=K9X-8aS8BxA
+  item: `items/K9X-8aS8BxA.md`
+- **Observing Chaos: Real-Time Monitoring of AI-Driven Kubernetes Destr... Josh Halley & Ricardo Aravena** — CNCF [Cloud Native Computing Foundation] (31:16, 4 views)
+  https://www.youtube.com/watch?v=KOM-PQNpcjk
+  item: `items/KOM-PQNpcjk.md`
+- **Vikings, Ragnar, Berserkers, Valhalla & the Warriors of the Viking Age | Lex Fridman Podcast #495** — Lex Fridman (2:03:24, 4.2K views)
+  https://www.youtube.com/watch?v=iKx3gAODybU
+  item: `items/iKx3gAODybU.md`
+- **3 Layers to Protect Your Local Claude AI Setup** — ICOR with Tom | AI Productivity (24:54, 304 views)
+  https://www.youtube.com/watch?v=9eU6-CppQ1Y
+  item: `items/9eU6-CppQ1Y.md`
+- **He Can't Code but His AI Agents Make Him $5K/Month** — Chris Koerner on The Koerner Office Podcast (44:20, 23.3K views)
+  https://www.youtube.com/watch?v=JHz6mikOPWw
+  item: `items/JHz6mikOPWw.md`
+- **Nancy Guthrie: Was This the Same Car That Took Her? Tommaso & Evans Linked?** — The Crime Vault (30:05, 66 views)
+  https://www.youtube.com/watch?v=l-lAK2V-L34
+  item: `items/l-lAK2V-L34.md`
+- **1 MIN AGO: Canada SHIFTS Aluminum Exports to Europe— U.S. Industry Hit Hard!** — TheGlobalshift (17:29, 42.1K views)
+  https://www.youtube.com/watch?v=jesZysrN7XQ
+  item: `items/jesZysrN7XQ.md`
+- **The $4 Japanese ENGINE SECRET That Works in ANY Car — Big Oil Paid to Bury This** — Japanese Car Secrets (18:22, 1.3K views)
+  https://www.youtube.com/watch?v=j0M__nEBgBg
+  item: `items/j0M__nEBgBg.md`
+- **Faculty Insights with Mario Berges** — College of Engineering, Carnegie Mellon University (49:37, 6 views)
+  https://www.youtube.com/watch?v=ygP1KJ_Wcuw
+  item: `items/ygP1KJ_Wcuw.md`
+- **Life Insurance, AI, and Distribution Innovation | Dennis Li** — Five[Minutes] (19:02, new)
+  https://www.youtube.com/watch?v=zBcpynOa9Ac
+  item: `items/zBcpynOa9Ac.md`
+- **Cupra Raval REVEALED – €26k Electric Game Changer?** — Nobby On Cars (15:31, 3.3K views)
+  https://www.youtube.com/watch?v=kJY7v1TDDS8
+  item: `items/kJY7v1TDDS8.md`
+- **AI assisted software engineering need leaders not coders** — Coding Chats (49:54, 18 views)
+  https://www.youtube.com/watch?v=E-VM_9UkaLo
+  item: `items/E-VM_9UkaLo.md`
+- **Once Human 2.3.6 Is HUGE! - Tech System, Specialization Overhaul & Major Progression Changes** — Azzel83 (6:48, 10.7K views)
+  https://www.youtube.com/watch?v=-1BV-bq34Rg
+  item: `items/-1BV-bq34Rg.md`
+- **Project Spotlight - Day 1** — MindMatrixEd (1:17:31, 1.7K views)
+  https://www.youtube.com/watch?v=Il2nOAWs2yY
+  item: `items/Il2nOAWs2yY.md`
+- **How to Secure IT/OT File Transfers | DMZ and Data Diode Segmentation Explained** — OPSWAT (1:02:42, 25.2K views)
+  https://www.youtube.com/watch?v=HidkrH4DkWo
+  item: `items/HidkrH4DkWo.md`
+- **Deepfakes, AI Hallucinations: Can We Trace Fake Images Back to the Creator? | Generation AI** — Arizona’s Family (3TV / CBS 5)  and Derek Staahl (26:00, 151 views)
+  https://www.youtube.com/watch?v=P5s21EguUxc
+  item: `items/P5s21EguUxc.md`
+- **April 7, 2026 | Carolina Impact** — WTVIPBSCLT (27:55, 4 views)
+  https://www.youtube.com/watch?v=cKriwxPidRg
+  item: `items/cKriwxPidRg.md`
+- **Elmhurst, Illinois Full Episode | John McGivern's Main Streets** — John McGivern's Main Streets (26:47, 856 views)
+  https://www.youtube.com/watch?v=O9fxXrcBAkQ
+  item: `items/O9fxXrcBAkQ.md`
+- **Mining in Deep Space to Pay off my SHIP DEBT! - SpaceCraft First Look** — ProRogueBear (55:01, 1 views)
+  https://www.youtube.com/watch?v=NlUDIdzBnkU
+  item: `items/NlUDIdzBnkU.md`
+- **Why The Matrix Works (And Most Movies Fail at This) #thematrix #screenwriting #film** — FADE IN: (18:43, 9 views)
+  https://www.youtube.com/watch?v=NYUw6PWkB3k
+  item: `items/NYUw6PWkB3k.md`
+- **Wanna Move to Brisbane in 2026? WATCH THIS FIRST!** — THE Brisbane Channel (43:22, 2.3K views)
+  https://www.youtube.com/watch?v=wxLvS7vqzds
+  item: `items/wxLvS7vqzds.md`
+- **The Brain’s Built-In Noise Cancellation** — Hearing Health Foundation (57:29, 11 views)
+  https://www.youtube.com/watch?v=POSRK9wJ4aE
+  item: `items/POSRK9wJ4aE.md`
+- **Last To Leave Cybertruck Keeps It!** — Topper Guild (28:57, 507.8K views)
+  https://www.youtube.com/watch?v=z6NMDt7tBbg
+  item: `items/z6NMDt7tBbg.md`
+- **Car Rental English | 100 Words & Sentences for Beginners** — English Dream (12:55, new)
+  https://www.youtube.com/watch?v=j4zfzYg_Nqw
+  item: `items/j4zfzYg_Nqw.md`
+- **Tech Stocks Rally on the Back of US-Iran Ceasefire Deal | Bloomberg Tech 4/8/2026** — Bloomberg Technology (44:03, 5.1K views)
+  https://www.youtube.com/watch?v=J1M-DDS0VcE
+  item: `items/J1M-DDS0VcE.md`

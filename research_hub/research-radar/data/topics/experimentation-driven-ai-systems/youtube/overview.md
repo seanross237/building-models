@@ -558,3 +558,96 @@ Full item files belong in `items/`.
 - **LIVESTREAM - Accessibility NYC Meetup - Apr 7 2026** — Accessibility NYC (58:05, 98 views)
   https://www.youtube.com/watch?v=FItqPVW2774
   item: `items/FItqPVW2774.md`
+
+## 2026-04-09 — 30 new videos
+
+- **Diving Deep on Physical AI | S1E2 | Fine-tuning NVIDIA GR00T on AWS** — AWS Events (59:27, 312 views)
+  https://www.youtube.com/watch?v=6zKS-uEz1yo
+  item: `items/6zKS-uEz1yo.md`
+- **NEW Claude Mythos Preview is INSANE! 😱** — Julian Goldie SEO (8:05, 1.4K views)
+  https://www.youtube.com/watch?v=_fCzAAHWM9k
+  item: `items/_fCzAAHWM9k.md`
+- **Wigner Said Szilárd Was Always One Day Early And That Changed Everything** — Mathematically Proven (14:08, 2.1K views)
+  https://www.youtube.com/watch?v=nUy0CtrhDi0
+  item: `items/nUy0CtrhDi0.md`
+- **Google New JITRO Crosses A Dangerous Line** — AI Revolution (13:21, 24.3K views)
+  https://www.youtube.com/watch?v=8d3E-XZX3u4
+  item: `items/8d3E-XZX3u4.md`
+- **Pilot to Powerhouse: AI That Moves the Business** — Canva (10:59, 200 views)
+  https://www.youtube.com/watch?v=wiUeAWdxOro
+  item: `items/wiUeAWdxOro.md`
+- **Hyperautomation - Your fast lane from AI to value** — AE (39, 3 views)
+  https://www.youtube.com/watch?v=TZHPacGa1IM
+  item: `items/TZHPacGa1IM.md`
+- **The New Developer Lifecycle** — ecosystem Ai (51:28, 8 views)
+  https://www.youtube.com/watch?v=_U88x-i9mQE
+  item: `items/_U88x-i9mQE.md`
+- **Mythos: Anthropic's Claude Just HACKED Everything | What Mythos Means for 2026** — Alex Hitt, The Great Discovery Pro (6:45, 17 views)
+  https://www.youtube.com/watch?v=HsREymjCSNw
+  item: `items/HsREymjCSNw.md`
+- **Edge AI London 2026: Where AI Meets the Real World** — EDGE AI FOUNDATION (31, 39 views)
+  https://www.youtube.com/watch?v=IFiHfVWU7Fw
+  item: `items/IFiHfVWU7Fw.md`
+- **Universal ECU Power Supply Build – Part 2 | Wiring & Final Assembly Guide#ecurepair #repair** — Autocar Star (29:38, 116 views)
+  https://www.youtube.com/watch?v=qyJytLOmHqI
+  item: `items/qyJytLOmHqI.md`
+- **Episode 93: Rethinking the Network for AI at the Edge** — Built for Trust (44:10, 5 views)
+  https://www.youtube.com/watch?v=lRqVwlRXDMo
+  item: `items/lRqVwlRXDMo.md`
+- **He Can't Code but His AI Agents Make Him $5K/Month** — Chris Koerner on The Koerner Office Podcast (44:20, 23.3K views)
+  https://www.youtube.com/watch?v=JHz6mikOPWw
+  item: `items/JHz6mikOPWw.md`
+- **Meta AI Muse Spark Is HERE – Testing Meta’s New Frontier Model!** — Bijan Bowen (42:07, 23.2K views)
+  https://www.youtube.com/watch?v=cfxRAdmxjOo
+  item: `items/cfxRAdmxjOo.md`
+- **Generative AI Full Course Free  | Gen AI Complete Course 2026 | Intellipaat** — Intellipaat (NA, 5.1K views)
+  https://www.youtube.com/watch?v=0UH-z4BTblg
+  item: `items/0UH-z4BTblg.md`
+- **MLOps 101: Platforms and Processes for Building AI | NVIDIA GTC** — NVIDIA Developer (38:57, 315 views)
+  https://www.youtube.com/watch?v=K9X-8aS8BxA
+  item: `items/K9X-8aS8BxA.md`
+- **Microsoft JDConf 2026 (APAC)** — Microsoft Reactor (4:05:48, 708 views)
+  https://www.youtube.com/watch?v=TyksDmKBHuM
+  item: `items/TyksDmKBHuM.md`
+- **Microsoft JDConf 2026 (Americas)** — Microsoft Reactor (4:11:14, 1.4K views)
+  https://www.youtube.com/watch?v=cJ1odDNflEA
+  item: `items/cJ1odDNflEA.md`
+- **$30 vs High-End Power for your HiFi System… The Truth** — HiFi Huff (23:35, 23.8K views)
+  https://www.youtube.com/watch?v=50166ASwM9s
+  item: `items/50166ASwM9s.md`
+- **GLM 5.1 - Coding, Quants, Apps & Maths TESTED | #1 Local AI Got Smarter 🤯** — xCreate (20:01, 11.9K views)
+  https://www.youtube.com/watch?v=T-eBZIMc_sY
+  item: `items/T-eBZIMc_sY.md`
+- **Microsoft VibeVoice: The AI Model That Can Generate 90-Minute Conversations** — Poniak Labs (4:07, 15 views)
+  https://www.youtube.com/watch?v=2iwVqjarRXQ
+  item: `items/2iwVqjarRXQ.md`
+- **Jonathan Stray | AI Can Make Conflict Worse or Better** — Stanford Tech Impact and Policy Center (NA, new)
+  https://www.youtube.com/watch?v=q90_eQE9_oY
+  item: `items/q90_eQE9_oY.md`
+- **3 Layers to Protect Your Local Claude AI Setup** — ICOR with Tom | AI Productivity (24:54, 304 views)
+  https://www.youtube.com/watch?v=9eU6-CppQ1Y
+  item: `items/9eU6-CppQ1Y.md`
+- **Delivery man crashed a high-end blind date—The Richest Female CEO PROPOSED to him!** — Steel Drama (1:52:13, 1.5K views)
+  https://www.youtube.com/watch?v=c1Wh-lVUMSU
+  item: `items/c1Wh-lVUMSU.md`
+- **Defense Technology: How Advanced ICBM Systems Are Engineered (Full Process)** — Modern Process Vault (23:49, 89 views)
+  https://www.youtube.com/watch?v=GwVnbM9LEBI
+  item: `items/GwVnbM9LEBI.md`
+- **Confidence by Spotify Explained: leboncoin’s A/B Testing at Scale - Meetup 31 Mars** — leboncoin (1:20:55, 1 views)
+  https://www.youtube.com/watch?v=Z8R7bH84vF8
+  item: `items/Z8R7bH84vF8.md`
+- **SSAC26: Making the Right Call: How AI is Reshaping Officiating Across Pro Sports** — 42 Analytics (45:53, 1 views)
+  https://www.youtube.com/watch?v=wAxweyMfr-Y
+  item: `items/wAxweyMfr-Y.md`
+- **Where hands-on chemistry meets the future** — ELTE TTK (32, 189 views)
+  https://www.youtube.com/watch?v=k-YflQYq6DU
+  item: `items/k-YflQYq6DU.md`
+- **Billionaire Old Lady Tests Street Singing Girl Gives 10 Billion Finds Lost Granddaughter After 6 Yrs** — CineDrama (1:48:08, 1.3K views)
+  https://www.youtube.com/watch?v=zBVBAzbBSlQ
+  item: `items/zBVBAzbBSlQ.md`
+- **Ideas: Steering AI toward the work future we want** — Microsoft Research (54:26, 56 views)
+  https://www.youtube.com/watch?v=f_xltAMa2ik
+  item: `items/f_xltAMa2ik.md`
+- **OpenAI is Flailing, Anthropic’s Mythos AI is Too Powerful, Are Vertical Tabs Good?** — Primary Technology (1:15:51, 90 views)
+  https://www.youtube.com/watch?v=9oVRoMtEa70
+  item: `items/9oVRoMtEa70.md`

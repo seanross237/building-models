@@ -336,3 +336,66 @@ Full item files belong in `items/`.
 - **After female cashback system,he is forced live off women,tenfold cashback yields over $100M cash** — Mania Comics Legends (27:42:58, 132 views)
   https://www.youtube.com/watch?v=PWquZTLes1M
   item: `items/PWquZTLes1M.md`
+
+## 2026-04-09 — 20 new videos
+
+- **【深度推演】中日衝突的終極引爆點在哪裡？中日明天就開戰的話，俄羅斯、朝鮮、巴基斯坦會幫助中國嗎？** — 焦點深鏡 (53:03, 8.4K views)
+  https://www.youtube.com/watch?v=EFJab8Uch6Y
+  item: `items/EFJab8Uch6Y.md`
+- **[MUTI SUB]廢妃重生狠斷戀愛腦！前世被渣皇殘殺天牢，這輩子她苦練媚術、經營勢力，勢要奪回后位讓王爺跪下求愛！🔥【FULL】錦繡鳳鳴#短劇 #短劇全集#復仇** — Yumi Drama🌟 (2:14:21, 11 views)
+  https://www.youtube.com/watch?v=FejEjkXf-vU
+  item: `items/FejEjkXf-vU.md`
+- **Thinking Before Acting Is Killing Your Discipline | Samurai Discipline** — Samurai Discipline (36:03, new)
+  https://www.youtube.com/watch?v=AMT4vUmK6g4
+  item: `items/AMT4vUmK6g4.md`
+- **How to Secure IT/OT File Transfers | DMZ and Data Diode Segmentation Explained** — OPSWAT (1:02:42, 25.2K views)
+  https://www.youtube.com/watch?v=HidkrH4DkWo
+  item: `items/HidkrH4DkWo.md`
+- **🌟【新番上线|ENG SUB】《被挖灵根？上交系统后国家带我反杀》濒死觉醒系统，废柴携蓝星科技逆袭！碾压仙宗，揭露暴行建联络站！ 一口气看完 #漫剧 #热血 #玄幻 #战斗 #苍穹动漫** — Dragon Animation Club (2:14:53, 4.0K views)
+  https://www.youtube.com/watch?v=yzzBifXV9Q0
+  item: `items/yzzBifXV9Q0.md`
+- **MULTISUB💥最新合集💥《来了个邪性女儿后王府翻天了》第1~143集丨魔童来访，开口就要老爹升天，强烈要求继承财产，凶名赫赫的王爷都被气炸了！#漫剧 #破晓动漫社** — 破晓动漫社 Dawn Anime Club (7:12:40, 1.1K views)
+  https://www.youtube.com/watch?v=r7hQkPg1BUE
+  item: `items/r7hQkPg1BUE.md`
+- **🌟【新番上线|ENG SUB】《高武之我儿有大帝之姿》废柴父亲工地搬砖咳血装惨，竟靠儿子修炼狂飙四个大境界躺赢！ 一口气看完 #漫剧 #热血 #玄幻 #战斗 #苍穹动漫** — Dragon Animation Club (2:45:50, 3.9K views)
+  https://www.youtube.com/watch?v=GlD7bP0ETu0
+  item: `items/GlD7bP0ETu0.md`
+- **Betrayed By The Gods, This F-Rank Player Reincarnated To Turn A Trash Tribe Into God-Slayers.** — Nice Recap (10:34:43, 115 views)
+  https://www.youtube.com/watch?v=pWvhkHQUn8s
+  item: `items/pWvhkHQUn8s.md`
+- **SAP SD: ECC to S/4HANA Migration Failures (Part 3 - Vol 1) | Testing & Cutover Incidents (142–180)!** — Ace Interviews (7:03:10, 7 views)
+  https://www.youtube.com/watch?v=pE_0zn4fBoE
+  item: `items/pE_0zn4fBoE.md`
+- **Reborn On My Wedding Day, I Married My Husband's Mortal Enemy  - Part 4** — MOONLIT STORIES (9:16:40, 67 views)
+  https://www.youtube.com/watch?v=AgcBDX5GUnY
+  item: `items/AgcBDX5GUnY.md`
+- **Intensifying Reading Intervention Part 2: A Tiered Approach** — ONlit-org (59:48, 102 views)
+  https://www.youtube.com/watch?v=jaZsrLLQty0
+  item: `items/jaZsrLLQty0.md`
+- **Apr 8, 2026 - Council Public Hearing (1:30PM)** — MoCoCouncilMD (2:37:47, 294 views)
+  https://www.youtube.com/watch?v=oQ_ChmADex0
+  item: `items/oQ_ChmADex0.md`
+- **【178集】一口气看爽日漫《地狱模式～喜欢速通游戏的玩家在废设定异世界无双》** — 韩漫潮映馆 (8:03:18, 3.9K views)
+  https://www.youtube.com/watch?v=xqvLjdObkKM
+  item: `items/xqvLjdObkKM.md`
+- **Can You Walk Me Home? He’s Following Me”—The Mafia Boss Swore to Handle It Forever** — Noir Mafia Hearts (1:30:27, 1 views)
+  https://www.youtube.com/watch?v=AQwFShYescg
+  item: `items/AQwFShYescg.md`
+- **My Daughter Said 'Don't Come To My Wedding' So I Cancelled Everything | TRUE STORY** — Father's Perfect Revenge (1:48:04, 9 views)
+  https://www.youtube.com/watch?v=kx6L36eHes0
+  item: `items/kx6L36eHes0.md`
+- **LA RIVAL QUE QUEBRÓ EL HIELO — Enemies to Lovers | Historia GL narrada sin cortes! FreenBecky** — Story Hunter GL (6:35:42, 1.0K views)
+  https://www.youtube.com/watch?v=RT8PmKmAHk4
+  item: `items/RT8PmKmAHk4.md`
+- **🔥Full:Raised by villains, he crushes his fake family#drama** — Kingdom Drama (3:00:43, 270 views)
+  https://www.youtube.com/watch?v=DZxKf_eaNi4
+  item: `items/DZxKf_eaNi4.md`
+- **Multi-Sub 🔥개 입에서 구한 여우가 절세미녀로 변하고, 투자 폭발 시스템까지 각성?! 제자 셋이 전부 괴물급이다😱 #cdrama #드라마 #kdrama** — 폭풍 극장 (2:32:51, 3.9K views)
+  https://www.youtube.com/watch?v=DXN1q3AI00E
+  item: `items/DXN1q3AI00E.md`
+- **🔥【最新合集】《我在末世搬金砖》EP1~87：我才不跟尸王生后代！| Multi SUB #热血 #逆袭 #战斗  #动漫魔女** — 动漫魔女 (7:25:00, 334 views)
+  https://www.youtube.com/watch?v=PGKYSF6wUn0
+  item: `items/PGKYSF6wUn0.md`
+- **【Eng Sub】《隐龙镇世》| 战功赫赫归来反遭亲姐弟夺卡践踏，决然转身守护心中挚爱#anime #动态漫 #動漫** — 漫剧时光 (1:40:04, 191 views)
+  https://www.youtube.com/watch?v=_fgVQ8TjKBw
+  item: `items/_fgVQ8TjKBw.md`

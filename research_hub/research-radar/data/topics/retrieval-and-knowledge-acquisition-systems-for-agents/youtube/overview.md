@@ -267,3 +267,60 @@ Full item files belong in `items/`.
 - **Iran Just SHOCKED the U.S. Air Force—F-15 Intercepted Over Hormuz as Western Media Stays Silent** — Athena Reports (17:50, 2 views)
   https://www.youtube.com/watch?v=FL-UFa4t9tI
   item: `items/FL-UFa4t9tI.md`
+
+## 2026-04-09 — 18 new videos
+
+- **Unaware I Inherited $500 Billion Empire, My Stepmother Slapped Me at My Dad’s Funeral Just for He** — Sweet Trap (1:08:33, new)
+  https://www.youtube.com/watch?v=CRH5xaLrp4I
+  item: `items/CRH5xaLrp4I.md`
+- **Unaware I Inherited $500 Billion Empire, My Stepmother Hit Me at My Father’s Funeral Just for He** — Billionaire Stories (1:07:26, new)
+  https://www.youtube.com/watch?v=CwNzA-5cMb0
+  item: `items/CwNzA-5cMb0.md`
+- **How to Secure IT/OT File Transfers | DMZ and Data Diode Segmentation Explained** — OPSWAT (1:02:42, 25.2K views)
+  https://www.youtube.com/watch?v=HidkrH4DkWo
+  item: `items/HidkrH4DkWo.md`
+- **Gunned Down While Running for Her Life — A Lone Cowboy Was the Only One Who Stopped** — WesternOdyssey (1:42:49, 391 views)
+  https://www.youtube.com/watch?v=PWkPq6tC3Gk
+  item: `items/PWkPq6tC3Gk.md`
+- **🔥【爽漫】【Eng Sub】《末日兌換系統：我稱霸廢土》網購零食附贈戒指，陳陽穿越末世廢土，左手當老闆，右手稱霸廢土，輕鬆走上巔峰。第1-110集 #都市 #anime #穿越 #玄幻** — 八虎动漫剧场 (9:09:22, 450 views)
+  https://www.youtube.com/watch?v=vf-NWdNu-3k
+  item: `items/vf-NWdNu-3k.md`
+- **COSCA Board Special Meeting - April 8, 2026** — CTO Meetings (2:09:26, 18 views)
+  https://www.youtube.com/watch?v=-3oMyZOugfE
+  item: `items/-3oMyZOugfE.md`
+- **My Dad Kicked Me Out After Getting the Car, and My Savings — But My Grandfather Left Me Something...** — Revenge Stories Lab (1:10:01, 1 views)
+  https://www.youtube.com/watch?v=LJt5KGa7ORE
+  item: `items/LJt5KGa7ORE.md`
+- **MULTISUB💥最新合集💥《神级奸商：全服求我别薅了》第1~119集丨林风带着前世的记忆，进入全球首款潜入式虚拟现实游戏“天下”，转职唯一隐藏职业“奸商”！#破晓动漫社** — 破晓动漫社 Dawn Anime Club (10:07:28, 1.3K views)
+  https://www.youtube.com/watch?v=paG_dHubxAE
+  item: `items/paG_dHubxAE.md`
+- **A poor man helps an old stranger, gains seven beauties and unlocks a system that grants every desire** — 穿越爽劇場ShortTV (1:50:06, 2.2K views)
+  https://www.youtube.com/watch?v=yunt-H7XumY
+  item: `items/yunt-H7XumY.md`
+- **House Transportation Finance and Policy Committee 4/8/26** — MNHouseInfo (1:48:49, 77 views)
+  https://www.youtube.com/watch?v=aiU-GU-6RpA
+  item: `items/aiU-GU-6RpA.md`
+- **💥ENG SUB💥【穿越末世：我掌控双界资源】Apocalypse Transcender: Master of Two Worlds 第1-110集 #穿越 #热血 #战斗 #动漫** — 超有钱动漫 Anime Club (9:09:22, 122 views)
+  https://www.youtube.com/watch?v=4OtlsYDXGDQ
+  item: `items/4OtlsYDXGDQ.md`
+- **Committee on Health and Human Services - 04/08/26** — Minnesota Senate Media Services (2:33:10, 869 views)
+  https://www.youtube.com/watch?v=RLpiSJURvPU
+  item: `items/RLpiSJURvPU.md`
+- **MULTISUB📢新番上线《开局两界倒卖，我反手开启万亿工业革命》第1~60集丨诸神十年后要灭蓝星？他觉醒双向传送外挂，搬空祖国物资横推异世界！身价亿万倍爆发，无敌打脸众神！💥✨#漫剧 #星启漫剧社** — 星启漫剧社 (2:18:26, 180 views)
+  https://www.youtube.com/watch?v=JC6L0k2HjIk
+  item: `items/JC6L0k2HjIk.md`
+- **【178集】一口气看爽日漫《地狱模式～喜欢速通游戏的玩家在废设定异世界无双》** — 韩漫潮映馆 (8:03:18, 3.9K views)
+  https://www.youtube.com/watch?v=xqvLjdObkKM
+  item: `items/xqvLjdObkKM.md`
+- **Forced to Marry a Mafia Boss—What He Whispered on Our Wedding Night Destroyed Me** — Dangerous Boss Stories (2:23:54, 25 views)
+  https://www.youtube.com/watch?v=lQGb8jjNO4M
+  item: `items/lQGb8jjNO4M.md`
+- **Can You Walk Me Home? He’s Following Me”—The Mafia Boss Swore to Handle It Forever** — Noir Mafia Hearts (1:30:27, 1 views)
+  https://www.youtube.com/watch?v=AQwFShYescg
+  item: `items/AQwFShYescg.md`
+- **Unaware I Inherited $500 Billion Fortune, My Stepmother Slapped Me at My Father’s Funeral Just for H** — Betrayed Stories (1:14:09, new)
+  https://www.youtube.com/watch?v=U_p7hyvahKA
+  item: `items/U_p7hyvahKA.md`
+- **【都市靈異】《大力地球》意外觉醒掌控地球之力，抬手引地震，跺脚掀海啸，一拳能撼动大陆板块。从此世间再无对手，管你武道至尊、异界魔神、星际战舰，在绝对的大地之力面前，统统不堪一击！.......** — 清風書吧 (1:07:53, 2 views)
+  https://www.youtube.com/watch?v=Pe4lz1k5_-s
+  item: `items/Pe4lz1k5_-s.md`

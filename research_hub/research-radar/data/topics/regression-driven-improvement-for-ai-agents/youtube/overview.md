@@ -78,3 +78,12 @@ Full item files belong in `items/`.
 - **倪海廈：4月10號甲寅日必看！3生肖穿白色，5種人穿紅色，保你2026馬年翻天覆地#倪海廈 #黃帝內經 #養生 #國學 #易經 #清明 #開運 #招財 #補財庫 #中醫 #風水 #2026運勢 #農曆** — 漢唐健康 (1:25:29, 2.9K views)
   https://www.youtube.com/watch?v=pNf_u5RCxpE
   item: `items/pNf_u5RCxpE.md`
+
+## 2026-04-09 — 2 new videos
+
+- **Mast Cells to Microplastics with Dr. Anne Maitland and cohost Dr. Dacre Knight (Ep 191)** — Bendy Bodies (1:24:06, 171 views)
+  https://www.youtube.com/watch?v=jZijHjn_LSo
+  item: `items/jZijHjn_LSo.md`
+- **🐉【牧龙师】EP1-80超长合集丨 天才剑修为救同伴变成废人，阴差阳错与女武神黎一夜相欢 #anime #玄幻 #穿越** — 嗨皮漫画 (5:52:45, 48 views)
+  https://www.youtube.com/watch?v=Izp_ku7YJzk
+  item: `items/Izp_ku7YJzk.md`

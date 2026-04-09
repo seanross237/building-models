@@ -353,3 +353,73 @@ Full item files belong in `items/`.
   source: https://www.youtube.com/watch?v=RoaPvj9Ovug
   summary file: `items/youtube--RoaPvj9Ovug.md`
   presentation candidate: `false`
+
+## 2026-04-09 — youtube score 5
+
+- **MAGA Stooge Publicly DESTROYED By Veterans… Crowd BOILS OVER!**
+  source: https://www.youtube.com/watch?v=SMn_jwyI4uQ
+  summary file: `items/youtube--SMn_jwyI4uQ.md`
+  presentation candidate: `false`
+
+## 2026-04-09 — youtube score 6
+
+- **POV: You're the Last Judge in a Country Where the Law Has Been Bought**
+  source: https://www.youtube.com/watch?v=SUxfKNHjl5k
+  summary file: `items/youtube--SUxfKNHjl5k.md`
+  presentation candidate: `false`
+
+## 2026-04-09 — youtube score 6
+
+- **Organ Child (2025) Movie Explained | English Subtitle Added**
+  source: https://www.youtube.com/watch?v=Sbq9cH7dOP8
+  summary file: `items/youtube--Sbq9cH7dOP8.md`
+  presentation candidate: `false`
+
+## 2026-04-09 — youtube score 6
+
+- **Stop Copy-Pasting Prompts: I Built 5 Claude Skills That Run Automatically**
+  source: https://www.youtube.com/watch?v=TJWeXsRRpRA
+  summary file: `items/youtube--TJWeXsRRpRA.md`
+  presentation candidate: `false`
+
+## 2026-04-09 — youtube score 5
+
+- **The 2026 Wealth Transfer: Why You’re Being Deleted (And How to Survive)**
+  source: https://www.youtube.com/watch?v=TZcSBuW94W0
+  summary file: `items/youtube--TZcSBuW94W0.md`
+  presentation candidate: `false`
+
+## 2026-04-09 — youtube score 6
+
+- **Our First Night in our Malaysian Built Truck Camper [S11-E4]**
+  source: https://www.youtube.com/watch?v=TaiuBm8bSBA
+  summary file: `items/youtube--TaiuBm8bSBA.md`
+  presentation candidate: `false`
+
+## 2026-04-09 — youtube score 5
+
+- **NASA's Artemis II Crew Launches To The Moon (Official Broadcast)**
+  source: https://www.youtube.com/watch?v=Tf_UjBMIzNo
+  summary file: `items/youtube--Tf_UjBMIzNo.md`
+  presentation candidate: `false`
+
+## 2026-04-09 — youtube score 6
+
+- **300 CALM FACTS THAT ARE EASY TO FALL ASLEEP TO**
+  source: https://www.youtube.com/watch?v=U816L34lkcA
+  summary file: `items/youtube--U816L34lkcA.md`
+  presentation candidate: `false`
+
+## 2026-04-09 — youtube score 6
+
+- **Anthropic Just Dropped Multi-Agent Planning for Claude Code**
+  source: https://www.youtube.com/watch?v=UNhA17l6CWw
+  summary file: `items/youtube--UNhA17l6CWw.md`
+  presentation candidate: `false`
+
+## 2026-04-09 — youtube score 6
+
+- **【完結】18歲的林清音誤闖校霸江炎的紋身店，他一眼淪陷，從此高調示愛，轟動全校，可她因原生家庭的陰影始終不敢邁出那一步，去回應他的炙熱，直到情緒失控，他紅著眼逼問：“你到底有沒有心？#马小宇#徐艺真**
+  source: https://www.youtube.com/watch?v=UqrnNNiduRg
+  summary file: `items/youtube--UqrnNNiduRg.md`
+  presentation candidate: `false`

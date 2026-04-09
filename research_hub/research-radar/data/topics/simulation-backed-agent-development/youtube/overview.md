@@ -399,3 +399,69 @@ Full item files belong in `items/`.
 - **🔥【最新合集】《太古十凶：别人御兽我御兽娘》EP1~144：成功六转！| Multi SUB #热血 #玄幻 #逆袭 #战斗 #动漫魔女** — 动漫魔女 (9:05:39, 607 views)
   https://www.youtube.com/watch?v=elGTlb1NGAg
   item: `items/elGTlb1NGAg.md`
+
+## 2026-04-09 — 21 new videos
+
+- **We TRICKED our friends into decorating our new office ft. Code Kunst, Lee Chunhee, Charles [ENG CC]** — EPIK HIGH (44:38, 179.2K views)
+  https://www.youtube.com/watch?v=fFbL5OYPRoA
+  item: `items/fFbL5OYPRoA.md`
+- **🔥Apocalypse Battlefield: He Gains a 100x Amplification System and Boosts All Weapons 100x Lethality!** — Bella's Comic Chronicles (28:48:41, 414 views)
+  https://www.youtube.com/watch?v=G1vCltReQtQ
+  item: `items/G1vCltReQtQ.md`
+- **House Legacy Finance Committee 4/8/26** — MNHouseInfo (1:48:19, 60 views)
+  https://www.youtube.com/watch?v=f7BuaaOoNzY
+  item: `items/f7BuaaOoNzY.md`
+- **Ceasefire Uncertainty Dampens Mood in Asia | The Asia Trade 4/9/2026** — Bloomberg Television (1:35:00, 4.5K views)
+  https://www.youtube.com/watch?v=78ZHk5jvsNg
+  item: `items/78ZHk5jvsNg.md`
+- **Investigação com Baralho Cigano - Oficina** — Os Oraculistas (1:44:46, 26 views)
+  https://www.youtube.com/watch?v=_TOBIgO6iwM
+  item: `items/_TOBIgO6iwM.md`
+- **ENG SUB 🔥【全網首發】《极热纪元：我带死党搬空全球》重生归来携无限空间，联手伙伴建末世堡垒碾压背叛者！#热血#末世#漫剧#末世生存#赛博剧场** — 赛博剧场 (1:15:19, 1.5K views)
+  https://www.youtube.com/watch?v=pCbIlMlSEL0
+  item: `items/pCbIlMlSEL0.md`
+- **[Multi-SUB] He Was Rejected and Humiliated—Then Became the Genius Who Saved the Empire** — Black Cat Drama (1:44:36, 184 views)
+  https://www.youtube.com/watch?v=-YVgmqCa1vY
+  item: `items/-YVgmqCa1vY.md`
+- **SAP SD: ECC to S/4HANA Migration Failures (Part 3 - Vol 1) | Testing & Cutover Incidents (142–180)!** — Ace Interviews (7:03:10, 7 views)
+  https://www.youtube.com/watch?v=pE_0zn4fBoE
+  item: `items/pE_0zn4fBoE.md`
+- **🔥【爽漫】【Eng Sub】《末日兌換系統：我稱霸廢土》網購零食附贈戒指，陳陽穿越末世廢土，左手當老闆，右手稱霸廢土，輕鬆走上巔峰。第1-110集 #都市 #anime #穿越 #玄幻** — 八虎动漫剧场 (9:09:22, 450 views)
+  https://www.youtube.com/watch?v=vf-NWdNu-3k
+  item: `items/vf-NWdNu-3k.md`
+- **🔴 LIVE: India's $1.5B Vibe Coding Unicorn | Meta's Muse Spark | Perplexity $450M ARR | IT Earnings** — AIM Network (44:53, 578 views)
+  https://www.youtube.com/watch?v=kH0cddV-q74
+  item: `items/kH0cddV-q74.md`
+- **The Producer's Edge On Air Ep 7: How Annuity Agents Use WealthlogiX to Enhance Their Sales Process** — WIN Group (1:06:45, 8 views)
+  https://www.youtube.com/watch?v=mqEDkyv_mss
+  item: `items/mqEDkyv_mss.md`
+- **Drunk after betrayal, broke into stranger’s room, he’s cold boss & gave her ultimate preference** — LoveScars Drama (2:35:10, 87 views)
+  https://www.youtube.com/watch?v=Gf6fSRGhk5A
+  item: `items/Gf6fSRGhk5A.md`
+- **Decision Intelligence 4 Health: Public health decision making under constraints** — UC Berkeley School of Public Health (48:06, 1 views)
+  https://www.youtube.com/watch?v=0wlCNBx_pP0
+  item: `items/0wlCNBx_pP0.md`
+- **April 8, 2026 City Council & Board of Estimate and Taxation Joint Meeting** — cityofminneapolis (1:36:10, 270 views)
+  https://www.youtube.com/watch?v=OiB7t5rAltU
+  item: `items/OiB7t5rAltU.md`
+- **💥ENG SUB💥【穿越末世：我掌控双界资源】Apocalypse Transcender: Master of Two Worlds 第1-110集 #穿越 #热血 #战斗 #动漫** — 超有钱动漫 Anime Club (9:09:22, 122 views)
+  https://www.youtube.com/watch?v=4OtlsYDXGDQ
+  item: `items/4OtlsYDXGDQ.md`
+- **Working Your Way - Career Development for People with Disabilities** — DisabilityRightsCA (1:57:21, 23 views)
+  https://www.youtube.com/watch?v=7Du6HaniXPs
+  item: `items/7Du6HaniXPs.md`
+- **【178集】一口气看爽日漫《地狱模式～喜欢速通游戏的玩家在废设定异世界无双》** — 韩漫潮映馆 (8:03:18, 3.9K views)
+  https://www.youtube.com/watch?v=xqvLjdObkKM
+  item: `items/xqvLjdObkKM.md`
+- **The Morning Current** — WEAR Channel 3 News (59:25, 184 views)
+  https://www.youtube.com/watch?v=6gUrjxHNE58
+  item: `items/6gUrjxHNE58.md`
+- **Unaware I Inherited $500 Billion Fortune, My Stepmother Slapped Me at My Father’s Funeral Just for H** — Betrayed Stories (1:14:09, new)
+  https://www.youtube.com/watch?v=U_p7hyvahKA
+  item: `items/U_p7hyvahKA.md`
+- **【Multi SUB】《上交修仙界后，动员全球助我成仙》（全集）开局穿越修仙界成矿奴？他用神秘玉佩连接地球，靠全球助力成功逆袭成修仙大佬，身边美女如云！#最火短剧推荐#短剧全集 #热血 #逆袭** — 苍龙剧场 (2:35:52, 1.4K views)
+  https://www.youtube.com/watch?v=a2zdPomvkts
+  item: `items/a2zdPomvkts.md`
+- **I reclaimed lands for the throne yet suffered unjust disgrace** — 一週短劇 Weekly Drama (2:02:54, 389 views)
+  https://www.youtube.com/watch?v=rh6-aymY1Gs
+  item: `items/rh6-aymY1Gs.md`

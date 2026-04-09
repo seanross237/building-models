@@ -555,3 +555,96 @@ Full item files belong in `items/`.
 - **AI Agents, Crypto & Robotics with Weekee: The Rise of Agent Economies & On-Chain Commerce** — 21shares (43:41, 55 views)
   https://www.youtube.com/watch?v=JwYbaUG9yno
   item: `items/JwYbaUG9yno.md`
+
+## 2026-04-09 — 30 new videos
+
+- **He Can't Code but His AI Agents Make Him $5K/Month** — Chris Koerner on The Koerner Office Podcast (44:20, 23.3K views)
+  https://www.youtube.com/watch?v=JHz6mikOPWw
+  item: `items/JHz6mikOPWw.md`
+- **How AI agents & Claude skills work (Clearly Explained)** — Greg Isenberg (35:26, 28.1K views)
+  https://www.youtube.com/watch?v=S_oN3vlzpMw
+  item: `items/S_oN3vlzpMw.md`
+- **Agentic Systems Engineering, ODC Self-Hosted, Semantic Search & A2A Connector** — OutSystems (3:14, 48 views)
+  https://www.youtube.com/watch?v=T6KtxPLK_1I
+  item: `items/T6KtxPLK_1I.md`
+- **The Next Evolution of AI Coding Is Harnesses - Here's How to Build Them** — Cole Medin (30:48, 11.6K views)
+  https://www.youtube.com/watch?v=qMnClynCAmM
+  item: `items/qMnClynCAmM.md`
+- **Self-Optimizing Multi-Agent Deep Research** — AI Research Roundup (2:30, 9 views)
+  https://www.youtube.com/watch?v=Y0aa9rVigTI
+  item: `items/Y0aa9rVigTI.md`
+- **Claude Managed Agents Just Dropped, And It Kills No-Code** — Nick Saraev (16:31, 109.0K views)
+  https://www.youtube.com/watch?v=Ob5Vu-gD3mo
+  item: `items/Ob5Vu-gD3mo.md`
+- **OpenClaw vs Hermes | What's the difference?** — Alex Hitt, The Great Discovery Pro (5:33, 8 views)
+  https://www.youtube.com/watch?v=9InAp_wgAsU
+  item: `items/9InAp_wgAsU.md`
+- **Is A Coup Coming for Putin? Elite Patience with War and Repression Diminishing!** — Silicon Curtain (53:05, 3.0K views)
+  https://www.youtube.com/watch?v=rVYisdliPao
+  item: `items/rVYisdliPao.md`
+- **This Al Model Improved Itself 100+ Times Autonomously** — Daniel Jindoo (12:53, 1.9K views)
+  https://www.youtube.com/watch?v=P6zx-WVt_eU
+  item: `items/P6zx-WVt_eU.md`
+- **Google New JITRO Crosses A Dangerous Line** — AI Revolution (13:21, 24.3K views)
+  https://www.youtube.com/watch?v=8d3E-XZX3u4
+  item: `items/8d3E-XZX3u4.md`
+- **MLOps 101: Platforms and Processes for Building AI | NVIDIA GTC** — NVIDIA Developer (38:57, 315 views)
+  https://www.youtube.com/watch?v=K9X-8aS8BxA
+  item: `items/K9X-8aS8BxA.md`
+- **Stop Losing AI Work. Ultimate Backup Guide for the Non-Techy.** — ICOR with Tom | AI Productivity (24:54, 304 views)
+  https://www.youtube.com/watch?v=9eU6-CppQ1Y
+  item: `items/9eU6-CppQ1Y.md`
+- **How To Coordinate Your Notion Agents (2026)** — Matthias Frank (26:38, 693 views)
+  https://www.youtube.com/watch?v=fjNJekqEfCg
+  item: `items/fjNJekqEfCg.md`
+- **The AI Marketing Squad: Multi-Agent Systems for Smarter Digital Campaigns** — Xaltius (41:13, 277 views)
+  https://www.youtube.com/watch?v=R3cPvtK7twY
+  item: `items/R3cPvtK7twY.md`
+- **Ali Ansari, Micro1 | theCUBE + NYSE Wired: Mixture of Experts** — SiliconANGLE theCUBE (15:18, 3.8K views)
+  https://www.youtube.com/watch?v=545nswb_SBE
+  item: `items/545nswb_SBE.md`
+- **Muse Spark - Meta's NEW Llama Replacement** — Sam Witteveen (16:30, 9.1K views)
+  https://www.youtube.com/watch?v=7vkybiVRSm0
+  item: `items/7vkybiVRSm0.md`
+- **Optimizing for the Agent Era: How PMs Build with AI Teammates (Agents & Agentic AI)** — Productside (1:01:20, 24 views)
+  https://www.youtube.com/watch?v=0gqWLi0Hkpg
+  item: `items/0gqWLi0Hkpg.md`
+- **The Future of DevOps: AI, Agents, and the "Impossible" Workflow** — Elias Khnaser (53:26, 303 views)
+  https://www.youtube.com/watch?v=21_Ol_p-UGk
+  item: `items/21_Ol_p-UGk.md`
+- **How AI Agents Are Reshaping the Solar Industry? | Clean Power Hour Podcast with Jesse Anglen** — Clean Power Hour (46:40, 41 views)
+  https://www.youtube.com/watch?v=yLfALiGarfk
+  item: `items/yLfALiGarfk.md`
+- **Project Spotlight - Day 1** — MindMatrixEd (1:17:31, 1.7K views)
+  https://www.youtube.com/watch?v=Il2nOAWs2yY
+  item: `items/Il2nOAWs2yY.md`
+- **Ads and AI: Leveraging AI Creative in 2026** — Social Media Examiner (47:46, 97 views)
+  https://www.youtube.com/watch?v=d43g7nUKxpQ
+  item: `items/d43g7nUKxpQ.md`
+- **Claude Managed Agents vs Openclaw : This Changes Everything** — Stephanie Nyarko (8:59, 44 views)
+  https://www.youtube.com/watch?v=GN7SQ4zJ0-w
+  item: `items/GN7SQ4zJ0-w.md`
+- **RAG Explained: Hybrid Search Is Making AI Smarter (Stop AI Hallucinations in 2026)** — Sunil Conscious Mindset (8:05, 1 views)
+  https://www.youtube.com/watch?v=W4NM-iadZ2o
+  item: `items/W4NM-iadZ2o.md`
+- **AI’s Impact on QA Teams with Bill Kirst of Adobe (Episode 5)** — TestSavantAI (40:00, 89 views)
+  https://www.youtube.com/watch?v=ALClZScAfgc
+  item: `items/ALClZScAfgc.md`
+- **From IC to VP: Engineering Leadership at Every Level, with Box's Tamar Bercovici** — Cortex | Engineering Operations Platform (47:56, 15 views)
+  https://www.youtube.com/watch?v=I3TI4fUUQWw
+  item: `items/I3TI4fUUQWw.md`
+- **Saving Automatic.CSS settings as re-usable kits with Schema.** — SchemaWP (4:07, 67 views)
+  https://www.youtube.com/watch?v=Pk6IpRtWUeY
+  item: `items/Pk6IpRtWUeY.md`
+- **OpenAI is Flailing, Anthropic’s Mythos AI is Too Powerful, Are Vertical Tabs Good?** — Primary Technology (1:15:51, 90 views)
+  https://www.youtube.com/watch?v=9oVRoMtEa70
+  item: `items/9oVRoMtEa70.md`
+- **【FULL】I Became the Villain with Reader Vision,Outplay Every “Chosen” Hero,Get All Beauties#minidrama** — RushMiniDrama (2:27:47, 11.4K views)
+  https://www.youtube.com/watch?v=CpF-25Jv7Tc
+  item: `items/CpF-25Jv7Tc.md`
+- **The Prime Mover | Reclaiming Your Position as the Causal Nexus | Full Audiobook** — The Sovereign Path (2:53:56, 3 views)
+  https://www.youtube.com/watch?v=oH8vaPD4URE
+  item: `items/oH8vaPD4URE.md`
+- **After Inheriting a Territory, I Unlocked Mechanical System & Can Summon an Infinite Army of Machines** — Revel Manga Chronicles (9:49:13, 535 views)
+  https://www.youtube.com/watch?v=RQzWqtsmPu0
+  item: `items/RQzWqtsmPu0.md`

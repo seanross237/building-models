@@ -117,3 +117,21 @@ Full item files belong in `items/`.
 - **After female cashback system,he is forced live off women,tenfold cashback yields over $100M cash** — Mania Comics Legends (27:42:58, 132 views)
   https://www.youtube.com/watch?v=PWquZTLes1M
   item: `items/PWquZTLes1M.md`
+
+## 2026-04-09 — 5 new videos
+
+- **Global Trade Outlook: Tariff Risks and Energy Shock** — BMO US (30:15, 21 views)
+  https://www.youtube.com/watch?v=2N2SwsNH6xw
+  item: `items/2N2SwsNH6xw.md`
+- **My Daughter Said 'Don't Come To My Wedding' So I Cancelled Everything | TRUE STORY** — Father's Perfect Revenge (1:48:04, 9 views)
+  https://www.youtube.com/watch?v=kx6L36eHes0
+  item: `items/kx6L36eHes0.md`
+- **Her Husband Killed Her... So She Went Back And Chose His Enemy | Full Manhwa Recap** — Animated Manhwa (7:47:15, 1 views)
+  https://www.youtube.com/watch?v=oiAncaNKTfU
+  item: `items/oiAncaNKTfU.md`
+- **A Mermaid Fell In Love With Him... Now She Won't Let Go | Full Manhwa Recap** — Animated Manhwa (8:35:52, 3 views)
+  https://www.youtube.com/watch?v=sYDoqaPQiIU
+  item: `items/sYDoqaPQiIU.md`
+- **Global Trade Outlook: Tariff Risks and Energy Shock** — BMOCommunity (30:15, 154 views)
+  https://www.youtube.com/watch?v=p2r1pC27yUM
+  item: `items/p2r1pC27yUM.md`

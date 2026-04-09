@@ -561,3 +561,96 @@ Full item files belong in `items/`.
 - **After 10 Years Of Hard Work For His Family, He Was Chosen By A God To Rule The Entire World** — Tanjiro Recap (13:31:29, 608 views)
   https://www.youtube.com/watch?v=hnd0sMkr6dk
   item: `items/hnd0sMkr6dk.md`
+
+## 2026-04-09 — 30 new videos
+
+- **Claude Managed Agents Just Automated EVERY Job! AI Agent OS!** — WorldofAI (11:53, 9.8K views)
+  https://www.youtube.com/watch?v=BkHnzW7vWaA
+  item: `items/BkHnzW7vWaA.md`
+- **How AI agents & Claude skills work (Clearly Explained)** — Greg Isenberg (35:26, 28.1K views)
+  https://www.youtube.com/watch?v=S_oN3vlzpMw
+  item: `items/S_oN3vlzpMw.md`
+- **Claude Managed Agents Just Dropped, And It Kills n8n** — Nick Saraev (16:31, 109.0K views)
+  https://www.youtube.com/watch?v=Ob5Vu-gD3mo
+  item: `items/Ob5Vu-gD3mo.md`
+- **AI agent in a robot does exactly what experts warned** — InsideAI (16:24, 5.7K views)
+  https://www.youtube.com/watch?v=woTy4dTiT20
+  item: `items/woTy4dTiT20.md`
+- **Claude Code Solves The Problem Every Developer Faces** — The AI Update Pro (7:51, 4 views)
+  https://www.youtube.com/watch?v=sFeAJAu7Zf8
+  item: `items/sFeAJAu7Zf8.md`
+- **Claude Code: The Simplest Way to Build an Agent** — Pocketful of AI (17:05, 97 views)
+  https://www.youtube.com/watch?v=ggujWDyzZ5Q
+  item: `items/ggujWDyzZ5Q.md`
+- **AI agents make mistakes more expensive** — The Deep View and Jason Hiner (49:18, 72 views)
+  https://www.youtube.com/watch?v=ANhHstorzNI
+  item: `items/ANhHstorzNI.md`
+- **OpenClaw 4.9: Your AI Agent Now Dreams** — Julian Goldie SEO (8:35, 7.2K views)
+  https://www.youtube.com/watch?v=gmU0kAfsEtE
+  item: `items/gmU0kAfsEtE.md`
+- **I Tested Claude's New Managed Agents... What You Need To Know** — Nate Herk | AI Automation (16:33, 67.0K views)
+  https://www.youtube.com/watch?v=27Y44JYXZJ8
+  item: `items/27Y44JYXZJ8.md`
+- **Project Lightning Talk: OpenFGA For Agents: Safe Delegation In 5 Minutes - Andres Aguiar, Maintainer** — CNCF [Cloud Native Computing Foundation] (6:48, 14 views)
+  https://www.youtube.com/watch?v=1_w_ZRJ5lWk
+  item: `items/1_w_ZRJ5lWk.md`
+- **Microsoft Is Cleaning Up Its AI Agent Mess** — The Hype Filter (3:34, 15 views)
+  https://www.youtube.com/watch?v=gWqG0LlbzQM
+  item: `items/gWqG0LlbzQM.md`
+- **Your AI agent just built its own WordPress abilities. Here's how.** — Dynamicooo (6:54, 76 views)
+  https://www.youtube.com/watch?v=2IUbl8-Po4w
+  item: `items/2IUbl8-Po4w.md`
+- **Your Local AI Projects Are NOT Safe. Claude Can Fix This Now. (Backup Guide)** — ICOR with Tom | AI Productivity (24:54, 305 views)
+  https://www.youtube.com/watch?v=9eU6-CppQ1Y
+  item: `items/9eU6-CppQ1Y.md`
+- **Why Vibe Coding Will Break Your App (And How to Fix It)** — Rynaut — Architecting Automation (8:19, 1 views)
+  https://www.youtube.com/watch?v=ppwGr-e_Kg0
+  item: `items/ppwGr-e_Kg0.md`
+- **Scrapely vs Drippi | Which Twitter/X DM Automation Tool Is Best? (2026)** — Scrapely (13:26, 6 views)
+  https://www.youtube.com/watch?v=03y1CBNYdjQ
+  item: `items/03y1CBNYdjQ.md`
+- **(Podcast) Bridging the Gap Between AI Agents and Professional Software** — Eddy Says Hi #EddySaysHi (21:25, 16 views)
+  https://www.youtube.com/watch?v=sX-0jhyYzUs
+  item: `items/sX-0jhyYzUs.md`
+- **Building AI Agents on the JVM by Anton Arhipov** — Devoxx (46:17, 383 views)
+  https://www.youtube.com/watch?v=fLK7-SUVVak
+  item: `items/fLK7-SUVVak.md`
+- **I Built a 5-Agent AI Sales Team That Books Meetings Automatically (No Code)** — Liam Haley (10:07, 16 views)
+  https://www.youtube.com/watch?v=Oishs95i3Ns
+  item: `items/Oishs95i3Ns.md`
+- **Taming The Claw: A Demo on Governing OpenClaw with Agent Control** — Galileo (59:24, 92 views)
+  https://www.youtube.com/watch?v=aV7gv1P63Eg
+  item: `items/aV7gv1P63Eg.md`
+- **Secure AI Agents: Prevent Data Exfiltration** — Master of Machines (5:42, 1 views)
+  https://www.youtube.com/watch?v=4olJ3IT0wEg
+  item: `items/4olJ3IT0wEg.md`
+- **Meta's NEW Llama Replacement - Muse Spark** — Sam Witteveen (16:30, 9.2K views)
+  https://www.youtube.com/watch?v=7vkybiVRSm0
+  item: `items/7vkybiVRSm0.md`
+- **Poke Brings Agents to Text. Tubi Brings Library to ChatGPT. Nudifying Bots Industrialize Abuse. O...** — AI News Daily | Podcast by Pickert (4:32, 3 views)
+  https://www.youtube.com/watch?v=aO2Bm6DIf7g
+  item: `items/aO2Bm6DIf7g.md`
+- **Claude’s New AI Just Changed the Internet Forever | Mythos & Project Glasswing Explained** — Noncoder (3:21, 129 views)
+  https://www.youtube.com/watch?v=DghWzt1g2cU
+  item: `items/DghWzt1g2cU.md`
+- **Nancy Guthrie: Was This the Same Car That Took Her? Tommaso & Evans Linked?** — The Crime Vault (30:05, 66 views)
+  https://www.youtube.com/watch?v=l-lAK2V-L34
+  item: `items/l-lAK2V-L34.md`
+- **"GHOST MURMUR" CIA uses MOST TERRIFYING SPY TECH - Heartbeat Detector - to Rescue Missing Pilot** — The Strategic Network (15:24, 10 views)
+  https://www.youtube.com/watch?v=uBz8-3e4jIM
+  item: `items/uBz8-3e4jIM.md`
+- **Ai Video Kaise Banaye Mobile SE Free ME 2026 || How to use Arena Ai || #cpstechnical** — CPS Technical (6:38, 6 views)
+  https://www.youtube.com/watch?v=BkDO7eMgMYM
+  item: `items/BkDO7eMgMYM.md`
+- **I Found His Secret...🤫So I Welcome Pregnant Mistress Home, Filed Divorce, and Exposed The Secret!** — CEOLOVERS (2:08:22, 8.2K views)
+  https://www.youtube.com/watch?v=ABGkaenO68Q
+  item: `items/ABGkaenO68Q.md`
+- **Laundry owner taught me the trick! 😱** — Life Tips (3:01, 226 views)
+  https://www.youtube.com/watch?v=qzU8W9H2O5I
+  item: `items/qzU8W9H2O5I.md`
+- **Post-Mortem of Anthropic's Claude Code Leak** — Practical AI (43:25, 6 views)
+  https://www.youtube.com/watch?v=3bEnnyfuIjI
+  item: `items/3bEnnyfuIjI.md`
+- **Steam Just Did What Nvidia Can't..** — OhNoItsAlexx (21:38, 27.1K views)
+  https://www.youtube.com/watch?v=aoK_TNB0w2o
+  item: `items/aoK_TNB0w2o.md`

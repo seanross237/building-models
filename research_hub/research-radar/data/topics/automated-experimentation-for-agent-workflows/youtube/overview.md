@@ -555,3 +555,96 @@ Full item files belong in `items/`.
 - **How to Change Review Policies in Google Antigravity IDE: Agent Automation & Security Guide 2026** — ProgrammingKnowledge2 (1:48, 25 views)
   https://www.youtube.com/watch?v=FnN2V61Rnh4
   item: `items/FnN2V61Rnh4.md`
+
+## 2026-04-09 — 30 new videos
+
+- **How AI agents & Claude skills work (Clearly Explained)** — Greg Isenberg (35:26, 28.1K views)
+  https://www.youtube.com/watch?v=S_oN3vlzpMw
+  item: `items/S_oN3vlzpMw.md`
+- **Claude Managed Agents Just Automated EVERY Job! AI Agent OS!** — WorldofAI (11:53, 9.8K views)
+  https://www.youtube.com/watch?v=BkHnzW7vWaA
+  item: `items/BkHnzW7vWaA.md`
+- **Claude Managed Agents Just Dropped, And It Kills No-Code** — Nick Saraev (16:31, 109.0K views)
+  https://www.youtube.com/watch?v=Ob5Vu-gD3mo
+  item: `items/Ob5Vu-gD3mo.md`
+- **DON'T Build AI Automations, build agentic workflows! (Claude Managed Agents)** — Jason Edward (27:58, 37 views)
+  https://www.youtube.com/watch?v=szERWh5EKdw
+  item: `items/szERWh5EKdw.md`
+- **He Can't Code but His AI Agents Make Him $5K/Month** — Chris Koerner on The Koerner Office Podcast (44:20, 23.3K views)
+  https://www.youtube.com/watch?v=JHz6mikOPWw
+  item: `items/JHz6mikOPWw.md`
+- **Optimizing for the Agent Era: How PMs Build with AI Teammates (Agents & Agentic AI)** — Productside (1:01:20, 24 views)
+  https://www.youtube.com/watch?v=0gqWLi0Hkpg
+  item: `items/0gqWLi0Hkpg.md`
+- **Building AI Agents on the JVM by Anton Arhipov** — Devoxx (46:17, 383 views)
+  https://www.youtube.com/watch?v=fLK7-SUVVak
+  item: `items/fLK7-SUVVak.md`
+- **How To Coordinate Your Notion Agents (2026)** — Matthias Frank (26:38, 693 views)
+  https://www.youtube.com/watch?v=fjNJekqEfCg
+  item: `items/fjNJekqEfCg.md`
+- **The Future of DevOps: AI, Agents, and the "Impossible" Workflow** — Elias Khnaser (53:26, 303 views)
+  https://www.youtube.com/watch?v=21_Ol_p-UGk
+  item: `items/21_Ol_p-UGk.md`
+- **Build AI Agents by Voice, Not Workflows** — 90 Day Mentoring Challenge (27:30, 1 views)
+  https://www.youtube.com/watch?v=zzhzKMEj7E0
+  item: `items/zzhzKMEj7E0.md`
+- **Stop hand-coding LangChain! Build AI Agents visually with n8n, connect your own data in 10 minutes** — DevCovery (5:31, 7 views)
+  https://www.youtube.com/watch?v=MK7rXE767Kk
+  item: `items/MK7rXE767Kk.md`
+- **清华发布催化研究智能体：人工智能迈向自主研究，实现从灵感到论文的科研全链路闭环** — Agent 创世纪 (10:39, 4 views)
+  https://www.youtube.com/watch?v=BdeK0c6lCi8
+  item: `items/BdeK0c6lCi8.md`
+- **Runbook Automation Release Notes v5.20.0** — PagerDuty Inc. (24:30, 27 views)
+  https://www.youtube.com/watch?v=9zUTWC5bTcg
+  item: `items/9zUTWC5bTcg.md`
+- **Create Your FIRST AI Agent in Minutes  | n8n Tutorial for Beginners 2026** — Tech SPR (18:02, 6 views)
+  https://www.youtube.com/watch?v=wke_cCmWOsA
+  item: `items/wke_cCmWOsA.md`
+- **Stop Losing AI Work. Ultimate Backup Guide for the Non-Techy.** — ICOR with Tom | AI Productivity (24:54, 304 views)
+  https://www.youtube.com/watch?v=9eU6-CppQ1Y
+  item: `items/9eU6-CppQ1Y.md`
+- **(Podcast) Bridging the Gap Between AI Agents and Professional Software** — Eddy Says Hi #EddySaysHi (21:25, 16 views)
+  https://www.youtube.com/watch?v=sX-0jhyYzUs
+  item: `items/sX-0jhyYzUs.md`
+- **So haben wir unsere A/B Test Auswertungen automatisiert** — Chris Dengler - Convertlab (15:55, 13 views)
+  https://www.youtube.com/watch?v=BTGbTtNw03A
+  item: `items/BTGbTtNw03A.md`
+- **Is GLM 5.1 the Best Model for AI Agents?** — Blunt AI (6:34, 25 views)
+  https://www.youtube.com/watch?v=UeSfiXpccNk
+  item: `items/UeSfiXpccNk.md`
+- **I Used AI To Write My Test Plan — Here's the Process** — Action QA (34:02, 5 views)
+  https://www.youtube.com/watch?v=HX478vt-imE
+  item: `items/HX478vt-imE.md`
+- **KaneAI Tutorial - Test Your Entire App in Plain English** — Kevin Stratvert (15:32, 1.4K views)
+  https://www.youtube.com/watch?v=1dVaUR-vWdU
+  item: `items/1dVaUR-vWdU.md`
+- **Beyond the IT Headlines | Inside the AI Data Factory: How Enterprise AI Gets Built** — Everpure (25:13, 92 views)
+  https://www.youtube.com/watch?v=t-eiddzxDNY
+  item: `items/t-eiddzxDNY.md`
+- **GitHub Copilot CLI — Autopilot & Delegation: Let AI Build Your Features (EP05/12)** — AI Terminal (8:09, 4 views)
+  https://www.youtube.com/watch?v=yGFv6KxkJQM
+  item: `items/yGFv6KxkJQM.md`
+- **AI that works for you? I met Hostinger's Agents: Integration with 1000+ Apps and N8N** — Leonardo Amoyr (6:20, 18 views)
+  https://www.youtube.com/watch?v=G7FeY1o36JQ
+  item: `items/G7FeY1o36JQ.md`
+- **Becoming a Caido Power User** — Bug Bounty DEFCON (45:16, 76 views)
+  https://www.youtube.com/watch?v=_Y0oexpt-R8
+  item: `items/_Y0oexpt-R8.md`
+- **The AI Marketing Squad: Multi-Agent Systems for Smarter Digital Campaigns** — Xaltius (41:13, 277 views)
+  https://www.youtube.com/watch?v=R3cPvtK7twY
+  item: `items/R3cPvtK7twY.md`
+- **PART 1: Can Open Claw Set Up VOLTTRON BACnet on a Raspberry Pi?** — TalkShopWithBen (42:02, 2 views)
+  https://www.youtube.com/watch?v=FgSnBS2Z350
+  item: `items/FgSnBS2Z350.md`
+- **🚀 Unlock 100% Antigravity Potential! (3 Secret Plugins) #shorts #antigravity** — Artifact Geeks official (52, 4 views)
+  https://www.youtube.com/watch?v=t3AUnhJKcLM
+  item: `items/t3AUnhJKcLM.md`
+- **Diving Deep on Physical AI | S1E2 | Fine-tuning NVIDIA GR00T on AWS** — AWS Events (59:27, 312 views)
+  https://www.youtube.com/watch?v=6zKS-uEz1yo
+  item: `items/6zKS-uEz1yo.md`
+- **MLOps 101: Platforms and Processes for Building AI | NVIDIA GTC** — NVIDIA Developer (38:57, 315 views)
+  https://www.youtube.com/watch?v=K9X-8aS8BxA
+  item: `items/K9X-8aS8BxA.md`
+- **KubeCon EU 2026 Wrap-Up: AI, Kubernetes & Platform Engineering Hit a Breaking Point** — Efficiently Connected, Inc. (20:37, 4 views)
+  https://www.youtube.com/watch?v=jspsa5RXdBI
+  item: `items/jspsa5RXdBI.md`

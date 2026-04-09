@@ -570,3 +570,96 @@ Full item files belong in `items/`.
 - **AI for CEOs | How to scale without burning cash or culture | Dr. Frumi Rachel Barr** — Bee Formless™ (34:53, 1 views)
   https://www.youtube.com/watch?v=LvBIN-CxUy8
   item: `items/LvBIN-CxUy8.md`
+
+## 2026-04-09 — 30 new videos
+
+- **This Al Model Improved Itself 100+ Times Autonomously** — Daniel Jindoo (12:53, 1.9K views)
+  https://www.youtube.com/watch?v=P6zx-WVt_eU
+  item: `items/P6zx-WVt_eU.md`
+- **AI Is Learning on Its Own… Here’s What Happens Next ,** — BrainSnacks 🧠 (6:02, 1 views)
+  https://www.youtube.com/watch?v=SlWewTHTGmM
+  item: `items/SlWewTHTGmM.md`
+- **Sam Altman: Am intrat deja în singularitate! 🤖 Viitorul inteligenței artificiale** — Cristian Presură - Fizica Povestită (10:10, 1.4K views)
+  https://www.youtube.com/watch?v=pT_l-cNOxoM
+  item: `items/pT_l-cNOxoM.md`
+- **The Next Evolution of AI Coding Is Harnesses - Here's How to Build Them** — Cole Medin (30:48, 11.6K views)
+  https://www.youtube.com/watch?v=qMnClynCAmM
+  item: `items/qMnClynCAmM.md`
+- **He Found a Loophole in the Code and Legally Stole $50M From Crypto Developer** — Lume (25:11, 5.1K views)
+  https://www.youtube.com/watch?v=8r2W1EkChWQ
+  item: `items/8r2W1EkChWQ.md`
+- **Weak AI: The Limits of Machine Intelligence** — Clear Tech (6:03, 5 views)
+  https://www.youtube.com/watch?v=NpXLzrnGEz0
+  item: `items/NpXLzrnGEz0.md`
+- **AI Isn't Taking Your Job, It's Taking Your Identity (And Nobody's Talking About It)** — MindGrove (9:31, 2 views)
+  https://www.youtube.com/watch?v=v3bMNwxwKA8
+  item: `items/v3bMNwxwKA8.md`
+- **Why so many businesses act INSANE?** — Malewicz (9:50, 697 views)
+  https://www.youtube.com/watch?v=twmPjqYedaw
+  item: `items/twmPjqYedaw.md`
+- **INSIDE THE DRIVER'S MIND, INSIDE THE MAN'S HEART! 🏎️ CHARLES LECLERC drops by the BSMT!** — The BSMT by Gianluca Gazzoli (1:14:17, 126.6K views)
+  https://www.youtube.com/watch?v=m-p1nqzOmDg
+  item: `items/m-p1nqzOmDg.md`
+- **How to Scale SaaS Operations Beyond 100k Users with Zero-Touch AI Architectures** — SaaS Academy (6:27, 2 views)
+  https://www.youtube.com/watch?v=BmPhtGxPLLc
+  item: `items/BmPhtGxPLLc.md`
+- **The Games We Play: The 321st Evolutionary Lens with Bret Weinstein and Heather Heying** — Bret Weinstein (1:50:31, 14.8K views)
+  https://www.youtube.com/watch?v=iUHSXGa7r1E
+  item: `items/iUHSXGa7r1E.md`
+- **Shen Wanjun reveals how Taiwan's one-day supply chain dominates the global AI lifeline!** — 寶傑點兵／寶傑怎麼說 (1:02:57, 24.6K views)
+  https://www.youtube.com/watch?v=Hyouo5cuXfs
+  item: `items/Hyouo5cuXfs.md`
+- **50x More Powerful! Why Tesla & SpaceX Just Partnered With Intel** — The Electric Viking (9:07, 4.0K views)
+  https://www.youtube.com/watch?v=KNZ-1pHjY10
+  item: `items/KNZ-1pHjY10.md`
+- **This AI Outsmarts Every NPC in Ragdoll Physics 😱** — AI Learns (2:32, 102 views)
+  https://www.youtube.com/watch?v=ZIMyz175E8c
+  item: `items/ZIMyz175E8c.md`
+- **Stop Buying AI Tools and Do This Instead - Thermo Fisher’s Director** — Turing College (23:22, 12 views)
+  https://www.youtube.com/watch?v=xiEgrZxpdBw
+  item: `items/xiEgrZxpdBw.md`
+- **OpenClaw vs Hermes | What's the difference?** — Alex Hitt, The Great Discovery Pro (5:33, 8 views)
+  https://www.youtube.com/watch?v=9InAp_wgAsU
+  item: `items/9InAp_wgAsU.md`
+- **400 Theories of Consciousness: Robert Lawrence Kuhn on Mind, Reality, and God - BatGap Interview** — Buddha at the Gas Pump® (2:13:07, 240 views)
+  https://www.youtube.com/watch?v=Kcy1SLTXl6A
+  item: `items/Kcy1SLTXl6A.md`
+- **The Rise of AI: Past, Present, and Future** — Global Insight Studio (12:27, new)
+  https://www.youtube.com/watch?v=iiHZD4tEKew
+  item: `items/iiHZD4tEKew.md`
+- **AI Podcast 29 Hermes Agent Vs OpenClaw** — Innovator Coffee (20:55, 3 views)
+  https://www.youtube.com/watch?v=DOLHe7VPvt4
+  item: `items/DOLHe7VPvt4.md`
+- **Why Traditional Sovereignty Doesn't Work Anymore? #aiwarfare #internationallaw** — The AI Law: Global Security, AI Risks & Liability (50:01, 1 views)
+  https://www.youtube.com/watch?v=ulZOkZdRWVc
+  item: `items/ulZOkZdRWVc.md`
+- **For 20,000 years humanity remained silent — then the ghost ship reappeared!** — Feuergeist HFY (1:42:34, 344 views)
+  https://www.youtube.com/watch?v=9lGHMjWtqTY
+  item: `items/9lGHMjWtqTY.md`
+- **Legal Is Next: Inside Harvey's Bet on Autonomous AI Agents with Gabe Pereyra** — Infodash (31:00, new)
+  https://www.youtube.com/watch?v=OPIrAG3wwZo
+  item: `items/OPIrAG3wwZo.md`
+- **Anthropic Built an AI So Powerful It Scared Itself** — Vivek Mishra (15:42, 1.7K views)
+  https://www.youtube.com/watch?v=B4HpkbFVszI
+  item: `items/B4HpkbFVszI.md`
+- **An Explosive Mars at Zero Aries — Horoscopes for All 12 Signs** — Adam Elenbaas (1:09:43, 5.2K views)
+  https://www.youtube.com/watch?v=nN8qmToBMPQ
+  item: `items/nN8qmToBMPQ.md`
+- **The Future of DevOps: AI, Agents, and the "Impossible" Workflow** — Elias Khnaser (53:26, 303 views)
+  https://www.youtube.com/watch?v=21_Ol_p-UGk
+  item: `items/21_Ol_p-UGk.md`
+- **Ali Ansari, Micro1 | theCUBE + NYSE Wired: Mixture of Experts** — SiliconANGLE theCUBE (15:18, 3.8K views)
+  https://www.youtube.com/watch?v=545nswb_SBE
+  item: `items/545nswb_SBE.md`
+- **A Post-Biological Evolution: A Model of Consciousness, Information, and Cosmic Awareness** — Gospel of the Glitch (8:24, 26 views)
+  https://www.youtube.com/watch?v=4qVCBiDjkBQ
+  item: `items/4qVCBiDjkBQ.md`
+- **Quantum Machines Learning Quantum | Gerard Milburn** — FirstPrinciples (44:50, new)
+  https://www.youtube.com/watch?v=D-AinVWRSoY
+  item: `items/D-AinVWRSoY.md`
+- **[Hermes Agent] Hermes Agent: A Complete Analysis of Self-Evolving Next-Generation AI Infrastructu...** — 지투지 - 지식에서 지혜로 (20:50, 104 views)
+  https://www.youtube.com/watch?v=WLNsnooehtQ
+  item: `items/WLNsnooehtQ.md`
+- **Applied Generative and Agentic AI | Day-3 | 360DigiTMG** — 360DigiTMG (1:07:03, 117 views)
+  https://www.youtube.com/watch?v=JiwIPwg5YyU
+  item: `items/JiwIPwg5YyU.md`

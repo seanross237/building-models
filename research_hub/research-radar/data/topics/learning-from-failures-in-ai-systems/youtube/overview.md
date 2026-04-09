@@ -552,3 +552,93 @@ Full item files belong in `items/`.
 - **Beyond the Algorithm: Why Behavioral Science is the Secret to Profitable AI in Banking** — 10X AI with Julius Neil (46:43, new)
   https://www.youtube.com/watch?v=O0PPW_OY_Is
   item: `items/O0PPW_OY_Is.md`
+
+## 2026-04-09 — 29 new videos
+
+- **Learning from AI Pilot Failures in Health Systems** — Newton's Tree (1:49, 6 views)
+  https://www.youtube.com/watch?v=VgEpqlZ56QU
+  item: `items/VgEpqlZ56QU.md`
+- **How a Simple NPM Error Leaked the Future of AI (The KAIROS Secret)** — GenAI Learning (7:29, 2 views)
+  https://www.youtube.com/watch?v=v3HVZvIfRIM
+  item: `items/v3HVZvIfRIM.md`
+- **What are and what to do with critical anchor points? 🤔** — EDELRID Knowledge Base (15:57, 870 views)
+  https://www.youtube.com/watch?v=ypJGkEaZiLc
+  item: `items/ypJGkEaZiLc.md`
+- **INSIDE THE DRIVER'S MIND, INSIDE THE MAN'S HEART! 🏎️ CHARLES LECLERC drops by the BSMT!** — The BSMT by Gianluca Gazzoli (1:14:17, 126.6K views)
+  https://www.youtube.com/watch?v=m-p1nqzOmDg
+  item: `items/m-p1nqzOmDg.md`
+- **MASSIVE Microsoft Divorce That WILL BANKRUPT OpenAI and ChatGPT Forever** — The Infographics Show (15:22, 633.5K views)
+  https://www.youtube.com/watch?v=6a9L-3Hiobs
+  item: `items/6a9L-3Hiobs.md`
+- **MLOps 101: Platforms and Processes for Building AI | NVIDIA GTC** — NVIDIA Developer (38:57, 316 views)
+  https://www.youtube.com/watch?v=K9X-8aS8BxA
+  item: `items/K9X-8aS8BxA.md`
+- **Don't let AI transformation become a burden for enterprises! Master the correct implementation lo...** — BFM 財今 (36:26, 464 views)
+  https://www.youtube.com/watch?v=mpIn4SWZPWs
+  item: `items/mpIn4SWZPWs.md`
+- **The Rise of AI: Past, Present, and Future** — Global Insight Studio (12:27, new)
+  https://www.youtube.com/watch?v=iiHZD4tEKew
+  item: `items/iiHZD4tEKew.md`
+- **[0번 버스] 황현(작곡가) ► 표창원(프로파일러)** — 공케이 (45:42, 11.0K views)
+  https://www.youtube.com/watch?v=PG76mceN3_g
+  item: `items/PG76mceN3_g.md`
+- **🌍 How Was Time Fixed Around the World? 😳 | दुनिया का Time कैसे Fix हुआ? ⏳ | Time Zones Explained 🔥** — HISTORY HACKER by Rahul Panchal (5:11, 32 views)
+  https://www.youtube.com/watch?v=hIWYDX9jSdk
+  item: `items/hIWYDX9jSdk.md`
+- **Claude"s NEW Security Update is INSANE!** — AI Profit Boardroom (1:43, 9 views)
+  https://www.youtube.com/watch?v=2LhynTME18Y
+  item: `items/2LhynTME18Y.md`
+- **Audit AI Agents: 5 Steps to Prevent Data Leaks** — Master of Machines (5:46, new)
+  https://www.youtube.com/watch?v=dBzc5-lPk0I
+  item: `items/dBzc5-lPk0I.md`
+- **The Quiet Anxiety Every Leader Faces – Are You Prepared** — Charlotte Kemp (3:01, new)
+  https://www.youtube.com/watch?v=Mo34AmV1FEc
+  item: `items/Mo34AmV1FEc.md`
+- **Anthropic Built an AI So Powerful It Scared Itself** — Vivek Mishra (15:42, 1.7K views)
+  https://www.youtube.com/watch?v=B4HpkbFVszI
+  item: `items/B4HpkbFVszI.md`
+- **The Future of DevOps: AI, Agents, and the "Impossible" Workflow** — Elias Khnaser (53:26, 303 views)
+  https://www.youtube.com/watch?v=21_Ol_p-UGk
+  item: `items/21_Ol_p-UGk.md`
+- **The Human + AI Strategy That Actually Works** — Octopart (47:17, 5 views)
+  https://www.youtube.com/watch?v=C0ijZ6kI83s
+  item: `items/C0ijZ6kI83s.md`
+- **Trust Is the Operating System of the Agentic Enterprise** — Sabine VdL (45:53, 3 views)
+  https://www.youtube.com/watch?v=kBsmItecojc
+  item: `items/kBsmItecojc.md`
+- **Why You Forget What You Learn: The Science of Memory and Retention | Uplatz** — Uplatz (19, 2 views)
+  https://www.youtube.com/watch?v=nwq37HFAZYI
+  item: `items/nwq37HFAZYI.md`
+- **3 Unfair Advantages Top Founders Use in 2026 (Not Hard Work)** — Ritesh Watts (2:04, 13 views)
+  https://www.youtube.com/watch?v=u7kFZR8JclY
+  item: `items/u7kFZR8JclY.md`
+- **They Told You the System Was Fair… Then It Took Everything From You** — Lance Jepsen (11, 2 views)
+  https://www.youtube.com/watch?v=VuHbOrJZC0o
+  item: `items/VuHbOrJZC0o.md`
+- **Code9Default ( Techno/ Metal )** — Darkoslayer , The Band (3:49, 13 views)
+  https://www.youtube.com/watch?v=sqEis38zoUw
+  item: `items/sqEis38zoUw.md`
+- **OpenAI is Flailing, Anthropic’s Mythos AI is Too Powerful, Are Vertical Tabs Good?** — Primary Technology (1:15:51, 90 views)
+  https://www.youtube.com/watch?v=9oVRoMtEa70
+  item: `items/9oVRoMtEa70.md`
+- **Why Vibe Coding Will Break Your App (And How to Fix It)** — Rynaut — Architecting Automation (8:19, 1 views)
+  https://www.youtube.com/watch?v=ppwGr-e_Kg0
+  item: `items/ppwGr-e_Kg0.md`
+- **AI Deepfakes, Fake Musicians, and the GL Fandom Fighting Back | GL Industry Insider** — HerRhythm (25:32, 136 views)
+  https://www.youtube.com/watch?v=c43BPPRL0OA
+  item: `items/c43BPPRL0OA.md`
+- **Trust Is the Operating System of the Agentic Enterprise | Scouting for Growth** — Sabine VdL (45:53, new)
+  https://www.youtube.com/watch?v=ITKwf8xdd4Y
+  item: `items/ITKwf8xdd4Y.md`
+- **ARS: Financial Guarantees for Autonomous Agents** — AI Research Roundup (4:04, 2 views)
+  https://www.youtube.com/watch?v=byx3TqFqqcA
+  item: `items/byx3TqFqqcA.md`
+- **Swarm Workshop: Make Your AI Agent Decentralized with Swarm** — Ethereum Swarm (1:01:30, 68 views)
+  https://www.youtube.com/watch?v=AP6Wr8f2m2Q
+  item: `items/AP6Wr8f2m2Q.md`
+- **S06 E04: How CHROs Should Redesign Roles as AI Reshapes Work | CultureClub X by CultureMonkey** — CultureMonkey HQ (31:33, 14 views)
+  https://www.youtube.com/watch?v=QfkrjoRUSsQ
+  item: `items/QfkrjoRUSsQ.md`
+- **The Personalized Playbook: Build Your Ultimate Productivity System** — Distilled Protocols (7:09, new)
+  https://www.youtube.com/watch?v=HjvkrPsXqVE
+  item: `items/HjvkrPsXqVE.md`

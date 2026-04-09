@@ -540,3 +540,96 @@ Full item files belong in `items/`.
 - **Cinderella gets plastic surgery and infiltrates a wealthy family to uncover truth** — 蜜糖短剧 (1:42:33, 345 views)
   https://www.youtube.com/watch?v=T9kB0WmExKI
   item: `items/T9kB0WmExKI.md`
+
+## 2026-04-09 — 30 new videos
+
+- **Unaware I Inherited $500 Billion Empire, My Stepmother Hit Me at My Father’s Funeral Just for He** — Billionaire Stories (1:07:26, new)
+  https://www.youtube.com/watch?v=CwNzA-5cMb0
+  item: `items/CwNzA-5cMb0.md`
+- **How to Create Cinematic Portraits with Simple Lighting with Clive Booth** — Camera Shake (1:54:05, 58 views)
+  https://www.youtube.com/watch?v=2ghPKgjKQj0
+  item: `items/2ghPKgjKQj0.md`
+- **China Touts Efforts to Push For US-Iran Truce | The China Show 4/9/2026** — Bloomberg Television (1:32:15, 4.6K views)
+  https://www.youtube.com/watch?v=wbLPGCAak9c
+  item: `items/wbLPGCAak9c.md`
+- **Iran War: US, Iran Prepare for Talks in Pakistan | The Pulse 4/9** — Bloomberg Television (48:47, 2.9K views)
+  https://www.youtube.com/watch?v=66nXFlIGB3A
+  item: `items/66nXFlIGB3A.md`
+- **Self-Driving Cars on the Moon Before New York City?** — The Road to Autonomy (1:24:17, 18 views)
+  https://www.youtube.com/watch?v=zLx8rY2utPU
+  item: `items/zLx8rY2utPU.md`
+- **After Inheriting a Territory, I Unlocked Mechanical System & Can Summon an Infinite Army of Machines** — Revel Manga Chronicles (9:49:13, 536 views)
+  https://www.youtube.com/watch?v=RQzWqtsmPu0
+  item: `items/RQzWqtsmPu0.md`
+- **2026 4 08   Board of Health** — Mendon Video (1:51:19, 8 views)
+  https://www.youtube.com/watch?v=588w5_fuxjA
+  item: `items/588w5_fuxjA.md`
+- **Trump Vows To Keep Troops In Place Before Iran Talks | The Opening Trade 4/9/2026** — Bloomberg Television (1:36:12, 6.8K views)
+  https://www.youtube.com/watch?v=RdvLusd8Rqg
+  item: `items/RdvLusd8Rqg.md`
+- **婚期只剩7天，她卻嫌他破產窮酸，將他狠狠拋棄，下一秒人生交換，美艷女總裁竟睡在破爛硬板床上#drama #男频 #逆袭 #爽剧** — 傲视短剧 (1:57:44, 348 views)
+  https://www.youtube.com/watch?v=i-Zq2az7NQU
+  item: `items/i-Zq2az7NQU.md`
+- **SAP SD: ECC to S/4HANA Migration Failures (Part 3 - Vol 1) | Testing & Cutover Incidents (142–180)!** — Ace Interviews (7:03:10, 7 views)
+  https://www.youtube.com/watch?v=pE_0zn4fBoE
+  item: `items/pE_0zn4fBoE.md`
+- **Betrayed By The Gods, This F-Rank Player Reincarnated To Turn A Trash Tribe Into God-Slayers.** — Nice Recap (10:34:43, 115 views)
+  https://www.youtube.com/watch?v=pWvhkHQUn8s
+  item: `items/pWvhkHQUn8s.md`
+- **🌟【New Anime Release | ENG SUB】"The Immortal's Tale in Plain Clothes": A seemingly useless retaine...** — Dragon Animation Club (1:05:34, 3.3K views)
+  https://www.youtube.com/watch?v=6VZoY6cym4s
+  item: `items/6VZoY6cym4s.md`
+- **惡霸朝黃包車夫臉上撒尿狂笑，豈料他竟是隱世龍頭大佬，亮明身份後30000黑西裝瞬間現身，惡霸當場嚇尿褲子！ #窮小夥 #逆襲 #上海灘** — 暴爽短劇CoolMovie (2:10:36, 393 views)
+  https://www.youtube.com/watch?v=szsljLPPP3o
+  item: `items/szsljLPPP3o.md`
+- **🌟【新番上线|ENG SUB】《特工归来：别惹那个杀猪的》昔日杀神菜场卖肉，为爱重握锋芒竟卷入颠覆世界的黑暗漩涡！ 一口气看完 #漫剧 #热血 #玄幻 #战斗 #苍穹动漫** — Dragon Animation Club (2:01:16, 17.5K views)
+  https://www.youtube.com/watch?v=fN_mTN2LCLs
+  item: `items/fN_mTN2LCLs.md`
+- **窮小夥覺醒寵妻返現系統，隨手買下60萬鑽戒3秒收穫千億現金，帶著女友逆襲！#多語種 #爽劇#逆襲#寵妻** — 橙果劇場No1Drama (1:47:16, 4.6K views)
+  https://www.youtube.com/watch?v=E-L-GV7zDBw
+  item: `items/E-L-GV7zDBw.md`
+- **Fishing for treasure, found bones and bombs instead. Now the cops want his help.** — 短劇急診室 (1:57:38, 30 views)
+  https://www.youtube.com/watch?v=AWFQVHIaMNY
+  item: `items/AWFQVHIaMNY.md`
+- **🤓全集无删减 | EP01-63一口气Full |《中国惊奇先生》Chinese Thriller | 阅文动漫 | 官方Official【会员专享热门动画剧集抢先看】** — 阅文动画官方频道 Yuewen Animation (9:07:46, 434 views)
+  https://www.youtube.com/watch?v=0f-jb-D7sMg
+  item: `items/0f-jb-D7sMg.md`
+- **MULTISUB📢新番上线《被挖灵根？上交系统后国家带我反杀》第1~82集丨被囚八年抽灵血，激活系统逃回蓝星，带星际战队杀回修仙界，怒掀伪善宗门！#漫剧 #破晓动漫社** — 破晓动漫社 Dawn Anime Club (2:14:53, 925 views)
+  https://www.youtube.com/watch?v=lyFU6hBwMCA
+  item: `items/lyFU6hBwMCA.md`
+- **Multi sub（完结新番）💥💥💥开局送她核聚变机甲，反手手撕鹰酱外星飞船，这跨界软饭硬吃得真香！《网恋对象是个女帝，举国为我备聘礼》#次元动漫  #破界 #動漫** — 破界动漫局 Anime Club (2:04:53, 991 views)
+  https://www.youtube.com/watch?v=c166O8k-CIc
+  item: `items/c166O8k-CIc.md`
+- **【Multi sub】危险的关系 04👑闺蜜含冤离世，孙俪为查真相误入圈套，在假意温情与精神控制中，她历经挣扎，最终撕破谎言、涅槃重生#孙俪 #王凯 #新剧** — 优米影剧社 Yumi Drama Station (2:59:52, 6 views)
+  https://www.youtube.com/watch?v=YjGifyhWtdQ
+  item: `items/YjGifyhWtdQ.md`
+- **💥ENG SUB💥【穿越末世：我掌控双界资源】Apocalypse Transcender: Master of Two Worlds 第1-110集 #穿越 #热血 #战斗 #动漫** — 超有钱动漫 Anime Club (9:09:22, 122 views)
+  https://www.youtube.com/watch?v=4OtlsYDXGDQ
+  item: `items/4OtlsYDXGDQ.md`
+- **🌟【新番上线|ENG SUB】《荒野求生：反派女配竟是满级大佬》废柴女星荒野觉醒，修仙大佬降维碾压全场！ 一口气看完 #漫剧 #热血 #玄幻 #战斗 #苍穹动漫** — Dragon Animation Club (2:02:07, 1.5K views)
+  https://www.youtube.com/watch?v=EJLvqAYnW1s
+  item: `items/EJLvqAYnW1s.md`
+- **🌟【新番上线|ENG SUB】《高武：每周一个新身份》废柴惨遭背叛觉醒身份系统，抽取顶级权势机甲碾压异能！ 一口气看完 #漫剧 #热血 #玄幻 #战斗 #苍穹动漫** — Dragon Animation Club (2:00:47, 1.0K views)
+  https://www.youtube.com/watch?v=vMsxLb9Ap1Q
+  item: `items/vMsxLb9Ap1Q.md`
+- **💥【新番上线】《被挖灵根？上交系统后国家带我反杀》姜岚被囚抽灵血八年，激活系统回蓝星，率队杀回修仙界，瓦解清虚宗，奠定两界联结基础！#斗破动漫 #逆袭 #战斗 #donghua** — Labubububu Animation (2:14:53, 150 views)
+  https://www.youtube.com/watch?v=6ywxyFWKSJA
+  item: `items/6ywxyFWKSJA.md`
+- **Multi sub（完结新番）💥💥💥史上最强“演员”老祖：开局一件神级衣袍，全靠被动防御和众人脑补《别拜了我真是凡人》#次元动漫  #破界 #動漫** — 破界动漫局 Anime Club (2:08:35, 1.7K views)
+  https://www.youtube.com/watch?v=DRN6Qaxo0yw
+  item: `items/DRN6Qaxo0yw.md`
+- **【Multi Sub】SSS Sword Domain, Starting as a Sword God EP 1-160 #animation #anime** — Quartic element Anime (12:17:07, 1.0K views)
+  https://www.youtube.com/watch?v=tan-aoDx5gU
+  item: `items/tan-aoDx5gU.md`
+- **🔥【爽漫】【Eng Sub】《末日兌換系統：我稱霸廢土》網購零食附贈戒指，陳陽穿越末世廢土，左手當老闆，右手稱霸廢土，輕鬆走上巔峰。第1-110集 #都市 #anime #穿越 #玄幻** — 八虎动漫剧场 (9:09:22, 450 views)
+  https://www.youtube.com/watch?v=vf-NWdNu-3k
+  item: `items/vf-NWdNu-3k.md`
+- **Building AI Agents - A simple guide for all** — Andreas Mitsakis (8:35, 7 views)
+  https://www.youtube.com/watch?v=bMS0r3mXI-M
+  item: `items/bMS0r3mXI-M.md`
+- **【Multi Sub】🔥 生活職業？我打造了抗魔聯軍！Life Class? I Built the Anti-Demon Alliance! EP1-50 #男频 #热血 #爽文** — Qixiang-Animation (4:04:26, 160 views)
+  https://www.youtube.com/watch?v=vqlOUKJS4iw
+  item: `items/vqlOUKJS4iw.md`
+- **🌟【新番上线|ENG SUB】《被挖灵根？上交系统后国家带我反杀》濒死觉醒系统，废柴携蓝星科技逆袭！碾压仙宗，揭露暴行建联络站！ 一口气看完 #漫剧 #热血 #玄幻 #战斗 #苍穹动漫** — Dragon Animation Club (2:14:53, 4.0K views)
+  https://www.youtube.com/watch?v=yzzBifXV9Q0
+  item: `items/yzzBifXV9Q0.md`

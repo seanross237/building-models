@@ -201,3 +201,57 @@ Full item files belong in `items/`.
 - **Zero Distraction Brain Power Beats | The Complete Deep Work Soundtrack Binaural | focus 🧠** — Apollo Focus (2:02:35, 1 views)
   https://www.youtube.com/watch?v=6dy-3knByqg
   item: `items/6dy-3knByqg.md`
+
+## 2026-04-09 — 17 new videos
+
+- **Bloomberg Surveillance 4/9/2026** — Bloomberg Television (2:24:13, 2.3K views)
+  https://www.youtube.com/watch?v=QjKxnvYG45Y
+  item: `items/QjKxnvYG45Y.md`
+- **What JAPAN Did for Ukraine Is INSANE… Putin Just Became POWERLESS** — The Military Show (16:44, 105.0K views)
+  https://www.youtube.com/watch?v=YvzmazMemvk
+  item: `items/YvzmazMemvk.md`
+- **How NASA Repaired Voyager 1 From 15 Billion Miles Away** — Boring Science (1:58:40, 666 views)
+  https://www.youtube.com/watch?v=IaPi8hc65eM
+  item: `items/IaPi8hc65eM.md`
+- **After Inheriting a Territory, I Unlocked Mechanical System & Can Summon an Infinite Army of Machines** — Revel Manga Chronicles (9:49:13, 536 views)
+  https://www.youtube.com/watch?v=RQzWqtsmPu0
+  item: `items/RQzWqtsmPu0.md`
+- **Proton Highways, AI Cyber Shields & The Historic Artemis Lunar Flyby | Artificially Informed** — Artificially Informed (1:05:44, 4 views)
+  https://www.youtube.com/watch?v=H_gyq4Wr_NE
+  item: `items/H_gyq4Wr_NE.md`
+- **Daily AI Brief — Part 077 (2026-04-08)** — Everstone AI (30:51, 4 views)
+  https://www.youtube.com/watch?v=zvVxdh73UHw
+  item: `items/zvVxdh73UHw.md`
+- **(Part 2)They Threw Him Into The Ocean… Now 43 Girls Depend On Him To Survive** — Top Comic Recap (21:01:28, 52 views)
+  https://www.youtube.com/watch?v=LJeX0_ILP1c
+  item: `items/LJeX0_ILP1c.md`
+- **2026 04 08 - Select Board & Finance Committee** — Mendon Video (3:16:25, 12 views)
+  https://www.youtube.com/watch?v=fJsteDG7WEU
+  item: `items/fJsteDG7WEU.md`
+- **🔥April's Shocking Prophecy❗Astrologer Reveals: A Major Leader of a Certain Country May Face a...** — HIBY新聞 (2:13:50, 848 views)
+  https://www.youtube.com/watch?v=9KTZNRxq2s0
+  item: `items/9KTZNRxq2s0.md`
+- **MULTISUB📢新番上线《开局自称黑奸商，我造出万亿机甲》第1~55集丨十万电脑敢赚九万九？反转竟是国家求他造坦克，一亿八千万利润后竟是领先地球万年的降维打击！💥✨#漫剧 #星启漫剧社** — 星启漫剧社 (2:02:41, 193 views)
+  https://www.youtube.com/watch?v=Gg73nIbEdnE
+  item: `items/Gg73nIbEdnE.md`
+- **Kontroll alatt az intelligencia - AI Budapest Afterhours 003 - Abbas Alexandrával** — AI Budapest (1:45:59, 152 views)
+  https://www.youtube.com/watch?v=09-hWKIqLyI
+  item: `items/09-hWKIqLyI.md`
+- **【系統X末世X喪屍】誰說喪屍不能打工？** — AI漫劇工坊 (3:27:48, 37 views)
+  https://www.youtube.com/watch?v=t9VoYVvpjyM
+  item: `items/t9VoYVvpjyM.md`
+- **🔥After a 50-year hiatus, why has humanity suddenly become so eager to return to the moon?** — ByBy (46:24, 9.9K views)
+  https://www.youtube.com/watch?v=8TRiEgxySYc
+  item: `items/8TRiEgxySYc.md`
+- **ACQUARIO🌈Si apre un nuovo ciclo🌈 15-30 APRILE 2026 Ruota del Destino** — Libera-Mente Zen ☥ Tarocchi e Metafisica (25:51, 355 views)
+  https://www.youtube.com/watch?v=SsgGsEUKW1A
+  item: `items/SsgGsEUKW1A.md`
+- **GPS Spoofing at Sea: Why Merchant Ships Need Inertial Navigation Now** — DeepDraft Conversations (26:18, new)
+  https://www.youtube.com/watch?v=hxMZMTRkX64
+  item: `items/hxMZMTRkX64.md`
+- **20 Minutes Of Terror At Hormuz: Why The US Navy Refused To Fire** — NAV-X Intel (46:56, 71 views)
+  https://www.youtube.com/watch?v=CS6Bc6ztQ3g
+  item: `items/CS6Bc6ztQ3g.md`
+- **A MISSILE Was launched in the Strait of Hormuz — The U.S. Navy Didn’t Hold Back** — NAV-X Intel (40:02, 103 views)
+  https://www.youtube.com/watch?v=k_f7bxGhqdo
+  item: `items/k_f7bxGhqdo.md`

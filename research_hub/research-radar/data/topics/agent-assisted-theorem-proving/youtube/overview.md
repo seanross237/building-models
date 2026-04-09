@@ -42,3 +42,9 @@ Full item files belong in `items/`.
 - **Brainstorm: AI Crossing the Disciplines with Ellie Pavlick and Junehyuk Jung - hosted by the JNBC** — Brown University (56:00, 20 views)
   https://www.youtube.com/watch?v=kUhxbE1LJ0c
   item: `items/kUhxbE1LJ0c.md`
+
+## 2026-04-09 — 1 new videos
+
+- **【全集】重生后我第一笔投资，是每天给她塞个水煮蛋——十年后，她登顶财富榜那天，当众宣布最大股东是我，还附赠了总裁夫人的头衔。 💸🥚👑#drama#短剧#爽文#逆袭** — 白龙剧场 (2:32:50, 36 views)
+  https://www.youtube.com/watch?v=5FFUL1WrmlQ
+  item: `items/5FFUL1WrmlQ.md`

@@ -207,3 +207,27 @@ Full item files belong in `items/`.
 - **Beyond Ischemia: The Case for CT-First Strategy in ChestPain Evaluation - Riaz Mahmood** — NGHS Continuing Medical Education (57:34, 9 views)
   https://www.youtube.com/watch?v=EK8LV2j0nD8
   item: `items/EK8LV2j0nD8.md`
+
+## 2026-04-09 — 7 new videos
+
+- **Observability for the Age of Generative AI** — Microsoft Azure (2:18, 128 views)
+  https://www.youtube.com/watch?v=zU5KmOcKsto
+  item: `items/zU5KmOcKsto.md`
+- **Full Meta Ads Audit to Campaign Execution in One AI Agent Prompt TicNote Cloud Marketing Workflow** — TicNote EU (47, new)
+  https://www.youtube.com/watch?v=VPJEOj-QAZU
+  item: `items/VPJEOj-QAZU.md`
+- **Optimizing for the Agent Era: How PMs Build with AI Teammates (Agents & Agentic AI)** — Productside (1:01:20, 24 views)
+  https://www.youtube.com/watch?v=0gqWLi0Hkpg
+  item: `items/0gqWLi0Hkpg.md`
+- **Meta Muse Spark: Scaling Towards Personal Superintelligence | Next in AI | Astha La Vista** — Next in AI: Astha La Vista (4:23, 10 views)
+  https://www.youtube.com/watch?v=uu_exA3l0Xw
+  item: `items/uu_exA3l0Xw.md`
+- **Learn AI — The ChatGPT Anthem | Nong Kham & Nungshi Bee | Official Lyrics Video** — NEXTGEN VERSE (5:16, 10 views)
+  https://www.youtube.com/watch?v=meo2gxADnA4
+  item: `items/meo2gxADnA4.md`
+- **Virtual Assistant Training (Free Virtual Assistance Course!)** — The Virtual Savvy (1:25:12, 381 views)
+  https://www.youtube.com/watch?v=xpBMMerJQlQ
+  item: `items/xpBMMerJQlQ.md`
+- **Package Contracting** — IT4T Solutions Pvt Ltd (12:02, 3 views)
+  https://www.youtube.com/watch?v=VVa43bs6tj8
+  item: `items/VVa43bs6tj8.md`

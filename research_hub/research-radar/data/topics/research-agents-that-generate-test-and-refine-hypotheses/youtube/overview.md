@@ -99,3 +99,15 @@ Full item files belong in `items/`.
 - **【Multi Sub】🔥 開局一個破攤位，我卻成了遊戲首富  Starting with a shabby stall EP1-120 #热血 #anime #爽文#男频** — Qixiang-Animation (10:12:39, 951 views)
   https://www.youtube.com/watch?v=MtNzcP01_es
   item: `items/MtNzcP01_es.md`
+
+## 2026-04-09 — 3 new videos
+
+- **🔥【爽漫】【Eng Sub】《末日兌換系統：我稱霸廢土》網購零食附贈戒指，陳陽穿越末世廢土，左手當老闆，右手稱霸廢土，輕鬆走上巔峰。第1-110集 #都市 #anime #穿越 #玄幻** — 八虎动漫剧场 (9:09:22, 450 views)
+  https://www.youtube.com/watch?v=vf-NWdNu-3k
+  item: `items/vf-NWdNu-3k.md`
+- **Mast Cells to Microplastics with Dr. Anne Maitland and cohost Dr. Dacre Knight (Ep 191)** — Bendy Bodies (1:24:06, 171 views)
+  https://www.youtube.com/watch?v=jZijHjn_LSo
+  item: `items/jZijHjn_LSo.md`
+- **💥ENG SUB💥【穿越末世：我掌控双界资源】Apocalypse Transcender: Master of Two Worlds 第1-110集 #穿越 #热血 #战斗 #动漫** — 超有钱动漫 Anime Club (9:09:22, 122 views)
+  https://www.youtube.com/watch?v=4OtlsYDXGDQ
+  item: `items/4OtlsYDXGDQ.md`

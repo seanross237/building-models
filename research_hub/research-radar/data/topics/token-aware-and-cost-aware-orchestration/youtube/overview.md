@@ -189,3 +189,42 @@ Full item files belong in `items/`.
 - **🔥【最新合集】《神的欲望游戏》EP1~129：你的信仰我来守护！| Multi SUB #热血 #玄幻 #逆袭 #战斗 #动漫魔女** — 动漫魔女 (8:20:02, 836 views)
   https://www.youtube.com/watch?v=EPI0Y0p5i80
   item: `items/EPI0Y0p5i80.md`
+
+## 2026-04-09 — 12 new videos
+
+- **The Claude "429" Secret: STOP Scaling Claude Until You Watch This!** — AskeyGeek (4:47, 4 views)
+  https://www.youtube.com/watch?v=_in0DI0yoMk
+  item: `items/_in0DI0yoMk.md`
+- **【Multi Sub】They Called Her a Fraud—Until the Ancient Goddess They Served Finally Awakened** — StardustTV - Movies & Dramas (1:44:42, 1.6K views)
+  https://www.youtube.com/watch?v=LpnTrNVp-L8
+  item: `items/LpnTrNVp-L8.md`
+- **Rajiv Ramaswami, Nutanix | Nutanix .NEXT 2026** — SiliconANGLE theCUBE (20:50, 97 views)
+  https://www.youtube.com/watch?v=3svDrFjEyVg
+  item: `items/3svDrFjEyVg.md`
+- **How AI Agents Are Reshaping the Solar Industry? | Clean Power Hour Podcast with Jesse Anglen** — Clean Power Hour (46:40, 41 views)
+  https://www.youtube.com/watch?v=yLfALiGarfk
+  item: `items/yLfALiGarfk.md`
+- **Anindo Sengupta & Dan Ciruli, Nutanix | Nutanix .NEXT 2026** — SiliconANGLE theCUBE (19:56, 24 views)
+  https://www.youtube.com/watch?v=hhrXur6VLCA
+  item: `items/hhrXur6VLCA.md`
+- **(Part 2)They Threw Him Into The Ocean… Now 43 Girls Depend On Him To Survive** — Top Comic Recap (21:01:28, 52 views)
+  https://www.youtube.com/watch?v=LJeX0_ILP1c
+  item: `items/LJeX0_ILP1c.md`
+- **Reborn On My Wedding Day, I Married My Husband's Mortal Enemy  - Part 4** — MOONLIT STORIES (9:16:40, 67 views)
+  https://www.youtube.com/watch?v=AgcBDX5GUnY
+  item: `items/AgcBDX5GUnY.md`
+- **🔥【爽漫】【Eng Sub】《末日兌換系統：我稱霸廢土》網購零食附贈戒指，陳陽穿越末世廢土，左手當老闆，右手稱霸廢土，輕鬆走上巔峰。第1-110集 #都市 #anime #穿越 #玄幻** — 八虎动漫剧场 (9:09:22, 450 views)
+  https://www.youtube.com/watch?v=vf-NWdNu-3k
+  item: `items/vf-NWdNu-3k.md`
+- **【178集】一口气看爽日漫《地狱模式～喜欢速通游戏的玩家在废设定异世界无双》** — 韩漫潮映馆 (8:03:18, 3.9K views)
+  https://www.youtube.com/watch?v=xqvLjdObkKM
+  item: `items/xqvLjdObkKM.md`
+- **Introduction to Azure Architecture and Services Full Course** — AI with Oscar (1:00:51, new)
+  https://www.youtube.com/watch?v=AEWwhtS0omo
+  item: `items/AEWwhtS0omo.md`
+- **💥【新番上线】肺癌晚期穿越诡异世界，觉醒红警系统，率大军破阴谋横扫怪谈！《别人规则怪谈，你红警火力覆盖》全集Multi SUB #热血 #漫剧 #动漫魔女** — 动漫魔女 (2:13:49, 112 views)
+  https://www.youtube.com/watch?v=cBQx5sXX3qo
+  item: `items/cBQx5sXX3qo.md`
+- **💥ENG SUB💥【穿越末世：我掌控双界资源】Apocalypse Transcender: Master of Two Worlds 第1-110集 #穿越 #热血 #战斗 #动漫** — 超有钱动漫 Anime Club (9:09:22, 122 views)
+  https://www.youtube.com/watch?v=4OtlsYDXGDQ
+  item: `items/4OtlsYDXGDQ.md`
