@@ -324,3 +324,75 @@ Full item files belong in `items/`.
 - **【都市靈異】《大力地球》意外觉醒掌控地球之力，抬手引地震，跺脚掀海啸，一拳能撼动大陆板块。从此世间再无对手，管你武道至尊、异界魔神、星际战舰，在绝对的大地之力面前，统统不堪一击！.......** — 清風書吧 (1:07:53, 2 views)
   https://www.youtube.com/watch?v=Pe4lz1k5_-s
   item: `items/Pe4lz1k5_-s.md`
+
+## 2026-04-10 — 23 new videos
+
+- **Teach AI to Code in Every Language with NVIDIA NeMo | NVIDIA GTC** — NVIDIA Developer (45:47, 32 views)
+  https://www.youtube.com/watch?v=d8yQ358u-rE
+  item: `items/d8yQ358u-rE.md`
+- **They Mocked His Weak Goblin Summon, Until He Wiped Out an Entire Tribe With One Trick!** — Bella's Comic Chronicles (23:39:14, 377 views)
+  https://www.youtube.com/watch?v=J2Ch3Gvv8ME
+  item: `items/J2Ch3Gvv8ME.md`
+- **MAGA die-hards rise up in rebellion! They bombard the "demented" call for Trump's son to go to war!** — 環球大戰線 (59:04, 9.6K views)
+  https://www.youtube.com/watch?v=dodMiJ8mK9w
+  item: `items/dodMiJ8mK9w.md`
+- **【全集FULL】《他有七分野》| ENG SUB | #薄荷听书 #cdrama #latest #热门短剧 #都市 #重生 #逆袭 #现代 #甜宠** — 薄荷聽書 (2:39:01, 1.9K views)
+  https://www.youtube.com/watch?v=GySgtemtFlI
+  item: `items/GySgtemtFlI.md`
+- **ENG SUB 🔥【全網首發】《重生荒年：双妹伴我定乾坤》荒年觉醒崛起系统，捕鱼医术双修碾压，建武装称霸一方！#热血#末世#漫剧#末世生存#赛博剧场** — 赛博剧场 (1:14:54, 403 views)
+  https://www.youtube.com/watch?v=N5AGNl7uhvk
+  item: `items/N5AGNl7uhvk.md`
+- **🌟【New Anime Release | ENG SUB】"Fantasy: From Taking Care of My Junior Sister to Becoming a God Th...** — Dragon Animation Club (1:27:49, 2.1K views)
+  https://www.youtube.com/watch?v=cS0Sj2JYgOM
+  item: `items/cS0Sj2JYgOM.md`
+- **【Multi Sub】Icebound Apocalypse: I Build a Perfect Territory EP 1-70#热血 #anime #animation** — Quartic element Anime (5:46:33, 348 views)
+  https://www.youtube.com/watch?v=pmkem_AxBpU
+  item: `items/pmkem_AxBpU.md`
+- **【Multi Sub】Job Transfer to the Weird: I Raise a Billion Undead Army 1-177 #animation #anime #donghua** — Quartic element Anime (14:13:56, 339 views)
+  https://www.youtube.com/watch?v=GAP6xbUQJyg
+  item: `items/GAP6xbUQJyg.md`
+- **MAGA die-hards rise up in rebellion! They bombard the "demented" call for Trump's son to go to war!** — 寰宇全視界 (59:04, 8.0K views)
+  https://www.youtube.com/watch?v=LWV6HLFfpG8
+  item: `items/LWV6HLFfpG8.md`
+- **ENG SUB 【沙雕動畫 】🔥《预见未来》穷大学生绝境逢生被神秘 APP 砸脸，预知 20 亿帝王绿原石，还解锁女友千金身份，反手逆袭成亿万富豪！#爽文#打脸爽剧#ScreenRewind声影漫游** — Screen Rewind ​声影漫游 (2:14:11, 312 views)
+  https://www.youtube.com/watch?v=y4tpKtGTj9Y
+  item: `items/y4tpKtGTj9Y.md`
+- **🔥【爽漫】【Eng Sub】《末世氪金王：我的詭異無限升級》末世降臨，開局獲得億萬詭幣，逆轉規則，統禦各路詭異強者稱霸世界！第50-179集 #热血 #玄幻 #都市 #动画 #2025** — 八虎动漫剧场 (10:27:54, 395 views)
+  https://www.youtube.com/watch?v=vpRj_l1TNSs
+  item: `items/vpRj_l1TNSs.md`
+- **ENG SUB 【沙雕動畫 】🔥《重生后我靠抽奖身家破亿》前世担保负债家破人亡，重生归来激活神级抽奖系统！每卖一份冻品抽一次奖，狂赚百亿逆袭人生！#爽文#打脸爽剧#ScreenRewind声影漫游** — Screen Rewind ​声影漫游 (1:49:35, 127 views)
+  https://www.youtube.com/watch?v=gZ0gzv1f2mM
+  item: `items/gZ0gzv1f2mM.md`
+- **Unlucky heir marries a lucky charm,ortune soars,even his paralyzed legs heal!** — 劇甜社 (2:08:53, 92 views)
+  https://www.youtube.com/watch?v=TavvL1GQK-E
+  item: `items/TavvL1GQK-E.md`
+- **【FULL】04 Cinderella dared to propose to the CEO | The Quirky and The Charming 我的差评女友** — KUKAN Drama Romance (3:03:39, 241 views)
+  https://www.youtube.com/watch?v=nijqh3HnTzs
+  item: `items/nijqh3HnTzs.md`
+- **Boy Activated a War Talent That Automatically Summons Soldier Legions and Builds a Super Empire!** — Panda Fantasy Chronicles (26:41:17, 246 views)
+  https://www.youtube.com/watch?v=qCwIPY5RVuM
+  item: `items/qCwIPY5RVuM.md`
+- **She Couldn't Speak—But Was Forced to Marry Her Sister’s Mafia Boss… Then He Claimed Her** — Dangerous Boss Stories (2:31:03, 36 views)
+  https://www.youtube.com/watch?v=yqOXs9M5UKI
+  item: `items/yqOXs9M5UKI.md`
+- **💥ENG SUB💥【开局万亿冥币：契约末世最强诡异】Trillion Ghost Money: Contract the Ultimate Anomaly  #玄幻 #都市 #anime** — 超有钱动漫 Anime Club (10:27:54, 174 views)
+  https://www.youtube.com/watch?v=LlyU2WyU_tk
+  item: `items/LlyU2WyU_tk.md`
+- **She Couldn't Speak—Yet Was Forced to Marry Her Sister’s Mafia Boss… Then He Chose Her** — Noir Mafia Hearts (2:30:12, 35 views)
+  https://www.youtube.com/watch?v=tVVlRxclass
+  item: `items/tVVlRxclass.md`
+- **The Mafia Boss Found His Dead Brother’s Ex-Wife Living on the Streets—Then Did What No One Expected** — Mafia Midnight Stories (1:13:09, 2 views)
+  https://www.youtube.com/watch?v=zANZpLgLFg0
+  item: `items/zANZpLgLFg0.md`
+- **Tetro Danganronpa Pink and The Writer’s Poorly Disguised Unconscious Biases** — Mortellana (2:30:40, 120 views)
+  https://www.youtube.com/watch?v=Cnwmerqdw5w
+  item: `items/Cnwmerqdw5w.md`
+- **Unaware I Inherited $500 Billion Empire, My Stepmother Slapped Me at My Father’s Burial Just for He** — Millionaire Stories (1:08:53, 4 views)
+  https://www.youtube.com/watch?v=-8zHcEfjCHs
+  item: `items/-8zHcEfjCHs.md`
+- **【ENG SUB】不當舔狗後，我成了億萬神豪 After I stopped being a simp, I became a billionaire tycoon.  EP 1~200  #都市** — Bikini-Anime 动漫社 and 2 more (7:16:53, 472 views)
+  https://www.youtube.com/watch?v=cLVpeJDE_WY
+  item: `items/cLVpeJDE_WY.md`
+- **平凡小夥路邊攤撿漏的神秘靈珠竟藏透視異能！憑藉著靈珠成商界巨鱷，更贏得真愛圓滿人生 #短劇全集 #精彩短劇推薦 #短劇 #minidrama YHDJ** — 逆拳劇場 Rising Fist (3:22:54, 9 views)
+  https://www.youtube.com/watch?v=tj55mk6mhsw
+  item: `items/tj55mk6mhsw.md`

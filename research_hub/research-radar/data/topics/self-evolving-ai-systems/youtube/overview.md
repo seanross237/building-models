@@ -663,3 +663,93 @@ Full item files belong in `items/`.
 - **Applied Generative and Agentic AI | Day-3 | 360DigiTMG** — 360DigiTMG (1:07:03, 117 views)
   https://www.youtube.com/watch?v=JiwIPwg5YyU
   item: `items/JiwIPwg5YyU.md`
+
+## 2026-04-10 — 29 new videos
+
+- **MiniMax M2.7 - Most Underrated AI Model Right Now** — Blunt AI (6:21, 10 views)
+  https://www.youtube.com/watch?v=gVxWelgPOyQ
+  item: `items/gVxWelgPOyQ.md`
+- **The New AI Models That Are Challenging ChatGPT** — Ai tech (52, 62 views)
+  https://www.youtube.com/watch?v=39k07WulaaE
+  item: `items/39k07WulaaE.md`
+- **The Next Chapter of the VAST AI Operating System | VAST Data** — VAST Data (1:00:19, 174 views)
+  https://www.youtube.com/watch?v=AGETjrW8yt8
+  item: `items/AGETjrW8yt8.md`
+- **Google AI Updates: Evolution of Autonomous Agents 【多言語字幕対応 / EN & JA Subs】** — AI研究最前線サマリー (AI Research Daily) (18:06, 2 views)
+  https://www.youtube.com/watch?v=MLl5UBI-xOw
+  item: `items/MLl5UBI-xOw.md`
+- **The Self-Evolution of Large Language Models | Robert Langer | Shinka Evolve | AlphaEvolve | Signi...** — 最佳拍档 (17:14, 3.3K views)
+  https://www.youtube.com/watch?v=m17jqrqBZSc
+  item: `items/m17jqrqBZSc.md`
+- **Social Security's SECRET AI Points Denial System** — Social Security Disability Benefit Videos SSI SSDI (1:16:28, 6.0K views)
+  https://www.youtube.com/watch?v=MBt66aAYI0k
+  item: `items/MBt66aAYI0k.md`
+- **Google Just Released Gemma 4 |The Most Intelligent Open Model Yet| AI World** — Cognivista Lab (9:49, 31 views)
+  https://www.youtube.com/watch?v=s_kK6__vMRc
+  item: `items/s_kK6__vMRc.md`
+- **Episode (014) - Latest Artificial Intelligence R&D Session with Digitalent & Mike Nedelko** — Digitalent - AI & Machine Learning Recruitment (57:49, 7 views)
+  https://www.youtube.com/watch?v=TgnLjM_K9gA
+  item: `items/TgnLjM_K9gA.md`
+- **The Future of Work: How Agentic AI Will Change Your Tech Career** — wecite (6:24, 5 views)
+  https://www.youtube.com/watch?v=S2JQOSVhgsE
+  item: `items/S2JQOSVhgsE.md`
+- **Should This Channel Be Allowed to Exist?** — I Am Learning You (10:43, 377 views)
+  https://www.youtube.com/watch?v=-1FuDece6VI
+  item: `items/-1FuDece6VI.md`
+- **Drop the Hierarchy and Roles: How Self-Organizing LLM Agents Outperform Designed Structures** — Praveen Govindaraj (4:06, 7 views)
+  https://www.youtube.com/watch?v=mcaCGNSb-ag
+  item: `items/mcaCGNSb-ag.md`
+- **How Large Language Models Actually Work | From Tokens to Transformers #LLM #AI #Token** — NandDevTech (7:17, 6 views)
+  https://www.youtube.com/watch?v=0X46bFU3Png
+  item: `items/0X46bFU3Png.md`
+- **What is Agentic AI? Agentic AI Explained: The Future of AI Automation** — Ride The AI Tide (9:19, new)
+  https://www.youtube.com/watch?v=w808q1z4ZwQ
+  item: `items/w808q1z4ZwQ.md`
+- **Spirituality and Artificial Intelligence With Dr. Erik Deumens** — Institute For Global Transformation™ (1:36:25, 20 views)
+  https://www.youtube.com/watch?v=u4vU-6iuF2s
+  item: `items/u4vU-6iuF2s.md`
+- **Is AI Confusing You? Let’s Talk About It.** — Pax8 (33:19, 36 views)
+  https://www.youtube.com/watch?v=SoIVK0XtZkE
+  item: `items/SoIVK0XtZkE.md`
+- **🔥 24/7 Crypto Live Trading 🤖AI Bots vs The Market -  Forex & Crypto #Livetrading** — Tradebuttons (NA, new)
+  https://www.youtube.com/watch?v=CnCkaV-nSnA
+  item: `items/CnCkaV-nSnA.md`
+- **AI Agents Are Here! Claude Managed Agents + Notion Agents** — Rob Cressy (19:45, 32 views)
+  https://www.youtube.com/watch?v=OMs3FjYUr4E
+  item: `items/OMs3FjYUr4E.md`
+- **Naval：為什麼窮人沉迷“瞎忙”，富人卻看起來很“懶”？看透這3個財富真相，停止無效努力！#納瓦爾 #財富思維 #納瓦爾寶典** — Naval思辨哲學 (39:16, 1.6K views)
+  https://www.youtube.com/watch?v=L7J9n4eyotw
+  item: `items/L7J9n4eyotw.md`
+- **Leading the Future of Agentic Enterprise with MuleSoft** — Salesforce (25:39, 284 views)
+  https://www.youtube.com/watch?v=aeBrTX6N9io
+  item: `items/aeBrTX6N9io.md`
+- **AI Explained: The Agentic Gap: What Enterprises Think vs. What Actually Works** — Fiddler AI (56:15, 11 views)
+  https://www.youtube.com/watch?v=7G_C-FjtTLM
+  item: `items/7G_C-FjtTLM.md`
+- **Artemis II Was Too Small. Mars Will Change Everything. Dr Scott Solomon** — Brad Carr and Wild World Podcast (1:29:02, 88 views)
+  https://www.youtube.com/watch?v=SIRH_vKOIr0
+  item: `items/SIRH_vKOIr0.md`
+- **The Feedback Loop - Life's True Growth Hack** — The Growth Shift Podcast (43:10, 1 views)
+  https://www.youtube.com/watch?v=K9uT-IsqV_c
+  item: `items/K9uT-IsqV_c.md`
+- **[Baojie's Commentary LIVE] US Giant Reveals Unparalleled Trust in TSMC! Shen Wanjun Unveils Taiwa...** — 寶傑點兵／寶傑怎麼說 (1:02:11, 24.3K views)
+  https://www.youtube.com/watch?v=7tcN40EMj8c
+  item: `items/7tcN40EMj8c.md`
+- **10 Old Farm Machines That Refuse to Be Replaced** — Ggiant Force (18:30, 35 views)
+  https://www.youtube.com/watch?v=Le7NjGSINOA
+  item: `items/Le7NjGSINOA.md`
+- **AI-Agent Modified Particle Life — Realtime Generative Drone Soundscape** — とくやん (3:51, 10 views)
+  https://www.youtube.com/watch?v=ErhUZ2Tr8X0
+  item: `items/ErhUZ2Tr8X0.md`
+- **China's NEW Robot Dogs Have Machine Guns Strapped to Their Backs** — Afterburn Defense (6:56, 1.5K views)
+  https://www.youtube.com/watch?v=Zk-23FUY8Wg
+  item: `items/Zk-23FUY8Wg.md`
+- **They Mocked His Weak Goblin Summon, Until He Wiped Out an Entire Tribe With One Trick!** — Bella's Comic Chronicles (23:39:14, 377 views)
+  https://www.youtube.com/watch?v=J2Ch3Gvv8ME
+  item: `items/J2Ch3Gvv8ME.md`
+- **Starting with an Infinite Bullet Shotgun, I Gain an S-Class Ability Every Time I Collect a Beauty!** — Revel Manga Chronicles (25:58:48, 243 views)
+  https://www.youtube.com/watch?v=qeyM9cKlIRM
+  item: `items/qeyM9cKlIRM.md`
+- **EP20: Age of AI - Do Exams Still Matter?** — Hess Academy (14:17, 19 views)
+  https://www.youtube.com/watch?v=xUNzU7vHHuA
+  item: `items/xUNzU7vHHuA.md`

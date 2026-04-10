@@ -645,3 +645,93 @@ Full item files belong in `items/`.
 - **Research in Focus - Nadimul Haque** — Australian Cobotics Centre (1:22, new)
   https://www.youtube.com/watch?v=ofTfv3QCufs
   item: `items/ofTfv3QCufs.md`
+
+## 2026-04-10 — 29 new videos
+
+- **Agents of Chaos  Deconstructing the Autonomous Attack Surface** — Kevin Varley (7:08, 8 views)
+  https://www.youtube.com/watch?v=ZzKeZkzaZkA
+  item: `items/ZzKeZkzaZkA.md`
+- **Advancing to AI's Next Frontier: Insights From Jeff Dean and Bill Dally** — NVIDIA Developer (59:02, 625 views)
+  https://www.youtube.com/watch?v=DqMIYc-keBQ
+  item: `items/DqMIYc-keBQ.md`
+- **Claude Mythos, Project Glasswing and AI cybersecurity risks** — IBM Technology (49:26, 3.0K views)
+  https://www.youtube.com/watch?v=Yae74guiqq8
+  item: `items/Yae74guiqq8.md`
+- **The Hidden Supervolcano Cycle That Could Change Everything | Gregg Braden** — Gregg Braden Official and Best of Gregg Braden (24:18, 24.0K views)
+  https://www.youtube.com/watch?v=zpnKKbhHZEM
+  item: `items/zpnKKbhHZEM.md`
+- **DIS & Social Media** — D.I.S.Ding (59:23, 584 views)
+  https://www.youtube.com/watch?v=ZMcGm-9WoPs
+  item: `items/ZMcGm-9WoPs.md`
+- **The AI That's Designing Drugs Nobody Knew Were Possible | Cipher Sci** — Cipher Sci (10:57, 5 views)
+  https://www.youtube.com/watch?v=Pf2695e-oKE
+  item: `items/Pf2695e-oKE.md`
+- **Paul Riechers: Understanding AI, Unlocking Optionality | Intelligence at the Frontier 2026** — Funding the Commons (20:36, 7 views)
+  https://www.youtube.com/watch?v=7oJIYrIrsV8
+  item: `items/7oJIYrIrsV8.md`
+- **Hassabis's AI Future** — AI in 8 Minutes (5:19, 2 views)
+  https://www.youtube.com/watch?v=No9MkV1uEA8
+  item: `items/No9MkV1uEA8.md`
+- **OpenClaw & Agents for 10X PMs: Delegate the Grind, Re-focus on Taste. (live Demo Link is in the Bio)** — Product at the University of Maryland (1:32:25, 525 views)
+  https://www.youtube.com/watch?v=7XbQIWIhazw
+  item: `items/7XbQIWIhazw.md`
+- **Spirituality and Artificial Intelligence With Dr. Erik Deumens** — Institute For Global Transformation™ (1:36:25, 20 views)
+  https://www.youtube.com/watch?v=u4vU-6iuF2s
+  item: `items/u4vU-6iuF2s.md`
+- **Unveiling the Future  Google’s Jitro and the New Era of AI Coding Agents** — AI Study Hub (21:57, 53 views)
+  https://www.youtube.com/watch?v=n2DdBdW2z-A
+  item: `items/n2DdBdW2z-A.md`
+- **Self-Managing DRAM: Talk at FMS 2025 - Prof. Onur Mutlu** — Onur Mutlu Lectures (23:15, 48 views)
+  https://www.youtube.com/watch?v=OSImEIOt_m8
+  item: `items/OSImEIOt_m8.md`
+- **Something Has Changed In Our Solar System — And The Evidence Is Now Undeniable** — Project Nightwatch (1:51:19, 10.8K views)
+  https://www.youtube.com/watch?v=s6VV3gcpmho
+  item: `items/s6VV3gcpmho.md`
+- **The Future of Work: How Agentic AI Will Change Your Tech Career** — wecite (6:24, 5 views)
+  https://www.youtube.com/watch?v=S2JQOSVhgsE
+  item: `items/S2JQOSVhgsE.md`
+- **Classified Facility Sealed After Quantum AI Exceeded All Theoretical Limits** — Luminox (27:36, 2.7K views)
+  https://www.youtube.com/watch?v=AuWlpm4bafQ
+  item: `items/AuWlpm4bafQ.md`
+- **3I/ATLAS: Just REPLICATED Venus Atmosphere — Creating Identical Gas Mix!** — Atlas Oracle (19:53, 200 views)
+  https://www.youtube.com/watch?v=OlWW2OHWCcI
+  item: `items/OlWW2OHWCcI.md`
+- **Teach AI to Code in Every Language with NVIDIA NeMo | NVIDIA GTC** — NVIDIA Developer (45:47, 32 views)
+  https://www.youtube.com/watch?v=d8yQ358u-rE
+  item: `items/d8yQ358u-rE.md`
+- **北京大学发布PRBench基准，在全隔离沙盒中挑战AI独立复现物理论文的端到端能力** — Agent 创世纪 (8:01, 51 views)
+  https://www.youtube.com/watch?v=a5KK-9cB21A
+  item: `items/a5KK-9cB21A.md`
+- **The Science of Inferencing: How AI Derives Logic from Unstructured Data** — AI Knowledge is Power! (14:07, 2 views)
+  https://www.youtube.com/watch?v=7A322z731bM
+  item: `items/7A322z731bM.md`
+- **From DARPA to Robotaxis to Warehouses — The Full Arc of Autonomy** — MIT Mobility Initiative (1:00:32, 25 views)
+  https://www.youtube.com/watch?v=ylDEGbm920I
+  item: `items/ylDEGbm920I.md`
+- **Our critical infrastructure is dangerously unprotected** — World Council of Churches (5:54, 3 views)
+  https://www.youtube.com/watch?v=3ndu6-93WCc
+  item: `items/3ndu6-93WCc.md`
+- **Egyptologists Are WRONG. The 2.3 Million Pyramid Mystery Is Finally SOLVED** — The Infographics Show (10:43, 136.8K views)
+  https://www.youtube.com/watch?v=dc6oWOH57TQ
+  item: `items/dc6oWOH57TQ.md`
+- **AI & You 2.0 (2 of 5): The Supervisor Mindset** — WTIU & WFIU - Indiana Public Media (40:31, 4 views)
+  https://www.youtube.com/watch?v=_9jLeZpnBP0
+  item: `items/_9jLeZpnBP0.md`
+- **The Level1 Links with Friends Show April 10 2026: Long Live Jonathan** — Level1Links With Friends (41:46, 6.8K views)
+  https://www.youtube.com/watch?v=O_1DjyR83ik
+  item: `items/O_1DjyR83ik.md`
+- **These Stone Logs Have No Roots, No Bark, No Branches — And They've Been Here for 200 Million Years** — Veiled Century (17:11, 30.3K views)
+  https://www.youtube.com/watch?v=wSbSeNwk1EI
+  item: `items/wSbSeNwk1EI.md`
+- **Why the Biggest Brands Are Whispering at You (ASMR Ads Explained)** — Duot Labs (11:09, 3 views)
+  https://www.youtube.com/watch?v=9kHDhQG3eN8
+  item: `items/9kHDhQG3eN8.md`
+- **AI Weapons 2026 😱  Future War Without Humans Explained** — Future Tech Tamil (6:20, 16 views)
+  https://www.youtube.com/watch?v=cDsv56Hbr20
+  item: `items/cDsv56Hbr20.md`
+- **We Took ThursdAI to London — Mythos, Muse Spark, GLM-5.1 & 5 Guests | AI Engineer Europe** — Alex Volkov from ThursdAI (1:59:28, 119 views)
+  https://www.youtube.com/watch?v=xxZz-TUMyfc
+  item: `items/xxZz-TUMyfc.md`
+- **Artemis II Was Too Small. Mars Will Change Everything. Dr Scott Solomon** — Brad Carr and Wild World Podcast (1:29:02, 88 views)
+  https://www.youtube.com/watch?v=SIRH_vKOIr0
+  item: `items/SIRH_vKOIr0.md`

@@ -1,0 +1,26 @@
+# Claude Managed Agents Explained: Why OpenClaw Might Be In Trouble
+
+- Topic: `AI systems harnesses`
+- Priority: `super_relevant`
+- Source context: `eywa`
+- Type: `youtube`
+- Video ID: `CZGwCiDvgVA`
+- Channel: `Agentic Intelligence Daily`
+- Duration: `6:26`
+- Views: `5 views`
+- Upload date: `NA`
+- URL: https://www.youtube.com/watch?v=CZGwCiDvgVA
+- Collected at UTC: `2026-04-10T18:15:07Z`
+- Transcript status: `pending`
+
+## Summary
+
+Not analyzed yet.
+
+## Transcript
+
+Transcript not collected yet.
+
+## Notes
+
+- Freshly collected by Research Radar.

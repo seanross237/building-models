@@ -111,3 +111,18 @@ Full item files belong in `items/`.
 - **💥ENG SUB💥【穿越末世：我掌控双界资源】Apocalypse Transcender: Master of Two Worlds 第1-110集 #穿越 #热血 #战斗 #动漫** — 超有钱动漫 Anime Club (9:09:22, 122 views)
   https://www.youtube.com/watch?v=4OtlsYDXGDQ
   item: `items/4OtlsYDXGDQ.md`
+
+## 2026-04-10 — 4 new videos
+
+- **Classified Facility Sealed After Quantum AI Exceeded All Theoretical Limits** — Luminox (27:36, 2.7K views)
+  https://www.youtube.com/watch?v=AuWlpm4bafQ
+  item: `items/AuWlpm4bafQ.md`
+- **Ancient Hermetics Knew About Quantum Physics Before Einstein** — Codex Origin (3:11:01, 17 views)
+  https://www.youtube.com/watch?v=FHVHtXKbJd8
+  item: `items/FHVHtXKbJd8.md`
+- **NAMS Menopause Certification 2026: Real Exam Insights and Study Strategy You Need Today** — Latestexamprep (29:28, new)
+  https://www.youtube.com/watch?v=JdfJRH-m1QI
+  item: `items/JdfJRH-m1QI.md`
+- **Cheated guy unlocks a system—gets rich and powerful as beauties chase him, ex begs** — 虎王短劇TigerDrama (2:17:52, 1.5K views)
+  https://www.youtube.com/watch?v=fb56jSLfo-k
+  item: `items/fb56jSLfo-k.md`

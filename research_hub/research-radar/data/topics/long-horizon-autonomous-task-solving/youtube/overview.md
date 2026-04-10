@@ -255,3 +255,57 @@ Full item files belong in `items/`.
 - **A MISSILE Was launched in the Strait of Hormuz — The U.S. Navy Didn’t Hold Back** — NAV-X Intel (40:02, 103 views)
   https://www.youtube.com/watch?v=k_f7bxGhqdo
   item: `items/k_f7bxGhqdo.md`
+
+## 2026-04-10 — 17 new videos
+
+- **INSPATIO-WORLD: Real-Time 4D World Simulator** — AI Research Roundup (4:34, 13 views)
+  https://www.youtube.com/watch?v=NyldvD-ueXc
+  item: `items/NyldvD-ueXc.md`
+- **Advancing to AI's Next Frontier: Insights From Jeff Dean and Bill Dally** — NVIDIA Developer (59:02, 625 views)
+  https://www.youtube.com/watch?v=DqMIYc-keBQ
+  item: `items/DqMIYc-keBQ.md`
+- **Fake disease fools AI chatbots & Agent benchmarks get stricter - AI News (Apr 10, 2026)** — The Automated Daily (8:06, 3 views)
+  https://www.youtube.com/watch?v=uSoBvvmmKo4
+  item: `items/uSoBvvmmKo4.md`
+- **From DARPA to Robotaxis to Warehouses — The Full Arc of Autonomy** — MIT Mobility Initiative (1:00:32, 25 views)
+  https://www.youtube.com/watch?v=ylDEGbm920I
+  item: `items/ylDEGbm920I.md`
+- **Deep Flow Dynamics | 2H | 40Hz Gamma Minimal Techno | Coding Logic** — Flow Station (2:00:01, 1 views)
+  https://www.youtube.com/watch?v=8SsrBykEQwE
+  item: `items/8SsrBykEQwE.md`
+- **Productive Study Music Soft Piano Peaceful Background for Learning** — Pure Focus Audio Music (1:09:06, 37 views)
+  https://www.youtube.com/watch?v=fgYq3xH7ss0
+  item: `items/fgYq3xH7ss0.md`
+- **Hallie Jackson NOW - April 9 | NBC News NOW** — NBC News (1:39:46, 28.3K views)
+  https://www.youtube.com/watch?v=4nMrsBFfVRI
+  item: `items/4nMrsBFfVRI.md`
+- **The Open for Thursday, April 9, 2026** — BNN Bloomberg (1:33:19, 132 views)
+  https://www.youtube.com/watch?v=GVEVDn4TJVs
+  item: `items/GVEVDn4TJVs.md`
+- **GLM-5.1 AI Just Shocked the World** — Julian Goldie Rundown (8:09, 164 views)
+  https://www.youtube.com/watch?v=VphQdKlLb4s
+  item: `items/VphQdKlLb4s.md`
+- **Hierarchical Planning with Latent World Models (Apr 2026)** — AI Paper Slop (19:54, 12 views)
+  https://www.youtube.com/watch?v=QWl_ga_RrGo
+  item: `items/QWl_ga_RrGo.md`
+- **From Tools to Teammates AI Agents** — GAIN scope AI (6:59, new)
+  https://www.youtube.com/watch?v=WlZmzAXWbZo
+  item: `items/WlZmzAXWbZo.md`
+- **NEW GLM 5.1 DESTROYS GPT and Claude?** — Ava Does AI (8:36, 124 views)
+  https://www.youtube.com/watch?v=TxmyPp0YTn8
+  item: `items/TxmyPp0YTn8.md`
+- **How to Stay Calm When Life Gets Chaotic: A Guide to Stress Relief, Peace, Resilience | Audiobook.** — Guiding Light Audiobooks (2:28:50, 6 views)
+  https://www.youtube.com/watch?v=FSRFPvJGOOU
+  item: `items/FSRFPvJGOOU.md`
+- **She Passed Out Before the Mafia Boss—He Caught Her and Saw the Bruises She Hid** — Mafia Destiny Stories (2:38:08, 2 views)
+  https://www.youtube.com/watch?v=awhR1rMalSI
+  item: `items/awhR1rMalSI.md`
+- **Mediology, 1990** — C3 Center for Culture & Communication Foundation (58:57, 10 views)
+  https://www.youtube.com/watch?v=TPhXcawNTBQ
+  item: `items/TPhXcawNTBQ.md`
+- **Cinematic Dark Country for Productivity | The Last Outlaw Radio - Transmission 16: The Windmill** — THE LAST OUTLAW RADIO (1:04:07, 14 views)
+  https://www.youtube.com/watch?v=TCGfm2I4wiw
+  item: `items/TCGfm2I4wiw.md`
+- **Deep Work Music ~ Zero Distraction Ambient Beats for Maximum Focus ~ Study & Productivity** — The Deep Hour (2:12:51, new)
+  https://www.youtube.com/watch?v=iqrHOBD6wZQ
+  item: `items/iqrHOBD6wZQ.md`

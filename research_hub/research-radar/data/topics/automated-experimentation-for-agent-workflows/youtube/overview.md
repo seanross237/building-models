@@ -648,3 +648,96 @@ Full item files belong in `items/`.
 - **KubeCon EU 2026 Wrap-Up: AI, Kubernetes & Platform Engineering Hit a Breaking Point** — Efficiently Connected, Inc. (20:37, 4 views)
   https://www.youtube.com/watch?v=jspsa5RXdBI
   item: `items/jspsa5RXdBI.md`
+
+## 2026-04-10 — 30 new videos
+
+- **Multi Agent Service Automation: Optimizing Workflows with DriveAI Actions** — Annata (3:11, 4 views)
+  https://www.youtube.com/watch?v=5ZkYXVnOI0U
+  item: `items/5ZkYXVnOI0U.md`
+- **Agentic Offensive Workflow - Sanket Shewale | FOXXCON** — Redfox Security (43:33, 6 views)
+  https://www.youtube.com/watch?v=mIIsrg0v_ko
+  item: `items/mIIsrg0v_ko.md`
+- **New Google AI Agent DESTROYS OpenClaw?** — Julian Goldie SEO (8:01, 5.3K views)
+  https://www.youtube.com/watch?v=08GQdfVVEFk
+  item: `items/08GQdfVVEFk.md`
+- **I Automated My Entire Trading Workflow with AI — Here's How** — Trading For BJ (14:32, 567 views)
+  https://www.youtube.com/watch?v=HYUxMKBiWrE
+  item: `items/HYUxMKBiWrE.md`
+- **From Automation to Autonomy: The Next Evolution of Playwright Testing by Ashish Ghosh** — Devoxx (1:39:50, 72 views)
+  https://www.youtube.com/watch?v=kDDKh4VI_Pg
+  item: `items/kDDKh4VI_Pg.md`
+- **NEW MiniMax Pocket AI Agent is INSANE!** — Julian Goldie SEO (8:02, 1.1K views)
+  https://www.youtube.com/watch?v=yGWKfK6_6Dk
+  item: `items/yGWKfK6_6Dk.md`
+- **Meta AI Muse Spark IS INCREDIBLE! Powerful Coding & Multimodal Model! (Fully Tested)** — WorldofAI (13:39, 5.7K views)
+  https://www.youtube.com/watch?v=6_m2SaAl5-0
+  item: `items/6_m2SaAl5-0.md`
+- **This NEW Manus AI AGENT is INSANE!** — Julian Goldie SEO (7:28, 2.4K views)
+  https://www.youtube.com/watch?v=xeJ_71MJ3n4
+  item: `items/xeJ_71MJ3n4.md`
+- **Hermes Agent: The AI That Learns From Your Workflow** — MSG Encrypted (6:32, 6 views)
+  https://www.youtube.com/watch?v=1lhhJuZGEdk
+  item: `items/1lhhJuZGEdk.md`
+- **OpenClaw Tutorial for Beginners | How to Set Up OpenClaw in 2026** — Intellipaat (33:27, 1.4K views)
+  https://www.youtube.com/watch?v=DEgwlXMQWeA
+  item: `items/DEgwlXMQWeA.md`
+- **This AI Builds Full Apps From One Prompt** — Lyzr AI (3:33, 30 views)
+  https://www.youtube.com/watch?v=odNZjzzeA50
+  item: `items/odNZjzzeA50.md`
+- **AI Agents vs Chatbots: The Truth About ROI** — Pranav Automates (15, 1 views)
+  https://www.youtube.com/watch?v=6uJyvY3255s
+  item: `items/6uJyvY3255s.md`
+- **ClawsBench: Testing LLM Agent Skills and Safety** — AI Research Roundup (4:43, 19 views)
+  https://www.youtube.com/watch?v=sBvWDnW6ODw
+  item: `items/sBvWDnW6ODw.md`
+- **Builders Unscripted: Ep. 2 - Ashe Magalhaes, Founder of Hearth AI** — OpenAI (33:39, 657 views)
+  https://www.youtube.com/watch?v=flweA_I-VKE
+  item: `items/flweA_I-VKE.md`
+- **Building an MCP Agent from Scratch | Full Step-by-Step Tutorial** — Shaad Tahseen (11:21, new)
+  https://www.youtube.com/watch?v=boYKqex2mAM
+  item: `items/boYKqex2mAM.md`
+- **Claude Managed Agents: Full MCP Setup with Firecrawl and Linear** — Firecrawl (9:23, 206 views)
+  https://www.youtube.com/watch?v=RYE7y2ziFBU
+  item: `items/RYE7y2ziFBU.md`
+- **16. AI Red-Teaming 101 - AI Agent Basics (Lesson 16)** — Jarno Baselier (22:00, 9 views)
+  https://www.youtube.com/watch?v=Sg518HpmnOQ
+  item: `items/Sg518HpmnOQ.md`
+- **Episode 168: A Guide for Using AI Agents in Media Analytics, with Newton Research’s John Hoctor** — MarketectureTV (55:18, 33 views)
+  https://www.youtube.com/watch?v=2bIxNtOlrAw
+  item: `items/2bIxNtOlrAw.md`
+- **I Made 2 AI Songs in Minutes (Tool + Prompts Revealed)** — Everything AI and Law Podcast (3:19, 12 views)
+  https://www.youtube.com/watch?v=ck7Dtc5oCBA
+  item: `items/ck7Dtc5oCBA.md`
+- **Automatic App Store Uploads w/ Bitrise and CI/CD** — Sean Allen (15:18, 616 views)
+  https://www.youtube.com/watch?v=OwdUGlrhZg4
+  item: `items/OwdUGlrhZg4.md`
+- **1000+ AI Tools Connected: The Future of NoCode-X Agentic Workflows** — NoCode-X (50:43, 36 views)
+  https://www.youtube.com/watch?v=mvQ_D5EJXlU
+  item: `items/mvQ_D5EJXlU.md`
+- **[AI Test Automation] Bài 4 - Cách thiết lập SKILL WORKFLOW RULE cho AI Agent trên Antigravity** — Anh Tester Automation Testing (3:37:27, 166 views)
+  https://www.youtube.com/watch?v=AkI4D2tcWoM
+  item: `items/AkI4D2tcWoM.md`
+- **Can AI Build a REAL Full-Stack App? InsForge Test** — TechPro (4:57, 356 views)
+  https://www.youtube.com/watch?v=W0l5rwRGbwo
+  item: `items/W0l5rwRGbwo.md`
+- **Google vs OPENCLAW WAR ? The Future of AI Action Models** — MysteryBytes.Studio (14:09, new)
+  https://www.youtube.com/watch?v=rmWoA-UF4_c
+  item: `items/rmWoA-UF4_c.md`
+- **Your Cyber Job Isn't Being Replaced. Your Workflow Is. #cybersecurity #hacking #cybersecurityjobs** — stuffy24 (39:27, 346 views)
+  https://www.youtube.com/watch?v=M4QWJRC-qfo
+  item: `items/M4QWJRC-qfo.md`
+- **GoHighLevel Ask AI Revealed (New Feature for AI Agencies)** — Dar - the HighLevel guy (6:27, 748 views)
+  https://www.youtube.com/watch?v=GIBA_ug8Q4Y
+  item: `items/GIBA_ug8Q4Y.md`
+- **PART 3: Can Open Claw Set Up VOLTTRON BACnet on a Raspberry Pi?** — TalkShopWithBen (17:34, 9 views)
+  https://www.youtube.com/watch?v=rCD4OwsGfBo
+  item: `items/rCD4OwsGfBo.md`
+- **AI Doesn’t Fix Bad Data — Why Unified Data Architecture Is the Real Foundation** — NeenOpal (15:17, 4 views)
+  https://www.youtube.com/watch?v=UZqkPHXa6NA
+  item: `items/UZqkPHXa6NA.md`
+- **PART 4: Can Open Claw Set Up VOLTTRON BACnet on a Raspberry Pi?** — TalkShopWithBen (37:22, 4 views)
+  https://www.youtube.com/watch?v=4Dlp-a_raTU
+  item: `items/4Dlp-a_raTU.md`
+- **KIRO For Dummies: The Complete Beginner's Guide (Install → Build → Powers)** — Data Science Basics (1:00:01, 36 views)
+  https://www.youtube.com/watch?v=a1EIi9BM3b0
+  item: `items/a1EIi9BM3b0.md`

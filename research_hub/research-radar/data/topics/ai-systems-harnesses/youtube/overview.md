@@ -651,3 +651,96 @@ Full item files belong in `items/`.
 - **Generative AI vs Agentic AI Explained Simply** — Blockchain Council (36, 807 views)
   https://www.youtube.com/watch?v=BxeUx_dSLkA
   item: `items/BxeUx_dSLkA.md`
+
+## 2026-04-10 — 30 new videos
+
+- **AI isn't the problem, your systems are** — IVM Consulting (2:04, new)
+  https://www.youtube.com/watch?v=3KOq58EqTj8
+  item: `items/3KOq58EqTj8.md`
+- **AI Was Supposed to Eliminate Jobs. Here's What Actually Happened.** — Redhawk Media Group (16:27, 5.9K views)
+  https://www.youtube.com/watch?v=lctlDGv0eKc
+  item: `items/lctlDGv0eKc.md`
+- **Classified Facility Sealed After Quantum AI Exceeded All Theoretical Limits** — Luminox (27:36, 2.7K views)
+  https://www.youtube.com/watch?v=AuWlpm4bafQ
+  item: `items/AuWlpm4bafQ.md`
+- **Anthropic's Agent Harness: The Real IP** — Practical AI (4:13, 8 views)
+  https://www.youtube.com/watch?v=Ct9WEChqlEk
+  item: `items/Ct9WEChqlEk.md`
+- **New Google AI Agent DESTROYS OpenClaw?** — Julian Goldie SEO (8:01, 5.3K views)
+  https://www.youtube.com/watch?v=08GQdfVVEFk
+  item: `items/08GQdfVVEFk.md`
+- **The Most Dangerous AI Model Ever: Mythos** — AI Revolution (17:37, 31.1K views)
+  https://www.youtube.com/watch?v=yBOOhzLltJA
+  item: `items/yBOOhzLltJA.md`
+- **AI BUBBLE POP - Half of AI Data Centers Are CANCELLED or Delayed** — EUREKA US (10:53, 4.6K views)
+  https://www.youtube.com/watch?v=UbnZpV0_2RY
+  item: `items/UbnZpV0_2RY.md`
+- **Bessent Summoned Wall Street Leaders to Discuss Anthropic's New AI** — Bloomberg Television (3:19, 24.4K views)
+  https://www.youtube.com/watch?v=Kl9LKFMj3Eg
+  item: `items/Kl9LKFMj3Eg.md`
+- **Claude Mythos, Project Glasswing and AI cybersecurity risks** — IBM Technology (49:26, 3.0K views)
+  https://www.youtube.com/watch?v=Yae74guiqq8
+  item: `items/Yae74guiqq8.md`
+- **AI OVERLOAD: Top Trends, Tools & Models for 2026 | INSIDE AI #33** — Fraunhofer IEM (36:47, 617 views)
+  https://www.youtube.com/watch?v=8nqoJORzOc8
+  item: `items/8nqoJORzOc8.md`
+- **NEW MiniMax Pocket AI Agent is INSANE!** — Julian Goldie SEO (8:02, 1.1K views)
+  https://www.youtube.com/watch?v=yGWKfK6_6Dk
+  item: `items/yGWKfK6_6Dk.md`
+- **Claude Code and Codex's Secret Weapon | Harness Engineering (Not Prompt Engineering)** — Yu | AI Automatic Workflow (17:10, 12 views)
+  https://www.youtube.com/watch?v=SMyxdBLMzyE
+  item: `items/SMyxdBLMzyE.md`
+- **Could the Iran War Cause the AI Bubble to Burst** — Bloomberg Television (14:40, 12.6K views)
+  https://www.youtube.com/watch?v=eJjxHs808yM
+  item: `items/eJjxHs808yM.md`
+- **Flutter AI skills | Observable Flutter #88** — Flutter (1:35:55, 2.9K views)
+  https://www.youtube.com/watch?v=2h3teBoAHQY
+  item: `items/2h3teBoAHQY.md`
+- **LLM Agent Framework: Memory, Skills, and Harness** — AI Research Roundup (3:33, 9 views)
+  https://www.youtube.com/watch?v=MUnW6HrlK0Q
+  item: `items/MUnW6HrlK0Q.md`
+- **Claude Managed Agents Explained: Why OpenClaw Might Be In Trouble** — Agentic Intelligence Daily (6:26, 5 views)
+  https://www.youtube.com/watch?v=CZGwCiDvgVA
+  item: `items/CZGwCiDvgVA.md`
+- **AI Cyber Threats Alarm Wall Street | Open Interest 4/10/2026** — Bloomberg Television (1:27:17, 216 views)
+  https://www.youtube.com/watch?v=z_F3LCQRUfI
+  item: `items/z_F3LCQRUfI.md`
+- **Fake disease fools AI chatbots & Agent benchmarks get stricter - AI News (Apr 10, 2026)** — The Automated Daily (8:06, 3 views)
+  https://www.youtube.com/watch?v=uSoBvvmmKo4
+  item: `items/uSoBvvmmKo4.md`
+- **I Automated My Entire Trading Workflow with AI — Here's How** — Trading For BJ (14:32, 567 views)
+  https://www.youtube.com/watch?v=HYUxMKBiWrE
+  item: `items/HYUxMKBiWrE.md`
+- **Your API subscription is about to see 50X increase** — Digital Dreamscapes (8:38, 1 views)
+  https://www.youtube.com/watch?v=lcII4QfkIRM
+  item: `items/lcII4QfkIRM.md`
+- **Google's New AI Agent Crawler EXPOSED: OpenClaw Revolution & The Future of AI Action Models** — MysteryBytes.Studio (14:09, new)
+  https://www.youtube.com/watch?v=rmWoA-UF4_c
+  item: `items/rmWoA-UF4_c.md`
+- **The Open-Weight Frontier: Economics of 2026 AI Coding Models | TradingMaster AI** — TradingMaster AI (7:11, 1 views)
+  https://www.youtube.com/watch?v=YYTETUovk4w
+  item: `items/YYTETUovk4w.md`
+- **Profession update, AI in focus and internal control in a GenAI world – April 9** — AICPA (1:00:59, 78 views)
+  https://www.youtube.com/watch?v=PXgaidW_4gI
+  item: `items/PXgaidW_4gI.md`
+- **AI Explained: The Agentic Gap: What Enterprises Think vs. What Actually Works** — Fiddler AI (56:15, 11 views)
+  https://www.youtube.com/watch?v=7G_C-FjtTLM
+  item: `items/7G_C-FjtTLM.md`
+- **AutoAgent The Open Source Library That Engineers Itself Overnight** — Eddy Says Hi #EddySaysHi (5:21, 2 views)
+  https://www.youtube.com/watch?v=VIHYWTwqFl0
+  item: `items/VIHYWTwqFl0.md`
+- **KI Agenten  Der Showdown - Der direkte Vergleich der Managed AI Agent Architekturen!** — Christoph Puppe | IT Security Expertise kompakt (8:48, 6 views)
+  https://www.youtube.com/watch?v=ErRFMr8pIZ8
+  item: `items/ErRFMr8pIZ8.md`
+- **Claude Managed Agents Are About to Replace Your Setup** — Technical Potpourri by Sudipta Deb (22:11, 50 views)
+  https://www.youtube.com/watch?v=Z8pk1Tb8p14
+  item: `items/Z8pk1Tb8p14.md`
+- **S02 E05 Bridging the Gap Between AI Strategy and Lab Reality** — CSols Inc. (15:12, new)
+  https://www.youtube.com/watch?v=EAKMzTHw-Gc
+  item: `items/EAKMzTHw-Gc.md`
+- **SmallCTl V.0.1.0 - An agentic harness for small language models** — LowSpecLabs (9:38, 30 views)
+  https://www.youtube.com/watch?v=kN-f56PEtVE
+  item: `items/kN-f56PEtVE.md`
+- **My $16,700/mo Faceless Shorts System (Copy This Exact Formula)** — NEXVANT (13:22, 4 views)
+  https://www.youtube.com/watch?v=i3WyLEYry_0
+  item: `items/i3WyLEYry_0.md`

@@ -651,3 +651,93 @@ Full item files belong in `items/`.
 - **Tesla Model 2 2026 Update! $20K Price, 800+ Mile Range, AWD Power & Smart Suspension** — NATION EV (18:29, 278 views)
   https://www.youtube.com/watch?v=qryl_p4RaVQ
   item: `items/qryl_p4RaVQ.md`
+
+## 2026-04-10 — 29 new videos
+
+- **Why Is It So Hard to Make Data Useful? | Modern Data Engineering Pipelines** — Confluent Developer (14:37, 48 views)
+  https://www.youtube.com/watch?v=Dzzgfl06Qxo
+  item: `items/Dzzgfl06Qxo.md`
+- **I Asked You How to Fix E-Bike Laws. The Answers Surprised Me.** — Shifter (20:59, 6.3K views)
+  https://www.youtube.com/watch?v=6Z35F2R7FeE
+  item: `items/6Z35F2R7FeE.md`
+- **SEO is just Google Optimization with a better name GEO is the upgrade** — Masotti AI (3:29, new)
+  https://www.youtube.com/watch?v=_DURiVY9MUM
+  item: `items/_DURiVY9MUM.md`
+- **Bloomberg Surveillance 4/10/2026** — Bloomberg Television (2:24:13, 556 views)
+  https://www.youtube.com/watch?v=vamnRjMrVyg
+  item: `items/vamnRjMrVyg.md`
+- **Starting with an Infinite Bullet Shotgun, I Gain an S-Class Ability Every Time I Collect a Beauty!** — Revel Manga Chronicles (25:58:48, 243 views)
+  https://www.youtube.com/watch?v=qeyM9cKlIRM
+  item: `items/qeyM9cKlIRM.md`
+- **Relax And You Will Attract Everything You Want | STOICISM** — Stoic Journal (1:05:55, 1.9K views)
+  https://www.youtube.com/watch?v=9KEBUhXS86k
+  item: `items/9KEBUhXS86k.md`
+- **The Forbidden Master Looks Like A Jobless Lecher, But Secretly Commands The SSS-Rank Kun.** — Inosuke Recap (43:46:53, 240 views)
+  https://www.youtube.com/watch?v=5XFTNREB10c
+  item: `items/5XFTNREB10c.md`
+- **watch these 33 minutes if you want to transform your life in 90 days** — Daniel Barada (33:54, 1.8K views)
+  https://www.youtube.com/watch?v=vqpK6urvlb4
+  item: `items/vqpK6urvlb4.md`
+- **What does the front of the car look like after the refurbishment? Episode 5** — Electrician Girl (35:05, 3.5K views)
+  https://www.youtube.com/watch?v=-AA87tt78vM
+  item: `items/-AA87tt78vM.md`
+- **Use AI to Achieve Operational Excellence with the Well-Architected Framework practices** — Microsoft Developer (14:30, 433 views)
+  https://www.youtube.com/watch?v=PRpYptDTe4o
+  item: `items/PRpYptDTe4o.md`
+- **He awakened the SSS-level Flame ability and became the pride of the entire school!#animerecap** — KAI Manhwa Recap (11:48:55, 357 views)
+  https://www.youtube.com/watch?v=kJxAR6tdsoc
+  item: `items/kJxAR6tdsoc.md`
+- **OpenAI supports bill limiting liability for AI-driven mass harm: Wired | Next in AI | Astha La Vista** — Next in AI: Astha La Vista (6:27, 9 views)
+  https://www.youtube.com/watch?v=gYTV0njsb4M
+  item: `items/gYTV0njsb4M.md`
+- **HERS ERI vs. IECC ERI vs. CEO LECC** — Colorado Energy Office (1:03:46, new)
+  https://www.youtube.com/watch?v=5Xb3qXi4i1I
+  item: `items/5Xb3qXi4i1I.md`
+- **Zeekr X 2026 review Australia: Huge power boost for BMW iX1 & Genesis GV60 rivalling electric car** — CarsGuide (10:01, 9.2K views)
+  https://www.youtube.com/watch?v=5Iqa4dACIKg
+  item: `items/5Iqa4dACIKg.md`
+- **How an ex-Figma Engineer and a Content Ops consultant actually use AI | Sanity Pioneers** — Sanity (29:20, 24 views)
+  https://www.youtube.com/watch?v=1-8awGw1mIc
+  item: `items/1-8awGw1mIc.md`
+- **His Enemies Thought He Ran Because He Was Weak, But He Was Charging 100000% Power** — Recap Manga (8:39:35, 350 views)
+  https://www.youtube.com/watch?v=zIGyS36BaQw
+  item: `items/zIGyS36BaQw.md`
+- **New Dancehall Mix 2026 Vol.6 | Vybz  Kartel, Mavado, Alkaline, Chronic Law, Valiant, Teejay New Hits** — ZJ Liquid Music (1:00:24, 9.3K views)
+  https://www.youtube.com/watch?v=Ou5y3zMVWCM
+  item: `items/Ou5y3zMVWCM.md`
+- **Selecting for Profit: Balancing Cow Adaptability and Carcass Quality | Dr. Bob Weaber** — SUNUPTV (1:04:36, 145 views)
+  https://www.youtube.com/watch?v=4fJuYmfBP5A
+  item: `items/4fJuYmfBP5A.md`
+- **Things BeamNG STILL Doesn’t Have…** — ModLand (8:20, 3.5K views)
+  https://www.youtube.com/watch?v=Y0NI7qBrijQ
+  item: `items/Y0NI7qBrijQ.md`
+- **【Full】❤️You get coins just for refusing to protect animals? I got rich thanks to the system** — Wish Fulfillment Drama (1:13:16, 104 views)
+  https://www.youtube.com/watch?v=9oAy9jEJhVg
+  item: `items/9oAy9jEJhVg.md`
+- **From Founder to CEO The Identity Shifts Required to Scale** — Avio Medtech Consulting (52:09, 1 views)
+  https://www.youtube.com/watch?v=AuSGdMQUN8A
+  item: `items/AuSGdMQUN8A.md`
+- **Advancing Pediatric CGT Clinical Trials: Scientific, Ethical, Regulatory & Practical Considerations** — U.S. Food and Drug Administration (7:37:30, 3.4K views)
+  https://www.youtube.com/watch?v=JGD68JebQJA
+  item: `items/JGD68JebQJA.md`
+- **Short Barrel 556 Suppressor Test The New King Will Shock You, A K can won!** — Silencer Analytics (15:19, 14.5K views)
+  https://www.youtube.com/watch?v=1XWqJYK72mA
+  item: `items/1XWqJYK72mA.md`
+- **BMW iX1 eDrive20, czyli nowe BMW za 1000 zł miesięcznie! (TEST PL/ENG 4K) | CaroSeria** — CaroSeria (47:25, 23.2K views)
+  https://www.youtube.com/watch?v=r6fHmrwF-7w
+  item: `items/r6fHmrwF-7w.md`
+- **Why Uber Prices Suddenly Increase: Surge Pricing Explained by Uber CTO Praveen | Gobinath** — Gobinath (1:17:28, 3.5K views)
+  https://www.youtube.com/watch?v=slU3wJuEORM
+  item: `items/slU3wJuEORM.md`
+- **IELTS LISTENING PRACTICE TEST 2026 WITH ANSWERS | 10.04.2026** — The IELTS Listening Test (24:50, 6.8K views)
+  https://www.youtube.com/watch?v=c02VHMC4yTg
+  item: `items/c02VHMC4yTg.md`
+- **PTR interview: BJP’s double engine a joke| Election 2026** — The News Minute (58:36, 12.9K views)
+  https://www.youtube.com/watch?v=XonK0Vb4GA0
+  item: `items/XonK0Vb4GA0.md`
+- **Fake disease fools AI chatbots & Agent benchmarks get stricter - AI News (Apr 10, 2026)** — The Automated Daily (8:06, 3 views)
+  https://www.youtube.com/watch?v=uSoBvvmmKo4
+  item: `items/uSoBvvmmKo4.md`
+- **Pengiriman ditolak bunga sekolah! Sistem dewa bikin naik puncak, pukul wajah!** — Pop-Skrin (1:14:25, 4.2K views)
+  https://www.youtube.com/watch?v=F9uqbxYVIoU
+  item: `items/F9uqbxYVIoU.md`

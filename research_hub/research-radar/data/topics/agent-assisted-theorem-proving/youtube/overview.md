@@ -48,3 +48,12 @@ Full item files belong in `items/`.
 - **【全集】重生后我第一笔投资，是每天给她塞个水煮蛋——十年后，她登顶财富榜那天，当众宣布最大股东是我，还附赠了总裁夫人的头衔。 💸🥚👑#drama#短剧#爽文#逆袭** — 白龙剧场 (2:32:50, 36 views)
   https://www.youtube.com/watch?v=5FFUL1WrmlQ
   item: `items/5FFUL1WrmlQ.md`
+
+## 2026-04-10 — 2 new videos
+
+- **Ancient Hermetics Knew About Quantum Physics Before Einstein** — Codex Origin (3:11:01, 17 views)
+  https://www.youtube.com/watch?v=FHVHtXKbJd8
+  item: `items/FHVHtXKbJd8.md`
+- **FULL📈Reborn, I invested in the poorest girl in class. Now she's the CEO who loves me! ❤️** — Arlene Drama (2:27:24, 237 views)
+  https://www.youtube.com/watch?v=HLq-qxhCd2E
+  item: `items/HLq-qxhCd2E.md`

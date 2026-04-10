@@ -654,3 +654,96 @@ Full item files belong in `items/`.
 - **Steam Just Did What Nvidia Can't..** — OhNoItsAlexx (21:38, 27.1K views)
   https://www.youtube.com/watch?v=aoK_TNB0w2o
   item: `items/aoK_TNB0w2o.md`
+
+## 2026-04-10 — 30 new videos
+
+- **New Claude Managed Agents Update is INSANE!** — Julian Goldie SEO (8:05, 1.2K views)
+  https://www.youtube.com/watch?v=FtYiGtH9Xjo
+  item: `items/FtYiGtH9Xjo.md`
+- **All of AI's New Models and Tools** — The AI Daily Brief: Artificial Intelligence News (15:55, 3.3K views)
+  https://www.youtube.com/watch?v=20vZc0cOpOw
+  item: `items/20vZc0cOpOw.md`
+- **This NEW Manus AI AGENT is INSANE!** — Julian Goldie SEO (7:28, 2.4K views)
+  https://www.youtube.com/watch?v=xeJ_71MJ3n4
+  item: `items/xeJ_71MJ3n4.md`
+- **What is AgentMail?** — Tool Finder (8:15, 145 views)
+  https://www.youtube.com/watch?v=pNChkT_RPJM
+  item: `items/pNChkT_RPJM.md`
+- **New Google AI Agent DESTROYS OpenClaw?** — Julian Goldie SEO (8:01, 5.3K views)
+  https://www.youtube.com/watch?v=08GQdfVVEFk
+  item: `items/08GQdfVVEFk.md`
+- **Claude Managed Agents Full Tutorial & Honest Review** — Lead Gen Jay (21:08, 1.4K views)
+  https://www.youtube.com/watch?v=Pve75_Zi8oE
+  item: `items/Pve75_Zi8oE.md`
+- **NEW MiniMax Pocket AI Agent is INSANE!** — Julian Goldie SEO (8:02, 1.1K views)
+  https://www.youtube.com/watch?v=yGWKfK6_6Dk
+  item: `items/yGWKfK6_6Dk.md`
+- **OpenAI Has Its Own MYTHOS Model + NEW Gemini Agents, Codex Super App & More!** — Universe of AI (12:53, 5.1K views)
+  https://www.youtube.com/watch?v=CPrpdqYgI8k
+  item: `items/CPrpdqYgI8k.md`
+- **From Text Generator to Enterprise Agent: Function Calling, MCP & Knowledge Graphs Explained** — Mactores (19:32, 6 views)
+  https://www.youtube.com/watch?v=2uqAmZYOA0E
+  item: `items/2uqAmZYOA0E.md`
+- **Mastering AI Agent Skills 🤖** — Darin R. McClure (6:14, 4 views)
+  https://www.youtube.com/watch?v=Ka4Vkvz98mI
+  item: `items/Ka4Vkvz98mI.md`
+- **Claude Managed Agents Explained: Why OpenClaw Might Be In Trouble** — Agentic Intelligence Daily (6:26, 5 views)
+  https://www.youtube.com/watch?v=CZGwCiDvgVA
+  item: `items/CZGwCiDvgVA.md`
+- **ClawsBench: Testing LLM Agent Skills and Safety** — AI Research Roundup (4:43, 19 views)
+  https://www.youtube.com/watch?v=sBvWDnW6ODw
+  item: `items/sBvWDnW6ODw.md`
+- **Using a VPN Could Strip You of Your Constitutional Rights** — Techlore (54:35, 20.4K views)
+  https://www.youtube.com/watch?v=TmfP-gHHpKg
+  item: `items/TmfP-gHHpKg.md`
+- **Agents of Chaos  Deconstructing the Autonomous Attack Surface** — Kevin Varley (7:08, 8 views)
+  https://www.youtube.com/watch?v=ZzKeZkzaZkA
+  item: `items/ZzKeZkzaZkA.md`
+- **OpenClaw vs Claude Managed Agents. I Built on Both This Week. Here's the Real Comparison.** — Chris Pearson (1:41:45, 30 views)
+  https://www.youtube.com/watch?v=QSDXM8mPkY0
+  item: `items/QSDXM8mPkY0.md`
+- **Flutter AI skills | Observable Flutter #88** — Flutter (1:35:55, 2.9K views)
+  https://www.youtube.com/watch?v=2h3teBoAHQY
+  item: `items/2h3teBoAHQY.md`
+- **AI Explained: The Agentic Gap: What Enterprises Think vs. What Actually Works** — Fiddler AI (56:15, 11 views)
+  https://www.youtube.com/watch?v=7G_C-FjtTLM
+  item: `items/7G_C-FjtTLM.md`
+- **The Most Dangerous AI Model Ever: Mythos** — AI Revolution (17:37, 31.1K views)
+  https://www.youtube.com/watch?v=yBOOhzLltJA
+  item: `items/yBOOhzLltJA.md`
+- **I Made 2 AI Songs in Minutes (Tool + Prompts Revealed)** — Everything AI and Law Podcast (3:19, 12 views)
+  https://www.youtube.com/watch?v=ck7Dtc5oCBA
+  item: `items/ck7Dtc5oCBA.md`
+- **Builders Unscripted: Ep. 2 - Ashe Magalhaes, Founder of Hearth AI** — OpenAI (33:39, 657 views)
+  https://www.youtube.com/watch?v=flweA_I-VKE
+  item: `items/flweA_I-VKE.md`
+- **The Invisible AI Breach: How "Trust Collapse" Destroys Security | Rynaut - The Agentic Architect** — Rynaut — Architecting Automation (6:02, new)
+  https://www.youtube.com/watch?v=RiYtTAQMQiE
+  item: `items/RiYtTAQMQiE.md`
+- **Google Sheets to AI Agent Automation with n8n** — Fayyaz Ahmed | Shopify Developer (9:41, 5 views)
+  https://www.youtube.com/watch?v=nWPwQG3oitI
+  item: `items/nWPwQG3oitI.md`
+- **Germany Hiring Indians 2026 | 288,000 Jobs  | How to Apply Without Agent (Full Guide)** — Your Knowledge Buddy (10:25, 626 views)
+  https://www.youtube.com/watch?v=UCrXBOQOIFY
+  item: `items/UCrXBOQOIFY.md`
+- **What is Agent Memory? - William Lyon** — WeAreDevelopers (48:41, 146 views)
+  https://www.youtube.com/watch?v=-qbcIbmiv7g
+  item: `items/-qbcIbmiv7g.md`
+- **Me, Myself & AI — A Personal Learning Journey | Monthly AI Meetup Helsinki** — Growth Mindset Builder (31:37, 14 views)
+  https://www.youtube.com/watch?v=7PvY_8xMUnI
+  item: `items/7PvY_8xMUnI.md`
+- **Police chase crashes drawing safety concerns | FOX 11 LA** — FOX 11 Los Angeles (3:31, 3.6K views)
+  https://www.youtube.com/watch?v=2LkpSXY94gU
+  item: `items/2LkpSXY94gU.md`
+- **Building a Kubernetes Graph Engine for Agents** — Memgraph (1:00:09, 8 views)
+  https://www.youtube.com/watch?v=i4Ig8eGbJns
+  item: `items/i4Ig8eGbJns.md`
+- **Handing Over The Keys to Your Kingdom: AI-Driven Security Woes** — OpenSSF (58:25, 43 views)
+  https://www.youtube.com/watch?v=_KhRE8KgPy0
+  item: `items/_KhRE8KgPy0.md`
+- **Bitcoin Mining Revolution Time** — Bitcoin University (11:43, 1.7K views)
+  https://www.youtube.com/watch?v=Bjcn5OZwgcs
+  item: `items/Bjcn5OZwgcs.md`
+- **The AI Agent Wars - Comparing Managed AI Agent Architectures!** — Christoph Puppe | IT Security Expertise kompakt (9:04, 5 views)
+  https://www.youtube.com/watch?v=NoDYHBe1uww
+  item: `items/NoDYHBe1uww.md`

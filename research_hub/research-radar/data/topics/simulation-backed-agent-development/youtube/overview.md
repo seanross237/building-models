@@ -465,3 +465,90 @@ Full item files belong in `items/`.
 - **I reclaimed lands for the throne yet suffered unjust disgrace** — 一週短劇 Weekly Drama (2:02:54, 389 views)
   https://www.youtube.com/watch?v=rh6-aymY1Gs
   item: `items/rh6-aymY1Gs.md`
+
+## 2026-04-10 — 28 new videos
+
+- **Mariana van Zeller Investigates Crypto Scammers & More | Trafficked MEGA Episode | Nat Geo** — National Geographic (2:24:33, 13.4K views)
+  https://www.youtube.com/watch?v=Grb5vBtBZD0
+  item: `items/Grb5vBtBZD0.md`
+- **Starting with an Infinite Bullet Shotgun, I Gain an S-Class Ability Every Time I Collect a Beauty!** — Revel Manga Chronicles (25:58:48, 247 views)
+  https://www.youtube.com/watch?v=qeyM9cKlIRM
+  item: `items/qeyM9cKlIRM.md`
+- **Good Morning America Full Broadcast - Friday, April 10, 2026** — ABC News (1:08:33, 5.6K views)
+  https://www.youtube.com/watch?v=6zVZaRjmzgU
+  item: `items/6zVZaRjmzgU.md`
+- **【FULL】My Family Drained Me Dry,I Awaken a Cashback System and Takes Revenge!#minidrama** — RushMiniDrama (2:04:35, 5.4K views)
+  https://www.youtube.com/watch?v=oKuD0n2bkOo
+  item: `items/oKuD0n2bkOo.md`
+- **After 20 Years Of Betrayal, He Regressed To Level 1 To Slay The Gods.** — Nice Recap (2:41:33, 104 views)
+  https://www.youtube.com/watch?v=k6qjN6XWjmE
+  item: `items/k6qjN6XWjmE.md`
+- **Morning News NOW Full Episode – April 10** — NBC News (1:27:39, 6.8K views)
+  https://www.youtube.com/watch?v=1TRZG00Hp1M
+  item: `items/1TRZG00Hp1M.md`
+- **🔥【New】【Multi Sub】Harem of beasts EP 1-144 #anime #animation** — Joyland-Animation (9:05:31, 1.2K views)
+  https://www.youtube.com/watch?v=7a6ceyPP6fg
+  item: `items/7a6ceyPP6fg.md`
+- **Google AI Studio for Equity-Driven Enrichment Activities** — eLearning Consortium of Colorado (47:04, 11 views)
+  https://www.youtube.com/watch?v=fvWcDGPikzM
+  item: `items/fvWcDGPikzM.md`
+- **James Bridle—Questioning Machine Intelligence with Peter Bauman** — Le Random (51:43, 8 views)
+  https://www.youtube.com/watch?v=BIOeIaTDlwM
+  item: `items/BIOeIaTDlwM.md`
+- **Is Your Leadership Team Obsolete? (The "CEO Bot" Experiment)** — Container Solutions (31:09, new)
+  https://www.youtube.com/watch?v=7HyXvzOB5y8
+  item: `items/7HyXvzOB5y8.md`
+- **⚔️ Hundred Slays: God Slayer | Full Series Recap | Reborn to Defy the Gods** — Comic Time (4:51:16, 5 views)
+  https://www.youtube.com/watch?v=2WKuMy8KFqc
+  item: `items/2WKuMy8KFqc.md`
+- **OpenAI supports bill limiting liability for AI-driven mass harm: Wired | Next in AI | Astha La Vista** — Next in AI: Astha La Vista (6:27, 9 views)
+  https://www.youtube.com/watch?v=gYTV0njsb4M
+  item: `items/gYTV0njsb4M.md`
+- **💥【新番上线】《丧尸列车：我独占头等厢之权力的碰撞》病毒爆发，女继承林晚凭特权登丧尸列车，卷阴谋、斗人心，终成免疫者，独赴零号站探真相！#斗破动漫 #逆袭 #战斗 #donghua** — Labubububu Animation (2:59:26, 451 views)
+  https://www.youtube.com/watch?v=4b1nFzKODAc
+  item: `items/4b1nFzKODAc.md`
+- **🌟【新番上线|ENG SUB】《天才爆震》F级学渣竟写出绝密图纸，当众打脸嘲讽者，携校花逆袭成国宝天才！ 一口气看完 #漫剧 #热血 #玄幻 #战斗 #苍穹动漫** — Dragon Animation Club (1:01:47, 1.4K views)
+  https://www.youtube.com/watch?v=FTcR8Q_aZ-w
+  item: `items/FTcR8Q_aZ-w.md`
+- **Operation Bernhard: The Counterfeit Plot That Almost Broke Britain** — Economy in Doc (43:46, 5 views)
+  https://www.youtube.com/watch?v=dkT2jRXVtlQ
+  item: `items/dkT2jRXVtlQ.md`
+- **St. Tammany Parish Council Meeting : April 9, 2026** — STPGtv (3:42:38, 101 views)
+  https://www.youtube.com/watch?v=j-60IjVfrek
+  item: `items/j-60IjVfrek.md`
+- **【FULL】EP01-80💥现代医生穿成农家恶女！凭神医外挂虐渣男、斗庸医，看她如何从人人喊打变传世神医 | 合集 | MULTI SUB** — Amazing Anime Man (2:48:29, 4.5K views)
+  https://www.youtube.com/watch?v=5e2msSvzCcc
+  item: `items/5e2msSvzCcc.md`
+- **Best of FabCon 2026: What’s New in Microsoft Fabric** — Concurrency Inc (50:58, 9 views)
+  https://www.youtube.com/watch?v=OvnoReFgmPI
+  item: `items/OvnoReFgmPI.md`
+- **[Live Surgery Room] EP17🧑‍⚕️Drama in the Hospital. | Zhang Binbin/Dai Xu | YOUKU** — YOUKU English-Get APP now (45:14, 430 views)
+  https://www.youtube.com/watch?v=DAWIeMPZnng
+  item: `items/DAWIeMPZnng.md`
+- **Dr. Zhivago: The Revolutionary Power of Love, Poetry & Resistance** — AI Eternal Chapters (40:30, 5 views)
+  https://www.youtube.com/watch?v=BkpZeK6TJ5A
+  item: `items/BkpZeK6TJ5A.md`
+- **全集【只是雇佣关系 Hired Lovers】她假扮浪女搅局相亲，他腹黑总裁将计就计。一纸契约，两相试探；假戏情深，终成眷属。** — 垂耳兔追剧 (4:45:37, 170 views)
+  https://www.youtube.com/watch?v=TxU6CEQ8700
+  item: `items/TxU6CEQ8700.md`
+- **Boy Activated a War Talent That Automatically Summons Soldier Legions and Builds a Super Empire!** — Panda Fantasy Chronicles (26:41:17, 246 views)
+  https://www.youtube.com/watch?v=qCwIPY5RVuM
+  item: `items/qCwIPY5RVuM.md`
+- **Episode 1: Word Vomit - Art, Authenticity & Building Community | The Essence of You Podcast** — In Real Life Films (1:35:14, 5 views)
+  https://www.youtube.com/watch?v=OIjVMHuHuV4
+  item: `items/OIjVMHuHuV4.md`
+- **She Couldn't Speak—Yet Was Forced to Marry Her Sister’s Mafia Boss… Then He Chose Her** — Noir Mafia Hearts (2:30:12, 35 views)
+  https://www.youtube.com/watch?v=tVVlRxclass
+  item: `items/tVVlRxclass.md`
+- **She Couldn't Speak—But Was Forced to Marry Her Sister’s Mafia Boss… Then He Claimed Her** — Dangerous Boss Stories (2:31:03, 36 views)
+  https://www.youtube.com/watch?v=yqOXs9M5UKI
+  item: `items/yqOXs9M5UKI.md`
+- **AI Newsreel Week of April 04 through April 10, 2026** — Fred Hinsley (8:32, 1 views)
+  https://www.youtube.com/watch?v=kVO5_tdV0W4
+  item: `items/kVO5_tdV0W4.md`
+- **我转职到完美犯罪世界觉醒SSS神级循环犯罪系统，单手掌控整个世界犯罪法则玩转终结所有黑暗案件成为顶级破案师** — 大学生手搓 (2:07:00, 487 views)
+  https://www.youtube.com/watch?v=0s060h4_kCo
+  item: `items/0s060h4_kCo.md`
+- **結婚3年還是處子，她以為是他珍惜她，直到目睹他對著初戀的照片解決生理需求，她才知原來只是不愛──她留下一封離婚協議離開，他後悔莫及！💚 [MULTI SUB]  #短劇 #虐恋 | YHKC** — 春禾短劇ShortTV (1:43:28, 4.0K views)
+  https://www.youtube.com/watch?v=9E_rI6sBl1E
+  item: `items/9E_rI6sBl1E.md`

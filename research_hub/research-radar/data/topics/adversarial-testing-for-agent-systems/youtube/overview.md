@@ -198,3 +198,12 @@ Full item files belong in `items/`.
 - **Brew #63: Skanowanie Mózgu przez Metę, Mistral i Europejska Suwerenność LLM, 4 Zawody Przyszłości** — CTO Morning Coffee (1:23:22, 158 views)
   https://www.youtube.com/watch?v=-7qtCgFjVjM
   item: `items/-7qtCgFjVjM.md`
+
+## 2026-04-10 — 2 new videos
+
+- **SAD** — Thomas (4:16, 9 views)
+  https://www.youtube.com/watch?v=zzW73tNjCqg
+  item: `items/zzW73tNjCqg.md`
+- **Happiness Was Never the Point! | Rebecca Goldstein on Mattering** — Philosophy Everyday (1:39:01, 1 views)
+  https://www.youtube.com/watch?v=TjgO_BE3JZ4
+  item: `items/TjgO_BE3JZ4.md`

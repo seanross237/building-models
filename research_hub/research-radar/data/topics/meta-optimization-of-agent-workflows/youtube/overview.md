@@ -231,3 +231,33 @@ Full item files belong in `items/`.
 - **Package Contracting** — IT4T Solutions Pvt Ltd (12:02, 3 views)
   https://www.youtube.com/watch?v=VVa43bs6tj8
   item: `items/VVa43bs6tj8.md`
+
+## 2026-04-10 — 9 new videos
+
+- **Why Google is Terrified of Meta’s New AI Agents** — The Inference (2:08, new)
+  https://www.youtube.com/watch?v=OqWpNJfjffA
+  item: `items/OqWpNJfjffA.md`
+- **AutoAgent The Open Source Library That Engineers Itself Overnight** — Eddy Says Hi #EddySaysHi (5:21, 2 views)
+  https://www.youtube.com/watch?v=VIHYWTwqFl0
+  item: `items/VIHYWTwqFl0.md`
+- **S4: EP.10⚙️ We Tested Claude Max vs Cursor for 3 Months. This Happened.** — Sean and Andrew (48:09, 4 views)
+  https://www.youtube.com/watch?v=00GYnzohRlU
+  item: `items/00GYnzohRlU.md`
+- **Meta’nın Yeni AI’ı Muse Spark: Claude Code’a Ciddi Rakip Çıktı!** — Ömer Göçmen | Yapay Zeka & Otomasyon (15:55, 45 views)
+  https://www.youtube.com/watch?v=o6UVBnnCsp4
+  item: `items/o6UVBnnCsp4.md`
+- **$8K Chrome Extension Built by AI - I Wrote ZERO Lines of Code!** — Ramanpal Singh (1:23:57, 1 views)
+  https://www.youtube.com/watch?v=U36oIZM62Cw
+  item: `items/U36oIZM62Cw.md`
+- **🎮 MIKS BHAUU AALA !!! [ ROAD TO 10K SUBSCRIBERS ] | EMJAY 27** — EMJAY 27 (NA, new)
+  https://www.youtube.com/watch?v=rhJLoFLXbC0
+  item: `items/rhJLoFLXbC0.md`
+- **Anthropic WITHHOLDS Claude Mythos & Google Drops Gemma 4 | AI News This Week (Apr 9, 2026)** — Allied Angels: Startup & VC Insights (6:42, 20 views)
+  https://www.youtube.com/watch?v=-vQ3udQT5bs
+  item: `items/-vQ3udQT5bs.md`
+- **Advancing to AI's Next Frontier: Insights From Jeff Dean and Bill Dally** — NVIDIA Developer (59:02, 625 views)
+  https://www.youtube.com/watch?v=DqMIYc-keBQ
+  item: `items/DqMIYc-keBQ.md`
+- **ThursdAI LIVE from London: Claude Mythos, Muse Spark & More w/ Swyx, VB (OpenAI), Gemini & OpenClaw** — Alex Volkov from ThursdAI (1:59:28, 119 views)
+  https://www.youtube.com/watch?v=xxZz-TUMyfc
+  item: `items/xxZz-TUMyfc.md`

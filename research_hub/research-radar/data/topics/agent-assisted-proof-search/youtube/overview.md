@@ -651,3 +651,96 @@ Full item files belong in `items/`.
 - **Meet the Press NOW – April 8** — NBC News (49:52, 106.7K views)
   https://www.youtube.com/watch?v=pYXtE2b1BP0
   item: `items/pYXtE2b1BP0.md`
+
+## 2026-04-10 — 30 new videos
+
+- **Mistress Stella: A double life that led to a terrifying end...** — Архив Волкодава (1:29:50, 876 views)
+  https://www.youtube.com/watch?v=mT7WooF1Bnc
+  item: `items/mT7WooF1Bnc.md`
+- **Kamala Harris slams Donald Trump on Iran War, talks possible 2028 presidential run: Full interview** — USA TODAY (46:22, 598 views)
+  https://www.youtube.com/watch?v=rmrvFtuVpAk
+  item: `items/rmrvFtuVpAk.md`
+- **RUMOR: “Nancy Guthrie’s Location EXPOSED? Brian Entin Reveals SHOCKING New Clues!”** — The Crime Vault (30:03, 86 views)
+  https://www.youtube.com/watch?v=woYYAdrOlk8
+  item: `items/woYYAdrOlk8.md`
+- **Губарев у Дудя | Z-спикеры продолжают прозревать (English subtitles) @Max_Katz** — Максим Кац (20:03, 493.0K views)
+  https://www.youtube.com/watch?v=18ljp0dpvZI
+  item: `items/18ljp0dpvZI.md`
+- **【2026最新古装悬疑电视剧 云襄传第二季18】陈晓本是隐士侠客，却被迫卷入江湖纷争⚡️一桩谜案竟暗藏惊天阴谋🔪他抽丝剥茧，破案求生！#cdrama #movie #电视剧 #电影 #悬疑 #古装** — 诡事放映厅 (1:41:31, 5.1K views)
+  https://www.youtube.com/watch?v=ukGdCXYh4Pw
+  item: `items/ukGdCXYh4Pw.md`
+- **How Environmentalists Became the FBI's #1 Threat** — Our Changing Climate (47:27, 1.1K views)
+  https://www.youtube.com/watch?v=hj0T4Re9nAs
+  item: `items/hj0T4Re9nAs.md`
+- **Melania Talks Epstein| Trump Surrenders, But Hormuz Still Closed| The Entire World Hates America** — David Feldman (2:17:19, 67.6K views)
+  https://www.youtube.com/watch?v=ewBNXCC7_U8
+  item: `items/ewBNXCC7_U8.md`
+- **Emperor Visited The "Poorest" Baron & Found A Modern City In 1200!- Manhwa Recap** — Silas Recap (2:05:47, 4.9K views)
+  https://www.youtube.com/watch?v=MpG1UYH7m30
+  item: `items/MpG1UYH7m30.md`
+- **Egyptologists Are WRONG. The 2.3 Million Pyramid Mystery Is Finally SOLVED** — The Infographics Show (10:43, 137.1K views)
+  https://www.youtube.com/watch?v=dc6oWOH57TQ
+  item: `items/dc6oWOH57TQ.md`
+- **A Rural Cleaning Lady Hid In The Company For Years—Then Her 3 CEO Sons Exposed Her Identity!** — Cocoa Daily Drama (1:46:39, 2.9K views)
+  https://www.youtube.com/watch?v=p33XrtFFtns
+  item: `items/p33XrtFFtns.md`
+- **I Traversed as the Villain Groom: My Inner Voice Exposed to the Empress!【Consort's Comeback】** — Blaze Drama (2:23:22, 57.0K views)
+  https://www.youtube.com/watch?v=fg-FtC6vW0M
+  item: `items/fg-FtC6vW0M.md`
+- **She Grew Up With No Freedom—Until a Popular Senior Saw Her First and Refused to Let Her Go** — Binge Drama (1:52:05, 1.0K views)
+  https://www.youtube.com/watch?v=PnfY_WSlPdM
+  item: `items/PnfY_WSlPdM.md`
+- **They Mocked His Weak Goblin Summon, Until He Wiped Out an Entire Tribe With One Trick!** — Bella's Comic Chronicles (23:39:14, 377 views)
+  https://www.youtube.com/watch?v=J2Ch3Gvv8ME
+  item: `items/J2Ch3Gvv8ME.md`
+- **RECAP: Tanner Horner Penalty Phase: Day 3   Afternoon Testimony** — Pretty Lies And Alibis (21:44, 3.9K views)
+  https://www.youtube.com/watch?v=93oBeQMZd9k
+  item: `items/93oBeQMZd9k.md`
+- **Starting with an Infinite Bullet Shotgun, I Gain an S-Class Ability Every Time I Collect a Beauty!** — Revel Manga Chronicles (25:58:48, 247 views)
+  https://www.youtube.com/watch?v=qeyM9cKlIRM
+  item: `items/qeyM9cKlIRM.md`
+- **Reborn, She Controlled Everything in Village, Except the Man She Fell For【Boss Lady Back in the 70s】** — Heartline Drama (2:24:23, 15.2K views)
+  https://www.youtube.com/watch?v=NBcVUoChoGQ
+  item: `items/NBcVUoChoGQ.md`
+- **【Multi Sub】At 60, She Chose to Have Another Baby to Stop Her Son-in-Law From Taking Everything** — StardustTV - Movies & Dramas (2:02:19, 1.8K views)
+  https://www.youtube.com/watch?v=CxtG9puAn8M
+  item: `items/CxtG9puAn8M.md`
+- **新劇搶先看【掌心暖陽】她被病態母愛囚禁整個青春，校草學長卻用溫柔撕開一道光！他教她反抗，帶她逃課。當母親當眾掌摑，他脫下外套將她護在懷裏——這場叛逆，他陪她贏到底** — 心動劇時刻Daily (1:52:05, 49.7K views)
+  https://www.youtube.com/watch?v=p2q_bAGo6M0
+  item: `items/p2q_bAGo6M0.md`
+- **無性婚姻三年，她推來離婚協議他卻忙著哄白月光連看都不看直接簽下，她徹底消失后他才發現自己早已離不開她，滿世界追妻求複合** — SmileTurn Drama (1:29:01, 13.7K views)
+  https://www.youtube.com/watch?v=VESWqkdhiyY
+  item: `items/VESWqkdhiyY.md`
+- **[ENG SUB]✨A Nine Heavens Goddess Descends to Earth, No Mortal or Demon Can Handle Her Wrathr#drama** — Twilight Drama Dreams💫 (1:50:09, 5.1K views)
+  https://www.youtube.com/watch?v=XO9nPGvgPbY
+  item: `items/XO9nPGvgPbY.md`
+- **He Left Her For Another Woman; She Married A Ceo, And Now He Is Full Of Regret** — Queen ShortDrama (1:49:20, 1.0K views)
+  https://www.youtube.com/watch?v=UkqXWmlKdAQ
+  item: `items/UkqXWmlKdAQ.md`
+- **First Nation leaders meeting over DRIPA | CTV Your Morning Vancouver for April 9, 2026** — CTV News (2:16:40, 1.1K views)
+  https://www.youtube.com/watch?v=qIYx5tAgksg
+  item: `items/qIYx5tAgksg.md`
+- **Yixuan Wang - Data-Driven Discovery and Verification of Singularities in Nonlinear PDEs** — MSR NE Generative Modeling & Sampling Seminar (43:52, 2 views)
+  https://www.youtube.com/watch?v=LfL3QOp4Xns
+  item: `items/LfL3QOp4Xns.md`
+- **【FULL】Dumped and Beaten,He Gets a System,Becomes a Wild “Street King” to Take Revenge!#minidrama** — RushMiniDrama (2:18:02, 3.4K views)
+  https://www.youtube.com/watch?v=qu1rlBjkhvg
+  item: `items/qu1rlBjkhvg.md`
+- **Advancing to AI's Next Frontier: Insights From Jeff Dean and Bill Dally** — NVIDIA Developer (59:02, 625 views)
+  https://www.youtube.com/watch?v=DqMIYc-keBQ
+  item: `items/DqMIYc-keBQ.md`
+- **九天玄女下凡歷劫，第一天便讓豪門世家掌權人的妹妹起死回生！人人皆說她這個黃毛丫頭是不自量力，她屢破邪術解怨靈斗不化骨，專治各種敗類邪祟，攜手頂級權貴除祟渡劫，七情圓滿回歸仙位！#甜宠 #先婚后爱** — 劇好追 (1:55:32, 8.6K views)
+  https://www.youtube.com/watch?v=BQYE9uxkaU0
+  item: `items/BQYE9uxkaU0.md`
+- **🔥【New】【Multi Sub】Harem of beasts EP 1-144 #anime #animation** — Joyland-Animation (9:05:31, 1.2K views)
+  https://www.youtube.com/watch?v=7a6ceyPP6fg
+  item: `items/7a6ceyPP6fg.md`
+- **The Official House of Villains Podcast | Episode 7: The ****ing Tides Have Changed** — Peacock (46:56, 795 views)
+  https://www.youtube.com/watch?v=hv6Gy6WON78
+  item: `items/hv6Gy6WON78.md`
+- **13News Top Stories | 6 a.m., April 10, 2026** — WTHR (8:54, 524 views)
+  https://www.youtube.com/watch?v=c9o7N4UeHD8
+  item: `items/c9o7N4UeHD8.md`
+- **Cheated guy unlocks a system—gets rich and powerful as beauties chase him, ex begs** — 虎王短劇TigerDrama (2:17:52, 1.5K views)
+  https://www.youtube.com/watch?v=fb56jSLfo-k
+  item: `items/fb56jSLfo-k.md`

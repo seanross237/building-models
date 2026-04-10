@@ -1,0 +1,26 @@
+# How Do You Become an Astronaut? 🚀 Jeremy Hansen's Journey Explained for Kids
+
+- Topic: `agents solving hard science problems`
+- Priority: `super_relevant`
+- Source context: `eywa, atlas`
+- Type: `youtube`
+- Video ID: `ORp4e-_tt1w`
+- Channel: `News For Kids With James`
+- Duration: `7:27`
+- Views: `1 views`
+- Upload date: `NA`
+- URL: https://www.youtube.com/watch?v=ORp4e-_tt1w
+- Collected at UTC: `2026-04-10T18:15:21Z`
+- Transcript status: `pending`
+
+## Summary
+
+Not analyzed yet.
+
+## Transcript
+
+Transcript not collected yet.
+
+## Notes
+
+- Freshly collected by Research Radar.

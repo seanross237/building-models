@@ -228,3 +228,18 @@ Full item files belong in `items/`.
 - **💥ENG SUB💥【穿越末世：我掌控双界资源】Apocalypse Transcender: Master of Two Worlds 第1-110集 #穿越 #热血 #战斗 #动漫** — 超有钱动漫 Anime Club (9:09:22, 122 views)
   https://www.youtube.com/watch?v=4OtlsYDXGDQ
   item: `items/4OtlsYDXGDQ.md`
+
+## 2026-04-10 — 4 new videos
+
+- **Chris Aniszczyk, CNCF | MCP Dev Summit 2026** — SiliconANGLE theCUBE (25:02, 131 views)
+  https://www.youtube.com/watch?v=D2bR7IFcqFs
+  item: `items/D2bR7IFcqFs.md`
+- **Leading the Future of Agentic Enterprise with MuleSoft** — Salesforce (25:39, 284 views)
+  https://www.youtube.com/watch?v=aeBrTX6N9io
+  item: `items/aeBrTX6N9io.md`
+- **Claude Managed Agents Clearly Explained (and why it matters)** — Corey Ganim and Nick Spisak (12:40, 162 views)
+  https://www.youtube.com/watch?v=nAOyErphp5M
+  item: `items/nAOyErphp5M.md`
+- **HE TIME-TRAVELED TO ANCIENT CHINA, ONLY 3 DAYS TO LIVE—MUST SOLVE A MURDER TO SURVIVE!** — Yuewen Shorts Drama (2:27:14, 4.3K views)
+  https://www.youtube.com/watch?v=1Q8AVhQ_7gA
+  item: `items/1Q8AVhQ_7gA.md`

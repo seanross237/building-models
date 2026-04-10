@@ -654,3 +654,96 @@ Full item files belong in `items/`.
 - **Alberta clipper brings return of snow | CTV News Saskatchewan Your Morning for April 8, 2026** — CTV News (2:17:26, 2.0K views)
   https://www.youtube.com/watch?v=B41sn_wOy5w
   item: `items/B41sn_wOy5w.md`
+
+## 2026-04-10 — 30 new videos
+
+- **Advancing Pediatric CGT Clinical Trials: Scientific, Ethical, Regulatory & Practical Considerations** — U.S. Food and Drug Administration (7:37:30, 3.4K views)
+  https://www.youtube.com/watch?v=JGD68JebQJA
+  item: `items/JGD68JebQJA.md`
+- **AI Explained: The Agentic Gap: What Enterprises Think vs. What Actually Works** — Fiddler AI (56:15, 11 views)
+  https://www.youtube.com/watch?v=7G_C-FjtTLM
+  item: `items/7G_C-FjtTLM.md`
+- **Don't Outsource Your Brain: A Framework for Human Agency in AI-Assisted Work** — eLearning Consortium of Colorado (39:13, 13 views)
+  https://www.youtube.com/watch?v=XFuZ-cStKEE
+  item: `items/XFuZ-cStKEE.md`
+- **Starting with an Infinite Bullet Shotgun, I Gain an S-Class Ability Every Time I Collect a Beauty!** — Revel Manga Chronicles (25:58:48, 247 views)
+  https://www.youtube.com/watch?v=qeyM9cKlIRM
+  item: `items/qeyM9cKlIRM.md`
+- **The Foundation of Modern Intelligence | VAST Data** — VAST Data (34:29, 93 views)
+  https://www.youtube.com/watch?v=a0gEOMUFkg0
+  item: `items/a0gEOMUFkg0.md`
+- **The Relativity Gambit: The Man Who Travelled Into the Past to Steal the Future (TEASER)** — STERLING SCIENCE (1:09, 46 views)
+  https://www.youtube.com/watch?v=0nFBqBLWVhw
+  item: `items/0nFBqBLWVhw.md`
+- **Leadership by Design: Authenticity, Aesthetics and Agency** — WellesleyCollege (1:03:34, 4 views)
+  https://www.youtube.com/watch?v=xUAJv7-drtA
+  item: `items/xUAJv7-drtA.md`
+- **The Relativity Gambit: The Man Who Travelled Into the Past to Steal the Future** — STERLING SCIENCE (17:39, 5 views)
+  https://www.youtube.com/watch?v=gDoX6J9NPDQ
+  item: `items/gDoX6J9NPDQ.md`
+- **Longevity In the Media | Longevity Summit Panel at the Buck Institute for Research on Aging** — Lifespan Research Institute (37:13, 28 views)
+  https://www.youtube.com/watch?v=I0VTFgLDV1M
+  item: `items/I0VTFgLDV1M.md`
+- **Classified Facility Sealed After Quantum AI Exceeded All Theoretical Limits** — Luminox (27:36, 2.7K views)
+  https://www.youtube.com/watch?v=AuWlpm4bafQ
+  item: `items/AuWlpm4bafQ.md`
+- **They Mocked His Weak Goblin Summon, Until He Wiped Out an Entire Tribe With One Trick!** — Bella's Comic Chronicles (23:39:14, 377 views)
+  https://www.youtube.com/watch?v=J2Ch3Gvv8ME
+  item: `items/J2Ch3Gvv8ME.md`
+- **Flutter AI skills | Observable Flutter #88** — Flutter (1:35:55, 2.9K views)
+  https://www.youtube.com/watch?v=2h3teBoAHQY
+  item: `items/2h3teBoAHQY.md`
+- **Happiness Was Never the Point! | Rebecca Goldstein on Mattering** — Philosophy Everyday (1:39:01, 1 views)
+  https://www.youtube.com/watch?v=TjgO_BE3JZ4
+  item: `items/TjgO_BE3JZ4.md`
+- **I filmed a mythical man-eating beast in the woods, only to uncover a terrifying alien secret!** — ถนอม แก้วธรรม (10:13:31, 77 views)
+  https://www.youtube.com/watch?v=rknh6oBHMhM
+  item: `items/rknh6oBHMhM.md`
+- **AI Data Pipeline in Action | VAST Data** — VAST Data (37:27, 60 views)
+  https://www.youtube.com/watch?v=AsrM22-uuMg
+  item: `items/AsrM22-uuMg.md`
+- **Board of Supervisors - 4/7/26** — County of Sacramento (4:39:32, 3 views)
+  https://www.youtube.com/watch?v=OkU3y3jyjPY
+  item: `items/OkU3y3jyjPY.md`
+- **The Next Chapter of the VAST AI Operating System | VAST Data** — VAST Data (1:00:19, 174 views)
+  https://www.youtube.com/watch?v=AGETjrW8yt8
+  item: `items/AGETjrW8yt8.md`
+- **Aging Untold: What families should know about cannabis edibles in dementia care** — Aging Untold (22:18, 1 views)
+  https://www.youtube.com/watch?v=sGR-ZmRK5jI
+  item: `items/sGR-ZmRK5jI.md`
+- **OLLI At the U: The Power of Ordinary Magic** — Osher Lifelong Learning Institute at UMN (1:30:23, new)
+  https://www.youtube.com/watch?v=lph-rLMg098
+  item: `items/lph-rLMg098.md`
+- **Office Hours: Early-Career Professional Panel** — National NSSLHA (1:25:38, new)
+  https://www.youtube.com/watch?v=PMgEVFa-YYo
+  item: `items/PMgEVFa-YYo.md`
+- **Chris Aniszczyk, CNCF | MCP Dev Summit 2026** — SiliconANGLE theCUBE (25:02, 131 views)
+  https://www.youtube.com/watch?v=D2bR7IFcqFs
+  item: `items/D2bR7IFcqFs.md`
+- **log x = 2 Answer is not 4. Literally many failed!.** — Fast and Easy Maths ! (1:10, 359 views)
+  https://www.youtube.com/watch?v=rqEroQql5gE
+  item: `items/rqEroQql5gE.md`
+- **From DARPA to Robotaxis to Warehouses — The Full Arc of Autonomy** — MIT Mobility Initiative (1:00:32, 25 views)
+  https://www.youtube.com/watch?v=ylDEGbm920I
+  item: `items/ylDEGbm920I.md`
+- **Ahead of the Threat Podcast: Season 2, Episode 5 — Joe Levy** — FBI – Federal Bureau of Investigation (1:18:42, 956 views)
+  https://www.youtube.com/watch?v=vKCWVReOkXI
+  item: `items/vKCWVReOkXI.md`
+- **Policy Panel: It’s Even Worse Than It Looks: Donald Trump and America’s Future** — Humphrey School UMN (1:08:38, 153 views)
+  https://www.youtube.com/watch?v=Ixr-ey5f4-0
+  item: `items/Ixr-ey5f4-0.md`
+- **We Took ThursdAI to London — Mythos, Muse Spark, GLM-5.1 & 5 Guests | AI Engineer Europe** — Alex Volkov from ThursdAI (1:59:28, 119 views)
+  https://www.youtube.com/watch?v=xxZz-TUMyfc
+  item: `items/xxZz-TUMyfc.md`
+- **How Do You Become an Astronaut? 🚀 Jeremy Hansen's Journey Explained for Kids** — News For Kids With James (7:27, 1 views)
+  https://www.youtube.com/watch?v=ORp4e-_tt1w
+  item: `items/ORp4e-_tt1w.md`
+- **Budget consultations on sports in Edmonton | CTV Your Morning Edmonton for April 10, 2026** — CTV News (2:15:21, 29 views)
+  https://www.youtube.com/watch?v=AKXJri917Fw
+  item: `items/AKXJri917Fw.md`
+- **AI, Quantum, and the Future of Work (Dr. Claudia Krywiak, CEO of OCI)** — Future with Fawzi (25:49, 20 views)
+  https://www.youtube.com/watch?v=JsfMw-FOp9s
+  item: `items/JsfMw-FOp9s.md`
+- **W1D4 - Working with Docker - Week2 Joining Details [9Apr]** — Tausief S (3:55:19, 1.6K views)
+  https://www.youtube.com/watch?v=cvepCq9Tj8E
+  item: `items/cvepCq9Tj8E.md`

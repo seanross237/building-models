@@ -423,3 +423,73 @@ Full item files belong in `items/`.
   source: https://www.youtube.com/watch?v=UqrnNNiduRg
   summary file: `items/youtube--UqrnNNiduRg.md`
   presentation candidate: `false`
+
+## 2026-04-10 — youtube score 5
+
+- **Agent Skills, Clearly Explained (And Why They Change Everything)**
+  source: https://www.youtube.com/watch?v=V-Axu9aeOAo
+  summary file: `items/youtube--V-Axu9aeOAo.md`
+  presentation candidate: `false`
+
+## 2026-04-10 — youtube score 5
+
+- **Pyre [Part 1]**
+  source: https://www.youtube.com/watch?v=V04CZ-K0A8s
+  summary file: `items/youtube--V04CZ-K0A8s.md`
+  presentation candidate: `false`
+
+## 2026-04-10 — youtube score 6
+
+- **UnDaoDu is LIVE ! Why large language models refused to turn other large language models off? live!**
+  source: https://www.youtube.com/watch?v=WTEkvubX-6M
+  summary file: `items/youtube--WTEkvubX-6M.md`
+  presentation candidate: `false`
+
+## 2026-04-10 — youtube score 6
+
+- **How Claude Code Saves Tokens on MCP Tools: tool_search & Deferred Loading**
+  source: https://www.youtube.com/watch?v=WZKZw9oqg20
+  summary file: `items/youtube--WZKZw9oqg20.md`
+  presentation candidate: `false`
+
+## 2026-04-10 — youtube score 6
+
+- **Claude Code LEAK: Was Anthropic im Source Code versteckt hat**
+  source: https://www.youtube.com/watch?v=Wa98kS_m6fw
+  summary file: `items/youtube--Wa98kS_m6fw.md`
+  presentation candidate: `false`
+
+## 2026-04-10 — youtube score 5
+
+- **The Mafia Paid Millions to Wiretap Themselves**
+  source: https://www.youtube.com/watch?v=Wjz_uKY1_WI
+  summary file: `items/youtube--Wjz_uKY1_WI.md`
+  presentation candidate: `false`
+
+## 2026-04-10 — youtube score 5
+
+- **The Andrej Karpathy Method How to Build an LLM Council**
+  source: https://www.youtube.com/watch?v=XQM-7OiouF4
+  summary file: `items/youtube--XQM-7OiouF4.md`
+  presentation candidate: `false`
+
+## 2026-04-10 — youtube score 5
+
+- **Artemis II Test Flight Launch**
+  source: https://www.youtube.com/watch?v=Y0X8yNr5W0M
+  summary file: `items/youtube--Y0X8yNr5W0M.md`
+  presentation candidate: `false`
+
+## 2026-04-10 — youtube score 6
+
+- **UnDaoDu is LIVE ! Why large language models refused to turn other large language models off?**
+  source: https://www.youtube.com/watch?v=YVRCFr219ns
+  summary file: `items/youtube--YVRCFr219ns.md`
+  presentation candidate: `false`
+
+## 2026-04-10 — youtube score 5
+
+- **The Claude Code Leak Accidentally Revealed AI's Future. Oops.**
+  source: https://www.youtube.com/watch?v=Yb6fBGopf2M
+  summary file: `items/youtube--Yb6fBGopf2M.md`
+  presentation candidate: `false`

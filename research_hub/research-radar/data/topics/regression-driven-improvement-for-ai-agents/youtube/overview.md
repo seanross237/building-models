@@ -87,3 +87,18 @@ Full item files belong in `items/`.
 - **🐉【牧龙师】EP1-80超长合集丨 天才剑修为救同伴变成废人，阴差阳错与女武神黎一夜相欢 #anime #玄幻 #穿越** — 嗨皮漫画 (5:52:45, 48 views)
   https://www.youtube.com/watch?v=Izp_ku7YJzk
   item: `items/Izp_ku7YJzk.md`
+
+## 2026-04-10 — 4 new videos
+
+- **From DARPA to Robotaxis to Warehouses — The Full Arc of Autonomy** — MIT Mobility Initiative (1:00:32, 25 views)
+  https://www.youtube.com/watch?v=ylDEGbm920I
+  item: `items/ylDEGbm920I.md`
+- **揭示AI编程的致命盲区：TDAD架构通过图谱影响分析，将智能体代码回归率大幅降低70%** — Agent 创世纪 (8:47, 4 views)
+  https://www.youtube.com/watch?v=v69W7uFGRNg
+  item: `items/v69W7uFGRNg.md`
+- **CIS-41A Unit 7 Lecture: Software and Hardware Security** — Kasey Nguyen (1:45:15, 9 views)
+  https://www.youtube.com/watch?v=lRp48XTuAr8
+  item: `items/lRp48XTuAr8.md`
+- **🐉【FULL】EP01-80《牧龙师/Dragon Tamer》#动态漫画 #系统 #玄幻 #穿越 #冒險 #异能 #comics #无厘头 #重生 #系統 #热血 #搞笑 #逆襲 #原神 #逆袭** — 阅文漫画 (5:52:45, 800 views)
+  https://www.youtube.com/watch?v=IHA3k5WGvjA
+  item: `items/IHA3k5WGvjA.md`

@@ -27,3 +27,15 @@ Full item files belong in `items/`.
 - **Scope it out with Maia Plan Scope Refinement - Mendix 11.9 Release Video** — Mendix Community (15:06, 44 views)
   https://www.youtube.com/watch?v=-SNEJadtf0g
   item: `items/-SNEJadtf0g.md`
+
+## 2026-04-10 — 3 new videos
+
+- **Observability Unpacked: The Good, The Bad & The Expensive | Bhoopesh Sharma, Grafana Champion** — Techie Talks With Kuldeep (26:05, 27 views)
+  https://www.youtube.com/watch?v=zEP1iG25eKc
+  item: `items/zEP1iG25eKc.md`
+- **AI Data Pipeline in Action | VAST Data** — VAST Data (37:27, 60 views)
+  https://www.youtube.com/watch?v=AsrM22-uuMg
+  item: `items/AsrM22-uuMg.md`
+- **AI Explained: The Agentic Gap: What Enterprises Think vs. What Actually Works** — Fiddler AI (56:15, 11 views)
+  https://www.youtube.com/watch?v=7G_C-FjtTLM
+  item: `items/7G_C-FjtTLM.md`

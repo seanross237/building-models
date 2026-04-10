@@ -642,3 +642,96 @@ Full item files belong in `items/`.
 - **The Personalized Playbook: Build Your Ultimate Productivity System** — Distilled Protocols (7:09, new)
   https://www.youtube.com/watch?v=HjvkrPsXqVE
   item: `items/HjvkrPsXqVE.md`
+
+## 2026-04-10 — 30 new videos
+
+- **They Promised AI Would Eliminate 300 Million Jobs- Why They Were Wrong.** — Redhawk Media Group (16:27, 5.9K views)
+  https://www.youtube.com/watch?v=lctlDGv0eKc
+  item: `items/lctlDGv0eKc.md`
+- **Episode 45: Why Running AI Systems is Harder Than You Think** — Cloudbrewery (3:33, 29 views)
+  https://www.youtube.com/watch?v=Z1-FpYvVoio
+  item: `items/Z1-FpYvVoio.md`
+- **Multi-Agent Systems Explained — When One AI Agent Isn't Enough | Core Agent Systems Part 4** — AI Evolution and Learning Path (5:01, 5 views)
+  https://www.youtube.com/watch?v=DJtKHBAzJ5Q
+  item: `items/DJtKHBAzJ5Q.md`
+- **AI BUBBLE POP - Half of AI Data Centers Are CANCELLED or Delayed** — EUREKA US (10:53, 4.6K views)
+  https://www.youtube.com/watch?v=UbnZpV0_2RY
+  item: `items/UbnZpV0_2RY.md`
+- **Episode 39 — Improve Interpretability and Reduce Model Risk During AI Testing** — Bare Metal Cyber (15:51, new)
+  https://www.youtube.com/watch?v=h8NeJWkUkJA
+  item: `items/h8NeJWkUkJA.md`
+- **Episode (014) - Latest Artificial Intelligence R&D Session with Digitalent & Mike Nedelko** — Digitalent - AI & Machine Learning Recruitment (57:49, 7 views)
+  https://www.youtube.com/watch?v=TgnLjM_K9gA
+  item: `items/TgnLjM_K9gA.md`
+- **What Is AI GRC? Everything Explained From Scratch (Before It's Too Late)** — GRC Coach: Hands-On Cyber Training (35:11, 53 views)
+  https://www.youtube.com/watch?v=npZwkGD9-d4
+  item: `items/npZwkGD9-d4.md`
+- **Claude Code just shipped the monitor tool** — Ray Amjad (7:53, 6.3K views)
+  https://www.youtube.com/watch?v=MpSf7EN5dhc
+  item: `items/MpSf7EN5dhc.md`
+- **One Country Quietly Won This Entire War | Prof. Jiang Analysis** — Prof. Jiang Analysis (28:42, 198.0K views)
+  https://www.youtube.com/watch?v=Vh12nZlZeEA
+  item: `items/Vh12nZlZeEA.md`
+- **Can AI Match Clinical Trial Patients Better Than Humans?** — AI Findings | Research Studies (4:22, 3 views)
+  https://www.youtube.com/watch?v=CdvZAl9A5gY
+  item: `items/CdvZAl9A5gY.md`
+- **Agentic AI Systems | LIve class starting this sunday #euron** — Euron (3:23, 279 views)
+  https://www.youtube.com/watch?v=SmRHf2doGDg
+  item: `items/SmRHf2doGDg.md`
+- **The deeper reason Mythos is dangerous** — 80,000 Hours (21:27, 643 views)
+  https://www.youtube.com/watch?v=Tjw9K9mQp4I
+  item: `items/Tjw9K9mQp4I.md`
+- **ISO/PAS 8800 Lesson 6: Safety-Related AI Development under ISO/PAS 8800** — Massimo Plavsic (1:21, 2 views)
+  https://www.youtube.com/watch?v=yDRQreGhSaI
+  item: `items/yDRQreGhSaI.md`
+- **The Foundation of Modern Intelligence | VAST Data** — VAST Data (34:29, 93 views)
+  https://www.youtube.com/watch?v=a0gEOMUFkg0
+  item: `items/a0gEOMUFkg0.md`
+- **Generative AI Full Course Free  | Gen AI Complete Course 2026 | Intellipaat** — Intellipaat (11:01:27, 7.1K views)
+  https://www.youtube.com/watch?v=0UH-z4BTblg
+  item: `items/0UH-z4BTblg.md`
+- **Java and Gen AI: JVM Agents With Embabel by Rod Johnson (Spring Creator)** — v JUG (1:35:32, 539 views)
+  https://www.youtube.com/watch?v=RDNrCz4EiFI
+  item: `items/RDNrCz4EiFI.md`
+- **Classified Facility Sealed After Quantum AI Exceeded All Theoretical Limits** — Luminox (27:36, 2.7K views)
+  https://www.youtube.com/watch?v=AuWlpm4bafQ
+  item: `items/AuWlpm4bafQ.md`
+- **RAG | Retrieval Augmented Generation Explained | Tamil AI Engineering Series** — Suneel D.K (7:24, new)
+  https://www.youtube.com/watch?v=4o1AIdgvCjo
+  item: `items/4o1AIdgvCjo.md`
+- **World's biggest MedTech fair opens in Shanghai with AI surgery, smart robots, global buyers watching** — ShanghaiEye魔都眼 (3:00, 727 views)
+  https://www.youtube.com/watch?v=AeYVSMFHZ7U
+  item: `items/AeYVSMFHZ7U.md`
+- **Use AI to Achieve Operational Excellence with the Well-Architected Framework practices** — Microsoft Developer (14:30, 433 views)
+  https://www.youtube.com/watch?v=PRpYptDTe4o
+  item: `items/PRpYptDTe4o.md`
+- **The Critique Paradox  Teaching LLMs to Self Correct** — MLSlops (7:01, new)
+  https://www.youtube.com/watch?v=mFj6Y1ZBLTY
+  item: `items/mFj6Y1ZBLTY.md`
+- **ISO/PAS 8800 Lesson 9:Lifecycle Management** — Massimo Plavsic (57, 2 views)
+  https://www.youtube.com/watch?v=w3C0yYV6IW0
+  item: `items/w3C0yYV6IW0.md`
+- **New EYE7 Smart Glasses and Eva AI w/ Jay Cormier from Eyedaptic! | Tech Connect Live!** — Vision Forward's Tech Connect (50:35, 305 views)
+  https://www.youtube.com/watch?v=8VTZjl8vIZU
+  item: `items/8VTZjl8vIZU.md`
+- **Who Should Own the Context Layer? Data Teams vs AI Teams [2026]** — Atlan (16:02, 5 views)
+  https://www.youtube.com/watch?v=fZjaYIvJ_rE
+  item: `items/fZjaYIvJ_rE.md`
+- **AI Data Pipeline in Action | VAST Data** — VAST Data (37:27, 60 views)
+  https://www.youtube.com/watch?v=AsrM22-uuMg
+  item: `items/AsrM22-uuMg.md`
+- **99% of people MISSED this $300B market shift** — Cheeky Crypto Unfiltered (17:34, 566 views)
+  https://www.youtube.com/watch?v=wHYm7GetW_k
+  item: `items/wHYm7GetW_k.md`
+- **Episode 29 — Define Business Context and Use Cases Before Building Any AI System** — Bare Metal Cyber (16:35, new)
+  https://www.youtube.com/watch?v=kJ-rC2Ctp0g
+  item: `items/kJ-rC2Ctp0g.md`
+- **LLM Data Pipeline with Airflow & Agents: From Weeks to Minutes** — DataSuperiority (11:47, 2 views)
+  https://www.youtube.com/watch?v=sORBro-J2do
+  item: `items/sORBro-J2do.md`
+- **Episode 43 — Assess Production AI After Release with Audits, Red Teaming, Threat Modeling, and Se...** — Bare Metal Cyber (18:59, new)
+  https://www.youtube.com/watch?v=tunubd1HaYs
+  item: `items/tunubd1HaYs.md`
+- **Agents of Chaos  Deconstructing the Autonomous Attack Surface** — Kevin Varley (7:08, 8 views)
+  https://www.youtube.com/watch?v=ZzKeZkzaZkA
+  item: `items/ZzKeZkzaZkA.md`

@@ -399,3 +399,84 @@ Full item files belong in `items/`.
 - **【Eng Sub】《隐龙镇世》| 战功赫赫归来反遭亲姐弟夺卡践踏，决然转身守护心中挚爱#anime #动态漫 #動漫** — 漫剧时光 (1:40:04, 191 views)
   https://www.youtube.com/watch?v=_fgVQ8TjKBw
   item: `items/_fgVQ8TjKBw.md`
+
+## 2026-04-10 — 26 new videos
+
+- **The Forbidden Master Looks Like A Jobless Lecher, But Secretly Commands The SSS-Rank Kun.** — Inosuke Recap (43:46:53, 240 views)
+  https://www.youtube.com/watch?v=5XFTNREB10c
+  item: `items/5XFTNREB10c.md`
+- **Reborn,forced to marry cruel CEO, but I tamed him & 2 rebel kids with cooking,now spoiled by them** — Mia Drama (2:13:51, 640 views)
+  https://www.youtube.com/watch?v=6YolrrzMds0
+  item: `items/6YolrrzMds0.md`
+- **🧿Стрелец♐Что Ждёт до Конца Апреля 2026💥События и Неожиданности в Вашей Судьбе⁉️Tarò Ispirazione** — Tarò Ispirazione (30:08, 281 views)
+  https://www.youtube.com/watch?v=CfQF8NdcVaI
+  item: `items/CfQF8NdcVaI.md`
+- **He awakened the SSS-level Flame ability and became the pride of the entire school!#animerecap** — KAI Manhwa Recap (11:48:55, 359 views)
+  https://www.youtube.com/watch?v=kJxAR6tdsoc
+  item: `items/kJxAR6tdsoc.md`
+- **一口氣看完《深月揽我心》| 荒年亂世被逼嫁老員外，她拉起鄰村傻子的手私定終身！誰知痴傻少年竟是隱匿世子，恢復記憶後背負血仇回京；她獨自承受流言身懷六甲，等著他踏雪歸來！#260410sy** — 聼風吟劇場 (1:03:57, 6.2K views)
+  https://www.youtube.com/watch?v=FbAR2qtLuDk
+  item: `items/FbAR2qtLuDk.md`
+- **8 Year Old Fairy Battles Demon King Falls To Earth, Becomes Lucky Star Saving The Noble Family!** — Gado-Gado Clips (2:42:43, 3.5K views)
+  https://www.youtube.com/watch?v=SQ8hOND7l_M
+  item: `items/SQ8hOND7l_M.md`
+- **After 20 Years Of Betrayal, He Regressed To Level 1 To Slay The Gods.** — Nice Recap (2:41:33, 104 views)
+  https://www.youtube.com/watch?v=k6qjN6XWjmE
+  item: `items/k6qjN6XWjmE.md`
+- **重生繼姐逼她替嫁給暴躁帶倆娃的老男人，坐等看她嫁過去受苦，她一手好廚藝把2個小魔王馴服乖乖喊「媽」，老公竟是上輩子暗戀她的頂級boss，受什麼苦？全家捧她當祖宗，這婚她贏麻了#冯祥琨 #陈酉西** — 追劇鴨 (2:13:51, 34.8K views)
+  https://www.youtube.com/watch?v=6l_JlacdHgM
+  item: `items/6l_JlacdHgM.md`
+- **Starting with an Infinite Bullet Shotgun, I Gain an S-Class Ability Every Time I Collect a Beauty!** — Revel Manga Chronicles (25:58:48, 247 views)
+  https://www.youtube.com/watch?v=qeyM9cKlIRM
+  item: `items/qeyM9cKlIRM.md`
+- **Personal Finance - Chapter 13 - Hedging** — Srihari's Lessons (7:42, 3 views)
+  https://www.youtube.com/watch?v=_mx404XtVIY
+  item: `items/_mx404XtVIY.md`
+- **MindPower Session** — MindMatrixEd (1:06:21, 975 views)
+  https://www.youtube.com/watch?v=jQRHDqMV_Os
+  item: `items/jQRHDqMV_Os.md`
+- **【MULTI SUB】現代男子一朝穿越，意外成女帝最信任的心腹，聯手逆襲超帶感#大女主 #穿越 #爽剧 #drama** — 微光剧场Micro Light Theater (2:09:35, 140 views)
+  https://www.youtube.com/watch?v=tUv_6gQOA_0
+  item: `items/tUv_6gQOA_0.md`
+- **【禁忌揭秘】以色列出埃及40年：生存奇迹背后，隐藏着残酷的“钱”与“死”！** — 聖經之光 (25:03, 3 views)
+  https://www.youtube.com/watch?v=HOhPgJwFSf4
+  item: `items/HOhPgJwFSf4.md`
+- **【完結】睜眼重生八十年代，她帶著一雙兒女艱難度日，受盡欺凌與冷眼，本以為餘生守活寡，卻沒想到「亡夫」竟死而復生，兩人情深不改，攜手並肩破局，一路逆襲翻盤，從此再無人敢輕視她半分！#大女主** — 劇熱門 (2:13:51, 24.3K views)
+  https://www.youtube.com/watch?v=Wg1sEjRLL68
+  item: `items/Wg1sEjRLL68.md`
+- **Capacity to Measure Progress Toward Sustainability in Global Food Systems** — M-RCBG_Harvard (1:10:23, 14 views)
+  https://www.youtube.com/watch?v=Lmh_e21NNiA
+  item: `items/Lmh_e21NNiA.md`
+- **🌟【新番上线|ENG SUB】《农村建航母合理吧》穷村长觉醒逆袭系统，花一元返利万倍，砸五亿造航母碾压式致富！ 一口气看完 #漫剧 #热血 #玄幻 #战斗 #苍穹动漫** — Dragon Animation Club (1:01:27, 4.5K views)
+  https://www.youtube.com/watch?v=P2-A5_CG2LQ
+  item: `items/P2-A5_CG2LQ.md`
+- **【嫡女壹身反骨，偏嫁高門當主母】（高清完整版）女將軍重生歸來，殺瘋了！周淩豐＆汪海敏#短剧 #热门短剧 #古风 #重生 #逆袭 #大女主 #王爷 #书辞短剧阁** — 书辞短剧阁 (3:11:22, 159 views)
+  https://www.youtube.com/watch?v=cdMa6P9YIYU
+  item: `items/cdMa6P9YIYU.md`
+- **Jason Sexton & Claude Atcho | 2025 Karl Barth Conference** — Center for Barth Studies (48:36, 2 views)
+  https://www.youtube.com/watch?v=WcEpPIgjL0M
+  item: `items/WcEpPIgjL0M.md`
+- **STA 4/9/26** — County of Sacramento (1:33:17, 4 views)
+  https://www.youtube.com/watch?v=BhoZcnuBaWQ
+  item: `items/BhoZcnuBaWQ.md`
+- **Climate Change Commission - Meeting of March 27, 2026** — Resilient Oʻahu (3:04:56, 20 views)
+  https://www.youtube.com/watch?v=qzPnAUK-bSk
+  item: `items/qzPnAUK-bSk.md`
+- **[MULTI SUB | FULL]武力值爆表嫡女&装傻充愣大皇子，前世被家人夺功废武害死，重生回山洞，当场摁住皇长子记牢她，手撕极品全家开启复仇！#MiniDrama #短剧  #古装 #复仇** — 爽剧核电站C-Drama Reactor (3:11:22, 3.1K views)
+  https://www.youtube.com/watch?v=5Z51B95fpqs
+  item: `items/5Z51B95fpqs.md`
+- **She Couldn't Speak—Yet Was Forced to Marry Her Sister’s Mafia Boss… Then He Chose Her** — Noir Mafia Hearts (2:30:12, 35 views)
+  https://www.youtube.com/watch?v=tVVlRxclass
+  item: `items/tVVlRxclass.md`
+- **She Couldn't Speak—But Was Forced to Marry Her Sister’s Mafia Boss… Then He Fell for Her** — Mafia Sinful Hearts (2:24:33, 83 views)
+  https://www.youtube.com/watch?v=RYAMwRoD2uM
+  item: `items/RYAMwRoD2uM.md`
+- **💥【新番上线】萌娃要拔花种菜，王爷口嫌体正直，府中温馨日常爆笑开启！《惜惜宝贝又整活啦》全集Multi SUB #热血 #漫剧 #动漫魔女** — 动漫魔女 (7:12:40, 3.8K views)
+  https://www.youtube.com/watch?v=YafRIa5zK4s
+  item: `items/YafRIa5zK4s.md`
+- **【Multi Sub】《我娶聖女後，系統逼我開枝散葉逆天改命》從廢柴皇子到皇室重點栽培，只因我生娃就能換頂級功法和資源#漫劇 #動態漫 #AI漫劇 #動漫 #動畫** — 神馬動漫 (1:21:09, 719 views)
+  https://www.youtube.com/watch?v=76HnfNDcVpA
+  item: `items/76HnfNDcVpA.md`
+- **【FULL】皇帝拯救刺殺自己的刺客，卻意外被雷擊中交換了身體，女刺客為了調查忠臣慘死的真相選擇替皇帝上朝參政，後面發現皇帝身世淒慘，完全被太后當成了傀儡，收集證據將太后打入大牢！《認錯硃砂》** — 三小猪追剧 (2:12:39, 207 views)
+  https://www.youtube.com/watch?v=Y1Fhh20Zu7I
+  item: `items/Y1Fhh20Zu7I.md`

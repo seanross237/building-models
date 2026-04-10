@@ -633,3 +633,96 @@ Full item files belong in `items/`.
 - **🌟【新番上线|ENG SUB】《被挖灵根？上交系统后国家带我反杀》濒死觉醒系统，废柴携蓝星科技逆袭！碾压仙宗，揭露暴行建联络站！ 一口气看完 #漫剧 #热血 #玄幻 #战斗 #苍穹动漫** — Dragon Animation Club (2:14:53, 4.0K views)
   https://www.youtube.com/watch?v=yzzBifXV9Q0
   item: `items/yzzBifXV9Q0.md`
+
+## 2026-04-10 — 30 new videos
+
+- **Build a Multi-Agent System & Master A2A Communication From Scratch | AI Agents Development** — CodersArts (3:30, 35 views)
+  https://www.youtube.com/watch?v=1TLUg0al4hA
+  item: `items/1TLUg0al4hA.md`
+- **Google Just Released Gemma 4 |The Most Intelligent Open Model Yet| AI World** — Cognivista Lab (9:49, 31 views)
+  https://www.youtube.com/watch?v=s_kK6__vMRc
+  item: `items/s_kK6__vMRc.md`
+- **Advancing to AI's Next Frontier: Insights From Jeff Dean and Bill Dally** — NVIDIA Developer (59:02, 625 views)
+  https://www.youtube.com/watch?v=DqMIYc-keBQ
+  item: `items/DqMIYc-keBQ.md`
+- **2026 Citizenship by Descent: Full Process & Document Checklist** — Jennifer Harding Marlin  Citizenship by investment (23:36, 116 views)
+  https://www.youtube.com/watch?v=37uePOdUay4
+  item: `items/37uePOdUay4.md`
+- **She Woke Up with FIVE Strangers. An Hour Later She Was Found Below the 10th Floor Balcony** — LAST FRAME (1:54:54, 1 views)
+  https://www.youtube.com/watch?v=6N9Wk00sl74
+  item: `items/6N9Wk00sl74.md`
+- **Daily AI Brief — Part 078 (2026-04-09)** — Everstone AI (25:09, new)
+  https://www.youtube.com/watch?v=KxaDqDUXdFk
+  item: `items/KxaDqDUXdFk.md`
+- **Fake disease fools AI chatbots & Agent benchmarks get stricter - AI News (Apr 10, 2026)** — The Automated Daily (8:06, 3 views)
+  https://www.youtube.com/watch?v=uSoBvvmmKo4
+  item: `items/uSoBvvmmKo4.md`
+- **I Tested All the Claude Prompts: Here is the Best One!** — Parlons IA (33:19, 2.0K views)
+  https://www.youtube.com/watch?v=iRCn9yKBIfo
+  item: `items/iRCn9yKBIfo.md`
+- **How Travel Agencies Use WhatsApp API to Stop Losing Bookings** — Respond.io (4:31, 13 views)
+  https://www.youtube.com/watch?v=1ANhKtyPKzM
+  item: `items/1ANhKtyPKzM.md`
+- **Trump’s Actions Never Made Sense - Until Now | Lepard & Dixon** — BTC Sessions and Simon Dixon (1:40:19, 3.2K views)
+  https://www.youtube.com/watch?v=YbdduZNB0so
+  item: `items/YbdduZNB0so.md`
+- **訂婚當天被渣男背叛，失意間錯把大佬當男模，一夜之後我想逃，他卻將我鎖住：既然招惹了我，就別想走！#chinesedrama #tvshow #chineseskits #shortfilms** — 心碎放映室 (2:05:34, 15 views)
+  https://www.youtube.com/watch?v=hc0ymKb67bA
+  item: `items/hc0ymKb67bA.md`
+- **They Mocked His Weak Goblin Summon, Until He Wiped Out an Entire Tribe With One Trick!** — Bella's Comic Chronicles (23:39:14, 377 views)
+  https://www.youtube.com/watch?v=J2Ch3Gvv8ME
+  item: `items/J2Ch3Gvv8ME.md`
+- **🔥Did Trump already foreshadow this 1300 years ago? The *Tui Bei Tu* reveals a bizarre dance posture.** — HIBY新聞 (2:08:23, 1.2K views)
+  https://www.youtube.com/watch?v=HTLnn-rLalI
+  item: `items/HTLnn-rLalI.md`
+- **Low-paid guy unlocks cashback, buys a ring, earns billions, girlfriend becomes richest!** — 傲心短劇No1Drama (1:47:16, 2.8K views)
+  https://www.youtube.com/watch?v=BdQ9u9BncFc
+  item: `items/BdQ9u9BncFc.md`
+- **Digital Nomad Business: How to Travel the World & Make Money Online? | Real Freedom** — BusinessAnywhere LLC (32:29, 13 views)
+  https://www.youtube.com/watch?v=SZ9rPpvlgJc
+  item: `items/SZ9rPpvlgJc.md`
+- **Starting with an Infinite Bullet Shotgun, I Gain an S-Class Ability Every Time I Collect a Beauty!** — Revel Manga Chronicles (25:58:48, 247 views)
+  https://www.youtube.com/watch?v=qeyM9cKlIRM
+  item: `items/qeyM9cKlIRM.md`
+- **PENDING:  - 529 S George St Charles Town WV 25414** — Cheryl Yates Real Estate (3:13, new)
+  https://www.youtube.com/watch?v=VzumStBrjNg
+  item: `items/VzumStBrjNg.md`
+- **She Hit 100% Bookings for 3.5 Years - Here’s the System Behind It** — Restaurant Rockstars |Restaurant Academy + Podcast (43:43, 25 views)
+  https://www.youtube.com/watch?v=s4xiqoYTy68
+  item: `items/s4xiqoYTy68.md`
+- **St. Tammany Parish Council Meeting : April 9, 2026** — STPGtv (3:42:38, 101 views)
+  https://www.youtube.com/watch?v=j-60IjVfrek
+  item: `items/j-60IjVfrek.md`
+- **窮小子郭霖與校花領證當天，意外激活「寵妻返現系統」！為妻豪擲六百萬買別墅，系統反手送他十億！打臉富二代、發布「盤古」神車血洗市場！面對商界大佬的暗算，他竟覺醒時空倒流神技，讓動他老婆的人血債血償！** — 剧迷大猫 (1:41:08, 18.8K views)
+  https://www.youtube.com/watch?v=fDHIbcGlvBQ
+  item: `items/fDHIbcGlvBQ.md`
+- **Why Cuba Could Be the Next Flashpoint: Espionage, Castros, Guns w/ Former CIA CoS Moises Juliao** — Restricted Handling (48:09, 19 views)
+  https://www.youtube.com/watch?v=lGvV4IQDyr4
+  item: `items/lGvV4IQDyr4.md`
+- **Ahead of the Threat Podcast: Season 2, Episode 5 — Joe Levy** — FBI – Federal Bureau of Investigation (1:18:42, 956 views)
+  https://www.youtube.com/watch?v=vKCWVReOkXI
+  item: `items/vKCWVReOkXI.md`
+- **Navy Seals Vs Terrorists: Epic 300s Deep Sea Rig Assault Sniper Action** — Alpha Series (1:21:08, 4.3K views)
+  https://www.youtube.com/watch?v=oN855YMTtBE
+  item: `items/oN855YMTtBE.md`
+- **Intent Recognition and Auto-Routing in Multi-Agent Systems** — AI Explained in 5 Minutes (5:56, 2 views)
+  https://www.youtube.com/watch?v=Du9Xlg-JRZc
+  item: `items/Du9Xlg-JRZc.md`
+- **[Apocalypse/Isekai] Two pieces of stinky tofu for an entire army—deal.** — TheAIWontStop (1:43:23, 56 views)
+  https://www.youtube.com/watch?v=5bYhCxREzTY
+  item: `items/5bYhCxREzTY.md`
+- **MULTI SUB《重生九零之野性時代》商界大亨李飛意外重生回1990年18歲，帶著前世記憶，他賭球狂攬百萬，從杭城街頭的落魄少年，到千億商業帝國掌舵人！ #AI #漫劇 #動漫 #無盡動漫社** — 无尽动漫社 | AI Anime (4:38:21, 395 views)
+  https://www.youtube.com/watch?v=d_CteIGSJF8
+  item: `items/d_CteIGSJF8.md`
+- **【精選】200特戰隊空降伊斯法罕門戶 救援規模比例失衡 目標疑為搬運濃縮鈾！｜#環球大戰線 #寰宇新聞** — 寰宇新聞 頻道 (49:52, 5.1K views)
+  https://www.youtube.com/watch?v=qV4CotQUPR0
+  item: `items/qV4CotQUPR0.md`
+- **🔥【New】【Multi Sub】Harem of beasts EP 1-144 #anime #animation** — Joyland-Animation (9:05:31, 1.2K views)
+  https://www.youtube.com/watch?v=7a6ceyPP6fg
+  item: `items/7a6ceyPP6fg.md`
+- **【MULTI SUB】現代男子一朝穿越，意外成女帝最信任的心腹，聯手逆襲超帶感#大女主 #穿越 #爽剧 #drama** — 微光剧场Micro Light Theater (2:09:35, 140 views)
+  https://www.youtube.com/watch?v=tUv_6gQOA_0
+  item: `items/tUv_6gQOA_0.md`
+- **Love-struck man dies for love and is reborn with a second chance** — 蜜糖短剧 (2:01:44, 1.2K views)
+  https://www.youtube.com/watch?v=2OHLY8GhC9Q
+  item: `items/2OHLY8GhC9Q.md`

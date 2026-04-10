@@ -27,3 +27,9 @@ Full item files belong in `items/`.
 - **2026, April 8 - Montana State Library Commission Meeting** — Montana State Library (2:47:59, 31 views)
   https://www.youtube.com/watch?v=lVQeCqR3pb0
   item: `items/lVQeCqR3pb0.md`
+
+## 2026-04-10 — 1 new videos
+
+- **AIMLx26 | Markus Buehler** — FSU Data Science Program (1:01:48, 2 views)
+  https://www.youtube.com/watch?v=gdibJc2Fw90
+  item: `items/gdibJc2Fw90.md`

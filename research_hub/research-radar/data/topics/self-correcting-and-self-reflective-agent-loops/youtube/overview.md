@@ -363,3 +363,36 @@ Full item files belong in `items/`.
 - **【Multi Sub】🔥 生活職業？我打造了抗魔聯軍！Life Class? I Built the Anti-Demon Alliance! EP1-50 #男频 #热血 #爽文** — Qixiang-Animation (4:04:26, 160 views)
   https://www.youtube.com/watch?v=vqlOUKJS4iw
   item: `items/vqlOUKJS4iw.md`
+
+## 2026-04-10 — 10 new videos
+
+- **They Mocked His Weak Goblin Summon, Until He Wiped Out an Entire Tribe With One Trick!** — Bella's Comic Chronicles (23:39:14, 377 views)
+  https://www.youtube.com/watch?v=J2Ch3Gvv8ME
+  item: `items/J2Ch3Gvv8ME.md`
+- **The Great Masters of the Renaissance (3 Hours) | Night at the Museum | For Focus & Deep Work** — The Quiet Curator | GloAetas (3:19:34, 9 views)
+  https://www.youtube.com/watch?v=rWr9Nhjgu0Q
+  item: `items/rWr9Nhjgu0Q.md`
+- **被眾人嘲諷的窩囊廢，實則是統御萬族的仙界帝尊，剛回歸都市，頂尖大佬紛紛俯首稱臣，人生直接起飛** — GalaxyDrama銀河劇場 (1:38:56, 282 views)
+  https://www.youtube.com/watch?v=IaghFAiSCjY
+  item: `items/IaghFAiSCjY.md`
+- **🌟【新番上线|ENG SUB】《废柴法师？我的禁咒无限放！》废柴选法师？双SSS天赋觉醒，暴力开荒碾压神魔游戏规则！ 一口气看完 #漫剧 #热血 #玄幻 #战斗 #苍穹动漫** — Dragon Animation Club (2:20:21, 2.1K views)
+  https://www.youtube.com/watch?v=2JlqAJ4I72M
+  item: `items/2JlqAJ4I72M.md`
+- **📅 ThursdAI LIVE from AI Engineer Europe w/ Swyx & friends from OpenCalw, OpenAI, Gemini, LMArena** — Alex Volkov from ThursdAI (1:59:28, 119 views)
+  https://www.youtube.com/watch?v=xxZz-TUMyfc
+  item: `items/xxZz-TUMyfc.md`
+- **She Passed Out Before the Mafia Boss—He Caught Her and Saw the Bruises She Hid** — Mafia Destiny Stories (2:38:08, 2 views)
+  https://www.youtube.com/watch?v=awhR1rMalSI
+  item: `items/awhR1rMalSI.md`
+- **Mafia Boss Opened the Storage Door at Midnight — And Froze at What He Saw** — Boss Love Chronicles (1:40:04, 25 views)
+  https://www.youtube.com/watch?v=NygJdxgStu8
+  item: `items/NygJdxgStu8.md`
+- **15 Doctors Couldn't Save A Dying Mafia Boss — Until A Delivery Mom Did The Impossible** — Boss Love Chronicles (1:34:12, 10 views)
+  https://www.youtube.com/watch?v=6vetwkR_G_w
+  item: `items/6vetwkR_G_w.md`
+- **SAD** — Thomas (4:16, 9 views)
+  https://www.youtube.com/watch?v=zzW73tNjCqg
+  item: `items/zzW73tNjCqg.md`
+- **Anne, Bu İlaç Beni Hasta Ediyor, Ona İlacı İçmesini Ben Söyledim yasanmis gercekler,  16 dil.** — lietome751 (1:52:02, 4 views)
+  https://www.youtube.com/watch?v=9yLVVupPVY0
+  item: `items/9yLVVupPVY0.md`

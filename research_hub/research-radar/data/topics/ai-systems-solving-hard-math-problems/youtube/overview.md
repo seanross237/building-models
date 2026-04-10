@@ -651,3 +651,93 @@ Full item files belong in `items/`.
 - **After 30, You Can't Play Fair (The Truth About Getting Rich) | Machiavelli** — The Unseen Game (34:28, 138 views)
   https://www.youtube.com/watch?v=iUR2DiCYk5w
   item: `items/iUR2DiCYk5w.md`
+
+## 2026-04-10 — 29 new videos
+
+- **We Asked AI: The Math Olympiad Question Only 10% Can Solve!** — Future Path (6:10, new)
+  https://www.youtube.com/watch?v=VhRDNYlDuCc
+  item: `items/VhRDNYlDuCc.md`
+- **The HARDEST SAT Math Questions Everyone Gets Wrong** — Outlier Learning (32:45, 11 views)
+  https://www.youtube.com/watch?v=VIAxRrGffxM
+  item: `items/VIAxRrGffxM.md`
+- **Why This Math Legend Left Academia for a 24 Yr Old's Startup** — Turing (14:03, 9.3K views)
+  https://www.youtube.com/watch?v=TV2MwcSkxp8
+  item: `items/TV2MwcSkxp8.md`
+- **A Nice Algebra Problem | Math Olympiad | Can you solve this? | x=?** — Mathematics & Statistics Guru (10:42, 150 views)
+  https://www.youtube.com/watch?v=0UG1Exh9f4s
+  item: `items/0UG1Exh9f4s.md`
+- **An Outstanding Algebraic equation | 90% Failed to crack this!  | Can you solve this? | x=?** — Mathematics & Statistics Guru (11:46, 38 views)
+  https://www.youtube.com/watch?v=JUvIfaFvt8k
+  item: `items/JUvIfaFvt8k.md`
+- **South Korean | Can You Solve This ? | Math Olympiad Mathematics** — HkLogics (2:56, 5 views)
+  https://www.youtube.com/watch?v=extUbk2ydrM
+  item: `items/extUbk2ydrM.md`
+- **Germany | Can You Solve This ? | Math Olympiad Mathematics** — HkLogics (3:24, 17 views)
+  https://www.youtube.com/watch?v=vXgp41sTkH4
+  item: `items/vXgp41sTkH4.md`
+- **Advancing to AI's Next Frontier: Insights From Jeff Dean and Bill Dally** — NVIDIA Developer (59:02, 625 views)
+  https://www.youtube.com/watch?v=DqMIYc-keBQ
+  item: `items/DqMIYc-keBQ.md`
+- **Why You're Still Better Than AI at Editing Documents - CS50 Tech Talk** — CS50 (46:03, 1.1K views)
+  https://www.youtube.com/watch?v=FqB_4QY6x6g
+  item: `items/FqB_4QY6x6g.md`
+- **Passkeys Explained (so even a kid could understand)** — All Things Secured (6:54, 2.9K views)
+  https://www.youtube.com/watch?v=ExAEb1MizVA
+  item: `items/ExAEb1MizVA.md`
+- **An AI-Proof Method for Deterring Cheating** — eLearning Consortium of Colorado (56:04, 4 views)
+  https://www.youtube.com/watch?v=oUj32ppKbyI
+  item: `items/oUj32ppKbyI.md`
+- **The Next Chapter of the VAST AI Operating System | VAST Data** — VAST Data (1:00:19, 174 views)
+  https://www.youtube.com/watch?v=AGETjrW8yt8
+  item: `items/AGETjrW8yt8.md`
+- **Ancient Hermetics Knew About Quantum Physics Before Einstein** — Codex Origin (3:11:01, 17 views)
+  https://www.youtube.com/watch?v=FHVHtXKbJd8
+  item: `items/FHVHtXKbJd8.md`
+- **【MULTI SUB】一口气看完《猎户征原》1-2季：穿成傻汉深山求生，本想狩猎温饱，不料意外踏上逐鹿中原之路！** — 趣说漫世界 (1:37:32, 31.3K views)
+  https://www.youtube.com/watch?v=9URT2LOhMdA
+  item: `items/9URT2LOhMdA.md`
+- **Flutter AI skills | Observable Flutter #88** — Flutter (1:35:55, 2.9K views)
+  https://www.youtube.com/watch?v=2h3teBoAHQY
+  item: `items/2h3teBoAHQY.md`
+- **This Gold Pattern Predicted Every Major Market Crash — It's Happening Again** — Tim Talks Finance (17:51, 398 views)
+  https://www.youtube.com/watch?v=xrHimNr5its
+  item: `items/xrHimNr5its.md`
+- **Who Is The Antichrist? Every Major Candidate Explained | 4K Documentary** — Ominous History (2:20:46, new)
+  https://www.youtube.com/watch?v=OFAMrSxSiIE
+  item: `items/OFAMrSxSiIE.md`
+- **[SUB] New Iranian Tactics to Attack the US and Israel? US Death Knights Suffer 24 More Losses [#N...** — 新聞大白話 (48:19, 14.9K views)
+  https://www.youtube.com/watch?v=pnmG7jeuIIc
+  item: `items/pnmG7jeuIIc.md`
+- **4 Simple $10K/Month Business Models Anyone Can Start** — Ray O'Daniel (43:41, 5 views)
+  https://www.youtube.com/watch?v=5D2DmriOCMQ
+  item: `items/5D2DmriOCMQ.md`
+- **The Foundation of Modern Intelligence | VAST Data** — VAST Data (34:29, 93 views)
+  https://www.youtube.com/watch?v=a0gEOMUFkg0
+  item: `items/a0gEOMUFkg0.md`
+- **Why Homeschooled Kids Are Better Prepared for an AI World Than Anyone Realizes** — Christy-Faith (43:02, 102 views)
+  https://www.youtube.com/watch?v=R0MQR-Z6NBY
+  item: `items/R0MQR-Z6NBY.md`
+- **💥【殺手古德】第一季合輯：曾經絕世殺手現今只知道摸魚擺爛！看廢柴所如何用實力詮釋中二英雄夢的爆笑喜劇！ MUTISUB｜追番補給站【國漫推薦】** — 追番补给站 (5:04:18, 681 views)
+  https://www.youtube.com/watch?v=RtN55y0377Y
+  item: `items/RtN55y0377Y.md`
+- **How To Make $300 A Day With Zillow | Easy 10 Minute Setup To Make Money Online** — Julian | Make Money Using AI (11:56, 4 views)
+  https://www.youtube.com/watch?v=tfvf_xkdBC8
+  item: `items/tfvf_xkdBC8.md`
+- **Ex-IDF, Ex-Israeli: Gilad Atzmon on What's Really Driving Israel's Genocidal Logic** — Deep Dive Perspective (1:13:23, 74 views)
+  https://www.youtube.com/watch?v=lrnildu2j4M
+  item: `items/lrnildu2j4M.md`
+- **Shutting Down a 25M User App** — Mostly Growth (37:32, 52 views)
+  https://www.youtube.com/watch?v=7OQ0kgU4zps
+  item: `items/7OQ0kgU4zps.md`
+- **LIVE STREAM: RUSD Board Meeting 4-9-2026** — Riverside Unified School District Board Meetings (5:45:15, 536 views)
+  https://www.youtube.com/watch?v=stn1ydd42wo
+  item: `items/stn1ydd42wo.md`
+- **Reborn as novel’s villain,He thought he’d die,until system say writing future daily can change fate！** — Mania Comics Legends (26:51:29, 276 views)
+  https://www.youtube.com/watch?v=L50u5k7a8ao
+  item: `items/L50u5k7a8ao.md`
+- **Emerging AI Trends in Education for 2026 | EP15** — Technology Essentials in Education Podcast (27:47, 8 views)
+  https://www.youtube.com/watch?v=zjxGgoqd_js
+  item: `items/zjxGgoqd_js.md`
+- **2026 April Library Board Meeting** — Johnson County Library (1:26:27, 71 views)
+  https://www.youtube.com/watch?v=XJf9jAebnBA
+  item: `items/XJf9jAebnBA.md`

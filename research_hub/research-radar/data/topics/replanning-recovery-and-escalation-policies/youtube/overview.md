@@ -135,3 +135,15 @@ Full item files belong in `items/`.
 - **Global Trade Outlook: Tariff Risks and Energy Shock** — BMOCommunity (30:15, 154 views)
   https://www.youtube.com/watch?v=p2r1pC27yUM
   item: `items/p2r1pC27yUM.md`
+
+## 2026-04-10 — 3 new videos
+
+- **She Faked Being INSANE To Survive... Then Her Husband Saw The Truth** — Animated Manhwa (8:57:34, 8 views)
+  https://www.youtube.com/watch?v=upBrbUvu2T4
+  item: `items/upBrbUvu2T4.md`
+- **💥【新番上线】外卖小哥逆境逆袭，遇真爱携手破局，守善良终获圆满人生《外卖人生》全集Multi SUB #热血 #漫剧 #动漫魔女** — 动漫魔女 (2:46:18, 331 views)
+  https://www.youtube.com/watch?v=VUjbm6GC4ZA
+  item: `items/VUjbm6GC4ZA.md`
+- **💗纯欲🔥梁思伟＆孟娜《绿茶小狼狗诱我情深》#短剧 #短剧全集 #甜宠 #恋爱 #重生 #女频 #萌宝 #柑橘短剧社** — 柑橘短剧社 (2:45:12, 1.5K views)
+  https://www.youtube.com/watch?v=_qLnC5bTY5E
+  item: `items/_qLnC5bTY5E.md`

@@ -123,3 +123,21 @@ Full item files belong in `items/`.
 - **Anindo Sengupta & Dan Ciruli, Nutanix | Nutanix .NEXT 2026** — SiliconANGLE theCUBE (19:56, 24 views)
   https://www.youtube.com/watch?v=hhrXur6VLCA
   item: `items/hhrXur6VLCA.md`
+
+## 2026-04-10 — 5 new videos
+
+- **Advancing to AI's Next Frontier: Insights From Jeff Dean and Bill Dally** — NVIDIA Developer (59:02, 625 views)
+  https://www.youtube.com/watch?v=DqMIYc-keBQ
+  item: `items/DqMIYc-keBQ.md`
+- **The Next Chapter of the VAST AI Operating System | VAST Data** — VAST Data (1:00:19, 174 views)
+  https://www.youtube.com/watch?v=AGETjrW8yt8
+  item: `items/AGETjrW8yt8.md`
+- **AI Explained: The Agentic Gap: What Enterprises Think vs. What Actually Works** — Fiddler AI (56:15, 11 views)
+  https://www.youtube.com/watch?v=7G_C-FjtTLM
+  item: `items/7G_C-FjtTLM.md`
+- **Striae Origins, Episode 2: The Evolution of Striae's Architecture** — Stephen J. Lu (38:12, 7 views)
+  https://www.youtube.com/watch?v=i-rI5Z0hUy0
+  item: `items/i-rI5Z0hUy0.md`
+- **Live Demo: Preset MCP: Unleash AI On Your Analytics** — Preset (41:17, 106 views)
+  https://www.youtube.com/watch?v=dElUMrtUeIA
+  item: `items/dElUMrtUeIA.md`

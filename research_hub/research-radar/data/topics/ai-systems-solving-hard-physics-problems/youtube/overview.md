@@ -654,3 +654,96 @@ Full item files belong in `items/`.
 - **(Part 2)They Threw Him Into The Ocean… Now 43 Girls Depend On Him To Survive** — Top Comic Recap (21:01:28, 52 views)
   https://www.youtube.com/watch?v=LJeX0_ILP1c
   item: `items/LJeX0_ILP1c.md`
+
+## 2026-04-10 — 30 new videos
+
+- **Ancient Hermetics Knew About Quantum Physics Before Einstein** — Codex Origin (3:11:01, 17 views)
+  https://www.youtube.com/watch?v=FHVHtXKbJd8
+  item: `items/FHVHtXKbJd8.md`
+- **Classified Facility Sealed After Quantum AI Exceeded All Theoretical Limits** — Luminox (27:36, 2.7K views)
+  https://www.youtube.com/watch?v=AuWlpm4bafQ
+  item: `items/AuWlpm4bafQ.md`
+- **CEO Mocked Him — Then One Call Turned Him Into the Only Hope** — MY - Stories (26:21, 2 views)
+  https://www.youtube.com/watch?v=h0c9vrhtPuE
+  item: `items/h0c9vrhtPuE.md`
+- **倪海廈：4月12號丙辰日必看！6生肖穿黃色，5種人穿白色，保你2026馬年翻天覆地#倪海廈 #黃帝內經 #養生 #國學 #易經 #清明 #開運 #招財 #補財庫 #中醫 #風水 #2026運勢 #農曆** — 漢唐健康 (1:22:28, 2.4K views)
+  https://www.youtube.com/watch?v=WDyNHqNGPfQ
+  item: `items/WDyNHqNGPfQ.md`
+- **Germany | Can You Solve This ? | Math Olympiad Mathematics** — HkLogics (3:24, 19 views)
+  https://www.youtube.com/watch?v=vXgp41sTkH4
+  item: `items/vXgp41sTkH4.md`
+- **South Korean | Can You Solve This ? | Math Olympiad Mathematics** — HkLogics (2:56, 5 views)
+  https://www.youtube.com/watch?v=extUbk2ydrM
+  item: `items/extUbk2ydrM.md`
+- **An Outstanding Algebraic equation | 90% Failed to crack this!  | Can you solve this? | x=?** — Mathematics & Statistics Guru (11:46, 38 views)
+  https://www.youtube.com/watch?v=JUvIfaFvt8k
+  item: `items/JUvIfaFvt8k.md`
+- **A Nice Algebra Problem | Math Olympiad | Can you solve this? | x=?** — Mathematics & Statistics Guru (10:42, 150 views)
+  https://www.youtube.com/watch?v=0UG1Exh9f4s
+  item: `items/0UG1Exh9f4s.md`
+- **Qurious Conversations: A Quantum Journey with Dcn. Larry Deschaine, Ph.D** — Quantum in South Carolina (56:21, 5 views)
+  https://www.youtube.com/watch?v=pJMxo-4y9yw
+  item: `items/pJMxo-4y9yw.md`
+- **THEY OWN YOUR MIND** — ZenITlynX-eXplore (37:27, 12 views)
+  https://www.youtube.com/watch?v=19_NSG7Cw4E
+  item: `items/19_NSG7Cw4E.md`
+- **Bitcoin in Danger? What Happened to Kaspa, and Is Adam Back Wrong?** — The Crypto Factor (1:28:51, 331 views)
+  https://www.youtube.com/watch?v=OSnnEQSk7Mw
+  item: `items/OSnnEQSk7Mw.md`
+- **How Quantum Computers Think** — Prime Mind (12:35, 5 views)
+  https://www.youtube.com/watch?v=hWdTvBMRI9k
+  item: `items/hWdTvBMRI9k.md`
+- **I filmed a mythical man-eating beast in the woods, only to uncover a terrifying alien secret!** — ถนอม แก้วธรรม (10:13:31, 77 views)
+  https://www.youtube.com/watch?v=rknh6oBHMhM
+  item: `items/rknh6oBHMhM.md`
+- **Advancing to AI's Next Frontier: Insights From Jeff Dean and Bill Dally** — NVIDIA Developer (59:02, 625 views)
+  https://www.youtube.com/watch?v=DqMIYc-keBQ
+  item: `items/DqMIYc-keBQ.md`
+- **Python Inverse Trigonometric Functions | asin(), acos(), atan() ExplainedLec13** — Signals and Systems (10:28, new)
+  https://www.youtube.com/watch?v=PcAKIhlBlas
+  item: `items/PcAKIhlBlas.md`
+- **They Mocked His Weak Goblin Summon, Until He Wiped Out an Entire Tribe With One Trick!** — Bella's Comic Chronicles (23:39:14, 377 views)
+  https://www.youtube.com/watch?v=J2Ch3Gvv8ME
+  item: `items/J2Ch3Gvv8ME.md`
+- **How This AI Makes Soft Robots 467× Faster and Still Accurate** — Five Minute Robots (5:55, 17 views)
+  https://www.youtube.com/watch?v=6v8FRtk1ar8
+  item: `items/6v8FRtk1ar8.md`
+- **Time Slips And Chronological Glitches to Drift Off to** — Whispered Wonders (38:40, 60 views)
+  https://www.youtube.com/watch?v=TCgXenrDJ4s
+  item: `items/TCgXenrDJ4s.md`
+- **Vibe Coding vs Real Hardware: The ESP32 Experiment** — Dimitrii's Lab (18:12, 20 views)
+  https://www.youtube.com/watch?v=9VgjOPdFN9I
+  item: `items/9VgjOPdFN9I.md`
+- **Artemis II Was Too Small. Mars Will Change Everything. Dr Scott Solomon** — Brad Carr and Wild World Podcast (1:29:02, 88 views)
+  https://www.youtube.com/watch?v=SIRH_vKOIr0
+  item: `items/SIRH_vKOIr0.md`
+- **Reborn as novel’s villain,He thought he’d die,until system say writing future daily can change fate！** — Mania Comics Legends (26:51:29, 276 views)
+  https://www.youtube.com/watch?v=L50u5k7a8ao
+  item: `items/L50u5k7a8ao.md`
+- **Trump Ramps Up Iran Threats Ahead of Talks | The China Show 4/10/2026** — Bloomberg Television (1:32:14, 5.9K views)
+  https://www.youtube.com/watch?v=GHeRxaLm7i0
+  item: `items/GHeRxaLm7i0.md`
+- **雙雙重生後，妹妹費盡心機搶走她的夫君，她順水推舟和她換了親事，嫁給前世那位紈絝不化的小王爺，這一世她展露智謀一邊打臉虐渣，一邊調教紈絝夫君，把紈絝夫君養成皇帝了！#古装言情 #重生复仇 #穿越** — 青鸾枕夢劇 (2:43:04, 14.8K views)
+  https://www.youtube.com/watch?v=o_8tx9Upt1I
+  item: `items/o_8tx9Upt1I.md`
+- **Liquid Cooling for AI: Advanced Architecture Explained | Schneider Electric** — Schneider Electric (47:07, 9 views)
+  https://www.youtube.com/watch?v=PTsOuxwE9Oo
+  item: `items/PTsOuxwE9Oo.md`
+- **一口气看完，全球高温末日，我在家囤货百倍！#穿越 #funny #動漫 #沙雕剧情 #动漫** — 七漫剪 (1:51:38, 1.4K views)
+  https://www.youtube.com/watch?v=P94jAxz63vg
+  item: `items/P94jAxz63vg.md`
+- **The Billionaire AI Prompt Build Your Synthetic Boardroom** — Dr. HR (14:17, 15 views)
+  https://www.youtube.com/watch?v=lM5h0NlB5sM
+  item: `items/lM5h0NlB5sM.md`
+- **Happiness Was Never the Point! | Rebecca Goldstein on Mattering** — Philosophy Everyday (1:39:01, 1 views)
+  https://www.youtube.com/watch?v=TjgO_BE3JZ4
+  item: `items/TjgO_BE3JZ4.md`
+- **Killed by a tyrant, I was reborn—married playboy prince, made him king, and was cherished as queen!** — MiniRomanceDrama (2:43:04, 5.0K views)
+  https://www.youtube.com/watch?v=l-Gr2ecol_w
+  item: `items/l-Gr2ecol_w.md`
+- **💥【新番上线】《末世自由行：我用菜刀换黄金》程墨觉醒穿越异能，现代末世资源倒卖暴富，建堡垒、供科技，更以能量炮力破双重末日危机！#斗破动漫 #逆袭 #战斗** — Labubububu Animation (1:16:11, 687 views)
+  https://www.youtube.com/watch?v=qM6Z9sNhX80
+  item: `items/qM6Z9sNhX80.md`
+- **This Horror Game Isn't As Broken As People Say** — ProRogueBear (1:11:43, 97 views)
+  https://www.youtube.com/watch?v=vSfqdcodv74
+  item: `items/vSfqdcodv74.md`

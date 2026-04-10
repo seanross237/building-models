@@ -651,3 +651,96 @@ Full item files belong in `items/`.
 - **OpenAI is Flailing, Anthropic’s Mythos AI is Too Powerful, Are Vertical Tabs Good?** — Primary Technology (1:15:51, 90 views)
   https://www.youtube.com/watch?v=9oVRoMtEa70
   item: `items/9oVRoMtEa70.md`
+
+## 2026-04-10 — 30 new videos
+
+- **How AI is being used to target Palestinians | The Stream** — Al Jazeera English (24:47, 2.6K views)
+  https://www.youtube.com/watch?v=n0SoBYXfY1Y
+  item: `items/n0SoBYXfY1Y.md`
+- **How to become a SDET? Step by step process** — Pratik Bhowmik (20:34, 44 views)
+  https://www.youtube.com/watch?v=2-8F_DjT3d0
+  item: `items/2-8F_DjT3d0.md`
+- **Classified Facility Sealed After Quantum AI Exceeded All Theoretical Limits** — Luminox (27:36, 2.7K views)
+  https://www.youtube.com/watch?v=AuWlpm4bafQ
+  item: `items/AuWlpm4bafQ.md`
+- **Building a Real Industrial AI Inspection System | Ep. #7** — Pysource (1:16:50, 582 views)
+  https://www.youtube.com/watch?v=YzFTVY-s8vc
+  item: `items/YzFTVY-s8vc.md`
+- **They Promised AI Would Eliminate 300 Million Jobs- Why They Were Wrong.** — Redhawk Media Group (16:27, 5.9K views)
+  https://www.youtube.com/watch?v=lctlDGv0eKc
+  item: `items/lctlDGv0eKc.md`
+- **20KW INFINITE ENERGY GENERATOR 110-220 Volts** — The Liberty Engine Project (33:55, 1.5K views)
+  https://www.youtube.com/watch?v=esLw_-NHeLc
+  item: `items/esLw_-NHeLc.md`
+- **Urban AI & Automation** — NPTEL-NOC IITM (27:11, 60 views)
+  https://www.youtube.com/watch?v=3z4m9obHqYk
+  item: `items/3z4m9obHqYk.md`
+- **95% of AI Projects Fail — EON AI Ventures Solves the Workforce Gap** — EON AI Ventures (20:16, 1 views)
+  https://www.youtube.com/watch?v=9FQ7xvb3fu0
+  item: `items/9FQ7xvb3fu0.md`
+- **the ONLY way to BEAT the Instagram algorithm in 2026** — heyDominik (24:05, 2.8K views)
+  https://www.youtube.com/watch?v=91CPPZmiPpk
+  item: `items/91CPPZmiPpk.md`
+- **Rainbow Robotics Quadruped Robot #RBQ Series Demo** — 레인보우로보틱스 (Rainbow Robotics) (1:31, 632 views)
+  https://www.youtube.com/watch?v=rNPI5z6qfp0
+  item: `items/rNPI5z6qfp0.md`
+- **You’re Using Peptides Wrong to Build Mass!** — Swole Focus (8:02, 2.1K views)
+  https://www.youtube.com/watch?v=qdgRWtFJaHo
+  item: `items/qdgRWtFJaHo.md`
+- **The AI That's Designing Drugs Nobody Knew Were Possible | Cipher Sci** — Cipher Sci (10:57, 5 views)
+  https://www.youtube.com/watch?v=Pf2695e-oKE
+  item: `items/Pf2695e-oKE.md`
+- **AI OVERLOAD: Top Trends, Tools & Models for 2026 | INSIDE AI #33** — Fraunhofer IEM (36:47, 617 views)
+  https://www.youtube.com/watch?v=8nqoJORzOc8
+  item: `items/8nqoJORzOc8.md`
+- **2. Why LLM Ops Exists: Managing Complexity in Generative AI Systems** — Analytics Vidhya (6:11, 36 views)
+  https://www.youtube.com/watch?v=AZE6io5fhbk
+  item: `items/AZE6io5fhbk.md`
+- **The Future of Accounting Explained (Data, AI, Blockchain) | AIS Ep. 19** — Prof LJ Learning Hub (5:13, 9 views)
+  https://www.youtube.com/watch?v=dgQuy0cZlLo
+  item: `items/dgQuy0cZlLo.md`
+- **Low-Mass Scatter | Abstract CGI Experiments | Generative Art** — GENERATIVE ART STUDIO (7:57, 1 views)
+  https://www.youtube.com/watch?v=EJ7JPcaTwLI
+  item: `items/EJ7JPcaTwLI.md`
+- **Gemma vs Reality — The Hallucination Problem** — DevHacks 360 (3:28, 2 views)
+  https://www.youtube.com/watch?v=JO5QY00Pay0
+  item: `items/JO5QY00Pay0.md`
+- **The Next Chapter of the VAST AI Operating System | VAST Data** — VAST Data (1:00:19, 174 views)
+  https://www.youtube.com/watch?v=AGETjrW8yt8
+  item: `items/AGETjrW8yt8.md`
+- **UniCon 2026: Continuous Validation in the Age of AI** — SCYTHE (6:18:48, 118 views)
+  https://www.youtube.com/watch?v=2HpcD9oXaEs
+  item: `items/2HpcD9oXaEs.md`
+- **Unveiling the Future  Google’s Jitro and the New Era of AI Coding Agents** — AI Study Hub (21:57, 53 views)
+  https://www.youtube.com/watch?v=n2DdBdW2z-A
+  item: `items/n2DdBdW2z-A.md`
+- **13 Action News Big Story: The Continuing Impact of AI** — WTVG 13 Action News | Toledo, OH (10:45, 34 views)
+  https://www.youtube.com/watch?v=zjLyfxI0cPY
+  item: `items/zjLyfxI0cPY.md`
+- **FABRIC: An  infrastructure for edge-to-cloud, distributed intelligence + network systems research** — HiPEAC TV (59:51, 15 views)
+  https://www.youtube.com/watch?v=EUQQ7UeL0Mg
+  item: `items/EUQQ7UeL0Mg.md`
+- **What If Gravity Suddenly Disappeared? | Feynman's Thought Experiments** — Feynman Method (19:02, 18 views)
+  https://www.youtube.com/watch?v=0EhSBE289UM
+  item: `items/0EhSBE289UM.md`
+- **Target: The Far Left | DeProgram with Ted Rall and Jamarl Thomas** — DeProgram Show with Ted Rall and Jamarl Thomas (59:51, 402 views)
+  https://www.youtube.com/watch?v=JW8fgPw6Nwc
+  item: `items/JW8fgPw6Nwc.md`
+- **OpenAI supports bill limiting liability for AI-driven mass harm: Wired | Next in AI | Astha La Vista** — Next in AI: Astha La Vista (6:27, 9 views)
+  https://www.youtube.com/watch?v=gYTV0njsb4M
+  item: `items/gYTV0njsb4M.md`
+- **AI Cyber Threats Alarm Wall Street | Open Interest 4/10/2026** — Bloomberg Television (1:27:17, 216 views)
+  https://www.youtube.com/watch?v=z_F3LCQRUfI
+  item: `items/z_F3LCQRUfI.md`
+- **iPhone in Space! Plus 5 MORE Apple Products That Went to Space | One More Thing** — CNET (6:41, 7.9K views)
+  https://www.youtube.com/watch?v=WNlEfFZvfUA
+  item: `items/WNlEfFZvfUA.md`
+- **AI Doesn’t Fix Bad Data — Why Unified Data Architecture Is the Real Foundation** — NeenOpal (15:17, 4 views)
+  https://www.youtube.com/watch?v=UZqkPHXa6NA
+  item: `items/UZqkPHXa6NA.md`
+- **RevOps Masterclass: AI That Actually Works in Sales** — Domestique - THE RevOps Agency (57:28, 1 views)
+  https://www.youtube.com/watch?v=x_2Fh7DQ8z0
+  item: `items/x_2Fh7DQ8z0.md`
+- **🔥Reborn as loser, I got the system, effortlessly become invincible!#emotion #cdrama** — Leo Thearter (2:13:09, 12.1K views)
+  https://www.youtube.com/watch?v=ZEvyXW4dUQY
+  item: `items/ZEvyXW4dUQY.md`

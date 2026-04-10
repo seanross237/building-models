@@ -648,3 +648,93 @@ Full item files belong in `items/`.
 - **Tech Stocks Rally on the Back of US-Iran Ceasefire Deal | Bloomberg Tech 4/8/2026** — Bloomberg Technology (44:03, 5.1K views)
   https://www.youtube.com/watch?v=J1M-DDS0VcE
   item: `items/J1M-DDS0VcE.md`
+
+## 2026-04-10 — 29 new videos
+
+- **Builders Unscripted: Ep. 2 - Ashe Magalhaes, Founder of Hearth AI** — OpenAI (33:39, 657 views)
+  https://www.youtube.com/watch?v=flweA_I-VKE
+  item: `items/flweA_I-VKE.md`
+- **Chris Aniszczyk, CNCF | MCP Dev Summit 2026** — SiliconANGLE theCUBE (25:02, 131 views)
+  https://www.youtube.com/watch?v=D2bR7IFcqFs
+  item: `items/D2bR7IFcqFs.md`
+- **How an ex-Figma Engineer and a Content Ops consultant actually use AI | Sanity Pioneers** — Sanity (29:20, 24 views)
+  https://www.youtube.com/watch?v=1-8awGw1mIc
+  item: `items/1-8awGw1mIc.md`
+- **the ONLY way to BEAT the Instagram algorithm in 2026** — heyDominik (24:05, 2.8K views)
+  https://www.youtube.com/watch?v=91CPPZmiPpk
+  item: `items/91CPPZmiPpk.md`
+- **AI Explained: The Agentic Gap: What Enterprises Think vs. What Actually Works** — Fiddler AI (56:15, 11 views)
+  https://www.youtube.com/watch?v=7G_C-FjtTLM
+  item: `items/7G_C-FjtTLM.md`
+- **AI Data Pipeline in Action | VAST Data** — VAST Data (37:27, 60 views)
+  https://www.youtube.com/watch?v=AsrM22-uuMg
+  item: `items/AsrM22-uuMg.md`
+- **The Foundation of Modern Intelligence | VAST Data** — VAST Data (34:29, 93 views)
+  https://www.youtube.com/watch?v=a0gEOMUFkg0
+  item: `items/a0gEOMUFkg0.md`
+- **How to Find Your Best Leads Without Buying More of Them** — Agent Legend (45:54, 4 views)
+  https://www.youtube.com/watch?v=ijFU0SwYOBU
+  item: `items/ijFU0SwYOBU.md`
+- **The Next Chapter of the VAST AI Operating System | VAST Data** — VAST Data (1:00:19, 174 views)
+  https://www.youtube.com/watch?v=AGETjrW8yt8
+  item: `items/AGETjrW8yt8.md`
+- **Your VPN May Make You a Foreign Surveillance Target** — Techlore (54:35, 20.4K views)
+  https://www.youtube.com/watch?v=TmfP-gHHpKg
+  item: `items/TmfP-gHHpKg.md`
+- **LLM Data Pipeline with Airflow & Agents: From Weeks to Minutes** — DataSuperiority (11:47, 2 views)
+  https://www.youtube.com/watch?v=sORBro-J2do
+  item: `items/sORBro-J2do.md`
+- **They Make Concrete Piles Driven Deep into the Ground. PHC Pile Factory in Korea** — Factory Monster (26:35, 12.9K views)
+  https://www.youtube.com/watch?v=eZPSI_23LA0
+  item: `items/eZPSI_23LA0.md`
+- **Trump’s Actions Never Made Sense - Until Now | Lepard & Dixon** — BTC Sessions and Simon Dixon (1:40:19, 3.1K views)
+  https://www.youtube.com/watch?v=YbdduZNB0so
+  item: `items/YbdduZNB0so.md`
+- **Flutter AI skills | Observable Flutter #88** — Flutter (1:35:55, 2.9K views)
+  https://www.youtube.com/watch?v=2h3teBoAHQY
+  item: `items/2h3teBoAHQY.md`
+- **Губарев у Дудя | Z-спикеры продолжают прозревать (English subtitles) @Max_Katz** — Максим Кац (20:03, 493.0K views)
+  https://www.youtube.com/watch?v=18ljp0dpvZI
+  item: `items/18ljp0dpvZI.md`
+- **all-new Mercedes GLB driving REVIEW (2027) with GLB EQ (EV)** — Autogefühl (33:21, 16.2K views)
+  https://www.youtube.com/watch?v=RfFRMfVJvyQ
+  item: `items/RfFRMfVJvyQ.md`
+- **Leamington man pleads guilty to cocaine trafficking | CTV News Windsor at 11, April 9, 2026** — CTV News (27:44, 60 views)
+  https://www.youtube.com/watch?v=sHvGMdOOOeo
+  item: `items/sHvGMdOOOeo.md`
+- **From Broke to Building a Million-Dollar Real Estate Team | Christopher Watters - EP 74** — Daniel M Berger Adventures of a Real Estate Broker (41:24, 6 views)
+  https://www.youtube.com/watch?v=PMYDFAtVdmA
+  item: `items/PMYDFAtVdmA.md`
+- **Starting with an Infinite Bullet Shotgun, I Gain an S-Class Ability Every Time I Collect a Beauty!** — Revel Manga Chronicles (25:58:48, 243 views)
+  https://www.youtube.com/watch?v=qeyM9cKlIRM
+  item: `items/qeyM9cKlIRM.md`
+- **Google AI Studio for Equity-Driven Enrichment Activities** — eLearning Consortium of Colorado (47:04, 11 views)
+  https://www.youtube.com/watch?v=fvWcDGPikzM
+  item: `items/fvWcDGPikzM.md`
+- **Emperor Visited The "Poorest" Baron & Found A Modern City In 1200!- Manhwa Recap** — Silas Recap (2:05:47, 4.7K views)
+  https://www.youtube.com/watch?v=MpG1UYH7m30
+  item: `items/MpG1UYH7m30.md`
+- **The DAM AI Gap: Preparedness and Foundations for 2026 - DAM Week 2026** — MediaValet (28:22, new)
+  https://www.youtube.com/watch?v=rsr546EaR0A
+  item: `items/rsr546EaR0A.md`
+- **Automate YouTube Membership Management with OpenClaw, WordPress & Google Sheets** — AI Business Applications (6:51, 13 views)
+  https://www.youtube.com/watch?v=oFyqiW8PQT8
+  item: `items/oFyqiW8PQT8.md`
+- **Trump Warns Iran on Hormuz Fee & Israel-Lebanon To Talk | Daybreak Europe 04/10/2026** — Bloomberg Television (47:02, 5.5K views)
+  https://www.youtube.com/watch?v=lptHDvtWSII
+  item: `items/lptHDvtWSII.md`
+- **AI Fridays with Phil | Enterprise AI, AI Governance and Agentic AI in Business** — Progress Software (58:36, 6 views)
+  https://www.youtube.com/watch?v=sT86GOsxE1Y
+  item: `items/sT86GOsxE1Y.md`
+- **They Mocked His Weak Goblin Summon, Until He Wiped Out an Entire Tribe With One Trick!** — Bella's Comic Chronicles (23:39:14, 377 views)
+  https://www.youtube.com/watch?v=J2Ch3Gvv8ME
+  item: `items/J2Ch3Gvv8ME.md`
+- **4 Simple $10K/Month Business Models Anyone Can Start** — Ray O'Daniel (43:41, 5 views)
+  https://www.youtube.com/watch?v=5D2DmriOCMQ
+  item: `items/5D2DmriOCMQ.md`
+- **Full Excel CRUD in Microsoft Copilot Studio — 100,000+ Rows, One AI Topic, Live Demo** — oartconsult (29:08, 60 views)
+  https://www.youtube.com/watch?v=EB4EMmXs7X8
+  item: `items/EB4EMmXs7X8.md`
+- **DIGFM: FM Magic Lamps of AI and Agentic Coding (4/9/2026)** — DIGFM (2:20:45, 6 views)
+  https://www.youtube.com/watch?v=wC2_qmbDi6c
+  item: `items/wC2_qmbDi6c.md`

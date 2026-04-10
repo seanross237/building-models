@@ -648,3 +648,96 @@ Full item files belong in `items/`.
 - **After Inheriting a Territory, I Unlocked Mechanical System & Can Summon an Infinite Army of Machines** — Revel Manga Chronicles (9:49:13, 535 views)
   https://www.youtube.com/watch?v=RQzWqtsmPu0
   item: `items/RQzWqtsmPu0.md`
+
+## 2026-04-10 — 30 new videos
+
+- **Self-Improving Skills: The Open Source Framework That Evolves Your AI Skills by Rbuid.ai** — Ragnar Pitla (Microsoft | Rbuild.ai) (7:46, 16 views)
+  https://www.youtube.com/watch?v=qlZGN4gKiWQ
+  item: `items/qlZGN4gKiWQ.md`
+- **How I Built My Own AI Second Brain with Claude Code (INSANE)** — Income stream surfers (20:00, 248 views)
+  https://www.youtube.com/watch?v=uhB29VsLQLo
+  item: `items/uhB29VsLQLo.md`
+- **Builders Unscripted: Ep. 2 - Ashe Magalhaes, Founder of Hearth AI** — OpenAI (33:39, 657 views)
+  https://www.youtube.com/watch?v=flweA_I-VKE
+  item: `items/flweA_I-VKE.md`
+- **The Next Chapter of the VAST AI Operating System | VAST Data** — VAST Data (1:00:19, 174 views)
+  https://www.youtube.com/watch?v=AGETjrW8yt8
+  item: `items/AGETjrW8yt8.md`
+- **Advancing to AI's Next Frontier: Insights From Jeff Dean and Bill Dally** — NVIDIA Developer (59:02, 625 views)
+  https://www.youtube.com/watch?v=DqMIYc-keBQ
+  item: `items/DqMIYc-keBQ.md`
+- **MiniMax M2.7 - Most Underrated AI Model Right Now** — Blunt AI (6:21, 10 views)
+  https://www.youtube.com/watch?v=gVxWelgPOyQ
+  item: `items/gVxWelgPOyQ.md`
+- **AI Explained: The Agentic Gap: What Enterprises Think vs. What Actually Works** — Fiddler AI (56:15, 11 views)
+  https://www.youtube.com/watch?v=7G_C-FjtTLM
+  item: `items/7G_C-FjtTLM.md`
+- **Teach AI to Code in Every Language with NVIDIA NeMo | NVIDIA GTC** — NVIDIA Developer (45:47, 32 views)
+  https://www.youtube.com/watch?v=d8yQ358u-rE
+  item: `items/d8yQ358u-rE.md`
+- **How to Get Rich on Easy Mode | Machiavelli** — The Unseen Game (28:36, 468 views)
+  https://www.youtube.com/watch?v=3zAtyRhVX5o
+  item: `items/3zAtyRhVX5o.md`
+- **Episode (014) - Latest Artificial Intelligence R&D Session with Digitalent & Mike Nedelko** — Digitalent - AI & Machine Learning Recruitment (57:49, 7 views)
+  https://www.youtube.com/watch?v=TgnLjM_K9gA
+  item: `items/TgnLjM_K9gA.md`
+- **The NSA Loophole: How A Privacy Tool Can Became a Liability** — Techlore (54:35, 20.4K views)
+  https://www.youtube.com/watch?v=TmfP-gHHpKg
+  item: `items/TmfP-gHHpKg.md`
+- **My LLM is 43% faster & 50% cheaper** — Johnny.Decimal (13:50, 114 views)
+  https://www.youtube.com/watch?v=PTFuhCrFjVw
+  item: `items/PTFuhCrFjVw.md`
+- **Bitcoin in Danger? What Happened to Kaspa, and Is Adam Back Wrong?** — The Crypto Factor (1:28:51, 331 views)
+  https://www.youtube.com/watch?v=OSnnEQSk7Mw
+  item: `items/OSnnEQSk7Mw.md`
+- **Fake disease fools AI chatbots & Agent benchmarks get stricter - AI News (Apr 10, 2026)** — The Automated Daily (8:06, 3 views)
+  https://www.youtube.com/watch?v=uSoBvvmmKo4
+  item: `items/uSoBvvmmKo4.md`
+- **Transform Your IT Career with IT Expert AI Tools |#AIResumeScan | #AIrRsumebuilder  | IT Experts** — IT Expert System, INC |  [IT Experts] (2:48, 16 views)
+  https://www.youtube.com/watch?v=P2oXwxjcDBI
+  item: `items/P2oXwxjcDBI.md`
+- **Stop Running AI Agents Locally (Do This Instead with PaperClip + VPS)** — My First Website (9:07, 2 views)
+  https://www.youtube.com/watch?v=_9jCNTnaB18
+  item: `items/_9jCNTnaB18.md`
+- **Leading the Future of Agentic Enterprise with MuleSoft** — Salesforce (25:39, 284 views)
+  https://www.youtube.com/watch?v=aeBrTX6N9io
+  item: `items/aeBrTX6N9io.md`
+- **Live Demo: Preset MCP: Unleash AI On Your Analytics** — Preset (41:17, 99 views)
+  https://www.youtube.com/watch?v=dElUMrtUeIA
+  item: `items/dElUMrtUeIA.md`
+- **The DAM AI Gap: Preparedness and Foundations for 2026 - DAM Week 2026** — MediaValet (28:22, new)
+  https://www.youtube.com/watch?v=rsr546EaR0A
+  item: `items/rsr546EaR0A.md`
+- **AI Data Pipeline in Action | VAST Data** — VAST Data (37:27, 60 views)
+  https://www.youtube.com/watch?v=AsrM22-uuMg
+  item: `items/AsrM22-uuMg.md`
+- **AI Agents in Finance: Stop Cash Flow Leaks Before They Happen | Bill360 + Yooz Webinar** — Bill360 (34:51, 4 views)
+  https://www.youtube.com/watch?v=wodIUAQeEmo
+  item: `items/wodIUAQeEmo.md`
+- **Google AI Updates: Evolution of Autonomous Agents 【多言語字幕対応 / EN & JA Subs】** — AI研究最前線サマリー (AI Research Daily) (18:06, 2 views)
+  https://www.youtube.com/watch?v=MLl5UBI-xOw
+  item: `items/MLl5UBI-xOw.md`
+- **Your Daily Habits Are Killing Your Income | Here's Why** — Payton Chavis (9:05, 12 views)
+  https://www.youtube.com/watch?v=k5Td_gzbISA
+  item: `items/k5Td_gzbISA.md`
+- **They Mocked His Weak Goblin Summon, Until He Wiped Out an Entire Tribe With One Trick!** — Bella's Comic Chronicles (23:39:14, 377 views)
+  https://www.youtube.com/watch?v=J2Ch3Gvv8ME
+  item: `items/J2Ch3Gvv8ME.md`
+- **KIRO For Dummies: The Complete Beginner's Guide (Install → Build → Powers)** — Data Science Basics (1:00:01, 36 views)
+  https://www.youtube.com/watch?v=a1EIi9BM3b0
+  item: `items/a1EIi9BM3b0.md`
+- **Starting with an Infinite Bullet Shotgun, I Gain an S-Class Ability Every Time I Collect a Beauty!** — Revel Manga Chronicles (25:58:48, 243 views)
+  https://www.youtube.com/watch?v=qeyM9cKlIRM
+  item: `items/qeyM9cKlIRM.md`
+- **How Millions of Concrete Pipes Are Produced Every Year Inside Massive Production Line** — The Factoran (16:22, 247 views)
+  https://www.youtube.com/watch?v=IkOL_GzX218
+  item: `items/IkOL_GzX218.md`
+- **【Full】❤️Earn 100,000 yuan instantly by picking up trash? I got rich thanks to the system** — Wish Fulfillment Drama (1:49:11, 89 views)
+  https://www.youtube.com/watch?v=_c0F0LTnocg
+  item: `items/_c0F0LTnocg.md`
+- **【New】【Multi Sub】Supermarket System: Minister Edition EP1~53#anime #animation** — Joyland-Animation (4:27:48, 330 views)
+  https://www.youtube.com/watch?v=YOXAw-ej5aA
+  item: `items/YOXAw-ej5aA.md`
+- **Ambil botol ribuan dolar, ambil buku jadi doktor! Sistem sampah bikin kaya & tendang wajah!** — Pop-Skrin and 5 more (1:52:43, 43.1K views)
+  https://www.youtube.com/watch?v=4kobtlg1dkA
+  item: `items/4kobtlg1dkA.md`

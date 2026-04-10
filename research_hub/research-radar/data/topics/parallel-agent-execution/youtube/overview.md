@@ -561,3 +561,93 @@ Full item files belong in `items/`.
 - **Claude Managed Agents 完整解析：企业 AI 智能体基础设施，Anthropic 全包了** — 爱副业AI (5:32, 1 views)
   https://www.youtube.com/watch?v=4CQzh9gimfM
   item: `items/4CQzh9gimfM.md`
+
+## 2026-04-10 — 29 new videos
+
+- **Claude Code Works Better With These 5 Agent Patterns** — Eric Tech (14:29, 420 views)
+  https://www.youtube.com/watch?v=DIHIllggaTw
+  item: `items/DIHIllggaTw.md`
+- **This NEW Manus AI AGENT is INSANE!** — Julian Goldie SEO (7:28, 2.4K views)
+  https://www.youtube.com/watch?v=xeJ_71MJ3n4
+  item: `items/xeJ_71MJ3n4.md`
+- **Cursor Changed PR Reviews — But Conductor Does It Locally** — TechWealth Hub (5:03, 3 views)
+  https://www.youtube.com/watch?v=jnm1kAHJ9Ns
+  item: `items/jnm1kAHJ9Ns.md`
+- **Lightpanda: The Headless Browser Built From Scratch for AI Agents (9x Faster Than Chrome)** — TechWealth Hub (5:38, 3 views)
+  https://www.youtube.com/watch?v=cekWoGG98yg
+  item: `items/cekWoGG98yg.md`
+- **OpenClaw Agent Made $3,500 With No Human Help** — Build In Public (12:40, 933 views)
+  https://www.youtube.com/watch?v=PAvX6BFAzHw
+  item: `items/PAvX6BFAzHw.md`
+- **This ForgeCode.dev AI Coding CLI Builder & Agent is INSANE to Build Full Stack Apps in Terminal** — Coding Shiksha (5:16, 4 views)
+  https://www.youtube.com/watch?v=gifvhyQshZ8
+  item: `items/gifvhyQshZ8.md`
+- **NEW Hermes 0.8 is INSANE!** — Julian Goldie SEO (8:32, 2.1K views)
+  https://www.youtube.com/watch?v=bUA21xnr0K0
+  item: `items/bUA21xnr0K0.md`
+- **Managing Multiple Agents with tmux and cmux | Forward Planning #9** — Fiberplane (48:13, 23 views)
+  https://www.youtube.com/watch?v=XCbpuiSmBRU
+  item: `items/XCbpuiSmBRU.md`
+- **AI Agent Builds a DeFi Workflow in Minutes | KeeperHub Tutorial** — KeeperHub (8:35, 1 views)
+  https://www.youtube.com/watch?v=dYIe7e84W2o
+  item: `items/dYIe7e84W2o.md`
+- **Why Hermes Agent is Winning the AI Agent War (OpenClaw Can't Compete)** — Panda Making Money (24:39, 379 views)
+  https://www.youtube.com/watch?v=ZPtjgrmUkZI
+  item: `items/ZPtjgrmUkZI.md`
+- **How to Build a 100% Automated Marketing Agent Team with Claude Code (Sub-agents + Skills + MCP All)** — 빌더 조쉬 Builder Josh (39:29, 4.2K views)
+  https://www.youtube.com/watch?v=6MJ-pmckowQ
+  item: `items/6MJ-pmckowQ.md`
+- **Teach AI to Code in Every Language with NVIDIA NeMo | NVIDIA GTC** — NVIDIA Developer (45:47, 32 views)
+  https://www.youtube.com/watch?v=d8yQ358u-rE
+  item: `items/d8yQ358u-rE.md`
+- **[Hermes Agent] The End of Chatbots: Hermes is Your 24/7 Autonomous AI Co-Founder** — 지투지 - 지식에서 지혜로 (13:22, 3 views)
+  https://www.youtube.com/watch?v=am42_Ohr5sk
+  item: `items/am42_Ohr5sk.md`
+- **Anthropic's Project Glasswing, Meta launches Muse Spark and Perplexity's Billion Dollar Build** — NEAR Protocol (3:11, 30 views)
+  https://www.youtube.com/watch?v=MRXt52szbY0
+  item: `items/MRXt52szbY0.md`
+- **Hermes Agent: The AI That Learns From Your Workflow** — MSG Encrypted (6:32, 6 views)
+  https://www.youtube.com/watch?v=1lhhJuZGEdk
+  item: `items/1lhhJuZGEdk.md`
+- **16. AI Red-Teaming 101 - AI Agent Basics (Lesson 16)** — Jarno Baselier (22:00, 9 views)
+  https://www.youtube.com/watch?v=Sg518HpmnOQ
+  item: `items/Sg518HpmnOQ.md`
+- **CIS-41A Unit 7 Lecture: Software and Hardware Security** — Kasey Nguyen (1:45:15, 9 views)
+  https://www.youtube.com/watch?v=lRp48XTuAr8
+  item: `items/lRp48XTuAr8.md`
+- **[Analyzing and correcting AI-generated comics] A practical explanation of Meta AI 'Muse Spark'! W...** — AI共創イノベーション (22:47, 61 views)
+  https://www.youtube.com/watch?v=e8b-UeMVJLA
+  item: `items/e8b-UeMVJLA.md`
+- **I'm In Your Logs Now, Deceiving Your Analysts and Blinding Your EDR | Olaf Hartong** — Wild West Hackin' Fest (48:43, 19 views)
+  https://www.youtube.com/watch?v=3R75TlaJsFA
+  item: `items/3R75TlaJsFA.md`
+- **Lance Community Sync - Apr 9, 2026** — LanceDB (57:11, 10 views)
+  https://www.youtube.com/watch?v=ezVn6g-uc5A
+  item: `items/ezVn6g-uc5A.md`
+- **GeekWire Studios: Nebius at NVIDIA GTC 2026 | Devang Sachdev, Nebius** — GeekWire (12:34, 27 views)
+  https://www.youtube.com/watch?v=hPXT4T1UXic
+  item: `items/hPXT4T1UXic.md`
+- **Son missing for 19 years, skeletons unearthed during renovation of the family's outhouse; the tru...** — 史說游記 (7:06, 1 views)
+  https://www.youtube.com/watch?v=lQM5VP75L_E
+  item: `items/lQM5VP75L_E.md`
+- **The Great Masters of the Renaissance (3 Hours) | Night at the Museum | For Focus & Deep Work** — The Quiet Curator | GloAetas (3:19:34, 9 views)
+  https://www.youtube.com/watch?v=rWr9Nhjgu0Q
+  item: `items/rWr9Nhjgu0Q.md`
+- **W1D4 - Working with Docker - Week2 Joining Details [9Apr]** — Tausief S (3:55:19, 1.6K views)
+  https://www.youtube.com/watch?v=cvepCq9Tj8E
+  item: `items/cvepCq9Tj8E.md`
+- **This Sandbox Gives AI Agents a Disposable VM (Open Source)** — Deployed-AI (5:46, 11 views)
+  https://www.youtube.com/watch?v=jqBmqR-LXVE
+  item: `items/jqBmqR-LXVE.md`
+- **💥【殺手古德】第一季合輯：曾經絕世殺手現今只知道摸魚擺爛！看廢柴所如何用實力詮釋中二英雄夢的爆笑喜劇！ MUTISUB｜追番補給站【國漫推薦】** — 追番补给站 (5:04:18, 683 views)
+  https://www.youtube.com/watch?v=RtN55y0377Y
+  item: `items/RtN55y0377Y.md`
+- **NEW Hermes Agent Update is INSANE!** — Sanny-Recommends (6:38, 19 views)
+  https://www.youtube.com/watch?v=e2wl5A28GQ4
+  item: `items/e2wl5A28GQ4.md`
+- **Why Do Amazon Strands Agents and Google ADK Build AI Agents Differently?** — Pushkar Mishra (3:03, 3 views)
+  https://www.youtube.com/watch?v=s6fsq-gi2fA
+  item: `items/s6fsq-gi2fA.md`
+- **Mysterious footprints were found in the home of an octogenarian. Her grandson went to investigate...** — 史說游記 (7:04, new)
+  https://www.youtube.com/watch?v=CwRQ6H7ni-s
+  item: `items/CwRQ6H7ni-s.md`

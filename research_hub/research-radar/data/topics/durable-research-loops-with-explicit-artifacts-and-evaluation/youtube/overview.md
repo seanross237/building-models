@@ -90,3 +90,21 @@ Full item files belong in `items/`.
 - **(Part 2)They Threw Him Into The Ocean… Now 43 Girls Depend On Him To Survive** — Top Comic Recap (21:01:28, 52 views)
   https://www.youtube.com/watch?v=LJeX0_ILP1c
   item: `items/LJeX0_ILP1c.md`
+
+## 2026-04-10 — 5 new videos
+
+- **He awakened the SSS-level Flame ability and became the pride of the entire school!#animerecap** — KAI Manhwa Recap (11:48:55, 359 views)
+  https://www.youtube.com/watch?v=kJxAR6tdsoc
+  item: `items/kJxAR6tdsoc.md`
+- **The Forbidden Master Looks Like A Jobless Lecher, But Secretly Commands The SSS-Rank Kun.** — Inosuke Recap (43:46:53, 240 views)
+  https://www.youtube.com/watch?v=5XFTNREB10c
+  item: `items/5XFTNREB10c.md`
+- **They Mocked His Weak Goblin Summon, Until He Wiped Out an Entire Tribe With One Trick!** — Bella's Comic Chronicles (23:39:14, 377 views)
+  https://www.youtube.com/watch?v=J2Ch3Gvv8ME
+  item: `items/J2Ch3Gvv8ME.md`
+- **Profession update, AI in focus and internal control in a GenAI world – April 9** — AICPA (1:00:59, 78 views)
+  https://www.youtube.com/watch?v=PXgaidW_4gI
+  item: `items/PXgaidW_4gI.md`
+- **Reborn as novel’s villain,He thought he’d die,until system say writing future daily can change fate！** — Mania Comics Legends (26:51:29, 276 views)
+  https://www.youtube.com/watch?v=L50u5k7a8ao
+  item: `items/L50u5k7a8ao.md`
